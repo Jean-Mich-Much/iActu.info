@@ -4,4 +4,4 @@ Ce dépôt contient le code source de la version 15 d'iactu.info. Le projet a é
 
 ### Structure
 
-La racine du site se trouve dans le dossier `/_`.
+La racine du site devra se trouver dans le dossier `/_` du serveur Linux.
