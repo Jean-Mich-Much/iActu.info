@@ -1,0 +1,268 @@
+/* Nav */
+
+nav#haut,
+nav#bas {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 95, 190, 1) 5%,
+    rgba(40, 130, 220, 1) 95%
+  );
+}
+
+nav#haut a div,
+nav#bas a div {
+  color: rgba(253, 254, 255, 0.96);
+}
+
+nav#sousmenu,
+nav#sousmenubas,
+form,
+select,
+option {
+  background-color: rgba(253, 254, 255, 1);
+}
+
+nav#sousmenubas a:hover,
+nav#sousmenubas select:hover {
+  color: rgba(195, 20, 20, 0.96);
+}
+
+aside,
+aside a,
+aside a:visited,
+aside form,
+aside form select option,
+aside form select option:visited,
+aside section,
+aside section a,
+aside section a:visited,
+aside section form,
+aside section form select,
+aside section form select:visited,
+aside section form select option,
+aside section form select option:visited,
+nav#sousmenu,
+nav#sousmenu a,
+nav#sousmenu a:visited,
+nav#sousmenu form,
+nav#sousmenu form select,
+nav#sousmenu form select:visited,
+nav#sousmenu form select option,
+nav#sousmenu form select option:visited,
+nav#sousmenu section,
+nav#sousmenu section a,
+nav#sousmenu section a:visited,
+nav#sousmenu section form,
+nav#sousmenu section form select option,
+nav#sousmenu section form select option:visited,
+nav#sousmenu span,
+nav#sousmenu span form select,
+nav#sousmenu span form select:visited,
+nav#sousmenu span form select option,
+nav#sousmenu span form select option:visited,
+nav#sousmenubas,
+nav#sousmenubas a,
+nav#sousmenubas a:visited,
+nav#sousmenubas form,
+nav#sousmenubas form select option,
+nav#sousmenubas form select option:visited,
+nav#sousmenubas section,
+nav#sousmenubas span,
+nav#sousmenubas span a,
+nav#sousmenubas span a:visited,
+nav#sousmenubas span form select,
+nav#sousmenubas span form select:visited,
+nav#sousmenubas span form select option,
+nav#sousmenubas span form select option:visited {
+  color: rgba(80, 90, 100, 0.96);
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+aside a:hover,
+aside form select option:hover,
+aside section a:hover,
+aside section form select:hover,
+aside section form select option:hover,
+nav#sousmenu a:hover,
+nav#sousmenu form select:hover,
+nav#sousmenu form select option:hover,
+nav#sousmenu section a:hover,
+nav#sousmenu section form select option:hover,
+nav#sousmenu span form select:hover,
+nav#sousmenu span form select option:hover,
+nav#sousmenubas a:hover,
+nav#sousmenubas form select option:hover,
+nav#sousmenubas span a:hover,
+nav#sousmenubas span form select:hover,
+nav#sousmenubas span form select option:hover {
+  color: rgba(195, 20, 20, 0.96);
+}
+
+nav#haut,
+nav#bas {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: auto;
+  justify-content: space-around;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 100%;
+}
+
+nav#haut a,
+nav#bas a {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: auto;
+  justify-content: flex-start;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: top;
+}
+
+nav#haut a img,
+nav#bas a img {
+  align-self: center;
+  height: 5.5vw;
+  margin: 0;
+  min-height: 40px;
+  text-align: center;
+  vertical-align: top;
+  width: auto;
+}
+
+nav#haut a div,
+nav#bas a div {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  font-family: "Open Sans Condensed", sans-serif;
+  margin: 0;
+  text-align: center;
+  visibility: visible;
+  vertical-align: top;
+  width: auto;
+}
+
+/* Sous-Menu */
+
+nav#sousmenu,
+nav#sousmenu a,
+nav#sousmenu a:hover,
+nav#sousmenu span,
+nav#sousmenubas,
+nav#sousmenubas a,
+nav#sousmenubas span,
+form,
+option,
+select {
+  align-content: center;
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  font-family: "Open Sans Condensed", sans-serif;
+  overflow: visible;
+  text-align: left;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: auto;
+}
+
+nav#sousmenu,
+nav#sousmenubas {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+nav#sousmenubas a:visited,
+nav#sousmenubas select:visited,
+aside.messagehaut a:visited,
+aside.messagehaut select:visited {
+  color: rgba(80, 90, 100, 0.96);
+}
+
+/* Nav vw */
+
+nav#haut,
+nav#bas {
+  border-bottom: calc(7 / 1920 * 100vw) solid rgba(120, 180, 240, 1);
+}
+
+nav#bas {
+  border-top: calc(7 / 1920 * 100vw) solid rgba(100, 165, 230, 1);
+}
+
+nav#haut a,
+nav#bas a {
+  margin: calc(18 / 1920 * 100vw) 0 0 0;
+}
+
+nav#haut a div,
+nav#bas a div {
+  border-bottom: calc(5 / 1920 * 100vw) solid rgba(40, 130, 220, 0.04);
+  font-size: calc(22 / 1920 * 100vw);
+  line-height: calc(38 / 1920 * 100vw);
+  text-shadow: calc(1 / 1920 * 100vw) calc(1 / 1920 * 100vw)
+    calc(1 / 1920 * 100vw) rgba(20, 25, 30, 0.65);
+}
+
+nav#haut a.pageActive div,
+nav#haut a:hover div,
+nav#bas a.pageActive div,
+nav#bas a:hover div {
+  border-bottom: calc(5 / 1920 * 100vw) solid rgba(253, 254, 255, 0.96);
+}
+
+/* Sous-Menu vw */
+
+nav#sousmenu,
+nav#sousmenu a,
+nav#sousmenu span,
+nav#sousmenubas a,
+nav#sousmenubas,
+nav#sousmenubas span,
+nav#sousmenubas form,
+nav#sousmenubas form select,
+nav#sousmenubas form option,
+form,
+select,
+option {
+  font-size: calc(18 / 1920 * 100vw);
+  line-height: calc(30 / 1920 * 100vw);
+}
+
+nav#sousmenu {
+  border-bottom: calc(1 / 1920 * 100vw) solid rgba(167, 168, 169, 1);
+  margin: 0 0 calc(8 / 1920 * 100vw) 0;
+}
+
+nav#sousmenubas {
+  border-top: calc(1 / 1920 * 100vw) solid rgba(167, 168, 169, 1);
+}
+
+nav#sousmenu span,
+nav#sousmenubas span,
+nav#sousmenubas form {
+  margin: calc(6 / 1920 * 100vw);
+}

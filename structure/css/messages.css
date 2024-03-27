@@ -1,0 +1,79 @@
+/* Messages */
+
+aside.messagebas {
+ border-bottom: 1px solid rgba(167, 168, 169, 0.8);
+}
+
+aside.messagehaut {
+ border-top: 1px solid rgba(167, 168, 169, 0.8);
+}
+
+aside.messagehaut,
+aside.messagehaut section,
+aside.messagehaut section a,
+aside.messagehaut section select,
+aside.messagebas section {
+ font-size: 18px;
+ line-height: 26px;
+}
+
+aside.messagehaut section,
+aside.messagebas section {
+ margin: 9px;
+}
+
+aside.messagehaut,
+aside.messagebas {
+ display: flex;
+ align-content: center;
+ align-items: center;
+ flex-direction: row;
+ flex-wrap: wrap;
+ height: auto;
+ justify-content: center;
+ overflow: hidden;
+ position: relative;
+ width: 100%;
+}
+
+aside.messagehaut section,
+aside.messagebas section {
+ display: inline-flex;
+ align-content: center;
+ align-items: start;
+ flex-direction: row;
+ flex-wrap: wrap;
+ height: auto;
+ justify-content: space-around;
+ overflow: visible;
+ position: relative;
+ text-align: left;
+ vertical-align: middle;
+ white-space: normal;
+ width: auto;
+}
+
+/* Messages vw */
+
+@media (min-width: 1921px) {
+ aside.messagebas {
+ border-bottom: calc(1 / 1920 * 100vw) solid rgba(167, 168, 169, 0.8);
+ }
+ aside.messagehaut {
+ border-top: calc(1 / 1920 * 100vw) solid rgba(167, 168, 169, 0.8);
+ }
+
+ aside.messagehaut,
+ aside.messagehaut section,
+ aside.messagehaut section a,
+ aside.messagehaut section select,
+ aside.messagebas section {
+ font-size: calc(18 / 1920 * 100vw);
+ line-height: calc(26 / 1920 * 100vw);
+ }
+
+ aside.messagehaut section,
+ aside.messagebas section {
+ margin: calc(9 / 1920 * 100vw);
+ }
+}

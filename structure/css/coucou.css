@@ -1,0 +1,6 @@
+
+.coucou:before {
+content: "\00a0" attr(data-website) "\0040" attr(data-user) "\00a0\2709\FE0F\00a0";
+unicode-bidi: bidi-override;
+direction: rtl;
+}

@@ -1,0 +1,381 @@
+/* Thème sombre */
+
+body,
+a,
+article,
+aside,
+div,
+form,
+main,
+nav,
+option,
+section,
+select,
+span {
+ color: rgba(245, 245, 245, 0.98);
+ font-family: "Open Sans Condensed", sans-serif;
+}
+
+body {
+ background: rgba(25, 25, 25, 1);
+}
+
+a:link,
+a:visited {
+ color: rgba(245, 245, 245, 0.98);
+}
+
+a:hover {
+ color: rgba(255, 210, 55, 0.98);
+}
+
+a:active {
+ color: rgba(255, 210, 55, 0.98);
+}
+
+::selection {
+ background: rgba(25, 25, 25, 0.98);
+ color: rgba(255, 245, 210, 0.98);
+}
+
+::-moz-selection {
+ background: rgba(25, 25, 25, 0.98);
+ color: rgba(255, 245, 210, 0.98);
+}
+
+/* Nav */
+
+nav#haut,
+nav#bas {
+ background: linear-gradient(
+ to bottom,
+ rgba(22, 22, 22, 1) 5%,
+ rgba(28, 28, 28, 1) 95%
+ );
+}
+
+nav#haut a div,
+nav#bas a div {
+ color: rgba(245, 245, 245, 0.96);
+}
+
+nav#sousmenu,
+nav#sousmenubas,
+form,
+select,
+option {
+ background-color: rgba(30, 30, 30, 1);
+}
+
+aside,
+aside a,
+aside a:visited,
+aside form,
+aside form select option,
+aside form select option:visited,
+aside section,
+aside section a,
+aside section a:visited,
+aside section form,
+aside section form select,
+aside section form select:visited,
+aside section form select option,
+aside section form select option:visited,
+nav#sousmenu,
+nav#sousmenu a,
+nav#sousmenu a:visited,
+nav#sousmenu form,
+nav#sousmenu form select,
+nav#sousmenu form select:visited,
+nav#sousmenu form select option,
+nav#sousmenu form select option:visited,
+nav#sousmenu section,
+nav#sousmenu section a,
+nav#sousmenu section a:visited,
+nav#sousmenu section form,
+nav#sousmenu section form select option,
+nav#sousmenu section form select option:visited,
+nav#sousmenu span,
+nav#sousmenu span form select,
+nav#sousmenu span form select:visited,
+nav#sousmenu span form select option,
+nav#sousmenu span form select option:visited,
+nav#sousmenubas,
+nav#sousmenubas a,
+nav#sousmenubas a:visited,
+nav#sousmenubas form,
+nav#sousmenubas form select option,
+nav#sousmenubas form select option:visited,
+nav#sousmenubas section,
+nav#sousmenubas span,
+nav#sousmenubas span a,
+nav#sousmenubas span a:visited,
+nav#sousmenubas span form select,
+nav#sousmenubas span form select:visited,
+nav#sousmenubas span form select option,
+nav#sousmenubas span form select option:visited {
+ color: rgba(245, 245, 245, 0.96);
+ font-family: "Open Sans Condensed", sans-serif;
+}
+
+aside a:hover,
+aside form select option:hover,
+aside section a:hover,
+aside section form select:hover,
+aside section form select option:hover,
+nav#sousmenu a:hover,
+nav#sousmenu form select:hover,
+nav#sousmenu form select option:hover,
+nav#sousmenu section a:hover,
+nav#sousmenu section form select option:hover,
+nav#sousmenu span form select:hover,
+nav#sousmenu span form select option:hover,
+nav#sousmenubas a:hover,
+nav#sousmenubas form select option:hover,
+nav#sousmenubas span a:hover,
+nav#sousmenubas span form select:hover,
+nav#sousmenubas span form select option:hover {
+ color: rgba(255, 210, 55, 0.96);
+}
+
+aside.messagebas {
+ border-bottom: 1px solid rgba(78, 78, 78, 0.8);
+}
+
+aside.messagehaut {
+ border-top: 1px solid rgba(78, 78, 78, 0.8);
+}
+
+/* Nav vw */
+
+nav#haut,
+nav#bas {
+ border-bottom: calc(7 / 1920 * 100vw) solid rgba(78, 78, 78, 1);
+}
+
+nav#bas {
+ border-top: calc(7 / 1920 * 100vw) solid rgba(78, 78, 78, 1);
+}
+
+nav#haut a div,
+nav#bas a div {
+ border-bottom: calc(5 / 1920 * 100vw) solid rgba(78, 78, 78, 0.04);
+}
+
+nav#haut a.pageActive div,
+nav#haut a:hover div,
+nav#bas a.pageActive div,
+nav#bas a:hover div {
+ border-bottom: calc(5 / 1920 * 100vw) solid rgba(255, 210, 55, 0.96);
+}
+
+/* Sous-Menu vw */
+
+nav#sousmenu {
+ border-bottom: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 1);
+}
+
+nav#sousmenubas {
+ border-top: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 1);
+}
+
+/* Main */
+
+.lienSite a span {
+ color: rgba(245, 245, 245, 0.98);
+}
+
+.majSite span {
+ color: rgba(225, 225, 225, 0.94);
+}
+
+.ay {
+ color: rgba(255, 210, 55, 0.98);
+}
+
+.b,
+.b a {
+ color: rgba(245, 245, 245, 0.98);
+}
+
+a.n:visited {
+ color: rgba(148, 148, 148, 0.84);
+}
+
+a.n:hover,
+.lienSite a:hover span {
+ color: rgba(255, 210, 55, 0.98);
+}
+
+.bu {
+ color: rgba(185, 185, 185, 0.92);
+}
+
+a.n::selection {
+ background: rgba(255, 245, 210, 0.98);
+ color: rgba(25, 25, 25, 0.98);
+}
+
+a.n::-moz-selection {
+ background: rgba(255, 245, 210, 0.98);
+ color: rgba(25, 25, 25, 0.98);
+}
+
+.siteGauche,
+.siteDroite,
+.boite,
+.actu,
+.ay,
+.bu,
+.b,
+.b a,
+aside,
+.lienSite,
+.majSite {
+ background-color: rgba(32, 32, 32, 1);
+}
+
+main,
+.sites,
+.sitesPar2,
+.siteGauche,
+.siteDroite {
+ background-color: rgba(25, 25, 25, 1);
+}
+
+/* Main vw */
+
+.boite {
+ border: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 1);
+}
+
+.enTete {
+ border-bottom: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 1);
+}
+
+.ay,
+.bu {
+ border-bottom: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 1);
+}
+
+.b {
+ border-bottom: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 1);
+}
+
+.lienSite {
+ background-color: rgba(28, 28, 28, 1);
+ border: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 0.96);
+}
+
+.majSite {
+ background-color: rgba(28, 28, 28, 1);
+ border: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 0.92);
+}
+
+/* Media */
+
+@media (max-width: 640px) {
+ nav#haut a img,
+ nav#bas a img {
+ border-bottom: 5px solid rgba(78, 78, 78, 0.04);
+ }
+
+ nav#haut a.pageActive img,
+ nav#haut a:hover img,
+ nav#bas a.pageActive img,
+ nav#bas a:hover img {
+ border-bottom: 5px solid rgba(255, 210, 55, 0.96);
+ }
+}
+
+@media (max-width: 1920px) {
+ /* Nav */
+
+ nav#haut {
+ border-bottom: 7px solid rgba(64, 64, 64, 1);
+ }
+
+ nav#bas {
+ border-bottom: 7px solid rgba(64, 64, 64, 1);
+ border-top: 7px solid rgba(64, 64, 64, 1);
+ }
+
+ nav#haut a div,
+ nav#bas a div {
+ border-bottom: 5px solid rgba(64, 64, 64, 0.04);
+ }
+
+ nav#haut a.pageActive div,
+ nav#haut a:hover div,
+ nav#bas a.pageActive div,
+ nav#bas a:hover div {
+ border-bottom: 5px solid rgba(255, 210, 55, 0.98);
+ }
+
+ /* Sous-Menu */
+
+ nav#sousmenu {
+ border-bottom: 1px solid rgba(64, 64, 64, 1);
+ }
+
+ nav#sousmenubas {
+ border-top: 1px solid rgba(64, 64, 64, 1);
+ }
+
+ /* Sous-Menu Bas*/
+
+ nav#sousmenu,
+ nav#sousmenubas {
+ color: rgba(240, 240, 240, 0.96);
+ }
+
+ nav#sousmenubas span {
+ color: rgba(240, 240, 240, 0.96);
+ }
+
+ form,
+ form select,
+ form select option {
+ color: rgba(240, 240, 240, 0.96);
+ }
+
+ form select:hover {
+ color: rgba(255, 210, 55, 0.98);
+ }
+
+ /* Main */
+
+ .boite {
+ border: 1px solid rgba(64, 64, 64, 1);
+ }
+
+ .enTete {
+ border-bottom: 1px solid rgba(64, 64, 64, 1);
+ }
+
+ .ay,
+ .bu {
+ border-bottom: 1px solid rgba(64, 64, 64, 1);
+ }
+
+ .b {
+ border-bottom: 1px solid rgba(64, 64, 64, 1);
+ }
+
+ .lienSite {
+ border: 1px solid rgba(64, 64, 64, 0.96);
+ }
+
+ .majSite {
+ border: 1px solid rgba(64, 64, 64, 0.92);
+ }
+}
+
+@media (min-width: 1921px) {
+ aside.messagebas {
+ border-bottom: calc(1 / 1920 * 100vw) solid rgba(78, 78, 78, 0.8);
+ }
+ aside.messagehaut {
+ border-top: calc(1 / 1920 * 100vw) solid rgba(78, 78, 78, 0.8);
+ }
+}

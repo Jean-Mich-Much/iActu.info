@@ -1,0 +1,68 @@
+/* Z-index */
+
+body {
+ z-index: 10;
+}
+
+main {
+ z-index: 20;
+}
+
+.sitesPar2 {
+ z-index: 21;
+}
+
+.siteGauche,
+.siteDroite {
+ z-index: 22;
+}
+
+.boite {
+ z-index: 23;
+}
+
+.actu {
+ z-index: 24;
+}
+
+.ay,
+.bu,
+.b {
+ z-index: 25;
+}
+
+.enTete {
+ z-index: 26;
+}
+
+aside {
+ z-index: 30;
+}
+
+nav#bas {
+ z-index: 40;
+}
+
+nav#sousmenubas {
+ z-index: 50;
+}
+
+nav#haut {
+ z-index: 60;
+}
+
+nav#sousmenu {
+ z-index: 70;
+}
+
+nav#sousmenu span:nth-child(3) {
+ z-index: 71;
+}
+
+nav#sousmenu span:nth-child(2) {
+ z-index: 72;
+}
+
+nav#sousmenu span:nth-child(1) {
+ z-index: 73;
+}
