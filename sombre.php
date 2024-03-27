@@ -1,0 +1,1 @@
+<?php include 'sombre_technologie.php'; ?>
