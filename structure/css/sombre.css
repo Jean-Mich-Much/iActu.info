@@ -11,62 +11,9 @@ nav,
 option,
 section,
 select,
-span {
- color: rgba(245, 245, 245, 0.98);
- font-family: "Open Sans Condensed", sans-serif;
-}
-
-body {
- background: rgba(25, 25, 25, 1);
-}
-
-a:link,
-a:visited {
- color: rgba(245, 245, 245, 0.98);
-}
-
-a:hover {
- color: rgba(255, 210, 55, 0.98);
-}
-
-a:active {
- color: rgba(255, 210, 55, 0.98);
-}
-
-::selection {
- background: rgba(25, 25, 25, 0.98);
- color: rgba(255, 245, 210, 0.98);
-}
-
-::-moz-selection {
- background: rgba(25, 25, 25, 0.98);
- color: rgba(255, 245, 210, 0.98);
-}
-
-/* Nav */
-
-nav#haut,
-nav#bas {
- background: linear-gradient(
- to bottom,
- rgba(22, 22, 22, 1) 5%,
- rgba(28, 28, 28, 1) 95%
- );
-}
-
+span,
 nav#haut a div,
-nav#bas a div {
- color: rgba(245, 245, 245, 0.96);
-}
-
-nav#sousmenu,
-nav#sousmenubas,
-form,
-select,
-option {
- background-color: rgba(30, 30, 30, 1);
-}
-
+nav#bas a div,
 aside,
 aside a,
 aside a:visited,
@@ -118,6 +65,17 @@ nav#sousmenubas span form select option:visited {
  font-family: "Open Sans Condensed", sans-serif;
 }
 
+body {
+ background: rgba(25, 25, 25, 1);
+}
+
+a:link,
+a:visited {
+ color: rgba(245, 245, 245, 0.98);
+}
+
+a:hover,
+a:active,
 aside a:hover,
 aside form select option:hover,
 aside section a:hover,
@@ -136,6 +94,31 @@ nav#sousmenubas span a:hover,
 nav#sousmenubas span form select:hover,
 nav#sousmenubas span form select option:hover {
  color: rgba(255, 210, 55, 0.96);
+}
+
+::selection,
+::-moz-selection {
+ background: rgba(25, 25, 25, 0.98);
+ color: rgba(255, 245, 210, 0.98);
+}
+
+/* Nav */
+
+nav#haut,
+nav#bas {
+ background: linear-gradient(
+ to bottom,
+ rgba(22, 22, 22, 1) 5%,
+ rgba(28, 28, 28, 1) 95%
+ );
+}
+
+nav#sousmenu,
+nav#sousmenubas,
+form,
+select,
+option {
+ background-color: rgba(30, 30, 30, 1);
 }
 
 /* Nav vw */
@@ -173,7 +156,9 @@ nav#sousmenubas {
 
 /* Main */
 
-.lienSite a span {
+.lienSite a span,
+.b,
+.b a {
  color: rgba(245, 245, 245, 0.98);
 }
 
@@ -181,33 +166,21 @@ nav#sousmenubas {
  color: rgba(225, 225, 225, 0.94);
 }
 
-.ay {
+.ay,
+a.n:hover,
+.lienSite a:hover span {
  color: rgba(255, 210, 55, 0.98);
-}
-
-.b,
-.b a {
- color: rgba(245, 245, 245, 0.98);
 }
 
 a.n:visited {
  color: rgba(148, 148, 148, 0.84);
 }
 
-a.n:hover,
-.lienSite a:hover span {
- color: rgba(255, 210, 55, 0.98);
-}
-
 .bu {
  color: rgba(185, 185, 185, 0.92);
 }
 
-a.n::selection {
- background: rgba(255, 245, 210, 0.98);
- color: rgba(25, 25, 25, 0.98);
-}
-
+a.n::selection,
 a.n::-moz-selection {
  background: rgba(255, 245, 210, 0.98);
  color: rgba(25, 25, 25, 0.98);
@@ -237,31 +210,18 @@ main,
 
 /* Main vw */
 
-.boite {
+.boite,
+.enTete,
+.ay,
+.bu,
+.b {
  border: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 1);
 }
 
-.enTete {
- border-bottom: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 1);
-}
-
-.ay,
-.bu {
- border-bottom: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 1);
-}
-
-.b {
- border-bottom: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 1);
-}
-
-.lienSite {
- background-color: rgba(28, 28, 28, 1);
- border: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 0.96);
-}
-
+.lienSite,
 .majSite {
  background-color: rgba(28, 28, 28, 1);
- border: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 0.92);
+ border: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 0.96);
 }
 
 /* Messages */
@@ -313,12 +273,12 @@ section.messagehaut section select:hover {
 @media (max-width: 1920px) {
  /* Nav */
 
- nav#haut {
+ nav#haut,
+ nav#bas {
  border-bottom: 7px solid rgba(64, 64, 64, 1);
  }
 
  nav#bas {
- border-bottom: 7px solid rgba(64, 64, 64, 1);
  border-top: 7px solid rgba(64, 64, 64, 1);
  }
 
@@ -336,25 +296,16 @@ section.messagehaut section select:hover {
 
  /* Sous-Menu */
 
- nav#sousmenu {
- border-bottom: 1px solid rgba(64, 64, 64, 1);
- }
-
+ nav#sousmenu,
  nav#sousmenubas {
- border-top: 1px solid rgba(64, 64, 64, 1);
+ border-bottom: 1px solid rgba(64, 64, 64, 1);
  }
 
  /* Sous-Menu Bas*/
 
  nav#sousmenu,
- nav#sousmenubas {
- color: rgba(240, 240, 240, 0.96);
- }
-
- nav#sousmenubas span {
- color: rgba(240, 240, 240, 0.96);
- }
-
+ nav#sousmenubas,
+ nav#sousmenubas span,
  form,
  form select,
  form select option {
@@ -367,21 +318,12 @@ section.messagehaut section select:hover {
 
  /* Main */
 
- .boite {
- border: 1px solid rgba(64, 64, 64, 1);
- }
-
- .enTete {
- border-bottom: 1px solid rgba(64, 64, 64, 1);
- }
-
+ .boite,
+ .enTete,
  .ay,
- .bu {
- border-bottom: 1px solid rgba(64, 64, 64, 1);
- }
-
+ .bu,
  .b {
- border-bottom: 1px solid rgba(64, 64, 64, 1);
+ border: 1px solid rgba(64, 64, 64, 1);
  }
 
  .lienSite {
