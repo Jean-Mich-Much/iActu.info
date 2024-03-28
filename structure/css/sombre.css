@@ -133,7 +133,7 @@ nav#bas {
 
 nav#haut a div,
 nav#bas a div {
-  border-bottom: calc(5 / 1920 * 100vw) solid rgba(62, 56, 68, 0.04);
+  border-bottom: calc(5 / 1920 * 100vw) solid rgba(26, 21, 29, 0.01);
 }
 
 nav#haut a.pageActive div,
@@ -265,7 +265,7 @@ section.messagehaut section select:hover {
 @media (max-width: 640px) {
   nav#haut a img,
   nav#bas a img {
-    border-bottom: 5px solid rgba(62, 56, 68, 1);
+    border-bottom: 5px solid rgba(26, 21, 29, 0.01);
   }
 
   nav#haut a.pageActive img,
@@ -290,7 +290,7 @@ section.messagehaut section select:hover {
 
   nav#haut a div,
   nav#bas a div {
-    border-bottom: 5px solid rgba(62, 56, 68, 0.04);
+    border-bottom: 5px solid rgba(26, 21, 29, 0.01);
   }
 
   nav#haut a.pageActive div,
