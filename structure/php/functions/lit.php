@@ -181,5 +181,4 @@ function parse($fichier, $logo, $lienSite, $w, $h, $titreSite) {
 </div>
 
 <?php 
-} 
-?>
+}
