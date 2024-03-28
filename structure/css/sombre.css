@@ -138,14 +138,6 @@ nav#sousmenubas span form select option:hover {
  color: rgba(255, 210, 55, 0.96);
 }
 
-aside.messagebas {
- border-bottom: 1px solid rgba(78, 78, 78, 0.8);
-}
-
-aside.messagehaut {
- border-top: 1px solid rgba(78, 78, 78, 0.8);
-}
-
 /* Nav vw */
 
 nav#haut,
@@ -272,6 +264,36 @@ main,
  border: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 0.92);
 }
 
+/* Messages */
+
+section.messagebas,
+section.messagehaut {
+  background-color: rgba(32, 32, 32, 1);
+  color: rgba(245, 245, 245, 0.96);
+}
+
+section.messagebas {
+  border-top: 1px solid rgba(64, 64, 64, 0.96);
+}
+
+section.messagehaut {
+  border-bottom: 1px solid rgba(64, 64, 64, 0.96);
+}
+
+section.messagebas section a,
+section.messagehaut section a,
+section.messagebas section a:visited,
+section.messagehaut section a:visited {
+ color: moccasin;
+}
+
+section.messagebas section a:hover,
+section.messagehaut section a:hover,
+section.messagebas section select:hover,
+section.messagehaut section select:hover {
+ color: rgba(255, 210, 55, 0.98);
+}
+
 /* Media */
 
 @media (max-width: 640px) {
@@ -373,9 +395,9 @@ main,
 
 @media (min-width: 1921px) {
  aside.messagebas {
- border-bottom: calc(1 / 1920 * 100vw) solid rgba(78, 78, 78, 0.8);
+ border-top: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 0.96);
  }
  aside.messagehaut {
- border-top: calc(1 / 1920 * 100vw) solid rgba(78, 78, 78, 0.8);
+ border-bottom: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 0.96);
  }
 }
