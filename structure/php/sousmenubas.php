@@ -1,6 +1,6 @@
-<nav id="sousmenubas">
+<?php @include 'structure/php/messagebas.php'; ?>
 
-  <?php @include 'structure/php/messagebas.php'; ?>
+<nav id="sousmenubas">
 
   <span id="lienjourprecedent">
     <a href="<?php echo $nom_page . date('j', strtotime('-1 days')) . '.html'; ?>" title="Actualités du jour précédent" aria-label="Actualités du jour précédent" id="JourPrecedent">⬅️ Jour précédent&nbsp;</a>
