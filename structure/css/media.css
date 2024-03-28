@@ -350,7 +350,7 @@
     line-height: 28px;
   }
 
-  /* Message */
+  /* Main */
 
   .siteGauche,
   .siteDroite {
@@ -436,7 +436,7 @@
     line-height: 30px;
   }
 
-  /* Message */
+  /* Main */
 
   .siteGauche,
   .siteDroite {
@@ -520,7 +520,7 @@
     line-height: calc(30 / 1920 * 100vw);
   }
 
-  /* Message */
+  /* Main */
 
   .siteGauche,
   .siteDroite {
