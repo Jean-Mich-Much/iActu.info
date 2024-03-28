@@ -379,6 +379,25 @@
   .majSite span span {
     font-size: 14px;
   }
+
+  /* Messages */
+
+  section.messagebas,
+  section.messagebas section,
+  section.messagebas section a,
+  section.messagebas section select,
+  section.messagehaut,
+  section.messagehaut section,
+  section.messagehaut section a,
+  section.messagehaut section select {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  section.messagehaut section,
+  section.messagebas section {
+    margin: 10px 18px;
+  }
 }
 
 @media (min-width: 642px) and (max-width: 960px) {
