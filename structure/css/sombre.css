@@ -61,17 +61,17 @@ nav#sousmenubas span form select,
 nav#sousmenubas span form select:visited,
 nav#sousmenubas span form select option,
 nav#sousmenubas span form select option:visited {
- color: rgba(245, 245, 245, 0.96);
- font-family: "Open Sans Condensed", sans-serif;
+  color: rgba(247, 244, 249, 0.96);
+  font-family: "Open Sans Condensed", sans-serif;
 }
 
 body {
- background: rgba(25, 25, 25, 1);
+  background: rgba(27, 24, 29, 1);
 }
 
 a:link,
 a:visited {
- color: rgba(245, 245, 245, 0.98);
+  color: rgba(247, 244, 249, 0.98);
 }
 
 a:hover,
@@ -93,24 +93,23 @@ nav#sousmenubas form select option:hover,
 nav#sousmenubas span a:hover,
 nav#sousmenubas span form select:hover,
 nav#sousmenubas span form select option:hover {
- color: rgba(255, 210, 55, 0.96);
+  color: rgba(255, 210, 55, 0.96);
 }
 
 ::selection,
 ::-moz-selection {
- background: rgba(25, 25, 25, 0.98);
- color: rgba(255, 245, 210, 0.98);
+  background: rgba(27, 24, 29, 0.98);
+  color: rgba(255, 245, 210, 0.98);
 }
 
 /* Nav */
 
 nav#haut,
 nav#bas {
- background: linear-gradient(
- to bottom,
- rgba(22, 22, 22, 1) 5%,
- rgba(28, 28, 28, 1) 95%
- );
+  background: url("structure/img/themes/sombre/bandeau.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 nav#sousmenu,
@@ -118,40 +117,40 @@ nav#sousmenubas,
 form,
 select,
 option {
- background-color: rgba(30, 30, 30, 1);
+  background-color: rgba(33, 30, 35, 1);
 }
 
 /* Nav vw */
 
 nav#haut,
 nav#bas {
- border-bottom: calc(7 / 1920 * 100vw) solid rgba(78, 78, 78, 1);
+  border-bottom: calc(7 / 1920 * 100vw) solid rgba(62, 56, 68, 1);
 }
 
 nav#bas {
- border-top: calc(7 / 1920 * 100vw) solid rgba(78, 78, 78, 1);
+  border-top: calc(7 / 1920 * 100vw) solid rgba(62, 56, 68, 1);
 }
 
 nav#haut a div,
 nav#bas a div {
- border-bottom: calc(5 / 1920 * 100vw) solid rgba(78, 78, 78, 0.04);
+  border-bottom: calc(5 / 1920 * 100vw) solid rgba(62, 56, 68, 0.04);
 }
 
 nav#haut a.pageActive div,
 nav#haut a:hover div,
 nav#bas a.pageActive div,
 nav#bas a:hover div {
- border-bottom: calc(5 / 1920 * 100vw) solid rgba(255, 210, 55, 0.96);
+  border-bottom: calc(5 / 1920 * 100vw) solid rgba(255, 210, 55, 0.96);
 }
 
 /* Sous-Menu vw */
 
 nav#sousmenu {
- border-bottom: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 1);
+  border-bottom: calc(1 / 1920 * 100vw) solid rgba(57, 52, 59, 1);
 }
 
 nav#sousmenubas {
- border-top: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 1);
+  border-top: calc(1 / 1920 * 100vw) solid rgba(57, 52, 59, 1);
 }
 
 /* Main */
@@ -159,36 +158,37 @@ nav#sousmenubas {
 .lienSite a span,
 .b,
 .b a {
- color: rgba(245, 245, 245, 0.98);
+  color: rgba(247, 244, 249, 0.98);
 }
 
 .majSite span {
- color: rgba(225, 225, 225, 0.94);
+  color: rgba(227, 224, 229, 0.94);
 }
 
 .ay,
 a.n:hover,
 .lienSite a:hover span {
- color: rgba(255, 210, 55, 0.98);
+  color: rgba(255, 210, 55, 0.98);
 }
 
 a.n:visited {
- color: rgba(148, 148, 148, 0.84);
+  color: rgba(151, 148, 153, 0.84);
 }
 
 .bu {
- color: rgba(185, 185, 185, 0.92);
+  color: rgba(187, 184, 189, 0.92);
 }
 
 a.n::selection,
 a.n::-moz-selection {
- background: rgba(255, 245, 210, 0.98);
- color: rgba(25, 25, 25, 0.98);
+  background: rgba(255, 245, 210, 0.98);
+  color: rgba(27, 24, 29, 0.98);
 }
 
 .siteGauche,
 .siteDroite,
 .boite,
+.enTete,
 .actu,
 .ay,
 .bu,
@@ -197,7 +197,7 @@ a.n::-moz-selection {
 aside,
 .lienSite,
 .majSite {
- background-color: rgba(32, 32, 32, 1);
+  background-color: rgba(36, 32, 38, 1);
 }
 
 main,
@@ -205,141 +205,153 @@ main,
 .sitesPar2,
 .siteGauche,
 .siteDroite {
- background-color: rgba(25, 25, 25, 1);
+  background-color: rgba(27, 24, 29, 1);
 }
 
 /* Main vw */
 
-.boite,
+.boite {
+  border: calc(1 / 1920 * 100vw) solid rgba(57, 52, 59, 1);
+}
+
 .enTete,
 .ay,
 .bu,
 .b {
- border: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 1);
+  border: calc(1 / 1920 * 100vw) solid rgba(57, 52, 59, 1);
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
 }
 
 .lienSite,
 .majSite {
- background-color: rgba(28, 28, 28, 1);
- border: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 0.96);
+  background-color: rgba(30, 25, 35, 1);
+  border: calc(1 / 1920 * 100vw) solid rgba(57, 52, 59, 0.96);
 }
 
 /* Messages */
 
 section.messagebas,
 section.messagehaut {
-  background-color: rgba(32, 32, 32, 1);
-  color: rgba(245, 245, 245, 0.96);
+  background-color: rgba(45, 42, 47, 1);
+  color: rgba(245, 242, 247, 0.96);
 }
 
 section.messagebas {
-  border-top: 1px solid rgba(64, 64, 64, 0.96);
+  border-top: 1px solid rgba(57, 52, 59, 0.96);
 }
 
 section.messagehaut {
-  border-bottom: 1px solid rgba(64, 64, 64, 0.96);
+  border-bottom: 1px solid rgba(57, 52, 59, 0.96);
 }
 
 section.messagebas section a,
 section.messagehaut section a,
 section.messagebas section a:visited,
 section.messagehaut section a:visited {
- color: moccasin;
+  color: moccasin;
 }
 
 section.messagebas section a:hover,
 section.messagehaut section a:hover,
 section.messagebas section select:hover,
 section.messagehaut section select:hover {
- color: rgba(255, 210, 55, 0.98);
+  color: rgba(255, 210, 55, 0.98);
 }
 
 /* Media */
 
 @media (max-width: 640px) {
- nav#haut a img,
- nav#bas a img {
- border-bottom: 5px solid rgba(78, 78, 78, 0.04);
- }
+  nav#haut a img,
+  nav#bas a img {
+    border-bottom: 5px solid rgba(62, 56, 68, 1);
+  }
 
- nav#haut a.pageActive img,
- nav#haut a:hover img,
- nav#bas a.pageActive img,
- nav#bas a:hover img {
- border-bottom: 5px solid rgba(255, 210, 55, 0.96);
- }
+  nav#haut a.pageActive img,
+  nav#haut a:hover img,
+  nav#bas a.pageActive img,
+  nav#bas a:hover img {
+    border-bottom: 5px solid rgba(255, 210, 55, 0.96);
+  }
 }
 
 @media (max-width: 1920px) {
- /* Nav */
+  /* Nav */
 
- nav#haut,
- nav#bas {
- border-bottom: 7px solid rgba(64, 64, 64, 1);
- }
+  nav#haut,
+  nav#bas {
+    border-bottom: 7px solid rgba(62, 56, 68, 1);
+  }
 
- nav#bas {
- border-top: 7px solid rgba(64, 64, 64, 1);
- }
+  nav#bas {
+    border-top: 7px solid rgba(62, 56, 68, 1);
+  }
 
- nav#haut a div,
- nav#bas a div {
- border-bottom: 5px solid rgba(64, 64, 64, 0.04);
- }
+  nav#haut a div,
+  nav#bas a div {
+    border-bottom: 5px solid rgba(62, 56, 68, 0.04);
+  }
 
- nav#haut a.pageActive div,
- nav#haut a:hover div,
- nav#bas a.pageActive div,
- nav#bas a:hover div {
- border-bottom: 5px solid rgba(255, 210, 55, 0.98);
- }
+  nav#haut a.pageActive div,
+  nav#haut a:hover div,
+  nav#bas a.pageActive div,
+  nav#bas a:hover div {
+    border-bottom: 5px solid rgba(255, 210, 55, 0.98);
+  }
 
- /* Sous-Menu */
+  /* Sous-Menu */
 
- nav#sousmenu,
- nav#sousmenubas {
- border-bottom: 1px solid rgba(64, 64, 64, 1);
- }
+  nav#sousmenu,
+  nav#sousmenubas {
+    border-bottom: 1px solid rgba(57, 52, 59, 1);
+  }
 
- /* Sous-Menu Bas*/
+  /* Sous-Menu Bas*/
 
- nav#sousmenu,
- nav#sousmenubas,
- nav#sousmenubas span,
- form,
- form select,
- form select option {
- color: rgba(240, 240, 240, 0.96);
- }
+  nav#sousmenu,
+  nav#sousmenubas,
+  nav#sousmenubas span,
+  form,
+  form select,
+  form select option {
+    color: rgba(245, 242, 247, 0.96);
+  }
 
- form select:hover {
- color: rgba(255, 210, 55, 0.98);
- }
+  form select:hover {
+    color: rgba(255, 210, 55, 0.98);
+  }
 
- /* Main */
+  /* Main */
 
- .boite,
- .enTete,
- .ay,
- .bu,
- .b {
- border: 1px solid rgba(64, 64, 64, 1);
- }
+  .boite {
+    border: 1px solid rgba(57, 52, 59, 1);
+  }
 
- .lienSite {
- border: 1px solid rgba(64, 64, 64, 0.96);
- }
+  .enTete,
+  .ay,
+  .bu,
+  .b {
+    border: 1px solid rgba(57, 52, 59, 1);
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+  }
 
- .majSite {
- border: 1px solid rgba(64, 64, 64, 0.92);
- }
+  .lienSite {
+    border: 1px solid rgba(57, 52, 59, 0.96);
+  }
+
+  .majSite {
+    border: 1px solid rgba(57, 52, 59, 0.92);
+  }
 }
 
 @media (min-width: 1921px) {
- aside.messagebas {
- border-top: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 0.96);
- }
- aside.messagehaut {
- border-bottom: calc(1 / 1920 * 100vw) solid rgba(64, 64, 64, 0.96);
- }
+  aside.messagebas {
+    border-top: calc(1 / 1920 * 100vw) solid rgba(57, 52, 59, 0.96);
+  }
+  aside.messagehaut {
+    border-bottom: calc(1 / 1920 * 100vw) solid rgba(57, 52, 59, 0.96);
+  }
 }
