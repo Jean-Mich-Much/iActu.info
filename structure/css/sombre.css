@@ -66,7 +66,7 @@ nav#sousmenubas span form select option:visited {
 }
 
 body {
-  background: rgba(15, 15, 30, 1);
+  background: rgba(15, 15, 40, 1);
 }
 
 a:link,
@@ -98,7 +98,7 @@ nav#sousmenubas span form select option:hover {
 
 ::selection,
 ::-moz-selection {
-  background: rgba(15, 15, 30, 0.98);
+  background: rgba(15, 15, 40, 0.98);
   color: rgba(255, 245, 210, 0.98);
 }
 
@@ -108,8 +108,8 @@ nav#haut,
 nav#bas {
   background: linear-gradient(
     to bottom,
-    rgba(20, 20, 40, 1) 5%,
-    rgba(25, 25, 45, 1) 95%
+    rgba(20, 20, 45, 1) 5%,
+    rgba(25, 25, 50, 1) 95%
   );
 }
 
@@ -118,23 +118,23 @@ nav#sousmenubas,
 form,
 select,
 option {
-  background-color: rgba(25, 25, 45, 1);
+  background-color: rgba(25, 25, 55, 1);
 }
 
 /* Nav vw */
 
 nav#haut,
 nav#bas {
-  border-bottom: calc(7 / 1920 * 100vw) solid rgba(60, 60, 100, 1);
+  border-bottom: calc(7 / 1920 * 100vw) solid rgba(50, 50, 95, 1);
 }
 
 nav#bas {
-  border-top: calc(7 / 1920 * 100vw) solid rgba(60, 60, 100, 1);
+  border-top: calc(7 / 1920 * 100vw) solid rgba(50, 50, 95, 1);
 }
 
 nav#haut a div,
 nav#bas a div {
-  border-bottom: calc(5 / 1920 * 100vw) solid rgba(60, 60, 100, 0.01);
+  border-bottom: calc(5 / 1920 * 100vw) solid rgba(50, 50, 95, 0.01);
 }
 
 nav#haut a.pageActive div,
@@ -147,11 +147,11 @@ nav#bas a:hover div {
 /* Sous-Menu vw */
 
 nav#sousmenu {
-  border-bottom: calc(1 / 1920 * 100vw) solid rgba(60, 60, 100, 1);
+  border-bottom: calc(1 / 1920 * 100vw) solid rgba(50, 50, 95, 1);
 }
 
 nav#sousmenubas {
-  border-top: calc(1 / 1920 * 100vw) solid rgba(60, 60, 100, 1);
+  border-top: calc(1 / 1920 * 100vw) solid rgba(50, 50, 95, 1);
 }
 
 /* Main */
@@ -173,7 +173,7 @@ a.n:hover,
 }
 
 a.n:visited {
-  color: rgba(150, 150, 155, 0.84);
+  color: rgba(150, 150, 175, 0.84);
 }
 
 .bu {
@@ -183,7 +183,7 @@ a.n:visited {
 a.n::selection,
 a.n::-moz-selection {
   background: rgba(255, 245, 210, 0.98);
-  color: rgba(15, 15, 30, 0.98);
+  color: rgba(15, 15, 40, 0.98);
 }
 
 .actu,
@@ -192,16 +192,10 @@ a.n::-moz-selection {
 .b a,
 .boite,
 .bu,
-.enTete,
 .siteDroite,
 .siteGauche,
 aside {
-  background-color: rgba(25, 25, 45, 1);
-}
-
-.lienSite,
-.majSite {
-  background-color: rgba(15, 15, 35, 1);
+  background-color: rgba(25, 25, 50, 1);
 }
 
 main,
@@ -209,44 +203,65 @@ main,
 .sitesPar2,
 .siteGauche,
 .siteDroite {
-  background-color: rgba(15, 15, 30, 1);
+  background-color: rgba(20, 20, 45, 1);
 }
 
 /* Main vw */
 
 .boite {
-  border: calc(1 / 1920 * 100vw) solid rgba(60, 60, 100, 1);
+  border: calc(1 / 1920 * 100vw) solid rgba(50, 50, 95, 1);
 }
 
 .enTete,
-.ay,
-.bu,
-.b {
-  border: calc(1 / 1920 * 100vw) solid rgba(60, 60, 100, 1);
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
+.lienSite,
+.majSite {
+  background-color: rgba(15, 15, 45, 1);
+}
+
+.enTete {
+  border: calc(1 / 1920 * 100vw) solid rgba(50, 50, 95, 0.96);
+  border-radius: 5px;
+}
+
+.enTete {
+  margin-left: calc(9 / 1920 * 100vw);
+  margin-top: calc(9 / 1920 * 100vw);
+  width: calc(100% - 18px);
 }
 
 .lienSite,
 .majSite {
-  border: calc(1 / 1920 * 100vw) solid rgba(60, 60, 100, 0.96);
+  border: 0;
+}
+
+.lienSite {
+  margin-bottom: calc(3 / 1920 * 100vw);
+  margin-top: calc(3 / 1920 * 100vw);
+}
+
+.ay,
+.bu,
+.b {
+  border: calc(1 / 1920 * 100vw) solid rgba(50, 50, 95, 1);
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
 }
 
 /* Messages */
 
 section.messagebas,
 section.messagehaut {
-  background-color: rgba(55, 55, 75, 1);
+  background-color: rgba(40, 40, 80, 1);
   color: rgba(242, 242, 247, 0.96);
 }
 
 section.messagebas {
-  border-top: 1px solid rgba(60, 60, 100, 0.96);
+  border-top: 1px solid rgba(50, 50, 95, 0.96);
 }
 
 section.messagehaut {
-  border-bottom: 1px solid rgba(60, 60, 100, 0.96);
+  border-bottom: 1px solid rgba(50, 50, 95, 0.96);
 }
 
 section.messagebas section a,
@@ -268,7 +283,7 @@ section.messagehaut section select:hover {
 @media (max-width: 640px) {
   nav#haut a img,
   nav#bas a img {
-    border-bottom: 5px solid rgba(25, 25, 45, 0.01);
+    border-bottom: 5px solid rgba(25, 25, 50, 0.01);
   }
 
   nav#haut a.pageActive img,
@@ -284,16 +299,16 @@ section.messagehaut section select:hover {
 
   nav#haut,
   nav#bas {
-    border-bottom: 7px solid rgba(60, 60, 100, 1);
+    border-bottom: 7px solid rgba(50, 50, 95, 1);
   }
 
   nav#bas {
-    border-top: 7px solid rgba(60, 60, 100, 1);
+    border-top: 7px solid rgba(50, 50, 95, 1);
   }
 
   nav#haut a div,
   nav#bas a div {
-    border-bottom: 5px solid rgba(60, 60, 100, 0.01);
+    border-bottom: 5px solid rgba(50, 50, 95, 0.01);
   }
 
   nav#haut a.pageActive div,
@@ -307,7 +322,7 @@ section.messagehaut section select:hover {
 
   nav#sousmenu,
   nav#sousmenubas {
-    border-bottom: 1px solid rgba(60, 60, 100, 1);
+    border-bottom: 1px solid rgba(50, 50, 95, 1);
   }
 
   /* Sous-Menu Bas*/
@@ -328,33 +343,45 @@ section.messagehaut section select:hover {
   /* Main */
 
   .boite {
-    border: 1px solid rgba(60, 60, 100, 1);
+    border: 1px solid rgba(50, 50, 95, 1);
   }
 
-  .enTete,
-  .ay,
-  .bu,
-  .b {
-    border: 1px solid rgba(60, 60, 100, 1);
-    border-left: 0;
-    border-right: 0;
-    border-top: 0;
+  .enTete {
+    border: 1px solid rgba(50, 50, 95, 0.96);
+    border-radius: 5px;
+  }
+
+  .enTete {
+    margin-left: 9px;
+    margin-top: 9px;
+    width: calc(100% - 18px);
+  }
+
+  .lienSite,
+  .majSite {
+    border: 0;
   }
 
   .lienSite {
-    border: 1px solid rgba(60, 60, 100, 0.96);
+    margin-bottom: 3px;
+    margin-top: 3px;
   }
 
-  .majSite {
-    border: 1px solid rgba(60, 60, 100, 0.92);
+  .ay,
+  .bu,
+  .b {
+    border: 1px solid rgba(50, 50, 95, 1);
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
   }
 }
 
 @media (min-width: 1921px) {
   aside.messagebas {
-    border-top: calc(1 / 1920 * 100vw) solid rgba(60, 60, 100, 0.96);
+    border-top: calc(1 / 1920 * 100vw) solid rgba(50, 50, 95, 0.96);
   }
   aside.messagehaut {
-    border-bottom: calc(1 / 1920 * 100vw) solid rgba(60, 60, 100, 0.96);
+    border-bottom: calc(1 / 1920 * 100vw) solid rgba(50, 50, 95, 0.96);
   }
 }
