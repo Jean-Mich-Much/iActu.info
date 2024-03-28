@@ -2,7 +2,7 @@
 
 section.messagebas,
 section.messagehaut {
-  background-color: rgba(251, 252, 253, 1);
+  background-color: rgba(255, 252, 240, 0.98);
   display: flex;
   align-content: flex-start;
   align-items: flex-start;
@@ -11,7 +11,7 @@ section.messagehaut {
   border: 0;
   border-image-width: 0;
   box-sizing: border-box;
-  color: rgba(7, 8, 9, 0.98);
+  color: rgba(45, 35, 5, 0.98);
   direction: ltr;
   flex: 0 1 auto;
   font-family: "Open Sans", sans-serif;
@@ -75,7 +75,7 @@ section.messagebas section a,
 section.messagehaut section a,
 section.messagebas section a:visited,
 section.messagehaut section a:visited {
- color: mediumblue;
+ color: rgba(30, 24, 240, 0.98);
 }
 
 section.messagebas section a:hover,
