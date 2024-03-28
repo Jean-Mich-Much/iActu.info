@@ -1,79 +1,119 @@
 /* Messages */
 
-aside.messagebas {
- border-bottom: 1px solid rgba(167, 168, 169, 0.8);
+section.messagebas,
+section.messagehaut {
+  background-color: rgba(251, 252, 253, 1);
+  display: flex;
+  align-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  border: 0;
+  border-image-width: 0;
+  box-sizing: border-box;
+  color: rgba(7, 8, 9, 0.98);
+  direction: ltr;
+  flex: 0 1 auto;
+  font-family: "Open Sans", sans-serif;
+  font-kerning: normal;
+  font-optical-sizing: auto;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  height: auto;
+  letter-spacing: 0;
+  margin: 0;
+  min-height: 1px;
+  min-width: 1px;
+  opacity: 1;
+  order: 0;
+  outline-width: 0;
+  overflow-wrap: break-word;
+  padding: 0;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  text-shadow: none;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  unicode-bidi: embed;
+  vertical-align: top;
+  width: 100%;
+  white-space: normal;
+  word-spacing: normal;
+  z-index: auto;
 }
 
-aside.messagehaut {
- border-top: 1px solid rgba(167, 168, 169, 0.8);
+section.messagebas {
+  border-top: 1px solid rgba(167, 168, 169, 0.8);
 }
 
-aside.messagehaut,
-aside.messagehaut section,
-aside.messagehaut section a,
-aside.messagehaut section select,
-aside.messagebas section {
- font-size: 18px;
- line-height: 26px;
+section.messagehaut {
+  border-bottom: 1px solid rgba(167, 168, 169, 0.8);
 }
 
-aside.messagehaut section,
-aside.messagebas section {
- margin: 9px;
+section.messagebas,
+section.messagebas section,
+section.messagebas section a,
+section.messagebas section select,
+section.messagehaut,
+section.messagehaut section,
+section.messagehaut section a,
+section.messagehaut section select {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  overflow: visible;
+  text-align: left;
+  text-decoration: none;
+  vertical-align: baseline;
+  white-space: normal;
+  width: auto;
 }
 
-aside.messagehaut,
-aside.messagebas {
- display: flex;
- align-content: center;
- align-items: center;
- flex-direction: row;
- flex-wrap: wrap;
- height: auto;
- justify-content: center;
- overflow: hidden;
- position: relative;
- width: 100%;
+section.messagebas section a,
+section.messagehaut section a,
+section.messagebas section a:visited,
+section.messagehaut section a:visited {
+ color: mediumblue;
 }
 
-aside.messagehaut section,
-aside.messagebas section {
- display: inline-flex;
- align-content: center;
- align-items: start;
- flex-direction: row;
- flex-wrap: wrap;
- height: auto;
- justify-content: space-around;
- overflow: visible;
- position: relative;
- text-align: left;
- vertical-align: middle;
- white-space: normal;
- width: auto;
+section.messagebas section a:hover,
+section.messagehaut section a:hover,
+section.messagebas section select:hover,
+section.messagehaut section select:hover {
+ color: rgba(195, 20, 20, 0.98);
+}
+
+section.messagehaut section,
+section.messagebas section {
+  margin: 12px 21px;
 }
 
 /* Messages vw */
 
 @media (min-width: 1921px) {
- aside.messagebas {
- border-bottom: calc(1 / 1920 * 100vw) solid rgba(167, 168, 169, 0.8);
- }
- aside.messagehaut {
- border-top: calc(1 / 1920 * 100vw) solid rgba(167, 168, 169, 0.8);
- }
+  section.messagebas {
+    border-top: calc(1 / 1920 * 100vw) solid rgba(167, 168, 169, 0.8);
+  }
+  section.messagehaut {
+    border-bottom: calc(1 / 1920 * 100vw) solid rgba(167, 168, 169, 0.8);
+  }
 
- aside.messagehaut,
- aside.messagehaut section,
- aside.messagehaut section a,
- aside.messagehaut section select,
- aside.messagebas section {
- font-size: calc(18 / 1920 * 100vw);
- line-height: calc(26 / 1920 * 100vw);
- }
+  section.messagebas,
+  section.messagebas section,
+  section.messagebas section a,
+  section.messagebas section select,
+  section.messagehaut,
+  section.messagehaut section,
+  section.messagehaut section a,
+  section.messagehaut section select {
+    font-size: calc(18 / 1920 * 100vw);
+    line-height: calc(26 / 1920 * 100vw);
+  }
 
- aside.messagehaut section,
- aside.messagebas section {
- margin: calc(9 / 1920 * 100vw);
- }
+  section.messagehaut section,
+  section.messagebas section {
+    margin: calc(12 / 1920 * 100vw) calc(21 / 1920 * 100vw);
+  }
 }
