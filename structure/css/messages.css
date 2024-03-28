@@ -75,19 +75,25 @@ section.messagebas section a,
 section.messagehaut section a,
 section.messagebas section a:visited,
 section.messagehaut section a:visited {
- color: rgba(30, 24, 240, 0.98);
+  color: rgba(30, 24, 240, 0.98);
 }
 
 section.messagebas section a:hover,
 section.messagehaut section a:hover,
 section.messagebas section select:hover,
 section.messagehaut section select:hover {
- color: rgba(195, 20, 20, 0.98);
+  color: rgba(195, 20, 20, 0.98);
+}
+
+section.messagehaut,
+section.messagebas {
+  padding: 12px 21px;
 }
 
 section.messagehaut section,
 section.messagebas section {
-  margin: 12px 21px;
+  margin: auto;
+  width: auto;
 }
 
 /* Messages vw */
@@ -112,8 +118,8 @@ section.messagebas section {
     line-height: calc(26 / 1920 * 100vw);
   }
 
-  section.messagehaut section,
-  section.messagebas section {
-    margin: calc(12 / 1920 * 100vw) calc(21 / 1920 * 100vw);
+  section.messagehaut,
+  section.messagebas {
+    padding: calc(12 / 1920 * 100vw) calc(21 / 1920 * 100vw);
   }
 }
