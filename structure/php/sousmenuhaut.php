@@ -95,6 +95,6 @@ $affiche_paypal_haut = true;
     <?php echo date('H:i'); ?>
   </span>
 
-  <?php @include 'structure/php/messagehaut.php'; ?>
-
 </nav>
+
+  <?php @include 'structure/php/messagehaut.php'; ?>
