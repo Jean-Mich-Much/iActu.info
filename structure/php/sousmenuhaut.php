@@ -2,6 +2,8 @@
 $affiche_paypal_haut = true;
 ?>
 
+<?php @include 'structure/php/messagehaut.php'; ?>
+
 <nav id="sousmenu">
 
   <span id="LiensThemes">
@@ -96,5 +98,3 @@ $affiche_paypal_haut = true;
   </span>
 
 </nav>
-
-  <?php @include 'structure/php/messagehaut.php'; ?>
