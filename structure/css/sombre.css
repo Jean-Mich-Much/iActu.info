@@ -61,17 +61,17 @@ nav#sousmenubas span form select,
 nav#sousmenubas span form select:visited,
 nav#sousmenubas span form select option,
 nav#sousmenubas span form select option:visited {
-  color: rgba(247, 244, 249, 0.96);
+  color: rgba(244, 244, 249, 0.96);
   font-family: "Open Sans Condensed", sans-serif;
 }
 
 body {
-  background: rgba(27, 24, 29, 1);
+  background: rgba(15, 15, 30, 1);
 }
 
 a:link,
 a:visited {
-  color: rgba(247, 244, 249, 0.98);
+  color: rgba(244, 244, 249, 0.98);
 }
 
 a:hover,
@@ -98,7 +98,7 @@ nav#sousmenubas span form select option:hover {
 
 ::selection,
 ::-moz-selection {
-  background: rgba(27, 24, 29, 0.98);
+  background: rgba(15, 15, 30, 0.98);
   color: rgba(255, 245, 210, 0.98);
 }
 
@@ -106,10 +106,11 @@ nav#sousmenubas span form select option:hover {
 
 nav#haut,
 nav#bas {
-  background: url("structure/img/themes/sombre/bandeau.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 20, 35, 1) 5%,
+    rgba(25, 25, 45, 1) 95%
+  );
 }
 
 nav#sousmenu,
@@ -117,23 +118,23 @@ nav#sousmenubas,
 form,
 select,
 option {
-  background-color: rgba(33, 30, 35, 1);
+  background-color: rgba(25, 25, 45, 1);
 }
 
 /* Nav vw */
 
 nav#haut,
 nav#bas {
-  border-bottom: calc(7 / 1920 * 100vw) solid rgba(62, 56, 68, 1);
+  border-bottom: calc(7 / 1920 * 100vw) solid rgba(60, 60, 100, 1);
 }
 
 nav#bas {
-  border-top: calc(7 / 1920 * 100vw) solid rgba(62, 56, 68, 1);
+  border-top: calc(7 / 1920 * 100vw) solid rgba(60, 60, 100, 1);
 }
 
 nav#haut a div,
 nav#bas a div {
-  border-bottom: calc(5 / 1920 * 100vw) solid rgba(26, 21, 29, 0.01);
+  border-bottom: calc(5 / 1920 * 100vw) solid rgba(60, 60, 100, 0.01);
 }
 
 nav#haut a.pageActive div,
@@ -146,11 +147,11 @@ nav#bas a:hover div {
 /* Sous-Menu vw */
 
 nav#sousmenu {
-  border-bottom: calc(1 / 1920 * 100vw) solid rgba(57, 52, 59, 1);
+  border-bottom: calc(1 / 1920 * 100vw) solid rgba(60, 60, 100, 1);
 }
 
 nav#sousmenubas {
-  border-top: calc(1 / 1920 * 100vw) solid rgba(57, 52, 59, 1);
+  border-top: calc(1 / 1920 * 100vw) solid rgba(60, 60, 100, 1);
 }
 
 /* Main */
@@ -158,11 +159,11 @@ nav#sousmenubas {
 .lienSite a span,
 .b,
 .b a {
-  color: rgba(247, 244, 249, 0.98);
+  color: rgba(244, 244, 249, 0.98);
 }
 
 .majSite span {
-  color: rgba(227, 224, 229, 0.94);
+  color: rgba(224, 224, 229, 0.94);
 }
 
 .ay,
@@ -172,32 +173,35 @@ a.n:hover,
 }
 
 a.n:visited {
-  color: rgba(151, 148, 153, 0.84);
+  color: rgba(150, 150, 155, 0.84);
 }
 
 .bu {
-  color: rgba(187, 184, 189, 0.92);
+  color: rgba(184, 184, 189, 0.92);
 }
 
 a.n::selection,
 a.n::-moz-selection {
   background: rgba(255, 245, 210, 0.98);
-  color: rgba(27, 24, 29, 0.98);
+  color: rgba(15, 15, 30, 0.98);
 }
 
-.siteGauche,
-.siteDroite,
-.boite,
-.enTete,
 .actu,
 .ay,
-.bu,
 .b,
 .b a,
-aside,
+.boite,
+.bu,
+.enTete,
+.siteDroite,
+.siteGauche,
+aside {
+  background-color: rgba(25, 25, 45, 1);
+}
+
 .lienSite,
 .majSite {
-  background-color: rgba(36, 32, 38, 1);
+  background-color: rgba(15, 15, 35, 1);
 }
 
 main,
@@ -205,20 +209,20 @@ main,
 .sitesPar2,
 .siteGauche,
 .siteDroite {
-  background-color: rgba(27, 24, 29, 1);
+  background-color: rgba(15, 15, 30, 1);
 }
 
 /* Main vw */
 
 .boite {
-  border: calc(1 / 1920 * 100vw) solid rgba(57, 52, 59, 1);
+  border: calc(1 / 1920 * 100vw) solid rgba(60, 60, 100, 1);
 }
 
 .enTete,
 .ay,
 .bu,
 .b {
-  border: calc(1 / 1920 * 100vw) solid rgba(57, 52, 59, 1);
+  border: calc(1 / 1920 * 100vw) solid rgba(60, 60, 100, 1);
   border-left: 0;
   border-right: 0;
   border-top: 0;
@@ -226,24 +230,23 @@ main,
 
 .lienSite,
 .majSite {
-  background-color: rgba(30, 25, 35, 1);
-  border: calc(1 / 1920 * 100vw) solid rgba(57, 52, 59, 0.96);
+  border: calc(1 / 1920 * 100vw) solid rgba(60, 60, 100, 0.96);
 }
 
 /* Messages */
 
 section.messagebas,
 section.messagehaut {
-  background-color: rgba(45, 42, 47, 1);
-  color: rgba(245, 242, 247, 0.96);
+  background-color: rgba(55, 55, 75, 1);
+  color: rgba(242, 242, 247, 0.96);
 }
 
 section.messagebas {
-  border-top: 1px solid rgba(57, 52, 59, 0.96);
+  border-top: 1px solid rgba(60, 60, 100, 0.96);
 }
 
 section.messagehaut {
-  border-bottom: 1px solid rgba(57, 52, 59, 0.96);
+  border-bottom: 1px solid rgba(60, 60, 100, 0.96);
 }
 
 section.messagebas section a,
@@ -265,7 +268,7 @@ section.messagehaut section select:hover {
 @media (max-width: 640px) {
   nav#haut a img,
   nav#bas a img {
-    border-bottom: 5px solid rgba(26, 21, 29, 0.01);
+    border-bottom: 5px solid rgba(25, 25, 45, 0.01);
   }
 
   nav#haut a.pageActive img,
@@ -281,16 +284,16 @@ section.messagehaut section select:hover {
 
   nav#haut,
   nav#bas {
-    border-bottom: 7px solid rgba(62, 56, 68, 1);
+    border-bottom: 7px solid rgba(60, 60, 100, 1);
   }
 
   nav#bas {
-    border-top: 7px solid rgba(62, 56, 68, 1);
+    border-top: 7px solid rgba(60, 60, 100, 1);
   }
 
   nav#haut a div,
   nav#bas a div {
-    border-bottom: 5px solid rgba(26, 21, 29, 0.01);
+    border-bottom: 5px solid rgba(60, 60, 100, 0.01);
   }
 
   nav#haut a.pageActive div,
@@ -304,7 +307,7 @@ section.messagehaut section select:hover {
 
   nav#sousmenu,
   nav#sousmenubas {
-    border-bottom: 1px solid rgba(57, 52, 59, 1);
+    border-bottom: 1px solid rgba(60, 60, 100, 1);
   }
 
   /* Sous-Menu Bas*/
@@ -315,7 +318,7 @@ section.messagehaut section select:hover {
   form,
   form select,
   form select option {
-    color: rgba(245, 242, 247, 0.96);
+    color: rgba(242, 242, 247, 0.96);
   }
 
   form select:hover {
@@ -325,33 +328,33 @@ section.messagehaut section select:hover {
   /* Main */
 
   .boite {
-    border: 1px solid rgba(57, 52, 59, 1);
+    border: 1px solid rgba(60, 60, 100, 1);
   }
 
   .enTete,
   .ay,
   .bu,
   .b {
-    border: 1px solid rgba(57, 52, 59, 1);
+    border: 1px solid rgba(60, 60, 100, 1);
     border-left: 0;
     border-right: 0;
     border-top: 0;
   }
 
   .lienSite {
-    border: 1px solid rgba(57, 52, 59, 0.96);
+    border: 1px solid rgba(60, 60, 100, 0.96);
   }
 
   .majSite {
-    border: 1px solid rgba(57, 52, 59, 0.92);
+    border: 1px solid rgba(60, 60, 100, 0.92);
   }
 }
 
 @media (min-width: 1921px) {
   aside.messagebas {
-    border-top: calc(1 / 1920 * 100vw) solid rgba(57, 52, 59, 0.96);
+    border-top: calc(1 / 1920 * 100vw) solid rgba(60, 60, 100, 0.96);
   }
   aside.messagehaut {
-    border-bottom: calc(1 / 1920 * 100vw) solid rgba(57, 52, 59, 0.96);
+    border-bottom: calc(1 / 1920 * 100vw) solid rgba(60, 60, 100, 0.96);
   }
 }
