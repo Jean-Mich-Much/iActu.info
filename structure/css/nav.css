@@ -196,9 +196,7 @@ nav#sousmenubas {
 }
 
 nav#sousmenubas a:visited,
-nav#sousmenubas select:visited,
-aside.messagehaut a:visited,
-aside.messagehaut select:visited {
+nav#sousmenubas select:visited {
   color: rgba(80, 90, 100, 0.96);
 }
 
