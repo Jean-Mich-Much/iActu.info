@@ -2,7 +2,7 @@
 
 section.messagebas,
 section.messagehaut {
-  background-color: rgba(255, 252, 242, 0.98);
+  background-color: rgba(255, 255, 240, 0.98);
   display: flex;
   align-content: flex-start;
   align-items: flex-start;
@@ -84,14 +84,9 @@ section.messagehaut section select:hover {
   color: rgba(195, 20, 20, 0.98);
 }
 
-section.messagehaut,
-section.messagebas {
-  padding: 12px 21px;
-}
-
 section.messagehaut section,
 section.messagebas section {
-  margin: auto;
+  margin: 12px 21px;
   width: auto;
 }
 
@@ -117,8 +112,8 @@ section.messagebas section {
     line-height: calc(26 / 1920 * 100vw);
   }
 
-  section.messagehaut,
-  section.messagebas {
+  section.messagehaut section,
+  section.messagebas section {
     padding: calc(12 / 1920 * 100vw) calc(21 / 1920 * 100vw);
   }
 }
