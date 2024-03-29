@@ -35,15 +35,14 @@
 <meta rel="sitemap" type="application/xml" content="https://iactu.info/sitemap.xml">
 
 <style type="text/css">
-    <?php
-    readfile('structure/css/base.css');
-    readfile('structure/css/fonts.css');
-    readfile('structure/css/nav.css');
-    readfile('structure/css/messages.css');
-    readfile('structure/css/main.css');
-    readfile('structure/css/coucou.css');
-    readfile('structure/css/media.css');
-    readfile('structure/css/zindex.css');
-    readfile('structure/css/priohigh.css');
-    ?>
+<?php readfile('structure/css/base.css');
+readfile('structure/css/fonts.css');
+readfile('structure/css/nav.css');
+readfile('structure/css/messages.css');
+readfile('structure/css/main.css');
+readfile('structure/css/coucou.css');
+readfile('structure/css/media.css');
+readfile('structure/css/zindex.css');
+readfile('structure/css/priohigh.css');
+?>
 </style>
