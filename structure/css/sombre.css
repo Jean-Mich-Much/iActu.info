@@ -1,19 +1,9 @@
 /* Thème sombre */
 
-body,
 a,
+a:link,
+a:visited,
 article,
-aside,
-div,
-form,
-main,
-nav,
-option,
-section,
-select,
-span,
-nav#haut a div,
-nav#bas a div,
 aside,
 aside a,
 aside a:visited,
@@ -25,17 +15,24 @@ aside section a,
 aside section a:visited,
 aside section form,
 aside section form select,
-aside section form select:visited,
 aside section form select option,
 aside section form select option:visited,
+aside section form select:visited,
+body,
+div,
+form,
+main,
+nav,
+nav#bas a div,
+nav#haut a div,
 nav#sousmenu,
 nav#sousmenu a,
 nav#sousmenu a:visited,
 nav#sousmenu form,
 nav#sousmenu form select,
-nav#sousmenu form select:visited,
 nav#sousmenu form select option,
 nav#sousmenu form select option:visited,
+nav#sousmenu form select:visited,
 nav#sousmenu section,
 nav#sousmenu section a,
 nav#sousmenu section a:visited,
@@ -44,9 +41,9 @@ nav#sousmenu section form select option,
 nav#sousmenu section form select option:visited,
 nav#sousmenu span,
 nav#sousmenu span form select,
-nav#sousmenu span form select:visited,
 nav#sousmenu span form select option,
 nav#sousmenu span form select option:visited,
+nav#sousmenu span form select:visited,
 nav#sousmenubas,
 nav#sousmenubas a,
 nav#sousmenubas a:visited,
@@ -58,20 +55,19 @@ nav#sousmenubas span,
 nav#sousmenubas span a,
 nav#sousmenubas span a:visited,
 nav#sousmenubas span form select,
-nav#sousmenubas span form select:visited,
 nav#sousmenubas span form select option,
-nav#sousmenubas span form select option:visited {
+nav#sousmenubas span form select option:visited,
+nav#sousmenubas span form select:visited,
+option,
+section,
+select,
+span {
   color: rgba(244, 244, 249, 0.96);
   font-family: "Open Sans Condensed", sans-serif;
 }
 
 body {
   background: rgba(15, 15, 40, 1);
-}
-
-a:link,
-a:visited {
-  color: rgba(244, 244, 249, 0.98);
 }
 
 a:hover,
@@ -98,7 +94,7 @@ nav#sousmenubas span form select option:hover {
 
 ::selection,
 ::-moz-selection {
-  background: rgba(15, 15, 40, 0.98);
+  background: rgba(15, 15, 40, 0.96);
   color: rgba(255, 245, 210, 0.98);
 }
 
@@ -178,12 +174,6 @@ a.n:visited {
 
 .bu {
   color: rgba(184, 184, 189, 0.92);
-}
-
-a.n::selection,
-a.n::-moz-selection {
-  background: rgba(255, 245, 210, 0.98);
-  color: rgba(15, 15, 40, 0.98);
 }
 
 .actu,
@@ -268,7 +258,7 @@ section.messagebas section a,
 section.messagehaut section a,
 section.messagebas section a:visited,
 section.messagehaut section a:visited {
-  color: moccasin;
+  color: rgba(255, 245, 210, 0.98);
 }
 
 section.messagebas section a:hover,
