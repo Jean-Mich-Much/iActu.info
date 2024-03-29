@@ -1,6 +1,6 @@
-/* Base */
-
 @charset "utf-8";
+
+/* Base */
 
 html,
 body {
@@ -32,7 +32,6 @@ span {
  flex: 0 1 auto;
  font-family: "Open Sans", sans-serif;
  font-kerning: normal;
- font-optical-sizing: auto;
  font-stretch: normal;
  font-style: normal;
  font-weight: normal;
