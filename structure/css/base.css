@@ -4,12 +4,12 @@
 
 html,
 body {
- font-size: calc(18 / 1920 * 100vw);
+  font-size: calc(18 / 1920 * 100vw);
 }
 
 html {
- height: 100%;
- width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 body,
@@ -24,81 +24,81 @@ option,
 section,
 select,
 span {
- border: 0;
- border-image-width: 0;
- box-sizing: border-box;
- color: rgba(0, 0, 0, 0.98);
- direction: ltr;
- flex: 0 1 auto;
- font-family: "Open Sans", sans-serif;
- font-kerning: normal;
- font-stretch: normal;
- font-style: normal;
- font-weight: normal;
- height: auto;
- letter-spacing: 0;
- line-height: calc(32 / 1920 * 100vw);
- margin: 0;
- min-height: 1px;
- min-width: 1px;
- opacity: 1;
- order: 0;
- outline-width: 0;
- overflow-wrap: break-word;
- padding: 0;
- position: relative;
- text-align: left;
- text-decoration: none;
- text-shadow: none;
- text-rendering: optimizeLegibility;
- text-transform: none;
- unicode-bidi: embed;
- vertical-align: top;
- width: auto;
- white-space: normal;
- word-spacing: normal;
- z-index: auto;
+  border: 0;
+  border-image-width: 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.98);
+  direction: ltr;
+  flex: 0 1 auto;
+  font-family: "Open Sans", sans-serif;
+  font-kerning: normal;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  height: auto;
+  letter-spacing: 0;
+  line-height: calc(32 / 1920 * 100vw);
+  margin: 0;
+  min-height: 1px;
+  min-width: 1px;
+  opacity: 1;
+  order: 0;
+  outline-width: 0;
+  overflow-wrap: break-word;
+  padding: 0;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  text-shadow: none;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  unicode-bidi: embed;
+  vertical-align: top;
+  width: auto;
+  white-space: normal;
+  word-spacing: normal;
+  z-index: auto;
 }
 
 body {
- background: rgba(242, 243, 244, 1);
- height: 100%;
- overflow-x: hidden;
- overflow-y: scroll;
- width: 100%;
+  background: rgba(237, 238, 239, 1);
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
 }
 
 a:link {
- color: rgba(0, 0, 0, 0.98);
- text-decoration: none;
+  color: rgba(0, 0, 0, 0.98);
+  text-decoration: none;
 }
 
 a:visited {
- color: rgba(127, 127, 127, 0.98);
- text-decoration: none;
+  color: rgba(127, 127, 127, 0.98);
+  text-decoration: none;
 }
 
 a:hover {
- color: rgba(195, 20, 20, 0.98);
- text-decoration: underline;
+  color: rgba(195, 20, 20, 0.98);
+  text-decoration: underline;
 }
 
 a:active {
- color: rgba(195, 20, 20, 0.98);
+  color: rgba(195, 20, 20, 0.98);
 }
 
 form select:hover {
- cursor: pointer;
- position: relative;
- text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
 }
 
 ::selection {
- background: rgba(255, 245, 210, 0.98);
- color: rgba(29, 28, 24, 0.98);
+  background: rgba(255, 245, 210, 0.98);
+  color: rgba(29, 28, 24, 0.98);
 }
 
 ::-moz-selection {
- background: rgba(255, 245, 210, 0.98);
- color: rgba(27, 28, 24, 0.98);
+  background: rgba(255, 245, 210, 0.98);
+  color: rgba(27, 28, 24, 0.98);
 }
