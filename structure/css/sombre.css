@@ -122,16 +122,16 @@ option {
 
 nav#haut,
 nav#bas {
-  border-bottom: calc(7 / 1920 * 100vw) solid rgba(50, 50, 95, 1);
+  border-bottom: calc(6 / 1920 * 100vw) solid rgba(52, 52, 92, 1);
 }
 
 nav#bas {
-  border-top: calc(7 / 1920 * 100vw) solid rgba(50, 50, 95, 1);
+  border-top: calc(6 / 1920 * 100vw) solid rgba(52, 52, 92, 1);
 }
 
 nav#haut a div,
 nav#bas a div {
-  border-bottom: calc(5 / 1920 * 100vw) solid rgba(50, 50, 95, 0.01);
+  border-bottom: calc(5 / 1920 * 100vw) solid rgba(52, 52, 92, 0.01);
 }
 
 nav#haut a.pageActive div,
@@ -144,11 +144,11 @@ nav#bas a:hover div {
 /* Sous-Menu vw */
 
 nav#sousmenu {
-  border-bottom: calc(1 / 1920 * 100vw) solid rgba(50, 50, 95, 1);
+  border-bottom: calc(1 / 1920 * 100vw) solid rgba(52, 52, 92, 1);
 }
 
 nav#sousmenubas {
-  border-top: calc(1 / 1920 * 100vw) solid rgba(50, 50, 95, 1);
+  border-top: calc(1 / 1920 * 100vw) solid rgba(52, 52, 92, 1);
 }
 
 /* Main */
@@ -200,7 +200,7 @@ main,
 /* Main vw */
 
 .boite {
-  border: calc(1 / 1920 * 100vw) solid rgba(50, 50, 95, 1);
+  border: calc(1 / 1920 * 100vw) solid rgba(52, 52, 92, 1);
 }
 
 .enTete,
@@ -210,29 +210,13 @@ main,
 }
 
 .enTete {
-  border: calc(1 / 1920 * 100vw) solid rgba(50, 50, 95, 0.96);
-}
-
-.enTete {
-  margin-left: calc(9 / 1920 * 100vw);
-  margin-top: calc(9 / 1920 * 100vw);
-  width: calc(100% - 18px);
-}
-
-.lienSite,
-.majSite {
-  border: 0;
-}
-
-.lienSite {
-  margin-bottom: calc(3 / 1920 * 100vw);
-  margin-top: calc(3 / 1920 * 100vw);
+  border: calc(1 / 1920 * 100vw) solid rgba(52, 52, 92, 0.96);
 }
 
 .ay,
 .bu,
 .b {
-  border: calc(1 / 1920 * 100vw) solid rgba(50, 50, 95, 1);
+  border: calc(1 / 1920 * 100vw) solid rgba(52, 52, 92, 1);
   border-left: 0;
   border-right: 0;
   border-top: 0;
@@ -242,16 +226,16 @@ main,
 
 section.messagebas,
 section.messagehaut {
-  background-color: rgba(40, 40, 80, 1);
+  background-color: rgba(32, 32, 68, 1);
   color: rgba(242, 242, 247, 0.96);
 }
 
 section.messagebas {
-  border-top: 1px solid rgba(50, 50, 95, 0.96);
+  border-top: 1px solid rgba(52, 52, 92, 0.96);
 }
 
 section.messagehaut {
-  border-bottom: 1px solid rgba(50, 50, 95, 0.96);
+  border-bottom: 1px solid rgba(52, 52, 92, 0.96);
 }
 
 section.messagebas section a,
@@ -289,16 +273,16 @@ section.messagehaut section select:hover {
 
   nav#haut,
   nav#bas {
-    border-bottom: 7px solid rgba(50, 50, 95, 1);
+    border-bottom: 6px solid rgba(52, 52, 92, 1);
   }
 
   nav#bas {
-    border-top: 7px solid rgba(50, 50, 95, 1);
+    border-top: 6px solid rgba(52, 52, 92, 1);
   }
 
   nav#haut a div,
   nav#bas a div {
-    border-bottom: 5px solid rgba(50, 50, 95, 0.01);
+    border-bottom: 5px solid rgba(52, 52, 92, 0.01);
   }
 
   nav#haut a.pageActive div,
@@ -312,7 +296,7 @@ section.messagehaut section select:hover {
 
   nav#sousmenu,
   nav#sousmenubas {
-    border-bottom: 1px solid rgba(50, 50, 95, 1);
+    border-bottom: 1px solid rgba(52, 52, 92, 1);
   }
 
   /* Sous-Menu Bas*/
@@ -333,33 +317,17 @@ section.messagehaut section select:hover {
   /* Main */
 
   .boite {
-    border: 1px solid rgba(50, 50, 95, 1);
+    border: 1px solid rgba(52, 52, 92, 1);
   }
 
   .enTete {
-    border: 1px solid rgba(50, 50, 95, 0.96);
-  }
-
-  .enTete {
-    margin-left: 9px;
-    margin-top: 9px;
-    width: calc(100% - 18px);
-  }
-
-  .lienSite,
-  .majSite {
-    border: 0;
-  }
-
-  .lienSite {
-    margin-bottom: 3px;
-    margin-top: 3px;
+    border: 1px solid rgba(52, 52, 92, 0.96);
   }
 
   .ay,
   .bu,
   .b {
-    border: 1px solid rgba(50, 50, 95, 1);
+    border: 1px solid rgba(52, 52, 92, 1);
     border-left: 0;
     border-right: 0;
     border-top: 0;
@@ -368,9 +336,9 @@ section.messagehaut section select:hover {
 
 @media (min-width: 1921px) {
   aside.messagebas {
-    border-top: calc(1 / 1920 * 100vw) solid rgba(50, 50, 95, 0.96);
+    border-top: calc(1 / 1920 * 100vw) solid rgba(52, 52, 92, 0.96);
   }
   aside.messagehaut {
-    border-bottom: calc(1 / 1920 * 100vw) solid rgba(50, 50, 95, 0.96);
+    border-bottom: calc(1 / 1920 * 100vw) solid rgba(52, 52, 92, 0.96);
   }
 }
