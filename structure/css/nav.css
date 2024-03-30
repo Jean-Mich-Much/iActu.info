@@ -1,3 +1,4 @@
+
 /* Nav */
 
 nav#haut,
@@ -74,7 +75,7 @@ nav#sousmenubas span form select,
 nav#sousmenubas span form select:visited,
 nav#sousmenubas span form select option,
 nav#sousmenubas span form select option:visited {
-  color: rgba(80, 90, 100, 0.96);
+  color: rgba(71, 79, 87, 0.98);
   font-family: "Open Sans Condensed", sans-serif;
 }
 
@@ -197,7 +198,7 @@ nav#sousmenubas {
 
 nav#sousmenubas a:visited,
 nav#sousmenubas select:visited{
-  color: rgba(80, 90, 100, 0.96);
+  color: rgba(71, 79, 87, 0.98);
 }
 
 /* Nav vw */
