@@ -1,3 +1,4 @@
+
 /* Thème sombre */
 
 a,
@@ -210,7 +211,6 @@ main,
 
 .enTete {
   border: calc(1 / 1920 * 100vw) solid rgba(50, 50, 95, 0.96);
-  border-radius: 5px;
 }
 
 .enTete {
@@ -338,7 +338,6 @@ section.messagehaut section select:hover {
 
   .enTete {
     border: 1px solid rgba(50, 50, 95, 0.96);
-    border-radius: 5px;
   }
 
   .enTete {
