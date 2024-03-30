@@ -1,3 +1,4 @@
+
 /* Media */
 
 @media (max-width: 640px) {
@@ -19,6 +20,33 @@
   nav#bas a div {
     display: none;
     visibility: hidden;
+  }
+
+  nav#sousmenu span#SousMenuHautThemes,
+  nav#sousmenu span#SousMenuHautHeureMajPage {
+    display: none;
+  }
+
+  .lienSite {
+    justify-content: center;
+  }
+
+  .lienSite,
+  .lienSite a,
+  .lienSite a span,
+  .lienSite a:hover span {
+    font-size: 20px;
+    line-height: 38px;
+  }
+
+  .lienSite {
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .majSite {
+    display: none;
   }
 
   .b {
@@ -74,6 +102,21 @@
     visibility: visible;
   }
 
+  nav#sousmenu span#SousMenuHautThemes,
+  nav#sousmenu span#SousMenuHautHeureMajPage {
+    display: flex;
+  }
+
+  .lienSite {
+    justify-content: flex-start;
+    margin: 0;
+    margin-right: auto;
+  }
+
+  .majSite {
+    display: flex;
+  }
+
   .b {
     align-content: center;
     align-items: center;
@@ -102,6 +145,23 @@
     line-height: 38px;
     margin-bottom: auto;
     margin-top: auto;
+  }
+}
+
+@media (min-width: 642px) and (max-width: 1920px) {
+  .lienSite,
+  .lienSite a,
+  .lienSite a span,
+  .lienSite a:hover span {
+    font-size: 20px;
+    line-height: 38px;
+  }
+
+  .majSite,
+  .majSite span,
+  .majSite span span {
+    font-size: 18px;
+    line-height: 38px;
   }
 }
 
@@ -198,38 +258,14 @@
 
   /* Main */
 
-  .boite {
-    border: 1px solid rgba(157, 158, 159, 1);
-  }
-
-  .enTete {
-    border-bottom: 1px solid rgba(177, 178, 179, 1);
-    margin-left: 9px;
-    width: calc(100% - 18px);
-  }
-
-  .ay,
-  .bu {
-    border-bottom: 1px solid rgba(197, 198, 199, 1);
-  }
-
-  .b {
-    border-bottom: 1px solid rgba(197, 198, 199, 1);
-  }
-
-  .lienSite {
-    border: 1px solid rgba(157, 158, 159, 0.96);
-    border-radius: 5px;
-  }
-
-  .majSite {
-    border: 1px solid rgba(167, 168, 169, 0.92);
-    border-radius: 44px;
-  }
-
-  main {
+  main,
+  article {
     font-size: 18px;
     line-height: 36px;
+  }
+
+  .boite {
+    border: 1px solid rgba(157, 158, 159, 1);
   }
 
   .siteGauche,
@@ -247,58 +283,43 @@
     margin-bottom: 8px;
   }
 
-  .actu {
-    margin-bottom: 9px;
+  .enTete {
+    margin-bottom: 3px;
+    margin-left: 9px;
+    margin-top: 9px;
+    width: calc(100% - 18px);
   }
 
-  .lienSite {
-    font-size: 20px;
-    line-height: 38px;
-    margin-bottom: 12px;
-    margin-left: 3px;
-    margin-top: 12px;
-  }
-
-  .lienSite a img,
-  .lienSite a span,
-  .lienSite a:hover span {
-    line-height: 38px;
-  }
-
-  .lienSite a {
-    font-size: 20px;
-    line-height: 38px;
+  .enTete {
+    border: 1px solid rgba(177, 178, 179, 0.96);
   }
 
   .lienSite a img {
-    height: 40px;
+    height: 36px;
     margin: 6px;
   }
 
   .lienSite a span,
   .lienSite a:hover span {
-    font-size: 20px;
-    line-height: 38px;
-    margin-right: 12px;
+    margin-right: 6px;
   }
 
   .majSite {
-    margin-left: 9px;
+    margin-left: 3px;
     margin-right: 3px;
   }
 
   .majSite span {
-    margin-right: 9px;
-  }
-
-  .majSite span span {
-    font-size: 20px;
-    line-height: 38px;
+    margin-right: 6px;
   }
 
   .majSite span span img {
     height: 18px;
     margin-left: 6px;
+  }
+
+  .actu {
+    margin-bottom: 9px;
   }
 
   .ay,
@@ -310,20 +331,23 @@
     width: calc(100% - 18px);
   }
 
-  .b {
-    font-size: 18px;
-    margin-left: 9px;
-    width: calc(100% - 18px);
+  .ay,
+  .bu {
+    border-bottom: 1px solid rgba(197, 198, 199, 1);
   }
 
   .b a {
     font-size: 18px;
   }
 
-  main,
-  article {
+  .b {
     font-size: 18px;
-    line-height: 36px;
+    margin-left: 9px;
+    width: calc(100% - 18px);
+  }
+
+  .b {
+    border-bottom: 1px solid rgba(197, 198, 199, 1);
   }
 }
 
@@ -350,6 +374,11 @@
     line-height: 28px;
   }
 
+  nav#sousmenu span#SousMenuHautStats_ou_Donateurs,
+  nav#sousmenu span#SousMenuHautDivers_ou_Paypal {
+    display: none;
+  }
+
   /* Main */
 
   .siteGauche,
@@ -363,21 +392,6 @@
 
   .siteDroite {
     margin-left: 8px;
-  }
-
-  .lienSite {
-    font-size: 16px;
-  }
-
-  .lienSite a,
-  .lienSite a span,
-  .lienSite a:hover span {
-    font-size: 16px;
-  }
-
-  .majSite span,
-  .majSite span span {
-    font-size: 14px;
   }
 
   /* Messages */
@@ -455,6 +469,11 @@
     line-height: 30px;
   }
 
+  nav#sousmenu span#SousMenuHautStats_ou_Donateurs,
+  nav#sousmenu span#SousMenuHautDivers_ou_Paypal {
+    display: flex;
+  }
+
   /* Main */
 
   .siteGauche,
@@ -468,21 +487,6 @@
 
   .siteDroite {
     margin-right: 8px;
-  }
-
-  .lienSite {
-    font-size: 20px;
-  }
-
-  .lienSite a,
-  .lienSite a span,
-  .lienSite a:hover span {
-    font-size: 20px;
-  }
-
-  .majSite span,
-  .majSite span span {
-    font-size: 18px;
   }
 
   .b {
@@ -514,6 +518,13 @@
     margin-bottom: auto;
     margin-top: auto;
   }
+
+  .b a {
+    font-size: 18px;
+    line-height: 38px;
+    margin-left: 6px;
+    max-width: calc(100% - 12px);
+  }
 }
 
 @media (min-width: 1921px) {
@@ -539,6 +550,11 @@
     line-height: calc(30 / 1920 * 100vw);
   }
 
+  nav#sousmenu span#SousMenuHautStats_ou_Donateurs,
+  nav#sousmenu span#SousMenuHautDivers_ou_Paypal {
+    display: flex;
+  }
+
   /* Main */
 
   .siteGauche,
@@ -552,21 +568,6 @@
 
   .siteDroite {
     margin-right: calc(8 / 1920 * 100vw);
-  }
-
-  .lienSite {
-    font-size: calc(20 / 1920 * 100vw);
-  }
-
-  .lienSite a,
-  .lienSite a span,
-  .lienSite a:hover span {
-    font-size: calc(20 / 1920 * 100vw);
-  }
-
-  .majSite span,
-  .majSite span span {
-    font-size: calc(18 / 1920 * 100vw);
   }
 
   .b {
