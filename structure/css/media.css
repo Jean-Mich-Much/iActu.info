@@ -191,12 +191,12 @@
   /* Nav */
 
   nav#haut {
-    border-bottom: 7px solid rgba(120, 180, 240, 1);
+    border-bottom: 6px solid rgba(120, 180, 240, 1);
   }
 
   nav#bas {
-    border-bottom: 7px solid rgba(120, 180, 240, 1);
-    border-top: 7px solid rgba(100, 165, 230, 1);
+    border-bottom: 6px solid rgba(120, 180, 240, 1);
+    border-top: 6px solid rgba(100, 165, 230, 1);
   }
 
   nav#haut a,
