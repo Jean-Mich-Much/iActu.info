@@ -197,19 +197,19 @@ nav#sousmenubas {
 }
 
 nav#sousmenubas a:visited,
-nav#sousmenubas select:visited{
+nav#sousmenubas select:visited {
   color: rgba(71, 79, 87, 0.98);
 }
 
 /* Nav vw */
 
-nav#haut,
-nav#bas {
-  border-bottom: calc(7 / 1920 * 100vw) solid rgba(120, 180, 240, 1);
+nav#haut {
+  border-bottom: calc(6 / 1920 * 100vw) solid rgba(120, 180, 240, 1);
 }
 
 nav#bas {
-  border-top: calc(7 / 1920 * 100vw) solid rgba(100, 165, 230, 1);
+  border-bottom: calc(6 / 1920 * 100vw) solid rgba(120, 180, 240, 1);
+  border-top: calc(6 / 1920 * 100vw) solid rgba(100, 165, 230, 1);
 }
 
 nav#haut a,
