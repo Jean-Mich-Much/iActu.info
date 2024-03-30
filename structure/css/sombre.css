@@ -63,12 +63,12 @@ option,
 section,
 select,
 span {
-  color: rgba(244, 244, 249, 0.96);
+  color: rgba(245, 247, 249, 0.96);
   font-family: "Open Sans Condensed", sans-serif;
 }
 
 body {
-  background: rgba(15, 15, 40, 1);
+  background: rgba(16, 20, 24, 1);
 }
 
 a:hover,
@@ -95,7 +95,7 @@ nav#sousmenubas span form select option:hover {
 
 ::selection,
 ::-moz-selection {
-  background: rgba(15, 15, 40, 0.96);
+  background: rgba(16, 20, 24, 0.96);
   color: rgba(255, 245, 210, 0.98);
 }
 
@@ -105,8 +105,8 @@ nav#haut,
 nav#bas {
   background: linear-gradient(
     to bottom,
-    rgba(20, 20, 45, 1) 5%,
-    rgba(25, 25, 50, 1) 95%
+    rgba(16, 20, 24, 1) 5%,
+    rgba(22, 26, 30, 1) 95%
   );
 }
 
@@ -115,23 +115,23 @@ nav#sousmenubas,
 form,
 select,
 option {
-  background-color: rgba(25, 25, 55, 1);
+  background-color: rgba(20, 25, 30, 1);
 }
 
 /* Nav vw */
 
 nav#haut,
 nav#bas {
-  border-bottom: calc(6 / 1920 * 100vw) solid rgba(52, 52, 92, 1);
+  border-bottom: calc(6 / 1920 * 100vw) solid rgba(52, 60, 68, 1);
 }
 
 nav#bas {
-  border-top: calc(6 / 1920 * 100vw) solid rgba(52, 52, 92, 1);
+  border-top: calc(6 / 1920 * 100vw) solid rgba(52, 60, 68, 1);
 }
 
 nav#haut a div,
 nav#bas a div {
-  border-bottom: calc(5 / 1920 * 100vw) solid rgba(52, 52, 92, 0.01);
+  border-bottom: calc(5 / 1920 * 100vw) solid rgba(22, 26, 30, 0.01);
 }
 
 nav#haut a.pageActive div,
@@ -144,11 +144,11 @@ nav#bas a:hover div {
 /* Sous-Menu vw */
 
 nav#sousmenu {
-  border-bottom: calc(1 / 1920 * 100vw) solid rgba(52, 52, 92, 1);
+  border-bottom: calc(1 / 1920 * 100vw) solid rgba(53, 60, 67, 1);
 }
 
 nav#sousmenubas {
-  border-top: calc(1 / 1920 * 100vw) solid rgba(52, 52, 92, 1);
+  border-top: calc(1 / 1920 * 100vw) solid rgba(53, 60, 67, 1);
 }
 
 /* Main */
@@ -156,11 +156,11 @@ nav#sousmenubas {
 .lienSite a span,
 .b,
 .b a {
-  color: rgba(244, 244, 249, 0.98);
+  color: rgba(245, 247, 249, 0.98);
 }
 
 .majSite span {
-  color: rgba(224, 224, 229, 0.94);
+  color: rgba(225, 227, 229, 0.94);
 }
 
 .ay,
@@ -170,11 +170,11 @@ a.n:hover,
 }
 
 a.n:visited {
-  color: rgba(145, 145, 180, 0.84);
+  color: rgba(152, 158, 164, 0.84);
 }
 
 .bu {
-  color: rgba(184, 184, 189, 0.92);
+  color: rgba(173, 176, 179, 0.92);
 }
 
 .actu,
@@ -186,7 +186,7 @@ a.n:visited {
 .siteDroite,
 .siteGauche,
 aside {
-  background-color: rgba(25, 25, 50, 1);
+  background-color: rgba(25, 30, 35, 1);
 }
 
 main,
@@ -194,29 +194,29 @@ main,
 .sitesPar2,
 .siteGauche,
 .siteDroite {
-  background-color: rgba(20, 20, 45, 1);
+  background-color: rgba(16, 20, 24, 1);
 }
 
 /* Main vw */
 
 .boite {
-  border: calc(1 / 1920 * 100vw) solid rgba(52, 52, 92, 1);
+  border: calc(1 / 1920 * 100vw) solid rgba(53, 60, 67, 1);
 }
 
 .enTete,
 .lienSite,
 .majSite {
-  background-color: rgba(15, 15, 45, 1);
+  background-color: rgba(20, 25, 30, 1);
 }
 
 .enTete {
-  border: calc(1 / 1920 * 100vw) solid rgba(52, 52, 92, 0.96);
+  border: calc(1 / 1920 * 100vw) solid rgba(53, 60, 67, 0.96);
 }
 
 .ay,
 .bu,
 .b {
-  border: calc(1 / 1920 * 100vw) solid rgba(52, 52, 92, 1);
+  border: calc(1 / 1920 * 100vw) solid rgba(53, 60, 67, 1);
   border-left: 0;
   border-right: 0;
   border-top: 0;
@@ -226,16 +226,16 @@ main,
 
 section.messagebas,
 section.messagehaut {
-  background-color: rgba(32, 32, 68, 1);
-  color: rgba(242, 242, 247, 0.96);
+  background-color: rgba(29, 37, 45, 1);
+  color: rgba(243, 245, 247, 0.96);
 }
 
 section.messagebas {
-  border-top: 1px solid rgba(52, 52, 92, 0.96);
+  border-top: 1px solid rgba(53, 60, 67, 0.96);
 }
 
 section.messagehaut {
-  border-bottom: 1px solid rgba(52, 52, 92, 0.96);
+  border-bottom: 1px solid rgba(53, 60, 67, 0.96);
 }
 
 section.messagebas section a,
@@ -257,7 +257,7 @@ section.messagehaut section select:hover {
 @media (max-width: 640px) {
   nav#haut a img,
   nav#bas a img {
-    border-bottom: 5px solid rgba(25, 25, 50, 0.01);
+    border-bottom: 5px solid rgba(22, 26, 30, 0.01);
   }
 
   nav#haut a.pageActive img,
@@ -273,16 +273,16 @@ section.messagehaut section select:hover {
 
   nav#haut,
   nav#bas {
-    border-bottom: 6px solid rgba(52, 52, 92, 1);
+    border-bottom: 6px solid rgba(52, 60, 68, 1);
   }
 
   nav#bas {
-    border-top: 6px solid rgba(52, 52, 92, 1);
+    border-top: 6px solid rgba(52, 60, 68, 1);
   }
 
   nav#haut a div,
   nav#bas a div {
-    border-bottom: 5px solid rgba(52, 52, 92, 0.01);
+    border-bottom: 5px solid rgba(22, 26, 30, 0.01);
   }
 
   nav#haut a.pageActive div,
@@ -296,7 +296,7 @@ section.messagehaut section select:hover {
 
   nav#sousmenu,
   nav#sousmenubas {
-    border-bottom: 1px solid rgba(52, 52, 92, 1);
+    border-bottom: 1px solid rgba(53, 60, 67, 1);
   }
 
   /* Sous-Menu Bas*/
@@ -307,7 +307,7 @@ section.messagehaut section select:hover {
   form,
   form select,
   form select option {
-    color: rgba(242, 242, 247, 0.96);
+    color: rgba(243, 245, 247, 0.96);
   }
 
   form select:hover {
@@ -317,17 +317,17 @@ section.messagehaut section select:hover {
   /* Main */
 
   .boite {
-    border: 1px solid rgba(52, 52, 92, 1);
+    border: 1px solid rgba(53, 60, 67, 1);
   }
 
   .enTete {
-    border: 1px solid rgba(52, 52, 92, 0.96);
+    border: 1px solid rgba(53, 60, 67, 0.96);
   }
 
   .ay,
   .bu,
   .b {
-    border: 1px solid rgba(52, 52, 92, 1);
+    border: 1px solid rgba(53, 60, 67, 1);
     border-left: 0;
     border-right: 0;
     border-top: 0;
@@ -336,9 +336,9 @@ section.messagehaut section select:hover {
 
 @media (min-width: 1921px) {
   aside.messagebas {
-    border-top: calc(1 / 1920 * 100vw) solid rgba(52, 52, 92, 0.96);
+    border-top: calc(1 / 1920 * 100vw) solid rgba(53, 60, 67, 0.96);
   }
   aside.messagehaut {
-    border-bottom: calc(1 / 1920 * 100vw) solid rgba(52, 52, 92, 0.96);
+    border-bottom: calc(1 / 1920 * 100vw) solid rgba(53, 60, 67, 0.96);
   }
 }
