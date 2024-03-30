@@ -1,4 +1,4 @@
-/* Sous-Menu Bas*/
+/* Sous-Menus*/
 
 nav#sousmenu,
 nav#sousmenubas,
@@ -27,38 +27,7 @@ nav#sousmenu aside section {
   flex-wrap: wrap;
   justify-content: center;
   margin: calc(9 / 1920 * 100vw) auto;
-  width: calc(100% / 5);
-}
-
-#ListeDonateurs {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: auto;
-}
-
-#FormSelectAutres {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: auto;
-}
-
-#FormThemes,
-#FormDates {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: auto;
+  width: 20%;
 }
 
 @media (max-width: 960px) {
