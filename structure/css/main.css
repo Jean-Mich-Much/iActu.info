@@ -61,7 +61,7 @@ main,
 .sitesPar2,
 .siteGauche,
 .siteDroite {
-  background-color: rgba(242, 243, 244, 1);
+  background-color: rgba(237, 238, 239, 1);
 }
 
 main {
@@ -307,7 +307,7 @@ main {
 .enTete,
 .lienSite,
 .majSite {
-  background-color: rgba(248, 249, 250, 1);
+  background-color: rgba(247, 248, 249, 1);
   border: 0;
 }
 
