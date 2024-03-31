@@ -450,7 +450,7 @@ a.n {
 
 main {
   font-size: calc(18 / 1920 * 100vw);
-  line-height: calc(32 / 1920 * 100vw);
+  line-height: calc(27 / 1920 * 100vw);
 }
 
 .siteGauche,
@@ -484,14 +484,14 @@ main {
 .lienSite a span,
 .lienSite a:hover span {
   font-size: calc(20 / 1920 * 100vw);
-  line-height: calc(38 / 1920 * 100vw);
+  line-height: calc(36 / 1920 * 100vw);
 }
 
 .majSite,
 .majSite span,
 .majSite span span {
   font-size: calc(18 / 1920 * 100vw);
-  line-height: calc(38 / 1920 * 100vw);
+  line-height: calc(36 / 1920 * 100vw);
 }
 
 .lienSite a img {
@@ -525,16 +525,16 @@ main {
 .ay,
 .bu {
   font-size: calc(19 / 1920 * 100vw);
-  height: calc(39.05 / 1920 * 100vw);
-  line-height: calc(38 / 1920 * 100vw);
+  height: calc(37.05 / 1920 * 100vw);
+  line-height: calc(36 / 1920 * 100vw);
   margin-left: calc(6 / 1920 * 100vw);
   width: calc(100% - calc(12 / 1920 * 100vw));
 }
 
 .b {
   font-size: calc(18 / 1920 * 100vw);
-  height: calc(39.05 / 1920 * 100vw);
-  line-height: calc(38 / 1920 * 100vw);
+  height: calc(37.05 / 1920 * 100vw);
+  line-height: calc(36 / 1920 * 100vw);
   margin-left: calc(6 / 1920 * 100vw);
   width: calc(100% - calc(12 / 1920 * 100vw));
 }
@@ -546,7 +546,7 @@ main {
 
 .b a {
   font-size: calc(18 / 1920 * 100vw);
-  line-height: calc(38 / 1920 * 100vw);
+  line-height: calc(36 / 1920 * 100vw);
   margin-left: calc(6 / 1920 * 100vw);
   max-width: calc(100% - calc(12 / 1920 * 100vw));
 }
@@ -564,16 +564,16 @@ a:hover div {
 a.n,
 a.n:hover {
   font-size: calc(18 / 1920 * 100vw);
-  line-height: calc(38 / 1920 * 100vw);
+  line-height: calc(36 / 1920 * 100vw);
 }
 
 .b {
   align-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  height: calc(39.05 / 1920 * 100vw);
+  height: calc(37.05 / 1920 * 100vw);
   justify-content: flex-start;
-  line-height: calc(38 / 1920 * 100vw);
+  line-height: calc(36 / 1920 * 100vw);
   vertical-align: middle;
   white-space: nowrap;
 }
@@ -582,7 +582,7 @@ a.n:hover {
 .b a:hover,
 a.n,
 a.n:hover {
-  line-height: calc(38 / 1920 * 100vw);
+  line-height: calc(36 / 1920 * 100vw);
   margin-bottom: auto;
   margin-top: auto;
   white-space: nowrap;
@@ -592,7 +592,7 @@ a.n:hover {
 a.n,
 a.n:hover {
   font-size: calc(18 / 1920 * 100vw);
-  line-height: calc(38 / 1920 * 100vw);
+  line-height: calc(36 / 1920 * 100vw);
   margin-bottom: auto;
   margin-top: auto;
 }
