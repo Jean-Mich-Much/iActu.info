@@ -135,9 +135,9 @@ nav#bas a {
 nav#haut a img,
 nav#bas a img {
   align-self: center;
-  height: 5.5vw;
+  height: 5vw;
   margin: 0;
-  min-height: 40px;
+  min-height: 36px;
   text-align: center;
   vertical-align: top;
   width: auto;
@@ -221,7 +221,7 @@ nav#haut a div,
 nav#bas a div {
   border-bottom: calc(5 / 1920 * 100vw) solid rgba(40, 130, 220, 0.04);
   font-size: calc(22 / 1920 * 100vw);
-  line-height: calc(38 / 1920 * 100vw);
+  line-height: calc(36 / 1920 * 100vw);
   text-shadow: calc(1 / 1920 * 100vw) calc(1 / 1920 * 100vw)
     calc(1 / 1920 * 100vw) rgba(20, 25, 30, 0.65);
 }
@@ -248,7 +248,7 @@ form,
 select,
 option {
   font-size: calc(18 / 1920 * 100vw);
-  line-height: calc(30 / 1920 * 100vw);
+  line-height: calc(27 / 1920 * 100vw);
 }
 
 nav#sousmenu {
