@@ -4,7 +4,7 @@
 @media (max-width: 640px) {
   nav#haut a img,
   nav#bas a img {
-    border-bottom: 5px solid rgba(40, 130, 220, 0.04);
+    border-bottom: 6px solid rgba(40, 130, 220, 0.04);
     padding-bottom: 5px;
   }
 
@@ -12,7 +12,7 @@
   nav#haut a:hover img,
   nav#bas a.pageActive img,
   nav#bas a:hover img {
-    border-bottom: 5px solid rgba(253, 254, 255, 0.96);
+    border-bottom: 6px solid rgba(253, 254, 255, 0.96);
     padding-bottom: 5px;
   }
 
@@ -66,9 +66,9 @@
   a.n:hover {
     line-height: 27px;
     margin-bottom: 6px;
-    margin-left: 3px;
+    margin-left: 6px;
     margin-top: 6px;
-    max-width: calc(100% - 6px);
+    max-width: calc(100% - 12px);
     white-space: normal;
   }
 
@@ -121,9 +121,9 @@
     align-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    height: 37px;
+    height: 40px;
     justify-content: flex-start;
-    line-height: 36px;
+    line-height: 39px;
     vertical-align: middle;
     white-space: nowrap;
   }
@@ -132,7 +132,7 @@
   .b a:hover,
   a.n,
   a.n:hover {
-    line-height: 36px;
+    line-height: 39px;
     margin-bottom: auto;
     margin-top: auto;
     white-space: nowrap;
@@ -142,7 +142,7 @@
   a.n,
   a.n:hover {
     font-size: 18px;
-    line-height: 36px;
+    line-height: 39px;
     margin-bottom: auto;
     margin-top: auto;
   }
@@ -191,12 +191,12 @@
   /* Nav */
 
   nav#haut {
-    border-bottom: 6px solid rgba(120, 180, 240, 1);
+    border-bottom: 8px solid rgba(120, 180, 240, 1);
   }
 
   nav#bas {
-    border-bottom: 6px solid rgba(120, 180, 240, 1);
-    border-top: 6px solid rgba(100, 165, 230, 1);
+    border-bottom: 8px solid rgba(120, 180, 240, 1);
+    border-top: 7px solid rgba(100, 165, 230, 1);
   }
 
   nav#haut a,
@@ -206,20 +206,20 @@
 
   nav#haut a div,
   nav#bas a div {
-    border-bottom: 5px solid rgba(40, 130, 220, 0.04);
+    border-bottom: 6px solid rgba(40, 130, 220, 0.04);
   }
 
   nav#haut a.pageActive div,
   nav#haut a:hover div,
   nav#bas a.pageActive div,
   nav#bas a:hover div {
-    border-bottom: 5px solid rgba(253, 254, 255, 0.96);
+    border-bottom: 6px solid rgba(253, 254, 255, 0.96);
   }
 
   nav#haut a div,
   nav#bas a div {
-    font-size: 22px;
-    line-height: 36px;
+    font-size: 21px;
+    line-height: 39px;
     text-shadow: 1px 1px 1px rgba(20, 25, 30, 0.65);
   }
 
@@ -238,12 +238,12 @@
   select,
   option {
     font-size: 18px;
-    line-height: 30px;
+    line-height: 36px;
   }
 
   nav#sousmenu {
     border-bottom: 1px solid rgba(167, 168, 169, 1);
-    margin: 0 0 6px 0;
+    margin: 0 0 8px 0;
   }
 
   nav#sousmenubas {
@@ -270,24 +270,24 @@
 
   .siteGauche,
   .siteDroite {
-    width: calc(50% - 9px);
+    width: calc(50% - 12px);
   }
 
   .siteGauche {
-    margin-bottom: 6px;
-    margin-left: 6px;
+    margin-bottom: 8px;
+    margin-left: 8px;
   }
 
   .siteDroite {
-    margin-right: 6px;
-    margin-bottom: 6px;
+    margin-right: 8px;
+    margin-bottom: 8px;
   }
 
   .enTete {
-    margin-bottom: 3px;
-    margin-left: 6px;
-    margin-top: 6px;
-    width: calc(100% - 12px);
+    margin-bottom: 2px;
+    margin-left: 8px;
+    margin-top: 8px;
+    width: calc(100% - 16px);
   }
 
   .enTete {
@@ -295,13 +295,14 @@
   }
 
   .lienSite a img {
-    height: 36px;
-    margin: 6px;
+    height: 40px;
+    margin: 8px;
+    margin-right: 6px;
   }
 
   .lienSite a span,
   .lienSite a:hover span {
-    margin-right: 6px;
+    margin-right: 3px;
   }
 
   .majSite {
@@ -310,7 +311,7 @@
   }
 
   .majSite span {
-    margin-right: 6px;
+    margin-right: 9px;
   }
 
   .majSite span span img {
@@ -319,16 +320,16 @@
   }
 
   .actu {
-    margin-bottom: 9px;
+    margin-bottom: -1px;
   }
 
   .ay,
   .bu {
-    font-size: 19px;
-    height: 37px;
-    line-height: 36px;
-    margin-left: 6px;
-    width: calc(100% - 12px);
+    font-size: 18px;
+    height: 40px;
+    line-height: 39px;
+    margin-left: 12px;
+    width: calc(100% - 24px);
   }
 
   .ay,
@@ -336,14 +337,19 @@
     border-bottom: 1px solid rgba(197, 198, 199, 1);
   }
 
+.ay::before,
+.bu::before {
+  margin-left: 4px;
+}
+
   .b a {
     font-size: 18px;
   }
 
   .b {
     font-size: 18px;
-    margin-left: 6px;
-    width: calc(100% - 12px);
+    margin-left: 12px;
+    width: calc(100% - 24px);
   }
 
   .b {
@@ -354,8 +360,8 @@
 @media (max-width: 960px) {
   nav#haut a div,
   nav#bas a div {
-    font-size: 20px;
-    line-height: 36px;
+    font-size: 21px;
+    line-height: 39px;
   }
 
   nav#sousmenu,
@@ -370,8 +376,8 @@
   form,
   select,
   option {
-    font-size: 16px;
-    line-height: 30px;
+    font-size: 18px;
+    line-height: 36px;
   }
 
   nav#sousmenu span#SousMenuHautStats_ou_Donateurs,
@@ -387,11 +393,11 @@
   }
 
   .siteGauche {
-    margin-left: 6px;
+    margin-left: 8px;
   }
 
   .siteDroite {
-    margin-left: 6px;
+    margin-left: 8px;
   }
 
   /* Messages */
@@ -404,8 +410,8 @@
   section.messagehaut section,
   section.messagehaut section a,
   section.messagehaut section select {
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 18px;
+    line-height: 27px;
   }
 
   section.messagehaut section,
@@ -419,9 +425,9 @@
     align-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    height: 37px;
+    height: 40px;
     justify-content: flex-start;
-    line-height: 36px;
+    line-height: 39px;
     vertical-align: middle;
     white-space: nowrap;
   }
@@ -430,7 +436,7 @@
   .b a:hover,
   a.n,
   a.n:hover {
-    line-height: 36px;
+    line-height: 39px;
     margin-bottom: auto;
     margin-top: auto;
     white-space: nowrap;
@@ -440,7 +446,7 @@
   a.n,
   a.n:hover {
     font-size: 18px;
-    line-height: 36px;
+    line-height: 39px;
     margin-bottom: auto;
     margin-top: auto;
   }
@@ -449,8 +455,8 @@
 @media (min-width: 961px) and (max-width: 1920px) {
   nav#haut a div,
   nav#bas a div {
-    font-size: 22px;
-    line-height: 36px;
+    font-size: 21px;
+    line-height: 39px;
   }
 
   nav#sousmenu,
@@ -466,7 +472,7 @@
   select,
   option {
     font-size: 18px;
-    line-height: 30px;
+    line-height: 36px;
   }
 
   nav#sousmenu span#SousMenuHautStats_ou_Donateurs,
@@ -478,24 +484,24 @@
 
   .siteGauche,
   .siteDroite {
-    width: calc(50% - 9px);
+    width: calc(50% - 12px);
   }
 
   .siteGauche {
-    margin-left: 6px;
+    margin-left: 8px;
   }
 
   .siteDroite {
-    margin-right: 6px;
+    margin-right: 8px;
   }
 
   .b {
     align-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    height: 37px;
+    height: 40px;
     justify-content: flex-start;
-    line-height: 36px;
+    line-height: 39px;
     vertical-align: middle;
     white-space: nowrap;
   }
@@ -504,7 +510,7 @@
   .b a:hover,
   a.n,
   a.n:hover {
-    line-height: 36px;
+    line-height: 39px;
     margin-bottom: auto;
     margin-top: auto;
     white-space: nowrap;
@@ -514,24 +520,24 @@
   a.n,
   a.n:hover {
     font-size: 18px;
-    line-height: 36px;
+    line-height: 39px;
     margin-bottom: auto;
     margin-top: auto;
   }
 
   .b a {
     font-size: 18px;
-    line-height: 36px;
-    margin-left: 6px;
-    max-width: calc(100% - 12px);
+    line-height: 39px;
+    margin-left: 4px;
+    max-width: calc(100% - 8px);
   }
 }
 
 @media (min-width: 1921px) {
   nav#haut a div,
   nav#bas a div {
-    font-size: calc(22 / 1920 * 100vw);
-    line-height: calc(36 / 1920 * 100vw);
+    font-size: calc(21 / 1920 * 100vw);
+    line-height: calc(39 / 1920 * 100vw);
   }
 
   nav#sousmenu,
@@ -547,7 +553,7 @@
   select,
   option {
     font-size: calc(18 / 1920 * 100vw);
-    line-height: calc(30 / 1920 * 100vw);
+    line-height: calc(36 / 1920 * 100vw);
   }
 
   nav#sousmenu span#SousMenuHautStats_ou_Donateurs,
@@ -559,24 +565,24 @@
 
   .siteGauche,
   .siteDroite {
-    width: calc(50% - calc(9.05 / 1920 * 100vw));
+    width: calc(50% - calc(12.05 / 1920 * 100vw));
   }
 
   .siteGauche {
-    margin-left: calc(6 / 1920 * 100vw);
+    margin-left: calc(8 / 1920 * 100vw);
   }
 
   .siteDroite {
-    margin-right: calc(6 / 1920 * 100vw);
+    margin-right: calc(8 / 1920 * 100vw);
   }
 
   .b {
     align-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    height: calc(37.05 / 1920 * 100vw);
+    height: calc(40.05 / 1920 * 100vw);
     justify-content: flex-start;
-    line-height: calc(36 / 1920 * 100vw);
+    line-height: calc(39 / 1920 * 100vw);
     vertical-align: middle;
     white-space: nowrap;
   }
@@ -585,7 +591,7 @@
   .b a:hover,
   a.n,
   a.n:hover {
-    line-height: calc(36 / 1920 * 100vw);
+    line-height: calc(39 / 1920 * 100vw);
     margin-bottom: auto;
     margin-top: auto;
     white-space: nowrap;
@@ -595,7 +601,7 @@
   a.n,
   a.n:hover {
     font-size: calc(18 / 1920 * 100vw);
-    line-height: calc(36 / 1920 * 100vw);
+    line-height: calc(39 / 1920 * 100vw);
     margin-bottom: auto;
     margin-top: auto;
   }
