@@ -37,7 +37,7 @@ span {
   font-weight: normal;
   height: auto;
   letter-spacing: 0;
-  line-height: calc(32 / 1920 * 100vw);
+  line-height: calc(27 / 1920 * 100vw);
   margin: 0;
   min-height: 1px;
   min-width: 1px;
