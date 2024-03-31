@@ -93,10 +93,16 @@ nav#sousmenubas span form select option:hover {
   color: rgba(255, 210, 55, 0.96);
 }
 
+::selection {
+  background: rgba(255, 247, 219, 0.98);
+  color: rgba(60, 45, 0, 0.98);
+}
+
+
 ::selection,
 ::-moz-selection {
-  background: rgba(16, 20, 24, 0.96);
-  color: rgba(255, 245, 210, 0.98);
+  background: rgba(255, 247, 219, 0.98);
+  color: rgba(60, 45, 0, 0.98);
 }
 
 /* Nav */
