@@ -36,7 +36,7 @@
   .lienSite a span,
   .lienSite a:hover span {
     font-size: 20px;
-    line-height: 38px;
+    line-height: 36px;
   }
 
   .lienSite {
@@ -55,7 +55,7 @@
     flex-wrap: wrap;
     height: auto;
     justify-content: start;
-    line-height: 26px;
+    line-height: 27px;
     vertical-align: top;
     white-space: normal;
   }
@@ -64,7 +64,7 @@
   .b a:hover,
   a.n,
   a.n:hover {
-    line-height: 26px;
+    line-height: 27px;
     margin-bottom: 6px;
     margin-left: 3px;
     margin-top: 6px;
@@ -76,7 +76,7 @@
   a.n,
   a.n:hover {
     font-size: 18px;
-    line-height: 26px;
+    line-height: 27px;
     margin-bottom: 6px;
     margin-top: 6px;
   }
@@ -121,9 +121,9 @@
     align-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    height: 39px;
+    height: 37px;
     justify-content: flex-start;
-    line-height: 38px;
+    line-height: 36px;
     vertical-align: middle;
     white-space: nowrap;
   }
@@ -132,7 +132,7 @@
   .b a:hover,
   a.n,
   a.n:hover {
-    line-height: 38px;
+    line-height: 36px;
     margin-bottom: auto;
     margin-top: auto;
     white-space: nowrap;
@@ -142,7 +142,7 @@
   a.n,
   a.n:hover {
     font-size: 18px;
-    line-height: 38px;
+    line-height: 36px;
     margin-bottom: auto;
     margin-top: auto;
   }
@@ -154,14 +154,14 @@
   .lienSite a span,
   .lienSite a:hover span {
     font-size: 20px;
-    line-height: 38px;
+    line-height: 36px;
   }
 
   .majSite,
   .majSite span,
   .majSite span span {
     font-size: 18px;
-    line-height: 38px;
+    line-height: 36px;
   }
 }
 
@@ -185,7 +185,7 @@
   section,
   select,
   span {
-    line-height: 32px;
+    line-height: 27px;
   }
 
   /* Nav */
@@ -219,7 +219,7 @@
   nav#haut a div,
   nav#bas a div {
     font-size: 22px;
-    line-height: 38px;
+    line-height: 36px;
     text-shadow: 1px 1px 1px rgba(20, 25, 30, 0.65);
   }
 
@@ -238,7 +238,7 @@
   select,
   option {
     font-size: 18px;
-    line-height: 30px;
+    line-height: 27px;
   }
 
   nav#sousmenu {
@@ -325,8 +325,8 @@
   .ay,
   .bu {
     font-size: 19px;
-    height: 39px;
-    line-height: 38px;
+    height: 37px;
+    line-height: 36px;
     margin-left: 6px;
     width: calc(100% - 12px);
   }
@@ -419,9 +419,9 @@
     align-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    height: 39px;
+    height: 37px;
     justify-content: flex-start;
-    line-height: 38px;
+    line-height: 36px;
     vertical-align: middle;
     white-space: nowrap;
   }
@@ -430,7 +430,7 @@
   .b a:hover,
   a.n,
   a.n:hover {
-    line-height: 38px;
+    line-height: 36px;
     margin-bottom: auto;
     margin-top: auto;
     white-space: nowrap;
@@ -440,7 +440,7 @@
   a.n,
   a.n:hover {
     font-size: 18px;
-    line-height: 38px;
+    line-height: 36px;
     margin-bottom: auto;
     margin-top: auto;
   }
@@ -450,7 +450,7 @@
   nav#haut a div,
   nav#bas a div {
     font-size: 22px;
-    line-height: 38px;
+    line-height: 36px;
   }
 
   nav#sousmenu,
@@ -466,7 +466,7 @@
   select,
   option {
     font-size: 18px;
-    line-height: 30px;
+    line-height: 27px;
   }
 
   nav#sousmenu span#SousMenuHautStats_ou_Donateurs,
@@ -493,9 +493,9 @@
     align-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    height: 39px;
+    height: 37px;
     justify-content: flex-start;
-    line-height: 38px;
+    line-height: 36px;
     vertical-align: middle;
     white-space: nowrap;
   }
@@ -504,7 +504,7 @@
   .b a:hover,
   a.n,
   a.n:hover {
-    line-height: 38px;
+    line-height: 36px;
     margin-bottom: auto;
     margin-top: auto;
     white-space: nowrap;
@@ -514,14 +514,14 @@
   a.n,
   a.n:hover {
     font-size: 18px;
-    line-height: 38px;
+    line-height: 36px;
     margin-bottom: auto;
     margin-top: auto;
   }
 
   .b a {
     font-size: 18px;
-    line-height: 38px;
+    line-height: 36px;
     margin-left: 6px;
     max-width: calc(100% - 12px);
   }
@@ -531,7 +531,7 @@
   nav#haut a div,
   nav#bas a div {
     font-size: calc(22 / 1920 * 100vw);
-    line-height: calc(38 / 1920 * 100vw);
+    line-height: calc(36 / 1920 * 100vw);
   }
 
   nav#sousmenu,
@@ -547,7 +547,7 @@
   select,
   option {
     font-size: calc(18 / 1920 * 100vw);
-    line-height: calc(30 / 1920 * 100vw);
+    line-height: calc(27 / 1920 * 100vw);
   }
 
   nav#sousmenu span#SousMenuHautStats_ou_Donateurs,
@@ -574,9 +574,9 @@
     align-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    height: calc(39.05 / 1920 * 100vw);
+    height: calc(37.05 / 1920 * 100vw);
     justify-content: flex-start;
-    line-height: calc(38 / 1920 * 100vw);
+    line-height: calc(36 / 1920 * 100vw);
     vertical-align: middle;
     white-space: nowrap;
   }
@@ -585,7 +585,7 @@
   .b a:hover,
   a.n,
   a.n:hover {
-    line-height: calc(38 / 1920 * 100vw);
+    line-height: calc(36 / 1920 * 100vw);
     margin-bottom: auto;
     margin-top: auto;
     white-space: nowrap;
@@ -595,7 +595,7 @@
   a.n,
   a.n:hover {
     font-size: calc(18 / 1920 * 100vw);
-    line-height: calc(38 / 1920 * 100vw);
+    line-height: calc(36 / 1920 * 100vw);
     margin-bottom: auto;
     margin-top: auto;
   }
