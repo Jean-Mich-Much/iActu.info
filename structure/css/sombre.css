@@ -122,23 +122,23 @@ option {
 
 nav#haut,
 nav#bas {
-  border-bottom: calc(6 / 1920 * 100vw) solid rgba(52, 60, 68, 1);
+  border-bottom: calc(8 / 1920 * 100vw) solid rgba(52, 60, 68, 1);
 }
 
 nav#bas {
-  border-top: calc(6 / 1920 * 100vw) solid rgba(52, 60, 68, 1);
+  border-top: calc(8 / 1920 * 100vw) solid rgba(52, 60, 68, 1);
 }
 
 nav#haut a div,
 nav#bas a div {
-  border-bottom: calc(5 / 1920 * 100vw) solid rgba(22, 26, 30, 0.01);
+  border-bottom: calc(6 / 1920 * 100vw) solid rgba(22, 26, 30, 0.01);
 }
 
 nav#haut a.pageActive div,
 nav#haut a:hover div,
 nav#bas a.pageActive div,
 nav#bas a:hover div {
-  border-bottom: calc(5 / 1920 * 100vw) solid rgba(255, 210, 55, 0.96);
+  border-bottom: calc(6 / 1920 * 100vw) solid rgba(255, 210, 55, 0.96);
 }
 
 /* Sous-Menu vw */
@@ -257,14 +257,14 @@ section.messagehaut section select:hover {
 @media (max-width: 640px) {
   nav#haut a img,
   nav#bas a img {
-    border-bottom: 5px solid rgba(22, 26, 30, 0.01);
+    border-bottom: 6px solid rgba(22, 26, 30, 0.01);
   }
 
   nav#haut a.pageActive img,
   nav#haut a:hover img,
   nav#bas a.pageActive img,
   nav#bas a:hover img {
-    border-bottom: 5px solid rgba(255, 210, 55, 0.96);
+    border-bottom: 6px solid rgba(255, 210, 55, 0.96);
   }
 }
 
@@ -273,23 +273,23 @@ section.messagehaut section select:hover {
 
   nav#haut,
   nav#bas {
-    border-bottom: 6px solid rgba(52, 60, 68, 1);
+    border-bottom: 8px solid rgba(52, 60, 68, 1);
   }
 
   nav#bas {
-    border-top: 6px solid rgba(52, 60, 68, 1);
+    border-top: 7px solid rgba(52, 60, 68, 1);
   }
 
   nav#haut a div,
   nav#bas a div {
-    border-bottom: 5px solid rgba(22, 26, 30, 0.01);
+    border-bottom: 6px solid rgba(22, 26, 30, 0.01);
   }
 
   nav#haut a.pageActive div,
   nav#haut a:hover div,
   nav#bas a.pageActive div,
   nav#bas a:hover div {
-    border-bottom: 5px solid rgba(255, 210, 55, 0.98);
+    border-bottom: 6px solid rgba(255, 210, 55, 0.98);
   }
 
   /* Sous-Menu */
