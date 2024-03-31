@@ -238,7 +238,7 @@
   select,
   option {
     font-size: 18px;
-    line-height: 27px;
+    line-height: 30px;
   }
 
   nav#sousmenu {
@@ -371,7 +371,7 @@
   select,
   option {
     font-size: 16px;
-    line-height: 28px;
+    line-height: 30px;
   }
 
   nav#sousmenu span#SousMenuHautStats_ou_Donateurs,
@@ -466,7 +466,7 @@
   select,
   option {
     font-size: 18px;
-    line-height: 27px;
+    line-height: 30px;
   }
 
   nav#sousmenu span#SousMenuHautStats_ou_Donateurs,
@@ -547,7 +547,7 @@
   select,
   option {
     font-size: calc(18 / 1920 * 100vw);
-    line-height: calc(27 / 1920 * 100vw);
+    line-height: calc(30 / 1920 * 100vw);
   }
 
   nav#sousmenu span#SousMenuHautStats_ou_Donateurs,
