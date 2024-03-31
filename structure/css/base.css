@@ -94,11 +94,11 @@ form select:hover {
 }
 
 ::selection {
-  background: rgba(255, 253, 239, 0.98);
-  color: rgba(29, 28, 24, 0.98);
+  background: rgba(255, 247, 219, 0.98);
+  color: rgba(60, 45, 0, 0.98);
 }
 
 ::-moz-selection {
-  background: rgba(255, 253, 239, 0.98);
-  color: rgba(27, 28, 24, 0.98);
+  background: rgba(255, 247, 219, 0.98);
+  color: rgba(60, 45, 0, 0.98);
 }
