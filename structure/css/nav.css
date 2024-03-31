@@ -135,7 +135,7 @@ nav#bas a {
 nav#haut a img,
 nav#bas a img {
   align-self: center;
-  height: 5vw;
+  height: 5.3125vw;
   margin: 0;
   min-height: 36px;
   text-align: center;
@@ -193,6 +193,7 @@ nav#sousmenubas {
   align-content: center;
   align-items: center;
   justify-content: space-evenly;
+  min-height: 54px;
   width: 100%;
 }
 
@@ -204,12 +205,12 @@ nav#sousmenubas select:visited {
 /* Nav vw */
 
 nav#haut {
-  border-bottom: calc(6 / 1920 * 100vw) solid rgba(120, 180, 240, 1);
+  border-bottom: calc(8 / 1920 * 100vw) solid rgba(120, 180, 240, 1);
 }
 
 nav#bas {
-  border-bottom: calc(6 / 1920 * 100vw) solid rgba(120, 180, 240, 1);
-  border-top: calc(6 / 1920 * 100vw) solid rgba(100, 165, 230, 1);
+  border-bottom: calc(8 / 1920 * 100vw) solid rgba(120, 180, 240, 1);
+  border-top: calc(8 / 1920 * 100vw) solid rgba(100, 165, 230, 1);
 }
 
 nav#haut a,
@@ -219,9 +220,9 @@ nav#bas a {
 
 nav#haut a div,
 nav#bas a div {
-  border-bottom: calc(5 / 1920 * 100vw) solid rgba(40, 130, 220, 0.04);
-  font-size: calc(22 / 1920 * 100vw);
-  line-height: calc(36 / 1920 * 100vw);
+  border-bottom: calc(6 / 1920 * 100vw) solid rgba(40, 130, 220, 0.04);
+  font-size: calc(21 / 1920 * 100vw);
+  line-height: calc(39 / 1920 * 100vw);
   text-shadow: calc(1 / 1920 * 100vw) calc(1 / 1920 * 100vw)
     calc(1 / 1920 * 100vw) rgba(20, 25, 30, 0.65);
 }
@@ -230,7 +231,7 @@ nav#haut a.pageActive div,
 nav#haut a:hover div,
 nav#bas a.pageActive div,
 nav#bas a:hover div {
-  border-bottom: calc(5 / 1920 * 100vw) solid rgba(253, 254, 255, 0.96);
+  border-bottom: calc(6 / 1920 * 100vw) solid rgba(253, 254, 255, 0.96);
 }
 
 /* Sous-Menu vw */
@@ -248,12 +249,12 @@ form,
 select,
 option {
   font-size: calc(18 / 1920 * 100vw);
-  line-height: calc(30 / 1920 * 100vw);
+  line-height: calc(36 / 1920 * 100vw);
 }
 
 nav#sousmenu {
   border-bottom: calc(1 / 1920 * 100vw) solid rgba(167, 168, 169, 1);
-  margin: 0 0 calc(6 / 1920 * 100vw) 0;
+  margin: 0 0 calc(8 / 1920 * 100vw) 0;
 }
 
 nav#sousmenubas {
