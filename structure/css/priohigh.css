@@ -15,7 +15,7 @@ nav#sousmenubas span {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin: calc(9 / 1920 * 100vw) auto;
+  margin: calc(6 / 1920 * 100vw) auto;
   width: 20%;
 }
 
@@ -27,7 +27,7 @@ nav#sousmenu aside section {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin: calc(9 / 1920 * 100vw) auto;
+  margin: calc(6 / 1920 * 100vw) auto;
   width: 20%;
 }
 
