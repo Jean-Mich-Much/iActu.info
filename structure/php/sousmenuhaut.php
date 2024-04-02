@@ -16,6 +16,23 @@ $affiche_paypal_haut = false;
     </form>
   </span>
 
+  <span id="SousMenuHautPages">
+    <form>
+      <select aria-label="Pages" id="SousMenuHautPagesSelect" name="Pages" size="1" title="Liste des pages" onChange="window.location.href=this.value">
+        <option value="#haut" title="Liste des pages" aria-label="Liste des pages" selected="">📃&nbsp;
+          <?php echo $titre_page; ?>&nbsp;
+        </option>
+        <option value="https://iactu.info/technologie.php" title="Page technologie" aria-label="Page technologie">📃&nbsp;Technologie&nbsp;</option>
+        <option value="https://iactu.info/apple.php" title="Page apple" aria-label="Page apple">📃&nbsp;Apple&nbsp;</option>
+        <option value="https://iactu.info/jeux.php" title="Page jeux" aria-label="Page jeux">📃&nbsp;Jeux&nbsp;</option>
+        <option value="https://iactu.info/sciences.php" title="Page sciences" aria-label="Page sciences">📃&nbsp;Sciences&nbsp;</option>
+        <option value="https://iactu.info/actualites.php" title="Page actualités" aria-label="Page actualités">📃&nbsp;Actualités&nbsp;</option>
+        <option value="https://iactu.info/resume.php" title="Page résumé" aria-label="Page résumé">📃&nbsp;Résumé&nbsp;</option>
+        <option value="https://iactu.info/recherche/p/i/" title="Page recherche" aria-label="Page recherche">📃&nbsp;Recherche&nbsp;</option>
+      </select>
+    </form>
+  </span>
+
   <span id="SousMenuHautStats_ou_Donateurs">
     &nbsp;
     <?php if ($affiche_paypal_haut) { ?>
