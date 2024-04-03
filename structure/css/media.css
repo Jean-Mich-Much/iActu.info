@@ -397,7 +397,7 @@
 
   .siteGauche,
   .siteDroite {
-    width: calc(100% - 12px);
+    width: calc(100% - 16px);
   }
 
   .siteGauche {
