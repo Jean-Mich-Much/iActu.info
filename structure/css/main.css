@@ -469,7 +469,7 @@ main {
 }
 
 .enTete {
-  margin-bottom: calc(2 / 1920 * 100vw);
+  margin-bottom: 0;
   margin-left: calc(8 / 1920 * 100vw);
   margin-top: calc(8 / 1920 * 100vw);
   width: calc(100% - (16 / 1920 * 100vw));
@@ -495,7 +495,7 @@ main {
 }
 
 .lienSite a img {
-  height: calc(40 / 1920 * 100vw);
+  height: calc(36 / 1920 * 100vw);
   margin: calc(8 / 1920 * 100vw);
   margin-right: calc(6 / 1920 * 100vw);
 }
