@@ -22,6 +22,8 @@ $affiche_paypal_haut = false;
         <option value="#haut" title="Liste des pages" aria-label="Liste des pages" selected="">📃&nbsp;
           <?php echo $titre_page; ?>&nbsp;
         </option>
+        <option value="https://iactu.info/" title="Lien thème clair" aria-label="Lien thème clair">🎨&nbsp;Clair&nbsp;</option>
+        <option value="https://iactu.info/sombre.php" title="Lien thème sombre" aria-label="Lien thème sombre">🎨&nbsp;Sombre&nbsp;</option>
         <option value="https://iactu.info/technologie.php" title="Page technologie" aria-label="Page technologie">📃&nbsp;Technologie&nbsp;</option>
         <option value="https://iactu.info/apple.php" title="Page apple" aria-label="Page apple">📃&nbsp;Apple&nbsp;</option>
         <option value="https://iactu.info/jeux.php" title="Page jeux" aria-label="Page jeux">📃&nbsp;Jeux&nbsp;</option>
@@ -38,7 +40,8 @@ $affiche_paypal_haut = false;
     <?php if ($affiche_paypal_haut) { ?>
       <form>
         <select aria-label="Liste des donateurs" id="SousMenuHautListeDonateurs" name="Liste des donateurs" size="1" title="Liste des donateurs">
-          <option value="#haut" title="Liste des donateurs" aria-label="Liste des donateurs" selected="">👤 David J. 85€ - 29/03&nbsp;</option>
+          <option value="#haut" title="Donateur" aria-label="Donateur" selected="">👤 Sebastien D. 5€ - 03/04&nbsp;</option>
+          <option value="#haut" title="Liste des donateurs" aria-label="Liste des donateurs">👤 David J. 85€ - 29/03&nbsp;</option>
           <option value="#haut" title="Liste des donateurs" aria-label="Liste des donateurs">👤 Philippe D. M. 20€ - 29/03&nbsp;</option>
           <option value="#haut" title="Liste des donateurs" aria-label="Liste des donateurs">👤 Christophe J. 5€ - 29/03&nbsp;</option>
           <option value="#haut" title="Liste des donateurs" aria-label="Liste des donateurs">👤 Philippe D. 10€ - 25/03&nbsp;</option>
