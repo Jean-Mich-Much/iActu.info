@@ -1,5 +1,19 @@
 
 /* Thème sombre */
+:root {
+  --c01: rgba(246, 249, 255, 0.95);
+  --c02: rgba(30, 38, 54, 1);
+  --c03: rgba(255, 210, 55, 0.95);
+  --c04: rgba(255, 247, 219, 0.95);
+  --c05: rgba(60, 45, 0, 0.95);
+  --c06: rgba(48, 58, 78, 1);
+  --c07: rgba(8, 16, 32, 1);
+  --c08: rgba(38, 48, 68, 1);
+  --c09: rgba(35, 45, 55, 1);
+  --c10: rgba(33, 40, 54, 0.05);
+  --c11: rgba(225, 227, 231, 0.95);
+  --c12: rgba(160, 168, 184, 0.95);
+}
 
 a,
 a:link,
@@ -63,12 +77,12 @@ option,
 section,
 select,
 span {
-  color: rgba(245, 247, 251, 0.96);
+  color: var(--c01);
   font-family: "Open Sans Condensed", sans-serif;
 }
 
 body {
-  background: rgba(34, 41, 55, 1);
+  background: var(--c02);
 }
 
 a:hover,
@@ -90,29 +104,25 @@ nav#sousmenubas form select option:hover,
 nav#sousmenubas span a:hover,
 nav#sousmenubas span form select:hover,
 nav#sousmenubas span form select option:hover {
-  color: rgba(255, 210, 55, 0.96);
+  color: var(--c03);
 }
 
 ::selection {
-  background: rgba(255, 247, 219, 0.98);
-  color: rgba(60, 45, 0, 0.98);
+  background: var(--c04);
+  color: var(--c05);
 }
 
 ::selection,
 ::-moz-selection {
-  background: rgba(255, 247, 219, 0.98);
-  color: rgba(60, 45, 0, 0.98);
+  background: var(--c04);
+  color: var(--c05);
 }
 
 /* Nav */
 
 nav#haut,
 nav#bas {
-  background: linear-gradient(
-    to bottom,
-    rgba(33, 40, 54, 1) 5%,
-    rgba(35, 42, 56, 1) 95%
-  );
+  background: linear-gradient(to bottom, var(--c02) 5%, var(--c02) 95%);
 }
 
 nav#sousmenu,
@@ -120,40 +130,40 @@ nav#sousmenubas,
 form,
 select,
 option {
-  background-color: rgba(50, 60, 80, 1);
+  background-color: var(--c06);
 }
 
 /* Nav vw */
 
 nav#haut,
 nav#bas {
-  border-bottom: calc(1 / 1920 * 100vw) solid rgba(20, 28, 42, 1);
+  border-bottom: calc(1 / 1920 * 100vw) solid var(--c07);
 }
 
 nav#bas {
-  border-top: calc(1 / 1920 * 100vw) solid rgba(20, 28, 42, 1);
+  border-top: calc(1 / 1920 * 100vw) solid var(--c07);
 }
 
 nav#haut a div,
 nav#bas a div {
-  border-bottom: calc(6 / 1920 * 100vw) solid rgba(35, 42, 56, 0.01);
+  border-bottom: calc(6 / 1920 * 100vw) solid var(--c10);
 }
 
 nav#haut a.pageActive div,
 nav#haut a:hover div,
 nav#bas a.pageActive div,
 nav#bas a:hover div {
-  border-bottom: calc(6 / 1920 * 100vw) solid rgba(255, 210, 55, 0.96);
+  border-bottom: calc(6 / 1920 * 100vw) solid var(--c03);
 }
 
 /* Sous-Menu vw */
 
 nav#sousmenu {
-  border-bottom: calc(1 / 1920 * 100vw) solid rgba(20, 28, 42, 1);
+  border-bottom: calc(1 / 1920 * 100vw) solid var(--c07);
 }
 
 nav#sousmenubas {
-  border-top: calc(1 / 1920 * 100vw) solid rgba(20, 28, 42, 1);
+  border-top: calc(1 / 1920 * 100vw) solid var(--c07);
 }
 
 /* Main */
@@ -161,25 +171,25 @@ nav#sousmenubas {
 .lienSite a span,
 .b,
 .b a {
-  color: rgba(245, 247, 251, 0.98);
+  color: var(--c01);
 }
 
 .majSite span {
-  color: rgba(225, 227, 231, 0.94);
+  color: var(--c11);
 }
 
 .ay,
 a.n:hover,
 .lienSite a:hover span {
-  color: rgba(255, 210, 55, 0.98);
+  color: var(--c03);
 }
 
 a.n:visited {
-  color: rgba(152, 158, 170, 0.84);
+  color: var(--c12);
 }
 
 .bu {
-  color: rgba(173, 176, 182, 0.92);
+  color: var(--c12);
 }
 
 .actu,
@@ -191,7 +201,7 @@ a.n:visited {
 .siteDroite,
 .siteGauche,
 aside {
-  background-color: rgba(50, 60, 80, 1);
+  background-color: var(--c06);
 }
 
 main,
@@ -199,29 +209,29 @@ main,
 .sitesPar2,
 .siteGauche,
 .siteDroite {
-  background-color: rgba(34, 41, 55, 1);
+  background-color: var(--c02);
 }
 
 /* Main vw */
 
 .boite {
-  border: calc(1 / 1920 * 100vw) solid rgba(20, 28, 42, 1);
+  border: calc(1 / 1920 * 100vw) solid var(--c07);
 }
 
 .enTete,
 .lienSite,
 .majSite {
-  background-color: rgba(40, 50, 70, 1);
+  background-color: var(--c08);
 }
 
 .enTete {
-  border: calc(1 / 1920 * 100vw) solid rgba(33, 41, 52, 0.96);
+  border: calc(1 / 1920 * 100vw) solid var(--c02);
 }
 
 .ay,
 .bu,
 .b {
-  border: calc(1 / 1920 * 100vw) solid rgba(38, 46, 62, 1);
+  border: calc(1 / 1920 * 100vw) solid var(--c09);
   border-left: 0;
   border-right: 0;
   border-top: 0;
@@ -229,32 +239,39 @@ main,
 
 /* Messages */
 
+aside.messagebas {
+  border-top: 1px solid var(--c07);
+}
+aside.messagehaut {
+  border-bottom: 1px solid var(--c07);
+}
+
 section.messagebas,
 section.messagehaut {
-  background-color: rgba(34, 41, 55, 1);
-  color: rgba(243, 245, 249, 0.96);
+  background-color: var(--c07);
+  color: var(--c01);
 }
 
 section.messagebas {
-  border-top: 1px solid rgba(34, 41, 55, 0.96);
+  border-top: 1px solid var(--c07);
 }
 
 section.messagehaut {
-  border-bottom: 1px solid rgba(34, 41, 55, 0.96);
+  border-bottom: 1px solid var(--c07);
 }
 
 section.messagebas section a,
 section.messagehaut section a,
 section.messagebas section a:visited,
 section.messagehaut section a:visited {
-  color: rgba(255, 245, 210, 0.98);
+  color: var(--c03);
 }
 
 section.messagebas section a:hover,
 section.messagehaut section a:hover,
 section.messagebas section select:hover,
 section.messagehaut section select:hover {
-  color: rgba(255, 210, 55, 0.98);
+  color: var(--c04);
 }
 
 /* Media */
@@ -262,14 +279,14 @@ section.messagehaut section select:hover {
 @media (max-width: 640px) {
   nav#haut a img,
   nav#bas a img {
-    border-bottom: 6px solid rgba(35, 42, 56, 0.01);
+    border-bottom: 6px solid var(--c10);
   }
 
   nav#haut a.pageActive img,
   nav#haut a:hover img,
   nav#bas a.pageActive img,
   nav#bas a:hover img {
-    border-bottom: 6px solid rgba(255, 210, 55, 0.96);
+    border-bottom: 6px solid var(--c03);
   }
 }
 
@@ -278,30 +295,30 @@ section.messagehaut section select:hover {
 
   nav#haut,
   nav#bas {
-    border-bottom: 1px solid rgba(20, 28, 42, 1);
+    border-bottom: 1px solid var(--c07);
   }
 
   nav#bas {
-    border-top: 1px solid rgba(20, 28, 42, 1);
+    border-top: 1px solid var(--c07);
   }
 
   nav#haut a div,
   nav#bas a div {
-    border-bottom: 6px solid rgba(35, 42, 56, 0.01);
+    border-bottom: 6px solid var(--c10);
   }
 
   nav#haut a.pageActive div,
   nav#haut a:hover div,
   nav#bas a.pageActive div,
   nav#bas a:hover div {
-    border-bottom: 6px solid rgba(255, 210, 55, 0.98);
+    border-bottom: 6px solid var(--c03);
   }
 
   /* Sous-Menu */
 
   nav#sousmenu,
   nav#sousmenubas {
-    border-bottom: 1px solid rgba(20, 28, 42, 1);
+    border-bottom: 1px solid var(--c07);
   }
 
   /* Sous-Menu Bas*/
@@ -312,27 +329,27 @@ section.messagehaut section select:hover {
   form,
   form select,
   form select option {
-    color: rgba(243, 245, 249, 0.96);
+    color: var(--c01);
   }
 
   form select:hover {
-    color: rgba(255, 210, 55, 0.98);
+    color: var(--c03);
   }
 
   /* Main */
 
   .boite {
-    border: 1px solid rgba(20, 28, 42, 1);
+    border: 1px solid var(--c07);
   }
 
   .enTete {
-    border: 1px solid rgba(33, 41, 52, 0.96);
+    border: 1px solid var(--c02);
   }
 
   .ay,
   .bu,
   .b {
-    border: 1px solid rgba(38, 46, 62, 1);
+    border: 1px solid var(--c09);
     border-left: 0;
     border-right: 0;
     border-top: 0;
@@ -341,9 +358,9 @@ section.messagehaut section select:hover {
 
 @media (min-width: 1921px) {
   aside.messagebas {
-    border-top: calc(1 / 1920 * 100vw) solid rgba(20, 28, 42, 0.96);
+    border-top: calc(1 / 1920 * 100vw) solid var(--c07);
   }
   aside.messagehaut {
-    border-bottom: calc(1 / 1920 * 100vw) solid rgba(20, 28, 42, 0.96);
+    border-bottom: calc(1 / 1920 * 100vw) solid var(--c07);
   }
 }
