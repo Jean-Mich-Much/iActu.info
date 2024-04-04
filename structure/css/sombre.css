@@ -6,10 +6,10 @@
   /* Caractères : couleur par défaut */
   --c01: rgba(246, 249, 255, 0.95);
 
-  /* Fond : page */
+  /* Fond : page et menu des pages */
   --c02: rgba(30, 38, 54, 1);
 
-  /* Caractères : liens survolés, "Aujourd'hui" et "Jours précédents */
+  /* Caractères : liens survolés, "Aujourd'hui", "Jours précédents et bordure de la page active en cours */
   --c03: rgba(255, 210, 55, 0.95);
 
   /* Caractères, sélection de texte */
@@ -30,8 +30,8 @@
   /* Bordures : news, "Aujourd'hui" et "Jours précédents */
   --c09: rgba(35, 45, 55, 1);
 
-  /* Caractères : menu principal */
-  --c10: rgba(33, 40, 54, 0.05);
+  /* Bordure invisible : page du menu non sélectionnée */
+  --c10: rgba(30, 38, 54, 0.05);
 
   /* Caractères : heure de maj par site */
   --c11: rgba(225, 227, 231, 0.95);
