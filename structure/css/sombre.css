@@ -1,17 +1,42 @@
-
 /* Thème sombre */
+
+/* Couleurs */
+
 :root {
+  /* Caractères : couleur par défaut */
   --c01: rgba(246, 249, 255, 0.95);
+
+  /* Fond : page */
   --c02: rgba(30, 38, 54, 1);
+
+  /* Caractères : liens survolés, "Aujourd'hui" et "Jours précédents */
   --c03: rgba(255, 210, 55, 0.95);
+
+  /* Caractères, sélection de texte */
   --c04: rgba(255, 247, 219, 0.95);
+
+  /* Fond, sélection de texte */
   --c05: rgba(60, 45, 0, 0.95);
+
+  /* Fond : news et sous-menu */
   --c06: rgba(48, 58, 78, 1);
+
+  /* Bordures : couleur par défaut */
   --c07: rgba(8, 16, 32, 1);
+
+  /* Fond : liens des sites */
   --c08: rgba(38, 48, 68, 1);
+
+  /* Bordures : news, "Aujourd'hui" et "Jours précédents */
   --c09: rgba(35, 45, 55, 1);
+
+  /* Caractères : menu principal */
   --c10: rgba(33, 40, 54, 0.05);
+
+  /* Caractères : heure de maj par site */
   --c11: rgba(225, 227, 231, 0.95);
+
+  /* Caractères : liens des news déjà visitées et "C’est tout pour aujourd’hui !" */
   --c12: rgba(160, 168, 184, 0.95);
 }
 
