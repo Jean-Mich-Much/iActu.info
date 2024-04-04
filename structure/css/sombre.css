@@ -30,7 +30,7 @@
   /* Bordures : news, "Aujourd'hui" et "Jours précédents */
   --c09: rgba(35, 45, 55, 1);
 
-  /* Bordure invisible : pages non sélectionnées du menu */
+  /* Bordure invisible : pages non sélectionnées du menu (identique à --c02 mais avec une transparence minimale pour que le navigateur prenne en compte la bordure) */
   --c10: rgba(30, 38, 54, 0.05);
 
   /* Caractères : heure de maj par site */
