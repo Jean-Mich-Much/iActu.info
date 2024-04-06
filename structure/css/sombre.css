@@ -28,7 +28,7 @@
   --c08: rgba(35, 45, 65, 1);
 
   /* Bordures : news, "Aujourd'hui" et "Jours précédents" */
-  --c09: rgba(35, 40, 55, 1);
+  --c09: rgba(30, 40, 60, 1);
 
   /* Bordure invisible : pages non sélectionnées du menu (doit être identique à --c02 mais avec une transparence minimale) */
   --c10: rgba(30, 40, 60, 0.05);
