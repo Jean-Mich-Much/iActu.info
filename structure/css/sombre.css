@@ -9,7 +9,7 @@
   /* Fond : page et menu des pages */
   --c02: rgba(30, 38, 54, 1);
 
-  /* Caractères : liens survolés, "Aujourd'hui", "Jours précédents et bordure de la page active en cours */
+  /* Caractères : liens survolés, "Aujourd'hui" et "Jours précédents". Bordure : page active en cours */
   --c03: rgba(255, 210, 55, 0.95);
 
   /* Caractères : sélection de texte */
@@ -27,7 +27,7 @@
   /* Fond : liens des sites */
   --c08: rgba(38, 48, 68, 1);
 
-  /* Bordures : news, "Aujourd'hui" et "Jours précédents */
+  /* Bordures : news, "Aujourd'hui" et "Jours précédents" */
   --c09: rgba(35, 45, 55, 1);
 
   /* Bordure invisible : pages non sélectionnées du menu (identique à --c02 mais avec une transparence minimale pour que le navigateur prenne en compte la bordure) */
