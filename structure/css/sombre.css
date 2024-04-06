@@ -12,10 +12,10 @@
   /* Caractères : liens survolés, "Aujourd'hui" et "Jours précédents". Bordure : page active en cours */
   --c03: rgba(255, 210, 55, 0.95);
 
-  /* Caractères : messages, lien survolé  */
+  /* Caractères : messages, liens survolés  */
   --c04: rgba(255, 245, 215, 0.95);
 
-  /* Fond : messages, lien survolé */
+  /* Fond : messages, liens survolés */
   --c05: rgba(60, 45, 0, 0.95);
 
   /* Fond : news et sous-menu */
@@ -30,7 +30,7 @@
   /* Bordures : news, "Aujourd'hui" et "Jours précédents" */
   --c09: rgba(35, 40, 55, 1);
 
-  /* Bordure invisible : pages non sélectionnées du menu (identique à --c02 mais avec une transparence minimale pour que le navigateur prenne en compte la bordure) */
+  /* Bordure invisible : pages non sélectionnées du menu (doit être identique à --c02 mais avec une transparence minimale) */
   --c10: rgba(30, 40, 60, 0.05);
 
   /* Caractères : heure de maj par site */
