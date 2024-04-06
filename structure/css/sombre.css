@@ -4,40 +4,40 @@
 
 :root {
   /* Caractères : couleur par défaut */
-  --c01: rgba(246, 249, 255, 0.95);
+  --c01: rgba(245, 250, 255, 0.95);
 
   /* Fond : page et menu des pages */
-  --c02: rgba(30, 38, 54, 1);
+  --c02: rgba(25, 35, 55, 1);
 
   /* Caractères : liens survolés, "Aujourd'hui" et "Jours précédents". Bordure : page active en cours */
   --c03: rgba(255, 210, 55, 0.95);
 
-  /* Caractères : sélection de texte */
-  --c04: rgba(255, 247, 219, 0.95);
+  /* Caractères : messages, lien survolé  */
+  --c04: rgba(255, 245, 215, 0.95);
 
-  /* Fond : sélection de texte */
+  /* Fond : messages, lien survolé */
   --c05: rgba(60, 45, 0, 0.95);
 
   /* Fond : news et sous-menu */
-  --c06: rgba(48, 58, 78, 1);
+  --c06: rgba(50, 60, 80, 1);
 
-  /* Bordures : couleur par défaut */
-  --c07: rgba(8, 16, 32, 1);
+  /* Bordures : couleur par défaut. Fond : messages */
+  --c07: rgba(5, 10, 20, 1);
 
   /* Fond : liens des sites */
-  --c08: rgba(38, 48, 68, 1);
+  --c08: rgba(35, 45, 65, 1);
 
   /* Bordures : news, "Aujourd'hui" et "Jours précédents" */
-  --c09: rgba(35, 45, 55, 1);
+  --c09: rgba(35, 40, 55, 1);
 
   /* Bordure invisible : pages non sélectionnées du menu (identique à --c02 mais avec une transparence minimale pour que le navigateur prenne en compte la bordure) */
-  --c10: rgba(30, 38, 54, 0.05);
+  --c10: rgba(30, 40, 60, 0.05);
 
   /* Caractères : heure de maj par site */
-  --c11: rgba(225, 227, 231, 0.95);
+  --c11: rgba(225, 230, 240, 0.95);
 
   /* Caractères : liens des news déjà visitées et "C’est tout pour aujourd’hui !" */
-  --c12: rgba(160, 168, 184, 0.95);
+  --c12: rgba(150, 160, 180, 0.95);
 }
 
 a,
@@ -130,17 +130,6 @@ nav#sousmenubas span a:hover,
 nav#sousmenubas span form select:hover,
 nav#sousmenubas span form select option:hover {
   color: var(--c03);
-}
-
-::selection {
-  background: var(--c04);
-  color: var(--c05);
-}
-
-::selection,
-::-moz-selection {
-  background: var(--c04);
-  color: var(--c05);
 }
 
 /* Nav */
@@ -296,6 +285,7 @@ section.messagebas section a:hover,
 section.messagehaut section a:hover,
 section.messagebas section select:hover,
 section.messagehaut section select:hover {
+  background-color: var(--c05);
   color: var(--c04);
 }
 
