@@ -395,8 +395,6 @@ a.n {
 .bu::before {
   margin-bottom: auto;
   margin-top: auto;
-  margin-left: calc(2 / 1920 * 100vw);
-  margin-right: calc(1 / 1920 * 100vw);
 }
 
 /* Main vw */
