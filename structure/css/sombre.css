@@ -365,9 +365,6 @@ section.messagehaut section select:hover {
   .bu,
   .b {
     border: 1px solid var(--c09);
-    border-left: 0;
-    border-right: 0;
-    border-top: 0;
   }
 }
 
