@@ -1,45 +1,25 @@
-
 /* Main */
 
-.lienSite a span {
-  color: rgba(67, 75, 83, 0.98);
-}
-
-.majSite span {
-  color: rgba(83, 91, 99, 0.96);
-  margin: auto;
-}
-
-.ay {
-  color: rgba(75, 83, 91, 0.97);
-}
-
+.lienSite a span,
+.majSite span,
+.ay,
 .bu {
-  color: rgba(75, 83, 91, 0.95);
+  color: rgba(70, 75, 80, 0.95);
 }
 
 .b,
 .b a {
-  color: rgba(0, 0, 0, 0.98);
-}
-
-a.n:visited {
-  color: rgba(120, 124, 128, 0.84);
-}
-
-a.n:hover,
-.lienSite a:hover span {
-  color: rgba(195, 20, 20, 0.98);
+  color: rgba(7, 8, 9, 0.95);
 }
 
 a.n::selection {
-  background: rgba(255, 247, 219, 0.98);
-  color: rgba(60, 45, 0, 0.98);
+  background: rgba(255, 245, 220, 0.95);
+  color: rgba(60, 45, 0, 0.95);
 }
 
 a.n::-moz-selection {
-  background: rgba(255, 247, 219, 0.98);
-  color: rgba(60, 45, 0, 0.98);
+  background: rgba(255, 245, 220, 0.95);
+  color: rgba(60, 45, 0, 0.95);
 }
 
 .siteGauche,
@@ -57,14 +37,7 @@ aside,
 }
 
 main,
-.sites,
-.sitesPar2,
-.siteGauche,
-.siteDroite {
-  background-color: rgba(237, 238, 239, 1);
-}
-
-main {
+.sites {
   display: flex;
   align-content: flex-start;
   align-items: flex-start;
@@ -76,34 +49,21 @@ main {
   margin: 0;
   overflow: hidden;
   position: relative;
+  text-align: left;
+  vertical-align: top;
   white-space: nowrap;
   width: 100%;
 }
 
-.sites {
-  display: flex;
-  align-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  height: auto;
-  justify-content: flex-start;
-  margin: 0;
-  overflow: hidden;
-  position: relative;
-  text-align: left;
-  vertical-align: top;
-  width: 100%;
-}
-
-.sitesPar2 {
+.sitesPar2,
+.siteGauche,
+.siteDroite {
   align-content: flex-start;
   align-items: stretch;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 0;
   overflow: hidden;
   position: relative;
   text-align: left;
@@ -114,14 +74,7 @@ main {
 .siteGauche,
 .siteDroite {
   align-items: flex-start;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: flex-start;
-  overflow: hidden;
-  position: relative;
-  text-align: left;
-  vertical-align: top;
 }
 
 .siteGauche {
@@ -299,7 +252,7 @@ main {
   align-self: center;
   display: flex;
   align-items: center;
-  opacity: 0.98;
+  opacity: 0.95;
   white-space: nowrap;
   width: auto;
 }
@@ -311,24 +264,18 @@ main {
   border: 0;
 }
 
-.enTete {
-  margin: 0;
-}
-
+.enTete,
 .lienSite {
   margin: 0;
 }
 
-.majSite {
-  margin: auto;
-}
-
-.majSite span span {
+.majSite,
+.majSite span span,
+.majSite span span img {
   margin: auto;
 }
 
 .majSite span span img {
-  margin: auto;
   width: auto;
 }
 
@@ -483,7 +430,7 @@ main {
 .lienSite a,
 .lienSite a span,
 .lienSite a:hover span {
-  font-size: calc(20 / 1920 * 100vw);
+  font-size: calc(19 / 1920 * 100vw);
   line-height: calc(36 / 1920 * 100vw);
 }
 
@@ -495,7 +442,7 @@ main {
 }
 
 .lienSite a img {
-  height: calc(36 / 1920 * 100vw);
+  height: calc(31 / 1920 * 100vw);
   margin: calc(8 / 1920 * 100vw);
   margin-right: calc(6 / 1920 * 100vw);
 }
