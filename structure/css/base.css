@@ -12,10 +12,28 @@ html {
   width: 100%;
 }
 
-body,
+.actu,
+.ay,
+.b,
+.b a,
+.boite,
+.bu,
+.enTete,
+.lienSite,
+.lienSite a,
+.lienSite a img,
+.lienSite a span,
+.lienSite a:hover span,
+.majSite,
+.majSite span,
+.siteDroite,
+.siteGauche,
+.sites,
+.sitesPar2,
 a,
 article,
 aside,
+body,
 div,
 form,
 main,
@@ -27,7 +45,7 @@ span {
   border: 0;
   border-image-width: 0;
   box-sizing: border-box;
-  color: rgba(0, 0, 0, 0.98);
+  color: rgba(7, 8, 9, 0.95);
   direction: ltr;
   flex: 0 1 auto;
   font-family: "Open Sans", sans-serif;
@@ -60,45 +78,35 @@ span {
   z-index: auto;
 }
 
-body {
+body,
+main,
+.sites,
+.sitesPar2,
+.siteGauche,
+.siteDroite {
   background: rgba(237, 238, 239, 1);
+}
+
+body {
   height: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
   width: 100%;
 }
 
-a:link {
-  color: rgba(0, 0, 0, 0.98);
-  text-decoration: none;
+a:visited,
+a.n:visited {
+  color: rgba(115, 120, 125, 0.95);
 }
 
-a:visited {
-  color: rgba(127, 127, 127, 0.98);
-  text-decoration: none;
-}
-
+.lienSite a:hover span,
+a.n:hover,
 a:hover {
-  color: rgba(195, 20, 20, 0.98);
-  text-decoration: underline;
-}
-
-a:active {
-  color: rgba(195, 20, 20, 0.98);
+  color: rgba(195, 20, 20, 0.95);
 }
 
 form select:hover {
   cursor: pointer;
   position: relative;
   text-decoration: none;
-}
-
-::selection {
-  background: rgba(255, 247, 219, 0.98);
-  color: rgba(60, 45, 0, 0.98);
-}
-
-::-moz-selection {
-  background: rgba(255, 247, 219, 0.98);
-  color: rgba(60, 45, 0, 0.98);
 }
