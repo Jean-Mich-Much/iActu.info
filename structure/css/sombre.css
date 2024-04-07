@@ -240,6 +240,9 @@ main,
 
 .enTete {
   border: calc(1 / 1920 * 100vw) solid var(--c02);
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
 }
 
 .ay,
@@ -359,12 +362,18 @@ section.messagehaut section select:hover {
 
   .enTete {
     border: 1px solid var(--c02);
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
   }
 
   .ay,
   .bu,
   .b {
     border: 1px solid var(--c09);
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
   }
 }
 
