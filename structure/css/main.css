@@ -465,7 +465,7 @@ main {
 }
 
 .majSite span {
-  margin-right: calc(3 / 1920 * 100vw);
+  margin-right: calc(5 / 1920 * 100vw);
 }
 
 .majSite span span img {
