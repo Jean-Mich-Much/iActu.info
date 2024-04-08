@@ -4,40 +4,40 @@
 
 :root {
   /* Caractères : couleur par défaut */
-  --th02c001: rgba(246, 249, 255, 0.95);
+  --t02color001: rgba(246, 249, 255, 0.95);
 
   /* Fond : page et menu des pages */
-  --th02c002: rgba(25, 35, 55, 1);
+  --t02color002: rgba(25, 35, 55, 1);
 
   /* Caractères : liens survolés, "Aujourd'hui" et "Jours précédents". Bordure : page active en cours */
-  --th02c003: rgba(255, 210, 55, 0.95);
+  --t02color003: rgba(255, 210, 55, 0.95);
 
   /* Caractères : messages, liens survolés*/
-  --th02c004: rgba(255, 245, 215, 0.95);
+  --t02color004: rgba(255, 245, 215, 0.95);
 
   /* Fond : messages, liens survolés */
-  --th02c005: rgba(60, 45, 0, 0.95);
+  --t02color005: rgba(60, 45, 0, 0.95);
 
   /* Fond : news et sous-menu */
-  --th02c006: rgba(50, 60, 80, 1);
+  --t02color006: rgba(50, 60, 80, 1);
 
   /* Bordures : couleur par défaut. Fond : messages */
-  --th02c007: rgba(5, 10, 20, 1);
+  --t02color007: rgba(5, 10, 20, 1);
 
   /* Fond : liens des sites */
-  --th02c008: rgba(35, 45, 65, 1);
+  --t02color008: rgba(35, 45, 65, 1);
 
   /* Bordures : news, "Aujourd'hui" et "Jours précédents" */
-  --th02c009: rgba(30, 40, 60, 1);
+  --t02color009: rgba(30, 40, 60, 1);
 
-  /* Bordure invisible : pages non sélectionnées du menu (doit être identique à --th02c002 mais avec une transparence minimale) */
-  --th02c010: rgba(25, 35, 55, 0.05);
+  /* Bordure invisible : pages non sélectionnées du menu (doit être identique à --t02color002 mais avec une transparence minimale) */
+  --t02color010: rgba(25, 35, 55, 0.05);
 
   /* Caractères : heure de maj par site */
-  --th02c011: rgba(225, 230, 240, 0.95);
+  --t02color011: rgba(225, 230, 240, 0.95);
 
   /* Caractères : liens des news déjà visitées et "C’est tout pour aujourd’hui !" */
-  --th02c012: rgba(155, 165, 185, 0.95);
+  --t02color012: rgba(155, 165, 185, 0.95);
 }
 
 a,
@@ -102,12 +102,12 @@ option,
 section,
 select,
 span {
-  color: var(--th02c001);
+  color: var(--t02color001);
   font-family: "Open Sans Condensed", sans-serif;
 }
 
 body {
-  background: var(--th02c002);
+  background: var(--t02color002);
 }
 
 a:hover,
@@ -129,7 +129,7 @@ nav#sousmenubas form select option:hover,
 nav#sousmenubas span a:hover,
 nav#sousmenubas span form select:hover,
 nav#sousmenubas span form select option:hover {
-  color: var(--th02c003);
+  color: var(--t02color003);
 }
 
 /* Nav */
@@ -138,8 +138,8 @@ nav#haut,
 nav#bas {
   background: linear-gradient(
     to bottom,
-    var(--th02c002) 5%,
-    var(--th02c002) 95%
+    var(--t02color002) 5%,
+    var(--t02color002) 95%
   );
 }
 
@@ -148,40 +148,40 @@ nav#sousmenubas,
 form,
 select,
 option {
-  background-color: var(--th02c006);
+  background-color: var(--t02color006);
 }
 
 /* Nav vw */
 
 nav#haut,
 nav#bas {
-  border-bottom: calc(1 / 1920 * 100vw) solid var(--th02c007);
+  border-bottom: calc(1 / 1920 * 100vw) solid var(--t02color007);
 }
 
 nav#bas {
-  border-top: calc(1 / 1920 * 100vw) solid var(--th02c007);
+  border-top: calc(1 / 1920 * 100vw) solid var(--t02color007);
 }
 
 nav#haut a div,
 nav#bas a div {
-  border-bottom: calc(6 / 1920 * 100vw) solid var(--th02c010);
+  border-bottom: calc(6 / 1920 * 100vw) solid var(--t02color010);
 }
 
 nav#haut a.pageActive div,
 nav#haut a:hover div,
 nav#bas a.pageActive div,
 nav#bas a:hover div {
-  border-bottom: calc(6 / 1920 * 100vw) solid var(--th02c003);
+  border-bottom: calc(6 / 1920 * 100vw) solid var(--t02color003);
 }
 
 /* Sous-Menu vw */
 
 nav#sousmenu {
-  border-bottom: calc(1 / 1920 * 100vw) solid var(--th02c007);
+  border-bottom: calc(1 / 1920 * 100vw) solid var(--t02color007);
 }
 
 nav#sousmenubas {
-  border-top: calc(1 / 1920 * 100vw) solid var(--th02c007);
+  border-top: calc(1 / 1920 * 100vw) solid var(--t02color007);
 }
 
 /* Main */
@@ -189,25 +189,25 @@ nav#sousmenubas {
 .lienSite a span,
 .b,
 .b a {
-  color: var(--th02c001);
+  color: var(--t02color001);
 }
 
 .majSite span {
-  color: var(--th02c011);
+  color: var(--t02color011);
 }
 
 .ay,
 a.n:hover,
 .lienSite a:hover span {
-  color: var(--th02c003);
+  color: var(--t02color003);
 }
 
 a.n:visited {
-  color: var(--th02c012);
+  color: var(--t02color012);
 }
 
 .bu {
-  color: var(--th02c012);
+  color: var(--t02color012);
 }
 
 .actu,
@@ -219,7 +219,7 @@ a.n:visited {
 .siteDroite,
 .siteGauche,
 aside {
-  background-color: var(--th02c006);
+  background-color: var(--t02color006);
 }
 
 main,
@@ -227,23 +227,23 @@ main,
 .sitesPar2,
 .siteGauche,
 .siteDroite {
-  background-color: var(--th02c002);
+  background-color: var(--t02color002);
 }
 
 /* Main vw */
 
 .boite {
-  border: calc(1 / 1920 * 100vw) solid var(--th02c007);
+  border: calc(1 / 1920 * 100vw) solid var(--t02color007);
 }
 
 .enTete,
 .lienSite,
 .majSite {
-  background-color: var(--th02c008);
+  background-color: var(--t02color008);
 }
 
 .enTete {
-  border: calc(1 / 1920 * 100vw) solid var(--th02c002);
+  border: calc(1 / 1920 * 100vw) solid var(--t02color002);
   border-left: 0;
   border-right: 0;
   border-top: 0;
@@ -252,7 +252,7 @@ main,
 .ay,
 .bu,
 .b {
-  border: calc(1 / 1920 * 100vw) solid var(--th02c009);
+  border: calc(1 / 1920 * 100vw) solid var(--t02color009);
   border-left: 0;
   border-right: 0;
   border-top: 0;
@@ -261,39 +261,39 @@ main,
 /* Messages */
 
 aside.messagebas {
-  border-top: 1px solid var(--th02c007);
+  border-top: 1px solid var(--t02color007);
 }
 aside.messagehaut {
-  border-bottom: 1px solid var(--th02c007);
+  border-bottom: 1px solid var(--t02color007);
 }
 
 section.messagebas,
 section.messagehaut {
-  background-color: var(--th02c007);
-  color: var(--th02c001);
+  background-color: var(--t02color007);
+  color: var(--t02color001);
 }
 
 section.messagebas {
-  border-top: 1px solid var(--th02c007);
+  border-top: 1px solid var(--t02color007);
 }
 
 section.messagehaut {
-  border-bottom: 1px solid var(--th02c007);
+  border-bottom: 1px solid var(--t02color007);
 }
 
 section.messagebas section a,
 section.messagehaut section a,
 section.messagebas section a:visited,
 section.messagehaut section a:visited {
-  color: var(--th02c003);
+  color: var(--t02color003);
 }
 
 section.messagebas section a:hover,
 section.messagehaut section a:hover,
 section.messagebas section select:hover,
 section.messagehaut section select:hover {
-  background-color: var(--th02c005);
-  color: var(--th02c004);
+  background-color: var(--t02color005);
+  color: var(--t02color004);
 }
 
 /* Media */
@@ -301,14 +301,14 @@ section.messagehaut section select:hover {
 @media (max-width: 640px) {
   nav#haut a img,
   nav#bas a img {
-    border-bottom: 6px solid var(--th02c010);
+    border-bottom: 6px solid var(--t02color010);
   }
 
   nav#haut a.pageActive img,
   nav#haut a:hover img,
   nav#bas a.pageActive img,
   nav#bas a:hover img {
-    border-bottom: 6px solid var(--th02c003);
+    border-bottom: 6px solid var(--t02color003);
   }
 }
 
@@ -317,30 +317,30 @@ section.messagehaut section select:hover {
 
   nav#haut,
   nav#bas {
-    border-bottom: 1px solid var(--th02c007);
+    border-bottom: 1px solid var(--t02color007);
   }
 
   nav#bas {
-    border-top: 1px solid var(--th02c007);
+    border-top: 1px solid var(--t02color007);
   }
 
   nav#haut a div,
   nav#bas a div {
-    border-bottom: 6px solid var(--th02c010);
+    border-bottom: 6px solid var(--t02color010);
   }
 
   nav#haut a.pageActive div,
   nav#haut a:hover div,
   nav#bas a.pageActive div,
   nav#bas a:hover div {
-    border-bottom: 6px solid var(--th02c003);
+    border-bottom: 6px solid var(--t02color003);
   }
 
   /* Sous-Menu */
 
   nav#sousmenu,
   nav#sousmenubas {
-    border-bottom: 1px solid var(--th02c007);
+    border-bottom: 1px solid var(--t02color007);
   }
 
   /* Sous-Menu Bas*/
@@ -351,21 +351,21 @@ section.messagehaut section select:hover {
   form,
   form select,
   form select option {
-    color: var(--th02c001);
+    color: var(--t02color001);
   }
 
   form select:hover {
-    color: var(--th02c003);
+    color: var(--t02color003);
   }
 
   /* Main */
 
   .boite {
-    border: 1px solid var(--th02c007);
+    border: 1px solid var(--t02color007);
   }
 
   .enTete {
-    border: 1px solid var(--th02c002);
+    border: 1px solid var(--t02color002);
     border-left: 0;
     border-right: 0;
     border-top: 0;
@@ -374,7 +374,7 @@ section.messagehaut section select:hover {
   .ay,
   .bu,
   .b {
-    border: 1px solid var(--th02c009);
+    border: 1px solid var(--t02color009);
     border-left: 0;
     border-right: 0;
     border-top: 0;
@@ -383,9 +383,9 @@ section.messagehaut section select:hover {
 
 @media (min-width: 1921px) {
   aside.messagebas {
-    border-top: calc(1 / 1920 * 100vw) solid var(--th02c007);
+    border-top: calc(1 / 1920 * 100vw) solid var(--t02color007);
   }
   aside.messagehaut {
-    border-bottom: calc(1 / 1920 * 100vw) solid var(--th02c007);
+    border-bottom: calc(1 / 1920 * 100vw) solid var(--t02color007);
   }
 }
