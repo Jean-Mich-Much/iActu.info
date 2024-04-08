@@ -461,7 +461,7 @@
   }
 
   .lienSite a img {
-    height: 28px;
+    height: 32px;
     margin: 6px;
   }
 
@@ -532,12 +532,12 @@
   .lienSite a,
   .lienSite a span,
   .lienSite a:hover span {
-    font-size: 18px;
-    line-height: 36px;
+    font-size: 19px;
+    line-height: 39px;
   }
 
   .lienSite a img {
-    height: 32px;
+    height: 33px;
     margin: 6px;
   }
 }
@@ -589,12 +589,12 @@
   .lienSite a,
   .lienSite a span,
   .lienSite a:hover span {
-    font-size: calc(18 / 1920 * 100vw);
-    line-height: calc(38.05 / 1920 * 100vw);
+    font-size: calc(19 / 1920 * 100vw);
+    line-height: calc(39.05 / 1920 * 100vw);
   }
 
   .lienSite a img {
-    height: calc(32.05 / 1920 * 100vw);
+    height: calc(33.05 / 1920 * 100vw);
     margin: calc(6 / 1920 * 100vw);
   }
 
