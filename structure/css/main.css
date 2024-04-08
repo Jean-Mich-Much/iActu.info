@@ -438,25 +438,25 @@ main {
 .lienSite a,
 .lienSite a span,
 .lienSite a:hover span {
-  font-size: calc(18 / 1920 * 100vw);
-  line-height: calc(38.05 / 1920 * 100vw);
-}
-
-.majSite,
-.majSite span,
-.majSite span span {
-  font-size: calc(18 / 1920 * 100vw);
-  line-height: calc(38.05 / 1920 * 100vw);
+  font-size: calc(19 / 1920 * 100vw);
+  line-height: calc(39.05 / 1920 * 100vw);
 }
 
 .lienSite a img {
-  height: calc(32.05 / 1920 * 100vw);
+  height: calc(33.05 / 1920 * 100vw);
   margin: calc(6 / 1920 * 100vw);
 }
 
 .lienSite a span,
 .lienSite a:hover span {
   margin-right: calc(5 / 1920 * 100vw);
+}
+
+.majSite,
+.majSite span,
+.majSite span span {
+  font-size: calc(18 / 1920 * 100vw);
+  line-height: calc(39.05 / 1920 * 100vw);
 }
 
 .majSite {
