@@ -64,16 +64,16 @@
     font-size: 18px;
     height: auto;
     line-height: 28px;
-    margin-left: 6px;
+    margin-left: 9px;
     min-height: 39px;
-    width: calc(100% - 12px);
+    width: calc(100% - 18px);
   }
 
   .b a {
     font-size: 18px;
     line-height: 28px;
-    margin-left: 4px;
-    max-width: calc(100% - 8px);
+    margin-left: 6px;
+    max-width: calc(100% - 12px);
   }
 
   main,
@@ -195,15 +195,15 @@
     font-size: 18px;
     height: 39px;
     line-height: 38px;
-    margin-left: 6px;
-    width: calc(100% - 12px);
+    margin-left: 9px;
+    width: calc(100% - 18px);
   }
 
   .b a {
     font-size: 18px;
     line-height: 38px;
-    margin-left: 4px;
-    max-width: calc(100% - 8px);
+    margin-left: 6px;
+    max-width: calc(100% - 12px);
   }
 
   main,
@@ -373,7 +373,7 @@
 
   .lienSite a span,
   .lienSite a:hover span {
-    margin-right: 3px;
+    margin-right: 5px;
   }
 
   .majSite {
@@ -382,16 +382,21 @@
   }
 
   .majSite span {
-    margin-right: 9px;
+    margin-right: 3px;
   }
 
   .majSite span span img {
     height: 18px;
-    margin-left: 6px;
+    margin-left: 5px;
   }
 
   .actu {
     margin-bottom: -1px;
+  }
+
+  .ay::before,
+  .bu::before {
+    margin-left: 3px;
   }
 
   .ay,
@@ -456,7 +461,7 @@
   }
 
   .lienSite a img {
-    height: 24px;
+    height: 28px;
     margin: 6px;
   }
 
@@ -532,7 +537,7 @@
   }
 
   .lienSite a img {
-    height: 30px;
+    height: 32px;
     margin: 6px;
   }
 }
@@ -589,7 +594,7 @@
   }
 
   .lienSite a img {
-    height: calc(30.05 / 1920 * 100vw);
+    height: calc(32.05 / 1920 * 100vw);
     margin: calc(6 / 1920 * 100vw);
   }
 
@@ -599,15 +604,15 @@
     font-size: calc(18 / 1920 * 100vw);
     height: calc(39.05 / 1920 * 100vw);
     line-height: calc(38.05 / 1920 * 100vw);
-    margin-left: calc(6 / 1920 * 100vw);
-    width: calc(100% - calc(12 / 1920 * 100vw));
+    margin-left: calc(9 / 1920 * 100vw);
+    width: calc(100% - calc(18 / 1920 * 100vw));
   }
 
   .b a {
     font-size: calc(18 / 1920 * 100vw);
     line-height: calc(38.05 / 1920 * 100vw);
-    margin-left: calc(4 / 1920 * 100vw);
-    max-width: calc(100% - calc(8 / 1920 * 100vw));
+    margin-left: calc(6 / 1920 * 100vw);
+    max-width: calc(100% - calc(12 / 1920 * 100vw));
   }
 
   main,
