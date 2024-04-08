@@ -51,7 +51,7 @@ if (@count($files) > 64) {
  }
 }
 foreach (@glob("Stats/*") as $file) {
- if (@filemtime($file) < @time() - 2678400) {
+ if (@filemtime($file) < @time() - 259200) {
   @unlink($file);
  }
 }
