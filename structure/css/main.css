@@ -407,17 +407,17 @@ main {
 
 .siteGauche,
 .siteDroite {
-  width: calc(50% - calc(9.05 / 1920 * 100vw));
+  width: calc(50% - calc(12.05 / 1920 * 100vw));
 }
 
 .siteGauche {
-  margin-bottom: calc(6 / 1920 * 100vw);
-  margin-left: calc(6 / 1920 * 100vw);
+  margin-bottom: calc(8 / 1920 * 100vw);
+  margin-left: calc(8 / 1920 * 100vw);
 }
 
 .siteDroite {
-  margin-right: calc(6 / 1920 * 100vw);
-  margin-bottom: calc(6 / 1920 * 100vw);
+  margin-right: calc(8 / 1920 * 100vw);
+  margin-bottom: calc(8 / 1920 * 100vw);
 }
 
 .enTete {
