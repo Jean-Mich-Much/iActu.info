@@ -1,4 +1,3 @@
-
 /* Nav */
 
 nav#haut,
@@ -254,7 +253,7 @@ option {
 
 nav#sousmenu {
   border-bottom: calc(1 / 1920 * 100vw) solid rgba(167, 168, 169, 1);
-  margin: 0 0 calc(6 / 1920 * 100vw) 0;
+  margin: 0 0 calc(8 / 1920 * 100vw) 0;
 }
 
 nav#sousmenubas {
