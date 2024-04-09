@@ -323,7 +323,7 @@
 
   nav#sousmenu {
     border-bottom: 1px solid rgba(167, 168, 169, 1);
-    margin: 0 0 6px 0;
+    margin: 0 0 8px 0;
   }
 
   nav#sousmenubas {
@@ -350,17 +350,17 @@
 
   .siteGauche,
   .siteDroite {
-    width: calc(50% - 9px);
+    width: calc(50% - 12px);
   }
 
   .siteGauche {
-    margin-bottom: 6px;
-    margin-left: 6px;
+    margin-bottom: 8px;
+    margin-left: 8px;
   }
 
   .siteDroite {
-    margin-right: 6px;
-    margin-bottom: 6px;
+    margin-right: 8px;
+    margin-bottom: 8px;
   }
 
   .enTete {
@@ -444,15 +444,17 @@
 
   .siteGauche,
   .siteDroite {
-    width: calc(100% - 12px);
+    width: calc(100% - 16px);
   }
 
   .siteGauche {
-    margin-left: 6px;
+    margin-bottom: 8px;
+    margin-left: 8px;
   }
 
   .siteDroite {
-    margin-left: 6px;
+    margin-bottom: 8px;
+    margin-left: 8px;
   }
 
   .lienSite,
@@ -521,15 +523,17 @@
 
   .siteGauche,
   .siteDroite {
-    width: calc(50% - 9px);
+    width: calc(50% - 12px);
   }
 
   .siteGauche {
-    margin-left: 6px;
+    margin-bottom: 8px;
+    margin-left: 8px;
   }
 
   .siteDroite {
-    margin-right: 6px;
+    margin-bottom: 8px;
+    margin-right: 8px;
   }
 
   .lienSite,
@@ -577,17 +581,36 @@
 
   /* Main */
 
+  main,
+  article,
+  a:hover,
+  a:hover img,
+  a:hover span,
+  a:hover div {
+    font-size: calc(18 / 1920 * 100vw);
+    line-height: calc(38.05 / 1920 * 100vw);
+  }
+
   .siteGauche,
   .siteDroite {
-    width: calc(50% - calc(9.05 / 1920 * 100vw));
+    width: calc(50% - calc(12.05 / 1920 * 100vw));
   }
 
   .siteGauche {
-    margin-left: calc(6 / 1920 * 100vw);
+    margin-bottom: calc(8 / 1920 * 100vw);
+    margin-left: calc(8 / 1920 * 100vw);
   }
 
   .siteDroite {
-    margin-right: calc(6 / 1920 * 100vw);
+    margin-bottom: calc(8 / 1920 * 100vw);
+    margin-right: calc(8 / 1920 * 100vw);
+  }
+
+  .enTete {
+    margin-bottom: 0;
+    margin-left: calc(8 / 1920 * 100vw);
+    margin-top: calc(8 / 1920 * 100vw);
+    width: calc(100% - (16 / 1920 * 100vw));
   }
 
   .lienSite,
@@ -618,16 +641,6 @@
     line-height: calc(38.05 / 1920 * 100vw);
     margin-left: calc(6 / 1920 * 100vw);
     max-width: calc(100% - calc(12 / 1920 * 100vw));
-  }
-
-  main,
-  article,
-  a:hover,
-  a:hover img,
-  a:hover span,
-  a:hover div {
-    font-size: calc(18 / 1920 * 100vw);
-    line-height: calc(38.05 / 1920 * 100vw);
   }
 
   a.n,
