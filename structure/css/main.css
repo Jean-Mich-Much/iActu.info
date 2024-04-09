@@ -422,9 +422,9 @@ main {
 
 .enTete {
   margin-bottom: 0;
-  margin-left: calc(6 / 1920 * 100vw);
-  margin-top: calc(6 / 1920 * 100vw);
-  width: calc(100% - (12 / 1920 * 100vw));
+  margin-left: calc(8 / 1920 * 100vw);
+  margin-top: calc(8 / 1920 * 100vw);
+  width: calc(100% - (16 / 1920 * 100vw));
 }
 
 .enTete {
@@ -441,7 +441,8 @@ main {
 
 .lienSite a img {
   height: calc(33.05 / 1920 * 100vw);
-  margin: calc(6 / 1920 * 100vw);
+  margin: calc(8 / 1920 * 100vw);
+  margin-right: calc(6 / 1920 * 100vw);
 }
 
 .lienSite a span,
@@ -480,8 +481,8 @@ main {
   font-size: calc(18 / 1920 * 100vw);
   height: calc(39.05 / 1920 * 100vw);
   line-height: calc(38.05 / 1920 * 100vw);
-  margin-left: calc(9 / 1920 * 100vw);
-  width: calc(100% - calc(18 / 1920 * 100vw));
+  margin-left: calc(12 / 1920 * 100vw);
+  width: calc(100% - calc(24 / 1920 * 100vw));
 }
 
 .ay::before,
