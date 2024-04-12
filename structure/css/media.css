@@ -4,7 +4,7 @@
   nav#haut a img,
   nav#bas a img {
     border-bottom: 6px solid rgba(40, 130, 220, 0.04);
-    padding-bottom: 5px;
+    padding-bottom: 6px;
   }
 
   nav#haut a.pageActive img,
@@ -12,13 +12,12 @@
   nav#bas a.pageActive img,
   nav#bas a:hover img {
     border-bottom: 6px solid rgba(253, 254, 255, 0.96);
-    padding-bottom: 5px;
+    padding-bottom: 6px;
   }
 
   nav#haut a div,
   nav#bas a div {
     display: none;
-    visibility: hidden;
   }
 
   nav#sousmenu span#SousMenuHautThemes,
@@ -137,7 +136,7 @@
 
   nav#haut a div,
   nav#bas a div {
-    visibility: visible;
+    display: flex;
   }
 
   nav#sousmenu span#SousMenuHautThemes,
