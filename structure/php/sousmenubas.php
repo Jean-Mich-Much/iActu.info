@@ -9,7 +9,10 @@
   <span id="SousMenuBasListeDonateurs">
     <form>
       <select aria-label="Liste des donateurs" id="SousMenuBasListeDonateursSelect" name="Liste des donateurs" size="1" title="Liste des donateurs">
-        <option value="#SousMenuBasListeDonateursSelect" title="Liste des donateurs" aria-label="Liste des donateurs" selected="">👤 David J. 85€ - 29/03&nbsp;</option>
+        <option value="#SousMenuBasListeDonateursSelect" title="Donateur" aria-label="Donateur" selected="">👤 Jérémy B. 10€ - 05/04&nbsp;</option>
+        <option value="#SousMenuBasListeDonateursSelect" title="Donateur" aria-label="Donateur">👤 Xavier M. 5€ - 05/04&nbsp;</option>
+        <option value="#SousMenuBasListeDonateursSelect" title="Donateur" aria-label="Donateur">👤 Sebastien D. 5€ - 03/04&nbsp;</option>
+        <option value="#SousMenuBasListeDonateursSelect" title="Liste des donateurs" aria-label="Liste des donateurs">👤 David J. 85€ - 29/03&nbsp;</option>
         <option value="#SousMenuBasListeDonateursSelect" title="Liste des donateurs" aria-label="Liste des donateurs">👤 Philippe D. M. 20€ - 29/03&nbsp;</option>
         <option value="#SousMenuBasListeDonateursSelect" title="Liste des donateurs" aria-label="Liste des donateurs">👤 Christophe J. 5€ - 29/03&nbsp;</option>
         <option value="#SousMenuBasListeDonateursSelect" title="Liste des donateurs" aria-label="Liste des donateurs">👤 Philippe D. 10€ - 25/03&nbsp;</option>
@@ -39,6 +42,7 @@
         <option value="#SousMenuBasStatsDiversSelect" title="Visites pour hier" aria-label="Visites pour hier">📈 Hier :
           <?php @readfile("Stats/visites_jour_" . date('d', strtotime("-1 day")) . ".txt"); ?>&nbsp;
         </option>
+        <option value="https://iactu.info/tv.php" title="Programme TV" aria-label="Programme TV">🎥&nbsp;TV&nbsp;</option>
         <option value="https://github.com/Jean-Mich-Much/iActu.info" title="Version" aria-label="Version 15">📜 Version 15&nbsp;</option>
         <option value="https://github.com/Jean-Mich-Much/iActu.info" title="Lien GitHub" aria-label="GitHub">😸Lien code source&nbsp;</option>
         <option value="https://github.com/Jean-Mich-Much/iActu.info" title="Copyright" aria-label="© iactu.info 2003">📰 ©️ iactu.info 2003&nbsp;</option>
