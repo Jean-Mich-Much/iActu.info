@@ -12,6 +12,8 @@ $affiche_paypal_haut = false;
         <option value="#haut" title="Liste des thèmes" aria-label="Liste des thèmes" selected="">🎨&nbsp;Thèmes&nbsp;</option>
         <option value="https://iactu.info/" title="Lien thème clair" aria-label="Lien thème clair">🎨&nbsp;Clair&nbsp;</option>
         <option value="https://iactu.info/sombre.php" title="Lien thème sombre" aria-label="Lien thème sombre">🎨&nbsp;Sombre&nbsp;</option>
+        <option value="https://iactu.info/ardoise.php" title="Lien thème ardoise" aria-label="Lien thème ardoise">🎨&nbsp;Ardoise&nbsp;</option>
+        <option value="https://iactu.info/twilight.php" title="Lien thème twilight" aria-label="Lien thème twilight">🎨&nbsp;Twilight&nbsp;</option>
       </select>
     </form>
   </span>
@@ -31,6 +33,9 @@ $affiche_paypal_haut = false;
         <option value="https://iactu.info/actualites.php" title="Page actualités" aria-label="Page actualités">📃&nbsp;Actualités&nbsp;</option>
         <option value="https://iactu.info/resume.php" title="Page résumé" aria-label="Page résumé">📃&nbsp;Résumé&nbsp;</option>
         <option value="https://iactu.info/recherche/p/i/" title="Page recherche" aria-label="Page recherche">📃&nbsp;Recherche&nbsp;</option>
+        <option value="https://iactu.info/tv.php" title="Programme TV" aria-label="Programme TV">🎥&nbsp;TV&nbsp;</option>
+        <option value="https://iactu.info/ardoise.php" title="Lien thème ardoise" aria-label="Lien thème ardoise">🎨&nbsp;Ardoise&nbsp;</option>
+        <option value="https://iactu.info/twilight.php" title="Lien thème twilight" aria-label="Lien thème twilight">🎨&nbsp;Twilight&nbsp;</option>
       </select>
     </form>
   </span>
@@ -138,6 +143,7 @@ $affiche_paypal_haut = false;
       <form>
         <select aria-label="Divers" id="SousMenuHautDiversSelect" name="SousMenuDivers" size="1" title="Divers" onChange="window.location.href=this.value">
           <option value="#haut" title="Divers" aria-label="Divers" selected="">📜 Liens divers&nbsp;</option>
+        <option value="https://iactu.info/tv.php" title="Programme TV" aria-label="Programme TV">🎥&nbsp;TV&nbsp;</option>
           <option value="https://github.com/Jean-Mich-Much/iActu.info" title="Lien GitHub" aria-label="GitHub">😸Code source&nbsp;</option>
           <option value="#coucou" title="Lien vers le bas de la page" aria-label="Lien vers le bas de la page">⬇️ Bas de page&nbsp;</option>
         </select>
