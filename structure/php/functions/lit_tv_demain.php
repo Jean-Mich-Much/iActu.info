@@ -10,22 +10,22 @@
   } catch (Exception $e) {
     return;
   }
-  echo '<div class="boite"><div class="progtvcomplet"><div class="progtv"><div class="menutv"><a href="tv.php" class="actif"><div class="titremenutv">⏰ Programme</div></a> | <a href="tv_00.php" class="inactif"><div class="titremenutv">🕛 Nuit</div></a> | <a href="tv_06.php" class="inactif"><div class="titremenutv">🕕 Matin</div></a> | <a href="tv_12.php" class="inactif"><div class="titremenutv">🕛 Après-midi</div></a> | <a href="tv_18.php" class="inactif"><div class="titremenutv">🕕 Soir</div></a> | <a href="tv_demain.php" class="inactif"><div class="titremenutv">📅 Demain</div></a> | <a href="tv_films.php" class="inactif"><div class="titremenutv">🍿 Films</div></a> | <a href="tv_series.php" class="inactif"><div class="titremenutv">🎬 Séries</div></a> | <a href="tv_docs.php" class="inactif"><div class="titremenutv">🎥 Documentaires</div></a> | <a href="tv_jeunesse.php" class="inactif"><div class="titremenutv">🌈 Jeunesse</div></a></div>';
+  echo '<div class="boite"><div class="progtvcomplet"><div class="progtv"><div class="menutv"><a href="tv.php" class="inactif"><div class="titremenutv">⏰ Programme</div></a> | <a href="tv_00.php" class="inactif"><div class="titremenutv">🕛 Nuit</div></a> | <a href="tv_06.php" class="inactif"><div class="titremenutv">🕕 Matin</div></a> | <a href="tv_12.php" class="inactif"><div class="titremenutv">🕛 Après-midi</div></a> | <a href="tv_18.php" class="inactif"><div class="titremenutv">🕕 Soir</div></a> | <a href="tv_demain.php" class="actif"><div class="titremenutv">📅 Demain</div></a> | <a href="tv_films.php" class="inactif"><div class="titremenutv">🍿 Films</div></a> | <a href="tv_series.php" class="inactif"><div class="titremenutv">🎬 Séries</div></a> | <a href="tv_docs.php" class="inactif"><div class="titremenutv">🎥 Documentaires</div></a> | <a href="tv_jeunesse.php" class="inactif"><div class="titremenutv">🌈 Jeunesse</div></a></div>';
   foreach ($xml->channel as $channel) {
     echo '<div class="chainetv"><span><span class="nomchainetv">📺 ' . $channel->{'display-name'} . '</span></span>';
     $progCount = 0;
     $primeTimeCount = 0;
-    $primeTimeStart = strtotime('20:45:00');
-    $primeTimeEnd = strtotime('23:59:59');
+    $primeTimeStart = strtotime('20:45:00 +1 day');
+    $primeTimeEnd = strtotime('23:59:59 +1 day');
     foreach ($programmes as $programme) {
       if ((string) $programme['channel'] != (string) $channel['id'])
         continue;
       $start = strtotime(substr($programme['start'], 0, -6));
       $stop = strtotime(substr($programme['stop'], 0, -6));
       $duration = ($stop - $start) / 60;
-      $startchoose = strtotime('00:00:00');
-      $endchoose = strtotime('23:59:59');
-      if (date('Y-m-d', $start) == date('Y-m-d') && $start >= $startchoose && $start <= $endchoose && $progCount < 100 && $duration > 10) {
+      $startchoose = strtotime('00:00:00 +1 day');
+      $endchoose = strtotime('23:59:59 +1 day');
+      if (date('Y-m-d', $start) == date('Y-m-d', strtotime("+1 day")) && $start >= $startchoose && $start <= $endchoose && $progCount < 100 && $duration > 10) {
         $fullTitle = @mb_convert_encoding($programme->title, 'UTF-8', 'auto');
         if ($fullTitle === false || mb_check_encoding($fullTitle, 'UTF-8') === false) {
           continue;
