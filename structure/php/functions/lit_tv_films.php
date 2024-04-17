@@ -14,7 +14,7 @@
   $chainetv = '<div class="chainetv"><span><span class="nomchainetv">📺 ' . $channel->{'display-name'} . '</span></span>';
   $progCount = 0;
   $primeTimeCount = 0;
-  $primeTimeStart = strtotime('20:45:00');
+  $primeTimeStart = strtotime('20:49:59');
   $primeTimeEnd = strtotime('23:59:59');
   foreach ($programmes as $programme) {
    if ((string) $programme['channel'] != (string) $channel['id'])
@@ -26,7 +26,7 @@
    $duration = ($stop - $start) / 60;
    $startchoose = strtotime('00:00:00');
    $endchoose = strtotime('23:59:59');
-   if (date('Y-m-d', $start) == date('Y-m-d') && $start >= $startchoose && $start <= $endchoose && $progCount < 100 && $duration > 10) {
+   if (date('Y-m-d', $start) == date('Y-m-d') && $start >= $startchoose && $start <= $endchoose && $progCount < 144 && $duration > 10) {
     $fullTitle = @mb_convert_encoding($programme->title, 'UTF-8', 'auto');
     if ($fullTitle === false || mb_check_encoding($fullTitle, 'UTF-8') === false) {
      continue;
@@ -45,10 +45,10 @@
       $emoji = '🍿';
       break;
     }
-    if ($start >= $primeTimeStart && $start <= $primeTimeEnd && $duration > 10) {
+    if ($start >= $primeTimeStart && $start <= $primeTimeEnd && $duration > 26) {
      $chainetv .= '<div class="prog" title="' . $descfull . '"><span class="primetime">' . date("H:i", $start) . ' ' . $emoji . ' <span class="progtvtitre">' . $title . '</span> - ' . $formattedDuration . ' : ' . $descfull . '</span></div>';
      $primeTimeCount++;
-     if ($primeTimeCount >= 12) {
+     if ($primeTimeCount >= 5) {
       break;
      }
     } else {
@@ -73,5 +73,3 @@ function formatDuration2($duration)
   return sprintf("%d mn", $minutes);
  }
 }
-
-
