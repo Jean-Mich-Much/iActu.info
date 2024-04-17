@@ -1,0 +1,256 @@
+/* Thème tv */
+
+/* Couleurs */
+
+.siteGauche {
+  width: calc(100% - 16px);
+}
+
+.siteGauche {
+  margin-bottom: 8px;
+  margin-left: 8px;
+}
+
+.progtvcomplet *,
+.progtv *,
+.chainetv,
+.menutv * {
+  font-family: sans-serif;
+  line-height: 24px;
+}
+
+.progtvcomplet {
+  align-content: flex-start;
+  align-items: flex-start;
+  background-color: rgba(253, 254, 255, 1);
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  vertical-align: top;
+  width: 100%;
+}
+
+
+
+.menutv {
+  align-content: center;
+  align-items: center;
+  background-color: rgba(247, 248, 249, 0.95);
+  border: 1px solid rgba(177, 178, 179, 0.95);
+  color: rgba(29, 99, 199, 0.85);
+  display: inline-flex;
+  flex-wrap: wrap;
+  height: auto;
+  justify-content: space-evenly;
+  margin: 4px auto;
+  min-height: 64px;
+  overflow: hidden;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.menutv a.inactif,
+.menutv a.actif {
+  align-self: center;
+  margin: auto;
+  text-align: center;
+  text-decoration: none;
+}
+
+.menutv a.inactif div.titremenutv,
+.menutv a.actif div.titremenutv {
+  align-self: center;
+  color: rgba(29, 99, 199, 0.95);
+  font-family: "Open Sans Condensed", sans-serif;
+  margin: auto;
+  padding: 3px 9px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.menutv a.inactif div.titremenutv:hover,
+.menutv a.actif div.titremenutv {
+  color: rgba(195, 20, 20, 0.95);
+}
+
+.chainetv {
+  align-content: flex-start;
+  align-items: flex-start;
+  background-color: rgba(253, 254, 255, 1);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: auto;
+  justify-content: flex-start;
+  margin: 0;
+  margin-bottom: 6px;
+  margin-right: auto;
+  margin-top: 4px;
+  position: relative;
+  text-align: left;
+  vertical-align: top;
+  width: 100%;
+}
+
+.chainetv span {
+  align-content: flex-start;
+  align-items: flex-start;
+  background-color: rgba(253, 254, 255, 1);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: auto;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.chainetv span span.nomchainetv {
+  background-color: rgba(247, 248, 249, 0.95);
+  color: rgba(29, 99, 199, 0.95);
+  font-family: "Open Sans Condensed", sans-serif;
+  margin: 0;
+  margin-bottom: 8px;
+  position: relative;
+  text-align: left;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.chainetv span span.nomchainetv {
+  border: 1px solid rgba(177, 178, 179, 0.85);
+  padding: 6px;
+}
+
+.chainetv div.prog {
+  background-color: rgba(253, 254, 255, 1);
+  display: flex;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  vertical-align: top;
+  width: calc(100% - 3px);
+}
+
+.chainetv div.prog span {
+  background-color: rgba(253, 254, 255, 1);
+  display: block;
+  height: auto;
+  margin-bottom: 1px;
+  margin-left: 3px;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  white-space: nowrap;
+  width: calc(100% - 6px);
+}
+
+.chainetv div.prog span:hover,
+.chainetv div.prog span:hover span.progtvtitre {
+  background-color: rgba(255, 250, 225, 0.98);
+}
+
+.chainetv div.prog span.primetime {
+  display: block;
+  margin: 1px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  width: calc(100% - 9px);
+}
+
+.chainetv div.prog span span.progtvtitre {
+  color: rgba(29, 99, 199, 0.95);
+  display: inline-flex;
+  font-family: "Open Sans Condensed", sans-serif;
+  vertical-align: inherit;
+  white-space: nowrap;
+  width: auto;
+}
+
+.chainetv,
+.chainetv div.prog,
+.chainetv span,
+.chainetv span span.nomchainetv,
+.progtv {
+  text-align: left;
+  vertical-align: top;
+}
+
+.progtv {
+  align-content: flex-start;
+  align-items: flex-start;
+  background-color: rgba(253, 254, 255, 1);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  margin-bottom: 0;
+  margin-left: 8px;
+  margin-right: auto;
+  margin-top: 4px;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  vertical-align: top;
+  width: calc(100% - 16px);
+}
+
+@media (min-width: 1921px) {
+  .siteGauche {
+    width: calc(100% - calc(16 / 1920 * 100vw));
+  }
+
+  .siteGauche {
+    margin-bottom: calc(8 / 1920 * 100vw);
+    margin-left: calc(8 / 1920 * 100vw);
+  }
+
+  .progtvcomplet *,
+  .progtv *,
+  .chainetv,
+  .menutv * {
+    line-height: calc(24 / 1920 * 100vw);
+  }
+
+  .progtv {
+    margin-left: calc(8 / 1920 * 100vw);
+    margin-top: calc(4 / 1920 * 100vw);
+    width: calc(100% - calc(16 / 1920 * 100vw));
+  }
+
+  .chainetv {
+    margin-bottom: calc(6 / 1920 * 100vw);
+    margin-top: calc(4 / 1920 * 100vw);
+  }
+
+  .chainetv span span.nomchainetv {
+    margin-bottom: calc(8 / 1920 * 100vw);
+  }
+
+  .chainetv span span.nomchainetv {
+    border: calc(1 / 1920 * 100vw) solid rgba(177, 178, 179, 0.85);
+    padding: calc(6 / 1920 * 100vw);
+  }
+
+  .chainetv div.prog span {
+    margin-bottom: calc(1 / 1920 * 100vw);
+    margin-left: calc(3 / 1920 * 100vw);
+    width: calc(100% - calc(6 / 1920 * 100vw));
+  }
+
+  .menutv {
+    border: calc(1 / 1920 * 100vw) solid rgba(177, 178, 179, 0.95);
+    margin: calc(4 / 1920 * 100vw) auto;
+    min-height: calc(56 / 1920 * 100vw);
+  }
+
+  .menutv a.inactif div.titremenutv,
+  .menutv a.actif div.titremenutv {
+    padding: calc(3 / 1920 * 100vw) calc(9 / 1920 * 100vw);
+  }
+}
