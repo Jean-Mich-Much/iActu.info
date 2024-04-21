@@ -31,12 +31,12 @@ $cache_secondes = 10800;
                     <div class="sitesPar2">
                         <span class="siteGauche">
                             <div class="boite">
-                                <?php lit_tv('xmltv_tnt','tv-01', '20:29:59', '23:59:59', '35', '2', '400', '200',true,false,true); ?>
+                                <?php lit_tv('xmltv_tnt','tv-01', '20:29:59', '23:59:59', '35', '2', '176', '200',false,false,true,true); ?>
                             </div>
                         </span>
                         <span class="siteDroite">
                             <div class="boite">
-                                <?php lit_tv('xmltv_tnt','tv-02', '00:00:00', '23:59:59', '20', '72', '400', '200',false,true,false); ?>
+                                <?php lit_tv('xmltv_tnt','tv-02', '00:00:00', '23:59:59', '20', '72', '176', '200',false,true,false,false); ?>
                             </div>
                         </span>
                     </div><!-- FIN SITES PAR 2 -->
