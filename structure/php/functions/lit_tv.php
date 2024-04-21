@@ -1,4 +1,4 @@
-<?php function lit_tv($fichier, $css_class, $choixdebut, $choixfin, $choixduree, $nbreprogs, $longdesc, $longtitle, $afficheimg, $afficheemoji, $affichedesc)
+<?php function lit_tv($fichier, $css_class, $choixdebut, $choixfin, $choixduree, $nbreprogs, $longdesc, $longtitle, $afficheimg, $afficheemoji, $affichedesc, $afficheimg_src)
 {
   try {
     $xml = simplexml_load_file('News/copy/' . $fichier . '.xml');
@@ -28,6 +28,7 @@
         }
         $title = strlen($fullTitle) > $longtitle ? substr($fullTitle, 0, strrpos(substr($fullTitle, 0, $longtitle), ' ')) . "..." : $fullTitle;
         $descfull = htmlspecialchars(str_replace("\\", "", str_replace("\"", "’", str_replace("'", "’", @strip_tags(@mb_convert_encoding($programme->desc, 'UTF-8', 'auto'))))));
+        $imgsrc = $programme->icon['src'];
         if ($descfull === false || mb_check_encoding($descfull, 'UTF-8') === false) {
           continue;
         }
@@ -90,6 +91,11 @@
           $progpicture = '<img src="structure/img/tv/' . $progimg . '.webp" width="128" height="128" class="prog-img">';
         }
 
+        $progpicture_src = ' ';
+        if ($afficheimg_src) {
+          $progpicture_src = '<img src="' . $imgsrc . '" width="128" height="72" class="prog-img-ratio-16-9">';
+        }
+
         $progemoji = ' ';
         if ($afficheemoji) {
           $progemoji = '<div class="tv-chaine-prog-contenu-tv-chaine-prog-contenu-categorie">' . $emoji . '' . $programme->category . '</div>';
@@ -102,12 +108,12 @@
           $progdesctitle = ' ';
         }
 
-        echo '<div class="tv-chaine-prog" ' . $progdesctitle . '>' . $progpicture . '<div class="tv-chaine-prog-contenu"><div class="tv-chaine-prog-contenu-heure">' . date("H:i", $start) . '</div><div class="tv-chaine-prog-contenu-titre">' . $title . '' . $progemoji . '</div>' . $progdesc . '</div></div>';
+        echo '<div class="tv-chaine-prog" ' . $progdesctitle . '>' . $progpicture . $progpicture_src . '<div class="tv-chaine-prog-contenu"><div class="tv-chaine-prog-contenu-heure">' . date("H:i", $start) . '</div><div class="tv-chaine-prog-contenu-titre">' . $title . '' . $progemoji . '</div>' . $progdesc . '</div></div>';
 
         $progCount++;
       }
     }
-      echo '</div>';
+    echo '</div>';
   }
   echo '</div>';
 }
