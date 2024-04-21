@@ -1,8 +1,8 @@
 <?php
-$titre_page = 'TV';
+$titre_page = 'Programme TV';
 $nom_page = 'tv';
 $page_active = $nom_page;
-$cache_secondes = 900;
+$cache_secondes = 10800;
 ?>
 
 <?php if (!file_exists($nom_page . '.html') or filemtime($nom_page . '.html') < (time() - $cache_secondes) or !file_exists($nom_page . date("j") . '.html')) { ?>
@@ -13,7 +13,6 @@ $cache_secondes = 900;
     <html lang="fr">
 
         <head>
-            <?php @include 'structure/php/head.php'; ?>
             <?php @include 'structure/php/tv_head.php'; ?>
         </head>
 
@@ -24,18 +23,23 @@ $cache_secondes = 900;
             </nav>
             <?php @include 'structure/php/sousmenuhaut.php'; ?>
             <?php @include 'structure/php/functions/unique.php'; ?>
-            <?php @include 'structure/php/functions/lit_tv_horaires.php'; ?>
+            <?php @include 'structure/php/functions/lit_tv.php'; ?>
 
             <main id="main_sites">
                 <article class="sites" id="articles_sites">
-
                     <!-- DEBUT SITES PAR 2 -->
-                    <div class="sitesPar2" <?php echo 'id="' . unique(2) . unique(2) . unique(2) . '"'; ?>>
+                    <div class="sitesPar2">
                         <span class="siteGauche">
-                            <?php parse_complet('xmltv_tnt', 'WNe', 'https://iactu.info/tv.php', 160, 254, 'Programme'); ?>
+                            <div class="boite">
+                                <?php lit_tv('xmltv_tnt','tv-01', '20:29:59', '23:59:59', '35', '2', '400', '200',true,false,true); ?>
+                            </div>
+                        </span>
+                        <span class="siteDroite">
+                            <div class="boite">
+                                <?php lit_tv('xmltv_tnt','tv-02', '00:00:00', '23:59:59', '20', '72', '400', '200',false,true,false); ?>
+                            </div>
                         </span>
                     </div><!-- FIN SITES PAR 2 -->
-
                 </article>
             </main>
 
@@ -54,7 +58,7 @@ $cache_secondes = 900;
         substr_count($p, '<!DOCTYPE html>') === 1 &&
         substr_count($p, '</html>') === 1 &&
         substr_count($p, 'http') >= 10 &&
-        strlen($p) >= 8192
+        strlen($p) >= 16384
     ) {
         echo $p;
         file_put_contents($nom_page . '.html', $p);
