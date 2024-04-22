@@ -103,6 +103,21 @@
 .tv-01
   .tv-chaine-listeprogs
   .tv-chaine-prog
+  .tv-chaine-prog-contenu-titre
+  .tv-chaine-prog-contenu-tv-chaine-prog-contenu-categorie {
+  align-self: center;
+  color: rgba(25, 55, 85, 0.95);
+  flex-wrap: nowrap;
+  font-size: 17px;
+  line-height: 25px;
+  margin: 0 3px 0 6px;
+  overflow: hidden;
+  text-wrap: nowrap;
+}
+
+.tv-01
+  .tv-chaine-listeprogs
+  .tv-chaine-prog
   .tv-chaine-prog-contenu-tv-chaine-prog-contenu-desc {
   color: rgba(75, 80, 85, 0.95);
   display: flex;
@@ -232,7 +247,7 @@
 
 .tv-02 .tv-chaine-listeprogs .tv-chaine-prog .tv-chaine-prog-contenu-heure {
   align-self: center;
-  color: rgba(25, 55, 85, 0.85);
+  color: rgba(25, 55, 85, 0.95);
   flex-wrap: nowrap;
   font-size: 15px;
   line-height: 21px;
@@ -260,7 +275,7 @@
   .tv-chaine-prog-contenu-titre
   .tv-chaine-prog-contenu-tv-chaine-prog-contenu-categorie {
   align-self: center;
-  color: rgba(35, 65, 95, 0.75);
+  color: rgba(25, 55, 85, 0.95);
   flex-wrap: nowrap;
   font-size: 15px;
   line-height: 21px;
