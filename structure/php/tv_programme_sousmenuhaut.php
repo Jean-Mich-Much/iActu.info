@@ -7,11 +7,11 @@ $affiche_paypal_haut = false;
 <nav id="sousmenu">
 
   <span>
-      <a href="tv.php" title="🌆Ce soir à la TV 😊">&nbsp;🌆Ce soir&nbsp;</a>
+      <a href="tv.php" title="📺Ce soir à la TV 😊">&nbsp;📺Ce soir&nbsp;</a>
   </span>
 
   <span>
-      <a href="tv_programme.php" title="🌇Programme TV 😊">&nbsp;🌇Programme&nbsp;</a>
+      <a href="tv_programme.php" title="📺Programme TV 😊">&nbsp;📺Programme&nbsp;</a>
   </span>
 
   <span id="SousMenuHautDates">
