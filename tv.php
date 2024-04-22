@@ -1,5 +1,5 @@
 <?php
-$titre_page = 'Programme TV';
+$titre_page = 'TV';
 $nom_page = 'tv';
 $page_active = $nom_page;
 $cache_secondes = 10800;
@@ -21,29 +21,25 @@ $cache_secondes = 10800;
             <nav id="haut">
                 <?php @include 'structure/php/navhaut.php'; ?>
             </nav>
-            <?php @include 'structure/php/sousmenuhaut.php'; ?>
+            <?php @include 'structure/php/tv_sousmenuhaut.php'; ?>
             <?php @include 'structure/php/functions/unique.php'; ?>
             <?php @include 'structure/php/functions/lit_tv.php'; ?>
 
             <main id="main_sites">
                 <article class="sites" id="articles_sites">
-                    <!-- DEBUT SITES PAR 2 -->
+                    <!-- DEBUT -->
                     <div class="sitesPar2">
                         <span class="siteGauche">
                             <div class="boite">
-                                <?php lit_tv('xmltv_tnt','tv-01', '20:29:59', '23:59:59', '35', '2', '188', '200',false,true,true,true); ?>
+                                <?php lit_tv('xmltv_tnt', 'tv-01', '20:29:59', '23:59:59', '35', '2', '188', '200', false, true, true, true); ?>
                             </div>
                         </span>
-                        <span class="siteDroite">
-                            <div class="boite">
-                                <?php lit_tv('xmltv_tnt','tv-02', '00:00:00', '23:59:59', '20', '72', '188', '200',false,true,false,false); ?>
-                            </div>
-                        </span>
-                    </div><!-- FIN SITES PAR 2 -->
+                    </div>
+                    <!-- FIN -->
                 </article>
             </main>
 
-            <?php @include 'structure/php/sousmenubas.php'; ?>
+            <?php @include 'structure/php/tv_sousmenubas.php'; ?>
             <nav id="bas">
                 <?php @include 'structure/php/navbas.php'; ?>
             </nav>
