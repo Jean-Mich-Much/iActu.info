@@ -41,6 +41,9 @@
         if ($desclong === false || mb_check_encoding($desclong, 'UTF-8') === false) {
           continue;
         }
+
+        $dureeFormatee = formatDuree($duree);
+        
         $desclongcalc = $longdesc * 4;
         $desclong = strlen($desclong) > $longdesc ? substr($desclong, 0, strrpos(substr($desclong, 0, $desclongcalc), ' ')) . "..." : $desclong;
         $desclong = empty($desclong) ? "Sans descriptif" : $desclong;
@@ -162,7 +165,7 @@
           $progdesc = '<div class="tv-chaine-prog-contenu-tv-chaine-prog-contenu-desc">' . $desc . '</div>';
         }
 
-        echo '<div class="tv-chaine-prog" title="' . $desclong . '">' . $progpicture . $progpicture_src . '<div class="tv-chaine-prog-contenu"><div class="tv-chaine-prog-contenu-heure">' . date("H:i", $start) . '</div><div class="tv-chaine-prog-contenu-titre">' . $title . '' . $progemoji . '</div>' . $progdesc . '</div></div>';
+        echo '<div class="tv-chaine-prog" title="⏳Durée :&nbsp;' . $dureeFormatee . '&nbsp;|&nbsp;📃Description :&nbsp;' . $desclong . '">' . $progpicture . $progpicture_src . '<div class="tv-chaine-prog-contenu"><div class="tv-chaine-prog-contenu-heure">' . date("H:i", $start) . '</div><div class="tv-chaine-prog-contenu-titre">' . $title . '' . $progemoji . '</div>' . $progdesc . '</div></div>';
 
         $progCount++;
       }
@@ -170,4 +173,10 @@
     echo '</div></div>';
   }
   echo '</div>';
+}
+
+function formatDuree($minutes) {
+  $heures = floor($minutes / 60);
+  $minutes = $minutes % 60;
+  return $heures > 0 ? $heures . "h " . str_pad($minutes, 2, "0", STR_PAD_LEFT) . "mn" : $minutes . " mn";
 }
