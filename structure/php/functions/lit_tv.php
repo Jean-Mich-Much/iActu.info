@@ -11,7 +11,7 @@
   }
   echo '<div class="' . $css_class . '">';
   foreach ($xml->channel as $channel) {
-    echo '<div class="tv-chaine"><span class="tv-chaine-nom"><span class="tv-chaine-logo"></span>' . $channel->{'display-name'} . '</span></div><div class="tv-chaine-listeprogs">';
+    echo '<div class="tv-chaines"><div class="tv-chaine"><span class="tv-chaine-nom"><span class="tv-chaine-logo"></span>' . $channel->{'display-name'} . '</span></div><div class="tv-chaine-listeprogs">';
     $progCount = 0;
     foreach ($progs as $programme) {
       if ((string) $programme['channel'] != (string) $channel['id'])
@@ -113,7 +113,7 @@
         $progCount++;
       }
     }
-    echo '</div>';
+    echo '</div></div>';
   }
   echo '</div>';
 }
