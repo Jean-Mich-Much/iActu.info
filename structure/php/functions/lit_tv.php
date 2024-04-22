@@ -27,14 +27,26 @@
           continue;
         }
         $title = strlen($fullTitle) > $longtitle ? substr($fullTitle, 0, strrpos(substr($fullTitle, 0, $longtitle), ' ')) . "..." : $fullTitle;
-        $descfull = htmlspecialchars(str_replace("\\", "", str_replace("\"", "’", str_replace("'", "’", @strip_tags(@mb_convert_encoding($programme->desc, 'UTF-8', 'auto'))))));
+
+        $desc = htmlspecialchars(str_replace("\\", "", str_replace("\"", "’", str_replace("'", "’", @strip_tags(@mb_convert_encoding($programme->desc, 'UTF-8', 'auto'))))));
         $imgsrc = $programme->icon['src'];
-        if ($descfull === false || mb_check_encoding($descfull, 'UTF-8') === false) {
+        if ($desc === false || mb_check_encoding($desc, 'UTF-8') === false) {
           continue;
         }
-        $descfull = strlen($descfull) > $longdesc ? substr($descfull, 0, strrpos(substr($descfull, 0, $longdesc), ' ')) . "..." : $descfull;
-        $descfull = empty($descfull) ? "Sans descriptif" : $descfull;
+        $desc = strlen($desc) > $longdesc ? substr($desc, 0, strrpos(substr($desc, 0, $longdesc), ' ')) . "..." : $desc;
+        $desc = empty($desc) ? "Sans descriptif" : $desc;
+
+        $desclong = htmlspecialchars(str_replace("\\", "", str_replace("\"", "’", str_replace("'", "’", @strip_tags(@mb_convert_encoding($programme->desc, 'UTF-8', 'auto'))))));
+        $imgsrc = $programme->icon['src'];
+        if ($desclong === false || mb_check_encoding($desclong, 'UTF-8') === false) {
+          continue;
+        }
+        $desclongcalc = $longdesc * 4;
+        $desclong = strlen($desclong) > $longdesc ? substr($desclong, 0, strrpos(substr($desclong, 0, $desclongcalc), ' ')) . "..." : $desclong;
+        $desclong = empty($desclong) ? "Sans descriptif" : $desclong;
+
         $emoji = '💤';
+        $progimg = 'autres';
         switch ($programme->category) {
           case 'Film':
             $emoji = '🎞️';
@@ -146,13 +158,11 @@
         }
 
         $progdesc = ' ';
-        $progdesctitle = 'title="' . $descfull . '"';
         if ($affichedesc) {
-          $progdesc = '<div class="tv-chaine-prog-contenu-tv-chaine-prog-contenu-desc">' . $descfull . '</div>';
-          $progdesctitle = ' ';
+          $progdesc = '<div class="tv-chaine-prog-contenu-tv-chaine-prog-contenu-desc">' . $desc . '</div>';
         }
 
-        echo '<div class="tv-chaine-prog" ' . $progdesctitle . '>' . $progpicture . $progpicture_src . '<div class="tv-chaine-prog-contenu"><div class="tv-chaine-prog-contenu-heure">' . date("H:i", $start) . '</div><div class="tv-chaine-prog-contenu-titre">' . $title . '' . $progemoji . '</div>' . $progdesc . '</div></div>';
+        echo '<div class="tv-chaine-prog" title="' . $desclong . '">' . $progpicture . $progpicture_src . '<div class="tv-chaine-prog-contenu"><div class="tv-chaine-prog-contenu-heure">' . date("H:i", $start) . '</div><div class="tv-chaine-prog-contenu-titre">' . $title . '' . $progemoji . '</div>' . $progdesc . '</div></div>';
 
         $progCount++;
       }
