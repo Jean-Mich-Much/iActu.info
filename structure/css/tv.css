@@ -20,10 +20,14 @@
   border: 0;
 }
 
-.tv-01,
-.tv-02 {
+.tv-01 {
   background-color: rgba(253, 254, 255, 1);
   border: 1px solid rgba(157, 158, 159, 0.85);
+  display: grid;
+  margin-bottom: -1px;
+}
+
+.tv-01 .tv-chaines {
   display: grid;
 }
 
@@ -57,7 +61,6 @@
   grid-column-gap: 9px;
   grid-row-gap: 9px;
   justify-content: center;
-  margin-bottom: 0;
   padding: 9px;
 }
 
@@ -67,11 +70,11 @@
 
 .tv-01 .tv-chaine-listeprogs .tv-chaine-prog {
   align-content: center;
-  align-items: center;
+  align-items: start;
   display: grid;
   grid-template-columns: 128px 1fr;
   grid-template-rows: 1fr;
-  justify-content: center;
+  justify-content: start;
 }
 
 .tv-01 .tv-chaine-listeprogs .tv-chaine-prog .tv-chaine-prog-contenu-heure {
@@ -81,7 +84,7 @@
   display: inline-flex;
   font-family: "Open Sans Condensed", sans-serif;
   flex-wrap: nowrap;
-  line-height: 24px;
+  line-height: 25px;
   margin-left: 9px;
 }
 
@@ -93,8 +96,8 @@
   font-family: "Open Sans Condensed", sans-serif;
   flex-wrap: nowrap;
   font-size: 19px;
-  line-height: 24px;
-  margin: 0 9px;
+  line-height: 25px;
+  margin: 0 9px 0 6px;
 }
 
 .tv-01
@@ -104,6 +107,7 @@
   color: rgba(75, 80, 85, 0.95);
   display: flex;
   flex-wrap: nowrap;
+  font-size: 17px;
   line-height: 22px;
   margin: 0 9px;
 }
@@ -173,6 +177,21 @@
   right: 2px;
   width: 12px;
 }
+
+.tv-02 {
+  background-color: rgba(253, 254, 255, 1);
+  border: 1px solid rgba(157, 158, 159, 0.85);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  margin-bottom: -1px;
+}
+
+.tv-02 .tv-chaines {
+  border-bottom: 1px solid rgba(157, 158, 159, 0.85);
+  display: block;
+}
+
 .tv-02 .tv-chaine {
   align-content: center;
   align-items: center;
@@ -180,7 +199,7 @@
   border-bottom: 1px solid rgba(157, 158, 159, 0.85);
   display: flex;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: start;
 }
 
 .tv-02 .tv-chaine .tv-chaine-nom {
@@ -192,19 +211,13 @@
   font-size: 20px;
   flex-wrap: nowrap;
   line-height: 40px;
-  justify-content: center;
+  justify-content: start;
+  margin-left: 37px;
 }
 
 .tv-02 .tv-chaine-listeprogs {
-  border-bottom: calc(1 / 1920 * 100vw) solid rgba(157, 158, 159, 0.85);
   display: grid;
-  flex-wrap: nowrap;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  grid-column-gap: 6px;
-  grid-row-gap: 3px;
-  margin-bottom: 0;
-  padding: 9px;
+  padding: 6px;
 }
 
 .tv-02 .tv-chaine-listeprogs .tv-chaine-prog:first-child {
@@ -220,19 +233,25 @@
 .tv-02 .tv-chaine-listeprogs .tv-chaine-prog .tv-chaine-prog-contenu-heure {
   align-self: center;
   color: rgba(25, 55, 85, 0.85);
+  flex-wrap: nowrap;
   font-size: 15px;
-  line-height: 22px;
-  margin-left: 9px;
+  line-height: 21px;
+  margin-left: 6px;
+  overflow: hidden;
+  text-wrap: nowrap;
 }
 
 .tv-02 .tv-chaine-listeprogs .tv-chaine-prog .tv-chaine-prog-contenu-titre {
   align-self: center;
   color: rgba(65, 75, 85, 0.95);
   display: inline-flex;
+  flex-wrap: nowrap;
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 18px;
-  line-height: 22px;
-  margin: 0 6px;
+  line-height: 21px;
+  margin: 0 1px 0 3px;
+  overflow: hidden;
+  text-wrap: nowrap;
 }
 
 .tv-02
@@ -242,9 +261,24 @@
   .tv-chaine-prog-contenu-tv-chaine-prog-contenu-categorie {
   align-self: center;
   color: rgba(35, 65, 95, 0.75);
+  flex-wrap: nowrap;
   font-size: 15px;
-  line-height: 22px;
-  margin: 0 6px;
+  line-height: 21px;
+  margin: 0 3px;
+  overflow: hidden;
+  text-wrap: nowrap;
+}
+
+@media (max-width: 640px) {
+  .tv-02 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1280px) {
+  .tv-02 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 1280px) {
@@ -261,15 +295,6 @@
     min-width: 1px;
     opacity: 0;
     width: 1px;
-  }
-  .tv-02 .tv-chaine-listeprogs {
-    grid-template-columns: minmax(1280px, 1fr);
-  }
-}
-
-@media (min-width: 1281px) and (max-width: 1600px) {
-  .tv-02 .tv-chaine-listeprogs {
-    grid-template-columns: minmax(800px, 1fr) minmax(800px, 1fr);
   }
 }
 
@@ -298,9 +323,9 @@
     margin-left: calc(8 / 1920 * 100vw);
   }
 
-  .tv-01,
-  .tv-02 {
+  .tv-01 {
     border: calc(1 / 1920 * 100vw) solid rgba(157, 158, 159, 0.85);
+    margin-bottom: calc(-1 / 1920 * 100vw);
   }
 
   .tv-01 .tv-chaine {
@@ -327,22 +352,34 @@
   }
 
   .tv-01 .tv-chaine-listeprogs .tv-chaine-prog .tv-chaine-prog-contenu-heure {
-    line-height: calc(24 / 1920 * 100vw);
+    line-height: calc(25 / 1920 * 100vw);
     margin-left: calc(9 / 1920 * 100vw);
   }
 
   .tv-01 .tv-chaine-listeprogs .tv-chaine-prog .tv-chaine-prog-contenu-titre {
     font-size: calc(19 / 1920 * 100vw);
-    line-height: calc(24 / 1920 * 100vw);
-    margin: 0 calc(9 / 1920 * 100vw);
+    line-height: calc(25 / 1920 * 100vw);
+    margin: 0 calc(9 / 1920 * 100vw) 0 calc(6 / 1920 * 100vw);
   }
 
   .tv-01
     .tv-chaine-listeprogs
     .tv-chaine-prog
     .tv-chaine-prog-contenu-tv-chaine-prog-contenu-desc {
+    font-size: calc(17 / 1920 * 100vw);
     line-height: calc(22 / 1920 * 100vw);
     margin: 0 calc(9 / 1920 * 100vw);
+  }
+
+  .prog-img {
+    min-height: calc(128 / 1920 * 100vw);
+    min-width: calc(128 / 1920 * 100vw);
+  }
+
+  .prog-img-ratio-16-9 {
+    min-height: calc(72 / 1920 * 100vw);
+    min-width: calc(128 / 1920 * 100vw);
+    outline: calc(1 / 1920 * 100vw) solid rgba(15, 20, 25, 0.85);
   }
 
   .tv-chaine-logo {
@@ -377,6 +414,16 @@
     right: calc(2 / 1920 * 100vw);
     width: calc(12 / 1920 * 100vw);
   }
+
+  .tv-02 {
+    border: calc(1 / 1920 * 100vw) solid rgba(157, 158, 159, 0.85);
+    margin-bottom: calc(-1 / 1920 * 100vw);
+  }
+
+  .tv-02 .tv-chaines {
+    border-bottom: calc(1 / 1920 * 100vw) solid rgba(157, 158, 159, 0.85);
+  }
+
   .tv-02 .tv-chaine {
     border-bottom: calc(1 / 1920 * 100vw) solid rgba(157, 158, 159, 0.85);
   }
@@ -384,12 +431,11 @@
   .tv-02 .tv-chaine .tv-chaine-nom {
     font-size: calc(20 / 1920 * 100vw);
     line-height: calc(40 / 1920 * 100vw);
+    margin-left: calc(37 / 1920 * 100vw);
   }
 
   .tv-02 .tv-chaine-listeprogs {
-    grid-column-gap: calc(6 / 1920 * 100vw);
-    grid-row-gap: calc(3 / 1920 * 100vw);
-    padding: calc(9 / 1920 * 100vw);
+    padding: calc(6 / 1920 * 100vw);
   }
 
   .tv-02 .tv-chaine-listeprogs .tv-chaine-prog .tv-chaine-prog-contenu {
@@ -398,14 +444,14 @@
 
   .tv-02 .tv-chaine-listeprogs .tv-chaine-prog .tv-chaine-prog-contenu-heure {
     font-size: calc(15 / 1920 * 100vw);
-    line-height: calc(22 / 1920 * 100vw);
-    margin-left: calc(9 / 1920 * 100vw);
+    line-height: calc(21 / 1920 * 100vw);
+    margin-left: calc(6 / 1920 * 100vw);
   }
 
   .tv-02 .tv-chaine-listeprogs .tv-chaine-prog .tv-chaine-prog-contenu-titre {
     font-size: calc(18 / 1920 * 100vw);
-    line-height: calc(22 / 1920 * 100vw);
-    margin: 0 calc(6 / 1920 * 100vw);
+    line-height: calc(21 / 1920 * 100vw);
+    margin: 0 calc(1 / 1920 * 100vw) 0 calc(3 / 1920 * 100vw);
   }
 
   .tv-02
@@ -414,7 +460,7 @@
     .tv-chaine-prog-contenu-titre
     .tv-chaine-prog-contenu-tv-chaine-prog-contenu-categorie {
     font-size: calc(15 / 1920 * 100vw);
-    line-height: calc(22 / 1920 * 100vw);
-    margin: 0 calc(6 / 1920 * 100vw);
+    line-height: calc(21 / 1920 * 100vw);
+    margin: 0 calc(3 / 1920 * 100vw);
   }
 }
