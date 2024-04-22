@@ -60,8 +60,32 @@
             $emoji = '🎭';
             $progimg = 'divertissement';
             break;
+          case 'Magazine du cinéma':
+            $emoji = '🎭';
+            $progimg = 'divertissement';
+            break;
           case 'Sport':
             $emoji = '⚽';
+            $progimg = 'sport';
+            break;
+          case 'Football':
+            $emoji = '⚽';
+            $progimg = 'sport';
+            break;
+          case 'Rugby':
+            $emoji = '🏉';
+            $progimg = 'sport';
+            break;
+          case 'Tennis':
+            $emoji = '🎾';
+            $progimg = 'sport';
+            break;
+          case 'Golf':
+            $emoji = '⛳';
+            $progimg = 'sport';
+            break;
+          case 'Rallye':
+            $emoji = '🏎️';
             $progimg = 'sport';
             break;
           case 'Musique':
@@ -81,6 +105,26 @@
             $progimg = 'divertissement';
             break;
           case 'Action':
+            $emoji = '🎞️';
+            $progimg = 'film';
+            break;
+          case 'Comédie dramatique':
+            $emoji = '🎞️';
+            $progimg = 'film';
+            break;
+          case 'Comédie':
+            $emoji = '🎞️';
+            $progimg = 'film';
+            break;
+          case 'Drame':
+            $emoji = '🎞️';
+            $progimg = 'film';
+            break;
+          case 'Film policier':
+            $emoji = '🎞️';
+            $progimg = 'film';
+            break;
+          case 'Biographie':
             $emoji = '🎞️';
             $progimg = 'film';
             break;
