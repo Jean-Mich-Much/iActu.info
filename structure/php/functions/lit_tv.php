@@ -165,7 +165,7 @@
           $progdesc = '<div class="tv-chaine-prog-contenu-tv-chaine-prog-contenu-desc">' . $desc . '</div>';
         }
 
-        echo '<div class="tv-chaine-prog" title="⏳Durée :&nbsp;' . $dureeFormatee . '&nbsp;|&nbsp;📃Description :&nbsp;' . $desclong . '">' . $progpicture . $progpicture_src . '<div class="tv-chaine-prog-contenu"><div class="tv-chaine-prog-contenu-heure">' . date("H:i", $start) . '</div><div class="tv-chaine-prog-contenu-titre">' . $title . '' . $progemoji . '</div>' . $progdesc . '</div></div>';
+        echo '<div class="tv-chaine-prog" title="⏳Durée :&nbsp;' . $dureeFormatee . '&nbsp;|&nbsp;📃Synopsis :&nbsp;' . $desclong . '">' . $progpicture . $progpicture_src . '<div class="tv-chaine-prog-contenu"><div class="tv-chaine-prog-contenu-heure">' . date("H:i", $start) . '</div><div class="tv-chaine-prog-contenu-titre">' . $title . '' . $progemoji . '</div>' . $progdesc . '</div></div>';
 
         $progCount++;
       }
