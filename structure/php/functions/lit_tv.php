@@ -43,7 +43,7 @@
         }
 
         $dureeFormatee = formatDuree($duree);
-        
+
         $desclongcalc = $longdesc * 4;
         $desclong = strlen($desclong) > $longdesc ? substr($desclong, 0, strrpos(substr($desclong, 0, $desclongcalc), ' ')) . "..." : $desclong;
         $desclong = empty($desclong) ? "Sans descriptif" : $desclong;
@@ -150,9 +150,42 @@
           $progpicture = '<img src="structure/img/tv/' . $progimg . '.webp" width="128" height="128" class="prog-img">';
         }
 
-        $progpicture_src = ' ';
+        $progpicture_src = '';
         if ($afficheimg_src) {
-          $progpicture_src = '<img src="' . $imgsrc . '" width="128" height="72" class="prog-img-ratio-16-9">';
+          $imgsrc = filter_var($imgsrc, FILTER_SANITIZE_URL);
+          if (filter_var($imgsrc, FILTER_VALIDATE_URL)) {
+            $extension = pathinfo($imgsrc, PATHINFO_EXTENSION);
+            $filename = preg_replace('/[^A-Za-z0-9\-]/', '', $imgsrc);
+            $filename = strtr(strtolower($filename), 'abcdefghijklmnopqrstuvwxyz', '12345678912345678912345678');
+            $filename = hash('md5', $filename);
+            $filename = str_replace('0', '', $filename);
+            $filename = $filename . "." . $extension;
+            $destinationPath = "News/tmp/" . $filename;
+            if (!file_exists($destinationPath)) {
+              $headers = @get_headers($imgsrc);
+              if ($headers && strpos($headers[0], '200')) {
+                @copy($imgsrc, $destinationPath);
+                usleep(1000);
+                $finfo = finfo_open(FILEINFO_MIME_TYPE);
+                $mime = finfo_file($finfo, $destinationPath);
+                finfo_close($finfo);
+                if (!preg_match('/^image\//', $mime)) {
+                  $destinationPath = "structure/img/tv/" . $progimg . ".webp";
+                }
+              } else {
+                $destinationPath = "structure/img/tv/" . $progimg . ".webp";
+              }
+            }
+            if (file_exists($destinationPath)) {
+              $progpicture_src = '<img src="' . $destinationPath . '" width="128" height="72" class="prog-img-ratio-16-9">';
+            } else {
+              $destinationPath = "structure/img/tv/" . $progimg . ".webp";
+              $progpicture_src = '<img src="' . $destinationPath . '" width="128" height="72" class="prog-img-ratio-16-9">';
+            }
+          } else {
+            $destinationPath = "structure/img/tv/" . $progimg . ".webp";
+            $progpicture_src = '<img src="' . $destinationPath . '" width="128" height="72" class="prog-img-ratio-16-9">';
+          }
         }
 
         $progemoji = ' ';
@@ -173,9 +206,22 @@
     echo '</div></div>';
   }
   echo '</div>';
+
+  $delfiles = glob('News/tmp/*');
+  $delnow = time();
+
+  foreach ($delfiles as $delfile) {
+    if (is_file($delfile)) {
+      if ($delnow - filemtime($delfile) >= 2419200) {
+        unlink($delfile);
+      }
+    }
+  }
+
 }
 
-function formatDuree($minutes) {
+function formatDuree($minutes)
+{
   $heures = floor($minutes / 60);
   $minutes = $minutes % 60;
   return $heures > 0 ? $heures . "h " . str_pad($minutes, 2, "0", STR_PAD_LEFT) . "mn" : $minutes . " mn";
