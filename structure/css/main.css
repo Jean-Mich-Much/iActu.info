@@ -1,7 +1,10 @@
 /* Main */
 
 .siteGauche,
-.siteDroite,
+.siteDroite {
+  background: rgba(237, 238, 239, 1);
+}
+
 .boite,
 .actu,
 .ay,

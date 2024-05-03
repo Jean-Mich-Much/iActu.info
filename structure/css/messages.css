@@ -1,3 +1,4 @@
+
 /* Messages */
 
 section.messagebas,
@@ -61,7 +62,7 @@ section.messagehaut section a,
 section.messagehaut section select {
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
-  line-height: 26px;
+  line-height: 27px;
   overflow: visible;
   text-align: left;
   text-decoration: none;
@@ -109,7 +110,7 @@ section.messagebas section {
   section.messagehaut section a,
   section.messagehaut section select {
     font-size: calc(18 / 1920 * 100vw);
-    line-height: calc(26 / 1920 * 100vw);
+    line-height: calc(27 / 1920 * 100vw);
   }
 
   section.messagehaut section,
