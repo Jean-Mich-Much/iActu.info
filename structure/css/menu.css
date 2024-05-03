@@ -125,8 +125,8 @@
 
   .menu-link:hover,
   .active {
-    box-shadow: 0 -7px 6px 3px rgba(29, 34, 39, 0.2);
-    outline: 2px solid rgba(95, 185, 255, 0.2);
+    box-shadow: 0 -7px 6px 3px rgba(20, 24, 28, 0.3);
+    outline: 2px solid rgba(120, 180, 245, 0.6);
     outline-offset: -1px;
   }
 
@@ -150,8 +150,8 @@
 
   .menu-link:hover,
   .active {
-    box-shadow: 0 -7px 6px 3px rgba(29, 34, 39, 0.2);
-    outline: 2px solid rgba(95, 185, 255, 0.2);
+    box-shadow: 0 -7px 6px 3px rgba(20, 24, 28, 0.3);
+    outline: 2px solid rgba(120, 180, 245, 0.6);
     outline-offset: -1px;
   }
 
@@ -180,8 +180,8 @@
   .menu-link:hover,
   .active {
     box-shadow: 0 calc(-7 / 1920 * 100vw) calc(6 / 1920 * 100vw)
-      calc(3 / 1920 * 100vw) rgba(29, 34, 39, 0.2);
-    outline: calc(2 / 1920 * 100vw) solid rgba(95, 185, 255, 0.2);
+      calc(3 / 1920 * 100vw) rgba(20, 24, 28, 0.3);
+    outline: calc(2 / 1920 * 100vw) solid rgba(120, 180, 245, 0.6);
     outline-offset: calc(-1 / 1920 * 100vw);
   }
 
@@ -223,22 +223,22 @@ nav#bot {
 /* Nav vw */
 
 nav#top {
-  border-bottom: calc(8 / 1920 * 100vw) solid rgba(120, 180, 240, 1);
+  border-bottom: calc(8 / 1920 * 100vw) solid rgba(120, 180, 245, 1);
 }
 
 nav#bot {
-  border-top: calc(8 / 1920 * 100vw) solid rgba(100, 165, 230, 1);
+  border-top: calc(8 / 1920 * 100vw) solid rgba(120, 180, 245, 1);
 }
 
 /* Nav Media */
 
 @media (max-width: 1920px) {
   nav#top {
-    border-bottom: 8px solid rgba(120, 180, 240, 1);
+    border-bottom: 8px solid rgba(120, 180, 245, 1);
   }
 
   nav#bot {
-    border-top: 8px solid rgba(100, 165, 230, 1);
+    border-top: 8px solid rgba(120, 180, 245, 1);
   }
 }
 
@@ -355,7 +355,7 @@ option {
 
 nav#sousmenu {
   border-bottom: calc(1 / 1920 * 100vw) solid rgba(167, 168, 169, 1);
-  margin: 0 0 calc(8 / 1920 * 100vw) 0;
+  margin: 0 0 calc(10 / 1920 * 100vw) 0;
 }
 
 nav#sousmenubas {
