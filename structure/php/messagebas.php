@@ -1,15 +1,13 @@
 <?php
-$affiche_message_bas = true;
+$affiche_message_bas = false;
 ?>
 
 <?php if ($affiche_message_bas) { ?>
 
  <section class="messagebas">
-
- <section>
- 📣 Coucou, le code source d’iActu, version 15, est désormais disponible et consultable sur Github. Vous pouvez donc rapporter les bugs, améliorer le code, etc : <a href="https://github.com/Jean-Mich-Much/iActu.info" target="_blank" id="MessageBasGithub" aria-label="Lien code source 😊" alt="Lien code source 😊" title="Lien code source 😊">&nbsp;🔗 Lien code source&nbsp;</a>💕
-    </section>
-
+ 
+ <section>📣 Coucou,nouveau menu ! Rapportez les bugs car celui-ci est bien complexe. </section>
+ 
  </section>
 
 <?php } ?>
