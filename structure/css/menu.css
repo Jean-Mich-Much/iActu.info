@@ -126,7 +126,7 @@
   .menu-link:hover,
   .active {
     box-shadow: 0 -7px 6px 3px rgba(29, 34, 39, 0.2);
-    outline: 2px solid rgba(95, 185, 255,0.3);
+    outline: 2px solid rgba(95, 185, 255, 0.2);
     outline-offset: -1px;
   }
 
@@ -151,7 +151,7 @@
   .menu-link:hover,
   .active {
     box-shadow: 0 -7px 6px 3px rgba(29, 34, 39, 0.2);
-    outline: 2px solid rgba(95, 185, 255,0.3);
+    outline: 2px solid rgba(95, 185, 255, 0.2);
     outline-offset: -1px;
   }
 
@@ -181,7 +181,7 @@
   .active {
     box-shadow: 0 calc(-7 / 1920 * 100vw) calc(6 / 1920 * 100vw)
       calc(3 / 1920 * 100vw) rgba(29, 34, 39, 0.2);
-    outline: calc(2 / 1920 * 100vw) solid rgba(95, 185, 255,0.3);
+    outline: calc(2 / 1920 * 100vw) solid rgba(95, 185, 255, 0.2);
     outline-offset: calc(-1 / 1920 * 100vw);
   }
 
