@@ -125,9 +125,9 @@
 
   .menu-link:hover,
   .active {
-    box-shadow: 0 -10px 9px 3px rgba(29, 34, 39, 0.3);
-    outline: 4px solid rgba(95, 185, 255,0.3);
-    outline-offset: -3px;
+    box-shadow: 0 -7px 6px 3px rgba(29, 34, 39, 0.2);
+    outline: 2px solid rgba(95, 185, 255,0.3);
+    outline-offset: -1px;
   }
 
   .menu-link a.ma {
@@ -150,9 +150,9 @@
 
   .menu-link:hover,
   .active {
-    box-shadow: 0 -10px 9px 3px rgba(29, 34, 39, 0.3);
-    outline: 4px solid rgba(95, 185, 255,0.3);
-    outline-offset: -3px;
+    box-shadow: 0 -7px 6px 3px rgba(29, 34, 39, 0.2);
+    outline: 2px solid rgba(95, 185, 255,0.3);
+    outline-offset: -1px;
   }
 
   .menu-link a.ma {
@@ -179,10 +179,10 @@
 
   .menu-link:hover,
   .active {
-    box-shadow: 0 calc(-10 / 1920 * 100vw) calc(9 / 1920 * 100vw)
-      calc(3 / 1920 * 100vw) rgba(29, 34, 39, 0.3);
-    outline: calc(4 / 1920 * 100vw) solid rgba(95, 185, 255,0.3);
-    outline-offset: calc(-3 / 1920 * 100vw);
+    box-shadow: 0 calc(-7 / 1920 * 100vw) calc(6 / 1920 * 100vw)
+      calc(3 / 1920 * 100vw) rgba(29, 34, 39, 0.2);
+    outline: calc(2 / 1920 * 100vw) solid rgba(95, 185, 255,0.3);
+    outline-offset: calc(-1 / 1920 * 100vw);
   }
 
   .menu-link a.ma {
