@@ -1,8 +1,8 @@
 <?php
 $titre_page = 'TV - Demain';
 $nom_page = 'tv_demain';
-$page_active = $nom_page;
-$cache_secondes = 10800;
+$page_active = 'tv';
+$cache_secondes = 7195;
 ?>
 
 <?php if (!file_exists($nom_page . '.html') or filemtime($nom_page . '.html') < (time() - $cache_secondes) or !file_exists($nom_page . date("j") . '.html')) { ?>
@@ -18,8 +18,8 @@ $cache_secondes = 10800;
 
         <body id="body" lang="fr">
 
-            <nav id="haut">
-                <?php @include 'structure/php/navhaut.php'; ?>
+            <nav id="top">
+                <?php @include 'structure/php/menutop.php'; ?>
             </nav>
             <?php @include 'structure/php/tv_demain_sousmenuhaut.php'; ?>
             <?php @include 'structure/php/functions/unique.php'; ?>
@@ -40,8 +40,8 @@ $cache_secondes = 10800;
             </main>
 
             <?php @include 'structure/php/tv_sousmenubas.php'; ?>
-            <nav id="bas">
-                <?php @include 'structure/php/navbas.php'; ?>
+            <nav id="bot">
+                <?php @include 'structure/php/menubot.php'; ?>
             </nav>
 
         </body>

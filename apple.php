@@ -19,8 +19,8 @@ $cache_secondes = 298;
 
  <body id="body" lang="fr">
 
-  <nav id="haut">
-   <?php @include 'structure/php/navhaut.php'; ?>
+  <nav id="top">
+   <?php @include 'structure/php/menutop.php'; ?>
   </nav>
   <?php @include 'structure/php/sousmenuhaut.php'; ?>
   <?php @include 'structure/php/functions/unique.php'; ?>
@@ -33,8 +33,8 @@ $cache_secondes = 298;
   </main>
 
   <?php @include 'structure/php/sousmenubas.php'; ?>
-  <nav id="bas">
-   <?php @include 'structure/php/navbas.php'; ?>
+  <nav id="bot">
+   <?php @include 'structure/php/menubot.php'; ?>
   </nav>
 
  </body>
