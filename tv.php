@@ -67,4 +67,9 @@ $cache_secondes = 7195;
 } else {
     readfile($nom_page . '.html');
 } ?>
-<?php @include 'structure/php/functions/stats.php';
+<?php @include 'structure/php/functions/stats.php'; ?>
+
+<?php
+if (@filemtime('copys.time') < (time() - 10795)) {
+    @include 'copys.php';
+}
