@@ -62,17 +62,17 @@
   .b {
     font-size: 18px;
     height: auto;
-    line-height: 28px;
-    margin-left: 12px;
-    min-height: 39px;
-    width: calc(100% - 24px);
+    line-height: 30px;
+    margin-left: 15px;
+    min-height: 41px;
+    width: calc(100% - 30px);
   }
 
   .b a {
     font-size: 18px;
-    line-height: 28px;
-    margin-left: 6px;
-    max-width: calc(100% - 12px);
+    line-height: 30px;
+    margin-left: 8px;
+    max-width: calc(100% - 15px);
   }
 
   main,
@@ -88,13 +88,13 @@
   a.n,
   a.n:hover {
     font-size: 18px;
-    line-height: 28px;
+    line-height: 30px;
   }
 
   .b {
     height: auto;
-    line-height: 28px;
-    min-height: 39px;
+    line-height: 30px;
+    min-height: 41px;
   }
 
   .b a,
@@ -102,12 +102,12 @@
   a.n,
   a.n:hover {
     font-size: 18px;
-    line-height: 28px;
+    line-height: 30px;
   }
 
   .ay,
   .bu {
-    line-height: 44px;
+    line-height: 46px;
   }
 
   .b a,
@@ -195,17 +195,17 @@
   .bu,
   .b {
     font-size: 18px;
-    height: 39px;
-    line-height: 38px;
-    margin-left: 12px;
-    width: calc(100% - 24px);
+    height: 41px;
+    line-height: 40px;
+    margin-left: 15px;
+    width: calc(100% - 30px);
   }
 
   .b a {
     font-size: 18px;
-    line-height: 38px;
-    margin-left: 6px;
-    max-width: calc(100% - 12px);
+    line-height: 40px;
+    margin-left: 8px;
+    max-width: calc(100% - 15px);
   }
 
   main,
@@ -221,26 +221,26 @@
   a.n,
   a.n:hover {
     font-size: 18px;
-    line-height: 38px;
+    line-height: 40px;
   }
 
   .b {
     height: 39px;
-    line-height: 38px;
+    line-height: 40px;
   }
 
   .b a,
   .b a:hover,
   a.n,
   a.n:hover {
-    line-height: 38px;
+    line-height: 40px;
   }
 
   .b a,
   a.n,
   a.n:hover {
     font-size: 18px;
-    line-height: 38px;
+    line-height: 40px;
   }
 }
 
@@ -322,7 +322,7 @@
 
   nav#sousmenu {
     border-bottom: 1px solid rgba(167, 168, 169, 1);
-    margin: 0 0 8px 0;
+    margin: 0 0 10px 0;
   }
 
   nav#sousmenubas {
@@ -349,24 +349,24 @@
 
   .siteGauche,
   .siteDroite {
-    width: calc(50% - 12px);
+    width: calc(50% - 15px);
   }
 
   .siteGauche {
-    margin-bottom: 8px;
-    margin-left: 8px;
+    margin-bottom: 10px;
+    margin-left: 10px;
   }
 
   .siteDroite {
-    margin-right: 8px;
-    margin-bottom: 8px;
+    margin-right: 10px;
+    margin-bottom: 10px;
   }
 
   .enTete {
     margin-bottom: 0;
-    margin-left: 8px;
-    margin-top: 8px;
-    width: calc(100% - 16px);
+    margin-left: 10px;
+    margin-top: 10px;
+    width: calc(100% - 20px);
   }
 
   .enTete {
@@ -384,7 +384,7 @@
   }
 
   .majSite span {
-    margin-right: 5px;
+    margin-right: 7px;
   }
 
   .majSite span span img {
@@ -398,7 +398,7 @@
 
   .ay::before,
   .bu::before {
-    margin-left: 3px;
+    margin-left: 5px;
   }
 
   .ay,
@@ -443,17 +443,17 @@
 
   .siteGauche,
   .siteDroite {
-    width: calc(100% - 16px);
+    width: calc(100% - 20px);
   }
 
   .siteGauche {
-    margin-bottom: 8px;
-    margin-left: 8px;
+    margin-bottom: 10px;
+    margin-left: 10px;
   }
 
   .siteDroite {
-    margin-bottom: 8px;
-    margin-left: 8px;
+    margin-bottom: 10px;
+    margin-left: 10px;
   }
 
   .lienSite,
@@ -465,8 +465,8 @@
   }
 
   .lienSite a img {
-    height: 32px;
-    margin: 8px;
+    height: 36px;
+    margin: 10px;
     margin-right: 6px;
   }
 
@@ -522,17 +522,17 @@
 
   .siteGauche,
   .siteDroite {
-    width: calc(50% - 12px);
+    width: calc(50% - 15px);
   }
 
   .siteGauche {
-    margin-bottom: 8px;
-    margin-left: 8px;
+    margin-bottom: 10px;
+    margin-left: 10px;
   }
 
   .siteDroite {
-    margin-bottom: 8px;
-    margin-right: 8px;
+    margin-bottom: 10px;
+    margin-right: 10px;
   }
 
   .lienSite,
@@ -544,8 +544,8 @@
   }
 
   .lienSite a img {
-    height: 33px;
-    margin: 8px;
+    height: 39px;
+    margin: 10px;
     margin-right: 6px;
   }
 }
@@ -592,24 +592,24 @@
 
   .siteGauche,
   .siteDroite {
-    width: calc(50% - calc(12.05 / 1920 * 100vw));
+    width: calc(50% - calc(15.05 / 1920 * 100vw));
   }
 
   .siteGauche {
-    margin-bottom: calc(8 / 1920 * 100vw);
-    margin-left: calc(8 / 1920 * 100vw);
+    margin-bottom: calc(10 / 1920 * 100vw);
+    margin-left: calc(10 / 1920 * 100vw);
   }
 
   .siteDroite {
-    margin-bottom: calc(8 / 1920 * 100vw);
-    margin-right: calc(8 / 1920 * 100vw);
+    margin-bottom: calc(10 / 1920 * 100vw);
+    margin-right: calc(10 / 1920 * 100vw);
   }
 
   .enTete {
     margin-bottom: 0;
-    margin-left: calc(8 / 1920 * 100vw);
-    margin-top: calc(8 / 1920 * 100vw);
-    width: calc(100% - (16 / 1920 * 100vw));
+    margin-left: calc(10 / 1920 * 100vw);
+    margin-top: calc(10 / 1920 * 100vw);
+    width: calc(100% - (20 / 1920 * 100vw));
   }
 
   .lienSite,
@@ -621,7 +621,7 @@
   }
 
   .lienSite a img {
-    height: calc(33.05 / 1920 * 100vw);
+    height: calc(39.05 / 1920 * 100vw);
     margin: calc(6 / 1920 * 100vw);
   }
 
@@ -629,41 +629,41 @@
   .bu,
   .b {
     font-size: calc(18 / 1920 * 100vw);
-    height: calc(39.05 / 1920 * 100vw);
-    line-height: calc(38.05 / 1920 * 100vw);
-    margin-left: calc(12 / 1920 * 100vw);
-    width: calc(100% - calc(24 / 1920 * 100vw));
+    height: calc(41.05 / 1920 * 100vw);
+    line-height: calc(40.05 / 1920 * 100vw);
+    margin-left: calc(15 / 1920 * 100vw);
+    width: calc(100% - calc(30 / 1920 * 100vw));
   }
 
   .b a {
     font-size: calc(18 / 1920 * 100vw);
-    line-height: calc(38.05 / 1920 * 100vw);
-    margin-left: calc(6 / 1920 * 100vw);
-    max-width: calc(100% - calc(12 / 1920 * 100vw));
+    line-height: calc(40.05 / 1920 * 100vw);
+    margin-left: calc(8 / 1920 * 100vw);
+    max-width: calc(100% - calc(15 / 1920 * 100vw));
   }
 
   a.n,
   a.n:hover {
     font-size: calc(18 / 1920 * 100vw);
-    line-height: calc(38.05 / 1920 * 100vw);
+    line-height: calc(40.05 / 1920 * 100vw);
   }
 
   .b {
-    height: calc(39.05 / 1920 * 100vw);
-    line-height: calc(38.05 / 1920 * 100vw);
+    height: calc(41.05 / 1920 * 100vw);
+    line-height: calc(40.05 / 1920 * 100vw);
   }
 
   .b a,
   .b a:hover,
   a.n,
   a.n:hover {
-    line-height: calc(38.05 / 1920 * 100vw);
+    line-height: calc(40.05 / 1920 * 100vw);
   }
 
   .b a,
   a.n,
   a.n:hover {
     font-size: calc(18 / 1920 * 100vw);
-    line-height: calc(38.05 / 1920 * 100vw);
+    line-height: calc(40.05 / 1920 * 100vw);
   }
 }

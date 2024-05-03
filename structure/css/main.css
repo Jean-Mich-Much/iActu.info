@@ -410,24 +410,24 @@ main {
 
 .siteGauche,
 .siteDroite {
-  width: calc(50% - calc(12.05 / 1920 * 100vw));
+  width: calc(50% - calc(15.05 / 1920 * 100vw));
 }
 
 .siteGauche {
-  margin-bottom: calc(8 / 1920 * 100vw);
-  margin-left: calc(8 / 1920 * 100vw);
+  margin-bottom: calc(10 / 1920 * 100vw);
+  margin-left: calc(10 / 1920 * 100vw);
 }
 
 .siteDroite {
-  margin-right: calc(8 / 1920 * 100vw);
-  margin-bottom: calc(8 / 1920 * 100vw);
+  margin-right: calc(10 / 1920 * 100vw);
+  margin-bottom: calc(10 / 1920 * 100vw);
 }
 
 .enTete {
   margin-bottom: 0;
-  margin-left: calc(8 / 1920 * 100vw);
-  margin-top: calc(8 / 1920 * 100vw);
-  width: calc(100% - (16 / 1920 * 100vw));
+  margin-left: calc(10 / 1920 * 100vw);
+  margin-top: calc(10 / 1920 * 100vw);
+  width: calc(100% - (20 / 1920 * 100vw));
 }
 
 .enTete {
@@ -443,8 +443,8 @@ main {
 }
 
 .lienSite a img {
-  height: calc(33.05 / 1920 * 100vw);
-  margin: calc(8 / 1920 * 100vw);
+  height: calc(39.05 / 1920 * 100vw);
+  margin: calc(10 / 1920 * 100vw);
   margin-right: calc(6 / 1920 * 100vw);
 }
 
@@ -466,7 +466,7 @@ main {
 }
 
 .majSite span {
-  margin-right: calc(5 / 1920 * 100vw);
+  margin-right: calc(7 / 1920 * 100vw);
 }
 
 .majSite span span img {
@@ -482,22 +482,22 @@ main {
 .bu,
 .b {
   font-size: calc(18 / 1920 * 100vw);
-  height: calc(39.05 / 1920 * 100vw);
-  line-height: calc(38.05 / 1920 * 100vw);
-  margin-left: calc(12 / 1920 * 100vw);
-  width: calc(100% - calc(24 / 1920 * 100vw));
+  height: calc(41.05 / 1920 * 100vw);
+  line-height: calc(40.05 / 1920 * 100vw);
+  margin-left: calc(15 / 1920 * 100vw);
+  width: calc(100% - calc(30 / 1920 * 100vw));
 }
 
 .ay::before,
 .bu::before {
-  margin-left: calc(3 / 1920 * 100vw);
+  margin-left: calc(5 / 1920 * 100vw);
 }
 
 .b a {
   font-size: calc(18 / 1920 * 100vw);
-  line-height: calc(38.05 / 1920 * 100vw);
-  margin-left: calc(6 / 1920 * 100vw);
-  max-width: calc(100% - calc(12 / 1920 * 100vw));
+  line-height: calc(40.05 / 1920 * 100vw);
+  margin-left: calc(8 / 1920 * 100vw);
+  max-width: calc(100% - calc(15 / 1920 * 100vw));
 }
 
 main,
@@ -513,16 +513,16 @@ a:hover div {
 a.n,
 a.n:hover {
   font-size: calc(18 / 1920 * 100vw);
-  line-height: calc(38.05 / 1920 * 100vw);
+  line-height: calc(40.05 / 1920 * 100vw);
 }
 
 .b {
   align-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  height: calc(39.05 / 1920 * 100vw);
+  height: calc(41.05 / 1920 * 100vw);
   justify-content: flex-start;
-  line-height: calc(38.05 / 1920 * 100vw);
+  line-height: calc(40.05 / 1920 * 100vw);
   vertical-align: middle;
   white-space: nowrap;
 }
@@ -531,7 +531,7 @@ a.n:hover {
 .b a:hover,
 a.n,
 a.n:hover {
-  line-height: calc(38.05 / 1920 * 100vw);
+  line-height: calc(40.05 / 1920 * 100vw);
   margin-bottom: auto;
   margin-top: auto;
   white-space: nowrap;
@@ -541,7 +541,7 @@ a.n:hover {
 a.n,
 a.n:hover {
   font-size: calc(18 / 1920 * 100vw);
-  line-height: calc(38.05 / 1920 * 100vw);
+  line-height: calc(40.05 / 1920 * 100vw);
   margin-bottom: auto;
   margin-top: auto;
 }
