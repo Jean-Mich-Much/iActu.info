@@ -220,8 +220,6 @@ nav#bas a:hover div {
   }
 
   /* Media compatibilité ancien menu */
-}
-
 @media (max-width: 960px) {
   nav#haut a div,
   nav#bas a div {

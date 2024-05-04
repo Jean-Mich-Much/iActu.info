@@ -5,8 +5,11 @@
   align-items: center;
   background: radial-gradient(
     circle,
-    rgb(40, 130, 220) 5%,
-    rgb(0, 95, 190) 95%
+    rgb(40, 130, 220) 10%,
+    rgb(30, 125, 215) 30%,
+    rgb(20, 115, 210) 50%,
+    rgb(10, 105, 195) 70%,
+    rgb(0, 95, 190) 90%
   );
   display: grid;
   font-family: "Open Sans Condensed", sans-serif;
@@ -123,7 +126,7 @@
 
   .menu-link a.ma img {
     padding-bottom: 4px;
-    border-bottom: 4px solid rgba(0, 95, 190, 0.05);
+    border-bottom: 4px solid rgba(0, 95, 190, 0.02);
   }
 
   .menu-link a.ma div {
@@ -160,7 +163,7 @@
   }
 
   .menu-link a.ma div {
-    border-bottom: 6px solid rgba(0, 95, 190, 0.05);
+    border-bottom: 6px solid rgba(0, 95, 190, 0.02);
     display: flex;
     font-size: 18px;
     line-height: 34px;
@@ -199,7 +202,7 @@
   }
 
   .menu-link a.ma div {
-    border-bottom: calc(6 / 1920 * 100vw) solid rgba(0, 95, 190, 0.05);
+    border-bottom: calc(6 / 1920 * 100vw) solid rgba(0, 95, 190, 0.02);
     display: flex;
     font-size: calc(21 / 1920 * 100vw);
     line-height: calc(37 / 1920 * 100vw);
