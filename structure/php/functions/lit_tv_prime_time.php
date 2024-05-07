@@ -20,9 +20,9 @@
       $start = strtotime(substr($programme['start'], 0, -6));
       $stop = strtotime(substr($programme['stop'], 0, -6));
       $duree = ($stop - $start) / 60;
-      $debut = strtotime('+1 days', strtotime($choixdebut));
-      $fin = strtotime('+1 days', strtotime($choixfin));
-      if (date('Y-m-d', $start) == date('Y-m-d', strtotime('+1 days')) && $start >= $debut && $start <= $fin && $progCount < $nbreprogs && $duree > $choixduree) {
+      $debut = strtotime($choixdebut);
+      $fin = strtotime($choixfin);
+      if (date('Y-m-d', $start) == date('Y-m-d') && $start >= $debut && $start <= $fin && $progCount < $nbreprogs && $duree > $choixduree) {
         $fullTitle = htmlspecialchars(str_replace("\\", "", str_replace("\"", "’", str_replace("'", "’", @strip_tags(@mb_convert_encoding($programme->title, 'UTF-8', 'auto'))))));
         if ($fullTitle === false || mb_check_encoding($fullTitle, 'UTF-8') === false) {
           continue;
