@@ -31,7 +31,7 @@ $cache_secondes = 7195;
      <div class="sitesPar2">
       <span class="siteGauche">
        <div class="boite">
-        <?php lit_tv('xmltv_tnt', 'tv-02', '00:00:00', '23:59:59', '20', '72', '188', '200', false, true, false, false); ?>
+        <?php lit_tv('xmltv_tnt', 'tv-02', '00:00:00', '23:59:59', '15', '72', '188', '200', false, true, false, false); ?>
        </div>
       </span>
      </div><!-- FIN -->

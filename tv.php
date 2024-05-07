@@ -13,7 +13,7 @@ $cache_secondes = 7195;
     <html lang="fr">
 
         <head>
-            <?php @include 'structure/php/tv_head.php'; ?>
+            <?php @include 'structure/php/tv_prime_time_head.php'; ?>
         </head>
 
         <body id="body" lang="fr">
@@ -23,17 +23,13 @@ $cache_secondes = 7195;
             </nav>
             <?php @include 'structure/php/tv_sousmenuhaut.php'; ?>
             <?php @include 'structure/php/functions/unique.php'; ?>
-            <?php @include 'structure/php/functions/lit_tv.php'; ?>
+            <?php @include 'structure/php/functions/lit_tv_prime_time.php'; ?>
 
             <main id="main_sites">
                 <article class="sites" id="articles_sites">
                     <!-- DEBUT -->
-                    <div class="sitesPar2">
-                        <span class="siteGauche">
-                            <div class="boite">
-                                <?php lit_tv('xmltv_tnt', 'tv-01', '20:49:59', '23:59:59', '25', '2', '188', '200', false, true, true, true); ?>
-                            </div>
-                        </span>
+                    <div class="tv-grid">
+                        <?php lit_tv('xmltv_tnt', '20:44:59', '23:59:59', '25', '2', '100', '250', false, true, true, true); ?>
                     </div>
                     <!-- FIN -->
                 </article>
@@ -73,3 +69,4 @@ $cache_secondes = 7195;
 if (@filemtime('copys.time') < (time() - 10795)) {
     @include 'copys.php';
 }
+
