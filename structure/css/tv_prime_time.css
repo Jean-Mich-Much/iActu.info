@@ -91,7 +91,6 @@ nav#sousmenubas {
   border-right: 1px solid rgb(190, 110, 170, 0.2);
 }
 
-.ctv-logo,
 .cbfmtv,
 .cchrie25 {
   background-color: rgb(240, 245, 255);
@@ -205,59 +204,66 @@ nav#sousmenubas {
   }
 
   .ctf1,
-  .cc8,
-  .ccnews,
-  .clci {
-    border-bottom: calc(6 / 1920 * 100vw) solid rgb(235, 60, 55);
-  }
+.cc8,
+.ccnews,
+.clci {
+  border-bottom: calc(6 / 1920 * 100vw) solid rgb(235, 60, 55);
+  border-right: calc(1 / 1920 * 100vw) solid rgb(235, 60, 55, 0.2);
+}
 
-  .cfrance2,
-  .cw9,
-  .ccstar,
-  .cfranceinfo {
-    border-bottom: calc(6 / 1920 * 100vw) solid rgb(125, 180, 215);
-  }
+.cfrance2,
+.cw9,
+.ccstar,
+.cfranceinfo {
+  border-bottom: calc(6 / 1920 * 100vw) solid rgb(125, 180, 215);
+  border-right: calc(1 / 1920 * 100vw) solid rgb(25, 95, 255, 0.2);
+}
 
-  .cfrance3,
-  .ctmc,
-  .cgulli,
-  .cparispremire,
-  .crmcdcouverte {
-    border-bottom: calc(6 / 1920 * 100vw) solid rgb(235, 105, 45);
-  }
+.cfrance3,
+.ctmc,
+.cgulli,
+.cparispremire,
+.crmcdcouverte {
+  border-bottom: calc(6 / 1920 * 100vw) solid rgb(235, 105, 45);
+  border-right: calc(1 / 1920 * 100vw) solid rgb(235, 105, 45, 0.2);
+}
 
-  .ccanal,
-  .ctfx,
-  .ctf1sries-films,
-  .ccanalsport {
-    border-bottom: calc(6 / 1920 * 100vw) solid rgb(100, 180, 170);
-  }
+.ccanal,
+.ctfx,
+.ctf1sries-films,
+.ccanalsport {
+  border-bottom: calc(6 / 1920 * 100vw) solid rgb(100, 180, 170);
+  border-right: calc(1 / 1920 * 100vw) solid rgb(50, 195, 85, 0.2);
+}
 
-  .cfrance5,
-  .cnrj12,
-  .clachainelquipe,
-  .ccanalcinema {
-    border-bottom: calc(6 / 1920 * 100vw) solid rgb(230, 0, 120);
-  }
+.cfrance5,
+.cnrj12,
+.clachainelquipe,
+.ccanalcinema {
+  border-bottom: calc(6 / 1920 * 100vw) solid rgb(230, 0, 120);
+  border-right: calc(1 / 1920 * 100vw) solid rgb(230, 0, 120, 0.2);
+}
 
-  .cm6,
-  .clcp,
-  .c6ter,
-  .cplanete {
-    border-bottom: calc(6 / 1920 * 100vw) solid rgb(25, 175, 230);
-  }
+.cm6,
+.clcp,
+.c6ter,
+.cplanete {
+  border-bottom: calc(6 / 1920 * 100vw) solid rgb(25, 175, 230);
+  border-right: calc(1 / 1920 * 100vw) solid rgb(25, 175, 230, 0.2);
+}
 
-  .carte,
-  .cfrance4,
-  .crmcstory {
-    border-bottom: calc(6 / 1920 * 100vw) solid rgb(190, 110, 170);
-  }
+.carte,
+.cfrance4,
+.crmcstory {
+  border-bottom: calc(6 / 1920 * 100vw) solid rgb(190, 110, 170);
+  border-right: calc(1 / 1920 * 100vw) solid rgb(190, 110, 170, 0.2);
+}
 
-  .ctv-logo,
-  .cbfmtv,
-  .cchrie25 {
-    border-bottom: calc(6 / 1920 * 100vw) solid rgb(95, 190, 215);
-  }
+.cbfmtv,
+.cchrie25 {
+  border-bottom: calc(6 / 1920 * 100vw) solid rgb(95, 190, 215);
+  border-right: calc(1 / 1920 * 100vw) solid rgb(95, 190, 215, 0.2);
+}
 
   .tv-logo img {
     margin-left: calc(12 / 1920 * 100vw);
