@@ -9,7 +9,8 @@
   <span id="SousMenuBasListeDonateurs">
     <form>
       <select aria-label="Liste des donateurs" id="SousMenuBasListeDonateursSelect" name="Liste des donateurs" size="1" title="Liste des donateurs">
-        <option value="#SousMenuBasListeDonateursSelect" title="Donateur" aria-label="Donateur" selected="">👤 David J. 65€ - 30/04&nbsp;</option>
+        <option value="#SousMenuBasListeDonateursSelect" title="Donateur" aria-label="Donateur" selected="">👤 Sebastien D. 5€ - 03/05&nbsp;</option>
+        <option value="#SousMenuBasListeDonateursSelect" title="Donateur" aria-label="Donateur">👤 David J. 65€ - 30/04&nbsp;</option>
         <option value="#SousMenuBasListeDonateursSelect" title="Donateur" aria-label="Donateur">👤 Noël N. 10€ - 30/04&nbsp;</option>
         <option value="#SousMenuBasListeDonateursSelect" title="Donateur" aria-label="Donateur">👤 Christophe J. 5€ - 29/04&nbsp;</option>
         <option value="#SousMenuBasListeDonateursSelect" title="Donateur" aria-label="Donateur">👤 Philippe D. M. 10€ - 28/04&nbsp;</option>
@@ -45,7 +46,6 @@
         <option value="https://github.com/Jean-Mich-Much/iActu.info" title="Version" aria-label="Version 15">📜 Version 15&nbsp;</option>
         <option value="https://github.com/Jean-Mich-Much/iActu.info" title="Lien GitHub" aria-label="GitHub">😸Lien code source&nbsp;</option>
         <option value="https://github.com/Jean-Mich-Much/iActu.info" title="Copyright" aria-label="© iactu.info 2003">📰 ©️ iactu.info 2003&nbsp;</option>
-        <option value="#haut" title="Lien vers le haut de la page" aria-label="Lien vers le haut de la page">⬆️ Haut de page&nbsp;</option>
       </select>
     </form>
   </span>

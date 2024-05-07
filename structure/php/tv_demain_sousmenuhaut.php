@@ -17,7 +17,7 @@ $affiche_paypal_haut = false;
   <span id="SousMenuHautDates">
     <form>
       <select aria-label="Liste des dates" id="SousMenuHautDatesSelect" name="Dates" size="1" title="Liste des dates" onChange="window.location.href=this.value">
-        <option value="#haut" title="Liste des dates" aria-label="Liste des dates" selected="">📅&nbsp;Demain soir&nbsp;
+        <option value="#SousMenuHautDatesSelect" title="Liste des dates" aria-label="Liste des dates" selected="">📅&nbsp;Demain soir&nbsp;
         </option>
         <option value="tv.php" title="Aujourd’hui" aria-label="Aujourd’hui">📋&nbsp;Aujourd’hui&nbsp;</option>
         <option value="tv<?php echo date('j', strtotime('-1 days')) . '.html'; ?>" title="Hier" aria-label="Hier">📋&nbsp;Hier soir&nbsp;</option>
@@ -35,9 +35,8 @@ $affiche_paypal_haut = false;
 
       <form>
         <select aria-label="Divers" id="SousMenuHautDiversSelect" name="SousMenuDivers" size="1" title="Divers" onChange="window.location.href=this.value">
-          <option value="#haut" title="Divers" aria-label="Divers" selected="">📜 Liens divers&nbsp;</option>
+          <option value="#SousMenuHautDiversSelect" title="Divers" aria-label="Divers" selected="">📜 Liens divers&nbsp;</option>
           <option value="https://github.com/Jean-Mich-Much/iActu.info" title="Lien GitHub" aria-label="GitHub">😸Code source&nbsp;</option>
-          <option value="#coucou" title="Lien vers le bas de la page" aria-label="Lien vers le bas de la page">⬇️ Bas de page&nbsp;</option>
         </select>
       </form>
 

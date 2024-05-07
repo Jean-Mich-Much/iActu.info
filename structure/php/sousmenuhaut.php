@@ -9,7 +9,7 @@ $affiche_paypal_haut = false;
   <span id="SousMenuHautThemes">
     <form>
       <select aria-label="Thèmes" id="SousMenuHautThemesSelect" name="Thèmes" size="1" title="Liste des thèmes" onChange="window.location.href=this.value">
-        <option value="#haut" title="Liste des thèmes" aria-label="Liste des thèmes" selected="">🎨&nbsp;Thèmes&nbsp;</option>
+        <option value="#SousMenuHautThemesSelect" title="Liste des thèmes" aria-label="Liste des thèmes" selected="">🎨&nbsp;Thèmes&nbsp;</option>
         <option value="https://iactu.info/" title="Lien thème clair" aria-label="Lien thème clair">🎨&nbsp;Clair&nbsp;</option>
         <option value="https://iactu.info/sombre.php" title="Lien thème sombre" aria-label="Lien thème sombre">🎨&nbsp;Sombre&nbsp;</option>
         <option value="https://iactu.info/ardoise.php" title="Lien thème ardoise" aria-label="Lien thème ardoise">🎨&nbsp;Ardoise&nbsp;</option>
@@ -21,7 +21,7 @@ $affiche_paypal_haut = false;
   <span id="SousMenuHautPages">
     <form>
       <select aria-label="Pages" id="SousMenuHautPagesSelect" name="Pages" size="1" title="Liste des pages" onChange="window.location.href=this.value">
-        <option value="#haut" title="Liste des pages" aria-label="Liste des pages" selected="">📃&nbsp;
+        <option value="#SousMenuHautPagesSelect" title="Liste des pages" aria-label="Liste des pages" selected="">📃&nbsp;
           <?php echo $titre_page; ?>&nbsp;
         </option>
         <option value="https://iactu.info/" title="Lien thème clair" aria-label="Lien thème clair">🎨&nbsp;Clair&nbsp;</option>
@@ -44,25 +44,26 @@ $affiche_paypal_haut = false;
     <?php if ($affiche_paypal_haut) { ?>
       <form>
         <select aria-label="Liste des donateurs" id="SousMenuHautListeDonateurs" name="Liste des donateurs" size="1" title="Liste des donateurs" onChange="window.location.href=this.value">
-        <option value="#haut" title="Donateur" aria-label="Donateur" selected="">👤 David J. 65€ - 30/04&nbsp;</option>
-        <option value="#haut" title="Donateur" aria-label="Donateur" selected="">👤 Noël N. 10€ - 30/04&nbsp;</option>
-        <option value="#haut" title="Donateur" aria-label="Donateur">👤 Christophe J. 5€ - 29/04&nbsp;</option>
-        <option value="#haut" title="Donateur" aria-label="Donateur">👤 Philippe D. M. 10€ - 28/04&nbsp;</option>
-        <option value="#haut" title="Donateur" aria-label="Donateur">👤 Olivier T. 10€ - 28/04&nbsp;</option>
-        <option value="#haut" title="Donateur" aria-label="Donateur">👤 Philippe D. 10€ - 25/04&nbsp;</option>
-        <option value="#haut" title="Donateur" aria-label="Donateur">👤 Jérémy B. 10€ - 05/04&nbsp;</option>
-        <option value="#haut" title="Donateur" aria-label="Donateur">👤 Xavier M. 5€ - 05/04&nbsp;</option>
-        <option value="#haut" title="Donateur" aria-label="Donateur">👤 Sebastien D. 5€ - 03/04&nbsp;</option>
-          <option value="#haut" title="Visiteurs uniques, chaque visiteur est compté une seule fois par jour" aria-label="Visiteurs uniques">📈 Visiteurs :
+        <option value="#SousMenuHautListeDonateurs" title="Donateur" aria-label="Donateur" selected="">👤 Sebastien D. 5€ - 03/05&nbsp;</option>
+        <option value="#SousMenuHautListeDonateurs" title="Donateur" aria-label="Donateur">👤 David J. 65€ - 30/04&nbsp;</option>
+        <option value="#SousMenuHautListeDonateurs" title="Donateur" aria-label="Donateur"👤 Noël N. 10€ - 30/04&nbsp;</option>
+        <option value="#SousMenuHautListeDonateurs" title="Donateur" aria-label="Donateur">👤 Christophe J. 5€ - 29/04&nbsp;</option>
+        <option value="#SousMenuHautListeDonateurs" title="Donateur" aria-label="Donateur">👤 Philippe D. M. 10€ - 28/04&nbsp;</option>
+        <option value="#SousMenuHautListeDonateurs" title="Donateur" aria-label="Donateur">👤 Olivier T. 10€ - 28/04&nbsp;</option>
+        <option value="#SousMenuHautListeDonateurs" title="Donateur" aria-label="Donateur">👤 Philippe D. 10€ - 25/04&nbsp;</option>
+        <option value="#SousMenuHautListeDonateurs" title="Donateur" aria-label="Donateur">👤 Jérémy B. 10€ - 05/04&nbsp;</option>
+        <option value="#SousMenuHautListeDonateurs" title="Donateur" aria-label="Donateur">👤 Xavier M. 5€ - 05/04&nbsp;</option>
+        <option value="#SousMenuHautListeDonateurs" title="Donateur" aria-label="Donateur">👤 Sebastien D. 5€ - 03/04&nbsp;</option>
+          <option value="#SousMenuHautListeDonateurs" title="Visiteurs uniques, chaque visiteur est compté une seule fois par jour" aria-label="Visiteurs uniques">📈 Visiteurs :
             <?php @readfile("Stats/visiteurs_jour_" . date('d') . ".txt"); ?>&nbsp;
           </option>
-          <option value="#haut" title="Visiteurs uniques pour hier" aria-label="Visiteurs uniques pour hier">📈 Hier :
+          <option value="#SousMenuHautListeDonateurs" title="Visiteurs uniques pour hier" aria-label="Visiteurs uniques pour hier">📈 Hier :
             <?php @readfile("Stats/visiteurs_jour_" . date('d', strtotime("-1 day")) . ".txt"); ?>&nbsp;
           </option>
-          <option value="#haut" title="Visites" aria-label="Visites">📈 Visites :
+          <option value="#SousMenuHautListeDonateurs" title="Visites" aria-label="Visites">📈 Visites :
             <?php @readfile("Stats/visites_jour_" . date('d') . ".txt"); ?>&nbsp;
           </option>
-          <option value="#haut" title="Visites pour hier" aria-label="Visites pour hier">📈 Hier :
+          <option value="#SousMenuHautListeDonateurs" title="Visites pour hier" aria-label="Visites pour hier">📈 Hier :
             <?php @readfile("Stats/visites_jour_" . date('d', strtotime("-1 day")) . ".txt"); ?>&nbsp;
           </option>
           <option value="https://github.com/Jean-Mich-Much/iActu.info" title="Lien GitHub" aria-label="GitHub">😸Code source&nbsp;</option>
@@ -74,17 +75,17 @@ $affiche_paypal_haut = false;
 
       <form>
         <select aria-label="Stats et diver" id="SousMenuHautStatsSelect" name="SousMenuStats" size="1" title="Stats" onChange="window.location.href=this.value">
-          <option value="#haut" title="Stats" aria-label="Stats" selected="">📈 Statistiques&nbsp;</option>
-          <option value="#haut" title="Visiteurs uniques, chaque visiteur est compté une seule fois par jour" aria-label="Visiteurs uniques">📈 Visiteurs :
+          <option value="#SousMenuHautStatsSelect" title="Stats" aria-label="Stats" selected="">📈 Statistiques&nbsp;</option>
+          <option value="#SousMenuHautStatsSelect" title="Visiteurs uniques, chaque visiteur est compté une seule fois par jour" aria-label="Visiteurs uniques">📈 Visiteurs :
             <?php @readfile("Stats/visiteurs_jour_" . date('d') . ".txt"); ?>&nbsp;
           </option>
-          <option value="#haut" title="Visiteurs uniques pour hier" aria-label="Visiteurs uniques pour hier">📈 Hier :
+          <option value="#SousMenuHautStatsSelect" title="Visiteurs uniques pour hier" aria-label="Visiteurs uniques pour hier">📈 Hier :
             <?php @readfile("Stats/visiteurs_jour_" . date('d', strtotime("-1 day")) . ".txt"); ?>&nbsp;
           </option>
-          <option value="#haut" title="Visites" aria-label="Visites">📈 Visites :
+          <option value="#SousMenuHautStatsSelect" title="Visites" aria-label="Visites">📈 Visites :
             <?php @readfile("Stats/visites_jour_" . date('d') . ".txt"); ?>&nbsp;
           </option>
-          <option value="#haut" title="Visites pour hier" aria-label="Visites pour hier">📈 Hier :
+          <option value="#SousMenuHautStatsSelect" title="Visites pour hier" aria-label="Visites pour hier">📈 Hier :
             <?php @readfile("Stats/visites_jour_" . date('d', strtotime("-1 day")) . ".txt"); ?>&nbsp;
           </option>
         </select>
@@ -96,7 +97,7 @@ $affiche_paypal_haut = false;
   <span id="SousMenuHautDates">
     <form>
       <select aria-label="Liste des dates" id="SousMenuHautDatesSelect" name="Dates" size="1" title="Liste des dates" onChange="window.location.href=this.value">
-        <option value="#haut" title="Liste des dates" aria-label="Liste des dates" selected="">📅&nbsp;
+        <option value="#SousMenuHautDatesSelect" title="Liste des dates" aria-label="Liste des dates" selected="">📅&nbsp;
           <?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w')))))))); ?>
           <?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j') . 'jour')); ?>
           <?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n'))))))))))))); ?>&nbsp;
@@ -157,9 +158,8 @@ $affiche_paypal_haut = false;
 
       <form>
         <select aria-label="Divers" id="SousMenuHautDiversSelect" name="SousMenuDivers" size="1" title="Divers" onChange="window.location.href=this.value">
-          <option value="#haut" title="Divers" aria-label="Divers" selected="">📜 Liens divers&nbsp;</option>
+          <option value="#SousMenuHautDiversSelect" title="Divers" aria-label="Divers" selected="">📜 Liens divers&nbsp;</option>
           <option value="https://github.com/Jean-Mich-Much/iActu.info" title="Lien GitHub" aria-label="GitHub">😸Code source&nbsp;</option>
-          <option value="#coucou" title="Lien vers le bas de la page" aria-label="Lien vers le bas de la page">⬇️ Bas de page&nbsp;</option>
         </select>
       </form>
 
