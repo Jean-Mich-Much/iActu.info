@@ -1,7 +1,7 @@
-<?php function lit_tv($fichier, $css_class, $choixdebut, $choixfin, $choixduree, $nbreprogs, $longdesc, $longtitle, $afficheimg, $afficheemoji, $affichedesc, $afficheimg_src)
+<?php function lit_tv($filename, $choicestart, $choiceend, $choiceduration, $howmanyprogs, $longdesc, $longtitle, $showimg, $showcat, $showdesc, $showimg_src, $starttomorow, $endtomorow)
 {
   try {
-    $xml = simplexml_load_file('News/copy/' . $fichier . '.xml');
+    $xml = simplexml_load_file('News/copy/' . $filename . '.xml');
     $progs = $xml->xpath('//programme');
     usort($progs, function ($a, $b) {
       return strtotime(substr($a['start'], 0, -6)) - strtotime(substr($b['start'], 0, -6));
@@ -9,19 +9,22 @@
   } catch (Exception $e) {
     return;
   }
-  echo '<div class="' . $css_class . '">';
   foreach ($xml->channel as $channel) {
-    echo '<div class="tv-chaines"><div class="tv-chaine"><span class="tv-chaine-nom"><span class="tv-chaine-logo"></span>' . $channel->{'display-name'} . '</span></div><div class="tv-chaine-listeprogs">';
     $progCount = 0;
+    $namechannelimg = strtolower(preg_replace('/[^A-Za-z0-9\-]/', '', $channel->{'display-name'}));
+    $pathchannelimg = "structure/img/tv/channels/" . $namechannelimg . "90tv.webp";
+    echo '<div class="tv-channel c' . $namechannelimg . '"><div class="tv-logo"><img src="' . $pathchannelimg . '" width="80" height="240" alt="' . $channel->{'display-name'} . '" title="' . $channel->{'display-name'} . '" id="' . $namechannelimg . date('His') . '"></div>';
     foreach ($progs as $programme) {
       if ((string) $programme['channel'] != (string) $channel['id'])
         continue;
       $start = strtotime(substr($programme['start'], 0, -6));
       $stop = strtotime(substr($programme['stop'], 0, -6));
       $duree = ($stop - $start) / 60;
-      $debut = strtotime($choixdebut);
-      $fin = strtotime($choixfin);
-      if (date('Y-m-d', $start) == date('Y-m-d') && $start >= $debut && $start <= $fin && $progCount < $nbreprogs && $duree > $choixduree) {
+      $debut = strtotime($choicestart);
+      $fin = strtotime($choiceend);
+      $debutplus1 = strtotime('+1 days', strtotime($starttomorow));
+      $finplus1 = strtotime('+1 days', strtotime($endtomorow));
+      if (((date('Y-m-d', $start) == date('Y-m-d') && $start >= $debut && $start <= $fin) or (date('Y-m-d', $start) == date('Y-m-d', strtotime('+1 days')) && $start >= $debutplus1 && $start <= $finplus1)) && $progCount < $howmanyprogs && $duree > $choiceduration) {
         $fullTitle = htmlspecialchars(str_replace("\\", "", str_replace("\"", "’", str_replace("'", "’", @strip_tags(@mb_convert_encoding($programme->title, 'UTF-8', 'auto'))))));
         if ($fullTitle === false || mb_check_encoding($fullTitle, 'UTF-8') === false) {
           continue;
@@ -49,109 +52,119 @@
         $desclong = empty($desclong) ? "Sans descriptif" : $desclong;
 
         $emoji = '💤';
-        $progimg = 'autres';
+        $imgcat = 'autres';
+        $csscat = '';
         switch ($programme->category) {
           case 'Film':
             $emoji = '🎞️';
-            $progimg = 'film';
+            $imgcat = 'film';
+            $csscat = ' class="tv-cat-film"';
             break;
           case 'Série':
             $emoji = '🎬';
-            $progimg = 'serie';
+            $imgcat = 'serie';
+            $csscat = ' class="tv-cat-serie"';
             break;
           case 'Documentaire':
             $emoji = '🚀';
-            $progimg = 'documentaire';
+            $imgcat = 'documentaire';
             break;
           case 'Magazine':
             $emoji = '🗞️';
-            $progimg = 'divertissement';
+            $imgcat = 'divertissement';
             break;
           case 'Info-Météo':
             $emoji = '📰';
-            $progimg = 'documentaire';
+            $imgcat = 'documentaire';
             break;
           case 'Divertissement':
             $emoji = '🎭';
-            $progimg = 'divertissement';
+            $imgcat = 'divertissement';
             break;
           case 'Magazine du cinéma':
             $emoji = '🎭';
-            $progimg = 'divertissement';
+            $imgcat = 'divertissement';
             break;
           case 'Sport':
             $emoji = '⚽';
-            $progimg = 'sport';
+            $imgcat = 'sport';
             break;
           case 'Football':
             $emoji = '⚽';
-            $progimg = 'sport';
+            $imgcat = 'sport';
             break;
           case 'Rugby':
             $emoji = '🏉';
-            $progimg = 'sport';
+            $imgcat = 'sport';
             break;
           case 'Tennis':
             $emoji = '🎾';
-            $progimg = 'sport';
+            $imgcat = 'sport';
             break;
           case 'Golf':
             $emoji = '⛳';
-            $progimg = 'sport';
+            $imgcat = 'sport';
             break;
           case 'Rallye':
             $emoji = '🏎️';
-            $progimg = 'sport';
+            $imgcat = 'sport';
             break;
           case 'Musique':
             $emoji = '🎵';
-            $progimg = 'divertissement';
+            $imgcat = 'divertissement';
             break;
           case 'Jeunesse':
             $emoji = '🐻';
-            $progimg = 'jeunesse';
+            $imgcat = 'jeunesse';
             break;
           case 'Evénement':
             $emoji = '🎭';
-            $progimg = 'divertissement';
+            $imgcat = 'divertissement';
             break;
           case 'Culture':
             $emoji = '🧐️';
-            $progimg = 'divertissement';
+            $imgcat = 'divertissement';
             break;
           case 'Action':
             $emoji = '🎞️';
-            $progimg = 'film';
+            $imgcat = 'film';
+            $csscat = ' class="tv-cat-film"';
             break;
           case 'Comédie dramatique':
             $emoji = '🎞️';
-            $progimg = 'film';
+            $imgcat = 'film';
+            $csscat = ' class="tv-cat-film"';
             break;
           case 'Comédie':
             $emoji = '🎞️';
-            $progimg = 'film';
+            $imgcat = 'film';
+            $csscat = ' class="tv-cat-film"';
             break;
           case 'Drame':
             $emoji = '🎞️';
-            $progimg = 'film';
+            $imgcat = 'film';
+            $csscat = ' class="tv-cat-film"';
             break;
           case 'Film policier':
             $emoji = '🎞️';
-            $progimg = 'film';
+            $imgcat = 'film';
+            $csscat = ' class="tv-cat-film"';
             break;
           case 'Biographie':
             $emoji = '🎞️';
-            $progimg = 'film';
+            $imgcat = 'film';
+            $csscat = ' class="tv-cat-film"';
             break;
         }
 
-        $progpicture = ' ';
-        if ($afficheimg) {
-          $progpicture = '<img src="structure/img/tv/' . $progimg . '.webp" width="128" height="128" class="prog-img">';
+        $picturecat = '';
+        if ($showimg) {
+          $picturecat = "structure/img/tv/' . $imgcat . '.webp";
         }
 
-        $progpicture_src = '';
-        if ($afficheimg_src) {
+        $picture_src = '';
+        $thumbnail = '';
+        if ($showimg_src) {
           $imgsrc = filter_var($imgsrc, FILTER_SANITIZE_URL);
           if (filter_var($imgsrc, FILTER_VALIDATE_URL)) {
             $extension = pathinfo($imgsrc, PATHINFO_EXTENSION);
@@ -170,42 +183,51 @@
                 $mime = finfo_file($finfo, $destinationPath);
                 finfo_close($finfo);
                 if (!preg_match('/^image\//', $mime)) {
-                  $destinationPath = "structure/img/tv/" . $progimg . ".webp";
+                  $destinationPath = "structure/img/tv/" . $imgcat . ".webp";
                 }
               } else {
-                $destinationPath = "structure/img/tv/" . $progimg . ".webp";
+                $destinationPath = "structure/img/tv/" . $imgcat . ".webp";
               }
             }
             if (file_exists($destinationPath)) {
-              $progpicture_src = '<img src="' . $destinationPath . '" width="128" height="72" class="prog-img-ratio-16-9">';
+              $picture_src = $destinationPath;
             } else {
-              $destinationPath = "structure/img/tv/" . $progimg . ".webp";
-              $progpicture_src = '<img src="' . $destinationPath . '" width="128" height="72" class="prog-img-ratio-16-9">';
+              $destinationPath = "structure/img/tv/" . $imgcat . ".webp";
+              $picture_src = $destinationPath;
             }
           } else {
-            $destinationPath = "structure/img/tv/" . $progimg . ".webp";
-            $progpicture_src = '<img src="' . $destinationPath . '" width="128" height="72" class="prog-img-ratio-16-9">';
+            $destinationPath = "structure/img/tv/" . $imgcat . ".webp";
+            $picture_src = $destinationPath;
           }
+          $thumbnail = '<div class="tv-cat-img"><img src="' . $picturecat . $picture_src . '" width="160" height="90" alt="' . $channel->{'display-name'} . '" title="' . $title . '" id="' . $picturecat . $picture_src . date(" Hi", $start) . '"></div>';
         }
 
-        $progemoji = ' ';
-        if ($afficheemoji) {
-          $progemoji = '<div class="tv-chaine-prog-contenu-tv-chaine-prog-contenu-categorie">' . $emoji . '' . $programme->category . '</div>';
+        $category = '';
+        if ($showcat) {
+          $category = '<div' . $csscat . '>' . $emoji . $programme->category . '</div>';
         }
 
-        $progdesc = ' ';
-        if ($affichedesc) {
-          $progdesc = '<div class="tv-chaine-prog-contenu-tv-chaine-prog-contenu-desc">' . $desc . '</div>';
+        $descshort = '';
+        $showdescshort = '';
+        if ($showdesc) {
+          $descshort = str_replace('Aucune description', '', $desc);
+          $showdescshort = '<div class="tv-desc" title="📃' . $desclong . '">' . str_replace('Info-Météo', 'Infos', $category) . '<div class="tv-duree">⏱️' . $dureeFormatee . '</div><div class="tv-descshort">' . $descshort . '</div></div> ';
         }
 
-        echo '<div class="tv-chaine-prog" title="⏳Durée :&nbsp;' . $dureeFormatee . '&nbsp;|&nbsp;📃Synopsis :&nbsp;' . $desclong . '">' . $progpicture . $progpicture_src . '<div class="tv-chaine-prog-contenu"><div class="tv-chaine-prog-contenu-heure">' . date("H:i", $start) . '</div><div class="tv-chaine-prog-contenu-titre">' . $title . '' . $progemoji . '</div>' . $progdesc . '</div></div>';
+        echo '
+       <div class="tv-master">
+        <div class="tv-prog">
+        <div class="tv-start-title">
+         <div class="tv-start">' . date("H:i", $start) . '</div>
+         <div class="tv-title" title="&nbsp;' . $title . '&nbsp;">' . $title . '</div></div>' . $thumbnail . $showdescshort . ' 
+         </div>
+      </div>';
 
         $progCount++;
       }
     }
-    echo '</div></div>';
+    echo '</div>';
   }
-  echo '</div>';
 
   $delfiles = glob('News/tmp/*');
   $delnow = time();
@@ -224,5 +246,5 @@ function formatDuree($minutes)
 {
   $heures = floor($minutes / 60);
   $minutes = $minutes % 60;
-  return $heures > 0 ? $heures . "h " . str_pad($minutes, 2, "0", STR_PAD_LEFT) . "mn" : $minutes . " mn";
+  return $heures > 0 ? $heures . "h" . str_pad($minutes, 2, "0", STR_PAD_LEFT) . "mn" : $minutes . " mn";
 }
