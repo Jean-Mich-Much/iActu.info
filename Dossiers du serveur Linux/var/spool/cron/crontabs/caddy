@@ -5,7 +5,10 @@
 
 3,8,13,18,23,28,33,38,43,48,53 * * * * cd /_ && ./copies.sh
 
-3 3 * * * cd /_ && ./copie_tv_xml.sh
+3 2 * * * cd /_/News/copy && wget -O "xmltv_tnt.xml" "https://xmltvfr.fr/xmltv/xmltv_tnt.xml" -q --limit-rate=16384k --no-check-certificate
+3 14 * * * cd /_/News/copy && wget -O "xmltv_tnt.xml" "https://xmltvfr.fr/xmltv/xmltv_tnt.xml" -q --limit-rate=16384k --no-check-certificate
+
+0 0-2,4-23 * * * /usr/bin/php-cgi8.3 /_/tv.php > /dev/null 2>&1
 
 0,5,10,15,20,25,30,35,40,45,50,55 * * * * /usr/bin/php-cgi8.3 /_/technologie.php > /dev/null 2>&1
 0,5,10,15,20,25,30,35,40,45,50,55 * * * * /usr/bin/php-cgi8.3 /_/apple.php > /dev/null 2>&1
