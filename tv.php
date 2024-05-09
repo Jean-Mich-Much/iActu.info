@@ -13,7 +13,7 @@ $cache_secondes = 7195;
     <html lang="fr">
 
         <head>
-            <?php @include 'structure/php/tv_prime_time_head.php'; ?>
+            <?php @include 'structure/php/tv_head.php'; ?>
         </head>
 
         <body id="body" lang="fr">
@@ -21,21 +21,18 @@ $cache_secondes = 7195;
             <nav id="top">
                 <?php @include 'structure/php/menutop.php'; ?>
             </nav>
-            <?php @include 'structure/php/tv_sousmenuhaut.php'; ?>
             <?php @include 'structure/php/functions/unique.php'; ?>
-            <?php @include 'structure/php/functions/lit_tv_prime_time.php'; ?>
+            <?php @include 'structure/php/functions/lit_tv.php'; ?>
 
             <main id="main_sites">
                 <article class="sites" id="articles_sites">
                     <!-- DEBUT -->
                     <div class="tv-grid">
-                        <?php lit_tv('xmltv_tnt', '20:44:59', '23:59:59', '25', '2', '100', '250', false, true, true, true); ?>
+                        <?php lit_tv('xmltv_tnt', '20:49:59', '23:59:59', '25', '2', '100', '250', false, true, true, true, '00:00:00', '02:59:59'); ?>
                     </div>
                     <!-- FIN -->
                 </article>
             </main>
-
-            <?php @include 'structure/php/tv_sousmenubas.php'; ?>
             <nav id="bot">
                 <?php @include 'structure/php/menubot.php'; ?>
             </nav>
