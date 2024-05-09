@@ -1,338 +1,419 @@
 /* Thème tv */
-
-.siteGauche,
-.siteDroite {
-  width: calc(100% - 16px);
+body,
+main,
+article {
+  background-color: rgb(253, 254, 255);
 }
 
-.siteGauche {
-  margin-bottom: 8px;
-  margin-left: 8px;
+nav#sousmenu {
+  border-bottom: 2px solid rgb(235, 105, 45, 0.3);
+  margin-bottom: 0;
 }
 
-.siteDroite {
-  margin-bottom: 8px;
-  margin-left: 8px;
+nav#sousmenubas {
+  border-top: 0;
+  margin-top: 0;
 }
 
-.boite {
-  background: rgba(237, 238, 239, 1);
-  border: 0;
-}
-
-.tv-01 {
-  background-color: rgba(253, 254, 255, 1);
-  border: 1px solid rgba(157, 158, 159, 0.85);
+.tv-grid {
+  background-color: rgb(253, 254, 255);
   display: grid;
-  margin-bottom: -1px;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
 }
 
-.tv-01 .tv-chaines {
+.tv-channel {
   display: grid;
-}
-
-.tv-01 .tv-chaine {
-  align-content: center;
-  align-items: center;
-  background-color: rgba(245, 246, 247, 1);
-  border-bottom: 1px solid rgba(157, 158, 159, 0.85);
-  display: flex;
-  flex-wrap: nowrap;
+  grid-template-columns: 45px repeat(auto-fill, calc(50% - 45px));
   justify-content: center;
 }
 
-.tv-01 .tv-chaine .tv-chaine-nom {
-  align-content: center;
-  align-items: center;
-  color: rgba(70, 75, 80, 0.95);
-  display: inline-flex;
-  font-family: "Open Sans Condensed", sans-serif;
-  font-size: 20px;
-  flex-wrap: nowrap;
-  line-height: 40px;
-  justify-content: center;
+.ctf1,
+.cc8,
+.ccnews,
+.clci {
+  background-color: rgb(255, 240, 235);
+  border-bottom: 6px solid rgb(235, 60, 55);
+  border-right: 1px solid rgba(235, 60, 55, 0.2);
 }
 
-.tv-01 .tv-chaine-listeprogs {
-  border-bottom: calc(1 / 1920 * 100vw) solid rgba(157, 158, 159, 0.85);
-  display: grid;
-  grid-column-gap: 9px;
-  grid-row-gap: 9px;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  justify-content: center;
-  padding: 9px;
+.cfrance2,
+.cw9,
+.ccstar,
+.cfranceinfo {
+  background-color: rgb(240, 245, 250);
+  border-bottom: 6px solid rgb(125, 180, 215);
+  border-right: 1px solid rgb(25, 95, 255, 0.2);
 }
 
-.tv-01 .tv-chaine-listeprogs .tv-chaine-prog:first-child {
-  border-right: 1px solid rgba(167, 168, 169, 0.85);
+.cfrance3,
+.ctmc,
+.cgulli,
+.cparispremire,
+.crmcdcouverte {
+  background-color: rgb(255, 250, 235);
+  border-bottom: 6px solid rgb(235, 105, 45);
+  border-right: 1px solid rgba(235, 105, 45, 0.2);
 }
 
-.tv-01 .tv-chaine-listeprogs .tv-chaine-prog {
-  align-content: center;
+.ccanal,
+.ctfx,
+.ctf1sries-films,
+.ccanalsport {
+  background-color: rgb(220, 245, 225);
+  border-bottom: 6px solid rgb(100, 180, 170);
+  border-right: 1px solid rgba(50, 195, 85, 0.2);
+}
+
+.cfrance5,
+.cnrj12,
+.clachainelquipe,
+.ccanalcinema {
+  background-color: rgb(255, 240, 245);
+  border-bottom: 6px solid rgb(230, 0, 120);
+  border-right: 1px solid rgba(230, 0, 120, 0.2);
+}
+
+.cm6,
+.clcp,
+.c6ter,
+.cplanete {
+  background-color: rgb(240, 250, 255);
+  border-bottom: 6px solid rgb(25, 175, 230);
+  border-right: 1px solid rgba(25, 175, 230, 0.2);
+}
+
+.carte,
+.cfrance4,
+.crmcstory {
+  background-color: rgb(245, 240, 250);
+  border-bottom: 6px solid rgb(190, 110, 170);
+  border-right: 1px solid rgba(190, 110, 170, 0.2);
+}
+
+.cbfmtv,
+.cchrie25 {
+  background-color: rgb(240, 245, 255);
+  border-bottom: 6px solid rgb(95, 190, 215);
+  border-right: 1px solid rgba(95, 190, 215, 0.2);
+}
+
+.tv-logo {
   align-items: start;
-  display: grid;
-  grid-template-columns: 128px 1fr;
-  grid-template-rows: 1fr;
+  align-content: start;
   justify-content: start;
+  justify-items: start;
+  display: flex;
+  height: 100%;
+  width: 100%;
 }
 
-.tv-01 .tv-chaine-listeprogs .tv-chaine-prog:hover {
-  background-color: rgba(255, 253, 239, 0.95);
-  outline: 1px solid rgba(167, 168, 169, 0.85);
+.tv-logo img {
+  height: auto;
+  margin-left: 0;
+  margin-top: 16px;
+  width: calc(100% - 15px);
+  aspect-ratio: 1 / 3;
 }
 
-.tv-01 .tv-chaine-listeprogs .tv-chaine-prog .tv-chaine-prog-contenu-heure {
-  align-content: center;
+.tv-master {
+  align-items: start;
+  align-content: start;
+  justify-content: start;
+  justify-items: start;
+  display: grid;
+  margin: 6px auto;
+  height: 100%;
+  width: 100%;
+}
+
+.tv-prog {
+  align-items: start;
+  align-content: start;
+  justify-content: start;
+  justify-items: start;
+  display: grid;
+  height: 100%;
+  width: calc(100% - 15px);
+}
+
+.tv-start-title {
   align-items: center;
-  color: rgba(45, 75, 105, 0.95);
-  display: inline-flex;
-  font-family: "Open Sans Condensed", sans-serif;
-  flex-wrap: nowrap;
-  line-height: 25px;
-  margin-left: 9px;
+  align-content: start;
+  justify-content: start;
+  justify-items: start;
+  display: flex;
+  height: 52px;
+  width: 100%;
 }
 
-.tv-01 .tv-chaine-listeprogs .tv-chaine-prog .tv-chaine-prog-contenu-titre {
-  align-content: center;
-  align-items: center;
-  color: rgba(65, 75, 85, 0.95);
-  display: inline-flex;
+.tv-start {
+  background-color: rgba(35, 45, 65, 0.8);
+  border-radius: 31px 31px;
+  color: rgba(246, 249, 255, 0.95);
   font-family: "Open Sans Condensed", sans-serif;
-  flex-wrap: nowrap;
-  font-size: 19px;
-  line-height: 25px;
-  margin: 0 9px 0 6px;
-}
-
-.tv-01
-  .tv-chaine-listeprogs
-  .tv-chaine-prog
-  .tv-chaine-prog-contenu-titre
-  .tv-chaine-prog-contenu-tv-chaine-prog-contenu-categorie {
-  align-self: center;
-  color: rgba(25, 55, 85, 0.95);
-  flex-wrap: nowrap;
   font-size: 17px;
-  line-height: 25px;
-  margin: 0 3px 0 6px;
+  display: inline-flex;
+  flex-wrap: nowrap;
   overflow: hidden;
-  text-wrap: nowrap;
+  line-height: 23px;
+  margin: 7px 1px;
+  padding: 4px 8px;
+  min-width: 52px;
+  text-align: center;
+  vertical-align: middle;
 }
 
-.tv-01
-  .tv-chaine-listeprogs
-  .tv-chaine-prog
-  .tv-chaine-prog-contenu-tv-chaine-prog-contenu-desc {
-  color: rgba(75, 80, 85, 0.95);
-  display: flex;
-  flex-wrap: nowrap;
-  font-size: 17px;
-  line-height: 22px;
-  margin: 0 9px;
-}
-
-.prog-img {
-  display: flex;
-  height: calc(128 / 1920 * 100vw);
-  min-height: 128px;
-  min-width: 128px;
-  opacity: 1;
-  width: calc(128 / 1920 * 100vw);
-}
-
-.prog-img-ratio-16-9 {
-  display: flex;
-  height: calc(72 / 1920 * 100vw);
-  min-height: 72px;
-  min-width: 128px;
-  opacity: 1;
-  outline: 1px solid rgba(15, 20, 25, 0.85);
-  width: calc(128 / 1920 * 100vw);
-}
-
-.tv-chaine-logo {
-  border-radius: 2px;
-  color: rgba(0, 95, 190, 0.95);
+.tv-title {
+  color: rgba(35, 45, 65, 0.9);
+  font-family: "Open Sans Condensed", sans-serif;
   display: inline-flex;
-  height: 14px;
-  justify-content: center;
-  margin-left: -16px;
-  margin-right: 8px;
-  opacity: 0.95;
-  position: relative;
-  width: 20px;
+  flex-wrap: nowrap;
+  align-items: start;
+  align-content: start;
+  justify-content: start;
+  justify-items: start;
+  overflow: hidden;
+  max-height: 52px;
+  margin: 7px auto 9px 5px;
+  padding: 0;
+  line-height: 24px;
+  text-align: left;
+  vertical-align: middle;
 }
 
-.tv-chaine-logo {
-  border: 2px solid;
-}
-
-.tv-chaine-logo::after,
-.tv-chaine-logo::before {
-  content: "";
+.tv-cat-img {
   display: flex;
-  position: absolute;
+  height: auto;
+  width: 100%;
+  aspect-ratio: 16 / 9;
 }
 
-.tv-chaine-logo::before {
-  border-bottom-left-radius: 2px;
-  top: -11px;
-  left: 4px;
-  transform: rotate(-45deg);
-  width: 7px;
-  height: 6px;
+.tv-cat-img img {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  outline: 1px solid rgba(25, 35, 45, 0.4);
+  outline-offset: -1px;
 }
 
-.tv-chaine-logo::before {
-  border-left: 2px solid;
-  border-bottom: 2px solid;
+.tv-desc {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: start;
+  align-items: start;
+  justify-content: start;
+  justify-items: start;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: left;
+  vertical-align: top;
+  height: auto;
+  width: 100%;
 }
 
-.tv-chaine-logo::after {
-  background: currentColor;
-  border-radius: 12px;
-  bottom: -5px;
-  height: 2px;
-  right: 2px;
-  width: 12px;
+.tv-desc div {
+  display: flex;
+  flex-direction: row;
+  align-content: start;
+  align-items: start;
+  justify-content: start;
+  justify-items: start;
+  font-size: 16px;
+  line-height: 22px;
+  margin: 7px auto 3px 0;
+  text-align: left;
+  vertical-align: middle;
+  width: auto;
 }
 
-@media (max-width: 1280px) {
-  .tv-01 .tv-chaine-listeprogs .tv-chaine-prog {
+.tv-desc div.tv-cat-film {
+  color: rgba(205, 25, 25, 0.95);
+}
+
+.tv-desc div.tv-cat-serie {
+  color: rgba(40, 80, 240, 0.95);
+}
+
+.tv-desc div.tv-duree {
+  color: rgba(20, 25, 50, 0.95);
+  display: flex;
+  flex-direction: row;
+  align-content: start;
+  align-items: start;
+  justify-content: start;
+  justify-items: start;
+  font-size: 16px;
+  line-height: 22px;
+  margin: 1px auto 3px 0;
+  text-align: left;
+  vertical-align: middle;
+  width: auto;
+}
+
+.tv-desc div.tv-descshort {
+  color: rgba(0, 20, 40, 0.95);
+  display: flex;
+  flex-direction: row;
+  align-content: start;
+  align-items: start;
+  justify-content: start;
+  justify-items: start;
+  font-size: 16px;
+  line-height: 22px;
+  margin: 1px auto 3px 0;
+  text-align: left;
+  vertical-align: top;
+  width: auto;
+}
+
+@media (max-width: 960px) {
+  .tv-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 961px) and (max-width: 1680px) {
+  .tv-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1681px) {
+  nav#sousmenu {
+    border-bottom: calc(2 / 1920 * 100vw) solid rgb(235, 105, 45, 0.3);
+  }
+
+  .tv-channel {
     display: grid;
-    grid-template-columns: 1px 1fr;
-    grid-template-rows: 1fr;
+    grid-template-columns: calc(45 / 1920 * 100vw) repeat(
+        auto-fill,
+        calc(50% - calc(45 / 1920 * 100vw))
+      );
+    justify-content: center;
   }
 
-  .prog-img,
-  .prog-img-ratio-16-9 {
-    height: 1px;
-    min-height: 1px;
-    min-width: 1px;
-    opacity: 0;
-    width: 1px;
-  }
-}
-
-@media (max-width: 1600px) {
-  .tv-01 .tv-chaine-listeprogs {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .tv-01 .tv-chaine-listeprogs .tv-chaine-prog:first-child {
-    border-right: 0;
-  }
-}
-
-@media (min-width: 1921px) {
-  .siteGauche,
-  .siteDroite {
-    width: calc(100% - calc(16 / 1920 * 100vw));
+  .ctf1,
+  .cc8,
+  .ccnews,
+  .clci {
+    border-bottom: calc(6 / 1920 * 100vw) solid rgb(235, 60, 55);
+    border-right: calc(1 / 1920 * 100vw) solid rgba(235, 60, 55, 0.2);
   }
 
-  .siteGauche {
-    margin-bottom: calc(8 / 1920 * 100vw);
-    margin-left: calc(8 / 1920 * 100vw);
+  .cfrance2,
+  .cw9,
+  .ccstar,
+  .cfranceinfo {
+    border-bottom: calc(6 / 1920 * 100vw) solid rgb(125, 180, 215);
+    border-right: calc(1 / 1920 * 100vw) solid rgb(25, 95, 255, 0.2);
   }
 
-  .siteDroite {
-    margin-bottom: calc(8 / 1920 * 100vw);
-    margin-left: calc(8 / 1920 * 100vw);
+  .cfrance3,
+  .ctmc,
+  .cgulli,
+  .cparispremire,
+  .crmcdcouverte {
+    border-bottom: calc(6 / 1920 * 100vw) solid rgb(235, 105, 45);
+    border-right: calc(1 / 1920 * 100vw) solid rgba(235, 105, 45, 0.2);
   }
 
-  .tv-01 {
-    border: calc(1 / 1920 * 100vw) solid rgba(157, 158, 159, 0.85);
-    margin-bottom: calc(-1 / 1920 * 100vw);
+  .ccanal,
+  .ctfx,
+  .ctf1sries-films,
+  .ccanalsport {
+    border-bottom: calc(6 / 1920 * 100vw) solid rgb(100, 180, 170);
+    border-right: calc(1 / 1920 * 100vw) solid rgba(50, 195, 85, 0.2);
   }
 
-  .tv-01 .tv-chaine {
-    border-bottom: calc(1 / 1920 * 100vw) solid rgba(157, 158, 159, 0.85);
+  .cfrance5,
+  .cnrj12,
+  .clachainelquipe,
+  .ccanalcinema {
+    border-bottom: calc(6 / 1920 * 100vw) solid rgb(230, 0, 120);
+    border-right: calc(1 / 1920 * 100vw) solid rgba(230, 0, 120, 0.2);
   }
 
-  .tv-01 .tv-chaine .tv-chaine-nom {
-    font-size: calc(20 / 1920 * 100vw);
-    line-height: calc(40 / 1920 * 100vw);
+  .cm6,
+  .clcp,
+  .c6ter,
+  .cplanete {
+    border-bottom: calc(6 / 1920 * 100vw) solid rgb(25, 175, 230);
+    border-right: calc(1 / 1920 * 100vw) solid rgba(25, 175, 230, 0.2);
   }
 
-  .tv-01 .tv-chaine-listeprogs {
-    grid-column-gap: calc(9 / 1920 * 100vw);
-    grid-row-gap: calc(9 / 1920 * 100vw);
-    padding: calc(9 / 1920 * 100vw);
+  .carte,
+  .cfrance4,
+  .crmcstory {
+    border-bottom: calc(6 / 1920 * 100vw) solid rgb(190, 110, 170);
+    border-right: calc(1 / 1920 * 100vw) solid rgba(190, 110, 170, 0.2);
   }
 
-  .tv-01 .tv-chaine-listeprogs .tv-chaine-prog:first-child {
-    border-right: calc(1 / 1920 * 100vw) solid rgba(167, 168, 169, 0.85);
+  .cbfmtv,
+  .cchrie25 {
+    border-bottom: calc(6 / 1920 * 100vw) solid rgb(95, 190, 215);
+    border-right: calc(1 / 1920 * 100vw) solid rgba(95, 190, 215, 0.2);
   }
 
-  .tv-01 .tv-chaine-listeprogs .tv-chaine-prog {
-    grid-template-columns: calc(128 / 1920 * 100vw) 1fr;
+  .tv-logo img {
+    margin-top: calc(16 / 1920 * 100vw);
+    width: calc(100% - calc(15 / 1920 * 100vw));
   }
 
-  .tv-01 .tv-chaine-listeprogs .tv-chaine-prog:hover {
-    outline: calc(1 / 1920 * 100vw) solid rgba(167, 168, 169, 0.85);
+  .tv-master {
+    margin: calc(6 / 1920 * 100vw) auto;
   }
 
-  .tv-01 .tv-chaine-listeprogs .tv-chaine-prog .tv-chaine-prog-contenu-heure {
-    line-height: calc(25 / 1920 * 100vw);
-    margin-left: calc(9 / 1920 * 100vw);
+  .tv-prog {
+    width: calc(100% - calc(15 / 1920 * 100vw));
   }
 
-  .tv-01 .tv-chaine-listeprogs .tv-chaine-prog .tv-chaine-prog-contenu-titre {
-    font-size: calc(19 / 1920 * 100vw);
-    line-height: calc(25 / 1920 * 100vw);
-    margin: 0 calc(9 / 1920 * 100vw) 0 calc(6 / 1920 * 100vw);
+  .tv-start-title {
+    height: calc(52 / 1920 * 100vw);
   }
 
-  .tv-01
-    .tv-chaine-listeprogs
-    .tv-chaine-prog
-    .tv-chaine-prog-contenu-tv-chaine-prog-contenu-desc {
+  .tv-start {
+    border-radius: calc(31 / 1920 * 100vw) calc(31 / 1920 * 100vw);
     font-size: calc(17 / 1920 * 100vw);
+    line-height: calc(23 / 1920 * 100vw);
+    margin: calc(7 / 1920 * 100vw) calc(1 / 1920 * 100vw);
+    padding: calc(4 / 1920 * 100vw) calc(8 / 1920 * 100vw);
+    min-width: calc(52 / 1920 * 100vw);
+  }
+
+  .tv-title {
+    max-height: calc(52 / 1920 * 100vw);
+    margin: calc(7 / 1920 * 100vw) auto calc(9 / 1920 * 100vw)
+      calc(5 / 1920 * 100vw);
+    line-height: calc(24 / 1920 * 100vw);
+  }
+
+  .tv-cat-img img {
+    outline: calc(1 / 1920 * 100vw) solid rgba(25, 35, 45, 0.4);
+    outline-offset: calc(-1 / 1920 * 100vw);
+  }
+
+  .tv-desc {
+    font-size: calc(16 / 1920 * 100vw);
     line-height: calc(22 / 1920 * 100vw);
-    margin: 0 calc(9 / 1920 * 100vw);
   }
 
-  .prog-img {
-    min-height: calc(128 / 1920 * 100vw);
-    min-width: calc(128 / 1920 * 100vw);
+  .tv-desc div {
+    font-size: calc(16 / 1920 * 100vw);
+    line-height: calc(22 / 1920 * 100vw);
+    margin: calc(7 / 1920 * 100vw) auto calc(3 / 1920 * 100vw) 0;
   }
 
-  .prog-img-ratio-16-9 {
-    min-height: calc(72 / 1920 * 100vw);
-    min-width: calc(128 / 1920 * 100vw);
-    outline: calc(1 / 1920 * 100vw) solid rgba(15, 20, 25, 0.85);
+  .tv-desc div.tv-duree {
+    font-size: calc(16 / 1920 * 100vw);
+    line-height: calc(22 / 1920 * 100vw);
+    margin: calc(1 / 1920 * 100vw) auto calc(3 / 1920 * 100vw) 0;
   }
 
-  .tv-chaine-logo {
-    border-radius: calc(2 / 1920 * 100vw);
-    height: calc(14 / 1920 * 100vw);
-    margin-left: calc(-16 / 1920 * 100vw);
-    margin-right: calc(8 / 1920 * 100vw);
-    width: calc(20 / 1920 * 100vw);
-  }
-
-  .tv-chaine-logo {
-    border: calc(2 / 1920 * 100vw) solid;
-  }
-
-  .tv-chaine-logo::before {
-    border-bottom-left-radius: calc(2 / 1920 * 100vw);
-    top: calc(-11 / 1920 * 100vw);
-    left: calc(4 / 1920 * 100vw);
-    width: calc(7 / 1920 * 100vw);
-    height: calc(6 / 1920 * 100vw);
-  }
-
-  .tv-chaine-logo::before {
-    border-left: calc(2 / 1920 * 100vw) solid;
-    border-bottom: calc(2 / 1920 * 100vw) solid;
-  }
-
-  .tv-chaine-logo::after {
-    border-radius: calc(12 / 1920 * 100vw);
-    bottom: calc(-5 / 1920 * 100vw);
-    height: calc(2 / 1920 * 100vw);
-    right: calc(2 / 1920 * 100vw);
-    width: calc(12 / 1920 * 100vw);
+  .tv-desc div.tv-descshort {
+    font-size: calc(16 / 1920 * 100vw);
+    line-height: calc(22 / 1920 * 100vw);
+    margin: calc(1 / 1920 * 100vw) auto calc(3 / 1920 * 100vw) 0;
   }
 }
