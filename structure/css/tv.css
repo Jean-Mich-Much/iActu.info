@@ -419,6 +419,14 @@ nav#bot {
   vertical-align: middle;
 }
 
+.o60 {
+  opacity: 0.6;
+}
+
+.o60:hover {
+  opacity: 1;
+}
+
 @media (max-width: 960px) {
   .tv-grid {
     grid-template-columns: 1fr;
