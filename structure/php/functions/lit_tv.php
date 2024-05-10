@@ -234,7 +234,7 @@
 
   foreach ($delfiles as $delfile) {
     if (is_file($delfile)) {
-      if ($delnow - filemtime($delfile) >= 2764800) {
+      if ($delnow - filemtime($delfile) >= 7776000) {
         unlink($delfile);
       }
     }
