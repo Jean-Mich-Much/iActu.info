@@ -306,7 +306,14 @@ nav#bot {
 }
 
 .tv-menu {
-  background-color: rgb(25, 45, 75);
+  background: radial-gradient(
+    circle,
+    rgb(0, 65, 155) 0%,
+    rgb(0, 75, 150) 25%,
+    rgb(0, 75, 160) 50%,
+    rgb(0, 75, 150) 75%,
+    rgb(0, 65, 155) 100%
+  );
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-content: center;
@@ -314,15 +321,14 @@ nav#bot {
   justify-content: center;
   justify-items: center;
   border: 0;
-  margin: 0;
   height: auto;
   width: 100%;
 }
 
 .tv-menu span a {
-  color: rgba(252, 253, 254, 0.95);
+  color: rgba(252, 252, 255, 0.95);
   font-family: "Open Sans Condensed", sans-serif;
-  line-height: 38px;
+  line-height: 42px;
 }
 
 .tv-menu span a:hover {
@@ -383,7 +389,7 @@ nav#bot {
 .tv-grid-programme .tv-channel .tv-master .tv-prog .tv-start-title .tv-start {
   background-color: transparent;
   border-radius: unset;
-  color: rgba(25, 95, 180, 0.95);
+  color: rgba(0, 75, 150, 0.95);
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
   display: inline-flex;
@@ -399,7 +405,7 @@ nav#bot {
 }
 
 .tv-grid-programme .tv-channel .tv-master .tv-prog .tv-start-title .tv-title {
-  color: rgba(35, 45, 65, 0.9);
+  color: rgba(20, 25, 30, 0.95);
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
   display: inline-flex;
@@ -419,11 +425,11 @@ nav#bot {
   vertical-align: middle;
 }
 
-.o60 {
-  opacity: 0.6;
+.o7 {
+  opacity: 0.7;
 }
 
-.o60:hover {
+.o7:hover {
   opacity: 1;
 }
 
@@ -615,7 +621,7 @@ nav#bot {
   }
 
   .tv-menu span a {
-    line-height: calc(38 / 1920 * 100vw);
+    line-height: calc(42 / 1920 * 100vw);
   }
 
   .tv-grid-programme .tv-channel {
