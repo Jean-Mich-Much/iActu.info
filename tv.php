@@ -35,7 +35,7 @@ $cache_secondes = 7195;
                         <span class="o60"><a href="#tv-demain">⚪ Demain</a></span>
                     </div>
                     <div class="tv-grid">
-                        <?php lit_tv('xmltv_tnt', '20:49:59', '23:59:59', '25', '2', '152', '52', false, true, true, true, '00:00:00', '02:59:59'); ?>
+                        <?php lit_tv('xmltv_tnt', '20:46:59', '23:59:59', '25', '2', '152', '52', false, true, true, true, '00:00:00', '07:59:59',false); ?>
                     </div>
                     <!-- FIN -->
                     <!-- DEBUT -->
@@ -47,7 +47,7 @@ $cache_secondes = 7195;
                         <span class="o60"><a href="#tv-demain">⚪ Demain</a></span>
                     </div>
                     <div class="tv-grid-programme">
-                        <?php lit_tv('xmltv_tnt', '00:00:00', '23:59:59', '20', '72', '152', '28', false, true, false, false, '00:00:00', '05:59:59'); ?>
+                        <?php lit_tv('xmltv_tnt', '00:00:00', '23:59:59', '20', '72', '152', '28', false, true, false, false, '00:00:00', '07:59:59',false); ?>
                     </div>
                     <!-- FIN -->
                     <!-- DEBUT -->
@@ -59,7 +59,7 @@ $cache_secondes = 7195;
                         <span id="tv-demain"><a href="#tv-demain">🟡 Demain</a></span>
                     </div>
                     <div class="tv-grid-demain">
-                        <?php lit_tv('xmltv_tnt', '23:59:59', '23:59:59', '25', '1', '152', '52', false, true, true, true, '20:49:59', '23:59:59'); ?>
+                        <?php lit_tv('xmltv_tnt', '23:59:59', '23:59:59', '25', '1', '152', '52', false, true, true, true, '20:46:59', '23:59:59',true); ?>
                     </div>
                     <!-- FIN -->
                 </article>
