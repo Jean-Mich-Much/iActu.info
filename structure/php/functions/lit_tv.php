@@ -1,4 +1,4 @@
-<?php function lit_tv($filename, $choicestart, $choiceend, $choiceduration, $howmanyprogs, $longdesc, $longtitle, $showimg, $showcat, $showdesc, $showimg_src, $starttomorow, $endtomorow)
+<?php function lit_tv($filename, $choicestart, $choiceend, $choiceduration, $howmanyprogs, $longdesc, $longtitle, $showimg, $showcat, $showdesc, $showimg_src, $starttomorow, $endtomorow, $demain)
 {
   try {
     $xml = simplexml_load_file('News/copy/' . $filename . '.xml');
@@ -24,7 +24,55 @@
       $fin = strtotime($choiceend);
       $debutplus1 = strtotime('+1 days', strtotime($starttomorow));
       $finplus1 = strtotime('+1 days', strtotime($endtomorow));
-      if (((date('Y-m-d', $start) == date('Y-m-d') && $start >= $debut && $start <= $fin) or (date('Y-m-d', $start) == date('Y-m-d', strtotime('+1 days')) && $start >= $debutplus1 && $start <= $finplus1)) && $progCount < $howmanyprogs && $duree > $choiceduration) {
+
+      $datedemain = date('Y-m-d');
+      $debutprime20 = strtotime('19:59:59');
+      $debutprime19 = strtotime('18:59:59');
+      $debutprime18 = strtotime('17:59:59');
+      $debutprime17 = strtotime('16:59:59');
+      $debutprime16 = strtotime('15:59:59');
+      $debutprime15 = strtotime('14:59:59');
+      $debutprime14 = strtotime('13:59:59');
+      $debutprime13 = strtotime('12:59:59');
+      $debutprime12 = strtotime('11:59:59');
+      $debutprime11 = strtotime('10:59:59');
+      $debutprime10 = strtotime('09:59:59');
+      $debutprime09 = strtotime('08:59:59');
+      $debutprime08 = strtotime('07:59:59');
+      $finprime = strtotime('21:11:59');
+      if ($demain) {
+        $datedemain = date('Y-m-d', strtotime('+1 days'));
+        $debutprime20 = strtotime('+1 days', strtotime('19:59:59'));
+        $finprime = strtotime('+1 days', strtotime('21:11:59'));
+        $debutprime19 = strtotime('+1 days', strtotime('18:59:59'));
+        $debutprime18 = strtotime('+1 days', strtotime('17:59:59'));
+        $debutprime17 = strtotime('+1 days', strtotime('16:59:59'));
+        $debutprime16 = strtotime('+1 days', strtotime('15:59:59'));
+        $debutprime15 = strtotime('+1 days', strtotime('14:59:59'));
+        $debutprime14 = strtotime('+1 days', strtotime('13:59:59'));
+        $debutprime13 = strtotime('+1 days', strtotime('12:59:59'));
+        $debutprime12 = strtotime('+1 days', strtotime('11:59:59'));
+        $debutprime11 = strtotime('+1 days', strtotime('10:59:59'));
+        $debutprime10 = strtotime('+1 days', strtotime('09:59:59'));
+        $debutprime09 = strtotime('+1 days', strtotime('08:59:59'));
+        $debutprime08 = strtotime('+1 days', strtotime('07:59:59'));
+      }
+
+      if (
+        (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime20 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 72) or (((date('Y-m-d', $start) == date('Y-m-d') && $start >= $debut && $start <= $fin) or (date('Y-m-d', $start) == date('Y-m-d', strtotime('+1 days')) && $start >= $debutplus1 && $start <= $finplus1)) && $progCount < $howmanyprogs && $duree > $choiceduration)
+        or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime19 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 132)
+        or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime18 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 192)
+        or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime17 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 252)
+        or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime16 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 312)
+        or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime15 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 372)
+        or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime14 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 432)
+        or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime13 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 492)
+        or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime12 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 552)
+        or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime11 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 612)
+        or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime10 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 672)
+        or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime09 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 732)
+        or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime08 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 792)
+      ) {
         $fullTitle = htmlspecialchars(str_replace("\\", "", str_replace("\"", "’", str_replace("'", "’", @strip_tags(@mb_convert_encoding($programme->title, 'UTF-8', 'auto'))))));
         if ($fullTitle === false || mb_check_encoding($fullTitle, 'UTF-8') === false) {
           continue;
