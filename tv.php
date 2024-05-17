@@ -28,10 +28,8 @@ $cache_secondes = 7195;
                 <article class="sites" id="articles_sites">
                     <!-- DEBUT -->
                     <div class="tv-menu">
-                        <span id="tv-soiree"><a href="#tv-soiree">🟡 Soirée du <?php echo str_replace('0', 'dimanche', str_replace('1', 'lundi', str_replace('2', 'mardi', str_replace('3', 'mercredi', str_replace('4', 'jeudi', str_replace('5', 'vendredi', str_replace('6', 'samedi', date('w')))))))); ?>
-          <?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j') . 'jour')); ?>
-          <?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n'))))))))))))); ?></a></span>
-                        <span class="o60"><a href="#tv-programme">⚪ Programme</a></span>
+                        <span id="tv-soir"><a href="#tv-soir">🟡 Soir</a></span>
+                        <span class="o60"><a href="#tv-guide">⚪ Guide</a></span>
                         <span class="o60"><a href="#tv-demain">⚪ Demain</a></span>
                     </div>
                     <div class="tv-grid">
@@ -40,10 +38,8 @@ $cache_secondes = 7195;
                     <!-- FIN -->
                     <!-- DEBUT -->
                     <div class="tv-menu">
-                        <span class="o60"><a href="#tv-soiree">⚪ Soirée du <?php echo str_replace('0', 'dimanche', str_replace('1', 'lundi', str_replace('2', 'mardi', str_replace('3', 'mercredi', str_replace('4', 'jeudi', str_replace('5', 'vendredi', str_replace('6', 'samedi', date('w')))))))); ?>
-          <?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j') . 'jour')); ?>
-          <?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n'))))))))))))); ?></a></span>
-                        <span id="tv-programme"><a href="#tv-programme">🟡 Programme</a></span>
+                        <span class="o60"><a href="#tv-soir">⚪ Soir</a></span>
+                        <span id="tv-guide"><a href="#tv-guide">🟡 Guide</a></span>
                         <span class="o60"><a href="#tv-demain">⚪ Demain</a></span>
                     </div>
                     <div class="tv-grid-programme">
@@ -52,10 +48,8 @@ $cache_secondes = 7195;
                     <!-- FIN -->
                     <!-- DEBUT -->
                     <div class="tv-menu">
-                        <span class="o60"><a href="#tv-soiree">⚪ Soirée du <?php echo str_replace('0', 'dimanche', str_replace('1', 'lundi', str_replace('2', 'mardi', str_replace('3', 'mercredi', str_replace('4', 'jeudi', str_replace('5', 'vendredi', str_replace('6', 'samedi', date('w')))))))); ?>
-          <?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j') . 'jour')); ?>
-          <?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n'))))))))))))); ?></a></span>
-                        <span class="o60"><a href="#tv-programme">⚪ Programme</a></span>
+                        <span class="o60"><a href="#tv-soir">⚪ Soir</a></span>
+                        <span class="o60"><a href="#tv-guide">⚪ Guide</a></span>
                         <span id="tv-demain"><a href="#tv-demain">🟡 Demain</a></span>
                     </div>
                     <div class="tv-grid-demain">
