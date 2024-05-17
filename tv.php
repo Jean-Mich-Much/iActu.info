@@ -47,7 +47,7 @@ $cache_secondes = 7195;
                         <span class="o60"><a href="#tv-demain">⚪ Demain</a></span>
                     </div>
                     <div class="tv-grid-programme">
-                        <?php lit_tv('xmltv_tnt', '00:00:00', '23:59:59', '20', '72', '152', '28', false, true, false, false, '00:00:00', '07:59:59',false); ?>
+                        <?php lit_tv('xmltv_tnt', '00:00:00', '23:59:59', '20', '72', '128', '128', false, true, false, false, '00:00:00', '07:59:59',false); ?>
                     </div>
                     <!-- FIN -->
                     <!-- DEBUT -->
