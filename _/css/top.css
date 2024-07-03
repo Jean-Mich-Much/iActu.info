@@ -1,0 +1,382 @@
+.top {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "top-logo top-menu";
+  justify-content: stretch;
+  align-content: stretch;
+  justify-items: stretch;
+  align-items: stretch;
+  height: 100%;
+  width: 100%;
+}
+
+.top-logo {
+  grid-area: top-logo;
+}
+
+.top-menu {
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "technologie apple jeux sciences actualites tv rec";
+  grid-area: top-menu;
+  justify-content: space-evenly;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.technologie {
+  grid-area: technologie;
+}
+
+.apple {
+  grid-area: apple;
+}
+
+.jeux {
+  grid-area: jeux;
+}
+
+.sciences {
+  grid-area: sciences;
+}
+
+.actualites {
+  grid-area: actualites;
+}
+
+.tv {
+  grid-area: tv;
+}
+
+.rec {
+  grid-area: rec;
+}
+
+.technologie,
+.apple,
+.jeux,
+.sciences,
+.actualites,
+.tv,
+.rec {
+  grid-auto-flow: column;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  margin: auto;
+  height: auto;
+  width: auto;
+}
+
+.top-sub-menu {
+  grid-auto-flow: row;
+}
+
+.top-sub-menu div {
+  color: var(--c8);
+  font-family: "Sriracha", "Segoe Print", "Brush Script", sans-serif;
+}
+
+@media (max-width: 1280px) {
+  .top {
+    background-image: url("_/img/bgs/90px.webp");
+    background-repeat: repeat;
+    background-size: 468px 90px;
+    grid-template-columns: 135px 1fr;
+    grid-template-rows: 90px;
+  }
+
+  a.page_index {
+    background-image: url("_/img/logo/90px.webp");
+    background-size: 135px 90px;
+    height: 90px;
+    width: 135px;
+  }
+
+  .page_actualites {
+    background-image: url("_/img/menu/act60px.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 48px 60px;
+    height: 60px;
+    width: 48px;
+  }
+
+  .page_apple {
+    background-image: url("_/img/menu/app60px.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 48px 60px;
+    height: 60px;
+    width: 48px;
+  }
+
+  .page_jeux {
+    background-image: url("_/img/menu/jeu60px.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60px 60px;
+    height: 60px;
+    width: 60px;
+  }
+
+  .page_rec {
+    background-image: url("_/img/menu/rec60px.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 69px 60px;
+    height: 60px;
+    width: 69px;
+  }
+
+  .page_sciences {
+    background-image: url("_/img/menu/sci60px.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 39px 60px;
+    height: 60px;
+    width: 39px;
+  }
+
+  .page_technologie {
+    background-image: url("_/img/menu/tec60px.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 35px 60px;
+    height: 60px;
+    width: 35px;
+  }
+
+  .page_tv {
+    background-image: url("_/img/menu/tv60px.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 31px 60px;
+    height: 60px;
+    width: 31px;
+  }
+
+  .top-sub-menu div {
+    font-size: 16px;
+    padding: 0 0 0 3px;
+  }
+
+  a.top_lien_menu:hover {
+    filter: contrast(1.025) saturate(1.025) brightness(1.025)
+      drop-shadow(0 0 9px var(--c7));
+    transform: scale(1.125);
+    transition-duration: 350ms, 350ms;
+    transition-property: filter, transform;
+  }
+}
+
+@media (min-width: 1281px) and (max-width: 1920px) {
+  .top {
+    background-image: url("_/img/bgs/200px.webp");
+    background-repeat: repeat;
+    background-size: 1040px 200px;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 200px;
+  }
+
+  a.page_index {
+    background-image: url("_/img/logo/200px.webp");
+    background-repeat: no-repeat;
+    background-size: 300px 200px;
+    height: 200px;
+    width: 300px;
+  }
+
+  .page_actualites {
+    background-image: url("_/img/menu/act120px.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 97px 120px;
+    height: 120px;
+    width: 97px;
+  }
+
+  .page_apple {
+    background-image: url("_/img/menu/app120px.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 96px 120px;
+    height: 120px;
+    width: 96px;
+  }
+
+  .page_jeux {
+    background-image: url("_/img/menu/jeu120px.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 120px 120px;
+    height: 120px;
+    width: 120px;
+  }
+
+  .page_rec {
+    background-image: url("_/img/menu/rec120px.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 138px 120px;
+    height: 120px;
+    width: 138px;
+  }
+
+  .page_sciences {
+    background-image: url("_/img/menu/sci120px.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 77px 120px;
+    height: 120px;
+    width: 77px;
+  }
+
+  .page_technologie {
+    background-image: url("_/img/menu/tec120px.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 71px 120px;
+    height: 120px;
+    width: 71px;
+  }
+
+  .page_tv {
+    background-image: url("_/img/menu/tv120px.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 62px 120px;
+    height: 120px;
+    width: 62px;
+  }
+
+  .top-sub-menu div {
+    padding: 0 0 0 9px;
+  }
+
+  a.top_lien_menu:hover {
+    filter: contrast(1.025) saturate(1.025) brightness(1.025)
+      drop-shadow(0 0 9px var(--c7));
+    transform: scale(1.125);
+    transition-duration: 350ms, 350ms;
+    transition-property: filter, transform;
+  }
+}
+
+@media (min-width: 1921px) {
+  .top {
+    background-image: url("_/img/bgs/200px.webp");
+    background-repeat: repeat;
+    background-size: calc(1040 / 1920 * 100vw) calc(200 / 1920 * 100vw);
+    grid-template-columns: calc(300 / 1920 * 100vw) 1fr;
+    grid-template-rows: calc(200 / 1920 * 100vw);
+  }
+
+  a.page_index {
+    background-image: url("_/img/logo/200px.webp");
+    background-repeat: no-repeat;
+    background-size: calc(300 / 1920 * 100vw) calc(200 / 1920 * 100vw);
+    height: calc(200 / 1920 * 100vw);
+    width: calc(300 / 1920 * 100vw);
+  }
+
+  .page_actualites {
+    background-image: url("_/img/menu/act120px.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: calc(97 / 1920 * 100vw) calc(120 / 1920 * 100vw);
+    height: calc(120 / 1920 * 100vw);
+    width: calc(97 / 1920 * 100vw);
+  }
+
+  .page_apple {
+    background-image: url("_/img/menu/app120px.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: calc(96 / 1920 * 100vw) calc(120 / 1920 * 100vw);
+    height: calc(120 / 1920 * 100vw);
+    width: calc(96 / 1920 * 100vw);
+  }
+
+  .page_jeux {
+    background-image: url("_/img/menu/jeu120px.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: calc(120 / 1920 * 100vw) calc(120 / 1920 * 100vw);
+    height: calc(120 / 1920 * 100vw);
+    width: calc(120 / 1920 * 100vw);
+  }
+
+  .page_rec {
+    background-image: url("_/img/menu/rec120px.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: calc(138 / 1920 * 100vw) calc(120 / 1920 * 100vw);
+    height: calc(120 / 1920 * 100vw);
+    width: calc(138 / 1920 * 100vw);
+  }
+
+  .page_sciences {
+    background-image: url("_/img/menu/sci120px.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: calc(77 / 1920 * 100vw) calc(120 / 1920 * 100vw);
+    height: calc(120 / 1920 * 100vw);
+    width: calc(77 / 1920 * 100vw);
+  }
+
+  .page_technologie {
+    background-image: url("_/img/menu/tec120px.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: calc(71 / 1920 * 100vw) calc(120 / 1920 * 100vw);
+    height: calc(120 / 1920 * 100vw);
+    width: calc(71 / 1920 * 100vw);
+  }
+
+  .page_tv {
+    background-image: url("_/img/menu/tv120px.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: calc(62 / 1920 * 100vw) calc(120 / 1920 * 100vw);
+    height: calc(120 / 1920 * 100vw);
+    width: calc(62 / 1920 * 100vw);
+  }
+
+  .top-sub-menu div {
+    padding: 0 0 0 calc(9 / 1920 * 100vw);
+  }
+
+  a.top_lien_menu:hover {
+    filter: contrast(1.025) saturate(1.025) brightness(1.025)
+      drop-shadow(0 0 calc(9 / 1920 * 100vw) var(--c7));
+    transform: scale(1.125);
+    transition-duration: 350ms, 350ms;
+    transition-property: filter, transform;
+  }
+}
+
+@media (min-width: 1921px) and (max-width: 3840px) {
+  .top {
+    background-image: url("_/img/bgs/400px.webp");
+  }
+
+  a.page_index {
+    background-image: url("_/img/logo/400px.webp");
+  }
+}
+
+@media (min-width: 3841px) {
+  .top {
+    background-image: url("_/img/bgs/800px.webp");
+  }
+
+  a.page_index {
+    background-image: url("_/img/logo/800px.webp");
+  }
+}

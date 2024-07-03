@@ -1,0 +1,14 @@
+/* Z-index  */
+
+body {
+  z-index: 10;
+}
+
+nav,
+main,
+aside,
+div,
+span,
+a {
+  z-index: 20;
+}
