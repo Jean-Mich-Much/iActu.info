@@ -1,0 +1,7 @@
+<div class="lien_bot"><a href="<?php echo $lien_tech; ?>" title="Technologie" <?php if ($page_active == 'technologie') {echo 'class="page_active"';} ?> id="lientechnologiemenubot">&nbsp;🤖&nbsp;</a></div>
+<div class="lien_bot"><a href="<?php echo $lien_apple; ?>" title="Apple" <?php if ($page_active == 'apple') {echo 'class="page_active"';} ?> id="lienapplemenubot">&nbsp;🍏&nbsp;</a></div>
+<div class="lien_bot"><a href="<?php echo $lien_jeux; ?>" title="Jeux" <?php if ($page_active == 'jeux') {echo 'class="page_active"';} ?> id="lienjeuxmenubot">&nbsp;🕹️&nbsp;</a></div>
+<div class="lien_bot"><a href="<?php echo $lien_sciences; ?>" title="Sciences" <?php if ($page_active == 'sciences') {echo 'class="page_active"';} ?> id="liensciencesmenubot">&nbsp;🧪&nbsp;</a></div>
+<div class="lien_bot"><a href="<?php echo $lien_actu; ?>" title="Actualités" <?php if ($page_active == 'actualites') {echo 'class="page_active"';} ?> id="lienactualitesmenubot">&nbsp;🗞️&nbsp;</a></div>
+<div class="lien_bot"><a href="<?php echo $lien_tv; ?>" title="TV" <?php if ($page_active == 'tv') {echo 'class="page_active"';} ?> id="lientvmenubot">&nbsp;📺&nbsp;</a></div>
+<div class="lien_bot"><a href="recherche/p/i/" title="Recherche" id="lienrecherchemenubot">&nbsp;🔎&nbsp;</a></div>
