@@ -3,7 +3,7 @@ $titre_page = 'Sciences';
 $nom_page = 'sciences';
 $page_active = 'sciences';
 $titre_page_active = '&#129514;&nbsp;Sciences';
-$cache_secondes = 5;
+$cache_secondes = 29;
 
 $lien_accueil = 'index.php';
 $lien_tech = 'technologie.php';

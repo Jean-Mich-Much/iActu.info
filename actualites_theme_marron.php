@@ -3,7 +3,7 @@ $titre_page = 'Actualités';
 $nom_page = 'actualites';
 $page_active = 'actualites';
 $titre_page_active = '&#128478;&#65039;&nbsp;Actualités';
-$cache_secondes = 5;
+$cache_secondes = 31;
 
 $lien_accueil = 'index.php';
 $lien_tech = 'technologie.php';

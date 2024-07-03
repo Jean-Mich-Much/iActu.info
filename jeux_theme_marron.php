@@ -3,7 +3,7 @@ $titre_page = 'Jeux';
 $nom_page = 'jeux';
 $page_active = 'jeux';
 $titre_page_active = '&#128377;&#65039;&nbsp;Jeux';
-$cache_secondes = 5;
+$cache_secondes = 23;
 
 $lien_accueil = 'index.php';
 $lien_tech = 'technologie.php';

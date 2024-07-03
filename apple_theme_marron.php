@@ -3,7 +3,7 @@ $titre_page = 'Apple';
 $nom_page = 'apple';
 $page_active = 'apple';
 $titre_page_active = '&#127823;&nbsp;Apple';
-$cache_secondes = 5;
+$cache_secondes = 19;
 
 $lien_accueil = 'index.php';
 $lien_tech = 'technologie.php';

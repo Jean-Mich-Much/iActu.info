@@ -4,7 +4,7 @@ $nom_page = 'technologie';
 $page_active = 'technologie';
 $titre_page_active = '&#129302;&nbsp;Technologie';
 $sites = 'Technologie';
-$cache_secondes = 5;
+$cache_secondes = 17;
 
 $lien_accueil = 'index.php';
 $lien_tech = 'technologie.php';

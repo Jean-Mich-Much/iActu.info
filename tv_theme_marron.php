@@ -3,7 +3,7 @@ $titre_page = 'TV';
 $nom_page = 'tv';
 $page_active = 'tv';
 $titre_page_active = '&#128250;&nbsp;TV';
-$cache_secondes = 5;
+$cache_secondes = 37;
 $cache_secondes_tv = 10800;
 
 $lien_accueil = 'index.php';
