@@ -1,0 +1,136 @@
+{
+email jemi33@gmail.com
+}
+
+(redirect) {
+@http {
+protocol http
+}
+redir @http https://{host}{uri} permanent
+}
+
+www.iactu.info, www.iactu.ovh, www.iactu.fr, iactu.ovh, iactu.fr {
+redir https://iactu.info{uri} permanent
+}
+
+iactu.info {
+
+root * /_
+
+php_fastcgi unix//run/php/s83.sock
+
+encode {
+gzip 1
+minimum_length 6144
+}
+
+file_server
+
+try_files {path} {path}/ =404
+
+@rootsite path /
+header @rootsite Cache-Control "no-cache, public"
+
+@csprootsite path /
+header @csprootsite Content-Security-Policy "upgrade-insecure-requests;base-uri 'self';default-src 'self' *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;img-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;style-src 'self' 'unsafe-inline' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;media-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;font-src 'self' data: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;script-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info 'unsafe-inline' 'unsafe-eval';child-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;frame-ancestors 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;"
+
+@css path *.css
+header @css Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate"
+
+@gif path *.gif
+header @gif Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate, no-transform"
+
+@ico path *.ico
+header @ico Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate, no-transform"
+
+@html path *.html
+header @html Cache-Control "no-cache, public"
+
+@csphtml path *.html
+header @csphtml Content-Security-Policy "upgrade-insecure-requests;base-uri 'self';default-src 'self' *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;img-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;style-src 'self' 'unsafe-inline' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;media-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;font-src 'self' data: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;script-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info 'unsafe-inline' 'unsafe-eval';child-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;frame-ancestors 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;"
+
+@js path *.js
+header @js Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate"
+
+@minejs path *.js
+header @minejs Content-Type "text/javascript; charset=UTF-8"
+
+@cspjs path *.js
+header @cspjs Content-Security-Policy "upgrade-insecure-requests;base-uri 'self';default-src 'self' *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;img-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;style-src 'self' 'unsafe-inline' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;media-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;font-src 'self' data: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;script-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info 'unsafe-inline' 'unsafe-eval';child-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;frame-ancestors 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;"
+
+@json path *.json
+header @json Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate"
+
+@mineJson path *.json
+header @mineJson Content-Type "application/json; charset=UTF-8"
+
+@jpg path *.jpg
+header @jpg Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate, no-transform"
+
+@php path *.php
+header @php Cache-Control "no-cache, public"
+
+@cspphp path *.php
+header @cspphp Content-Security-Policy "upgrade-insecure-requests;base-uri 'self';default-src 'self' *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;img-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;style-src 'self' 'unsafe-inline' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;media-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;font-src 'self' data: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;script-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info 'unsafe-inline' 'unsafe-eval';child-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;frame-ancestors 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;"
+
+@png path *.png
+header @png Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate, no-transform"
+
+@txt path *.txt
+header @txt Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate"
+
+@csptxt path *.txt
+header @csptxt Content-Security-Policy "upgrade-insecure-requests;base-uri 'self';default-src 'self' *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;img-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;style-src 'self' 'unsafe-inline' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;media-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;font-src 'self' data: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;script-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info 'unsafe-inline' 'unsafe-eval';child-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;frame-ancestors 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;"
+
+@svg path *.svg
+header @svg Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate"
+
+@svgz path *.svgz
+header @svgz Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate, no-transform"
+
+@webmanifest path *.webmanifest
+header @webmanifest Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate"
+
+@cspwebmanifest path *.webmanifest
+header @cspwebmanifest Content-Security-Policy "upgrade-insecure-requests;base-uri 'self';default-src 'self' *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;img-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;style-src 'self' 'unsafe-inline' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;media-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;font-src 'self' data: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;script-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info 'unsafe-inline' 'unsafe-eval';child-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;frame-ancestors 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;"
+
+@xml path *.xml
+header @xml Cache-Control "public, max-age=60, immutable, stale-while-revalidate"
+
+@cspxml path *.xml
+header @cspxml Content-Security-Policy "upgrade-insecure-requests;base-uri 'self';default-src 'self' *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;img-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;style-src 'self' 'unsafe-inline' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;media-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;font-src 'self' data: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;script-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info 'unsafe-inline' 'unsafe-eval';child-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;frame-ancestors 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;"
+
+@webp path *.webp
+header @webp Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate, no-transform"
+
+@woff path *.woff
+header @woff Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate, no-transform"
+
+@cspwoff path *.woff
+header @cspwoff Content-Security-Policy "upgrade-insecure-requests;base-uri 'self';default-src 'self' *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;img-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;style-src 'self' 'unsafe-inline' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;media-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;font-src 'self' data: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;script-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info 'unsafe-inline' 'unsafe-eval';child-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;frame-ancestors 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;"
+
+@woff2 path *.woff2
+header @woff2 Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate, no-transform"
+
+@cspwoff2 path *.woff2
+header @cspwoff2 Content-Security-Policy "upgrade-insecure-requests;base-uri 'self';default-src 'self' *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;img-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;style-src 'self' 'unsafe-inline' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;media-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;font-src 'self' data: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;script-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info 'unsafe-inline' 'unsafe-eval';child-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;frame-ancestors 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;"
+
+header {
+Access-Control-Allow-Credentials "true"
+Access-Control-Allow-Headers "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,X-Custom-Header,Upgrade-Insecure-Requests,Cookie"
+Access-Control-Allow-Methods "GET, POST, OPTIONS"
+Access-Control-Allow-Origin "*"
+Access-Control-Expose-Headers "Cache-Control,Content-Length,Content-Range,Content-Language,Content-Type,Expires,Last-Modified,Pragma"
+Permissions-Policy "accelerometer=(self), autoplay=(self), camera=(self), cross-origin-isolated=(self), display-capture=(self), encrypted-media=(self), fullscreen=(self), geolocation=(self), gyroscope=(self), keyboard-map=(self), magnetometer=(self), microphone=(self), midi=(self), payment=(self), picture-in-picture=(self), publickey-credentials-get=(self), screen-wake-lock=(self), sync-xhr=(self), usb=(self), web-share=(self), xr-spatial-tracking=(self)"
+Referrer-Policy "no-referrer-when-downgrade"
+Strict-Transport-Security "max-age=31536000;includeSubDomains;preload"
+Timing-Allow-Origin "*"
+X-Content-Type-Options "nosniff"
+}
+
+handle_errors {
+rewrite * /erreur.html
+file_server
+}
+
+}
