@@ -256,6 +256,7 @@
   }
 
   .top-sub-menu div {
+    line-height: 30px;
     padding: 0 0 0 9px;
   }
 
@@ -349,6 +350,7 @@
   }
 
   .top-sub-menu div {
+    line-height: calc(30 / 1920 * 100vw);
     padding: 0 0 0 calc(9 / 1920 * 100vw);
   }
 
