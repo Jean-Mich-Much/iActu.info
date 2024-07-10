@@ -8,6 +8,7 @@
    <div>&nbsp;<?php echo $titre_page_active; ?>&nbsp;</div>
    <div>&nbsp;📅&nbsp;<?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w')))))))); ?>&nbsp;<?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j') . 'jour')); ?>&nbsp;<?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n'))))))))))))); ?>&nbsp;</div>
    <div>&nbsp;⏰&nbsp;Màj&nbsp;<?php echo date('H:i'); ?>&nbsp;</div>
+   <div><a href="<?php echo $lien_theme; ?>" title="Thème">&nbsp;&#127912;&nbsp;Thème 2&nbsp;</a></div>
   </div>
   <?php } ?>
 
@@ -19,6 +20,7 @@
    <div>&nbsp;<?php echo $titre_page_active; ?>&nbsp;</div>
    <div>&nbsp;📅&nbsp;<?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w')))))))); ?>&nbsp;<?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j') . 'jour')); ?>&nbsp;<?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n'))))))))))))); ?>&nbsp;</div>
    <div>&nbsp;⏰&nbsp;Màj&nbsp;<?php echo date('H:i'); ?>&nbsp;</div>
+   <div><a href="<?php echo $lien_theme; ?>" title="Thème">&nbsp;&#127912;&nbsp;Thème 2&nbsp;</a></div>
   </div>
   <?php } ?>
 
@@ -30,6 +32,7 @@
    <div>&nbsp;<?php echo $titre_page_active; ?>&nbsp;</div>
    <div>&nbsp;📅&nbsp;<?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w')))))))); ?>&nbsp;<?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j') . 'jour')); ?>&nbsp;<?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n'))))))))))))); ?>&nbsp;</div>
    <div>&nbsp;⏰&nbsp;Màj&nbsp;<?php echo date('H:i'); ?>&nbsp;</div>
+   <div><a href="<?php echo $lien_theme; ?>" title="Thème">&nbsp;&#127912;&nbsp;Thème 2&nbsp;</a></div>
   </div>
   <?php } ?>
 
@@ -41,6 +44,7 @@
    <div>&nbsp;<?php echo $titre_page_active; ?>&nbsp;</div>
    <div>&nbsp;📅&nbsp;<?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w')))))))); ?>&nbsp;<?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j') . 'jour')); ?>&nbsp;<?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n'))))))))))))); ?>&nbsp;</div>
    <div>&nbsp;⏰&nbsp;Màj&nbsp;<?php echo date('H:i'); ?>&nbsp;</div>
+   <div><a href="<?php echo $lien_theme; ?>" title="Thème">&nbsp;&#127912;&nbsp;Thème 2&nbsp;</a></div>
   </div>
   <?php } ?>
 
@@ -52,6 +56,7 @@
    <div>&nbsp;<?php echo $titre_page_active; ?>&nbsp;</div>
    <div>&nbsp;📅&nbsp;<?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w')))))))); ?>&nbsp;<?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j') . 'jour')); ?>&nbsp;<?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n'))))))))))))); ?>&nbsp;</div>
    <div>&nbsp;⏰&nbsp;Màj&nbsp;<?php echo date('H:i'); ?>&nbsp;</div>
+   <div><a href="<?php echo $lien_theme; ?>" title="Thème">&nbsp;&#127912;&nbsp;Thème 2&nbsp;</a></div>
   </div>
   <?php } ?>
 
@@ -63,6 +68,7 @@
    <div>&nbsp;<?php echo $titre_page_active; ?>&nbsp;</div>
    <div>&nbsp;📅&nbsp;<?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w')))))))); ?>&nbsp;<?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j') . 'jour')); ?>&nbsp;<?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n'))))))))))))); ?>&nbsp;</div>
    <div>&nbsp;⏰&nbsp;Màj&nbsp;<?php echo date('H:i'); ?>&nbsp;</div>
+   <div><a href="<?php echo $lien_theme; ?>" title="Thème">&nbsp;&#127912;&nbsp;Thème 2&nbsp;</a></div>
   </div>
   <?php } ?>
 

@@ -61,7 +61,10 @@ $affiche_message_bot = false;
  <span>
   <form>
    <select aria-label="Donateurs" id="SousMenuBas" name="Donateurs" size="1" title="Donateurs">
-        <option value="#SousMenuBas" title="Donateur" aria-label="Donateur" selected="">👤 Olivier P. 10€ - 02/07&nbsp;</option>
+   <option value="#SousMenuBas" title="Donateur" aria-label="Donateur" selected="">👤 Xavier M.. 5€ - 05/07&nbsp;</option>
+   <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Christophe J. 5€ - 04/07&nbsp;</option>
+        <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Sebastien D. 5€ - 04/07&nbsp;</option>
+        <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Olivier P. 10€ - 02/07&nbsp;</option>
         <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Régis B. 10€ - 02/07&nbsp;</option>
         <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Jean-Yves R. 10€ - 02/07&nbsp;</option>
         <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Alain S. 10€ - 01/07&nbsp;</option>
@@ -99,7 +102,7 @@ $affiche_message_bot = false;
 
 <aside class="mess">
 
-<span class="mess_text">📣 Message : Kinéis déploie les 5 premiers satellites de sa constellation française pour l'Internet des objets. Coucou 🤒&nbsp;</span><a href="https://www.paypal.com/donate/?hosted_button_id=QVKRNFGMPXYXY" target="_blank" id="SousMenuHautDonsPaypalHref" aria-label="Faire un don, merci par avance 😊" alt="Faire un don, merci par avance 😊" title="Faire un don, merci par avance 😊">&nbsp;Lien Paypal&nbsp💕&nbsp;</a>
+<span class="mess_text">📣 Message : je ferais le thème sombre plus tard 😊&nbsp;</a>
 
 </aside>
 
