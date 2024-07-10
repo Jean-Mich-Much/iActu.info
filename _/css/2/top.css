@@ -1,0 +1,126 @@
+.top {
+  background-color: var(--c6);
+  color: var(--c8);
+  display: flex;
+  align-content: stretch;
+  align-items: stretch;
+  justify-content: center;
+  justify-items: stretch;
+  overflow: hidden;
+  flex-wrap: wrap;
+  overflow-wrap: normal;
+  width: 100%;
+}
+
+.lien_top,
+.lien_top a,
+.txt_top {
+  color: var(--c8);
+}
+
+.lien_top a:hover,
+.lien_top a.page_active {
+  background-color: var(--c5);
+  color: var(--c7);
+}
+
+.txt_top {
+  font-weight: 600;
+}
+
+.lien_top {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr;
+  align-content: center;
+  align-items: stretch;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.lien_top a,
+.txt_top {
+  display: flex;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  vertical-align: middle;
+}
+
+@media (max-width: 1280px) {
+  .top {
+    min-height: 44px;
+  }
+
+  .lien_top a,
+  .txt_top {
+    line-height: 44px;
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .lien_top a:hover,
+  .lien_top a.page_active {
+    border-top: 3px solid var(--c7);
+  }
+
+  .lien_top,
+  .lien_top a {
+    font-family: "Sriracha", "Segoe Print", "Brush Script", sans-serif;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1281px) and (max-width: 1920px) {
+  .top {
+    min-height: 54px;
+  }
+
+  .lien_top a,
+  .txt_top {
+    line-height: 54px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .lien_top a:hover,
+  .lien_top a.page_active {
+    border-top: 4px solid var(--c7);
+  }
+
+  .lien_top,
+  .lien_top a {
+    font-family: "Sriracha", "Segoe Print", "Brush Script", sans-serif;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1921px) {
+  .top {
+    min-height: calc(54 / 1920 * 100vw);
+  }
+
+  .lien_top a,
+  .txt_top {
+    line-height: calc(54 / 1920 * 100vw);
+    padding-left: calc(12 / 1920 * 100vw);
+    padding-right: calc(12 / 1920 * 100vw);
+  }
+
+  .lien_top a:hover,
+  .lien_top a.page_active {
+    border-top: calc(4 / 1920 * 100vw) solid var(--c7);
+  }
+
+  .lien_top,
+  .lien_top a {
+    font-family: "Sriracha", "Segoe Print", "Brush Script", sans-serif;
+    font-size: calc(18 / 1920 * 100vw);
+  }
+}

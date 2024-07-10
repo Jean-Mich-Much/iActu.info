@@ -1,0 +1,135 @@
+.mess {
+  background-color: var(--c5);
+  color: var(--c2);
+}
+
+.mess a {
+  color: var(--c2);
+}
+
+.mess a:hover {
+  color: var(--c3);
+}
+
+.mess {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: start;
+  justify-content: center;
+  justify-items: start;
+  overflow: hidden;
+  width: 100%;
+}
+
+.mess span,
+.mess a,
+.mess span a {
+  display: inline-flex;
+  align-items: center;
+  align-content: start;
+  justify-content: center;
+  justify-items: start;
+  width: auto;
+}
+
+.mess a,
+.mess span a {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.mess a,
+.mess span,
+.mess span a,
+.mess form,
+.mess form select,
+.mess form select option,
+.mess form option {
+  font-size: 16px;
+  line-height: 22px;
+  padding: 4px;
+}
+
+.coucou:before {
+  content: "\00a0"attr(data-website) "\0040"attr(data-user)
+    "\00a0\2709\FE0F\00a0";
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
+@media (max-width: 1280px) {
+  .mess {
+    padding: 6px;
+  }
+
+  .mess span,
+  .mess a,
+  .mess span a {
+    margin: 0 8px;
+  }
+
+  .mess a,
+  .mess span,
+  .mess span a,
+  .mess form,
+  .mess form select,
+  .mess form select option,
+  .mess form option {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@media (min-width: 1281px) and (max-width: 1920px) {
+  .mess {
+    font-size: 16px;
+    line-height: 22px;
+    padding: 12px;
+  }
+
+  .mess span,
+  .mess a,
+  .mess span a {
+    margin: 0 9px;
+  }
+
+  .mess a,
+  .mess span,
+  .mess span a,
+  .mess form,
+  .mess form select,
+  .mess form select option,
+  .mess form option {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@media (min-width: 1921px) {
+  .mess {
+    font-size: 16px;
+    line-height: 22px;
+    padding: calc(12 / 1920 * 100vw);
+  }
+
+  .mess span,
+  .mess a,
+  .mess span a {
+    font-size: calc(16 / 1920 * 100vw);
+    line-height: calc(22 / 1920 * 100vw);
+    margin: 0 calc(9 / 1920 * 100vw);
+  }
+
+  .mess a,
+  .mess span,
+  .mess span a,
+  .mess form,
+  .mess form select,
+  .mess form select option,
+  .mess form option {
+    font-size: calc(16 / 1920 * 100vw);
+    line-height: calc(22 / 1920 * 100vw);
+    padding: calc(4 / 1920 * 100vw);
+  }
+}

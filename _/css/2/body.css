@@ -1,0 +1,127 @@
+/* Body  */
+
+body {
+  background-color: var(--c1);
+  color: var(--c2);
+}
+
+a:hover {
+  color: var(--c3);
+}
+
+html,
+body,
+nav,
+main,
+aside,
+div,
+span,
+a {
+  align-items: start;
+  align-content: start;
+  display: grid;
+  gap: 0px 0px;
+  justify-content: start;
+  justify-items: start;
+}
+
+html {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+body,
+nav,
+main,
+aside,
+div,
+span,
+a {
+  border-image-width: 0;
+  border: 0;
+  box-sizing: border-box;
+  direction: ltr;
+  font-family: "Inter", "Open Sans", sans-serif;
+  font-kerning: normal;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin: 0;
+  opacity: 1;
+  order: 0;
+  outline-width: 0;
+  overflow-wrap: break-word;
+  padding: 0;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  text-shadow: none;
+  text-transform: none;
+  unicode-bidi: embed;
+  vertical-align: baseline;
+  white-space: normal;
+  word-spacing: normal;
+}
+
+body,
+nav,
+main,
+aside,
+div,
+span,
+a {
+  height: auto;
+  width: auto;
+}
+
+@media (max-width: 1280px) {
+  body,
+  nav,
+  main,
+  aside,
+  div,
+  span,
+  a {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+@media (min-width: 1281px) and (max-width: 1920px) {
+  body,
+  nav,
+  main,
+  aside,
+  div,
+  span,
+  a {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media (min-width: 1921px) {
+  body,
+  nav,
+  main,
+  aside,
+  div,
+  span,
+  a {
+    font-size: calc(16 / 1920 * 100vw);
+    line-height: calc(24 / 1920 * 100vw);
+  }
+}

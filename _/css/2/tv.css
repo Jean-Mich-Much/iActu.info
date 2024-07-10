@@ -1,0 +1,353 @@
+/* Thème tv */
+
+.mid {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-content: start;
+  justify-content: start;
+  align-items: stretch;
+  justify-items: stretch;
+  gap: 0 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  width: 100%;
+}
+
+.tv-menu {
+  background-color: var(--c5);
+  outline: 1px solid var(--c1);
+  outline-offset: -1px;
+  color: var(--c2);
+  grid-template-columns: 1fr 1fr;
+  gap: 0 0;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+}
+
+#tv-soir a,
+#tv-guide a,
+#tv-demain a {
+  color: var(--c1tv);
+}
+
+#tv-soir a:hover,
+#tv-guide a:hover,
+#tv-demain a:hover {
+  color: var(--c3);
+}
+
+.o60 a {
+  color: var(--c2);
+  opacity: 0.6;
+}
+
+.o60 a:hover {
+  color: var(--c3);
+  opacity: 1;
+}
+
+.tv-grid {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 0 0;
+  margin: 0;
+  align-content: start;
+  justify-content: start;
+  align-items: stretch;
+  justify-items: stretch;
+  vertical-align: top;
+}
+
+.tv-grid-demain {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 0 0;
+  margin: 0;
+  align-content: start;
+  justify-content: start;
+  align-items: stretch;
+  justify-items: stretch;
+  vertical-align: top;
+}
+
+.tv-channel {
+  grid-template-columns: 36px repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  align-content: start;
+  justify-content: start;
+  align-items: stretch;
+  justify-items: stretch;
+  padding-bottom: 9px;
+  padding-left: 3px;
+  padding-top: 12px;
+  vertical-align: top;
+}
+
+.tv-logo {
+  background-color: var(--c1tv);
+  justify-content: center;
+  height: 100%;
+  width: 34px;
+}
+
+.tv-logo img {
+  aspect-ratio: 1 / 3;
+  margin-top: 6px;
+  height: auto;
+  width: 28px;
+}
+
+.tv-master {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-content: start;
+  justify-content: start;
+  align-items: stretch;
+  justify-items: stretch;
+  padding: 0 6px 6px 3px;
+  vertical-align: top;
+}
+
+.tv-prog {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  align-content: start;
+  justify-content: start;
+  align-items: stretch;
+  justify-items: stretch;
+  vertical-align: top;
+}
+
+.tv-start-title {
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr;
+  align-content: center;
+  justify-content: center;
+  align-items: stretch;
+  justify-items: stretch;
+  vertical-align: top;
+}
+
+.tv-desc {
+  display: block;
+  width: 100%;
+}
+
+.tv-desc div {
+  display: inline-block;
+  width: auto;
+}
+
+.tv-duree {
+  display: inline-flex;
+  width: auto;
+}
+
+.tv-descshort {
+  display: flex;
+  align-content: start;
+  justify-content: start;
+  align-items: stretch;
+  justify-items: stretch;
+  width: 100%;
+}
+
+.tv-cat-img img {
+  height: auto;
+}
+
+.tv-start,
+.tv-duree {
+  color: var(--c9);
+}
+
+.tv-title {
+  color: var(--c3);
+  font-family: "Sriracha", "Segoe Print", "Brush Script", sans-serif;
+}
+
+.tv-desc div:first-child {
+  color: var(--c2);
+}
+
+@media (max-width: 1680px) {
+  .tv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tv-menu {
+    outline: 1px solid var(--c1);
+    outline-offset: -1px;
+    height: 48px;
+    line-height: 48px;
+  }
+
+  .tv-grid-demain {
+    grid-template-columns: 1fr;
+  }
+
+  .tv-master {
+    padding: 0 6px 6px 3px;
+  }
+
+  .tv-cat-img img {
+    margin: 8px auto 7px auto;
+    border-radius: 3px;
+    outline: 1px solid var(--c1);
+    outline-offset: -1px;
+    width: calc(100% - 10px);
+  }
+
+  .tv-descshort {
+    margin: 0 0 3px 0;
+  }
+
+  .tv-duree {
+    padding: 0 0 0 6px;
+  }
+
+  .tv-start {
+    font-size: 16px;
+  }
+
+  .tv-title {
+    font-size: 19px;
+    padding: 0 0 0 9px;
+  }
+}
+
+@media (min-width: 1681px) and (max-width: 1920px) {
+  .mid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 0 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .tv-menu {
+    outline: 1px solid var(--c1);
+    outline-offset: -1px;
+    height: 48px;
+    line-height: 48px;
+  }
+
+  .tv-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tv-grid-demain {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tv-master {
+    padding: 0 6px 6px 3px;
+  }
+
+  .tv-cat-img img {
+    margin: 8px auto 7px auto;
+    border-radius: 3px;
+    outline: 1px solid var(--c1);
+    outline-offset: -1px;
+    width: calc(100% - 10px);
+  }
+
+  .tv-descshort {
+    margin: 0 0 3px 0;
+  }
+
+  .tv-duree {
+    padding: 0 0 0 6px;
+  }
+
+  .tv-start {
+    font-size: 17px;
+  }
+
+  .tv-title {
+    font-size: 19px;
+    padding: 0 0 0 9px;
+  }
+}
+
+@media (min-width: 1921px) {
+  .mid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 0 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .tv-menu {
+    outline: calc(3 / 1920 * 100vw) solid var(--c1);
+    outline-offset: calc(-1 / 1920 * 100vw);
+    height: calc(48 / 1920 * 100vw);
+    line-height: calc(48 / 1920 * 100vw);
+  }
+
+  .tv-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tv-grid-demain {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tv-channel {
+    grid-template-columns: calc(36 / 1920 * 100vw) repeat(2, 1fr);
+    padding-bottom: calc(9 / 1920 * 100vw);
+    padding-left: calc(3 / 1920 * 100vw);
+    padding-top: calc(12 / 1920 * 100vw);
+  }
+
+  .tv-logo {
+    width: calc(34 / 1920 * 100vw);
+  }
+
+  .tv-logo img {
+    margin-top: calc(6 / 1920 * 100vw);
+    width: calc(28 / 1920 * 100vw);
+  }
+
+  .tv-master {
+    padding: 0 calc(6 / 1920 * 100vw) calc(6 / 1920 * 100vw)
+      calc(3 / 1920 * 100vw);
+  }
+
+  .tv-cat-img img {
+    margin: calc(8 / 1920 * 100vw) auto calc(7 / 1920 * 100vw) auto;
+    border-radius: calc(3 / 1920 * 100vw);
+    outline: calc(1 / 1920 * 100vw) solid var(--c1);
+    outline-offset: calc(-1 / 1920 * 100vw);
+    width: calc(100% - calc(10 / 1920 * 100vw));
+  }
+
+  .tv-descshort {
+    margin: 0 0 calc(3 / 1920 * 100vw) 0;
+  }
+
+  .tv-duree {
+    padding: 0 0 0 calc(6 / 1920 * 100vw);
+  }
+
+  .tv-start {
+    font-size: calc(17 / 1920 * 100vw);
+  }
+
+  .tv-title {
+    font-size: calc(19 / 1920 * 100vw);
+    padding: 0 0 0 calc(9 / 1920 * 100vw);
+  }
+}
