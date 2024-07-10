@@ -77,9 +77,21 @@
   grid-auto-flow: row;
 }
 
-.top-sub-menu div {
+.top-sub-menu div,
+.top-sub-menu a {
   color: var(--c8);
   font-family: "Sriracha", "Segoe Print", "Brush Script", sans-serif;
+}
+
+.top-sub-menu a:hover {
+  color: var(--c3);
+}
+
+a.top_lien_menu {
+  filter: contrast(1) saturate(1) brightness(1) drop-shadow(0);
+  transform: scale(1);
+  transition-duration: 400ms, 400ms;
+  transition-property: filter, transform;
 }
 
 @media (max-width: 1280px) {
@@ -162,15 +174,21 @@
   }
 
   .top-sub-menu div {
-    font-size: 16px;
+    font-size: 15px;
+    line-height: 18px;
     padding: 0 0 0 3px;
+  }
+
+  .top-sub-menu a {
+    font-size: 15px;
+    line-height: 18px;
   }
 
   a.top_lien_menu:hover {
     filter: contrast(1.025) saturate(1.025) brightness(1.025)
       drop-shadow(0 0 9px var(--c7));
     transform: scale(1.125);
-    transition-duration: 350ms, 350ms;
+    transition-duration: 400ms, 400ms;
     transition-property: filter, transform;
   }
 }
@@ -256,7 +274,6 @@
   }
 
   .top-sub-menu div {
-    line-height: 30px;
     padding: 0 0 0 9px;
   }
 
@@ -264,7 +281,7 @@
     filter: contrast(1.025) saturate(1.025) brightness(1.025)
       drop-shadow(0 0 9px var(--c7));
     transform: scale(1.125);
-    transition-duration: 350ms, 350ms;
+    transition-duration: 400ms, 400ms;
     transition-property: filter, transform;
   }
 }
@@ -350,7 +367,6 @@
   }
 
   .top-sub-menu div {
-    line-height: calc(30 / 1920 * 100vw);
     padding: 0 0 0 calc(9 / 1920 * 100vw);
   }
 
@@ -358,7 +374,7 @@
     filter: contrast(1.025) saturate(1.025) brightness(1.025)
       drop-shadow(0 0 calc(9 / 1920 * 100vw) var(--c7));
     transform: scale(1.125);
-    transition-duration: 350ms, 350ms;
+    transition-duration: 400ms, 400ms;
     transition-property: filter, transform;
   }
 }
