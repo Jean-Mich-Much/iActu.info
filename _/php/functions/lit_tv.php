@@ -267,7 +267,7 @@
         <div class="tv-prog">
         <div class="tv-start-title">
          <div class="tv-start">&#9200;' . date("H:i", $start) . '</div>
-         <div class="tv-title" title="&nbsp;' . $title . '&nbsp;"> &#128250;' . $title . '</div></div>' . $thumbnail . $showdescshort . ' 
+         <div class="tv-title" title="&nbsp;' . $title . '&nbsp;"> &#128250;&nbsp;' . $title . '</div></div>' . $thumbnail . $showdescshort . ' 
          </div>
       </div>';
 
