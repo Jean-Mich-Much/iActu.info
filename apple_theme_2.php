@@ -1,19 +1,19 @@
 <?php
 $titre_page = 'Apple';
-$nom_page = 'apple';
+$nom_page = 'apple_2';
 $page_active = 'apple';
-$titre_page_active = '&#127823;&nbsp;Apple';
+$titre_page_active = 'Apple';
 $cache_secondes = 19;
 
-$lien_accueil = 'index.php';
-$lien_tech = 'technologie.php';
-$lien_apple = 'apple.php';
-$lien_jeux = 'jeux.php';
-$lien_sciences = 'sciences.php';
-$lien_actu = 'actualites.php';
-$lien_tv = 'tv.php';
+$lien_accueil = 'index_2.php';
+$lien_tech = 'technologie_2.php';
+$lien_apple = 'apple_2.php';
+$lien_jeux = 'jeux_2.php';
+$lien_sciences = 'sciences_2.php';
+$lien_actu = 'actualites_2.php';
+$lien_tv = 'tv_2.php';
 
-$lien_theme = 'apple_2.php';
+$lien_theme = 'apple.php';
 
 ?>
 
@@ -30,15 +30,15 @@ $lien_theme = 'apple_2.php';
  <head>
   <?php @include '_/php/header.php'; ?>
   <style type="text/css">
-  <?php @readfile('_/css/root.css');
-  @readfile('_/css/fonts.css');
-  @readfile('_/css/body.css');
-  @readfile('_/css/container.css');
-  @readfile('_/css/top.css');
-  @readfile('_/css/mid.css');
-  @readfile('_/css/bot.css');
-  @readfile('_/css/mess.css');
-  @readfile('_/css/zindex.css');
+  <?php @readfile('_/css/2/root.css');
+  @readfile('_/css/2/fonts.css');
+  @readfile('_/css/2/body.css');
+  @readfile('_/css/2/container.css');
+  @readfile('_/css/2/top.css');
+  @readfile('_/css/2/mid.css');
+  @readfile('_/css/2/bot.css');
+  @readfile('_/css/2/mess.css');
+  @readfile('_/css/2/zindex.css');
   ?>
   </style>
  </head>
@@ -48,7 +48,7 @@ $lien_theme = 'apple_2.php';
   <div class="container">
 
    <nav class="top" id="top">
-    <?php @include '_/php/top.php'; ?>
+    <?php @include '_/php/2/top.php';?>
    </nav>
 
    <?php @include '_/php/mess_top.php'; ?>

@@ -14,6 +14,8 @@ $lien_sciences = 'sciences.php';
 $lien_actu = 'actualites.php';
 $lien_tv = 'tv.php';
 
+$lien_theme = 'technologie_2.php';
+
 ?>
 
 <?php if (!file_exists($nom_page . '.html') or filemtime($nom_page . '.html') < (time() - $cache_secondes) or !file_exists($nom_page . date("j") . '.html')) { ?>
