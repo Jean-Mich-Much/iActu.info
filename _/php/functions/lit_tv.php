@@ -1,4 +1,4 @@
-<?php function lit_tv($filename, $choicestart, $choiceend, $choiceduration, $howmanyprogs, $longdesc, $longtitle, $showimg, $showcat, $showdesc, $showimg_src, $starttomorow, $endtomorow, $demain)
+<?php function lit_tv($filename, $choicestart, $choiceend, $choiceduration, $howmanyprogs, $longdesc, $longtitle, $showimg, $showcat, $showdesc, $showimg_src, $starttomorow, $endtomorow, $demain, $prefix)
 {
   try {
     $xml = simplexml_load_file('_/cache/source/tv.xml');
@@ -12,7 +12,7 @@
   foreach ($xml->channel as $channel) {
     $progCount = 0;
     $namechannelimg = strtolower(preg_replace('/[^A-Za-z0-9\-]/', '', $channel->{'display-name'}));
-    $pathchannelimg = "_/img/tv/channels/" . $namechannelimg . "90tv.webp";
+    $pathchannelimg = "_/img/tv/channels/" . $prefix.$namechannelimg . ".webp";
     echo '<div class="tv-channel c' . $namechannelimg . '"><div class="tv-logo"><img src="' . $pathchannelimg . '" width="80" height="240" alt="' . $channel->{'display-name'} . '" title="' . $channel->{'display-name'} . '" id="' . $namechannelimg . date('His') . '"></div>';
     foreach ($progs as $programme) {
       if ((string) $programme['channel'] != (string) $channel['id'])
