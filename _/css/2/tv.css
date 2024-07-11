@@ -211,19 +211,25 @@
   }
 
   .tv-descshort {
+    font-size: 14px;
     margin: 0 0 3px 0;
   }
 
+  .tv-cat-serie {
+    font-size: 14px;
+  }
+
   .tv-duree {
+    font-size: 14px;
     padding: 0 0 0 6px;
   }
 
   .tv-start {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .tv-title {
-    font-size: 19px;
+    font-size: 16px;
     padding: 0 0 0 9px;
   }
 }
@@ -266,19 +272,25 @@
   }
 
   .tv-descshort {
+    font-size: 14px;
     margin: 0 0 3px 0;
   }
 
+  .tv-cat-serie {
+    font-size: 14px;
+  }
+
   .tv-duree {
+    font-size: 14px;
     padding: 0 0 0 6px;
   }
 
   .tv-start {
-    font-size: 17px;
+    font-size: 14px;
   }
 
   .tv-title {
-    font-size: 19px;
+    font-size: 16px;
     padding: 0 0 0 9px;
   }
 }
@@ -338,19 +350,25 @@
   }
 
   .tv-descshort {
+    font-size: calc(14 / 1920 * 100vw);
     margin: 0 0 calc(3 / 1920 * 100vw) 0;
   }
 
+  .tv-cat-serie {
+    font-size: calc(14 / 1920 * 100vw);
+  }
+
   .tv-duree {
+    font-size: calc(14 / 1920 * 100vw);
     padding: 0 0 0 calc(6 / 1920 * 100vw);
   }
 
   .tv-start {
-    font-size: calc(17 / 1920 * 100vw);
+    font-size: calc(14 / 1920 * 100vw);
   }
 
   .tv-title {
-    font-size: calc(19 / 1920 * 100vw);
+    font-size: calc(16 / 1920 * 100vw);
     padding: 0 0 0 calc(9 / 1920 * 100vw);
   }
 }
