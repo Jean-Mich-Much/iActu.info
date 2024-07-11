@@ -53,7 +53,7 @@ $lien_theme = 'tv.php';
    <?php @include '_/php/mess_top.php'; ?>
 
    <main class="mid">
-   <?php  if (file_exists('tv_maj_final.html')) {@include('tv_maj_final.html');}; ?>
+   <?php  if (file_exists('tv_maj_final_2.html')) {@include('tv_maj_final_2.html');}; ?>
    </main>
 
    <?php @include '_/php/mess_bot.php'; ?>
@@ -73,7 +73,7 @@ $lien_theme = 'tv.php';
 if (!file_exists("_/cache/source/xmltv_tnt.xml") or @filemtime("_/cache/source/xmltv_tnt.tem") < (time() - $cache_secondes_tv)) {exec('wget -O "/_/_/cache/source/xmltv_tnt.xml" "https://xmltvfr.fr/xmltv/xmltv_tnt.xml" -q --limit-rate=16384k --no-check-certificate'. " > /dev/null &");if (!file_exists("_/cache/source/xmltv_tnt.time")){fopen("_/cache/source/xmltv_tnt.time", "w");} @copy("_/cache/source/xmltv_tnt.time", "_/cache/source/xmltv_tnt.tem");
 }
 
-exec('/usr/bin/php-cgi8.3 /_/tv_maj.php > /dev/null &');
+exec('/usr/bin/php-cgi8.3 /_/tv_maj_2.php > /dev/null &');
 
  if (!file_exists("_/cache/source/tv.xml") or @filemtime("_/cache/source/xmltv_tnt.tem") < (time() - 300)) {exec('chmod 777 /_/_/cache/source/xmltv_tnt.xml && chown caddy:caddy /_/_/cache/source/xmltv_tnt.xml');
   $file_xml = file_get_contents('_/cache/source/xmltv_tnt.xml');
