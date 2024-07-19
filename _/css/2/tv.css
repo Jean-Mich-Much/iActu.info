@@ -80,7 +80,7 @@
 }
 
 .tv-channel {
-  grid-template-columns: 48px repeat(2, 1fr);
+  grid-template-columns: 42px repeat(2, 1fr);
   grid-template-rows: 1fr;
   align-content: start;
   justify-content: start;
@@ -97,7 +97,7 @@
   justify-content: center;
   justify-self: center;
   height: 100%;
-  width: 42px;
+  width: 36px;
 }
 
 .tv-logo img {
@@ -107,7 +107,7 @@
   opacity: 0.92;
   text-align: center;
   vertical-align: top;
-  width: 42px;
+  width: 36px;
 }
 
 .tv-master {
@@ -165,7 +165,15 @@
   width: 100%;
 }
 
+.tv-cat-img {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  width: 100%;
+}
+
 .tv-cat-img img {
+  display: block;
   height: auto;
 }
 
@@ -216,7 +224,9 @@
     margin: 0 0 3px 0;
   }
 
-  .tv-cat-serie {
+  .tv-cat-serie,
+  .tv-desc,
+  .tv-desc div {
     font-size: 14px;
   }
 
@@ -277,7 +287,9 @@
     margin: 0 0 3px 0;
   }
 
-  .tv-cat-serie {
+  .tv-cat-serie,
+  .tv-desc,
+  .tv-desc div {
     font-size: 14px;
   }
 
@@ -322,7 +334,7 @@
   }
 
   .tv-channel {
-    grid-template-columns: calc(48 / 1920 * 100vw) repeat(2, 1fr);
+    grid-template-columns: calc(42 / 1920 * 100vw) repeat(2, 1fr);
     padding-bottom: calc(9 / 1920 * 100vw);
     padding-left: calc(9 / 1920 * 100vw);
     padding-right: calc(9 / 1920 * 100vw);
@@ -330,12 +342,12 @@
   }
 
   .tv-logo {
-    width: calc(42 / 1920 * 100vw);
+    width: calc(36 / 1920 * 100vw);
   }
 
   .tv-logo img {
     margin: calc(-12 / 1920 * 100vw) auto auto auto;
-    width: calc(42 / 1920 * 100vw);
+    width: calc(36 / 1920 * 100vw);
   }
 
   .tv-master {
@@ -356,7 +368,9 @@
     margin: 0 0 calc(3 / 1920 * 100vw) 0;
   }
 
-  .tv-cat-serie {
+  .tv-cat-serie,
+  .tv-desc,
+  .tv-desc div {
     font-size: calc(14 / 1920 * 100vw);
   }
 
