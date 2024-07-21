@@ -138,8 +138,8 @@ function parse($fichier, $logo, $lienSite, $w, $h, $titreSite,$cache,$source_flu
   parsexml($fichier);
   $dossier = '_/cache/html/';
   $id = unique(2) . $logo . unique(2);
-  $texte1 = ' news aujourd’hui ⏰';
-  $texte2 = 'Rien de neuf ⏰';
+  $texte1 = ' news aujourd’hui&nbsp;&nbsp;⏰';
+  $texte2 = 'Rien de neuf&nbsp;&nbsp;⏰';
   $texte3 = 'Une erreur s’est produite';
   $texte4 = '<div class="ay">&#128197;&nbsp;Aujourd’hui</div><div class="ay">&#128197;&nbsp;Jours précédents</div>';
   $texte5 = '<div class="ay">&#128197;&nbsp;Aujourd’hui : pas de news</div><div class="ay">&#128197;&nbsp;Jours précédents</div>';
