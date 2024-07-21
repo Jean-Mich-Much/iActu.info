@@ -50,7 +50,7 @@ a {
   border: 0;
   box-sizing: border-box;
   direction: ltr;
-  font-family: "Inter", "Open Sans", sans-serif;
+  font-family: "Inter", "Open Sans", -apple-system, "Segoe UI", sans-serif, "color-emoji", "Noto Color Emoji";
   font-kerning: normal;
   font-stretch: 100%;
   font-style: normal;

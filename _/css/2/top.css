@@ -72,7 +72,7 @@
 
   .lien_top,
   .lien_top a {
-    font-family: "Sriracha", "Segoe Print", "Brush Script", sans-serif;
+    font-family: "Sriracha", "Segoe Print", "Brush Script", "color-emoji", "Noto Color Emoji", sans-serif;
     font-size: 16px;
   }
 }
@@ -96,7 +96,7 @@
 
   .lien_top,
   .lien_top a {
-    font-family: "Sriracha", "Segoe Print", "Brush Script", sans-serif;
+    font-family: "Sriracha", "Segoe Print", "Brush Script", "color-emoji", "Noto Color Emoji", sans-serif;
     font-size: 18px;
   }
 }
@@ -120,7 +120,7 @@
 
   .lien_top,
   .lien_top a {
-    font-family: "Sriracha", "Segoe Print", "Brush Script", sans-serif;
+    font-family: "Sriracha", "Segoe Print", "Brush Script", "color-emoji", "Noto Color Emoji", sans-serif;
     font-size: calc(18 / 1920 * 100vw);
   }
 }
