@@ -251,8 +251,11 @@
 }
 
 .tv-title {
+  display: flex;
+  align-self: center;
   color: var(--c2);
-  font-family: "Sriracha", "Segoe Print", "Brush Script", sans-serif;
+  font-family: "Sriracha", "Segoe Print", "Brush Script", "color-emoji", "Noto Color Emoji";
+  vertical-align: middle;
 }
 
 .tv-desc div:first-child {

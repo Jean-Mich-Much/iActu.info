@@ -103,14 +103,14 @@ img.logo_site {
 
 .titre_site {
   display: inline;
-  font-family: "Sriracha", "Segoe Print", "Brush Script", sans-serif;
+  font-family: "Sriracha", "Segoe Print", "Brush Script", "color-emoji", "Noto Color Emoji";
   text-align: left;
   vertical-align: middle;
 }
 
 .news_today {
   display: inline;
-  font-family: "Sriracha", "Segoe Print", "Brush Script", sans-serif;
+  font-family: "Sriracha", "Segoe Print", "Brush Script", "color-emoji", "Noto Color Emoji";
   text-align: right;
   vertical-align: middle;
 }
