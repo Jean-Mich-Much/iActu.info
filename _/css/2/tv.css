@@ -102,7 +102,7 @@
 
 .tv-logo img {
   aspect-ratio: 1 / 3;
-  margin: -12px auto auto auto;
+  margin: -8px auto auto auto;
   height: auto;
   opacity: 0.92;
   text-align: center;
@@ -375,7 +375,7 @@
   }
 
   .tv-logo img {
-    margin: calc(-12 / 1920 * 100vw) auto auto auto;
+    margin: calc(-8 / 1920 * 100vw) auto auto auto;
     width: calc(36 / 1920 * 100vw);
   }
 
