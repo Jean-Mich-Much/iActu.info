@@ -204,9 +204,8 @@
   grid-template-rows: 1fr;
   align-content: center;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
   justify-items: stretch;
-  vertical-align: top;
 }
 
 .tv-desc {
@@ -250,11 +249,18 @@
   color: var(--c8);
 }
 
+.tv-start {
+  display: inline-flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
 .tv-title {
-  display: flex;
+  display: inline-flex;
   align-self: center;
   color: var(--c2);
-  font-family: "Sriracha", "Segoe Print", "Brush Script", "color-emoji", "Noto Color Emoji";
+  font-family: "Sriracha", "Segoe Print", "Brush Script", "color-emoji",
+    "Noto Color Emoji";
   vertical-align: middle;
 }
 
@@ -311,6 +317,16 @@
   .tv-title {
     font-size: 16px;
     padding: 0 0 0 9px;
+  }
+
+  .tv-start {
+    height: 14px;
+    line-height: 14px;
+  }
+
+  .tv-title {
+    height: 24px;
+    line-height: 24px;
   }
 }
 
@@ -372,6 +388,16 @@
   .tv-title {
     font-size: 17px;
     padding: 0 0 0 9px;
+  }
+
+  .tv-start {
+    height: 15px;
+    line-height: 15px;
+  }
+
+  .tv-title {
+    height: 25px;
+    line-height: 25px;
   }
 }
 
@@ -513,5 +539,15 @@
   .tv-title {
     font-size: calc(17 / 1920 * 100vw);
     padding: 0 0 0 calc(9 / 1920 * 100vw);
+  }
+
+  .tv-start {
+    height: calc(15 / 1920 * 100vw);
+    line-height: calc(15 / 1920 * 100vw);
+  }
+
+  .tv-title {
+    height: calc(25 / 1920 * 100vw);
+    line-height: calc(25 / 1920 * 100vw);
   }
 }
