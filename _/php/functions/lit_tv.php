@@ -100,7 +100,7 @@
         $desclong = empty($desclong) ? "Sans descriptif" : $desclong;
 
         $emoji = '💤';
-        $imgcat = 'autres';
+        $imgcat = 'autre';
         $csscat = '';
         switch ($programme->category) {
           case 'Film':
@@ -110,68 +110,68 @@
             break;
           case 'Série':
             $emoji = '🎬';
-            $imgcat = 'serie';
+            $imgcat = 'film';
             $csscat = ' class="tv-cat-serie"';
             break;
           case 'Documentaire':
             $emoji = '🚀';
-            $imgcat = 'documentaire';
+            $imgcat = 'autre';
             break;
           case 'Magazine':
             $emoji = '🗞️';
-            $imgcat = 'divertissement';
+            $imgcat = 'autre';
             break;
           case 'Info-Météo':
             $emoji = '📰';
-            $imgcat = 'documentaire';
+            $imgcat = 'autre';
             break;
           case 'Divertissement':
             $emoji = '🎭';
-            $imgcat = 'divertissement';
+            $imgcat = 'autre';
             break;
           case 'Magazine du cinéma':
             $emoji = '🎭';
-            $imgcat = 'divertissement';
+            $imgcat = 'autre';
             break;
           case 'Sport':
             $emoji = '⚽';
-            $imgcat = 'sport';
+            $imgcat = 'autre';
             break;
           case 'Football':
             $emoji = '⚽';
-            $imgcat = 'sport';
+            $imgcat = 'autre';
             break;
           case 'Rugby':
             $emoji = '🏉';
-            $imgcat = 'sport';
+            $imgcat = 'autre';
             break;
           case 'Tennis':
             $emoji = '🎾';
-            $imgcat = 'sport';
+            $imgcat = 'autre';
             break;
           case 'Golf':
             $emoji = '⛳';
-            $imgcat = 'sport';
+            $imgcat = 'autre';
             break;
           case 'Rallye':
             $emoji = '🏎️';
-            $imgcat = 'sport';
+            $imgcat = 'autre';
             break;
           case 'Musique':
             $emoji = '🎵';
-            $imgcat = 'divertissement';
+            $imgcat = 'autre';
             break;
           case 'Jeunesse':
             $emoji = '🐻';
-            $imgcat = 'jeunesse';
+            $imgcat = 'autre';
             break;
           case 'Evénement':
             $emoji = '🎭';
-            $imgcat = 'divertissement';
+            $imgcat = 'autre';
             break;
           case 'Culture':
             $emoji = '🧐️';
-            $imgcat = 'divertissement';
+            $imgcat = 'autre';
             break;
           case 'Action':
             $emoji = '🎞️';
@@ -207,7 +207,7 @@
 
         $picturecat = '';
         if ($showimg) {
-          $picturecat = "_/img/tv/' . $imgcat . '.webp";
+          $picturecat = "_/img/tv/cat/' . $imgcat . '.webp";
         }
 
         $picture_src = '';
@@ -231,20 +231,20 @@
                 $mime = finfo_file($finfo, $destinationPath);
                 finfo_close($finfo);
                 if (!preg_match('/^image\//', $mime)) {
-                  $destinationPath = "_/img/tv/" . $imgcat . ".webp";
+                  $destinationPath = "_/img/tv/cat/" . $imgcat . ".webp";
                 }
               } else {
-                $destinationPath = "_/img/tv/" . $imgcat . ".webp";
+                $destinationPath = "_/img/tv/cat/" . $imgcat . ".webp";
               }
             }
             if (file_exists($destinationPath)) {
               $picture_src = $destinationPath;
             } else {
-              $destinationPath = "_/img/tv/" . $imgcat . ".webp";
+              $destinationPath = "_/img/tv/cat/" . $imgcat . ".webp";
               $picture_src = $destinationPath;
             }
           } else {
-            $destinationPath = "_/img/tv/" . $imgcat . ".webp";
+            $destinationPath = "_/img/tv/cat/" . $imgcat . ".webp";
             $picture_src = $destinationPath;
           }
           $thumbnail = '<div class="tv-cat-img"><img src="' . $picturecat . $picture_src . '" width="160" height="90" alt="' . $channel->{'display-name'} . '" title="' . $title . '" id="' . $picturecat . $picture_src . date(" Hi", $start) . '"></div>';
@@ -252,21 +252,21 @@
 
         $category = '';
         if ($showcat) {
-          $category = '<div' . $csscat . '>' . $emoji . $programme->category . '</div>';
+          $category = '<div' . $csscat . '>' . $emoji . '&nbsp;'.$programme->category . '</div>';
         }
 
         $descshort = '';
         $showdescshort = '';
         if ($showdesc) {
           $descshort = str_replace('Aucune description', '', $desc);
-          $showdescshort = '<div class="tv-desc" title="📃' . $desclong . '">' . str_replace('Info-Météo', 'Infos', $category) . '<div class="tv-duree">⏱️' . $dureeFormatee . '</div><div class="tv-descshort">' . $descshort . '</div></div> ';
+          $showdescshort = '<div class="tv-desc" title="📃' . $desclong . '">' . str_replace('Info-Météo', 'Infos', $category) . '<div class="tv-duree">⏱️&nbsp;' . $dureeFormatee . '</div><div class="tv-descshort">' . $descshort . '</div></div> ';
         }
 
         echo '
        <div class="tv-master">
         <div class="tv-prog">
         <div class="tv-start-title">
-         <div class="tv-start">&#9200;' . date("H:i", $start) . '</div>
+         <div class="tv-start">&#9200;&nbsp;' . date("H:i", $start) . '</div>
          <div class="tv-title" title="&nbsp;' . $title . '&nbsp;"> &#128250;&nbsp;' . $title . '</div></div>' . $thumbnail . $showdescshort . ' 
          </div>
       </div>';
