@@ -39,6 +39,13 @@
       $debutprime10 = strtotime('09:59:59');
       $debutprime09 = strtotime('08:59:59');
       $debutprime08 = strtotime('07:59:59');
+      $debutprime07 = strtotime('06:59:59');
+      $debutprime06 = strtotime('05:59:59');
+      $debutprime05 = strtotime('04:59:59');
+      $debutprime04 = strtotime('03:59:59');
+      $debutprime03 = strtotime('02:59:59');
+      $debutprime02 = strtotime('01:59:59');
+      $debutprime01 = strtotime('00:59:59');
       $finprime = strtotime('21:11:59');
       if ($demain) {
         $datedemain = date('Y-m-d', strtotime('+1 days'));
@@ -56,10 +63,17 @@
         $debutprime10 = strtotime('+1 days', strtotime('09:59:59'));
         $debutprime09 = strtotime('+1 days', strtotime('08:59:59'));
         $debutprime08 = strtotime('+1 days', strtotime('07:59:59'));
+        $debutprime07 = strtotime('+1 days', strtotime('06:59:59'));
+        $debutprime06 = strtotime('+1 days', strtotime('05:59:59'));
+        $debutprime05 = strtotime('+1 days', strtotime('04:59:59'));
+        $debutprime04 = strtotime('+1 days', strtotime('03:59:59'));
+        $debutprime03 = strtotime('+1 days', strtotime('02:59:59'));
+        $debutprime02 = strtotime('+1 days', strtotime('01:59:59'));
+        $debutprime01 = strtotime('+1 days', strtotime('00:59:59'));
       }
 
       if (
-        (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime20 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 72) or (((date('Y-m-d', $start) == date('Y-m-d') && $start >= $debut && $start <= $fin) or (date('Y-m-d', $start) == date('Y-m-d', strtotime('+1 days')) && $start >= $debutplus1 && $start <= $finplus1)) && $progCount < $howmanyprogs && $duree > $choiceduration)
+        (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime20 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 72) or (((date('Y-m-d', $start) == date(format: 'Y-m-d') && $start >= $debut && $start <= $fin) or (date('Y-m-d', $start) == date('Y-m-d', strtotime('+1 days')) && $start >= $debutplus1 && $start <= $finplus1)) && $progCount < $howmanyprogs && $duree > $choiceduration)
         or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime19 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 132)
         or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime18 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 192)
         or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime17 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 252)
@@ -72,6 +86,33 @@
         or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime10 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 672)
         or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime09 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 732)
         or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime08 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 792)
+        or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime07 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 852)
+        or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime06 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 912)
+        or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime05 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 972)
+        or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime04 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 1032)
+        or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime03 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 1092)
+        or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime02 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 1152)
+        or (((date('Y-m-d', $start) == $datedemain && $start >= $debutprime01 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 1212)
+        or (((date('Y-m-d', $start) == date(format: 'Y-m-d') && $start >= $debutprime20 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 72)
+        or (((date('Y-m-d', $start) == date(format: 'Y-m-d') && $start >= $debutprime19 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 132)
+        or (((date('Y-m-d', $start) == date(format: 'Y-m-d') && $start >= $debutprime18 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 192)
+        or (((date('Y-m-d', $start) == date(format: 'Y-m-d') && $start >= $debutprime17 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 252)
+        or (((date('Y-m-d', $start) == date(format: 'Y-m-d') && $start >= $debutprime16 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 312)
+        or (((date('Y-m-d', $start) == date(format: 'Y-m-d') && $start >= $debutprime15 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 372)
+        or (((date('Y-m-d', $start) == date(format: 'Y-m-d') && $start >= $debutprime14 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 432)
+        or (((date('Y-m-d', $start) == date(format: 'Y-m-d') && $start >= $debutprime13 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 492)
+        or (((date('Y-m-d', $start) == date(format: 'Y-m-d') && $start >= $debutprime12 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 552)
+        or (((date('Y-m-d', $start) == date(format: 'Y-m-d') && $start >= $debutprime11 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 612)
+        or (((date('Y-m-d', $start) == date(format: 'Y-m-d') && $start >= $debutprime10 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 672)
+        or (((date('Y-m-d', $start) == date(format: 'Y-m-d') && $start >= $debutprime09 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 732)
+        or (((date('Y-m-d', $start) == date(format: 'Y-m-d') && $start >= $debutprime08 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 792)
+        or (((date('Y-m-d', $start) == date(format: 'Y-m-d') && $start >= $debutprime07 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 852)
+        or (((date('Y-m-d', $start) == date(format: 'Y-m-d') && $start >= $debutprime06 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 912)
+        or (((date('Y-m-d', $start) == date(format: 'Y-m-d') && $start >= $debutprime05 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 972)
+        or (((date('Y-m-d', $start) == date(format: 'Y-m-d') && $start >= $debutprime04 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 1032)
+        or (((date('Y-m-d', $start) == date(format: 'Y-m-d') && $start >= $debutprime03 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 1092)
+        or (((date('Y-m-d', $start) == date(format: 'Y-m-d') && $start >= $debutprime02 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 1152)
+        or (((date('Y-m-d', $start) == date(format: 'Y-m-d') && $start >= $debutprime01 && $start <= $finprime)) && $progCount < $howmanyprogs && $duree > 1212)
       ) {
         $fullTitle = htmlspecialchars(str_replace("\\", "", str_replace("\"", "’", str_replace("'", "’", @strip_tags(@mb_convert_encoding($programme->title, 'UTF-8', 'auto'))))));
         if ($fullTitle === false || mb_check_encoding($fullTitle, 'UTF-8') === false) {
