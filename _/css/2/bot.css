@@ -44,11 +44,17 @@
   vertical-align: middle;
 }
 
+.bot {
+  margin-bottom: 4px;
+  margin-top: 4px;
+}
+
+
 @media (max-width: 1280px) {
   .bot,
   .lien_bot,
   .lien_bot a {
-    padding: 3px;
+    padding: 7px;
   }
 
   .lien_bot a:hover,
@@ -61,7 +67,7 @@
   .bot,
   .lien_bot,
   .lien_bot a {
-    padding: 5px;
+    padding: 7px;
   }
 
   .lien_bot a:hover,
@@ -74,11 +80,16 @@
   .bot,
   .lien_bot,
   .lien_bot a {
-    padding: calc(5 / 1920 * 100vw);
+    padding: calc(7 / 1920 * 100vw);
   }
 
   .lien_bot a:hover,
   .lien_bot a.page_active {
     border-radius: calc(5 / 1920 * 100vw);
+  }
+
+  .bot {
+    margin-bottom: calc(4 / 1920 * 100vw);
+    margin-top: calc(4 / 1920 * 100vw);
   }
 }
