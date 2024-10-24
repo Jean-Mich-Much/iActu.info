@@ -103,14 +103,16 @@ img.logo_site {
 
 .titre_site {
   display: inline;
-  font-family: "Sriracha", "Segoe Print", "Brush Script", "color-emoji", "Noto Color Emoji";
+  font-family: "Sriracha", "Segoe Print", "Brush Script", "color-emoji",
+    "Noto Color Emoji";
   text-align: left;
   vertical-align: middle;
 }
 
 .news_today {
   display: inline;
-  font-family: "Sriracha", "Segoe Print", "Brush Script", "color-emoji", "Noto Color Emoji";
+  font-family: "Sriracha", "Segoe Print", "Brush Script", "color-emoji",
+    "Noto Color Emoji";
   text-align: right;
   vertical-align: middle;
 }
@@ -170,11 +172,16 @@ a.n {
   .en_tete {
     border-radius: 8px;
     margin: 8px 8px 4px 8px;
-    padding: 8px;
+    width: calc(100% - 16px);
   }
 
   .lien_site {
     gap: 0px 6px;
+    margin: 8px;
+  }
+
+  .news_today {
+    margin: 8px;
   }
 
   img.logo_site {
@@ -230,11 +237,16 @@ a.n {
   .en_tete {
     border-radius: 9px;
     margin: 12px 12px 6px 12px;
-    padding: 12px;
+    width: calc(100% - 24px);
   }
 
   .lien_site {
     gap: 0px 6px;
+    margin: 12px;
+  }
+
+  .news_today {
+    margin: 12px;
   }
 
   img.logo_site {
@@ -293,11 +305,16 @@ a.n {
     border-radius: calc(9 / 1920 * 100vw);
     margin: calc(12 / 1920 * 100vw) calc(12 / 1920 * 100vw)
       calc(6 / 1920 * 100vw) calc(12 / 1920 * 100vw);
-    padding: calc(12 / 1920 * 100vw);
+    width: calc(100% - calc(24 / 1920 * 100vw));
   }
 
   .lien_site {
-    gap: 0px calc(6 / 1920 * 100vw);
+    gap: 0px calc(12 / 1920 * 100vw);
+    margin: calc(12 / 1920 * 100vw);
+  }
+
+  .news_today {
+    margin: calc(12 / 1920 * 100vw);
   }
 
   img.logo_site {
