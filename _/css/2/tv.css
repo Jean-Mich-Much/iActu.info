@@ -173,7 +173,11 @@
 
 .tv-cat-img img {
   display: block;
+  max-height: calc(234 / 1920 * 100vw);
   height: auto;
+  min-width: 24%;
+  max-width: 96%;
+  width: auto;
 }
 
 .tv-start,
@@ -225,7 +229,6 @@
     border-radius: 3px;
     outline: 1px solid var(--c1);
     outline-offset: -1px;
-    width: calc(100% - 10px);
   }
 
   .tv-descshort {
@@ -298,7 +301,6 @@
     border-radius: 3px;
     outline: 1px solid var(--c1);
     outline-offset: -1px;
-    width: calc(100% - 10px);
   }
 
   .tv-descshort {
@@ -389,7 +391,6 @@
     border-radius: calc(3 / 1920 * 100vw);
     outline: calc(1 / 1920 * 100vw) solid var(--c1);
     outline-offset: calc(-1 / 1920 * 100vw);
-    width: calc(100% - calc(10 / 1920 * 100vw));
   }
 
   .tv-descshort {
