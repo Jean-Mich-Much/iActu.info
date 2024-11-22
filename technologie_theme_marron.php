@@ -51,7 +51,6 @@ $lien_theme = 'technologie_2.php';
    <nav class="top" id="top">
     <?php @include '_/php/top.php'; ?>
    </nav>
-
    <?php @include '_/php/mess_top.php'; ?>
 
    <main class="mid">
@@ -73,7 +72,7 @@ $lien_theme = 'technologie_2.php';
 
     <?php parse('overc', 'Ove', 'https://overclocking.com/', 95, 144, 'Overclocking',1080,'https://iactu.info/recherche/p/i/?a=rss&get=f_101&user=Gon1Kirua&token=flux&hours=912'); ?>
 
-    <?php parse('minim', 'Min', 'https://www.minimachines.net/', 218, 144, 'MiniMachines',1140,'https://iactu.info/recherche/p/i/?a=rss&get=f_97&user=Gon1Kirua&token=flux&hours=912'); ?>
+    <?php parse('kultu', 'kug', 'https://kulturegeek.fr/', 103, 144, 'KultureGeek', 1140, 'https://iactu.info/recherche/p/i/?a=rss&get=f_110&user=Gon1Kirua&token=flux&hours=912');?>
 
     <?php parse('numer', 'Num', 'https://www.numerama.com/', 150, 144, 'Numerama',1200,'https://iactu.info/recherche/p/i/?a=rss&get=f_100&user=Gon1Kirua&token=flux&hours=912'); ?>
 
@@ -134,4 +133,5 @@ $lien_theme = 'technologie_2.php';
  }
 } else {
  @readfile($nom_page . '.html');
-}
+} ?>
+<?php @include '_/php/functions/stats.php';
