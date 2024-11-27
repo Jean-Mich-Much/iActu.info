@@ -1,4 +1,5 @@
 .container {
+  background-color: var(--c5);
   display: grid; 
   grid-auto-columns: 1fr; 
   grid-template-rows: repeat(auto-fill, auto);
