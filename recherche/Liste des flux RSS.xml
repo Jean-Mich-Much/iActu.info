@@ -2,7 +2,7 @@
 <opml xmlns:frss="https://freshrss.org/opml" version="2.0">
   <head>
     <title>iActu</title>
-    <dateCreated>Thu, 27 Jun 2024 11:58:16 +0200</dateCreated>
+    <dateCreated>Thu, 19 Dec 2024 11:22:10 +0100</dateCreated>
   </head>
   <body>
     <outline text="1.1 🖥️ Technologie">
@@ -14,11 +14,11 @@
       <outline text="GinjFo" type="rss" xmlUrl="https://www.ginjfo.com/feed" htmlUrl="http://www.ginjfo.com/" description="Toute l'actualité informatique, Hardware, High-Tech et Gaming. Restez informé au quotidien et découvrez nos tests produits et guides d’achat."/>
       <outline text="GNT" type="rss" xmlUrl="https://www.generation-nt.com/export/rss.xml" htmlUrl="http://www.generation-nt.com/" description="Generation Nouvelles Technologies"/>
       <outline text="Informaticien.be" type="rss" xmlUrl="https://www.informaticien.be/index.ks?page=rss_news" htmlUrl="http://www.informaticien.be/" description="Communauté des informaticiens belges"/>
+      <outline text="KultureGeek" type="rss" xmlUrl="http://feeds.feedburner.com/Kulturegeek" htmlUrl="https://kulturegeek.fr/" description="Actualité High-Tech, Culture Geek et comparateur de prix"/>
       <outline text="Le comptoir" type="rss" xmlUrl="https://www.comptoir-hardware.com/home.xml" htmlUrl="https://www.comptoir-hardware.com/" description="Le comptoir du hardware : les actualités, les ragots et les tests du monde hardware informatique" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="5" frss:CURLOPT_USERAGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0)"/>
       <outline text="Le Journal du Geek" type="rss" xmlUrl="https://feeds.feedburner.com/journaldugeek/cqdl" htmlUrl="http://www.journaldugeek.com/" description="Journal du Geek - Source d'actualité High-tech : téléphone mobile, tablette, gadgets... tout l'univers Geek !"/>
       <outline text="Les Numériques" type="rss" xmlUrl="https://www.lesnumeriques.com/rss-news.xml" htmlUrl="http://www.lesnumeriques.com/" description="Retrouvez toute l'actualité web et high tech, les tests de nos experts, nos guides d'achat et les bons plans du moment de l'univers numérique."/>
-      <outline text="MiniMachines" type="rss" xmlUrl="https://feeds.feedburner.com/minimachines/iactu" htmlUrl="https://www.minimachines.net/" description="Des petites machines et des hommes (qui savent lire)" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="5" frss:CURLOPT_USERAGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0)"/>
-      <outline text="Next" type="rss" xmlUrl="https://next.ink/feed/" htmlUrl="https://next.ink/"/>
+      <outline text="Next" type="rss" xmlUrl="https://next.ink/feed/" htmlUrl="https://next.ink/" description="Actualités informatiques et numériques au quotidien."/>
       <outline text="NextPit" type="rss" xmlUrl="https://www.nextpit.fr/feed/main.xml" htmlUrl="https://www.nextpit.fr/" description="Tout sur la high-tech : actualités, tests, tutoriels, vidéos et bien plus encore !"/>
       <outline text="Numerama" type="rss" xmlUrl="https://www.numerama.com/feed/" htmlUrl="https://www.numerama.com/" description="Le média de référence sur la société numérique et l'innovation technologique"/>
       <outline text="Overclocking" type="rss" xmlUrl="https://overclocking.com/feed/" htmlUrl="https://overclocking.com/" description="Overclocking &amp; Hardware"/>
@@ -30,19 +30,17 @@
     <outline text="1.2 🖥️ Tech. Autres sites">
       <outline text="GoodTech" type="rss" xmlUrl="https://goodtech.info/feed/" htmlUrl="https://goodtech.info/" description="L'actualité de l'informatique éthique"/>
       <outline text="iPhon" type="rss" xmlUrl="https://www.iphon.fr/feed" htmlUrl="https://www.iphon.fr/" description="Toute l'actualité iPhone, iPad, Mac et Apple Watch"/>
-      <outline text="Korben" type="rss" xmlUrl="https://korben.info/feed" htmlUrl="https://korben.info/" description="Upgrade your mind"/>
-      <outline text="KultureGeek" type="rss" xmlUrl="http://feeds.feedburner.com/Kulturegeek" htmlUrl="https://kulturegeek.fr/" description="Actualité High-Tech, Culture Geek et comparateur de prix"/>
+      <outline text="Korben" type="rss" xmlUrl="https://korben.info/feed" htmlUrl="https://korben.info/" description="Nouveaux articles de Korben"/>
       <outline text="OmgGpu" type="rss" xmlUrl="https://www.omgpu.com/feed/" htmlUrl="https://www.omgpu.com/" description="Toute l'actualité sur les cartes graphique, les processeurs, ainsi que des tests et des guides d'optimisations"/>
       <outline text="PC Astuces" type="rss" xmlUrl="https://www.pcastuces.com/xml/pca_astuces.xml" htmlUrl="https://www.pcastuces.com/pratique" description="Les dernieres astuces pratiques publiées sur PC Astuces"/>
       <outline text="Programmez!" type="rss" xmlUrl="https://www.programmez.com/rss.xml" htmlUrl="http://www.programmez.com/"/>
-      <outline text="Silicon" type="rss" xmlUrl="https://feeds.feedburner.com/silicon/98MPabKC7x3" htmlUrl="https://www.silicon.fr/"/>
       <outline text="SOSPC" type="rss" xmlUrl="https://sospc.name/feed/" htmlUrl="https://sospc.name/" description="Il y a toujours une solution."/>
       <outline text="TousLesDrivers" type="rss" xmlUrl="https://www.touslesdrivers.com/php/scripts/news_rss.php" htmlUrl="http://www.touslesdrivers.com/" description="Téléchargement gratuit de mises à jour PC (drivers, BIOS, firmwares, applications)"/>
       <outline text="Vonguru" type="rss" xmlUrl="https://vonguru.fr/feed/" htmlUrl="http://vonguru.fr/" description="High Tech, culture geek et gadgets"/>
     </outline>
     <outline text="1.3 🖥️ Tech. English">
-      <outline text="AnandTech" type="rss" xmlUrl="https://www.anandtech.com/rss/" htmlUrl="http://www.anandtech.com/" description="This channel features the latest computer hardware related articles."/>
       <outline text="AppleInsider" type="rss" xmlUrl="https://feeds.feedburner.com/appleinsider/iactu" htmlUrl="http://appleinsider.com/" description="AppleInsider News Feed"/>
+      <outline text="GamersNexus" type="rss" xmlUrl="https://gamersnexus.net/rss.xml" htmlUrl="http://gamersnexus.net/"/>
       <outline text="HotHardware" type="rss" xmlUrl="https://hothardware.com/rss/articles.aspx" htmlUrl="https://hothardware.com" description="HotHardware.com Article Rss Feed"/>
       <outline text="KitGuru" type="rss" xmlUrl="https://www.kitguru.net/feed/" htmlUrl="https://www.kitguru.net/" description="KitGuru.net - Tech News | Hardware News | Hardware Reviews | IOS | Mobile | Gaming | Graphics Cards"/>
       <outline text="PC Perspective" type="rss" xmlUrl="https://pcper.com/feed/" htmlUrl="http://www.pcper.com/" description="A Leader in PC Hardware Reviews and News"/>
@@ -69,13 +67,19 @@
       <outline text="Gamekult" type="rss" xmlUrl="https://www.gamekult.com/feed.xml" htmlUrl="http://www.gamekult.com/" description="Dernieres actualites de jeux video par la rédaction de Gamekult.com"/>
       <outline text="GamerGen" type="rss" xmlUrl="https://gamergen.com/rss" htmlUrl="http://www.gamergen.com/" description="GAMERGEN.COM est le portail français consacré à l'actualité du geek connecté et du joueur de jeux vidéo sur consoles de salon (PS4 / Xbox One / Switch), consoles portables (PS Vita / 3DS), PC  mais aussi sur smartphones et tablettes (Android, iOS, Windows) ainsi que sur la réalité virtuelle VR. Retrouvez nos actualités, dossiers, tests, tutos, fiches jeu, fiches matériel et autres téléchargements, ainsi que notre communauté dans un forum très actif."/>
       <outline text="IndieMag" type="rss" xmlUrl="https://www.indiemag.fr/feed/rss.xml" htmlUrl="https://www.indiemag.fr" description="L'actualité du jeu vidéo indépendant"/>
-      <outline text="JeuxVideo" type="rss" xmlUrl="https://feeds.feedburner.com/pc-jeuxvideocom" htmlUrl="http://www.jeuxvideo.com/" description="Le média de référence des gamers - Jeux Vidéo PC et Consoles - PC"/>
+      <outline text="JV France" type="rss" xmlUrl="https://www.jvfrance.com/feed/" htmlUrl="https://www.jvfrance.com/feed/"/>
       <outline text="NoFrag" type="rss" xmlUrl="https://feeds.feedburner.com/nofrag/disj" htmlUrl="http://www.nofrag.com/" description="L'actualité des simulateurs de meurtres"/>
     </outline>
     <outline text="3.2 🎲 Jeux Autres">
+      <outline text="Gameblog" type="rss" xmlUrl="https://www.gameblog.fr/rssmap/rss_all.xml" htmlUrl="https://www.gameblog.fr/" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="3"/>
+      <outline text="Gamekyo" type="rss" xmlUrl="https://www.gamekyo.com/news.xml" htmlUrl="http://www.gamekyo.com/newslist.html" description="Toute l'actualite des Jeux Video" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="5"/>
+      <outline text="Insert Coin" type="rss" xmlUrl="https://www.insert-coin.fr/feed/" htmlUrl="https://www.insert-coin.fr/" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="5"/>
+      <outline text="JeuxActu" type="rss" xmlUrl="https://www.jeuxactu.com/rss/ja.rss" htmlUrl="https://www.jeuxactu.com/" description="L'actualité quotidienne des jeux vidéo" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="3"/>
       <outline text="JeuxOnLine" type="rss" xmlUrl="https://www.jeuxonline.info/rss/actualites/rss.xml" htmlUrl="http://www.jeuxonline.info/" description="JeuxOnLine - Actualités"/>
-      <outline text="JV France" type="rss" xmlUrl="https://www.jvfrance.com/feed/" htmlUrl="https://www.jvfrance.com/feed/"/>
+      <outline text="JVMag" type="rss" xmlUrl="https://jvmag.ch/feed/" htmlUrl="https://jvmag.ch/" description="L'actu gaming suisse romande" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="3"/>
+      <outline text="Playerone" type="rss" xmlUrl="https://playerone.tv/feed/" htmlUrl="https://playerone.tv/" description="Le meilleur de l'actualité gaming !"/>
       <outline text="Puissance Nintendo" type="rss" xmlUrl="http://feeds.feedburner.com/pn-majs" htmlUrl="http://www.p-nintendo.com/" description="Flux RSS de Puissance Nintendo : actualité des consoles Switch, 3DS, Wii U"/>
+      <outline text="XboxOrNot" type="rss" xmlUrl="https://www.xboxornot.fr/feed/" htmlUrl="https://www.xboxornot.fr/" description="Test de jeux vidéo XBOX"/>
     </outline>
     <outline text="3.3 🎲 Jeux English">
       <outline text="DSOGaming" type="rss" xmlUrl="https://www.dsogaming.com/feed/" htmlUrl="https://www.dsogaming.com/" description="PC Games News, Screenshots, Trailers &amp; More"/>
@@ -87,7 +91,7 @@
       <outline text="DistroWatch" type="rss" xmlUrl="https://distrowatch.com/news/dwd.xml" htmlUrl="http://distrowatch.com/" description="Latest distribution releases"/>
       <outline text="LinuxFr" type="rss" xmlUrl="https://linuxfr.org/news.atom" htmlUrl="http://linuxfr.org/"/>
       <outline text="OMG! Ubuntu!" type="rss" xmlUrl="https://www.omgubuntu.co.uk/feed" htmlUrl="https://www.omgubuntu.co.uk/" description="Ubuntu News, Apps, Tips &amp; More"/>
-      <outline text="Phoronix" type="rss" xmlUrl="https://www.phoronix.com/rss.php" htmlUrl="http://www.phoronix.com/" description="Linux Hardware Reviews, Benchmarks &amp; Open-Source News"/>
+      <outline text="Phoronix" type="rss" xmlUrl="https://www.phoronix.com/rss.php" htmlUrl="http://www.phoronix.com/" description="Linux Hardware Reviews, Performance Benchmarks &amp; Open-Source / Free Software News"/>
     </outline>
     <outline text="5.1 👓 Réalité Virtuelle">
       <outline text="RealiteVirtuelle" type="rss" xmlUrl="https://feeds.feedburner.com/realitevirtuelle/rss" htmlUrl="https://www.realitevirtuelle.com/" description="Réalité Virtuelle - Retrouvez l'actualité VR, tests de jeux VR et casques VR, guides d'achat, tutos et vidéos"/>
@@ -95,7 +99,7 @@
       <outline text="Réalité Augmentée" type="rss" xmlUrl="https://feeds.feedburner.com/augmented-reality/iactu" htmlUrl="http://www.augmented-reality.fr/" description="L'association francophone de la réalité augmentée"/>
     </outline>
     <outline text="6.1 📰 Infos France">
-      <outline text="Europe1" type="rss" xmlUrl="https://www.europe1.fr/rss/societe.xml" htmlUrl="https://www.europe1.fr/"/>
+      <outline text="Europe1" type="rss" xmlUrl="https://www.europe1.fr/rss/societe.xml" htmlUrl="https://www.europe1.fr/" description="L'actualité française et internationale de la politique, l'économie, le sport, les médias, et la culture. Humoristes et divertissement. Direct et replay (audio et vidéo) des émissions diffusées à l'antenne."/>
       <outline text="France 24" type="rss" xmlUrl="https://feeds.feedburner.com/france24/france" htmlUrl="https://www.france24.com/" description="France 24  couvre les évènements en France et en Outre-mer : politique, culture, faits de société, énergie, crise sociale, sport, santé, avec ses reportages, enquêtes, débats et analyses."/>
       <outline text="Franceinfo" type="rss" xmlUrl="https://www.francetvinfo.fr/france.rss" htmlUrl="https://www.francetvinfo.fr/france/" description="Franceinfo- France"/>
       <outline text="L'Obs" type="rss" xmlUrl="https://www.nouvelobs.com/faits-divers/rss.xml" htmlUrl="https://www.nouvelobs.com/" description="Actualité politique, information sociale ou internationale"/>
@@ -127,7 +131,7 @@
       <outline text="CNRS" type="rss" xmlUrl="https://lejournal.cnrs.fr/rss" htmlUrl="https://lejournal.cnrs.fr/" description="Donner du sens à la science"/>
       <outline text="Franceinfo" type="rss" xmlUrl="https://www.francetvinfo.fr/sciences.rss" htmlUrl="https://www.francetvinfo.fr/sciences/" description="Franceinfo- Sciences"/>
       <outline text="Le Monde" type="rss" xmlUrl="https://www.lemonde.fr/sciences/rss_full.xml" htmlUrl="http://www.lemonde.fr/" description="Sciences  - Découvrez gratuitement tous les articles, les vidéos et les infographies de la rubrique Sciences sur Le Monde.fr."/>
-      <outline text="Radio-Canada" type="rss" xmlUrl="https://ici.radio-canada.ca/rss/4165" htmlUrl="http://www.radio-canada.ca/" description="Mise à jour à toutes les 15 minutes tous les jours. - Pour usage personnel seulement."/>
+      <outline text="Radio-Canada" type="rss" xmlUrl="https://feeds.feedburner.com/radio-canada/wkogvs6Kv4D" htmlUrl="http://www.radio-canada.ca/" description="Mise à jour à toutes les 15 minutes tous les jours. - Pour usage personnel seulement."/>
     </outline>
     <outline text="6.5 📰 Sciences English">
       <outline text="Discover Mag" type="rss" xmlUrl="https://feeds.feedburner.com/AllDiscovermagazinecomContent" htmlUrl="https://discovermagazine.com/" description="Discover satisfies everyday curiosity with relevant and approachable science news, feature articles, photos and more."/>
@@ -150,7 +154,7 @@
       <outline text="Le Monde" type="rss" xmlUrl="https://www.lemonde.fr/sport/rss_full.xml" htmlUrl="http://www.lemonde.fr/" description="Sport  - Découvrez gratuitement tous les articles, les vidéos et les infographies de la rubrique Sport sur Le Monde.fr."/>
       <outline text="Maxifoot" type="rss" xmlUrl="http://rss.maxifoot.com/football-general.xml" htmlUrl="http://www.maxifoot.fr/" description="L'info football et transfert, rss general"/>
       <outline text="Sport Le Figaro" type="rss" xmlUrl="https://www.lefigaro.fr/rss/figaro_sport.xml" htmlUrl="https://www.lefigaro.fr/sports/" description="Sports : Retrouvez toute l'actualité sportive en direct et résultats en continue avec Le Figaro"/>
-      <outline text="TOP Mercato" type="rss" xmlUrl="https://www.topmercato.com/rss.xml" htmlUrl="http://www.topmercato.com/" description="Actu transferts foot, mercato football"/>
+      <outline text="TOP Mercato" type="rss" xmlUrl="https://www.topmercato.com/rss.php" htmlUrl="http://www.topmercato.com/" description="Actu transferts foot, mercato football"/>
     </outline>
     <outline text="6.9 📰 Infos English">
       <outline text="Financial Times" type="rss" xmlUrl="https://www.ft.com/rss/home/uk" htmlUrl="https://www.ft.com/" description="UK homepage"/>
