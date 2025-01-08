@@ -24,8 +24,6 @@ Commenter cette ligne :
 Redémarrer le service SSH :
 systemctl restart sshd
 
-Installation serveur Caddy + PHP sur Ubuntu 22.04 :
-clear
 ps aux | sort -rnk 5 | head -48
 systemctl -at service
 systemctl --type=service --state=running
