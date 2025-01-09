@@ -5,7 +5,7 @@ function getUniqueItems($url)
     return [];
   }
   $xml = @simplexml_load_file($url);
-  usleep(10);
+  usleep(8);
   if ($xml === false) {
     return [];
   }
@@ -37,7 +37,7 @@ function getUniqueItems($url)
     }
     $key = $title . $link;
     if (!isset($uniqueItems[$key]) && strlen($title) >= 8 && strlen($link) >= 8 && strlen($pubDate) >= 8) {
-      if (!in_array($link, $seenLinks) && (!in_array($title, $seenTitles) || strlen($title) <= 32)) {
+      if (!in_array($link, $seenLinks) && (!in_array($title, $seenTitles) || strlen($title) <= 16)) {
         $itemData = ['title' => $title, 'link' => $link, 'pubDate' => $pubDate,];
         if ($validLink && $validDate) {
           $uniqueItems[$key] = $itemData;
@@ -45,7 +45,7 @@ function getUniqueItems($url)
           $fallbackItems[$key] = $itemData;
         }
         $seenLinks[] = $link;
-        if (strlen($title) > 32) {
+        if (strlen($title) > 16) {
           $seenTitles[] = $title;
         }
       }
@@ -105,22 +105,22 @@ function parsexml($filename)
   if (file_exists($url)) {
     ob_start();
     $items = getUniqueItems($url);
-    usleep(10);
+    usleep(8);
     list($todayNews, $otherNews) = categorizeNews($items);
     displayNews($todayNews, '&#128197;&nbsp;Aujourd’hui', true);
     displayNews($otherNews, '&#128197;&nbsp;Jours précédents');
     echo '<!-- FIN NEWS -->';
     $p = ob_get_clean();
-    usleep(10);
+    usleep(8);
     if (
       substr_count($p, '<!-- FIN NEWS -->') === 1 &&
       substr_count($p, 'href="http') >= 20 &&
-      strlen($p) >= 768
+      strlen($p) >= 512
     ) {
       @file_put_contents($savetohtml, $p);
-      usleep(10);
+      usleep(8);
       @chmod($savetohtml, 0775);
-      usleep(10);
+      usleep(8);
       if (!empty($todayNews)) {
         @copy($savetohtml, $savetotoday);
         @chmod($savetotoday, 0775);
