@@ -3,7 +3,7 @@ $titre_page = 'Actualités';
 $nom_page = 'actualites';
 $page_active = 'actualites';
 $titre_page_active = '&#128478;&#65039;&nbsp;Actualités';
-$cache_secondes = 31;
+$cache_secondes = 17;
 
 $lien_accueil = 'index.php';
 $lien_tech = 'technologie.php';
@@ -55,17 +55,17 @@ $lien_theme = 'actualites_2.php';
 
    <main class="mid">
 
-    <?php parse('actu4', 'TFr', 'https://iactu.info/recherche/p/i/?a=normal&get=c_4', 227, 144, 'France',1230,'https://iactu.info/recherche/p/i/?a=rss&get=c_4&user=Gon1Kirua&token=flux&hours=912'); ?>
+    <?php parse('actu4', 'TFr', 'https://iactu.info/recherche/p/i/?a=normal&get=c_4', 227, 144, 'France',22,'https://iactu.info/recherche/p/i/?a=rss&get=c_4&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-    <?php parse('actu6', 'Imo', 'https://iactu.info/recherche/p/i/?a=normal&get=c_6', 114, 144, 'Monde',1330,'https://iactu.info/recherche/p/i/?a=rss&get=c_6&user=Gon1Kirua&token=flux&hours=912'); ?>
+    <?php parse('actu6', 'Imo', 'https://iactu.info/recherche/p/i/?a=normal&get=c_6', 114, 144, 'Monde',27,'https://iactu.info/recherche/p/i/?a=rss&get=f_134&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-    <?php parse('actu5', 'Iin', 'https://iactu.info/recherche/p/i/?a=normal&get=c_5', 194, 144, 'Insolites',1230,'https://iactu.info/recherche/p/i/?a=rss&get=c_5&user=Gon1Kirua&token=flux&hours=912'); ?>
+    <?php parse('actu5', 'Iin', 'https://iactu.info/recherche/p/i/?a=normal&get=c_5', 194, 144, 'Insolites',32,'https://iactu.info/recherche/p/i/?a=rss&get=c_5&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-    <?php parse('actu2', 'TvC', 'https://iactu.info/recherche/p/i/?a=normal&get=c_2', 154, 144, 'TV - Cinéma',1330,'https://iactu.info/recherche/p/i/?a=rss&get=c_2&user=Gon1Kirua&token=flux&hours=912'); ?>
+    <?php parse('actu2', 'TvC', 'https://iactu.info/recherche/p/i/?a=normal&get=c_2', 154, 144, 'TV - Cinéma',37,'https://iactu.info/recherche/p/i/?a=rss&get=c_2&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-    <?php parse('actu10', 'Spo', 'https://iactu.info/recherche/p/i/?a=normal&get=c_10', 178, 144, 'Sports',1230,'https://iactu.info/recherche/p/i/?a=rss&get=c_10&user=Gon1Kirua&token=flux&hours=912'); ?>
+    <?php parse('actu10', 'Spo', 'https://iactu.info/recherche/p/i/?a=normal&get=c_10', 178, 144, 'Sports',42,'https://iactu.info/recherche/p/i/?a=rss&get=c_10&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-    <?php parse('actu3', 'TUK', 'https://iactu.info/recherche/p/i/?a=normal&get=c_3', 221, 144, 'English',1330,'https://iactu.info/recherche/p/i/?a=rss&get=c_3&user=Gon1Kirua&token=flux&hours=912'); ?>
+    <?php parse('actu3', 'TUK', 'https://iactu.info/recherche/p/i/?a=normal&get=c_3', 221, 144, 'English',47,'https://iactu.info/recherche/p/i/?a=rss&get=c_3&user=Gon1Kirua&token=flux&hours=2400'); ?>
    </main>
 
    <?php @include '_/php/mess_bot.php'; ?>
@@ -98,4 +98,5 @@ $lien_theme = 'actualites_2.php';
  }
 } else {
  @readfile($nom_page . '.html');
-}
+} ?>
+<?php @include '_/php/functions/stats.php';

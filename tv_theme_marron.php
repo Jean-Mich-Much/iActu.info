@@ -100,4 +100,5 @@ exec('/usr/bin/php-cgi8.3 /_/tv_maj.php > /dev/null &');
  }
 } else {
  @readfile($nom_page . '.html');
-}
+} ?>
+<?php @include '_/php/functions/stats.php';

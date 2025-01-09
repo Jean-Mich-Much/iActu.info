@@ -54,17 +54,17 @@ $lien_theme = 'apple_2.php';
    <?php @include '_/php/mess_top.php'; ?>
 
    <main class="mid">
-    <?php parse('macge', 'Mac', 'https://www.macg.co/', 144, 144, 'MacG',615,'https://iactu.info/recherche/p/i/?a=rss&get=f_75&user=Gon1Kirua&token=flux&hours=912'); ?>
+    <?php parse('macge', 'Mac', 'https://www.macg.co/', 144, 144, 'MacG',24,'https://iactu.info/recherche/p/i/?a=rss&get=f_75&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-    <?php parse('macbi', 'Mbi', 'http://macbidouille.com/', 240, 144, 'MacBidouille',715,'https://iactu.info/recherche/p/i/?a=rss&get=f_74&user=Gon1Kirua&token=flux&hours=912'); ?>
+    <?php parse('macbi', 'Mbi', 'http://macbidouille.com/', 240, 144, 'MacBidouille',29,'https://iactu.info/recherche/p/i/?a=rss&get=f_74&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-    <?php parse('conso', 'Csm', 'https://consomac.fr/', 144, 144, 'Consomac',815,'https://iactu.info/recherche/p/i/?a=rss&get=f_72&user=Gon1Kirua&token=flux&hours=912'); ?>
+    <?php parse('conso', 'Csm', 'https://consomac.fr/', 144, 144, 'Consomac',34,'https://iactu.info/recherche/p/i/?a=rss&get=f_72&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-    <?php parse('mc4ve', 'M4e', 'https://www.mac4ever.com/', 91, 144, 'Mac4Ever',915,'https://iactu.info/recherche/p/i/?a=rss&get=f_73&user=Gon1Kirua&token=flux&hours=912'); ?>
+    <?php parse('mc4ve', 'M4e', 'https://www.mac4ever.com/', 91, 144, 'Mac4Ever',39,'https://iactu.info/recherche/p/i/?a=rss&get=f_73&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-    <?php parse('get16', 'TFr', 'https://iactu.info/recherche/p/i/?a=normal&get=c_16', 227, 144, 'Autres sites',1815,'https://iactu.info/recherche/p/i/?a=rss&get=c_16&user=Gon1Kirua&token=flux&hours=912'); ?>
+    <?php parse('get16', 'TFr', 'https://iactu.info/recherche/p/i/?a=normal&get=c_16', 227, 144, 'Autres sites',44,'https://iactu.info/recherche/p/i/?a=rss&get=c_16&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-    <?php parse('get21', 'TUK', 'https://iactu.info/recherche/p/i/?a=normal&get=c_17', 221, 144, 'English',1915,'https://iactu.info/recherche/p/i/?a=rss&get=c_17&user=Gon1Kirua&token=flux&hours=912'); ?>
+    <?php parse('get21', 'TUK', 'https://iactu.info/recherche/p/i/?a=normal&get=c_17', 221, 144, 'English',49,'https://iactu.info/recherche/p/i/?a=rss&get=c_17&user=Gon1Kirua&token=flux&hours=2400'); ?>
    </main>
 
    <?php @include '_/php/mess_bot.php'; ?>
@@ -97,4 +97,5 @@ $lien_theme = 'apple_2.php';
  }
 } else {
  @readfile($nom_page . '.html');
-}
+} ?>
+<?php @include '_/php/functions/stats.php';

@@ -3,7 +3,7 @@ $titre_page = 'Jeux';
 $nom_page = 'jeux_2';
 $page_active = 'jeux';
 $titre_page_active = 'Jeux';
-$cache_secondes = 23;
+$cache_secondes = 22;
 
 $lien_accueil = 'index_2.php';
 $lien_tech = 'technologie_2.php';
@@ -54,21 +54,22 @@ $lien_theme = 'jeux.php';
    <?php @include '_/php/mess_top.php'; ?>
 
    <main class="mid">
-    <?php parse('gamek', 'Gam', 'https://www.gamekult.com/', 144, 144, 'Gamekult',730,'https://iactu.info/recherche/p/i/?a=rss&get=f_55&user=Gon1Kirua&token=flux&hours=912'); ?>
 
-<?php parse('facto', 'Fac', 'https://www.factornews.com/', 144, 144, 'Factornews',830,'https://iactu.info/recherche/p/i/?a=rss&get=f_54&user=Gon1Kirua&token=flux&hours=912'); ?>
+    <?php parse('gamek', 'Gam', 'https://www.gamekult.com/', 144, 144, 'Gamekult',27,'https://iactu.info/recherche/p/i/?a=rss&get=f_55&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-    <?php parse('jvfra', 'Jvf', 'https://www.jvfrance.com/', 124, 144, 'JVFrance',1430,'https://iactu.info/recherche/p/i/?a=rss&get=f_60&user=Gon1Kirua&token=flux&hours=912'); ?>
+    <?php parse('jvfra', 'Jvf', 'https://www.jvfrance.com/', 124, 144, 'JVFrance',32,'https://iactu.info/recherche/p/i/?a=rss&get=f_60&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-<?php parse('nfrag', 'NoF', 'https://nofrag.com/', 144, 144, 'NoFrag',930,'https://iactu.info/recherche/p/i/?a=rss&get=f_59&user=Gon1Kirua&token=flux&hours=912'); ?>
+<?php parse('facto', 'Fac', 'https://www.factornews.com/', 144, 144, 'Factornews',37,'https://iactu.info/recherche/p/i/?a=rss&get=f_54&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-<?php parse('gameg', 'GaG', 'https://www.gamergen.com/', 229, 144, 'GamerGen',1030,'https://iactu.info/recherche/p/i/?a=rss&get=f_56&user=Gon1Kirua&token=flux&hours=912'); ?>
+<?php parse('nfrag', 'NoF', 'https://nofrag.com/', 144, 144, 'NoFrag',42,'https://iactu.info/recherche/p/i/?a=rss&get=f_59&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-<?php parse('indie', 'Ind', 'https://www.indiemag.fr/', 144, 144, 'IndieMag',1130,'https://iactu.info/recherche/p/i/?a=rss&get=f_57&user=Gon1Kirua&token=flux&hours=912'); ?>
+<?php parse('gameg', 'GaG', 'https://www.gamergen.com/', 229, 144, 'GamerGen',47,'https://iactu.info/recherche/p/i/?a=rss&get=f_56&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-    <?php parse('get12', 'TFr', 'https://iactu.info/recherche/p/i/?a=normal&get=c_12', 227, 144, 'Autres sites',1230,'https://iactu.info/recherche/p/i/?a=rss&get=c_12&user=Gon1Kirua&token=flux&hours=912'); ?>
+<?php parse('indie', 'Ind', 'https://www.indiemag.fr/', 144, 144, 'IndieMag',52,'https://iactu.info/recherche/p/i/?a=rss&get=f_57&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-    <?php parse('get13', 'TUK', 'https://iactu.info/recherche/p/i/?a=normal&get=c_13', 221, 144, 'English',1330,'https://iactu.info/recherche/p/i/?a=rss&get=c_13&user=Gon1Kirua&token=flux&hours=912'); ?>
+    <?php parse('get12', 'TFr', 'https://iactu.info/recherche/p/i/?a=normal&get=c_12', 227, 144, 'Autres sites',57,'https://iactu.info/recherche/p/i/?a=rss&get=c_12&user=Gon1Kirua&token=flux&hours=2400'); ?>
+
+    <?php parse('get13', 'TUK', 'https://iactu.info/recherche/p/i/?a=normal&get=c_13', 221, 144, 'English',62,'https://iactu.info/recherche/p/i/?a=rss&get=c_13&user=Gon1Kirua&token=flux&hours=2400'); ?>
    </main>
 
    <?php @include '_/php/mess_bot.php'; ?>

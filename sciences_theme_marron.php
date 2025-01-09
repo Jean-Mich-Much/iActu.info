@@ -3,7 +3,7 @@ $titre_page = 'Sciences';
 $nom_page = 'sciences';
 $page_active = 'sciences';
 $titre_page_active = '&#129514;&nbsp;Sciences';
-$cache_secondes = 29;
+$cache_secondes = 23;
 
 $lien_accueil = 'index.php';
 $lien_tech = 'technologie.php';
@@ -54,17 +54,17 @@ $lien_theme = 'sciences_2.php';
    <?php @include '_/php/mess_top.php'; ?>
 
    <main class="mid">
-    <?php parse('futur', 'Fut', 'https://www.futura-sciences.com/', 151, 144, 'Futura',630,'https://iactu.info/recherche/p/i/?a=rss&get=f_36&user=Gon1Kirua&token=flux&hours=912'); ?>
+    <?php parse('futur', 'Fut', 'https://www.futura-sciences.com/', 151, 144, 'Futura',28,'https://iactu.info/recherche/p/i/?a=rss&get=f_36&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-    <?php parse('tecsci', 'Tec', 'https://www.techno-science.net/', 144, 144, 'Techno-Science',730,'https://iactu.info/recherche/p/i/?a=rss&get=f_39&user=Gon1Kirua&token=flux&hours=912'); ?>
+    <?php parse('tecsci', 'Tec', 'https://www.techno-science.net/', 144, 144, 'Techno-Science',33,'https://iactu.info/recherche/p/i/?a=rss&get=f_39&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-<?php parse('sciav', 'ScA', 'https://www.sciencesetavenir.fr/', 144, 144, 'Sciences et Avenir',830,'https://iactu.info/recherche/p/i/?a=rss&get=f_38&user=Gon1Kirua&token=flux&hours=912'); ?>
+<?php parse('sciav', 'ScA', 'https://www.sciencesetavenir.fr/', 144, 144, 'Sciences et Avenir',38,'https://iactu.info/recherche/p/i/?a=rss&get=f_38&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-<?php parse('scipo', 'ScP', 'https://sciencepost.fr/', 144, 144, 'SciencePost',930,'https://iactu.info/recherche/p/i/?a=rss&get=f_37&user=Gon1Kirua&token=flux&hours=912'); ?>
+<?php parse('scipo', 'ScP', 'https://sciencepost.fr/', 144, 144, 'SciencePost',43,'https://iactu.info/recherche/p/i/?a=rss&get=f_37&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-    <?php parse('get8', 'TFr', 'https://iactu.info/recherche/p/i/?a=normal&get=c_8', 227, 144, 'Autres sites',1230,'https://iactu.info/recherche/p/i/?a=rss&get=c_8&user=Gon1Kirua&token=flux&hours=912'); ?>
+    <?php parse('get8', 'TFr', 'https://iactu.info/recherche/p/i/?a=normal&get=c_8', 227, 144, 'Autres sites',48,'https://iactu.info/recherche/p/i/?a=rss&get=c_8&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-    <?php parse('get9', 'TUK', 'https://iactu.info/recherche/p/i/?a=normal&get=c_9', 221, 144, 'English',1330,'https://iactu.info/recherche/p/i/?a=rss&get=c_9&user=Gon1Kirua&token=flux&hours=912'); ?>
+    <?php parse('get9', 'TUK', 'https://iactu.info/recherche/p/i/?a=normal&get=c_9', 221, 144, 'English',53,'https://iactu.info/recherche/p/i/?a=rss&get=c_9&user=Gon1Kirua&token=flux&hours=2400'); ?>
    </main>
 
    <?php @include '_/php/mess_bot.php'; ?>
@@ -97,4 +97,5 @@ $lien_theme = 'sciences_2.php';
  }
 } else {
  @readfile($nom_page . '.html');
-}
+} ?>
+<?php @include '_/php/functions/stats.php';
