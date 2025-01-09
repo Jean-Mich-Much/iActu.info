@@ -6,7 +6,7 @@ $affiche_message_bot = false;
 
 <aside class="bot">
 
- 📣 Coucou 🤣.
+ 📣 Message 🤣.
 
 </aside>
 

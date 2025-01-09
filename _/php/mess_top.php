@@ -3,12 +3,12 @@ $affiche_message_top = false;
 ?>
 <?php if ($affiche_message_top) {?>
 <aside class="mess">
- <span style="color:red">Coucou 🤪</span>
+ <span style="color:red">Message 🤪</span>
  <!--  -->
  <span>
   <form>
    <select aria-label="Donateurs" id="SousMenuBas" name="Donateurs" size="1" title="Donateurs">
-   <option value="#SousMenuBas" title="Donateur" aria-label="Donateur" selected="">👤 Prénom Nom 5€ - 05/01&nbsp;</option>
+   <option value="#SousMenuBas" title="Donateur" aria-label="Donateur" selected="">👤 Prénom N. 5€ - 05/01&nbsp;</option>
    </select>
   </form>
  </span>
