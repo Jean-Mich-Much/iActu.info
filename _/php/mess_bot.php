@@ -2,80 +2,92 @@
 $affiche_message_bot = false;
 ?>
 
+<?php if ($affiche_message_bot) {?>
+
+<aside class="bot">
+
+ 📣 Coucou ! Jeuxvideo est remplacé par un autre site suite au blocage systématique des serveurs ovh et autres sites de récupération de flux rss (même google feedburner pour dire 🤣).
+
+</aside>
+
+<?php }?>
+
 <aside class="mess">
 
-<span>
-    <form>
-      <select aria-label="Dates" id="SousMenuDates" name="Dates" size="1" title="Dates" onChange="window.location.href=this.value">
-        <option value="#SousMenuDates" title="Dates" aria-label="Dates" selected>📅&nbsp;
-          <?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w')))))))); ?>
-          <?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j') . 'jour')); ?>
-          <?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n'))))))))))))); ?>&nbsp;
-        </option>
-        <option value="<?php echo $nom_page . date('j', strtotime('-1 days')) . '.html'; ?>" title="Hier" aria-label="Hier">📋&nbsp;
-          <?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w', strtotime('-1 days'))))))))); ?>
-          <?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j', strtotime('-1 days')) . 'jour')); ?>
-          <?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n', strtotime('-1 days')))))))))))))); ?>
-          &nbsp;
-        </option>
-        <option value="<?php echo $nom_page . date('j', strtotime('-2 days')) . '.html'; ?>" title=" J-2" aria-label="J-2">📋&nbsp;
-          <?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w', strtotime('-2 days'))))))))); ?>
-          <?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j', strtotime('-2 days')) . 'jour')); ?>
-          <?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n', strtotime('-2 days')))))))))))))); ?>
-          &nbsp;
-        </option>
-        <option value="<?php echo $nom_page . date('j', strtotime('-3 days')) . '.html'; ?>" title=" J-3" aria-label="J-3">📋&nbsp;
-          <?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w', strtotime('-3 days'))))))))); ?>
-          <?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j', strtotime('-3 days')) . 'jour')); ?>
-          <?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n', strtotime('-3 days')))))))))))))); ?>
-          &nbsp;
-        </option>
-        <option value="<?php echo $nom_page . date('j', strtotime('-4 days')) . '.html'; ?>" title=" J-4" aria-label="J-4">📋&nbsp;
-          <?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w', strtotime('-4 days'))))))))); ?>
-          <?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j', strtotime('-4 days')) . 'jour')); ?>
-          <?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n', strtotime('-4 days')))))))))))))); ?>
-          &nbsp;
-        </option>
-        <option value="<?php echo $nom_page . date('j', strtotime('-5 days')) . '.html'; ?>" title=" J-5" aria-label="J-5">📋&nbsp;
-          <?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w', strtotime('-5 days'))))))))); ?>
-          <?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j', strtotime('-5 days')) . 'jour')); ?>
-          <?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n', strtotime('-5 days')))))))))))))); ?>
-          &nbsp;
-        </option>
-        <option value="<?php echo $nom_page . date('j', strtotime('-6 days')) . '.html'; ?>" title=" J-6" aria-label="J-6">📋&nbsp;
-          <?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w', strtotime('-6 days'))))))))); ?>
-          <?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j', strtotime('-6 days')) . 'jour')); ?>
-          <?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n', strtotime('-6 days')))))))))))))); ?>
-          &nbsp;
-        </option>
-        <option value="<?php echo $nom_page . date('j', strtotime('-7 days')) . '.html'; ?>" title=" J-7" aria-label="J-7">📋&nbsp;
-          <?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w', strtotime('-7 days'))))))))); ?>
-          <?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j', strtotime('-7 days')) . 'jour')); ?>
-          <?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n', strtotime('-7 days')))))))))))))); ?>
-          &nbsp;
-        </option>
-      </select>
-    </form>
-  </span>
+ <span>
+  <form>
+   <select aria-label="Dates" id="SousMenuDates" name="Dates" size="1" title="Dates" onChange="window.location.href=this.value">
+    <option value="#SousMenuDates" title="Dates" aria-label="Dates" selected>📅&nbsp;
+     <?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w')))))))); ?>
+     <?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j') . 'jour')); ?>
+     <?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n'))))))))))))); ?>&nbsp;
+    </option>
+    <option value="<?php echo $nom_page . date('j', strtotime('-1 days')) . '.html'; ?>" title="Hier" aria-label="Hier">📋&nbsp;
+     <?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w', strtotime('-1 days'))))))))); ?>
+     <?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j', strtotime('-1 days')) . 'jour')); ?>
+     <?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n', strtotime('-1 days')))))))))))))); ?>
+     &nbsp;
+    </option>
+    <option value="<?php echo $nom_page . date('j', strtotime('-2 days')) . '.html'; ?>" title=" J-2" aria-label="J-2">📋&nbsp;
+     <?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w', strtotime('-2 days'))))))))); ?>
+     <?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j', strtotime('-2 days')) . 'jour')); ?>
+     <?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n', strtotime('-2 days')))))))))))))); ?>
+     &nbsp;
+    </option>
+    <option value="<?php echo $nom_page . date('j', strtotime('-3 days')) . '.html'; ?>" title=" J-3" aria-label="J-3">📋&nbsp;
+     <?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w', strtotime('-3 days'))))))))); ?>
+     <?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j', strtotime('-3 days')) . 'jour')); ?>
+     <?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n', strtotime('-3 days')))))))))))))); ?>
+     &nbsp;
+    </option>
+    <option value="<?php echo $nom_page . date('j', strtotime('-4 days')) . '.html'; ?>" title=" J-4" aria-label="J-4">📋&nbsp;
+     <?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w', strtotime('-4 days'))))))))); ?>
+     <?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j', strtotime('-4 days')) . 'jour')); ?>
+     <?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n', strtotime('-4 days')))))))))))))); ?>
+     &nbsp;
+    </option>
+    <option value="<?php echo $nom_page . date('j', strtotime('-5 days')) . '.html'; ?>" title=" J-5" aria-label="J-5">📋&nbsp;
+     <?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w', strtotime('-5 days'))))))))); ?>
+     <?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j', strtotime('-5 days')) . 'jour')); ?>
+     <?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n', strtotime('-5 days')))))))))))))); ?>
+     &nbsp;
+    </option>
+    <option value="<?php echo $nom_page . date('j', strtotime('-6 days')) . '.html'; ?>" title=" J-6" aria-label="J-6">📋&nbsp;
+     <?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w', strtotime('-6 days'))))))))); ?>
+     <?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j', strtotime('-6 days')) . 'jour')); ?>
+     <?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n', strtotime('-6 days')))))))))))))); ?>
+     &nbsp;
+    </option>
+    <option value="<?php echo $nom_page . date('j', strtotime('-7 days')) . '.html'; ?>" title=" J-7" aria-label="J-7">📋&nbsp;
+     <?php echo str_replace('0', 'Dimanche', str_replace('1', 'Lundi', str_replace('2', 'Mardi', str_replace('3', 'Mercredi', str_replace('4', 'Jeudi', str_replace('5', 'Vendredi', str_replace('6', 'Samedi', date('w', strtotime('-7 days'))))))))); ?>
+     <?php echo str_replace('jour', '', str_replace('jour1jour', '1er', 'jour' . date('j', strtotime('-7 days')) . 'jour')); ?>
+     <?php echo str_replace('1', 'janvier', str_replace('2', 'février', str_replace('3', 'mars', str_replace('4', 'avril', str_replace('5', 'mai', str_replace('6', 'juin', str_replace('7', 'juillet', str_replace('8', 'août', str_replace('9', 'septembre', str_replace('10', 'octobre', str_replace('11', 'novembre', str_replace('12', 'décembre', date('n', strtotime('-7 days')))))))))))))); ?>
+     &nbsp;
+    </option>
+   </select>
+  </form>
+ </span>
 
  <span>
   <form>
    <select aria-label="Donateurs" id="SousMenuBas" name="Donateurs" size="1" title="Donateurs">
-   <option value="#SousMenuBas" title="Donateur" aria-label="Donateur" selected="">👤 Xavier M.. 5€ - 05/07&nbsp;</option>
-   <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Christophe J. 5€ - 04/07&nbsp;</option>
-        <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Sebastien D. 5€ - 04/07&nbsp;</option>
-        <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Olivier P. 10€ - 02/07&nbsp;</option>
-        <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Régis B. 10€ - 02/07&nbsp;</option>
-        <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Jean-Yves R. 10€ - 02/07&nbsp;</option>
-        <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Alain S. 10€ - 01/07&nbsp;</option>
-        <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Nicolas J. 5€ - 01/07&nbsp;</option>
-        <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Geoffrey A. 10€ - 01/07&nbsp;</option>
-        <option value="#SousMenuBas" title="Donateur" aria-label="Donateur" >👤 Philippe F. 7€ - 30/06&nbsp;</option>
-        <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Philippe D. M. 20€ - 29/06&nbsp;</option>
-        <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Philippe D. 10€ - 25/06&nbsp;</option>
-        <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Frederick I. 10€ - 17/06&nbsp;</option>
-        <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Xavier M. 5€ - 05/06&nbsp;</option>
-        <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Sebastien D. 5€ - 03/06&nbsp;</option>
+   <option value="#SousMenuBas" title="Donateur" aria-label="Donateur" selected="">👤 Xavier M. 5€ - 05/01&nbsp;</option>
+    <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Sebastien D. 5€ - 03/01&nbsp;</option>
+    <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Tony M. 50€ - 02/01&nbsp;</option>
+    <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Raoul M. 10€ - 01/01&nbsp;</option>
+    <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Alain-Leopold N. 20 - 01/01&nbsp;</option>
+    <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Philippe F. 10€ - 01/01&nbsp;</option>
+    <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Franck G. 10€ - 01/01&nbsp;</option>
+    <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Johann V. 20€ - 27/12&nbsp;</option>
+    <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Pierre B. 10€ - 26/12&nbsp;</option>
+    <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Philippe D. 10€ - 25/12&nbsp;</option>
+    <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Xavier M. 5€ - 05/12&nbsp;</option>
+    <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Sebastien D. 5€ - 03/12&nbsp;</option>
+    <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Johann V. 100€ - 29/11&nbsp;</option>
+    <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Nile E. 10€ - 27/11&nbsp;</option>
+    <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Philippe D. 10€ - 25/11&nbsp;</option>
+    <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Xavier M. 5€ - 05/11&nbsp;</option>
+    <option value="#SousMenuBas" title="Donateur" aria-label="Donateur">👤 Sebastien D. 5€ - 03/11&nbsp;</option>
    </select>
   </form>
  </span>
@@ -97,13 +109,3 @@ $affiche_message_bot = false;
 
  <span id="coucou" class="coucou" data-user="33imej" data-website="moc.liamg" title="Coucou 😊" aria-label="Coucou 😊" role="term"></span>
 </aside>
-
-<?php if ($affiche_message_bot) { ?>
-
-<aside class="mess">
-
-<span class="mess_text">📣 Message : je ferais le thème sombre plus tard 😊&nbsp;</a>
-
-</aside>
-
-<?php } ?>
