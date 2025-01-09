@@ -73,6 +73,7 @@ a.n:hover {
   grid-template-rows: auto;
   justify-content: stretch;
   overflow: hidden;
+  width: 100%;
 }
 
 .en_tete {
