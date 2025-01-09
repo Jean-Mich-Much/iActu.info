@@ -2,7 +2,7 @@
 <opml xmlns:frss="https://freshrss.org/opml" version="2.0">
   <head>
     <title>iActu</title>
-    <dateCreated>Thu, 19 Dec 2024 11:22:10 +0100</dateCreated>
+    <dateCreated>Thu, 09 Jan 2025 14:09:26 +0100</dateCreated>
   </head>
   <body>
     <outline text="1.1 🖥️ Technologie">
@@ -101,7 +101,6 @@
     <outline text="6.1 📰 Infos France">
       <outline text="Europe1" type="rss" xmlUrl="https://www.europe1.fr/rss/societe.xml" htmlUrl="https://www.europe1.fr/" description="L'actualité française et internationale de la politique, l'économie, le sport, les médias, et la culture. Humoristes et divertissement. Direct et replay (audio et vidéo) des émissions diffusées à l'antenne."/>
       <outline text="France 24" type="rss" xmlUrl="https://feeds.feedburner.com/france24/france" htmlUrl="https://www.france24.com/" description="France 24  couvre les évènements en France et en Outre-mer : politique, culture, faits de société, énergie, crise sociale, sport, santé, avec ses reportages, enquêtes, débats et analyses."/>
-      <outline text="Franceinfo" type="rss" xmlUrl="https://www.francetvinfo.fr/france.rss" htmlUrl="https://www.francetvinfo.fr/france/" description="Franceinfo- France"/>
       <outline text="L'Obs" type="rss" xmlUrl="https://www.nouvelobs.com/faits-divers/rss.xml" htmlUrl="https://www.nouvelobs.com/" description="Actualité politique, information sociale ou internationale"/>
       <outline text="Le Figaro" type="rss" xmlUrl="https://www.lefigaro.fr/rss/figaro_politique.xml" htmlUrl="http://www.lefigaro.fr/" description="Le Figaro - Politique - Retrouvez toute la politique du gouvernement et de l'opposition, les propositions de lois, les institutions, les députés, les candidats aux élections sur Lefigaro.fr"/>
       <outline text="Le Monde" type="rss" xmlUrl="https://www.lemonde.fr/economie-francaise/rss_full.xml" htmlUrl="https://www.lemonde.fr" description="Économie française  - Découvrez gratuitement tous les articles, les vidéos et les infographies de la rubrique Économie française sur Le Monde.fr."/>
@@ -110,8 +109,7 @@
     <outline text="6.2 📰 Infos Monde">
       <outline text="Bfm" type="rss" xmlUrl="https://www.bfmtv.com/rss/international/" htmlUrl="https://www.bfmtv.com/international/" description="Monde et International - Retrouvez les dernières infos politiques, économiques et sociales: Articles, interviews et vidéos en direct"/>
       <outline text="France-Guyane" type="rss" xmlUrl="https://www.franceguyane.fr/actualite/international/rss.xml" htmlUrl="https://www.franceguyane.fr/" description="Tous les articles de la rubrique &quot;International&quot;"/>
-      <outline text="France 24" type="rss" xmlUrl="https://feeds.feedburner.com/france24/monde" htmlUrl="http://www.france24.com/" description="France 24 décrypte l’actualité internationale, politique, l’économie, l’environnement, la culture, le sport, en France et à l’international avec analyses, des interviews, des reportages exclusifs, des magazines et des documentaires."/>
-      <outline text="Franceinfo" type="rss" xmlUrl="https://www.francetvinfo.fr/monde/asie.rss" htmlUrl="https://www.francetvinfo.fr/monde/asie/" description="Franceinfo- Asie-Pacifique"/>
+      <outline text="France 24" type="rss" xmlUrl="https://feeds.feedburner.com/france24/monde" htmlUrl="https://www.france24.com/fr/" description="France 24 décrypte l’actualité internationale, politique, l’économie, l’environnement, la culture, le sport, en France et à l’international avec analyses, des interviews, des reportages exclusifs, des magazines et des documentaires."/>
       <outline text="Journal de Montreal" type="rss" xmlUrl="https://www.journaldemontreal.com/monde/rss.xml" htmlUrl="https://www.journaldemontreal.com/" description="Monde - Nouvelles mondiales et actualités internationales"/>
       <outline text="L'Obs" type="rss" xmlUrl="https://www.nouvelobs.com/monde/atom.xml" htmlUrl="https://www.nouvelobs.com/monde/atom.xml" description="Actualité politique, information sociale ou internationale"/>
       <outline text="La Dépêche" type="rss" xmlUrl="https://www.ladepeche.fr/actu/international/rss.xml" htmlUrl="https://www.ladepeche.fr/actu/international/"/>
@@ -120,6 +118,7 @@
       <outline text="Le Télégramme" type="rss" xmlUrl="https://www.letelegramme.fr/monde/rss.xml" htmlUrl="https://www.letelegramme.fr/" description="Toute l'actualité internationale traitée au quotidien par les journalistes du Télégramme. Reportages, informations de dernière minute, directs en lien avec le monde"/>
       <outline text="RFI" type="rss" xmlUrl="https://feeds.feedburner.com/rfi/europe" htmlUrl="http://www.rfi.fr/" description="Suivez l'actualité en direct dédiée au continent Européen - Les derniers reportages, news et informations en continu en Europe, Emissions, Podcast, dossiers sur RFI."/>
       <outline text="RTBF" type="rss" xmlUrl="http://rss.rtbf.be/article/rss/highlight_rtbfinfo_monde-amerique-du-sud.xml?source=internal" htmlUrl="http://www.rtbf.be/info" description="Retrouvez toutes l'actualité d'Amérique du Sud sur RTBF.be. Les dernières informations en provenance du continent sud-américain en direct 24h/24, 7j/7 !"/>
+      <outline text="Sud Ouest" type="rss" xmlUrl="https://www.sudouest.fr/international/rss.xml" htmlUrl="https://www.sudouest.fr/international/"/>
     </outline>
     <outline text="6.3 📰 Sciences">
       <outline text="Futura-Sciences" type="rss" xmlUrl="https://www.futura-sciences.com/rss/actualites.xml" htmlUrl="http://www.futura-sciences.com/" description="L'actualité des sciences et technologies."/>
@@ -129,7 +128,6 @@
     </outline>
     <outline text="6.4 📰 Sciences Autres">
       <outline text="CNRS" type="rss" xmlUrl="https://lejournal.cnrs.fr/rss" htmlUrl="https://lejournal.cnrs.fr/" description="Donner du sens à la science"/>
-      <outline text="Franceinfo" type="rss" xmlUrl="https://www.francetvinfo.fr/sciences.rss" htmlUrl="https://www.francetvinfo.fr/sciences/" description="Franceinfo- Sciences"/>
       <outline text="Le Monde" type="rss" xmlUrl="https://www.lemonde.fr/sciences/rss_full.xml" htmlUrl="http://www.lemonde.fr/" description="Sciences  - Découvrez gratuitement tous les articles, les vidéos et les infographies de la rubrique Sciences sur Le Monde.fr."/>
       <outline text="Radio-Canada" type="rss" xmlUrl="https://feeds.feedburner.com/radio-canada/wkogvs6Kv4D" htmlUrl="http://www.radio-canada.ca/" description="Mise à jour à toutes les 15 minutes tous les jours. - Pour usage personnel seulement."/>
     </outline>
@@ -141,8 +139,8 @@
     </outline>
     <outline text="6.6 📰 Insolites">
       <outline text="7sur7" type="rss" xmlUrl="https://feeds.feedburner.com/7sur7/iactu" htmlUrl="http://www.7sur7.be/" description="7sur7 vous propose l'actu en temps réel ainsi que des analyses et des opinions"/>
-      <outline text="France 3 Régions" type="rss" xmlUrl="https://france3-regions.francetvinfo.fr/insolite/rss" htmlUrl="https://france3-regions.francetvinfo.fr/insolite/rss"/>
       <outline text="La Dépêche" type="rss" xmlUrl="https://www.ladepeche.fr/insolite/rss.xml" htmlUrl="https://www.ladepeche.fr/actu/insolite/" description="Retrouvez toutes les actualités insolites dans la région Occitanie, en France et dans le monde : des images spectaculaires, des sujets qui font le buzz, des informations aussi incroyables qu'inattendues, des moments..."/>
+      <outline text="Rmc" type="rss" xmlUrl="https://rmc.bfmtv.com/rss/actualites/insolite/" htmlUrl="https://rmc.bfmtv.com/actualites/insolite/"/>
     </outline>
     <outline text="6.7 📰 Cinéma | TV">
       <outline text="Allocine" type="rss" xmlUrl="https://www.allocine.fr/rss/news.xml" htmlUrl="http://www.allocine.fr/" description="AlloCiné, le site de référence du cinéma et des séries tv ! Découvrez notre recherche d'horaires de films, l'actualité ciné et séries, les dernières bandes-annonces, les films et séries disponibles en streaming."/>
