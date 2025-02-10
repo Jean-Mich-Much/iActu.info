@@ -1,0 +1,218 @@
+/* Couleurs thème 01 */
+
+:root {
+  --c1: rgba(8, 8, 8, 1);
+  --c2: rgba(255, 255, 255, 0.8);
+  --c3: rgba(255, 192, 32, 0.9);
+  --c4: rgba(255, 144, 32, 0.9);
+  --c5: rgba(32, 192, 255, 0.9);
+  --c6: rgba(28, 28, 36, 1);
+  --c7: rgba(54, 54, 62, 1);
+  --c8: rgba(30, 30, 38, 1);
+  --c9: rgba(18, 18, 26, 1);
+  --c10: rgba(32, 176, 128, 1);
+  --c11: rgba(168, 168, 176, 0.8);
+  --c12: rgba(68, 68, 76, 0.8);
+}
+
+/* Base */
+a,
+aside,
+body,
+div,
+html,
+main,
+nav,
+span {
+  color: var(--c2);
+}
+
+/* Body */
+body {
+  background-color: var(--c1);
+}
+
+/* Menu */
+.menu {
+  background-color: var(--c1);
+  color: var(--c2);
+  outline: 4px solid var(--c7);
+}
+
+.menu span a,
+.menu span a:visited {
+  color: var(--c2);
+}
+
+.menu span a:hover {
+  color: var(--c3);
+}
+
+.menu span a.logo {
+  color: var(--c3);
+}
+
+.logobarre {
+  color: var(--c4);
+}
+
+.logoinfo {
+  color: var(--c5);
+}
+
+.menu span a.logo:hover,
+.menu span a.menu_dates:hover {
+  outline: 3px solid var(--c2);
+}
+
+.menu span a.logo:hover,
+.menu span a.logo:hover .logoinfo {
+  color: var(--c2);
+}
+
+.menu span a.page_active {
+  color: var(--c3);
+  outline: 3px solid var(--c3);
+}
+
+.menu span a.page_active:hover,
+.menu span a:hover {
+  color: var(--c2);
+  outline: 3px solid var(--c2);
+}
+
+/* News */
+.mid {
+  background-color: var(--c1);
+  color: var(--c2);
+}
+
+.site {
+  background-color: var(--c8);
+  color: var(--c2);
+  outline: 4px solid var(--c7);
+  outline-offset: -4px;
+}
+
+.lien_site {
+  background-color: var(--c6);
+  outline: 3px solid var(--c12);
+}
+
+.lien_site:hover {
+  outline: 3px solid var(--c3);
+}
+
+.lien_site:hover .site_nom {
+  color: var(--c3);
+}
+
+.ay {
+  color: var(--c10);
+}
+
+.b {
+  border-top: 1px solid var(--c7);
+}
+
+a.n {
+  color: var(--c2);
+}
+
+a.n:visited {
+  color: var(--c11);
+}
+
+a.n::before {
+  color: var(--c11);
+}
+
+a.n:visited::before {
+  color: var(--c3);
+}
+
+a.n:visited:hover::before {
+  color: var(--c5);
+}
+
+a.n:hover::before {
+  color: var(--c3);
+}
+
+a.n:hover {
+  color: var(--c3);
+}
+
+.bu {
+  border-top: 1px solid var(--c7);
+  color: var(--c11);
+}
+
+/* Messages */
+.messages {
+  background-color: var(--c7);
+  color: var(--c2);
+}
+
+.messages span a {
+  color: var(--c2);
+}
+.messages span a:hover {
+  color: var(--c3);
+}
+
+/* Séparation */
+.separe {
+  color: var(--c5);
+}
+
+/* Responsive */
+@media (max-width: 1151px) {
+  a.n:hover {
+    background-color: var(--c9);
+  }
+}
+
+/* Ecrans > HD */
+@media (min-width: 1921px) {
+  /* Menu */
+  .menu {
+    outline: round(calc(4 / 1920 * 100vw), 1px) solid var(--c7);
+  }
+
+  .menu span a.logo:hover,
+  .menu span a.menu_dates:hover {
+    outline: round(calc(3 / 1920 * 100vw), 1px) solid var(--c2);
+  }
+
+  .menu span a.page_active {
+    outline: round(calc(3 / 1920 * 100vw), 1px) solid var(--c3);
+  }
+
+  .menu span a.page_active:hover,
+  .menu span a:hover {
+    outline: round(calc(3 / 1920 * 100vw), 1px) solid var(--c2);
+  }
+
+  /* News */
+  .site {
+    outline: round(calc(4 / 1920 * 100vw), 1px) solid var(--c7);
+    outline-offset: round(calc(-4 / 1920 * 100vw), 1px);
+  }
+
+  .lien_site {
+    outline: round(calc(3 / 1920 * 100vw), 1px) solid var(--c7);
+  }
+
+  .lien_site:hover {
+    outline: round(calc(3 / 1920 * 100vw), 1px) solid var(--c3);
+  }
+
+  .b {
+    border-top: round(calc(1 / 1920 * 100vw), 1px) solid var(--c7);
+  }
+
+  .bu {
+    border-top: round(calc(1 / 1920 * 100vw), 1px) solid var(--c7);
+  }
+}
