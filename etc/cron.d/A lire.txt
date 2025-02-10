@@ -1,0 +1,5 @@
+Ne pas oublier : root en  0644
+et :
+sudo service cron reload
+sudo service cron restart
+reboot

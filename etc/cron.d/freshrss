@@ -1,0 +1,1 @@
+10,20,30,40,50 * * * * www-data php -f /_/recherche/app/actualize_script.php > /tmp/FreshRSS.log 2>&1
