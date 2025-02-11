@@ -1,3 +1,26 @@
+<?php
+$lien_accueil = 'index.php';
+$lien_tech = 'technologie.php';
+$lien_apple = 'apple.php';
+$lien_jeux = 'jeux.php';
+$lien_sciences = 'sciences.php';
+$lien_actu = 'actualites.php';
+$lien_tv = 'tv.php';
+
+$lien_accueil_theme_02 = 'theme_02_index.php';
+$lien_tech_theme_02 = 'theme_02_technologie.php';
+$lien_apple_theme_02 = 'theme_02_apple.php';
+$lien_jeux_theme_02 = 'theme_02_jeux.php';
+$lien_sciences_theme_02 = 'theme_02_sciences.php';
+$lien_actu_theme_02 = 'theme_02_actualites.php';
+$lien_tv_theme_02 = 'theme_02_tv.php';
+
+$lien_rec = 'recherche/p/i/';
+
+$emoji_theme_02 = '🌜';
+
+?>
+
 <span class="pad8px m3px responsive">
  <a class="logo" href="<?php echo $lien_accueil; ?>" title="Accueil"><span class="f18px m5px">🔖</span>iACTU<span class="logobarre m5px">&#124;</span><span class="logoinfo">INFO</span><span class="f28px flip45 m10px">🚀</span></a>
 </span>
