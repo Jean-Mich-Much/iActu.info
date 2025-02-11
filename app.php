@@ -4,29 +4,8 @@ $nom_page = 'app';
 $page_active = 'apple';
 $titre_page_active = '&#129302;&nbsp;Apple';
 $sites = 'app';
-$cache_secondes = 15;
-
-$lien_accueil = 'index.php';
-$lien_tech = 'technologie.php';
-$lien_apple = 'apple.php';
-$lien_jeux = 'jeux.php';
-$lien_sciences = 'sciences.php';
-$lien_actu = 'actualites.php';
-$lien_tv = 'tv.php';
-
-$lien_accueil_theme_02 = 'index_02.php';
-$lien_tech_theme_02 = 'technologie_02.php';
-$lien_apple_theme_02 = 'apple_02.php';
-$lien_jeux_theme_02 = 'jeux_02.php';
-$lien_sciences_theme_02 = 'sciences_02.php';
-$lien_actu_theme_02 = 'actualites_02.php';
-$lien_tv_theme_02 = 'tv_02.php';
-
-$lien_rec = 'recherche/p/i/';
-
+$cache_secondes = 7;
 $theme = '01';
-$theme_alternatif_emoji = '🌜';
-
 ?>
 
 <?php if (!file_exists($nom_page . '.html') or filemtime($nom_page . '.html') < (time() - $cache_secondes) or !file_exists($nom_page . date("j") . '.html')) { ?>
