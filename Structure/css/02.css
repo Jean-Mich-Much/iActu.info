@@ -159,7 +159,7 @@ a.n:hover::before {
 
 .bu {
   border-top: 1px solid var(--c16);
-  color: var(--c11);
+  color: var(--cnews);
 }
 
 /* Messages */
@@ -184,17 +184,17 @@ a.n:hover::before {
 @media (max-width: 1151px) {
   a.n:hover {
     background-color: var(--c9);
-    color:  var(--c3);
+    color: var(--c3);
   }
-  
+
   a.n:visited:hover::before {
     color: var(--c5);
   }
-  
+
   a.n:hover {
     color: var(--c3);
   }
-  
+
   a.n:hover::before {
     color: var(--c3);
   }
@@ -223,13 +223,13 @@ a.n:hover::before {
 
   /* News */
   .site {
-    outline: round(calc(4 / 1920 * 100vw), 1px) solid var(--c12);
+    outline: round(calc(4 / 1920 * 100vw), 1px) solid var(--c15);
     outline-offset: round(calc(-3 / 1920 * 100vw), 1px);
-    border-radius: round(calc(15 / 1920 * 100vw), 1px);
+    border-radius: round(calc(12 / 1920 * 100vw), 1px);
   }
 
   .lien_site {
-    outline: round(calc(3 / 1920 * 100vw), 1px) solid var(--c12);
+    outline: round(calc(3 / 1920 * 100vw), 1px) solid var(--c14);
   }
 
   .lien_site:hover {
