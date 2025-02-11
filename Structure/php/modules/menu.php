@@ -6,18 +6,10 @@ $lien_jeux = 'jeux.php';
 $lien_sciences = 'sciences.php';
 $lien_actu = 'actualites.php';
 $lien_tv = 'tv.php';
-
-$lien_accueil_theme_02 = 'theme_02_index.php';
-$lien_tech_theme_02 = 'theme_02_technologie.php';
-$lien_apple_theme_02 = 'theme_02_apple.php';
-$lien_jeux_theme_02 = 'theme_02_jeux.php';
-$lien_sciences_theme_02 = 'theme_02_sciences.php';
-$lien_actu_theme_02 = 'theme_02_actualites.php';
-$lien_tv_theme_02 = 'theme_02_tv.php';
-
 $lien_rec = 'recherche/p/i/';
 
-$emoji_theme_02 = '🌜';
+$lien_theme_02 = 'theme_02_index.php';
+$emoji_theme_02 = '💡';
 
 ?>
 
@@ -55,4 +47,8 @@ $emoji_theme_02 = '🌜';
 
 <span class="menu_dates aligne responsive">
  <a class="menu_dates menulien p1px aligne" href="<?php echo $nom_page . date('j', strtotime('+1 days')) . '.html'; ?>" title="Jour suivant"><span class="menu_dates aligne fw600">⏰&nbsp;<?php echo date('H:i'); ?>&nbsp;&nbsp;📅 J+1 ➡️</span></a>
+</span>
+
+<span class="pad8px m3px">
+ <a class="menulien p3px" href="<?php echo $lien_theme_02; ?>" title="Plus clair"><span class="menu_ico m3px"><?php echo $emoji_theme_02; ?></span></a>
 </span>
