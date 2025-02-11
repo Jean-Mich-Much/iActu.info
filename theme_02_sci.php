@@ -1,6 +1,7 @@
 <?php
 $titre_page = 'Sciences';
 $nom_page = 'theme_02_sci';
+$nom_page_theme_alternatif = 'sciences.php';
 $page_active = 'sciences';
 $titre_page_active = '&#129302;&nbsp;Sciences';
 $sites = 'sci';

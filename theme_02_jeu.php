@@ -1,6 +1,7 @@
 <?php
 $titre_page = 'Jeux';
 $nom_page = 'theme_02_jeu';
+$nom_page_theme_alternatif = 'jeux.php';
 $page_active = 'jeux';
 $titre_page_active = '&#129302;&nbsp;Jeux';
 $sites = 'jeu';

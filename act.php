@@ -1,6 +1,7 @@
 <?php
 $titre_page = 'Actualités';
 $nom_page = 'act';
+$nom_page_theme_alternatif = 'theme_02_actualites.php';
 $page_active = 'actu';
 $titre_page_active = '&#129302;&nbsp;Actualités';
 $sites = 'act';

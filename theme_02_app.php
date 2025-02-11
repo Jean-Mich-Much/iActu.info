@@ -1,6 +1,7 @@
 <?php
 $titre_page = 'Apple';
 $nom_page = 'theme_02_app';
+$nom_page_theme_alternatif = 'apple.php';
 $page_active = 'apple';
 $titre_page_active = '&#129302;&nbsp;Apple';
 $sites = 'app';
