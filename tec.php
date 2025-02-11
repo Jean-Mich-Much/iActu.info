@@ -1,7 +1,7 @@
 <?php
 $titre_page = 'iActu';
 $nom_page = 'tec';
-$nom_page_theme_alternatif = 'theme_02_index.php';
+$nom_page_theme_alternatif = 'theme_02_technologie.php';
 $page_active = 'technologie';
 $titre_page_active = '&#129302;&nbsp;Technologie';
 $sites = 'tec';
