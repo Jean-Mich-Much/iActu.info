@@ -8,8 +8,7 @@ $lien_actu = 'actualites.php';
 $lien_tv = 'tv.php';
 $lien_rec = 'recherche/p/i/';
 
-$lien_theme_02 = 'theme_02_index.php';
-$emoji_theme_02 = '💡';
+$emoji_theme_alternatif = '💡';
 
 ?>
 
@@ -50,5 +49,5 @@ $emoji_theme_02 = '💡';
 </span>
 
 <span class="pad8px m3px">
- <a class="menulien p3px" href="<?php echo $lien_theme_02; ?>" title="Plus clair"><span class="menu_ico m3px"><?php echo $emoji_theme_02; ?></span></a>
+ <a class="menulien p3px" href="<?php echo $nom_page_theme_alternatif; ?>" title="Plus clair"><span class="menu_ico m3px"><?php echo $emoji_theme_alternatif; ?></span></a>
 </span>
