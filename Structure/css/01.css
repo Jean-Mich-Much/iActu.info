@@ -37,30 +37,101 @@ body {
   background-color: var(--c1);
   color: var(--c2);
   outline: 4px solid var(--c7);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 720;
+  font-weight: 720;
 }
 
 .menu span a,
 .menu span a:visited {
   color: var(--c2);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 720;
+  font-weight: 720;
 }
 
 .menu span a:hover {
   color: var(--c3);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 720;
+  font-weight: 720;
 }
 
 .menu span a.logo {
   color: var(--c3);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 720;
+  font-weight: 720;
 }
 
 .logobarre {
   color: var(--c4);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 720;
+  font-weight: 720;
 }
 
 .logoinfo {
   color: var(--c5);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 720;
+  font-weight: 720;
 }
 
-.menu span a.logo:hover,
+.menu span a.logo:hover {
+  outline: 3px solid var(--c2);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 720;
+  font-weight: 720;
+}
+
+.menu span a.menu_dates,
+.menu span a.menu_dates:hover {
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 532;
+  font-weight: 532;
+}
+
 .menu span a.menu_dates:hover {
   outline: 3px solid var(--c2);
 }
@@ -68,23 +139,55 @@ body {
 .menu span a.logo:hover,
 .menu span a.logo:hover .logoinfo {
   color: var(--c2);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 720;
+  font-weight: 720;
 }
 
 .menu span a.page_active {
   color: var(--c3);
   outline: 3px solid var(--c3);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 720;
+  font-weight: 720;
 }
 
 .menu span a.page_active:hover,
 .menu span a:hover {
   color: var(--c2);
   outline: 3px solid var(--c2);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 720;
+  font-weight: 720;
 }
 
 /* News */
 .mid {
   background-color: var(--c1);
   color: var(--c2);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 460;
+  font-weight: 460;
 }
 
 .site {
@@ -92,60 +195,172 @@ body {
   color: var(--c2);
   outline: 4px solid var(--c7);
   outline-offset: -3px;
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 532;
+  font-weight: 532;
 }
 
 .lien_site {
   background-color: var(--c6);
   outline: 3px solid var(--c12);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 532;
+  font-weight: 532;
 }
 
 .lien_site:hover {
   outline: 3px solid var(--c3);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 532;
+  font-weight: 532;
 }
 
 .lien_site:hover .site_nom {
   color: var(--c3);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 532;
+  font-weight: 532;
 }
 
 .ay {
   color: var(--c10);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 480;
+  font-weight: 480;
 }
 
 .b {
   border-top: 1px solid var(--c7);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 460;
+  font-weight: 460;
 }
 
 a.n {
   color: var(--c2);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 460;
+  font-weight: 460;
 }
 
 a.n:visited {
   color: var(--c11);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 460;
+  font-weight: 460;
 }
 
 a.n::before {
   color: var(--c11);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 460;
+  font-weight: 460;
 }
 
 a.n:visited::before {
   color: var(--c3);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 460;
+  font-weight: 460;
 }
 
 a.n:visited:hover::before {
   color: var(--c5);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 460;
+  font-weight: 460;
 }
 
 a.n:hover::before {
   color: var(--c3);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 460;
+  font-weight: 460;
 }
 
 a.n:hover {
   color: var(--c3);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 460;
+  font-weight: 460;
 }
 
 .bu {
   border-top: 1px solid var(--c7);
   color: var(--c11);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  font-variation-settings: "wdth" 100;
+  font-variation-settings: "wght" 460;
+  font-weight: 460;
 }
 
 /* Messages */
