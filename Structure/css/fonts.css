@@ -289,6 +289,15 @@
 }
 
 @font-face {
+  font-family: Twemoji;
+  src: url("Structure/fonts/Twemoji.woff2") format("woff2"),
+    local("Apple Color Emoji"), local("Noto Color Emoji"),
+    local("Segoe UI Emoji"), local("Twemoji Mozilla");
+  unicode-range: U+2300-23FF, U+2600-26FF, U+2700-27BF, U+2B00-2BFF,
+    U+1F1E6-1F1FF, U+1F300-1F5FF, U+1F600-1F64F, U+1F680-1F6FF, U+1F900-1F9FF;
+}
+
+@font-face {
   font-family: "color-emoji";
   src: local("Apple Color Emoji"), local("Twemoji Mozilla"),
     local("Segoe UI Emoji"), local("Segoe UI Symbol"), local("Noto Color Emoji"),

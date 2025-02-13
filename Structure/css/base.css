@@ -12,7 +12,7 @@ span {
   box-sizing: border-box;
   direction: ltr;
   font-family: "Inter", "Open Sans", -apple-system, "Segoe UI", sans-serif,
-    "color-emoji", "Noto Color Emoji";
+    "Twemoji", "color-emoji", "Noto Color Emoji";
   font-kerning: normal;
   font-optical-sizing: auto;
   font-size: 16px;
