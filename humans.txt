@@ -1,0 +1,18 @@
+/* TEAM */
+
+   Web developer: Jean-Michel GURGUI
+   Site: https://iactu.info/
+   From: Paris, France
+
+/* THANKS */
+
+   Humans.txt: http://humanstxt.org
+
+/* SITE */
+
+   Last update: 2025/02/02
+   Language: French
+   Standards: HTML5, CSS3
+   Doctype: HTML5
+   Software: Notepad
+   
