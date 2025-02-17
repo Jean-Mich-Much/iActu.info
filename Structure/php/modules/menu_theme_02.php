@@ -5,7 +5,7 @@ $lien_apple_theme_02 = 'theme_02_apple.php';
 $lien_jeux_theme_02 = 'theme_02_jeux.php';
 $lien_sciences_theme_02 = 'theme_02_sciences.php';
 $lien_actu_theme_02 = 'theme_02_actualites.php';
-$lien_tv_theme_02 = 'theme_02_tv.php';
+$lien_tv = 'theme_02_tv.php';
 $lien_rec = 'recherche/p/i/';
 
 $emoji_theme_alternatif = '🌜';
@@ -34,6 +34,10 @@ $emoji_theme_alternatif = '🌜';
 
 <span class="pad8px m3px">
  <a class="menulien p3px <?php if ($page_active == 'actu') {echo 'page_active'; } ?>" href="<?php echo $lien_actu_theme_02; ?>" title="Actualités"><span class="menu_ico m3px">🗞️</span><?php if ($page_active == 'actu') {echo 'Info'; } ?></a>
+</span>
+
+<span class="pad8px m3px">
+ <a class="menulien p3px <?php if ($page_active == 'tv') {echo 'page_active'; } ?>" href="<?php echo $lien_tv; ?>" title="Tv"><span class="menu_ico m3px">📺️</span><?php if ($page_active == 'tv') {echo 'Tv'; } ?></a>
 </span>
 
 <span class="pad8px m3px">

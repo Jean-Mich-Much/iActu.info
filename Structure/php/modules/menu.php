@@ -37,6 +37,10 @@ $emoji_theme_alternatif = '💡';
 </span>
 
 <span class="pad8px m3px">
+ <a class="menulien p3px <?php if ($page_active == 'tv') {echo 'page_active'; } ?>" href="<?php echo $lien_tv; ?>" title="Actualités"><span class="menu_ico m3px">📺️</span><?php if ($page_active == 'tv') {echo 'Tv'; } ?></a>
+</span>
+
+<span class="pad8px m3px">
  <a class="menulien p3px" href="<?php echo $lien_rec; ?>" title="Recherche"><span class="menu_ico m3px">🔎</span></a>
 </span>
 
