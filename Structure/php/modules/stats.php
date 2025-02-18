@@ -1,9 +1,9 @@
 <?php
 $ip = @$_SERVER['REMOTE_ADDR'];
 $day = @date('d');
-$ipFile = "Stats/ip_jour_$day.txt";
-$visitorsFile = "Stats/visiteurs_jour_$day.txt";
-$visitsFile = "Stats/visites_jour_$day.txt";
+$ipFile = "Structure/stats/ip_jour_$day.txt";
+$visitorsFile = "Structure/stats/visiteurs_jour_$day.txt";
+$visitsFile = "Structure/stats/visites_jour_$day.txt";
 
 if (!@file_exists($ipFile)) {
  @file_put_contents($ipFile, '');
@@ -33,7 +33,7 @@ $visits = @file_get_contents($visitsFile);
 
 if (@filesize($ipFile) > 262144) {
  $time = @date('Hi');
- $gzFile = "Stats/ip_jour_{$day}_{$time}.txt.gz";
+ $gzFile = "Structure/stats/ip_jour_{$day}_{$time}.txt.gz";
  $data = @implode("", @file($ipFile));
  $gzData = @gzencode($data, 1);
  $fp = @fopen($gzFile, "w");
@@ -41,7 +41,7 @@ if (@filesize($ipFile) > 262144) {
  @fclose($fp);
 }
 
-$files = @glob("Stats/ip_jour_*.txt.gz");
+$files = @glob("Structure/stats/ip_jour_*.txt.gz");
 
 if (@count($files) > 64) {
  @array_multisort(@array_map('filemtime', $files), SORT_NUMERIC, SORT_ASC, $files);
@@ -50,7 +50,7 @@ if (@count($files) > 64) {
   @unlink($file);
  }
 }
-foreach (@glob("Stats/*") as $file) {
+foreach (@glob("Structure/stats/*") as $file) {
  if (@filemtime($file) < @time() - 259200) {
   @unlink($file);
  }
