@@ -75,4 +75,5 @@ echo $p;
 }
 } else {
 @readfile($nom_page . '.html');
-};
+};?>
+<?php @include 'Structure/php/modules/stats.php';

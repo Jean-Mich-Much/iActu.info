@@ -28,7 +28,7 @@ if(!file_exists($nom_page.'.html')||filemtime($nom_page.'.html')<(time()-$cache_
 echo"<div style='background-color:var(--c8);color:var(--c2);font-synthesis-small-caps:auto;font-synthesis-weight:auto;font-synthesis:style;font-variant-emoji:emoji;font-variant:discretionary-ligatures tabular-nums;outline:round(calc(4 / 1920 * 100vw),1px) solid var(--c7);outline-offset:round(calc(-3 / 1920 * 100vw),1px);border-radius:round(calc(12 / 1920 * 100vw),1px);padding:round(up,calc(8 / 1920 * 100vw),1px); margin-bottom:round(up,calc(6 / 1920 * 100vw),1px);'>
 <div class='f20px' style='border-bottom:round(up,calc(1 / 1920 * 100vw),1px) solid var(--c7);margin:round(up,calc(6 / 1920 * 100vw),1px) round(calc(1 / 1920 * 100vw),1px) 0 auto;padding:round(up,calc(6 / 1920 * 100vw),1px) round(calc(6 / 1920 * 100vw),1px) round(up,calc(12 / 1920 * 100vw),1px) round(calc(6 / 1920 * 100vw),1px);color:var(--c10);font-variation-settings: \"wght\" 600;'>📺&nbsp;$dispName</div>";
 $progs=$xp->query("/tv/programme[@channel='$chId']");
-$ptStart=new DateTime("$td 20:49:59",new DateTimeZone("Europe/Paris"));
+$ptStart=new DateTime("$td 20:54:59",new DateTimeZone("Europe/Paris"));
 $ptEnd=new DateTime("$td 23:59:59",new DateTimeZone("Europe/Paris"));
 $firstPT=null;
 $secondPT=null;
@@ -37,10 +37,10 @@ foreach($progs as $p){
 $start=new DateTime($p->getAttribute("start"),new DateTimeZone("Europe/Paris"));
 $stop=new DateTime($p->getAttribute("stop"),new DateTimeZone("Europe/Paris"));
 $durMin=($stop->getTimestamp()-$start->getTimestamp())/60;
-if($start>=$ptStart&&$start<$ptEnd&&$durMin>35){
+if($start>=$ptStart&&$start<$ptEnd&&$durMin>24){
     if(!$firstPT){
         $firstPT=$p;
-    } elseif($start>new DateTime($firstPT->getAttribute("stop"),new DateTimeZone("Europe/Paris"))&&$durMin>25){
+    } elseif($start>new DateTime($firstPT->getAttribute("stop"),new DateTimeZone("Europe/Paris"))&&$durMin>24){
         $secondPT=$p;
         break;
     }
@@ -53,10 +53,10 @@ foreach($progs as $p){
 $start=new DateTime($p->getAttribute("start"),new DateTimeZone("Europe/Paris"));
 $stop=new DateTime($p->getAttribute("stop"),new DateTimeZone("Europe/Paris"));
 $durMin=($stop->getTimestamp()-$start->getTimestamp())/60;
-if($start>=$secondPTStart&&$start<=$secondPTEnd&&$durMin>25){
+if($start>=$secondPTStart&&$start<=$secondPTEnd&&$durMin>24){
     if(!$secondPT){
         $secondPT=$p;
-    } elseif($firstStop&&$start>$firstStop&&$start>=$secondPTStart&&$durMin>25){
+    } elseif($firstStop&&$start>$firstStop&&$start>=$secondPTStart&&$durMin>24){
         $secondPT=$p;
         break;
     }
@@ -67,7 +67,7 @@ foreach($progs as $p){
     $start=new DateTime($p->getAttribute("start"),new DateTimeZone("Europe/Paris"));
     $stop=new DateTime($p->getAttribute("stop"),new DateTimeZone("Europe/Paris"));
     $durMin=($stop->getTimestamp()-$start->getTimestamp())/60;
-    if($firstStop&&$start>$firstStop&&$durMin>35&&!in_array($p->getAttribute("start").$p->getAttribute("stop").$p->getElementsByTagName("title")[0]->nodeValue,$shown)){
+    if($firstStop&&$start>$firstStop&&$durMin>24&&!in_array($p->getAttribute("start").$p->getAttribute("stop").$p->getElementsByTagName("title")[0]->nodeValue,$shown)){
         $secondPT=$p;
         break;
     }
@@ -100,4 +100,4 @@ if($p&&!in_array($p->getAttribute("start").$p->getAttribute("stop").$p->getEleme
 </body>
 </html>
 
-<?php $p=ob_get_clean();if(substr_count($p,'<!DOCTYPE html>')===1&&substr_count($p,'</html>')===1&&strlen($p)>=1024){echo $p;@file_put_contents($nom_page.'.html',$p);@chmod($nom_page.'.html',0775);@copy($nom_page.'.html',$nom_page.date("j").'.html');@chmod($nom_page.date("j").'.html',0775);}else{@readfile($nom_page.'.html');}}else{@readfile($nom_page.'.html');};
+<?php $p=ob_get_clean();if(substr_count($p,'<!DOCTYPE html>')===1&&substr_count($p,'</html>')===1&&strlen($p)>=1024){echo $p;@file_put_contents($nom_page.'.html',$p);@chmod($nom_page.'.html',0775);@copy($nom_page.'.html',$nom_page.date("j").'.html');@chmod($nom_page.date("j").'.html',0775);}else{@readfile($nom_page.'.html');}}else{@readfile($nom_page.'.html');}; @include 'Structure/php/modules/stats.php';

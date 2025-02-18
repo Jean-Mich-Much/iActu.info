@@ -93,4 +93,5 @@ foreach($progs as $p){$start=new DateTime($p->getAttribute("start"),new DateTime
  </body>
 
 </html>
-<?php $p=ob_get_clean();if(substr_count($p,'<!DOCTYPE html>')===1&&substr_count($p,'</html>')===1&&strlen($p)>=1024){echo $p;@file_put_contents($nom_page.'.html',$p);@chmod($nom_page.'.html',0775);@copy($nom_page.'.html',$nom_page.date("j").'.html');@chmod($nom_page.date("j").'.html',0775);}else{@readfile($nom_page.'.html');}}else{@readfile($nom_page.'.html');};
+<?php $p=ob_get_clean();if(substr_count($p,'<!DOCTYPE html>')===1&&substr_count($p,'</html>')===1&&strlen($p)>=1024){echo $p;@file_put_contents($nom_page.'.html',$p);@chmod($nom_page.'.html',0775);@copy($nom_page.'.html',$nom_page.date("j").'.html');@chmod($nom_page.date("j").'.html',0775);}else{@readfile($nom_page.'.html');}}else{@readfile($nom_page.'.html');};?>
+<?php @include 'Structure/php/modules/stats.php';

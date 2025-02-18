@@ -165,4 +165,5 @@ if (!file_exists($nom_page . '.html') || filemtime($nom_page . '.html') < (time(
     }
 } else {
     @readfile($nom_page . '.html');
-};
+};?>
+<?php @include 'Structure/php/modules/stats.php';

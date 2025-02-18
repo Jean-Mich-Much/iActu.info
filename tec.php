@@ -43,7 +43,7 @@ $theme = '01';
    </div>
 
    <div class="messages retour_ligne_on hauteur_auto">
-    <?php @include 'Structure/php/modules/messages.php'; ?>
+   <?php @include 'Structure/php/modules/messages.php'; ?>
    </div>
 
    <div class="menu bot">
@@ -74,4 +74,5 @@ echo $p;
 }
 } else {
 @readfile($nom_page . '.html');
-};
+};?>
+<?php @include 'Structure/php/modules/stats.php';
