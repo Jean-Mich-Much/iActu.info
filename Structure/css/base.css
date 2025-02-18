@@ -293,6 +293,16 @@ a.n::before {
   direction: rtl;
 }
 
+.messages a.faireundon {
+  color: var(--c3);
+  font-variation-settings: "wght" 720;
+  font-weight: 720;
+}
+
+.messages a.faireundon:hover {
+  color: var(--c5);
+}
+
 /* Autres */
 span {
   align-self: auto;
