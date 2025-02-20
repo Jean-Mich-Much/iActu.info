@@ -1,6 +1,6 @@
 <span class="pad16px retour_ligne_on hauteur_auto largeur_auto marges_auto">
 
-<span class="aligne"><span class="aligne gris_clairx3 opacity75pc">📎</span>&nbsp;&nbsp;Objectif février : 20€ reçus sur 130€ (manque 110€)&nbsp;&nbsp;</span>
+<span class="aligne"><span class="aligne gris_clairx3 opacity75pc">📎</span>&nbsp;&nbsp;Objectif février :&nbsp;<span style="display: inline;color: var(--c5);">20€</span>&nbsp;reçus sur&nbsp;<span style="display: inline;color: var(--c5);">130€</span>&nbsp;(manque&nbsp;<span style="display: inline;color: var(--c3);">110€</span>)&nbsp;&nbsp;</span>
 
 <span class="aligne separe m4px">&#124;&nbsp;&nbsp;</span>
 
