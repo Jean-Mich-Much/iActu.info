@@ -48,7 +48,7 @@ if (
 
 <?php
 @include "Structure/php/parsers/lit_tv.php";
-$programmes = tv('Structure/cache/tv/xmltv_tnt.xml', '2044', '2359', '24', '0', 'avant', '120', '2');
+$programmes = tv('Structure/cache/tv/xmltv_tnt.xml', '2052', '2359', '24', '0', 'avant', '120', '2');
 afficherProgrammeTV($programmes);
 ?>
 
