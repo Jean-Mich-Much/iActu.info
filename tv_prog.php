@@ -5,7 +5,7 @@ $nom_page_theme_alternatif = 'theme_02_tv.php';
 $page_active = 'tv';
 $page_tv_active= 'programme';
 $titre_page_active = '&#129302;&nbsp;Tv';
-$cache =120;
+$cache =240;
 $theme = '01';
 
 if (!file_exists($nom_page . '.html') || filemtime($nom_page . '.html') < (time() - $cache) || !file_exists($nom_page . date("j") . '.html')) {

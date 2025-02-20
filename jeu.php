@@ -5,7 +5,7 @@ $nom_page_theme_alternatif = 'theme_02_jeux.php';
 $page_active = 'jeux';
 $titre_page_active = '&#129302;&nbsp;Jeux';
 $sites = 'jeu';
-$cache_secondes = 8;
+$cache_secondes = 60;
 $theme = '01';
 ?>
 
