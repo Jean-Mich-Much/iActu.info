@@ -59,9 +59,9 @@ if (!file_exists($nom_page . '.html') || filemtime($nom_page . '.html') < (time(
                 // Charge le fichier XML et initialise DOMXPath
                 $xmlFile = "Structure/cache/tv/xmltv_tnt.xml";
                 $tem = "Structure/cache/tv/xmltv_tnt" . date("j") . ".tem";
-                $cacheSTv = 18000;
+                $cachetv = 18000;
 
-                if (!file_exists($xmlFile) || @filemtime($tem) < time() - $cacheSTv) {
+                if (!file_exists($xmlFile) || @filemtime($tem) < time() - $cachetv) {
                     exec('wget -O "/_/Structure/cache/tv/xmltv_tnt.xml" "https://xmltvfr.fr/xmltv/xmltv_tnt.xml" -q --no-check-certificate');
                     if (!file_exists("Structure/cache/tv/xmltv_tnt.time")) {
                         fopen("Structure/cache/tv/xmltv_tnt.time", "w");
