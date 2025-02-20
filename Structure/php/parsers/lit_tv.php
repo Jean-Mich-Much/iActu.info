@@ -128,10 +128,10 @@ echo '<div style="display:flex;flex-direction:column;width:100%;padding: round(c
 if($programme['director']) { echo '&nbsp;🎬&nbsp;Réalisé par&nbsp;'.$programme['director']; }
 if(!empty($programme['actors'])) { echo '&nbsp;🎭&nbsp;Acteurs:&nbsp;'.implode(", ",$programme['actors']); }
 if(!empty($programme['guests'])) { echo '&nbsp;👤&nbsp;Production&nbsp;&#47;&nbsp;invité&nbsp;&#47;&nbsp;autre&nbsp;:&nbsp;'.implode(", ",$programme['guests']); }
-if($programme['rating']) { echo '&nbsp;🚸&nbsp;Csa&nbsp;'.str_replace("-", "", $programme['rating']); }
+if($programme['rating']) { echo '&nbsp;•&nbsp;Contenu&nbsp;:&nbsp;'.str_replace("Tout public ans", "tout public", str_replace("-Tout public", "Tout public", $programme['rating']).' ans'); }
 if($programme['episode']) { echo '&nbsp;📺&nbsp;'.$programme['episode']; }
 echo '</span></div></div>';
-  };
-  echo '</div>';
- };
+};
+echo '</div>';
+};
 };
