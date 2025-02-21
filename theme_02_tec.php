@@ -5,7 +5,7 @@ $nom_page_theme_alternatif = 'technologie.php';
 $page_active = 'technologie';
 $titre_page_active = '&#129302;&nbsp;Technologie';
 $sites = 'tec';
-$cache_secondes = 35;
+$cache_secondes = 305;
 $theme = '02';
 $lien_menu_theme = 'menu_theme_02';
 ?>

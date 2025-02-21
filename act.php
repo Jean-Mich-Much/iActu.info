@@ -5,7 +5,7 @@ $nom_page_theme_alternatif = 'theme_02_actualites.php';
 $page_active = 'actu';
 $titre_page_active = '&#129302;&nbsp;Actualités';
 $sites = 'act';
-$cache_secondes = 90;
+$cache_secondes = 340;
 $theme = '01';
 ?>
 

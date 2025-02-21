@@ -1,0 +1,1 @@
+<?php if (file_exists('Structure/cache/tv/xmltv_cp.xml') && filesize('Structure/cache/tv/xmltv_cp.xml') >= 1048576 && strpos(file_get_contents('Structure/cache/tv/xmltv_cp.xml'), '</tv>') !== false) {copy('Structure/cache/tv/xmltv_cp.xml', 'Structure/cache/tv/xmltv_tnt.xml');} ?>

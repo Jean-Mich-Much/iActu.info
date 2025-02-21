@@ -27,25 +27,6 @@ if(!file_exists($nom_page.'.html')||filemtime($nom_page.'.html')<(time()-$cache)
    <div class="menu"><?php @include 'Structure/php/modules/'.$lien_menu_theme.'.php'; ?></div>
    <div class="menu"><?php @include "Structure/php/modules/menu_tv_theme_02.php"; ?></div>
    <div class="mid">
-    <?php $xmlFile = "Structure/cache/tv/xmltv_tnt.xml";
-$tem="Structure/cache/tv/xmltv_tnt".date("j").".tem";
-$cachetv = 18000;
-if (
-    !file_exists($xmlFile) ||
-    @filemtime($tem) < time() - $cachetv
-) {
-    exec(
-        'wget -O "/_/Structure/cache/tv/xmltv_tnt.xml" "https://xmltvfr.fr/xmltv/xmltv_tnt.xml" -q --no-check-certificate'
-    );
-    if (!file_exists("Structure/cache/tv/xmltv_tnt.time")) {
-        fopen("Structure/cache/tv/xmltv_tnt.time", "w");
-    }
-    @copy(
-        "Structure/cache/tv/xmltv_tnt.time",
-        $tem
-    ); 
-} ;
-; ?>
 
 <?php
 @include "Structure/php/parsers/lit_tv.php";

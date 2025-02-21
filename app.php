@@ -5,7 +5,7 @@ $nom_page_theme_alternatif = 'theme_02_apple.php';
 $page_active = 'apple';
 $titre_page_active = '&#129302;&nbsp;Apple';
 $sites = 'app';
-$cache_secondes = 45;
+$cache_secondes = 310;
 $theme = '01';
 ?>
 

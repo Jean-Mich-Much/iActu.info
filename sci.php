@@ -5,7 +5,7 @@ $nom_page_theme_alternatif = 'theme_02_sciences.php';
 $page_active = 'sciences';
 $titre_page_active = '&#129302;&nbsp;Sciences';
 $sites = 'sci';
-$cache_secondes = 75;
+$cache_secondes = 330;
 $theme = '01';
 ?>
 
