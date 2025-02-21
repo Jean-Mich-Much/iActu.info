@@ -1,1 +1,1 @@
-<?php include 'theme_02_act.php'; ?>
+<?php @readfile('theme_02_act.html'); ?><?php @include 'Structure/php/modules/stats.php';

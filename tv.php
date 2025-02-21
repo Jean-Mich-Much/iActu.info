@@ -5,7 +5,7 @@ $nom_page_theme_alternatif='theme_02_tv.php';
 $page_active='tv';
 $page_tv_active= 'cesoir';
 $titre_page_active='&#129302;&nbsp;Tv';
-$cache=10800;
+$cache=28800;
 $theme='01';
 
 if(!file_exists($nom_page.'.html')||filemtime($nom_page.'.html')<(time()-$cache)||!file_exists($nom_page.date("j").'.html')){ob_start();?>
@@ -26,26 +26,7 @@ if(!file_exists($nom_page.'.html')||filemtime($nom_page.'.html')<(time()-$cache)
    <div class="menu"><?php @include "Structure/php/modules/menu.php"; ?></div>
    <div class="menu"><?php @include "Structure/php/modules/menu_tv.php"; ?></div>
    <div class="mid">
-    <?php $xmlFile = "Structure/cache/tv/xmltv_tnt.xml";
-$tem="Structure/cache/tv/xmltv_tnt".date("j").".tem";
-$cachetv = 18000;
-if (
-    !file_exists($xmlFile) ||
-    @filemtime($tem) < time() - $cachetv
-) {
-    exec(
-        'wget -O "/_/Structure/cache/tv/xmltv_tnt.xml" "https://xmltvfr.fr/xmltv/xmltv_tnt.xml" -q --no-check-certificate'
-    );
-    if (!file_exists("Structure/cache/tv/xmltv_tnt.time")) {
-        fopen("Structure/cache/tv/xmltv_tnt.time", "w");
-    }
-    @copy(
-        "Structure/cache/tv/xmltv_tnt.time",
-        $tem
-    ); 
-} ;
-; ?>
-
+    
 <?php
 @include "Structure/php/parsers/lit_tv.php";
 $programmes = tv('Structure/cache/tv/xmltv_tnt.xml', '2052', '2359', '24', '0', 'avant', '120', '2');

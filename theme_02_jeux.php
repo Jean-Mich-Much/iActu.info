@@ -1,1 +1,1 @@
-<?php include 'theme_02_jeu.php'; ?>
+<?php @readfile('theme_02_jeu.html'); ?><?php @include 'Structure/php/modules/stats.php';

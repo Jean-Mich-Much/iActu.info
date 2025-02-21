@@ -1,1 +1,1 @@
-<?php include 'sci.php'; ?>
+<?php @readfile('sci.html'); ?><?php @include 'Structure/php/modules/stats.php';
