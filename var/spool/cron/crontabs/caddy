@@ -8,3 +8,9 @@
 54,55 23 * * * /usr/bin/php-cgi8.3 /_/jeux.php > /dev/null 2>&1
 52,53 23 * * * /usr/bin/php-cgi8.3 /_/sciences.php > /dev/null 2>&1
 50,51 23 * * * /usr/bin/php-cgi8.3 /_/actualites.php > /dev/null 2>&1
+
+4 */6 * * * wget -O "/_/Structure/cache/tv/xmltv_tnt_source.xml" "https://xmltvfr.fr/xmltv/xmltv_tnt.xml" -q --no-check-certificate
+
+16 */6 * * * cp /_/Structure/cache/tv/xmltv_tnt_source.xml /_/Structure/cache/tv/xmltv_cp.xml
+
+18 */6 * * * /usr/bin/php-cgi8.3 /_/xmltv.php > /dev/null 2>&1
