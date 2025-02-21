@@ -3,11 +3,35 @@
 # (Cron version -- $Id: crontab.c,v 2.13 1994/01/17 03:20:37 vixie Exp $)
 14,24,34,44,54 * * * * truncate -s 0 /_/recherche/data/users/Gon1Kirua/FreshRSS.log && truncate -s 0 /_/recherche/data/users/Gon1Kirua/log.txt && truncate -s 0 /_/recherche/data/users/_/log_pshb.txt && truncate -s 0 /_/recherche/data/users/_/log_api.txt && truncate -s 0 /_/recherche/data/users/_/log.txt
 
-58,59 23 * * * /usr/bin/php-cgi8.3 /_/technologie.php > /dev/null 2>&1
-56,57 23 * * * /usr/bin/php-cgi8.3 /_/apple.php > /dev/null 2>&1
-54,55 23 * * * /usr/bin/php-cgi8.3 /_/jeux.php > /dev/null 2>&1
-52,53 23 * * * /usr/bin/php-cgi8.3 /_/sciences.php > /dev/null 2>&1
-50,51 23 * * * /usr/bin/php-cgi8.3 /_/actualites.php > /dev/null 2>&1
+# technologie.php
+02,08,15,22,29,36,43,50 * * * * /usr/bin/php-cgi8.3 /_/tec.php > /dev/null 2>&1
+
+# apple.php
+05,12,19,26,33,40,47,54 * * * * /usr/bin/php-cgi8.3 /_/app.php > /dev/null 2>&1
+
+# jeux.php
+06,13,20,27,34,41,48,55 * * * * /usr/bin/php-cgi8.3 /_/jeu.php > /dev/null 2>&1
+
+# sciences.php
+07,14,21,28,35,42,49,56 * * * * /usr/bin/php-cgi8.3 /_/sci.php > /dev/null 2>&1
+
+# actualites.php
+09,16,23,30,37,44,51,58 * * * * /usr/bin/php-cgi8.3 /_/act.php > /dev/null 2>&1
+
+# theme_02_technologie.php
+02,08,15,22,29,36,43,50 * * * * /usr/bin/php-cgi8.3 /_/theme_02_tec.php > /dev/null 2>&1
+
+# theme_02_apple.php
+05,12,19,26,33,40,47,54 * * * * /usr/bin/php-cgi8.3 /_/theme_02_app.php > /dev/null 2>&1
+
+# theme_02_jeux.php
+06,13,20,27,34,41,48,55 * * * * /usr/bin/php-cgi8.3 /_/theme_02_jeu.php > /dev/null 2>&1
+
+# theme_02_sciences.php
+07,14,21,28,35,42,49,56 * * * * /usr/bin/php-cgi8.3 /_/theme_02_sci.php > /dev/null 2>&1
+
+# theme_02_actualites.php
+09,16,23,30,37,44,51,58 * * * * /usr/bin/php-cgi8.3 /_/theme_02_act.php > /dev/null 2>&1
 
 4 */6 * * * wget -O "/_/Structure/cache/tv/xmltv_tnt_source.xml" "https://xmltvfr.fr/xmltv/xmltv_tnt.xml" -q --no-check-certificate
 
