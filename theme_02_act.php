@@ -8,6 +8,8 @@ $sites = 'act';
 $cache_secondes = 345;
 $theme = '02';
 $lien_menu_theme = 'menu_theme_02';
+$nbrclassn='115';
+$nbrchr='70000';
 ?>
 
 <?php if (!file_exists($nom_page . '.html') or filemtime($nom_page . '.html') < (time() - $cache_secondes) or !file_exists($nom_page . date("j") . '.html')) { ?>
@@ -63,7 +65,8 @@ if (
 substr_count($p, '<!DOCTYPE html>') === 1 &&
 substr_count($p, '</html>') === 1 &&
 substr_count($p, 'http') >= 2 &&
-strlen($p) >= 1024
+substr_count($p, 'class="n"') >= $nbrclassn &&
+strlen($p) >= $nbrchr
 ) {
 echo $p;
 @file_put_contents($nom_page . '.html', $p);
