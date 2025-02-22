@@ -68,7 +68,7 @@ $now = new DateTime("now", new DateTimeZone("Europe/Paris"));
 $shown = [];
 $yesterday = (clone $now)->modify('-1 day');
 $tomorrow = (clone $now)->modify('+1 day');
-$startWindow = (clone $now)->modify('-240 minutes');
+$startWindow = (clone $now)->modify('-85 minutes');
 $endWindow = (new DateTime())->setTime(6, 0, 0)->modify('+7 day');
 foreach ($chs as $ch) {
 $chId = $ch->getAttribute("id");
@@ -100,7 +100,7 @@ $displayTitle = $title . ' (' . $start->format('d/m') . ')';
 $displayDuration = "Durée: " . gmdate("H:i", $duration);
 $progTitles[$title] = true;
 $shown[] = $time . ' - ' . $displayTitle . ' ' . $displayDuration;
-if ($progCount < 20) {
+if ($progCount < 15) {
 $progCount++;
 echo "<div class='programme-item' class='programme-time'><div>$time&nbsp;</div><div class='programme-title'>" . mb_strimwidth($displayTitle, 0, 56, "...") . "</div><div class='programme-duration'>$displayDuration</div></div>";
 }
