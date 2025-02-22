@@ -54,24 +54,40 @@ flex: 1;
 <div class="menu"><?php @include "Structure/php/modules/menu.php"; ?></div>
 <div class="menu"><?php @include "Structure/php/modules/menu_tv.php"; ?></div>
 <div class="mid">
-<?php
-try {
+<?php try {
 $xmlFile = "Structure/cache/tv/xmltv_tnt.xml";
 $xml = new DOMDocument();
-if (!$xml->load($xmlFile)) {
-throw new Exception(" ");
-}
+@$xml->load($xmlFile) or die();
 $xp = new DOMXPath($xml);
 $chs = $xp->query("/tv/channel");
 $now = new DateTime("now", new DateTimeZone("Europe/Paris"));
 $shown = [];
 $yesterday = (clone $now)->modify('-1 day');
 $tomorrow = (clone $now)->modify('+1 day');
-$startWindow = (clone $now)->modify('-85 minutes');
-$endWindow = (new DateTime())->setTime(6, 0, 0)->modify('+7 day');
+
+// Chercher le programme en cours
+$ongoingProgramFound = false;
 foreach ($chs as $ch) {
 $chId = $ch->getAttribute("id");
-$dispName = $ch->getElementsByTagName("display-name")[0]->nodeValue;
+$progs = $xp->query("/tv/programme[@channel='$chId']");
+foreach ($progs as $p) {
+$start = new DateTime($p->getAttribute("start"), new DateTimeZone("Europe/Paris"));
+$stop = new DateTime($p->getAttribute("stop"), new DateTimeZone("Europe/Paris"));
+if (strtotime($p->getAttribute("start")) <= strtotime($now->format(DateTime::ATOM)) && strtotime($now->format(DateTime::ATOM)) < strtotime($p->getAttribute("stop"))) {
+$startWindow = $start;
+$endWindow = (clone $start)->modify('+7 day');
+$ongoingProgramFound = true;
+break 2;
+}
+}
+}
+if (!$ongoingProgramFound) {
+$startWindow = (clone $now)->modify('-85 minutes');
+$endWindow = (new DateTime())->setTime(6, 0, 0)->modify('+7 day');
+}
+foreach ($chs as $ch) {
+$chId = $ch->getAttribute("id");
+$dispName = @$ch->getElementsByTagName("display-name")[0]->nodeValue ?: 'Nom de chaîne non disponible';
 echo "<div style='background-color: var(--c8);color: var(--c2);font-synthesis-small-caps:auto;font-synthesis-weight:auto;font-synthesis:style;font-variant-emoji:emoji;font-variant:discretionary-ligatures tabular-nums;outline:round(calc(4 / 1920 * 100vw),1px) solid var(--c7);outline-offset:round(calc(-3 / 1920 * 100vw),1px);border-radius:round(calc(12 / 1920 * 100vw),1px);padding:round(up,calc(8 / 1920 * 100vw),1px);margin-bottom:round(up,calc(6 / 1920 * 100vw),1px);'>";
 echo "<div class='f20px' style='border-bottom:round(up,calc(1 / 1920 * 100vw),1px) solid var(--c7);margin:round(up,calc(6 / 1920 * 100vw),1px) round(calc(1 / 1920 * 100vw),1px) round(up,calc(6 / 1920 * 100vw),1px) auto;padding:round(up,calc(6 / 1920 * 100vw),1px) round(calc(6 / 1920 * 100vw),1px) round(up,calc(12 / 1920 * 100vw),1px) round(calc(6 / 1920 * 100vw),1px);color: var(--c10);font-variation-settings: \"wght\" 600;'>📺&nbsp;$dispName</div>";
 $progs = $xp->query("/tv/programme[@channel='$chId']");
@@ -81,7 +97,7 @@ foreach ($progs as $p) {
 $start = new DateTime($p->getAttribute("start"), new DateTimeZone("Europe/Paris"));
 $stop = new DateTime($p->getAttribute("stop"), new DateTimeZone("Europe/Paris"));
 $duration = $stop->getTimestamp() - $start->getTimestamp();
-$title = $p->getElementsByTagName("title")[0]->nodeValue;
+$title = @$p->getElementsByTagName("title")[0]->nodeValue ?: 'Titre non disponible';
 $isToday = $start->format('Y-m-d') === $now->format('Y-m-d');
 $isYesterday = $start->format('Y-m-d') === $yesterday->format('Y-m-d');
 $isTomorrow = $start->format('Y-m-d') === $tomorrow->format('Y-m-d');
@@ -107,8 +123,8 @@ echo "<div class='programme-item' class='programme-time'><div>$time&nbsp;</div><
 }
 echo "</div>";
 }
-} catch (Exception $e) {}
-?>
+} catch (Exception $e) {} ?>
+
 </div>
 </div>
 
