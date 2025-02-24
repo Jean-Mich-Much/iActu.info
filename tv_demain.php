@@ -25,6 +25,7 @@ if(!file_exists($nom_page.'.html')||filemtime($nom_page.'.html')<(time()-$cache)
       <div class="flex-page">
        <div class="menu"><?php @include "Structure/php/modules/menu.php"; ?></div>
        <div class="menu"><?php @include "Structure/php/modules/menu_tv.php"; ?></div>
+       <?php @include 'Structure/php/modules/messages_top.php'; ?>
        <div class="mid">
     
     <?php

@@ -40,6 +40,8 @@ $nbrchr='70000';
    <div class="menu">
     <?php @include 'Structure/php/modules/'.$lien_menu_theme.'.php'; ?>
    </div>
+   
+   <?php @include 'Structure/php/modules/messages_top.php'; ?>
 
    <div class="mid">
     <?php @include 'Structure/sites/'.$sites.'.php'; ?>

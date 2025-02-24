@@ -53,6 +53,8 @@ flex: 1;
 <div class="flex-page">
 <div class="menu"><?php @include "Structure/php/modules/menu.php"; ?></div>
 <div class="menu"><?php @include "Structure/php/modules/menu_tv.php"; ?></div>
+<?php @include 'Structure/php/modules/messages_top.php'; ?>
+
 <div class="mid">
 <?php try {
 $xmlFile = "Structure/cache/tv/xmltv_tnt.xml";
@@ -64,7 +66,6 @@ $now = new DateTime("now", new DateTimeZone("Europe/Paris"));
 $shown = [];
 $yesterday = (clone $now)->modify('-1 day');
 $tomorrow = (clone $now)->modify('+1 day');
-
 // Chercher le programme en cours
 $ongoingProgramFound = false;
 foreach ($chs as $ch) {
@@ -78,9 +79,7 @@ $startWindow = $start;
 $endWindow = (clone $start)->modify('+7 day');
 $ongoingProgramFound = true;
 break 2;
-}
-}
-}
+}}}
 if (!$ongoingProgramFound) {
 $startWindow = (clone $now)->modify('-85 minutes');
 $endWindow = (new DateTime())->setTime(6, 0, 0)->modify('+7 day');
