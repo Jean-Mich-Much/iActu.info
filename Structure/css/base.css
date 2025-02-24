@@ -74,7 +74,7 @@ body {
 }
 
 .bot {
-  order: 4;
+  order: 5;
 }
 
 .menu {
@@ -179,7 +179,7 @@ body {
 /* News */
 .mid {
   display: grid;
-  order: 2;
+  order: 3;
   grid-template-columns: 1fr;
   flex-grow: 1;
   flex-shrink: 1;
@@ -276,14 +276,49 @@ a.n::before {
 
 /* Messages */
 .messages {
-  order: 3;
+  order: 4;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  align-content: flex-start;
+  flex-wrap: nowrap;
+  align-content: center;
+  height: fit-content;
   overflow: hidden;
-  width: 100%;
+  margin-left: -5px;
+  width: (100% + 10px);
+  z-index: 100;
+}
+
+.messages span,
+.messages span span,
+.messages span span span,
+.messages a,
+.messages span a,
+.messages span span a,
+.messages span span span a {
+  align-self: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  vertical-align: baseline;
+  margin-bottom: round(up, calc(3 / 1920 * 100vw), 1px);
+  margin-top: round(up, calc(3 / 1920 * 100vw), 1px);
+}
+
+.top {
+  order: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  height: fit-content;
+  overflow: hidden;
+  margin-left: -5px;
+  width: (100% + 10px);
   z-index: 100;
 }
 
@@ -312,7 +347,7 @@ span {
 
 .aligne {
   align-self: center;
-  display: inline;
+  display: inline-flex;
   height: inherit;
   line-height: inherit;
   vertical-align: baseline;
@@ -692,6 +727,13 @@ span {
   .menu_dates {
     font-size: round(calc(14 / 1920 * 100vw), 1px);
     line-height: round(calc(14 / 1920 * 100vw), 1px);
+  }
+
+  /* Messages */
+  .messages,
+  .top {
+    margin-left: round(calc(-5 / 1920 * 100vw), 1px);
+    width: (100% + round(calc(10 / 1920 * 100vw), 1px));
   }
 
   /* News */

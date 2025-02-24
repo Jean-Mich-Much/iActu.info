@@ -387,8 +387,10 @@ a.n:hover::before {
 
 /* Messages */
 .messages {
-  background-color: var(--c7);
+  background-color: var(--c1);
   color: var(--c2);
+  outline: 4px solid var(--c7);
+  outline-offset: -4px;
 }
 
 .messages span a {
@@ -442,6 +444,12 @@ a.n:hover::before {
   .menu span a.page_active:hover,
   .menu span a:hover {
     outline: round(calc(3 / 1920 * 100vw), 1px) solid var(--c2);
+  }
+
+  /* Messages */
+  .messages {
+    outline: round(calc(4 / 1920 * 100vw), 1px) solid var(--c7);
+    outline-offset: round(calc(-4 / 1920 * 100vw), 1px);
   }
 
   /* News */
