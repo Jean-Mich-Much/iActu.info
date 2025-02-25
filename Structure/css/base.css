@@ -38,6 +38,17 @@ span {
   word-spacing: normal;
 }
 
+body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: auto;
+  width: 100%;
+}
+
 .flex-page {
   display: flex;
   justify-content: flex-start;
