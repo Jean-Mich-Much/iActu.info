@@ -38,25 +38,13 @@ span {
   word-spacing: normal;
 }
 
-body {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  align-content: flex-start;
+.flex-page {
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
   overflow-y: auto;
   height: auto;
   width: 100%;
-}
-
-.flex-page {
-  display: flex;
-  justify-content: flex-start;
-  align-items: stretch;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-content: stretch;
-  height: 100%;
   gap: 0;
 }
 
@@ -67,8 +55,11 @@ body {
 }
 
 /* Body */
+
 body {
-  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: auto;
   width: 100%;
   z-index: 0;
 }
