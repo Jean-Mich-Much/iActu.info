@@ -241,31 +241,56 @@ body {
 }
 
 .b {
+  align-self: stretch;
   display: flex;
+  flex-grow: 1;
   justify-content: flex-start;
   align-items: center;
   align-content: center;
   flex-wrap: nowrap;
   white-space: nowrap;
   overflow: hidden;
-  width: auto;
+  width: 100%;
 }
 
-a.n,
+a.n {
+  align-self: flex-start;
+  display: flex;
+  flex-basis: auto;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  margin: 6px 0;
+  padding-inline: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .ay {
+  align-self: flex-start;
+  display: flex;
+  flex-basis: auto;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  margin: 6px 0;
+  padding-inline: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.bu {
+  align-self: stretch;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   align-content: center;
-  height: 20px;
-  margin: 6px 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 6px;
+  flex-wrap: nowrap;
   white-space: nowrap;
   overflow: hidden;
-  width: auto;
-}
-
-.bu {
-  padding: 6px 1px;
 }
 
 a.n::before {
@@ -285,8 +310,9 @@ a.n::before {
   align-content: center;
   height: fit-content;
   overflow: hidden;
-  margin-left: -5px;
-  width: (100% + 10px);
+  margin-left: -10px;
+  margin-right: -10px;
+  width: (100% + 20px);
   z-index: 100;
 }
 
@@ -602,7 +628,6 @@ span {
   a.n {
     height: auto;
     white-space: normal;
-    width: auto;
   }
 
   /* Autres */
@@ -730,10 +755,17 @@ span {
   }
 
   /* Messages */
-  .messages,
+
+  /* Messages */
   .top {
     margin-left: round(calc(-5 / 1920 * 100vw), 1px);
     width: (100% + round(calc(10 / 1920 * 100vw), 1px));
+  }
+
+  .messages {
+    margin-left: round(calc(-10 / 1920 * 100vw), 1px);
+    margin-right: round(calc(-10 / 1920 * 100vw), 1px);
+    width: (100% + round(calc(20 / 1920 * 100vw), 1px));
   }
 
   /* News */
@@ -782,15 +814,18 @@ span {
     margin-right: round(calc(5 / 1920 * 100vw), 1px);
   }
 
-  a.n,
-  .ay {
-    height: round(calc(20 / 1920 * 100vw), 1px);
+  a.n {
     margin: round(calc(6 / 1920 * 100vw), 1px) 0;
+    padding-inline: round(calc(1 / 1920 * 100vw), 1px);
+  }
+
+  .ay {
+    margin: round(calc(6 / 1920 * 100vw), 1px) 0;
+    padding-inline: round(calc(3 / 1920 * 100vw), 1px);
   }
 
   .bu {
-    padding: round(calc(6 / 1920 * 100vw), 1px)
-      round(calc(1 / 1920 * 100vw), 1px);
+    padding: round(calc(6 / 1920 * 100vw), 1px);
   }
 
   /* Marges intérieures */

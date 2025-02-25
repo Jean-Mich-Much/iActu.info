@@ -387,6 +387,8 @@ a.n:hover {
 @media (max-width: 1151px) {
   a.n:hover {
     background-color: var(--c9);
+    outline: 9px solid var(--c9);
+    outline-offset: 0;
   }
 }
 

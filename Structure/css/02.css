@@ -410,6 +410,8 @@ a.n:hover::before {
   a.n:hover {
     background-color: var(--c9);
     color: var(--c3);
+    outline: 9px solid var(--c9);
+    outline-offset: 0;
   }
 
   a.n:visited:hover::before {
