@@ -305,16 +305,15 @@ a.n::before {
 .messages {
   order: 4;
   display: flex;
-  justify-content: center;
+  align-content: center;
   align-items: center;
+  justify-content: center;
+  justify-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
-  align-content: center;
-  height: fit-content;
+  flex-basis: 100%;
+  align-self: stretch;
   overflow: hidden;
-  margin-left: -10px;
-  margin-right: -10px;
-  width: (100% + 20px);
   z-index: 100;
 }
 
@@ -325,14 +324,35 @@ a.n::before {
 .messages span a,
 .messages span span a,
 .messages span span span a {
-  align-self: center;
   display: inline-flex;
-  justify-content: center;
-  align-items: center;
   align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  align-self: center;
   vertical-align: baseline;
-  margin-bottom: round(up, calc(3 / 1920 * 100vw), 1px);
-  margin-top: round(up, calc(3 / 1920 * 100vw), 1px);
+  text-align: justify;
+  margin-bottom: round(up, calc(4 / 1920 * 100vw), 1px);
+  margin-top: round(up, calc(2 / 1920 * 100vw), 1px);
+}
+
+.top span,
+.top span span,
+.top span span span,
+.top a,
+.top span a,
+.top span span a,
+.top span span span a {
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  align-self: center;
+  vertical-align: baseline;
+  text-align: justify;
+  margin-bottom: round(up, calc(2 / 1920 * 100vw), 1px);
+  margin-top: round(up, calc(4 / 1920 * 100vw), 1px);
 }
 
 .top {
@@ -356,16 +376,6 @@ a.n::before {
   direction: rtl;
 }
 
-.messages a.faireundon {
-  color: var(--c3);
-  font-variation-settings: "wght" 720;
-  font-weight: 720;
-}
-
-.messages a.faireundon:hover {
-  color: var(--c5);
-}
-
 /* Autres */
 span {
   align-self: auto;
@@ -374,11 +384,16 @@ span {
 }
 
 .aligne {
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
   align-self: center;
   display: inline-flex;
   height: inherit;
   line-height: inherit;
   vertical-align: baseline;
+  text-align: justify;
   overflow: hidden;
   white-space: nowrap;
 }
@@ -754,20 +769,6 @@ span {
   .menu_dates {
     font-size: round(calc(14 / 1920 * 100vw), 1px);
     line-height: round(calc(14 / 1920 * 100vw), 1px);
-  }
-
-  /* Messages */
-
-  /* Messages */
-  .top {
-    margin-left: round(calc(-5 / 1920 * 100vw), 1px);
-    width: (100% + round(calc(10 / 1920 * 100vw), 1px));
-  }
-
-  .messages {
-    margin-left: round(calc(-10 / 1920 * 100vw), 1px);
-    margin-right: round(calc(-10 / 1920 * 100vw), 1px);
-    width: (100% + round(calc(20 / 1920 * 100vw), 1px));
   }
 
   /* News */
