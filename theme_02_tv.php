@@ -5,7 +5,7 @@ $nom_page_theme_alternatif='tv.php';
 $page_active='tv';
 $page_tv_active= 'cesoir';
 $titre_page_active='&#129302;&nbsp;Tv';
-$cache=28830;
+$cache=14415;
 $theme='01';
 $lien_menu_theme = 'menu_theme_02';
 
@@ -18,6 +18,7 @@ if(!file_exists($nom_page.'.html')||filemtime($nom_page.'.html')<(time()-$cache)
   <?php @readfile("Structure/css/fonts.css");
   @readfile("Structure/css/base.css");
   @readfile("Structure/css/". $theme . ".css");
+  @readfile("Structure/css/tv.css");
   ?>
   </style>
  </head>

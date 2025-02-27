@@ -1,1 +1,1 @@
-{"name": "iActu","short_name": "iActu","background_color": "#ffffff","description": "Revue de presse","orientation": "any","scope": "/","start_url": "https://iactu.info","display": "standalone","theme_color": "#ffffff"}
+{"name": "iActu","short_name": "iActu","background_color": "#ffffff","description": "Revue de presse","orientation": "any","scope": "/","start_url": "https://iactu.info","display": "standalone","theme_color": "#ffffff","icons":[{"src":"favicon_512.png","type":"image/png","sizes":"512x512"},{"src":"favicon_192.png","type":"image/png","sizes":"192x192"}]}
