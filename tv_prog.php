@@ -5,7 +5,7 @@ $nom_page_theme_alternatif = 'theme_02_tv.php';
 $page_active = 'tv';
 $page_tv_active= 'programme';
 $titre_page_active = '&#129302;&nbsp;Tv';
-$cache =240;
+$cache =30;
 $theme = '01';
 
 if (!file_exists($nom_page . '.html') || filemtime($nom_page . '.html')< (time() - $cache) || !file_exists($nom_page . date("j") . '.html')) {
@@ -20,31 +20,80 @@ if (!file_exists($nom_page . '.html') || filemtime($nom_page . '.html')< (time()
 <?php @readfile("Structure/css/fonts.css");
 @readfile("Structure/css/base.css");
 @readfile("Structure/css/". $theme . ".css");
+?>
 
-?>.programmes {
-margin-bottom: round(up, calc(16 / 1920 * 100vw), 8px);
+.tvchaine {
+ align-self: stretch;
+ display: flex;
+ align-content: start;
+ align-items: stretch;
+ justify-content: start;
+ justify-items: stretch;
+ border-bottom: round(up, calc(1 / 1920 * 100vw), 1px) solid var(--c7);
+ padding-bottom: round(up, calc(12 / 1920 * 100vw), 6px);
+ padding-top: 0;
+ padding-left: round(up, calc(8 / 1920 * 100vw), 4px);
+ padding-right: round(up, calc(8 / 1920 * 100vw), 4px);
+ color: var(--c10);
+ font-variation-settings: "wght" 600;
+ overflow: hidden;
 }
 
-.programme-item {
-display: flex;
-justify-content: stretch;
-justify-items: start;
-align-content: center;
-align-items: center;
-padding: round(up, calc(4 / 1920 * 100vw), 5px) round(up, calc(10 / 1920 * 100vw), 6px);
-border-bottom:round(up,calc(1 / 1920 * 100vw),1px) solid var(--c7);
+.tvprog {
+  display: flex;
+  flex-direction: column;
+  align-content: start;
+  align-items: stretch;
+  justify-content: start;
+  justify-items: stretch;
+  background-color: var(--c8);
+  color: var(--c2);
+  font-synthesis-small-caps: auto;
+  font-synthesis-weight: auto;
+  font-synthesis: style;
+  font-variant-emoji: emoji;
+  font-variant: discretionary-ligatures tabular-nums;
+  outline: round(up, calc(4 / 1920 * 100vw), 2px) solid var(--c7);
+  outline-offset: round(up, calc(-4 / 1920 * 100vw), 2px);
+  border-radius: round(up, calc(12 / 1920 * 100vw), 6px);
+  padding: round(up, calc(16 / 1920 * 100vw), 6px);
+  margin-bottom: round(up, calc(8 / 1920 * 100vw), 4px);
+  overflow: hidden;
 }
 
-.programme-time {
-display: inline;
+.tvprogitem {
+  display: flex;
+  justify-content: stretch;
+  justify-items: start;
+  align-content: center;
+  align-items: center;
+  padding: round(up, calc(8 / 1920 * 100vw), 4px);
+  border-bottom: round(up, calc(1 / 1920 * 100vw), 1px) solid var(--c7);
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.programme-title {
-flex: 1;
+.tvprogheure {
+  display: inline-flex;
 }
 
-.encours {
- color: var(--c3);
+.tvprogtitle {
+  display: inline-flex;
+  flex: 1;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tvprogduree {
+  display: inline-flex;
+}
+
+@media (max-width: 719px) {
+  .tvprogduree {
+    display: none;
+  }
 }
 </style>
 </head>
@@ -87,8 +136,8 @@ $endWindow = (new DateTime())->setTime(6, 0, 0)->modify('+7 day');
 foreach ($chs as $ch) {
 $chId = $ch->getAttribute("id");
 $dispName = @$ch->getElementsByTagName("display-name")[0]->nodeValue ?: 'Nom de chaîne non disponible';
-echo "<div style='background-color: var(--c8);color: var(--c2);font-synthesis-small-caps:auto;font-synthesis-weight:auto;font-synthesis:style;font-variant-emoji:emoji;font-variant:discretionary-ligatures tabular-nums;outline:round(calc(4 / 1920 * 100vw),1px) solid var(--c7);outline-offset:round(calc(-3 / 1920 * 100vw),1px);border-radius:round(calc(12 / 1920 * 100vw),1px);padding:round(up,calc(8 / 1920 * 100vw),1px);margin-bottom:round(up,calc(6 / 1920 * 100vw),1px);'>";
-echo "<div class='f20px' style='border-bottom:round(up,calc(1 / 1920 * 100vw),1px) solid var(--c7);margin:round(up,calc(6 / 1920 * 100vw),1px) round(calc(1 / 1920 * 100vw),1px) round(up,calc(6 / 1920 * 100vw),1px) auto;padding:round(up,calc(6 / 1920 * 100vw),1px) round(calc(6 / 1920 * 100vw),1px) round(up,calc(12 / 1920 * 100vw),1px) round(calc(6 / 1920 * 100vw),1px);color: var(--c10);font-variation-settings: \"wght\" 600;'>📺&nbsp;$dispName</div>";
+echo "<div class='tvprog'>";
+echo "<div class='f20px tvchaine'>📺&nbsp;$dispName</div>";
 $progs = $xp->query("/tv/programme[@channel='$chId']");
 $progCount = 0;
 $progTitles = [];
@@ -101,7 +150,7 @@ $isToday = $start->format('Y-m-d') === $now->format('Y-m-d');
 $isYesterday = $start->format('Y-m-d') === $yesterday->format('Y-m-d');
 $isTomorrow = $start->format('Y-m-d') === $tomorrow->format('Y-m-d');
 if ($start >= $startWindow && $start <= $endWindow) {
-$time = $start->format("H:i");
+$heure = $start->format("H:i");
 if ($isToday) {
 $displayTitle = $title;
 } elseif ($isYesterday) {
@@ -113,10 +162,10 @@ $displayTitle = $title . ' (' . $start->format('d/m') . ')';
 }
 $displayDuration = "Durée: " . gmdate("H:i", $duration);
 $progTitles[$title] = true;
-$shown[] = $time . ' - ' . $displayTitle . ' ' . $displayDuration;
+$shown[] = $heure . ' - ' . $displayTitle . ' ' . $displayDuration;
 if ($progCount < 15) {
 $progCount++;
-echo "<div class='programme-item' class='programme-time'><div>$time&nbsp;</div><div class='programme-title'>" . mb_strimwidth($displayTitle, 0, 56, "...") . "</div><div class='programme-duration'>$displayDuration</div></div>";
+echo "<div class='tvprogitem'><span class='tvprogheure'>$heure&nbsp;</span><span class='tvprogtitle'>" . mb_strimwidth($displayTitle, 0, 56, "...") . "</span><span class='tvprogduree'>$displayDuration</span></div>";
 }
 }
 }
