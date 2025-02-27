@@ -14,7 +14,7 @@
 <meta name="geo.placename" content="Paris">
 <meta name="geo.position" content="48.856614;2.3522219000000177">
 <meta name="geo.region" content="FR-75">
-<meta name="keywords" content="iactu,news,actualité,presse,information,journal,magazine">
+<meta name="keywords" content="iactu,news,actualité,presse,information,journal,magazine,tv">
 <meta name="language" content="FR">
 <meta name="owner" content="Jean-Michel GURGUI">
 <meta name="rating" content="General">
@@ -23,4 +23,14 @@
 <meta name="robots" content="index, follow">
 <meta name="subject" content="<?php echo $titre_page; ?> - Revue de presse des sites technologiques">
 <meta name="url" content="iactu.info">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5, user-scalable=yes">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="msapplication-starturl" content="/">
+<meta name="HandheldFriendly" content="true">
+<meta name="application-name" content="iActu ">
+<meta name="apple-mobile-web-app-title" content="iActu">
+<meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
+<link rel="manifest" href="/iactu.webmanifest">
