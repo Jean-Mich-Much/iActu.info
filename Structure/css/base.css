@@ -275,7 +275,10 @@ a.n {
   justify-content: flex-start;
   align-items: center;
   align-content: center;
-  margin: 6px 0;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  margin-left: 3px;
+  margin-right: auto;
   padding-inline: 3px;
   white-space: nowrap;
   overflow: hidden;
@@ -823,7 +826,9 @@ span {
   }
 
   .ay {
-    margin: round(calc(6 / 1920 * 100vw), 1px) 0;
+    margin-bottom: round(calc(6 / 1920 * 100vw), 1px);
+    margin-top: round(calc(6 / 1920 * 100vw), 1px);
+    margin-left: round(calc(3 / 1920 * 100vw), 1px);
     padding-inline: round(calc(3 / 1920 * 100vw), 1px);
   }
 
