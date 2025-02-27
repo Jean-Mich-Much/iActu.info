@@ -59,7 +59,7 @@ $guests[]=$guestNodes->item($i)->nodeValue;
 }
 $actors=[];
 $actorNodes=$programme->getElementsByTagName("actor");
-for($i=0;$i<$actorNodes->length&&$i<5;$i++)
+for($i=0;$i<$actorNodes->length&&$i<7;$i++)
 {
 $actors[]=$actorNodes->item($i)->nodeValue;
 }
@@ -119,19 +119,18 @@ return $resultat;
 
 function afficherProgrammeTV($programmes)
 {
-foreach($programmes as $chaine=>$programmesChaine)
+ foreach($programmes as $chaine=>$programmesChaine)
+ {
+echo '<div class="tvcontainer"><div class="f20px">📺&nbsp;'.htmlspecialchars($chaine).'</div>';
+foreach($programmesChaine as $programme)
 {
-echo '<div style="background-color: var(--c8);color: var(--c2);font-synthesis-small-caps:auto;font-synthesis-weight:auto;font-synthesis:style;font-variant-emoji:emoji;font-variant:discretionary-ligatures tabular-nums;outline:round(calc(4 / 1920 * 100vw),1px) solid var(--c7);outline-offset:round(calc(-3 / 1920 * 100vw),1px);border-radius:round(calc(12 / 1920 * 100vw),1px);padding:round(up,calc(8 / 1920 * 100vw),1px); margin-bottom:round(up,calc(6 / 1920 * 100vw),1px);"><div class="f20px" style="border-bottom:round(up,calc(1 / 1920 * 100vw),1px) solid var(--c7);margin:round(up,calc(6 / 1920 * 100vw),1px) round(calc(1 / 1920 * 100vw),1px) 0 auto;padding:round(up,calc(6 / 1920 * 100vw),1px) round(calc(6 / 1920 * 100vw),1px) round(up,calc(12 / 1920 * 100vw),1px) round(calc(6 / 1920 * 100vw),1px);color: var(--c10);font-variation-settings: &quot;wght&quot; 600;">📺&nbsp;'.htmlspecialchars($chaine).'</div>';
-  foreach($programmesChaine as $programme)
-{
-echo '<div style="display:flex;flex-direction:column;width:100%;padding: round(calc(8 / 1920 * 100vw), 1px) round(calc(8 / 1920 * 100vw), 1px) round(calc(12 / 1920 * 100vw), 1px) round(calc(8 / 1920 * 100vw), 1px);margin:round(up,calc(4 / 1920 * 100vw),1px) round(calc(1 / 1920 * 100vw),1px) round(up,calc(4 / 1920 * 100vw),1px) auto;border-bottom:round(up,calc(1 / 1920 * 100vw),1px) solid var(--c7);"><div style="align-self:flex-start;margin-bottom: round(calc(8 / 1920 * 100vw), 1px);margin-top: round(calc(1 / 1920 * 100vw), 1px);"><strong class="f18px" style="color: var(--c5);font-variation-settings: &quot;wght&quot; 500;">🎬&nbsp;'.htmlspecialchars($programme['titre']).'</strong></div><div style="align-self:flex-start;">⏰&nbsp;'.date("H:i",strtotime($programme['debut'])).'&nbsp;⏱️&nbsp;'.$programme['duree'].' mn&nbsp;💤&nbsp;Finit à '.date("H:i",strtotime($programme['fin'])).str_replace("&nbsp;🍿&nbsp;Aucun genre, Aucun sous-genre", "", '&nbsp;🍿&nbsp;'.htmlspecialchars($programme['categories'])).'</div><div style="align-self:stretch;display: grid;grid-template-columns: 0.6fr 1fr; grid-template-rows: 1fr; gap: 0px 0px; grid-template-areas: ". ."; justify-content: start; align-content: start; justify-items: start; align-items: start;"><img src="'.htmlspecialchars($programme['image']).'" alt="'.htmlspecialchars($programme['titre']).'" style="outline: round(calc(2 / 1920 * 100vw), 1px) solid var(--c6);outline-offset: round(calc(-2 / 1920 * 100vw), 1px);border-radius: round(calc(6 / 1920 * 100vw), 1px);margin: round(calc(6 / 1920 * 100vw), 1px) 0 round(calc(4 / 1920 * 100vw), 1px) 0;min-width:auto;min-height: auto;max-width: 100%;max-height: round(calc(320 / 1920 * 100vw), 1px);width: 100%;height: auto;"><span style="align-self:stretch;padding: round(calc(12 / 1920 * 100vw), 1px);">'.str_replace("📜&nbsp;Aucune description", "", '📜&nbsp;'.mb_strimwidth(htmlspecialchars($programme['description']), 0, 380, "..."));
-if($programme['director']) { echo '&nbsp;🎬&nbsp;Réalisé par&nbsp;'.$programme['director']; }
-if(!empty($programme['actors'])) { echo '&nbsp;🎭&nbsp;Acteurs:&nbsp;'.implode(", ",$programme['actors']); }
-if(!empty($programme['guests'])) { echo '&nbsp;👤&nbsp;Production&nbsp;&#47;&nbsp;invité&nbsp;&#47;&nbsp;autre&nbsp;:&nbsp;'.implode(", ",$programme['guests']); }
-if($programme['rating']) { echo '&nbsp;•&nbsp;Contenu&nbsp;:&nbsp;'.str_replace("Tout public ans", "tout public", str_replace("-Tout public", "Tout public", $programme['rating']).' ans'); }
-if($programme['episode']) { echo '&nbsp;📺&nbsp;'.$programme['episode']; }
+echo '<div class="tvprogramme"><div class="tvprogtitre"><strong class="f18px">🎬&nbsp;'.htmlspecialchars($programme['titre']).'</strong></div><div class="tvproginfos">⏰&nbsp;'.date("H:i",strtotime($programme['debut'])).'&nbsp;&nbsp;⏱️&nbsp;'.$programme['duree'].' mn&nbsp;&nbsp;💤&nbsp;Finit à '.date("H:i",strtotime($programme['fin'])).'&nbsp;'.str_replace("&nbsp;🍿&nbsp;Aucun genre, Aucun sous-genre", "", '&nbsp;🍿&nbsp;'.htmlspecialchars($programme['categories'])).'</div><div class="tvgrid"><img class="tvimage" src="'.htmlspecialchars($programme['image']).'" alt="'.htmlspecialchars($programme['titre']).'"><span class="tvdescription"><span class="tvdescplus">'.str_replace("📜&nbsp;Aucune description", "", '📜&nbsp;'.mb_strimwidth(htmlspecialchars($programme['description']), 0, 376, "...")).'</span>';
+if($programme['director']) { echo '<span class="tvdescplus">&nbsp;🎬&nbsp;Réalisé par&nbsp;'.$programme['director'].'</span>'; }
+if(!empty($programme['actors'])) { echo '<span class="tvdescplus">&nbsp;🎭&nbsp;Acteurs:&nbsp;'.implode(", ",$programme['actors']).'</span>'; }
+if(!empty($programme['guests'])) { echo '<span class="tvdescplus">&nbsp;👤&nbsp;Production&nbsp;&#47;&nbsp;invité&nbsp;&#47;&nbsp;autre&nbsp;:&nbsp;'.implode(", ",$programme['guests']).'</span>'; }
+if($programme['rating']) { echo '<span class="tvdescplus">&nbsp;👀&nbsp;Contenu&nbsp;:&nbsp;'.str_replace("Tout public ans", "tout public", str_replace("-Tout public", "Tout public", $programme['rating']).' ans').'</span>'; }
+if($programme['episode']) { echo '<span class="tvdescplus">&nbsp;📺&nbsp;'.$programme['episode'].'</span>'; }
 echo '</span></div></div>';
-};
+}
 echo '</div>';
-};
-};
+}};
