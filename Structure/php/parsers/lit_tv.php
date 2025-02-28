@@ -1,5 +1,5 @@
 <?php
-function tv($fichier, $choixdebut, $choixfin, $dureemini, $jourprog, $avantapres, $decal, $maxProgrammes){
+function tv($fichier, $choixdebut, $choixfin, $dureemini, $jourprog, $decal, $maxProgrammes){
 $xml=new DOMDocument();
 @$xml->load($fichier);
 $xpath=new DOMXPath($xml);
@@ -69,13 +69,9 @@ if(($heureDebut>=$choixdebut-1085&&$heureDebut<=$choixfin&&$duree>=$dureemini+10
 ($heureDebut>=$choixdebut-85&&$heureDebut<=$choixfin&&$duree>=$dureemini+75)||
 ($heureDebut>=$choixdebut-80&&$heureDebut<=$choixfin&&$duree>=$dureemini+70)||
 ($heureDebut>=$choixdebut-75&&$heureDebut<=$choixfin&&$duree>=$dureemini+65)||
-($heureDebut>=$choixdebut-70&&$heureDebut<=$choixfin&&$duree>=$dureemini+60)||
-($heureDebut>=$choixdebut-65&&$heureDebut<=$choixfin&&$duree>=$dureemini+55)||
-($heureDebut>=$choixdebut-60&&$heureDebut<=$choixfin&&$duree>=$dureemini+50)||
-($heureDebut>=$choixdebut-55&&$heureDebut<=$choixfin&&$duree>=$dureemini+45)||
-($heureDebut>=$choixdebut-50&&$heureDebut<=$choixfin&&$duree>=$dureemini+40)||
-($heureDebut>=$choixdebut-45&&$heureDebut<=$choixfin&&$duree>=$dureemini+35)||
-($heureDebut>=$choixdebut-40&&$heureDebut<=$choixfin&&$duree>=$dureemini+30)||
+($heureDebut>=$choixdebut-70&&$heureDebut<=$choixfin&&$duree>=$dureemini+62)||
+($heureDebut>=$choixdebut-65&&$heureDebut<=$choixfin&&$duree>=$dureemini+59)||
+($heureDebut>=$choixdebut-60&&$heureDebut<=$choixfin&&$duree>=$dureemini+58)||
 ($heureDebut>=$choixdebut&&$heureDebut<=$choixfin&&$duree>=$dureemini)){
 $previousFinTime=$finTime;
 }else{
