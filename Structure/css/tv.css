@@ -24,7 +24,7 @@
     round(up, calc(6 / 1920 * 100vw), 3px)
     round(up, calc(10 / 1920 * 100vw), 5px)
     round(up, calc(6 / 1920 * 100vw), 3px);
-  border-bottom: round(up, calc(1 / 1920 * 100vw), 1px) solid var(--c7);
+  border-bottom: round(up, calc(2 / 1920 * 100vw), 2px) solid var(--c7);
   max-width: fit-content;
 }
 
@@ -50,15 +50,15 @@
 
 .tvprogtitre {
   justify-self: stretch;
-  margin-bottom: round(up, calc(2 / 1920 * 100vw), 1px);
-  margin-top: round(up, calc(6 / 1920 * 100vw), 2px);
+  margin-bottom: round(up, calc(2 / 1920 * 100vw), 2px);
+  margin-top: round(up, calc(6 / 1920 * 100vw), 3px);
   max-width: fit-content;
 }
 
 .tvproginfos {
   justify-self: stretch;
-  margin-bottom: round(up, calc(2 / 1920 * 100vw), 1px);
-  margin-top: round(up, calc(2 / 1920 * 100vw), 1px);
+  margin-bottom: round(up, calc(2 / 1920 * 100vw), 2px);
+  margin-top: round(up, calc(2 / 1920 * 100vw), 2px);
   max-width: fit-content;
 }
 
@@ -66,7 +66,7 @@
   align-self: start;
   justify-self: start;
   display: inline-flex;
-  outline: round(up, calc(2 / 1920 * 100vw), 1px) solid var(--c6);
+  outline: round(up, calc(2 / 1920 * 100vw), 2px) solid var(--c6);
   outline-offset: round(up, calc(-2 / 1920 * 100vw), 1px);
   border-radius: round(up, calc(6 / 1920 * 100vw), 3px);
   margin: round(up, calc(4 / 1920 * 100vw), 2px) 0 0 0;
@@ -83,10 +83,10 @@
   justify-self: start;
   display: inline-grid;
   grid-auto-flow: row dense;
-  padding-left: round(up, calc(10 / 1920 * 100vw), 5px);
+  padding-left: round(up, calc(12 / 1920 * 100vw), 6px);
   padding-right: round(up, calc(8 / 1920 * 100vw), 4px);
   padding-bottom: round(up, calc(4 / 1920 * 100vw), 2px);
-  padding-top: round(up, calc(2 / 1920 * 100vw), 1px);
+  padding-top: round(up, calc(2 / 1920 * 100vw), 2px);
   max-width: fit-content;
   text-align: start;
   text-wrap: wrap;
@@ -98,6 +98,8 @@
   text-wrap: wrap;
   white-space: normal;
   margin-bottom: round(up, calc(2 / 1920 * 100vw), 2px);
+  max-height: round(up, calc(100 / 1920 * 100vw), 20px);
+  overflow: hidden;
 }
 
 .f18px {
@@ -110,7 +112,7 @@
 .f20px {
   justify-self: stretch;
   display: flex;
-  border-bottom: round(up, calc(1 / 1920 * 100vw), 1px) solid var(--c7);
+  border-bottom: round(up, calc(2 / 1920 * 100vw), 2px) solid var(--c7);
   padding: round(up, calc(10 / 1920 * 100vw), 5px);
   color: var(--c10);
   font-variation-settings: "wght" 600;
