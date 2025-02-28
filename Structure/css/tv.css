@@ -50,16 +50,24 @@
 
 .tvprogtitre {
   justify-self: stretch;
+  flex-wrap: wrap;
   margin-bottom: round(up, calc(2 / 1920 * 100vw), 2px);
   margin-top: round(up, calc(6 / 1920 * 100vw), 3px);
   max-width: fit-content;
+  text-align: start;
+  text-wrap: wrap;
+  white-space: normal;
 }
 
 .tvproginfos {
   justify-self: stretch;
+  flex-wrap: wrap;
   margin-bottom: round(up, calc(2 / 1920 * 100vw), 2px);
   margin-top: round(up, calc(2 / 1920 * 100vw), 2px);
   max-width: fit-content;
+  text-align: start;
+  text-wrap: wrap;
+  white-space: normal;
 }
 
 .tvimage {
@@ -83,6 +91,7 @@
   justify-self: start;
   display: inline-grid;
   grid-auto-flow: row dense;
+  flex-wrap: wrap;
   padding-left: round(up, calc(12 / 1920 * 100vw), 6px);
   padding-right: round(up, calc(8 / 1920 * 100vw), 4px);
   padding-bottom: round(up, calc(4 / 1920 * 100vw), 2px);
@@ -94,28 +103,38 @@
 }
 
 .tvdescplus {
+  align-self: stretch;
+  flex-wrap: wrap;
+  margin-bottom: round(up, calc(2 / 1920 * 100vw), 2px);
+  max-height: round(up, calc(100 / 1920 * 100vw), 20px);
   text-align: start;
   text-wrap: wrap;
   white-space: normal;
-  margin-bottom: round(up, calc(2 / 1920 * 100vw), 2px);
-  max-height: round(up, calc(100 / 1920 * 100vw), 20px);
   overflow: hidden;
 }
 
 .f18px {
   justify-self: stretch;
+  flex-wrap: wrap;
   color: var(--c5);
   font-variation-settings: "wght" 500;
   max-width: fit-content;
+  text-wrap: wrap;
+  white-space: normal;
+  overflow: hidden;
 }
 
 .f20px {
   justify-self: stretch;
+  flex-wrap: wrap;
   display: flex;
   border-bottom: round(up, calc(2 / 1920 * 100vw), 2px) solid var(--c7);
   padding: round(up, calc(10 / 1920 * 100vw), 5px);
   color: var(--c10);
   font-variation-settings: "wght" 600;
+  text-wrap: wrap;
+  white-space: normal;
+  overflow: hidden;
 }
 
 @media (max-width: 575px) {
