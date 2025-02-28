@@ -42,18 +42,40 @@ continue;
 }
 $heureDebut=date("Hi",strtotime($debut));
 $heureFin=date("Hi",strtotime($fin));
-if(($heureDebut>=$choixdebut-720&&$heureDebut<=$choixfin&&$duree>=$dureemini+720)||
-($heureDebut>=$choixdebut-660&&$heureDebut<=$choixfin&&$duree>=$dureemini+660)||
-($heureDebut>=$choixdebut-600&&$heureDebut<=$choixfin&&$duree>=$dureemini+600)||
-($heureDebut>=$choixdebut-540&&$heureDebut<=$choixfin&&$duree>=$dureemini+540)||
-($heureDebut>=$choixdebut-480&&$heureDebut<=$choixfin&&$duree>=$dureemini+480)||
-($heureDebut>=$choixdebut-420&&$heureDebut<=$choixfin&&$duree>=$dureemini+420)||
-($heureDebut>=$choixdebut-360&&$heureDebut<=$choixfin&&$duree>=$dureemini+360)||
-($heureDebut>=$choixdebut-300&&$heureDebut<=$choixfin&&$duree>=$dureemini+300)||
-($heureDebut>=$choixdebut-240&&$heureDebut<=$choixfin&&$duree>=$dureemini+240)||
-($heureDebut>=$choixdebut-180&&$heureDebut<=$choixfin&&$duree>=$dureemini+180)||
-($heureDebut>=$choixdebut-120&&$heureDebut<=$choixfin&&$duree>=$dureemini+120)||
-($heureDebut>=$choixdebut-60&&$heureDebut<=$choixfin&&$duree>=$dureemini+60)||
+if(($heureDebut>=$choixdebut-1085&&$heureDebut<=$choixfin&&$duree>=$dureemini+1075)||
+($heureDebut>=$choixdebut-1025&&$heureDebut<=$choixfin&&$duree>=$dureemini+1015)||
+($heureDebut>=$choixdebut-965&&$heureDebut<=$choixfin&&$duree>=$dureemini+955)||
+($heureDebut>=$choixdebut-905&&$heureDebut<=$choixfin&&$duree>=$dureemini+895)||
+($heureDebut>=$choixdebut-845&&$heureDebut<=$choixfin&&$duree>=$dureemini+835)||
+($heureDebut>=$choixdebut-785&&$heureDebut<=$choixfin&&$duree>=$dureemini+775)||
+($heureDebut>=$choixdebut-725&&$heureDebut<=$choixfin&&$duree>=$dureemini+715)||
+($heureDebut>=$choixdebut-665&&$heureDebut<=$choixfin&&$duree>=$dureemini+655)||
+($heureDebut>=$choixdebut-605&&$heureDebut<=$choixfin&&$duree>=$dureemini+595)||
+($heureDebut>=$choixdebut-545&&$heureDebut<=$choixfin&&$duree>=$dureemini+535)||
+($heureDebut>=$choixdebut-485&&$heureDebut<=$choixfin&&$duree>=$dureemini+475)||
+($heureDebut>=$choixdebut-425&&$heureDebut<=$choixfin&&$duree>=$dureemini+415)||
+($heureDebut>=$choixdebut-365&&$heureDebut<=$choixfin&&$duree>=$dureemini+355)||
+($heureDebut>=$choixdebut-305&&$heureDebut<=$choixfin&&$duree>=$dureemini+295)||
+($heureDebut>=$choixdebut-245&&$heureDebut<=$choixfin&&$duree>=$dureemini+235)||
+($heureDebut>=$choixdebut-185&&$heureDebut<=$choixfin&&$duree>=$dureemini+175)||
+($heureDebut>=$choixdebut-125&&$heureDebut<=$choixfin&&$duree>=$dureemini+115)||
+($heureDebut>=$choixdebut-120&&$heureDebut<=$choixfin&&$duree>=$dureemini+110)||
+($heureDebut>=$choixdebut-115&&$heureDebut<=$choixfin&&$duree>=$dureemini+105)||
+($heureDebut>=$choixdebut-110&&$heureDebut<=$choixfin&&$duree>=$dureemini+100)||
+($heureDebut>=$choixdebut-105&&$heureDebut<=$choixfin&&$duree>=$dureemini+95)||
+($heureDebut>=$choixdebut-100&&$heureDebut<=$choixfin&&$duree>=$dureemini+90)||
+($heureDebut>=$choixdebut-95&&$heureDebut<=$choixfin&&$duree>=$dureemini+85)||
+($heureDebut>=$choixdebut-90&&$heureDebut<=$choixfin&&$duree>=$dureemini+80)||
+($heureDebut>=$choixdebut-85&&$heureDebut<=$choixfin&&$duree>=$dureemini+75)||
+($heureDebut>=$choixdebut-80&&$heureDebut<=$choixfin&&$duree>=$dureemini+70)||
+($heureDebut>=$choixdebut-75&&$heureDebut<=$choixfin&&$duree>=$dureemini+65)||
+($heureDebut>=$choixdebut-70&&$heureDebut<=$choixfin&&$duree>=$dureemini+60)||
+($heureDebut>=$choixdebut-65&&$heureDebut<=$choixfin&&$duree>=$dureemini+55)||
+($heureDebut>=$choixdebut-60&&$heureDebut<=$choixfin&&$duree>=$dureemini+50)||
+($heureDebut>=$choixdebut-55&&$heureDebut<=$choixfin&&$duree>=$dureemini+45)||
+($heureDebut>=$choixdebut-50&&$heureDebut<=$choixfin&&$duree>=$dureemini+40)||
+($heureDebut>=$choixdebut-45&&$heureDebut<=$choixfin&&$duree>=$dureemini+35)||
+($heureDebut>=$choixdebut-40&&$heureDebut<=$choixfin&&$duree>=$dureemini+30)||
 ($heureDebut>=$choixdebut&&$heureDebut<=$choixfin&&$duree>=$dureemini)){
 $previousFinTime=$finTime;
 }else{
@@ -135,7 +157,7 @@ function afficherProgrammeTV($programmes){
 foreach($programmes as $chaine=>$programmesChaine){
 echo '<div class="tvcontainer"><div class="f20px">📺&nbsp;'.htmlspecialchars($chaine).'</div>';
 foreach($programmesChaine as $programme){
-echo '<div class="tvprogramme"><div class="tvgrid"><img class="tvimage" src="'.htmlspecialchars($programme['image']).'" alt="'.htmlspecialchars($programme['titre']).'"><span class="tvdescription"><span class="tvdescplus"><div class="tvprogtitre"><strong class="f18px">🎬&nbsp;'.htmlspecialchars($programme['titre']).'</strong></div></span><span class="tvdescplus"><div class="tvproginfos">⏰&nbsp;'.date("H:i",strtotime($programme['debut'])).'&nbsp;&nbsp; ⏱️&nbsp;'.$programme['duree'].'&nbsp;mn&nbsp;&nbsp; '.str_replace("&nbsp;🍿&nbsp;indéterminé", "", str_replace("&nbsp;🍿&nbsp;Aucun genre, Aucun sous-genre","",'&nbsp;🍿&nbsp;'.str_replace("Programme ", "", str_replace("Programme, ", "", htmlspecialchars($programme['categories']))))).'</div></span><span class="tvdescplus">'.str_replace("📜&nbsp;Aucune description","",'📜&nbsp;'.mb_strimwidth(htmlspecialchars($programme['description']),0,304,"...")).'</span>';
+echo '<div class="tvprogramme"><div class="tvgrid"><img class="tvimage" src="'.htmlspecialchars($programme['image']).'" alt="'.htmlspecialchars($programme['titre']).'"><span class="tvdescription"><span class="tvdescplus"><div class="tvprogtitre"><strong class="f18px">🎬&nbsp;'.htmlspecialchars($programme['titre']).'</strong></div></span><span class="tvdescplus"><div class="tvproginfos">⏰&nbsp;'.date("H:i",strtotime($programme['debut'])).'&nbsp; ⏱️&nbsp;'.$programme['duree'].'&nbsp;mn&nbsp; '.str_replace("&nbsp;🍿&nbsp;indéterminé", "", str_replace("&nbsp;🍿&nbsp;Aucun genre, Aucun sous-genre","",'&nbsp;🍿&nbsp;'.str_replace("Programme ", "", str_replace("Programme, ", "", htmlspecialchars($programme['categories']))))).'</div></span><span class="tvdescplus">'.str_replace("📜&nbsp;Aucune description","",'📜&nbsp;'.mb_strimwidth(htmlspecialchars($programme['description']),0,304,"...")).'</span>';
 // if($programme['director']) { echo '<span class="tvdescplus">&nbsp;🎬&nbsp;Réalisé par&nbsp;'.$programme['director'].'</span>'; }
 // if(!empty($programme['actors'])) { echo '<span class="tvdescplus">&nbsp;🎭&nbsp;Acteurs:&nbsp;'.implode(", ",$programme['actors']).'</span>'; }
 // if(!empty($programme['guests'])) { echo '<span class="tvdescplus">&nbsp;👤&nbsp;Production&nbsp;&#47;&nbsp;invité&nbsp;&#47;&nbsp;autre&nbsp;:&nbsp;'.implode(", ",$programme['guests']).'</span>'; }
