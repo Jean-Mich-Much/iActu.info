@@ -141,7 +141,7 @@ function parsexml($filename)
   }
 }
 
-function parse($fichier, $logo, $lienSite, $w, $h, $titreSite,$cache,$source_flux)
+function parse($fichier, $logo, $lienSite, $titreSite,$cache,$source_flux)
 {
   if (!file_exists("Structure/cache/source/".$fichier.".xml") or @filemtime("Structure/cache/source/".$fichier.".xml") < (time() - $cache)) {
     exec('wget -O "/_/Structure/cache/source/'.$fichier.'.xml" "'.$source_flux.'" -q --limit-rate=16384k --no-check-certificate'. " > /dev/null &");
@@ -159,26 +159,24 @@ function parse($fichier, $logo, $lienSite, $w, $h, $titreSite,$cache,$source_flu
   ?>
 
 <div class="site">
-
- <div class="site_conteneur pad16px">
-  <div class="site_en_tete">
-   <a href="<?php echo $lienSite; ?>" target="_blank" class="lien_site" <?php echo 'id="hfref' . $id . '"'; ?> rel="noopener nofollow" title="Accueil du site">
-    <span class="site_nom_symbole"><?php echo $logo; ?></span>
-    <span class="site_nom" <?php echo 'id="titresite' . $id . '"'; ?>><?php echo $titreSite; ?></span>
-   </a>
-
-   <span class="site_nbre_news">
-    <?php
+<div class="site_conteneur pad16px">
+<div class="site_en_tete">
+<a href="<?php echo $lienSite; ?>" target="_blank" class="lien_site" <?php echo 'id="hfref' . $id . '"'; ?> rel="noopener nofollow" title="Accueil du site">
+<span class="site_nom_symbole"><?php echo $logo; ?></span>
+<span class="site_nom" <?php echo 'id="titresite' . $id . '"'; ?>><?php echo $titreSite; ?></span>
+</a>
+<span class="site_nbre_news">
+<?php
 if (file_exists($dossier . $fichier . '.' . date('yz'))) {
 $fichiero = @file_get_contents($dossier . $fichier . '.' . date('yz'));
 echo substr_count($fichiero, 'id="' . date('Y-z') . '-')." ".$texte1;
 } else echo $texte2;
 ?>
-   </span>
-  </div>
+</span>
+</div>
 
-  <div class="site_news">
-   <?php
+<div class="site_news">
+<?php
 if (file_exists($dossier . $fichier . '.' . date('yz'))) {
 $fichiera = @file_get_contents($dossier . $fichier . '.' . date('yz'));
 echo str_replace($texte3, $texte4, str_replace($texte5, $texte6, $fichiera));
@@ -187,11 +185,9 @@ $fichierb = @file_get_contents($dossier . $fichier . '.html');
 echo str_replace($texte3, $texte4, str_replace($texte5, $texte6, $fichierb));
 }
 ?>
-  </div>
- </div>
-
+</div>
+</div>
 </div>
 
 <?php
-}
-?>
+};
