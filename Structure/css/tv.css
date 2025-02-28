@@ -25,7 +25,6 @@
     round(up, calc(10 / 1920 * 100vw), 5px)
     round(up, calc(6 / 1920 * 100vw), 3px);
   border-bottom: round(up, calc(2 / 1920 * 100vw), 2px) solid var(--c7);
-  max-width: fit-content;
 }
 
 .tvgrid {

@@ -399,11 +399,6 @@ a.n:hover::before {
   color: var(--c3);
 }
 
-/* Séparation */
-.separe {
-  color: var(--c5);
-}
-
 /* Responsive */
 @media (max-width: 1151px) {
   a.n:hover {
