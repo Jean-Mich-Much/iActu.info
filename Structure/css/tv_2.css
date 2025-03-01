@@ -1,0 +1,84 @@
+.tvcontainer {
+ background-color: var(--c8);
+ color: var(--c2);
+ outline: round(up, calc(4 / 1920 * 100vw), 2px) solid var(--c7);
+ outline-offset: round(up, calc(-4 / 1920 * 100vw), 2px);
+ border-radius: round(up, calc(12 / 1920 * 100vw), 6px);
+ padding: round(up, calc(10 / 1920 * 100vw), 5px);
+ margin-bottom: round(up, calc(6 / 1920 * 100vw), 3px);
+}
+
+.tvchainetitre {
+ font-size: 18px;
+ line-height: 18px;
+ justify-self: stretch;
+ flex-wrap: wrap;
+ display: flex;
+ border-bottom: round(up, calc(2 / 1920 * 100vw), 2px) solid var(--c7);
+ padding: round(up, calc(6 / 1920 * 100vw), 3px);
+ color: var(--c10);
+ font-variation-settings: "wght" 600;
+ text-wrap: wrap;
+ white-space: normal;
+}
+
+.tvcontainerprog {
+ display: flex;
+ flex-direction: column;
+ flex-basis: 100%;
+ padding: round(up, calc(4 / 1920 * 100vw), 2px);
+ border-bottom: round(up, calc(2 / 1920 * 100vw), 2px) solid var(--c7);
+ text-wrap: wrap;
+ white-space: normal;
+ overflow: hidden;
+}
+
+.tvprog {
+ display: grid;
+ grid-template-columns: auto 1fr;
+ grid-template-rows: auto;
+ gap: 0px 0px;
+ grid-template-areas: "tvheure tvtitre tvdesc";
+ flex-basis: 100%;
+ align-items: start;
+ align-content: start;
+ justify-content: start;
+ justify-items: start;
+ text-wrap: wrap;
+ white-space: normal;
+}
+
+.tvheure {
+ grid-area: tvheure;
+ display: flex;
+ flex-basis: auto;
+ align-items: center;
+ align-content: center;
+ align-self: center;
+ justify-content: start;
+ justify-items: start;
+ justify-self: start;
+ padding-left: round(up, calc(4 / 1920 * 100vw), 2px);
+ text-wrap: wrap;
+ white-space: normal;
+}
+
+.tvtitre {
+ grid-area: tvtitre;
+ display: flex;
+ flex-basis: auto;
+ align-items: center;
+ align-content: center;
+ align-self: center;
+ justify-content: start;
+ justify-items: start;
+ justify-self: start;
+ padding-left: round(up, calc(10 / 1920 * 100vw), 5px);
+ padding-right: round(up, calc(4 / 1920 * 100vw), 2px);
+ text-wrap: wrap;
+ white-space: normal;
+}
+
+.tvdescencours {
+ color: var(--c3);
+}
