@@ -1,7 +1,7 @@
 <?php
 $titre_page='Tv';
 $nom_page='tv_demain';
-$nom_page_theme_alternatif='theme_02_tv.php';
+$nom_page_theme_alternatif='theme_02_tv_demain.php';
 $page_active='tv';
 $page_tv_active= 'demain';
 $titre_page_active='&#129302;&nbsp;Tv';
