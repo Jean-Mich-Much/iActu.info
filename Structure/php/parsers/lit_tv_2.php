@@ -43,14 +43,16 @@ continue;
 $heureDebut=date("Hi",strtotime($debut));
 $heureFin=date("Hi",strtotime($fin));
 if(
- ($heureDebut>=$choixdebut-512&&$heureDebut<=$choixfin&&$duree>=256)||
- ($heureDebut>=$choixdebut-256&&$heureDebut<=$choixfin&&$duree>=128)||
- ($heureDebut>=$choixdebut-128&&$heureDebut<=$choixfin&&$duree>=64)||
- ($heureDebut>=$choixdebut-64&&$heureDebut<=$choixfin&&$duree>=32)||
- ($heureDebut>=$choixdebut-32&&$heureDebut<=$choixfin&&$duree>=16)||
- ($heureDebut>=$choixdebut-16&&$heureDebut<=$choixfin&&$duree>=8)||
- ($heureDebut>=$choixdebut-8&&$heureDebut<=$choixfin&&$duree>=4)||
- ($heureDebut>=$choixdebut-4&&$heureDebut<=$choixfin&&$duree>=2)||
+ ($heureDebut>=$choixdebut-480&&$heureDebut<=$choixfin&&$duree>=240)||
+ ($heureDebut>=$choixdebut-360&&$heureDebut<=$choixfin&&$duree>=180)||
+ ($heureDebut>=$choixdebut-240&&$heureDebut<=$choixfin&&$duree>=120)||
+ ($heureDebut>=$choixdebut-180&&$heureDebut<=$choixfin&&$duree>=90)||
+ ($heureDebut>=$choixdebut-120&&$heureDebut<=$choixfin&&$duree>=60)||
+ ($heureDebut>=$choixdebut-90&&$heureDebut<=$choixfin&&$duree>=45)||
+ ($heureDebut>=$choixdebut-60&&$heureDebut<=$choixfin&&$duree>=30)||
+ ($heureDebut>=$choixdebut-45&&$heureDebut<=$choixfin&&$duree>=15)||
+ ($heureDebut>=$choixdebut-30&&$heureDebut<=$choixfin&&$duree>=5)||
+ ($heureDebut>=$choixdebut-15&&$heureDebut<=$choixfin&&$duree>=3)||
 ($heureDebut>=$choixdebut&&$heureDebut<=$choixfin&&$duree>=$dureemini)){
 $previousFinTime=$finTime;
 }else{
