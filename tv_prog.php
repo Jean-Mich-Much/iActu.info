@@ -31,7 +31,7 @@ if(!file_exists($nom_page.'.html')||filemtime($nom_page.'.html')<(time()-$cache)
     
 <?php
 @include "Structure/php/parsers/lit_tv_2.php";
-$programmes = tv('Structure/cache/tv/xmltv_tnt.xml', date("Hi"), '2359', '3', '0', '120', '20');
+$programmes = tv('Structure/cache/tv/xmltv_tnt.xml', date("Hi"), '2359', '3', '0', '120', '15');
 afficherProgrammeTV($programmes);
 ?>
 
