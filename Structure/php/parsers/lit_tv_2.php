@@ -42,17 +42,18 @@ continue;
 }
 $heureDebut=date("Hi",strtotime($debut));
 $heureFin=date("Hi",strtotime($fin));
-if(
- ($heureDebut>=$choixdebut-360&&$heureDebut<=$choixfin&&$duree>=290)||
- ($heureDebut>=$choixdebut-300&&$heureDebut<=$choixfin&&$duree>=230)||
- ($heureDebut>=$choixdebut-240&&$heureDebut<=$choixfin&&$duree>=170)||
- ($heureDebut>=$choixdebut-180&&$heureDebut<=$choixfin&&$duree>=110)||
- ($heureDebut>=$choixdebut-120&&$heureDebut<=$choixfin&&$duree>=75)||
- ($heureDebut>=$choixdebut-90&&$heureDebut<=$choixfin&&$duree>=45)||
- ($heureDebut>=$choixdebut-60&&$heureDebut<=$choixfin&&$duree>=30)||
- ($heureDebut>=$choixdebut-45&&$heureDebut<=$choixfin&&$duree>=15)||
- ($heureDebut>=$choixdebut-30&&$heureDebut<=$choixfin&&$duree>=5)||
- ($heureDebut>=$choixdebut-15&&$heureDebut<=$choixfin&&$duree>=3)||
+if(($heureDebut>=$choixdebut-480&&$heureDebut<=$choixfin&&$duree>=240)||
+($heureDebut>=$choixdebut-360&&$heureDebut<=$choixfin&&$duree>=180)||
+($heureDebut>=$choixdebut-240&&$heureDebut<=$choixfin&&$duree>=120)||
+($heureDebut>=$choixdebut-180&&$heureDebut<=$choixfin&&$duree>=90)||
+($heureDebut>=$choixdebut-120&&$heureDebut<=$choixfin&&$duree>=60)||
+($heureDebut>=$choixdebut-90&&$heureDebut<=$choixfin&&$duree>=45)||
+($heureDebut>=$choixdebut-60&&$heureDebut<=$choixfin&&$duree>=30)||
+($heureDebut>=$choixdebut-50&&$heureDebut<=$choixfin&&$duree>=25)||
+($heureDebut>=$choixdebut-40&&$heureDebut<=$choixfin&&$duree>=20)||
+($heureDebut>=$choixdebut-30&&$heureDebut<=$choixfin&&$duree>=15)||
+($heureDebut>=$choixdebut-20&&$heureDebut<=$choixfin&&$duree>=10)||
+($heureDebut>=$choixdebut-10&&$heureDebut<=$choixfin&&$duree>=4)||
 ($heureDebut>=$choixdebut&&$heureDebut<=$choixfin&&$duree>=$dureemini)){
 $previousFinTime=$finTime;
 }else{
