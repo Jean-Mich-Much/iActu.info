@@ -42,15 +42,13 @@ continue;
 }
 $heureDebut=date("Hi",strtotime($debut));
 $heureFin=date("Hi",strtotime($fin));
-if(($heureDebut>=$choixdebut-360&&$heureDebut<=$choixfin&&$duree>=295)||
-($heureDebut>=$choixdebut-300&&$heureDebut<=$choixfin&&$duree>=235)||
-($heureDebut>=$choixdebut-240&&$heureDebut<=$choixfin&&$duree>=175)||
-($heureDebut>=$choixdebut-180&&$heureDebut<=$choixfin&&$duree>=115)||
-($heureDebut>=$choixdebut-120&&$heureDebut<=$choixfin&&$duree>=85)||
-($heureDebut>=$choixdebut-90&&$heureDebut<=$choixfin&&$duree>=55)||
-($heureDebut>=$choixdebut-60&&$heureDebut<=$choixfin&&$duree>=25)||
-($heureDebut>=$choixdebut-30&&$heureDebut<=$choixfin&&$duree>=10)||
-($heureDebut>=$choixdebut-15&&$heureDebut<=$choixfin&&$duree>=4)||
+if(($heureDebut>=$choixdebut-360&&$heureDebut<=$choixfin&&$duree>=225)||
+($heureDebut>=$choixdebut-240&&$heureDebut<=$choixfin&&$duree>=165)||
+($heureDebut>=$choixdebut-180&&$heureDebut<=$choixfin&&$duree>=105)||
+($heureDebut>=$choixdebut-120&&$heureDebut<=$choixfin&&$duree>=75)||
+($heureDebut>=$choixdebut-90&&$heureDebut<=$choixfin&&$duree>=45)||
+($heureDebut>=$choixdebut-60&&$heureDebut<=$choixfin&&$duree>=15)||
+($heureDebut>=$choixdebut-30&&$heureDebut<=$choixfin&&$duree>=5)||
 ($heureDebut>=$choixdebut&&$heureDebut<=$choixfin&&$duree>=$dureemini)){
 $previousFinTime=$finTime;
 }else{
@@ -124,7 +122,7 @@ $resultat[$chaine->getElementsByTagName('display-name')->item(0)->nodeValue]=$pr
 }
 $interval+=$decal;
 }
-while(!$foundProgrammes&&$interval<=1440);
+while(!$foundProgrammes&&$interval<=360);
 }
 return $resultat;
 }
