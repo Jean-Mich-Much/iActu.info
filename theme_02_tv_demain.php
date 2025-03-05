@@ -5,7 +5,7 @@ $nom_page_theme_alternatif='tv_demain.php';
 $page_active='tv';
 $page_tv_active= 'demain';
 $titre_page_active='&#129302;&nbsp;Tv';
-$cache=14430;
+$cache=3645;
 $theme='01';
 $lien_menu_theme = 'menu_theme_02';
 

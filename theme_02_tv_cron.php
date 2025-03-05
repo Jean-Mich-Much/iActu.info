@@ -1,12 +1,13 @@
 <?php
 $titre_page='Tv';
-$nom_page='tv';
-$nom_page_theme_alternatif='theme_02_tv.php';
+$nom_page='theme_02_tv';
+$nom_page_theme_alternatif='tv.php';
 $page_active='tv';
 $page_tv_active= 'cesoir';
 $titre_page_active='&#129302;&nbsp;Tv';
-$cache=3645;
+$cache=3595;
 $theme='01';
+$lien_menu_theme = 'menu_theme_02';
 
 if(!file_exists($nom_page.'.html')||filemtime($nom_page.'.html')<(time()-$cache)||!file_exists($nom_page.date("j").'.html')){ob_start();?>
 
@@ -24,11 +25,11 @@ if(!file_exists($nom_page.'.html')||filemtime($nom_page.'.html')<(time()-$cache)
 
  <body id="body" lang="fr">
   <div class="flex-page">
-   <div class="menu"><?php @include "Structure/php/modules/menu.php"; ?></div>
-   <div class="menu"><?php @include "Structure/php/modules/menu_tv.php"; ?></div>
+   <div class="menu"><?php @include 'Structure/php/modules/'.$lien_menu_theme.'.php'; ?></div>
+   <div class="menu"><?php @include "Structure/php/modules/menu_tv_theme_02.php"; ?></div>
    <?php @include 'Structure/php/modules/messages_top.php'; ?>
    <div class="mid">
-    
+
 <?php
 @include "Structure/php/parsers/lit_tv.php";
 $programmes = tv('Structure/cache/tv/xmltv_tnt.xml', '2049', '2359', '19', '0', '120', '2');
@@ -38,8 +39,8 @@ afficherProgrammeTV($programmes);
    </div>
 
   <div class="messages retour_ligne_on hauteur_auto"><?php @include 'Structure/php/modules/messages.php';?></div>
-  <div class="menu bot"><?php @include "Structure/php/modules/menu_tv.php"; ?></div>
-  <div class="menu bot"><?php @include 'Structure/php/modules/menu.php';?></div>
+  <div class="menu bot"><?php @include "Structure/php/modules/menu_tv_theme_02.php"; ?></div>
+  <div class="menu bot"><?php @include 'Structure/php/modules/'.$lien_menu_theme.'.php'; ?></div>
  </body>
  </html>
 <?php $p=ob_get_clean();
