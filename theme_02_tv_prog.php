@@ -30,8 +30,9 @@ if(!file_exists($nom_page.'.html')||filemtime($nom_page.'.html')<(time()-$cache)
 <div class="mid">
 <?php
 @include "Structure/php/parsers/lit_tv_2.php";
-$programmes = tv('Structure/cache/tv/xmltv_tnt.xml', date("Hi", strtotime("-180 minutes")), '2359', '5', '0', '360', '35');
-afficherProgrammeTV($programmes);
+$programmes = tv('Structure/cache/tv/xmltv_tnt.xml', date("Hi", strtotime("-360 minutes")), '2359', '5', '0', '360', '10'); // ((source du flux xmltv, heure du début de la recherche des programmes tv, heure de fin, durée minimum d'un programme, jour du programme tv : si 0 alors jour en cours mais si 1 = jour suivant par exemple / 2 dans deux jours etc., nombre de minutes en arrière de l'heure définit à rechercher un programme valide si aucun programme trouvé, nombre maximum de programmes à rechercher
+$maxProgrammes = 10; // Définissez ici le nombre maximum de programmes à afficher (supérieur ou égal au nombre de programmes à rechercher)
+afficherProgrammeTV($programmes, $maxProgrammes);
 ?>
 </div>
 <div class="messages retour_ligne_on hauteur_auto"><?php @include 'Structure/php/modules/messages.php';?></div>
