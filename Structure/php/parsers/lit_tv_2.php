@@ -111,6 +111,5 @@ $programmeArray[]=['heure'=>$debut,'titre'=>htmlspecialchars($programme['titre']
 }else{$programmeArray[]=['heure'=>$debut,'titre'=>htmlspecialchars($programme['titre']),'emote'=>'','dateLabel'=>dateLabel($programme['debut'])];}}
 $programmeArray=array_slice($programmeArray,$afficher?array_search('🏷️',array_column($programmeArray,'emote')):0,10);
 foreach($programmeArray as $programme){
-echo'<div class="tvcontainerprog"><div class="tvprog"><span class="tvheure">⏰'.$programme['emote'].'&nbsp;'.$programme['heure'].'</span><span class="tvtitre">🎬&nbsp;'.mb_strimwidth($programme['titre'],0,56,"...").($programme['dateLabel']!=="Aujourd'hui"?' ('.$programme['dateLabel'].')':'').'</span></div></div>';
+echo'<div class="tvcontainerprog"><div class="tvprog"><span class="tvheure">⏰'.str_replace("🏷️", "", $programme['emote']).'&nbsp;'.$programme['heure'].'</span><span class="tvtitre">🎬&nbsp;'.mb_strimwidth($programme['titre'],0,56,"...").($programme['dateLabel']!=="Aujourd'hui"?' ('.$programme['dateLabel'].')':'').'</span></div></div>';
 }echo'</div>';}}
-   
