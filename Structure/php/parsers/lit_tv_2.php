@@ -5,6 +5,7 @@ function tv($fichier, $choixdebut, $choixfin, $dureemini, $jourprog, $decal, $ma
 $xpath=new DOMXPath($xml);
 $chaines=$xpath->query("//channel");
 $resultat=[];
+$maxprogs=$maxProgrammes * 5;
 foreach($chaines as $chaine){
 $chaineId=$chaine->getAttribute("id");
 $programmes=$xpath->query("//programme[@channel='{$chaineId}']");
@@ -15,7 +16,7 @@ $previousFinTime=null;
 do{
 $foundProgrammes=false;
 foreach($programmes as $programme){
-try{if($programmesCount>=$maxProgrammes){break;}
+try{if($programmesCount>=$maxprogs){break;}
 $debut=$programme->getAttribute("start");
 $fin=$programme->getAttribute("stop");
 if(!$debut||!$fin){continue;}
@@ -85,6 +86,7 @@ if(!empty($programmesChaine)){$resultat[$chaine->getElementsByTagName('display-n
 $interval+=$decal;}
 while(!$foundProgrammes&&$interval<=1440);}
 return $resultat;}
+
 function dateLabel($date){
  $jour=strtotime($date);
  $aujourdhui=strtotime(date("Y-m-d"));
@@ -98,7 +100,7 @@ function dateLabel($date){
  return "Hier";
  }else{ return date("d/m", $jour);}}
 
- function afficherProgrammeTV($programmes){
+function afficherProgrammeTV($programmes, $maxProgrammes){
 $heureActuelle=date("H:i");
 foreach($programmes as $chaine=>$programmesChaine){
 echo'<div class="tvcontainer"><div class="tvchainetitre">📺&nbsp;'.htmlspecialchars($chaine).'</div>';
@@ -109,7 +111,7 @@ $debut=date("H:i",strtotime($programme['debut']));$fin=date("H:i",strtotime($pro
 if(!$afficher&&$heureActuelle>=$debut&&$heureActuelle<$fin){$afficher=true;
 $programmeArray[]=['heure'=>$debut,'titre'=>htmlspecialchars($programme['titre']),'emote'=>'🏷️','dateLabel'=>dateLabel($programme['debut'])];
 }else{$programmeArray[]=['heure'=>$debut,'titre'=>htmlspecialchars($programme['titre']),'emote'=>'','dateLabel'=>dateLabel($programme['debut'])];}}
-$programmeArray=array_slice($programmeArray,$afficher?array_search('🏷️',array_column($programmeArray,'emote')):0,10);
+$programmeArray=array_slice($programmeArray,$afficher?array_search('🏷️',array_column($programmeArray,'emote')):0,$maxProgrammes);
 foreach($programmeArray as $programme){
 echo'<div class="tvcontainerprog"><div class="tvprog"><span class="tvheure">⏰'.str_replace("🏷️", "", $programme['emote']).'&nbsp;'.$programme['heure'].'</span><span class="tvtitre">🎬&nbsp;'.mb_strimwidth($programme['titre'],0,56,"...").($programme['dateLabel']!=="Aujourd'hui"?' ('.$programme['dateLabel'].')':'').'</span></div></div>';
 }echo'</div>';}}
