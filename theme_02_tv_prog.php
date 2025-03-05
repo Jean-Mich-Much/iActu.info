@@ -5,7 +5,7 @@ $nom_page_theme_alternatif='tv_prog.php';
 $page_active='tv';
 $page_tv_active= 'programme';
 $titre_page_active='&#129302;&nbsp;Tv';
-$cache=45;
+$cache=55;
 $theme='01';
 $lien_menu_theme = 'menu_theme_02';
 
@@ -30,7 +30,7 @@ if(!file_exists($nom_page.'.html')||filemtime($nom_page.'.html')<(time()-$cache)
 <div class="mid">
 <?php
 @include "Structure/php/parsers/lit_tv_2.php";
-$programmes = tv('Structure/cache/tv/xmltv_tnt.xml', date("Hi", strtotime("-5 minutes")), '2359', '5', '0', '360', '10');
+$programmes = tv('Structure/cache/tv/xmltv_tnt.xml', date("Hi", strtotime("-180 minutes")), '2359', '5', '0', '360', '35');
 afficherProgrammeTV($programmes);
 ?>
 </div>
