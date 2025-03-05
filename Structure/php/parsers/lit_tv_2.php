@@ -24,8 +24,7 @@ $debutTime=strtotime($debut);
 $finTime=strtotime($fin);
 $duree=($finTime-$debutTime)/60;
 if($duree<$dureemini){continue;}
-if($programmesCount==0){ 
-// Appliquer les limites au premier programme
+if($programmesCount==0){
 if($jourprog=='0'){
 $currentDate=date("Ymd");
 }else{$currentDate=date("Ymd",strtotime("+$jourprog days"));}
