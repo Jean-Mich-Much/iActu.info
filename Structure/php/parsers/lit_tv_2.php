@@ -1,6 +1,6 @@
 <?php
 function tv($fichier, $choixdebut, $choixfin, $dureemini, $jourprog, $decal, $maxProgrammes){
- $xml=new DOMDocument();
+$xml=new DOMDocument();
 @$xml->load($fichier);
 $xpath=new DOMXPath($xml);
 $chaines=$xpath->query("//channel");
@@ -59,8 +59,7 @@ $rating=$ratingNode?$ratingNode->getElementsByTagName("value")->item(0)->nodeVal
 $episodeNode=$programme->getElementsByTagName("episode-num")->item(0);
 $episode=null;
 if($episodeNode&&preg_match("/^([0-9]+)\.([0-9]+)\.$/",$episodeNode->nodeValue,$matches)){
-$episode=str_replace("Episode 0","",str_replace(", épisode 0","",str_replace("Saison 0, é","E","Saison {$matches[1]}, épisode {$matches[2]}")));
-}
+$episode=str_replace("Episode 0","",str_replace(", épisode 0","",str_replace("Saison 0, é","E","Saison {$matches[1]}, épisode {$matches[2]}")));}
 $categories=[];
 foreach($xpath->query("category",$programme)as $categoryNode){$categories[]=$categoryNode->nodeValue;}
 $categoriesText=implode(", ",$categories);
@@ -76,8 +75,7 @@ $programmesChaine[]=[
 "actors"=>$actors,
 "director"=>$director,
 "rating"=>$rating,
-"episode"=>$episode
-];
+"episode"=>$episode];
 $foundProgrammes=true;
 $programmesCount++;
 $previousFinTime=$finTime;
@@ -88,17 +86,17 @@ while(!$foundProgrammes&&$interval<=1440);}
 return $resultat;}
 
 function dateLabel($date){
- $jour=strtotime($date);
- $aujourdhui=strtotime(date("Y-m-d"));
- $demain=strtotime("+1 day", $aujourdhui);
- $hier=strtotime("-1 day", $aujourdhui);
- if(date("Y-m-d", $jour)==date("Y-m-d", $aujourdhui)){
- return "Aujourd'hui";
- }elseif(date("Y-m-d", $jour)==date("Y-m-d", $demain)){
- return "Demain";
- }elseif(date("Y-m-d", $jour)==date("Y-m-d", $hier)){
- return "Hier";
- }else{ return date("d/m", $jour);}}
+$jour=strtotime($date);
+$aujourdhui=strtotime(date("Y-m-d"));
+$demain=strtotime("+1 day", $aujourdhui);
+$hier=strtotime("-1 day", $aujourdhui);
+if(date("Y-m-d", $jour)==date("Y-m-d", $aujourdhui)){
+return "Aujourd'hui";
+}elseif(date("Y-m-d", $jour)==date("Y-m-d", $demain)){
+return "Demain";
+}elseif(date("Y-m-d", $jour)==date("Y-m-d", $hier)){
+return "Hier";
+}else{ return date("d/m", $jour);}}
 
 function afficherProgrammeTV($programmes, $maxProgrammes){
 $heureActuelle=date("H:i");
