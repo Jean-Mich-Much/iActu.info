@@ -31,43 +31,8 @@ $currentDate=date("Ymd");
 if(strpos($debut,$currentDate)===false){continue;}
 $heureDebut=date("Hi",strtotime($debut));
 $heureFin=date("Hi",strtotime($fin));
-if(($heureDebut>=$choixdebut-360&&$heureDebut<=$choixfin&&$duree>=340)||
-($heureDebut>=$choixdebut-340&&$heureDebut<=$choixfin&&$duree>=320)||
-($heureDebut>=$choixdebut-320&&$heureDebut<=$choixfin&&$duree>=300)||
-($heureDebut>=$choixdebut-300&&$heureDebut<=$choixfin&&$duree>=280)||
-($heureDebut>=$choixdebut-280&&$heureDebut<=$choixfin&&$duree>=260)||
-($heureDebut>=$choixdebut-260&&$heureDebut<=$choixfin&&$duree>=240)||
-($heureDebut>=$choixdebut-240&&$heureDebut<=$choixfin&&$duree>=220)||
-($heureDebut>=$choixdebut-220&&$heureDebut<=$choixfin&&$duree>=200)||
-($heureDebut>=$choixdebut-200&&$heureDebut<=$choixfin&&$duree>=180)||
-($heureDebut>=$choixdebut-180&&$heureDebut<=$choixfin&&$duree>=170)||
-($heureDebut>=$choixdebut-170&&$heureDebut<=$choixfin&&$duree>=160)||
-($heureDebut>=$choixdebut-160&&$heureDebut<=$choixfin&&$duree>=150)||
-($heureDebut>=$choixdebut-150&&$heureDebut<=$choixfin&&$duree>=140)||
-($heureDebut>=$choixdebut-140&&$heureDebut<=$choixfin&&$duree>=130)||
-($heureDebut>=$choixdebut-130&&$heureDebut<=$choixfin&&$duree>=120)||
-($heureDebut>=$choixdebut-120&&$heureDebut<=$choixfin&&$duree>=110)||
-($heureDebut>=$choixdebut-110&&$heureDebut<=$choixfin&&$duree>=105)||
-($heureDebut>=$choixdebut-105&&$heureDebut<=$choixfin&&$duree>=100)||
-($heureDebut>=$choixdebut-100&&$heureDebut<=$choixfin&&$duree>=95)||
-($heureDebut>=$choixdebut-95&&$heureDebut<=$choixfin&&$duree>=90)||
-($heureDebut>=$choixdebut-90&&$heureDebut<=$choixfin&&$duree>=85)||
-($heureDebut>=$choixdebut-85&&$heureDebut<=$choixfin&&$duree>=80)||
-($heureDebut>=$choixdebut-80&&$heureDebut<=$choixfin&&$duree>=75)||
-($heureDebut>=$choixdebut-75&&$heureDebut<=$choixfin&&$duree>=70)||
-($heureDebut>=$choixdebut-70&&$heureDebut<=$choixfin&&$duree>=65)||
-($heureDebut>=$choixdebut-65&&$heureDebut<=$choixfin&&$duree>=60)||
-($heureDebut>=$choixdebut-60&&$heureDebut<=$choixfin&&$duree>=55)||
-($heureDebut>=$choixdebut-55&&$heureDebut<=$choixfin&&$duree>=50)||
-($heureDebut>=$choixdebut-50&&$heureDebut<=$choixfin&&$duree>=45)||
-($heureDebut>=$choixdebut-45&&$heureDebut<=$choixfin&&$duree>=40)||
-($heureDebut>=$choixdebut-40&&$heureDebut<=$choixfin&&$duree>=35)||
-($heureDebut>=$choixdebut-35&&$heureDebut<=$choixfin&&$duree>=30)||
-($heureDebut>=$choixdebut-30&&$heureDebut<=$choixfin&&$duree>=25)||
-($heureDebut>=$choixdebut-25&&$heureDebut<=$choixfin&&$duree>=20)||
-($heureDebut>=$choixdebut-20&&$heureDebut<=$choixfin&&$duree>=15)||
-($heureDebut>=$choixdebut-15&&$heureDebut<=$choixfin&&$duree>=10)||
-($heureDebut>=$choixdebut-10&&$heureDebut<=$choixfin&&$duree>=5)||
+if(($heureDebut>=$choixdebut-30&&$heureDebut<=$choixfin&&$duree>=15)||
+($heureDebut>=$choixdebut-15&&$heureDebut<=$choixfin&&$duree>=5)||
 ($heureDebut>=$choixdebut&&$heureDebut<=$choixfin&&$duree>=$dureemini)){
 $previousFinTime=$finTime;
 }else{continue;}
@@ -132,10 +97,20 @@ function dateLabel($date){
  }elseif(date("Y-m-d", $jour)==date("Y-m-d", $hier)){
  return "Hier";
  }else{ return date("d/m", $jour);}}
-function afficherProgrammeTV($programmes){
+
+ function afficherProgrammeTV($programmes){
+$heureActuelle=date("H:i");
 foreach($programmes as $chaine=>$programmesChaine){
-echo '<div class="tvcontainer"><div class="tvchainetitre">📺&nbsp;'.htmlspecialchars($chaine).'</div>';
+echo'<div class="tvcontainer"><div class="tvchainetitre">📺&nbsp;'.htmlspecialchars($chaine).'</div>';
+$programmeArray=[];$afficher=false;
 foreach($programmesChaine as $programme){
-echo '<div class="tvcontainerprog"><div class="tvprog"><span class="tvheure">⏰&nbsp;'.date("H:i",strtotime($programme['debut'])).'</span><span class="tvtitre">🎬&nbsp;'.mb_strimwidth(htmlspecialchars($programme['titre']),0,56,"...").(dateLabel($programme['debut']) !== "Aujourd'hui" ? ' ('.dateLabel($programme['debut']).')' : '').'</span></div>';
-echo '</div>';}
-echo '</div>';}};
+if(!isset($programme['debut'])||!isset($programme['fin'])||!isset($programme['titre'])){continue;}
+$debut=date("H:i",strtotime($programme['debut']));$fin=date("H:i",strtotime($programme['fin']));
+if(!$afficher&&$heureActuelle>=$debut&&$heureActuelle<$fin){$afficher=true;
+$programmeArray[]=['heure'=>$debut,'titre'=>htmlspecialchars($programme['titre']),'emote'=>'🏷️','dateLabel'=>dateLabel($programme['debut'])];
+}else{$programmeArray[]=['heure'=>$debut,'titre'=>htmlspecialchars($programme['titre']),'emote'=>'','dateLabel'=>dateLabel($programme['debut'])];}}
+$programmeArray=array_slice($programmeArray,$afficher?array_search('🏷️',array_column($programmeArray,'emote')):0,10);
+foreach($programmeArray as $programme){
+echo'<div class="tvcontainerprog"><div class="tvprog"><span class="tvheure">⏰'.$programme['emote'].'&nbsp;'.$programme['heure'].'</span><span class="tvtitre">🎬&nbsp;'.mb_strimwidth($programme['titre'],0,56,"...").($programme['dateLabel']!=="Aujourd'hui"?' ('.$programme['dateLabel'].')':'').'</span></div></div>';
+}echo'</div>';}}
+   
