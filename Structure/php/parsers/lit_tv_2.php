@@ -100,7 +100,7 @@ return "Hier";
 function afficherProgrammeTV($programmes, $maxProgrammes){
 $heureActuelle=date("H:i");
 foreach($programmes as $chaine=>$programmesChaine){
-echo'<div class="tvcontainer"><div class="tvchainetitre">📺&nbsp;'.htmlspecialchars($chaine).'</div>';
+echo '<div class="tvcontainer"><div class="tvchainetitre">📺&nbsp;'.htmlspecialchars($chaine).'</div>';
 $programmeArray=[];$afficher=false;
 foreach($programmesChaine as $programme){
 if(!isset($programme['debut'])||!isset($programme['fin'])||!isset($programme['titre'])){continue;}
@@ -110,5 +110,5 @@ $programmeArray[]=['heure'=>$debut,'titre'=>htmlspecialchars($programme['titre']
 }else{$programmeArray[]=['heure'=>$debut,'titre'=>htmlspecialchars($programme['titre']),'emote'=>'','dateLabel'=>dateLabel($programme['debut'])];}}
 $programmeArray=array_slice($programmeArray,$afficher?array_search('🏷️',array_column($programmeArray,'emote')):0,$maxProgrammes);
 foreach($programmeArray as $programme){
-echo'<div class="tvcontainerprog"><div class="tvprog"><span class="tvheure">⏰'.str_replace("🏷️", "", $programme['emote']).'&nbsp;'.$programme['heure'].'</span><span class="tvtitre">🎬&nbsp;'.mb_strimwidth($programme['titre'],0,56,"...").($programme['dateLabel']!=="Aujourd'hui"?' ('.$programme['dateLabel'].')':'').'</span></div></div>';
-}echo'</div>';}}
+echo '<div class="tvcontainerprog"><div class="tvprog"><span class="tvheure">⏰'.str_replace("🏷️", "", $programme['emote']).'&nbsp;'.$programme['heure'].'</span><span class="tvtitre">🎬&nbsp;'.mb_strimwidth($programme['titre'],0,56,"...").($programme['dateLabel']!=="Aujourd'hui"?' ('.$programme['dateLabel'].')':'').'</span></div></div>';
+}echo '</div>';}}
