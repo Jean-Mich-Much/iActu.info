@@ -51,6 +51,8 @@ $nbrchr='70000';
     <?php @include 'Structure/php/modules/messages.php'; ?>
    </div>
 
+   <?php @include 'Structure/php/modules/donateurs.php'; ?>
+
    <div class="menu bot">
     <?php @include 'Structure/php/modules/'.$lien_menu_theme.'.php'; ?>
    </div>
