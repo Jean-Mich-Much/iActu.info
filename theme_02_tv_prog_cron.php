@@ -30,7 +30,7 @@ if(!file_exists($nom_page.'.html')||filemtime($nom_page.'.html')<(time()-$cache)
 <div class="mid">
 <?php
 @include "Structure/php/parsers/lit_tv_2.php";
-$programmes = tv('Structure/cache/tv/xmltv_tnt.xml', date("Hi", strtotime("-360 minutes")), '2359', '5', '0', '360', '10');
+$programmes = tv('Structure/cache/tv/xmltv_tnt.xml', date("Hi", strtotime("-360 minutes")),  '5', '0', '360', '10');
 // source du flux xmltv
 // heure du début de la recherche des programmes tv
 // heure de fin
