@@ -1,5 +1,5 @@
 <?php
-function tv($fichier, $choixdebut, $choixfin, $dureemini, $jourprog, $decal, $maxProgrammes){
+function tv($fichier, $choixdebut, $dureemini, $jourprog, $decal, $maxProgrammes){
 $xml=new DOMDocument();
 @$xml->load($fichier);
 $xpath=new DOMXPath($xml);
@@ -31,9 +31,9 @@ $currentDate=date("Ymd");
 if(strpos($debut,$currentDate)===false){continue;}
 $heureDebut=date("Hi",strtotime($debut));
 $heureFin=date("Hi",strtotime($fin));
-if(($heureDebut>=$choixdebut-30&&$heureDebut<=$choixfin&&$duree>=15)||
-($heureDebut>=$choixdebut-15&&$heureDebut<=$choixfin&&$duree>=5)||
-($heureDebut>=$choixdebut&&$heureDebut<=$choixfin&&$duree>=$dureemini)){
+if(($heureDebut>=$choixdebut-30&&$heureDebut&&$duree>=15)||
+($heureDebut>=$choixdebut-15&&$heureDebut&&$duree>=5)||
+($heureDebut>=$choixdebut&&$heureDebut&&$duree>=$dureemini)){
 $previousFinTime=$finTime;
 }else{continue;}
 }else{if($previousFinTime!==null&&$debutTime<$previousFinTime){continue;}}
