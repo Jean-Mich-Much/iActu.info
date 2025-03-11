@@ -1,90 +1,132 @@
 <?php
-function tv($fichier, $choixdebut, $dureemini, $jourprog, $decal, $maxProgrammes){
-$xml=new DOMDocument();
-@$xml->load($fichier);
-$xpath=new DOMXPath($xml);
-$chaines=$xpath->query("//channel");
-$resultat=[];
-foreach($chaines as $chaine){
-$chaineId=$chaine->getAttribute("id");
-$programmes=$xpath->query("//programme[@channel='{$chaineId}']");
-$programmesCount=0;
-$programmesChaine=[];
-$interval=0;
-$previousFinTime=null;
-do{
-$foundProgrammes=false;
-foreach($programmes as $programme){
+function wordLimit($text, $maxChars) {
+if (mb_strlen($text) <= $maxChars) return $text;
+$words = explode(' ', $text);
+$output = '';
+foreach ($words as $word) {
+if (mb_strlen($output . ' ' . $word) > $maxChars) break;
+$output .= ' ' . $word;}
+return trim($output) . '...';}
+?>
+
+<?php
+function dateLabel($date){
+$jour=new DateTime($date);
+$aujourdhui=(new DateTime())->format('Y-m-d');
+$demain=(new DateTime('tomorrow'))->format('Y-m-d');
+$hier=(new DateTime('yesterday'))->format('Y-m-d');
+if($jour->format('Y-m-d')===$aujourdhui){return "Aujourd'hui";}
+elseif($jour->format('Y-m-d')===$demain){return "Demain";}
+elseif($jour->format('Y-m-d')===$hier){return "Hier";}
+else{$joursFrancais=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+return $joursFrancais[$jour->format('w')];}}
+?>
+
+<?php
+function tv($source, $startTime, $minDuration, $dayOffset, $maxProgrammes){
+$programmes=[];
 try{
-if($programmesCount>=$maxProgrammes){
-break;}
-$debut=$programme->getAttribute("start");
-$fin=$programme->getAttribute("stop");
-if(!$debut||!$fin){continue;}
-$debutTime=strtotime($debut);
-$finTime=strtotime($fin);
-$duree=($finTime-$debutTime)/60;
-if($duree<$dureemini){continue;}
-if($programmesCount==0){ 
-// Appliquer les limites au premier programme
-if($jourprog=='0'){
-$currentDate=date("Ymd");}else{
-$currentDate=date("Ymd",strtotime("+$jourprog days"));}
-if(strpos($debut,$currentDate)===false){continue;}
-$heureDebut=date("Hi",strtotime($debut));
-$heureFin=date("Hi",strtotime($fin));
-if(($heureDebut>=$choixdebut-360&&$heureDebut&&$duree>=235)||
-($heureDebut>=$choixdebut-240&&$heureDebut&&$duree>=175)||
-($heureDebut>=$choixdebut-180&&$heureDebut&&$duree>=115)||
-($heureDebut>=$choixdebut-120&&$heureDebut&&$duree>=110)||
-($heureDebut>=$choixdebut-115&&$heureDebut&&$duree>=105)||
-($heureDebut>=$choixdebut-110&&$heureDebut&&$duree>=100)||
-($heureDebut>=$choixdebut-105&&$heureDebut&&$duree>=95)||
-($heureDebut>=$choixdebut-100&&$heureDebut&&$duree>=90)||
-($heureDebut>=$choixdebut-95&&$heureDebut&&$duree>=85)||
-($heureDebut>=$choixdebut-90&&$heureDebut&&$duree>=80)||
-($heureDebut>=$choixdebut&&$heureDebut&&$duree>=$dureemini)){
-$previousFinTime=$finTime;}else{continue;}}else{
-if($previousFinTime!==null&&$debutTime<$previousFinTime){continue;}}
-$titre=$xpath->query("title",$programme)->item(0);
-if(!$titre){continue;}
-$titre=$titre->nodeValue;
-$image=$xpath->query("icon",$programme)->item(0);
-if(!$image){continue;}
-$image=$image->getAttribute("src");
-$description=$xpath->query("desc",$programme)->item(0);
-$description=$description?$description->nodeValue:"Aucune description";
-$episodeNode=$programme->getElementsByTagName("episode-num")->item(0);
-$episode=null;
-if($episodeNode&&preg_match("/^([0-9]+)\.([0-9]+)\.$/",$episodeNode->nodeValue,$matches)){
-$episode=str_replace("Episode 0","",str_replace(", épisode 0","",str_replace("Saison 0, é","E","Saison {$matches[1]}, épisode {$matches[2]}")));}
+if(!file_exists($source)){return $programmes;}
+$xml=new SimpleXMLElement(file_get_contents($source));
+$baseDate=(new DateTime())->modify("+$dayOffset days");
+$startTime=$baseDate->setTime((int)substr($startTime,0,2),(int)substr($startTime,2,2));
+$maxEndDate=(clone $baseDate)->modify('+5 days')->setTime(23,59);
+foreach($xml->programme as $programme){
+try{
+$debut=new DateTime((string)$programme['start']);
+$fin=new DateTime((string)$programme['stop']);
+if($debut>=$startTime&&$fin<=$maxEndDate){
+$duree=$debut->diff($fin)->i+($debut->diff($fin)->h*60);
+if($duree>=$minDuration){
+$channelId=(string)$programme['channel'];
+$titre=(string)$programme->title;
+$description=(string)$programme->desc??'Aucune description disponible';
 $categories=[];
-foreach($xpath->query("category",$programme)as $categoryNode){
-$categories[]=$categoryNode->nodeValue;}
-$categoriesText=implode(", ",$categories);
-$programmesChaine[]=[
-"titre"=>$titre,
-"description"=>$description,
-"image"=>$image,
-"debut"=>$debut,
-"fin"=>$fin,
-"duree"=>$duree,
-"categories"=>$categoriesText,
-"episode"=>$episode
-];
-$foundProgrammes=true;
-$programmesCount++;
-$previousFinTime=$finTime;}catch(Exception $e){continue;}}
-if(!empty($programmesChaine)){
-$resultat[$chaine->getElementsByTagName('display-name')->item(0)->nodeValue]=$programmesChaine;}
-$interval+=$decal;}
-while(!$foundProgrammes&&$interval<=1440);}
-return $resultat;}
-function afficherProgrammeTV($programmes){
+foreach($programme->category as $category){
+$categories[]=(string)$category;}
+$image=isset($programme->icon['src'])?(string)$programme->icon['src']:'default_program_image.jpg';
+if(!isset($programmes[$channelId])){$programmes[$channelId]=[];}
+if(count($programmes[$channelId])<$maxProgrammes){
+$programmes[$channelId][]=[
+'debut'=>$debut->format('Y-m-d H:i:s'),
+'fin'=>$fin->format('Y-m-d H:i:s'),
+'titre'=>$titre,
+'duree'=>$duree,
+'categories'=>implode(', ',$categories),
+'description'=>$description,
+'image'=>$image
+];}}}}catch(Exception $e){continue;}}}catch(Exception $e){return $programmes;}
+return $programmes;}
+?>
+
+<?php
+function afficherProgrammeTVComplet($programmes){
 foreach($programmes as $chaine=>$programmesChaine){
-echo '<div class="tvcontainer"><div class="f20px">📺&nbsp;'.htmlspecialchars($chaine).'</div>';
+ echo '<div class="tvcontainer"><div class="f20px">📺&nbsp;'.htmlspecialchars(
+  str_replace(
+      ['.fr', 'NT1', 'LEquipe21', 'Numero23', 'RMCDecouverte', 'Cherie25', 'ParisPremiere', 'CanalPlusSport', 'CanalPlusCinema', 'PlanetePlus', 'CanalPlus', 'France2', 'France3', 'France5', 'France4', 'LaChaineParlementaire', 'BFMTV', 'TF1SeriesFilms', 'FranceInfo'],
+      ['', 'TFX', 'La chaine l’Équipe', 'RMC STORY', 'RMC Découverte', 'Chérie 25', 'Paris Première', 'Canal+ Sport', 'Canal+ Cinéma', 'Planete+', 'Canal+', 'France 2', 'France 3', 'France 5', 'France 4', 'LCP', 'BFM TV', 'TF1 Séries-Films', 'France Info'],
+      $chaine
+  )
+).'</div>';
 foreach($programmesChaine as $programme){
-echo '<div class="tvprogramme"><div class="tvgrid"><img class="tvimage" src="'.htmlspecialchars($programme['image']).'" alt="'.htmlspecialchars($programme['titre']).'"><span class="tvdescription"><span class="tvdescplus"><div class="tvprogtitre"><strong class="f18px">🎬&nbsp;'.htmlspecialchars($programme['titre']).'</strong></div></span><span class="tvdescplus"><div class="tvproginfos">⏰&nbsp;'.date("H:i",strtotime($programme['debut'])).'&nbsp; ⏱️&nbsp;'.$programme['duree'].'&nbsp;mn&nbsp; '.str_replace("&nbsp;🍿&nbsp;indéterminé", "", str_replace("&nbsp;🍿&nbsp;Aucun genre, Aucun sous-genre","",'&nbsp;🍿&nbsp;'.str_replace("Programme ", "", str_replace("Programme, ", "", htmlspecialchars($programme['categories']))))).'</div></span><span class="tvdescplus">'.str_replace("📜&nbsp;Aucune description","",'📜&nbsp;'.mb_strimwidth(htmlspecialchars($programme['description']),0,304,"...")).'</span>';
-if($programme['episode']){echo '<span class="tvdescplus">&nbsp;📺&nbsp;'.$programme['episode'].'</span>';}
-echo '</span></div></div>';}
-echo '</div>';}};
+if(!isset($programme['debut'])||!isset($programme['titre'])){continue;}
+$debut=new DateTime($programme['debut']);
+$heureDebut=$debut->format('H:i');
+$jourLabel=dateLabel($programme['debut']);
+$titre=wordLimit(htmlspecialchars($programme['titre']),120);
+$jourInfo=($jourLabel!=="Aujourd'hui")?" (".strtolower($jourLabel).")":"";
+$description=wordLimit(htmlspecialchars($programme['description']),400);
+echo '<div class="tvprogramme">
+<div class="tvgrid">
+<img class="tvimage" src="'.htmlspecialchars($programme['image']).'" alt="'.htmlspecialchars($programme['titre']).'">
+<span class="tvdescription">
+<span class="tvdescplus">
+<div class="tvprogtitre">
+<strong class="f18px">🎬&nbsp;'.$titre.'</strong>
+</div>
+</span>
+<span class="tvdescplus">
+<div class="tvproginfos">
+⏰&nbsp;'.$heureDebut.$jourInfo.'&nbsp; ⏱️&nbsp;'.$programme['duree'].'&nbsp;mn&nbsp; '.str_replace("🍿&nbsp;indéterminé","",str_replace("&nbsp;🍿&nbsp;Aucun genre, Aucun sous-genre",'','&nbsp;🍿&nbsp;'.str_replace("Programme ","",str_replace("Programme, ","",htmlspecialchars($programme['categories']))))).'
+</div>
+</span>
+<span class="tvdescplus">'.str_replace("📜&nbsp;Aucune description","",'📜&nbsp;'.$description).'</span>
+</span>
+</div>
+</div>';}
+echo '</div>';}}
+?>
+
+<?php
+function afficherProgrammeTVCompact($programmes){
+foreach($programmes as $chaine=>$programmesChaine){
+echo '<div class="tvcontainer"><div class="tvchainetitre">📺&nbsp;'.htmlspecialchars(
+  str_replace(
+      ['.fr', 'NT1', 'LEquipe21', 'Numero23', 'RMCDecouverte', 'Cherie25', 'ParisPremiere', 'CanalPlusSport', 'CanalPlusCinema', 'PlanetePlus', 'CanalPlus', 'France2', 'France3', 'France5', 'France4', 'LaChaineParlementaire', 'BFMTV', 'TF1SeriesFilms', 'FranceInfo'],
+      ['', 'TFX', 'La chaine l’Équipe', 'RMC STORY', 'RMC Découverte', 'Chérie 25', 'Paris Première', 'Canal+ Sport', 'Canal+ Cinéma', 'Planete+', 'Canal+', 'France 2', 'France 3', 'France 5', 'France 4', 'LCP', 'BFM TV', 'TF1 Séries-Films', 'France Info'],
+      $chaine
+  )
+).'</div>';
+
+foreach($programmesChaine as $programme){
+if(!isset($programme['debut'])||!isset($programme['titre'])){continue;}
+$debut=new DateTime($programme['debut']);
+$heureDebut=$debut->format('H:i');
+$jourLabel=dateLabel($programme['debut']);
+$titre=wordLimit(htmlspecialchars($programme['titre']),54);
+$jourInfo=($jourLabel!=="Aujourd'hui")?" (".strtolower($jourLabel).")":"";
+echo '<div class="tvcontainerprog">
+<div class="tvprog">
+<span class="tvheure">⏰&nbsp;'.$heureDebut.'</span>
+<span class="tvtitre">🎬&nbsp;'.$titre.$jourInfo.'</span>
+</div></div>';}
+echo '</div>';}}
+?>
+
+<?php
+function afficherProgrammeTV($programmes, $completOuCompact) {
+if ($completOuCompact == 0) {afficherProgrammeTVComplet($programmes);
+} elseif ($completOuCompact == 1) {afficherProgrammeTVCompact($programmes);
+}};
+?>
