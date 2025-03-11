@@ -29,12 +29,21 @@ if(!file_exists($nom_page.'.html')||filemtime($nom_page.'.html')<(time()-$cache)
        <?php @include 'Structure/php/modules/messages_top.php'; ?>
        <div class="mid">
     
-    <?php
-    @include "Structure/php/parsers/lit_tv.php";
-    $programmes = tv("Structure/cache/tv/xmltv_" . (date('j') + 1) . ".xml", '2049',  '19', '1', '360', '2');
-    afficherProgrammeTV($programmes);
-    ?>
-    
+<?php
+@include "Structure/php/parsers/lit_tv.php";
+
+// Charge les programmes TV depuis un fichier XMLTV
+$programmes = tv(
+    "Structure/cache/tv/xmltv_" . (date('j') + 1) . ".xml", // Chemin du fichier XMLTV
+    '2049', // Heure de début : 20h44
+    '19',   // Durée minimale : 19 minutes
+    '1',    // Jour : 0 = aujourd'hui, 1 = demain, etc.
+    '2'     // Max programmes par chaîne : ici 2
+);
+
+// Affiche les programmes TV en HTML (0 = complet, 1 = compact)
+afficherProgrammeTV($programmes, '0');
+?>
        </div>
     
       <div class="messages retour_ligne_on hauteur_auto"><?php @include 'Structure/php/modules/messages.php';?></div><?php @include 'Structure/php/modules/donateurs.php'; ?>

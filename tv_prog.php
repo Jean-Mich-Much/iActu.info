@@ -29,18 +29,15 @@ if(!file_exists($nom_page.'.html')||filemtime($nom_page.'.html')<(time()-$cache)
 <?php @include 'Structure/php/modules/messages_top.php'; ?>
 <div class="mid">
 <?php
-@include "Structure/php/parsers/lit_tv_2.php";
-$programmes = tv("Structure/cache/tv/xmltv_" . date('j') . ".xml", date("Hi", strtotime("-240 minutes")),  '5', '0', '360', '30');
-// source du flux xmltv
-// heure du début de la recherche des programmes tv
-// heure de fin
-// durée minimum d'un programme
-// jour du programme tv : si 0 alors jour en cours mais si 1 = jour suivant par exemple / 2 dans deux jours etc.
-// permet pas exemple pour 360 de rechercher jusqu'à 360 minutes en arrière de l'heure définit à rechercher un programme valide si aucun programme trouvé
-// nombre maximum de programmes à rechercher
-$maxProgrammes = 10;
-// nombre maximum de programmes à afficher (inférieur ou égal au nombre de programmes à rechercher)
-afficherProgrammeTV($programmes, $maxProgrammes);
+@include "Structure/php/parsers/lit_tv.php";
+$programmes = tv(
+    "Structure/cache/tv/xmltv_" . date('j') . ".xml",
+    date("Hi", strtotime("-180 minutes")),
+    '4',
+    '0',
+    '10'
+);
+afficherProgrammeTV($programmes, '1');
 ?>
 </div>
 <div class="messages retour_ligne_on hauteur_auto"><?php @include 'Structure/php/modules/messages.php';?></div><?php @include 'Structure/php/modules/donateurs.php'; ?>
