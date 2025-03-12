@@ -1,1 +1,3 @@
-<?php @readfile('theme_02_jeu.html'); ?><?php @include 'Structure/php/modules/stats.php';
+<?php
+$pagephp = 'theme_02_jeu';
+$updatepagephp = 3600;if (!file_exists($pagephp . '.html') or filemtime($pagephp . '.html') < (time() - $updatepagephp) or !file_exists($pagephp . date("j") . '.html')) {@include $pagephp . '.php';} else {@readfile($pagephp . '.html');@include 'Structure/php/modules/stats.php';}
