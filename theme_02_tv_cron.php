@@ -33,16 +33,18 @@ if(!file_exists($nom_page.'.html')||filemtime($nom_page.'.html')<(time()-$cache)
    <?php
 @include "Structure/php/parsers/lit_tv.php";
 
-// Charge les programmes TV depuis un fichier XMLTV
+// Récupère les programmes TV à partir d'un fichier XMLTV
 $programmes = tv(
-    "Structure/cache/tv/xmltv_" . date('j') . ".xml", // Chemin du fichier XMLTV
-    '2049', // Heure de début : 20h49
-    '19',   // Durée minimale : 19 minutes
-    '0',    // Jour : 0 = aujourd'hui, 1 = demain, etc.
-    '2'     // Max programmes par chaîne : ici 2
+    "Structure/cache/tv/xmltv_" . date('j') . ".xml", // Chemin vers le fichier XMLTV
+    '2045', // Heure de début souhaitée (format HHMM, ici 20h45)
+    '19',   // Durée minimale des programmes en minutes
+    '0',    // Décalage en jours (0 = aujourd'hui, 1 = demain, etc.)
+    '2',    // Nombre maximum de programmes par chaîne
+    '0',    // Mode en cours : 1 = commence au programme actuellement en cours de diffusion au lieu de l'heure de début souhaitée
+    '1'     // Mode prime time : 1 = sélectionne les programmes en prime time qui se terminent en début de soirée, indépendamment de l'heure de début souhaitée
 );
 
-// Affiche les programmes TV en HTML (0 = complet, 1 = compact)
+// Génère et affiche les programmes TV en HTML (0 = affichage complet, 1 = affichage compact)
 afficherProgrammeTV($programmes, '0');
 ?>
 
