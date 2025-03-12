@@ -23,20 +23,32 @@ return $joursFrancais[$jour->format('w')];}}
 ?>
 
 <?php
-function tv($source, $startTime, $minDuration, $dayOffset, $maxProgrammes){
+function tv($source, $startTime, $minDuration, $dayOffset, $maxProgrammes,$encours, $primetime){
 $programmes=[];
-try{
-if(!file_exists($source)){return $programmes;}
+try{if(!file_exists($source)){return $programmes;}
 $xml=new SimpleXMLElement(file_get_contents($source));
 $baseDate=(new DateTime())->modify("+$dayOffset days");
 $startTime=$baseDate->setTime((int)substr($startTime,0,2),(int)substr($startTime,2,2));
 $maxEndDate=(clone $baseDate)->modify('+5 days')->setTime(23,59);
 foreach($xml->programme as $programme){
-try{
-$debut=new DateTime((string)$programme['start']);
+try{$debut=new DateTime((string)$programme['start']);
 $fin=new DateTime((string)$programme['stop']);
-if($debut>=$startTime&&$fin<=$maxEndDate){
-$duree=$debut->diff($fin)->i+($debut->diff($fin)->h*60);
+$finprimetv = (int)(new DateTime((string)$programme['stop']))->format('Hi');
+if ($encours === '1') {$currentDateTime=new DateTime();
+if($debut<=$currentDateTime&&$fin>$currentDateTime){$startTime=$debut;}}
+$currentDay = $baseDate->format('Y-m-d');
+$debutDay = (new DateTime((string)$programme['start']))->format('Y-m-d');
+if(($primetime==='1'&&(int)$debut->format('Hi')>=1145&&$debutDay===$currentDay&&$finprimetv>2115)||
+($primetime==='1'&&(int)$debut->format('Hi')>=1245&&$debutDay===$currentDay&&$finprimetv>2115)||
+($primetime==='1'&&(int)$debut->format('Hi')>=1345&&$debutDay===$currentDay&&$finprimetv>2115)||
+($primetime==='1'&&(int)$debut->format('Hi')>=1445&&$debutDay===$currentDay&&$finprimetv>2115)||
+($primetime==='1'&&(int)$debut->format('Hi')>=1545&&$debutDay===$currentDay&&$finprimetv>2115)||
+($primetime==='1'&&(int)$debut->format('Hi')>=1645&&$debutDay===$currentDay&&$finprimetv>2115)||
+($primetime==='1'&&(int)$debut->format('Hi')>=1745&&$debutDay===$currentDay&&$finprimetv>2115)||
+($primetime==='1'&&(int)$debut->format('Hi')>=1845&&$debutDay===$currentDay&&$finprimetv>2115)||
+($primetime==='1'&&(int)$debut->format('Hi')>=1945&&$debutDay===$currentDay&&$finprimetv>2115)||
+($debut>=$startTime&&$fin<=$maxEndDate))
+{$duree=$debut->diff($fin)->i+($debut->diff($fin)->h*60);
 if($duree>=$minDuration){
 $channelId=(string)$programme['channel'];
 $titre=(string)$programme->title;
