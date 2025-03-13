@@ -43,7 +43,6 @@ $uniqueItems[] = array_shift($fallbackItems);}
 return $uniqueItems;
 };
 
-
 function categorizeNews($items)
 {$today=new DateTime();
 $todayStart=$today->setTime(0,0);
@@ -101,7 +100,6 @@ $texte3 = '<div class="ay">&#128197;&nbsp;Aujourd’hui</div><div class="ay">&#1
 $texte4 = '<div class="ay">&#128197;&nbsp;Aujourd’hui : pas de news</div><div class="ay">&#128197;&nbsp;Jours précédents</div>';
 $texte5 = '<div class="ay">&#128197;&nbsp;Jours précédents</div><!-- FIN NEWS -->';
 $texte6 = '<div class="bu">&#128240;&nbsp;C’est tout pour aujourd’hui !</div><!-- FIN NEWS -->';
-
 ?>
 
 <div class="site">
