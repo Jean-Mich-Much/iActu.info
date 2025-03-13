@@ -35,7 +35,7 @@ if(!file_exists($nom_page.'.html')||filemtime($nom_page.'.html')<(time()-$cache)
 // Récupère les programmes TV à partir d'un fichier XMLTV
 $programmes = tv(
     "Structure/cache/tv/xmltv_" . date('j') . ".xml", // Chemin vers le fichier XMLTV
-    '2045', // Heure de début souhaitée (format HHMM, ici 20h45)
+    '2049', // Heure de début souhaitée (format HHMM, ici 20h45)
     '19',   // Durée minimale des programmes en minutes
     '0',    // Décalage en jours (0 = aujourd'hui, 1 = demain, etc.)
     '2',    // Nombre maximum de programmes par chaîne
