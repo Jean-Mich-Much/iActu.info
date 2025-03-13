@@ -38,15 +38,15 @@ if ($encours === '1') {$currentDateTime=new DateTime();
 if($debut<=$currentDateTime&&$fin>$currentDateTime){$startTime=$debut;}}
 $currentDay = $baseDate->format('Y-m-d');
 $debutDay = (new DateTime((string)$programme['start']))->format('Y-m-d');
-if(($primetime==='1'&&(int)$debut->format('Hi')>=1145&&$debutDay===$currentDay&&$finprimetv>2115)||
-($primetime==='1'&&(int)$debut->format('Hi')>=1245&&$debutDay===$currentDay&&$finprimetv>2115)||
-($primetime==='1'&&(int)$debut->format('Hi')>=1345&&$debutDay===$currentDay&&$finprimetv>2115)||
-($primetime==='1'&&(int)$debut->format('Hi')>=1445&&$debutDay===$currentDay&&$finprimetv>2115)||
-($primetime==='1'&&(int)$debut->format('Hi')>=1545&&$debutDay===$currentDay&&$finprimetv>2115)||
-($primetime==='1'&&(int)$debut->format('Hi')>=1645&&$debutDay===$currentDay&&$finprimetv>2115)||
-($primetime==='1'&&(int)$debut->format('Hi')>=1745&&$debutDay===$currentDay&&$finprimetv>2115)||
-($primetime==='1'&&(int)$debut->format('Hi')>=1845&&$debutDay===$currentDay&&$finprimetv>2115)||
-($primetime==='1'&&(int)$debut->format('Hi')>=1945&&$debutDay===$currentDay&&$finprimetv>2115)||
+if(($primetime==='1'&&(int)$debut->format('Hi')>=1149&&$debutDay===$currentDay&&$finprimetv>2129)||
+($primetime==='1'&&(int)$debut->format('Hi')>=1249&&$debutDay===$currentDay&&$finprimetv>2129)||
+($primetime==='1'&&(int)$debut->format('Hi')>=1349&&$debutDay===$currentDay&&$finprimetv>2129)||
+($primetime==='1'&&(int)$debut->format('Hi')>=1449&&$debutDay===$currentDay&&$finprimetv>2129)||
+($primetime==='1'&&(int)$debut->format('Hi')>=1549&&$debutDay===$currentDay&&$finprimetv>2129)||
+($primetime==='1'&&(int)$debut->format('Hi')>=1649&&$debutDay===$currentDay&&$finprimetv>2129)||
+($primetime==='1'&&(int)$debut->format('Hi')>=1749&&$debutDay===$currentDay&&$finprimetv>2129)||
+($primetime==='1'&&(int)$debut->format('Hi')>=1849&&$debutDay===$currentDay&&$finprimetv>2129)||
+($primetime==='1'&&(int)$debut->format('Hi')>=1949&&$debutDay===$currentDay&&$finprimetv>2129)||
 ($debut>=$startTime&&$fin<=$maxEndDate))
 {$duree=$debut->diff($fin)->i+($debut->diff($fin)->h*60);
 if($duree>=$minDuration){
