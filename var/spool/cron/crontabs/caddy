@@ -2,58 +2,36 @@
 # (/tmp/crontab.3g0fs3/crontab installed on Wed Mar  5 17:37:34 2025)
 # (Cron version -- $Id: crontab.c,v 2.13 1994/01/17 03:20:37 vixie Exp $)
 
-14,24,34,44,54 * * * * truncate -s 0 /_/recherche/data/users/Gon1Kirua/FreshRSS.log && truncate -s 0 /_/recherche/data/users/Gon1Kirua/log.txt && truncate -s 0 /_/recherche/data/users/_/log_pshb.txt && truncate -s 0 /_/recherche/data/users/_/log_api.txt && truncate -s 0 /_/recherche/data/users/_/log.txt
+# Crontab pour l'utilisateur caddy
 
-# technologie.php
-02,08,17,18,31,36,43,52 * * * * /usr/bin/php-cgi8.3 /_/tec.php > /dev/null 2>&1
+# Nettoyage des fichiers logs à la 19ème minute de chaque heure
+19 * * * * truncate -s 0 /_/recherche/data/users/Gon1Kirua/FreshRSS.log && truncate -s 0 /_/recherche/data/users/Gon1Kirua/log.txt && truncate -s 0 /_/recherche/data/users/_/log_pshb.txt && truncate -s 0 /_/recherche/data/users/_/log_api.txt && truncate -s 0 /_/recherche/data/users/_/log.txt
 
-# apple.php
-05,12,21,26,33,38,47,54 * * * * /usr/bin/php-cgi8.3 /_/app.php > /dev/null 2>&1
+# Mise à jour des pages
+02,12,22,32,42 * * * * /usr/bin/php-cgi8.3 /_/tec.php > /dev/null 2>&1
+03,13,23,33,43 * * * * /usr/bin/php-cgi8.3 /_/app.php > /dev/null 2>&1
+04,14,24,34,44 * * * * /usr/bin/php-cgi8.3 /_/jeu.php > /dev/null 2>&1
+05,15,25,35,45 * * * * /usr/bin/php-cgi8.3 /_/sci.php > /dev/null 2>&1
+06,16,26,36,46 * * * * /usr/bin/php-cgi8.3 /_/act.php > /dev/null 2>&1
 
-# jeux.php
-06,15,19,25,34,41,48,55 * * * * /usr/bin/php-cgi8.3 /_/jeu.php > /dev/null 2>&1
+# Mise à jour des pages pour le thème 2
+07,17,27,37,47 * * * * /usr/bin/php-cgi8.3 /_/theme_02_tec.php > /dev/null 2>&1
+08,18,28,38,48 * * * * /usr/bin/php-cgi8.3 /_/theme_02_app.php > /dev/null 2>&1
+09,19,29,39,49 * * * * /usr/bin/php-cgi8.3 /_/theme_02_jeu.php > /dev/null 2>&1
+11,21,31,41,51 * * * * /usr/bin/php-cgi8.3 /_/theme_02_sci.php > /dev/null 2>&1
+12,22,32,42,52 * * * * /usr/bin/php-cgi8.3 /_/theme_02_act.php > /dev/null 2>&1
 
-# sciences.php
-07,14,28,29,35,42,49,53 * * * * /usr/bin/php-cgi8.3 /_/sci.php > /dev/null 2>&1
+# Téléchargement et traitement des fichiers XMLTV (programme tv) toutes les 6 heures
+2 */6 * * * wget -O "/_/Structure/cache/tv/xmltv_tnt_source.xml" "https://xmltvfr.fr/xmltv/xmltv_tnt.xml" -q --no-check-certificate
+3 */6 * * * cp /_/Structure/cache/tv/xmltv_tnt_source.xml /_/Structure/cache/tv/xmltv_cp.xml
+4 */6 * * * /usr/bin/php-cgi8.3 /_/xmltv.php > /dev/null 2>&1
 
-# actualites.php
-09,22,23,32,37,44,51,58 * * * * /usr/bin/php-cgi8.3 /_/act.php > /dev/null 2>&1
+# Tâches TV exécutées chaque heure
+16 * * * * /usr/bin/php-cgi8.3 /_/tv_cron.php > /dev/null 2>&1
+17 * * * * /usr/bin/php-cgi8.3 /_/tv_demain_cron.php > /dev/null 2>&1
+18 * * * * /usr/bin/php-cgi8.3 /_/tv_prog_cron.php > /dev/null 2>&1
 
-# tv_cron.php
-7 * * * * /usr/bin/php-cgi8.3 /_/tv_cron.php > /dev/null 2>&1
-
-# tv_demain_cron.php
-6 * * * * /usr/bin/php-cgi8.3 /_/tv_demain_cron.php > /dev/null 2>&1
-
-# tv_prog_cron.php
-* * * * * /usr/bin/php-cgi8.3 /_/tv_prog_cron.php > /dev/null 2>&1
-
-# theme_02_technologie.php
-02,08,17,18,31,36,43,52 * * * * /usr/bin/php-cgi8.3 /_/theme_02_tec.php > /dev/null 2>&1
-
-# theme_02_apple.php
-05,12,21,26,33,38,47,54 * * * * /usr/bin/php-cgi8.3 /_/theme_02_app.php > /dev/null 2>&1
-
-# theme_02_jeux.php
-06,15,19,25,34,41,48,55 * * * * /usr/bin/php-cgi8.3 /_/theme_02_jeu.php > /dev/null 2>&1
-
-# theme_02_sciences.php
-07,14,28,29,35,42,49,53 * * * * /usr/bin/php-cgi8.3 /_/theme_02_sci.php > /dev/null 2>&1
-
-# theme_02_actualites.php
-09,22,23,32,37,44,51,58 * * * * /usr/bin/php-cgi8.3 /_/theme_02_act.php > /dev/null 2>&1
-
-# theme_02_tv_cron.php
-9 * * * * /usr/bin/php-cgi8.3 /_/theme_02_tv_cron.php > /dev/null 2>&1
-
-# theme_02_tv_demain_cron.php
-5 * * * * /usr/bin/php-cgi8.3 /_/theme_02_tv_demain_cron.php > /dev/null 2>&1
-
-# theme_02_tv_prog.php
-* * * * * /usr/bin/php-cgi8.3 /_/theme_02_tv_prog_cron.php > /dev/null 2>&1
-
-4 */6 * * * wget -O "/_/Structure/cache/tv/xmltv_tnt_source.xml" "https://xmltvfr.fr/xmltv/xmltv_tnt.xml" -q --no-check-certificate
-
-16 */6 * * * cp /_/Structure/cache/tv/xmltv_tnt_source.xml /_/Structure/cache/tv/xmltv_cp.xml
-
-18 */6 * * * /usr/bin/php-cgi8.3 /_/xmltv.php > /dev/null 2>&1
+# Tâches TV (theme_02) exécutées chaque heure
+6 * * * * /usr/bin/php-cgi8.3 /_/theme_02_tv_cron.php > /dev/null 2>&1
+7 * * * * /usr/bin/php-cgi8.3 /_/theme_02_tv_demain_cron.php > /dev/null 2>&1
+8 * * * * /usr/bin/php-cgi8.3 /_/theme_02_tv_prog_cron.php > /dev/null 2>&1
