@@ -8,18 +8,18 @@
 19 * * * * truncate -s 0 /_/recherche/data/users/Gon1Kirua/FreshRSS.log && truncate -s 0 /_/recherche/data/users/Gon1Kirua/log.txt && truncate -s 0 /_/recherche/data/users/_/log_pshb.txt && truncate -s 0 /_/recherche/data/users/_/log_api.txt && truncate -s 0 /_/recherche/data/users/_/log.txt
 
 # Mise à jour des pages
-02,12,22,32,42 * * * * /usr/bin/php-cgi8.3 /_/tec.php > /dev/null 2>&1
-03,13,23,33,43 * * * * /usr/bin/php-cgi8.3 /_/app.php > /dev/null 2>&1
-04,14,24,34,44 * * * * /usr/bin/php-cgi8.3 /_/jeu.php > /dev/null 2>&1
-05,15,25,35,45 * * * * /usr/bin/php-cgi8.3 /_/sci.php > /dev/null 2>&1
-06,16,26,36,46 * * * * /usr/bin/php-cgi8.3 /_/act.php > /dev/null 2>&1
+02,12,22,32,42,52 * * * * /usr/bin/php-cgi8.3 /_/tec.php > /dev/null 2>&1
+03,13,23,33,43,53 * * * * /usr/bin/php-cgi8.3 /_/app.php > /dev/null 2>&1
+04,14,24,34,44,54 * * * * /usr/bin/php-cgi8.3 /_/jeu.php > /dev/null 2>&1
+03,13,23,33,43,53 * * * * /usr/bin/php-cgi8.3 /_/sci.php > /dev/null 2>&1
+04,14,24,34,44,54 * * * * /usr/bin/php-cgi8.3 /_/act.php > /dev/null 2>&1
 
 # Mise à jour des pages pour le thème 2
-07,17,27,37,47 * * * * /usr/bin/php-cgi8.3 /_/theme_02_tec.php > /dev/null 2>&1
-08,18,28,38,48 * * * * /usr/bin/php-cgi8.3 /_/theme_02_app.php > /dev/null 2>&1
-09,19,29,39,49 * * * * /usr/bin/php-cgi8.3 /_/theme_02_jeu.php > /dev/null 2>&1
-11,21,31,41,51 * * * * /usr/bin/php-cgi8.3 /_/theme_02_sci.php > /dev/null 2>&1
-12,22,32,42,52 * * * * /usr/bin/php-cgi8.3 /_/theme_02_act.php > /dev/null 2>&1
+01,11,21,31,41,51 * * * * /usr/bin/php-cgi8.3 /_/theme_02_tec.php > /dev/null 2>&1
+02,12,22,32,42,52 * * * * /usr/bin/php-cgi8.3 /_/theme_02_app.php > /dev/null 2>&1
+03,13,23,33,43,53 * * * * /usr/bin/php-cgi8.3 /_/theme_02_jeu.php > /dev/null 2>&1
+04,14,24,34,44,54 * * * * /usr/bin/php-cgi8.3 /_/theme_02_sci.php > /dev/null 2>&1
+02,12,22,32,42,52 * * * * /usr/bin/php-cgi8.3 /_/theme_02_act.php > /dev/null 2>&1
 
 # Téléchargement et traitement des fichiers XMLTV (programme tv) toutes les 6 heures
 2 */6 * * * wget -O "/_/Structure/cache/tv/xmltv_tnt_source.xml" "https://xmltvfr.fr/xmltv/xmltv_tnt.xml" -q --no-check-certificate
