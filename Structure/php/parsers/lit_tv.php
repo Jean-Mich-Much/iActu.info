@@ -72,53 +72,6 @@ return $programmes;}
 ?>
 
 <?php
-function imgscache($url, $titre, $usedFiles=[]) {
-$cacheDir = "Structure/cache/tv/img1/";
-$fallbackDir = "Structure/cache/tv/img2/";
-$cookieFile = 'cookies.txt';
-if (!file_exists($cookieFile)) {file_put_contents($cookieFile, '');}
-$originalFilename = basename(parse_url($url, PHP_URL_PATH));
-$filteredFilename = preg_replace('/[^a-z0-9]/', '', strtolower(strtr($originalFilename, [
-'á' => 'a', 'é' => 'e', 'í' => 'i', 'ó' => 'o', 'ú' => 'u', 
-'à' => 'a', 'è' => 'e', 'ì' => 'i', 'ò' => 'o', 'ù' => 'u',
-'ä' => 'a', 'ë' => 'e', 'ï' => 'i', 'ö' => 'o', 'ü' => 'u',
-'â' => 'a', 'ê' => 'e', 'î' => 'i', 'ô' => 'o', 'û' => 'u',
-'ç' => 'c', 'ñ' => 'n'
-])));
-$cacheFile = $cacheDir . $filteredFilename . ".webp";
-if (file_exists($cacheFile)) {
-$fileSize = filesize($cacheFile);
-if ($fileSize > 64 && $fileSize <= 1048576) {return $cacheFile;}}
-$wgetCommand = escapeshellcmd(
-"wget -q --timeout=5 --no-check-certificate --max-redirect=5 " .
-"--header='Accept: image/*' " .
-"--referer=" . escapeshellarg($url) . " " .
-"--load-cookies=" . escapeshellarg($cookieFile) . " " .
-"--save-cookies=" . escapeshellarg($cookieFile) . " " .
-"-O " . escapeshellarg($cacheFile) . " " . escapeshellarg($url));
-@exec($wgetCommand);
-usleep(25);
-if (file_exists($cacheFile)) {
-$fileSize = filesize($cacheFile);
-if ($fileSize > 64 && $fileSize <= 1048576) {return $cacheFile;}}
-usleep(50);
-@exec($wgetCommand);
-if (file_exists($cacheFile)) {
-$fileSize = filesize($cacheFile);
-if ($fileSize > 64 && $fileSize <= 1048576) {return $cacheFile;}}
-$fallbackFile = $fallbackDir . rand(0, 9) . ".webp";
-if (file_exists($fallbackFile)) {@copy($fallbackFile, $cacheFile);}
-cleanCache($cacheDir, $usedFiles, 90);
-return $cacheFile;}
-function cleanCache($cacheDir, $usedFiles, $daysOld) {
-$files = glob($cacheDir . "*.webp");
-$expirationTime = time() - ($daysOld * 24 * 60 * 60);
-foreach ($files as $file) {
-if (in_array($file, $usedFiles)) {continue;}
-if (filemtime($file) < $expirationTime) {@unlink($file);}}}
-?>
-
-<?php
 function afficherProgrammeTVComplet($programmes){
 foreach($programmes as $chaine=>$programmesChaine){
  echo '<div class="tvcontainer"><div class="f20px">📺&nbsp;'.htmlspecialchars(
@@ -138,7 +91,7 @@ $jourInfo=($jourLabel!=="Aujourd'hui")?" (".strtolower($jourLabel).")":"";
 $description=wordLimit(htmlspecialchars($programme['description']),400);
 echo '<div class="tvprogramme">
 <div class="tvgrid">
-<img class="tvimage" src="'.imgscache($programme['image'], $programme['titre']).'" alt="'.$programme['titre'].'">
+<img class="tvimage" src="'.htmlspecialchars($programme['image']).'" alt="'.htmlspecialchars($programme['titre']).'">
 <span class="tvdescription">
 <span class="tvdescplus">
 <div class="tvprogtitre">
