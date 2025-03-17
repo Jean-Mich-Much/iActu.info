@@ -72,75 +72,26 @@ return $programmes;}
 ?>
 
 <?php
-function downloadImages(array $imageUrls){
-$cacheDir='Structure/cache/tv/img1/';$fallbackImage='Structure/cache/tv/img2/tv.webp';$batchSize=8;$delayBetweenBatches=250;
-function getLocalImagePath($url,$cacheDir,$fallbackImage){
-$parsedUrl=parse_url($url);$pathInfo=pathinfo($parsedUrl['path']);
-$fileNameBase=preg_replace('/[^a-zA-Z0-9]/','',$parsedUrl['host'].$pathInfo['filename']);
-$originalExtension=isset($pathInfo['extension'])?'.'.preg_replace('/[^a-zA-Z0-9]/','',$pathInfo['extension']):'';
-$localImagePathOriginal=$cacheDir.$fileNameBase.$originalExtension;
-$localImagePathWebp=$cacheDir.$fileNameBase.'.webp';
-if(file_exists($localImagePathOriginal)&&filesize($localImagePathOriginal)>=512&&filesize($localImagePathOriginal)<=512*1024){
-return $localImagePathOriginal;}
-if(file_exists($localImagePathWebp)&&filesize($localImagePathWebp)>=512&&filesize($localImagePathWebp)<=512*1024){
-return $localImagePathWebp;}return null;}
-foreach(glob($cacheDir.'*')as$file){if(filemtime($file)<strtotime('-3 months')){@unlink($file);}}
-$batches=array_chunk($imageUrls,$batchSize);foreach($batches as$batch){$processes=[];
-foreach($batch as$url){try{$localPath=getLocalImagePath($url,$cacheDir,$fallbackImage);if($localPath!==null){continue;}
-$parsedUrl=parse_url($url);$pathInfo=pathinfo($parsedUrl['path']);
-$fileNameBase=preg_replace('/[^a-zA-Z0-9]/','',$parsedUrl['host'].$pathInfo['filename']);
-$extension=isset($pathInfo['extension'])?'.'.preg_replace('/[^a-zA-Z0-9]/','',$pathInfo['extension']):'.webp';
-$localImagePath=$cacheDir.$fileNameBase.$extension;
-$command="wget --no-check-certificate --timeout=1 --tries=1 --quiet -O ".escapeshellarg($localImagePath)." ".escapeshellarg($url);
-$processes[]=$command;}catch(Exception $e){continue;}}
-foreach($processes as$process){exec($process." > /dev/null 2>&1 &");}usleep($delayBetweenBatches);}}
-?>
-
-<?php
-function saveimg($url){
-$cacheDir='Structure/cache/tv/img1/';$fallbackImage='Structure/cache/tv/img2/tv.webp';
-try{$parsedUrl=parse_url($url);$pathInfo=pathinfo($parsedUrl['path']);
-$fileNameBase=preg_replace('/[^a-zA-Z0-9]/','',$parsedUrl['host'].$pathInfo['filename']);
-$originalExtension=isset($pathInfo['extension'])?'.'.preg_replace('/[^a-zA-Z0-9]/','',$pathInfo['extension']):'';
-$localImagePathOriginal=$cacheDir.$fileNameBase.$originalExtension;
-$localImagePathWebp=$cacheDir.$fileNameBase.'.webp';}catch(Exception $e){
-return $fallbackImage;}
-try{if(file_exists($localImagePathOriginal)&&filesize($localImagePathOriginal)>=512&&filesize($localImagePathOriginal)<=512*1024){
-return $localImagePathOriginal;}
-if(file_exists($localImagePathWebp)&&filesize($localImagePathWebp)>=512&&filesize($localImagePathWebp)<=512*1024){
-return $localImagePathWebp;}}catch(Exception $e){
-return $fallbackImage;}
-try{foreach(glob($cacheDir.'*')as$file){
-if(filemtime($file)<strtotime('-3 months')){@unlink($file);}}}catch(Exception $e){}
-try{$command="wget --no-check-certificate --timeout=1 --tries=1 --quiet -O ".escapeshellarg($localImagePathOriginal)." ".escapeshellarg($url);
-exec($command);}catch(Exception $e){@unlink($localImagePathOriginal);
-copy($fallbackImage,$localImagePathWebp);return $localImagePathWebp;}
-try{if(!file_exists($localImagePathOriginal)||filesize($localImagePathOriginal)<512||filesize($localImagePathOriginal)>512*1024){
-@unlink($localImagePathOriginal);copy($fallbackImage,$localImagePathWebp);return $localImagePathWebp;}}catch(Exception $e){
-copy($fallbackImage,$localImagePathWebp);return $localImagePathWebp;}return $localImagePathOriginal;}
-?>
-
-<?php
 function afficherProgrammeTVComplet($programmes){
-$imageUrls=[];foreach($programmes as$chaine=>$programmesChaine){foreach($programmesChaine as$programme){
-if(isset($programme['image'])){$imageUrls[]=$programme['image'];}}}downloadImages($imageUrls);
-foreach($programmes as$chaine=>$programmesChaine){
-echo '<div class="tvcontainer"><div class="f20px">📺&nbsp;'.htmlspecialchars(str_replace(
-['.fr','NT1','LEquipe21','Numero23','RMCDecouverte','Cherie25','ParisPremiere','CanalPlusSport','CanalPlusCinema',
-'PlanetePlus','CanalPlus','France2','France3','France5','France4','LaChaineParlementaire','BFMTV','TF1SeriesFilms',
-'FranceInfo'],['','TFX','La chaine l’Équipe','RMC STORY','RMC Découverte','Chérie 25','Paris Première','Canal+ Sport',
-'Canal+ Cinéma','Planete+','Canal+','France 2','France 3','France 5','France 4','LCP','BFM TV','TF1 Séries-Films',
-'France Info'],$chaine)).'</div>';
-foreach($programmesChaine as$programme){
+foreach($programmes as $chaine=>$programmesChaine){
+ echo '<div class="tvcontainer"><div class="f20px">📺&nbsp;'.htmlspecialchars(
+  str_replace(
+      ['.fr', 'NT1', 'LEquipe21', 'Numero23', 'RMCDecouverte', 'Cherie25', 'ParisPremiere', 'CanalPlusSport', 'CanalPlusCinema', 'PlanetePlus', 'CanalPlus', 'France2', 'France3', 'France5', 'France4', 'LaChaineParlementaire', 'BFMTV', 'TF1SeriesFilms', 'FranceInfo'],
+      ['', 'TFX', 'La chaine l’Équipe', 'RMC STORY', 'RMC Découverte', 'Chérie 25', 'Paris Première', 'Canal+ Sport', 'Canal+ Cinéma', 'Planete+', 'Canal+', 'France 2', 'France 3', 'France 5', 'France 4', 'LCP', 'BFM TV', 'TF1 Séries-Films', 'France Info'],
+      $chaine
+  )
+).'</div>';
+foreach($programmesChaine as $programme){
 if(!isset($programme['debut'])||!isset($programme['titre'])){continue;}
 $debut=new DateTime($programme['debut']);
-$heureDebut=$debut->format('H:i');$jourLabel=dateLabel($programme['debut']);
+$heureDebut=$debut->format('H:i');
+$jourLabel=dateLabel($programme['debut']);
 $titre=wordLimit(htmlspecialchars($programme['titre']),120);
 $jourInfo=($jourLabel!=="Aujourd'hui")?" (".strtolower($jourLabel).")":"";
 $description=wordLimit(htmlspecialchars($programme['description']),400);
 echo '<div class="tvprogramme">
 <div class="tvgrid">
-<img class="tvimage" src="'.saveimg($programme['image']).'" alt="'.$programme['titre'].'">
+<img class="tvimage" src="'.htmlspecialchars($programme['image']).'" alt="'.htmlspecialchars($programme['titre']).'">
 <span class="tvdescription">
 <span class="tvdescplus">
 <div class="tvprogtitre">
@@ -169,6 +120,7 @@ echo '<div class="tvcontainer"><div class="tvchainetitre">📺&nbsp;'.htmlspecia
       $chaine
   )
 ).'</div>';
+
 foreach($programmesChaine as $programme){
 if(!isset($programme['debut'])||!isset($programme['titre'])){continue;}
 $debut=new DateTime($programme['debut']);
