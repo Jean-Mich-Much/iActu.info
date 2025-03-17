@@ -11,7 +11,7 @@ $nbrclassn='115';
 $nbrchr='70000';
 ?>
 
-<?php if (!file_exists($nom_page . '.html') or filemtime($nom_page . '.html') < (time() - $cache_secondes) or !file_exists($nom_page . date("j") . '.html')) { ?>
+<?php if (!file_exists($nom_page . '.html') or filemtime($nom_page . '.html') < (time() - $cache_secondes) or !file_exists($nom_page . date("j") . '.html') or filemtime($nom_page . date("j") . '.html') < (time() - $cache_secondes)) { ?>
 
 <?php ob_start(); ?>
 

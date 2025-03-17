@@ -1,11 +1,11 @@
 <?php
-$titre_page='Tv';
-$nom_page='tv';
+$titre_page='Test';
+$nom_page='test';
 $nom_page_theme_alternatif='theme_02_tv.php';
 $page_active='tv';
 $page_tv_active= 'cesoir';
 $titre_page_active='&#129302;&nbsp;Tv';
-$cache=3645;
+$cache=5;
 $theme='01';
 
 if(!file_exists($nom_page.'.html')||filemtime($nom_page.'.html')<(time()-$cache)||!file_exists($nom_page.date("j").'.html')||filemtime($nom_page.date("j").'.html')<(time()-$cache)){ob_start();?>
@@ -30,14 +30,14 @@ if(!file_exists($nom_page.'.html')||filemtime($nom_page.'.html')<(time()-$cache)
    <div class="mid">
     
    <?php
-@include "Structure/php/parsers/lit_tv.php";
+@include "Structure/php/parsers/test.php";
 
 // Récupère les programmes TV à partir d'un fichier XMLTV
 $programmes = tv(
     "Structure/cache/tv/xmltv_" . date('j') . ".xml", // Chemin vers le fichier XMLTV
     '2049', // Heure de début souhaitée (format HHMM, ici 20h45)
     '19',   // Durée minimale des programmes en minutes
-    '0',    // Décalage en jours (0 = aujourd'hui, 1 = demain, etc.)
+    '1',    // Décalage en jours (0 = aujourd'hui, 1 = demain, etc.)
     '2',    // Nombre maximum de programmes par chaîne
     '0',    // Mode en cours : 1 = commence au programme actuellement en cours de diffusion au lieu de l'heure de début souhaitée
     '1'     // Mode prime time : 1 = sélectionne les programmes en prime time qui se terminent en début de soirée, indépendamment de l'heure de début souhaitée

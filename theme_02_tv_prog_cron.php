@@ -9,7 +9,7 @@ $cache=45;
 $theme='01';
 $lien_menu_theme = 'menu_theme_02';
 
-if(!file_exists($nom_page.'.html')||filemtime($nom_page.'.html')<(time()-$cache)||!file_exists($nom_page.date("j").'.html')){ob_start();?>
+if(!file_exists($nom_page.'.html')||filemtime($nom_page.'.html')<(time()-$cache)||!file_exists($nom_page.date("j").'.html')||filemtime($nom_page.date("j").'.html')<(time()-$cache)){ob_start();?>
 
 <!DOCTYPE html>
 <html lang="fr">
