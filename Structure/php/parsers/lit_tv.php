@@ -1,3 +1,5 @@
+<?php ob_start();?>
+
 <?php
 function wordLimit($text, $maxChars) {
 if (mb_strlen($text) <= $maxChars) return $text;
@@ -142,3 +144,5 @@ if ($completOuCompact == 0) {afficherProgrammeTVComplet($programmes);
 } elseif ($completOuCompact == 1) {afficherProgrammeTVCompact($programmes);
 }};
 ?>
+
+<?php ob_end_flush();

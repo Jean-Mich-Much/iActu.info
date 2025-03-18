@@ -124,4 +124,4 @@ echo str_replace($texte3, $texte4, str_replace($texte5, $texte6, $fichierb));}
 ?>
 </div></div></div>
 <?php }; ?>
-<?php $output = ob_get_clean();
+<?php ob_end_flush();
