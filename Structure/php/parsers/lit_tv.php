@@ -18,6 +18,52 @@ return $joursFrancais[$jour->format('w')];}}
 ?>
 
 <?php
+function imageparcategorie($categories) {
+ $imagesCategories = [
+  'film' => 'Structure/cache/tv/images/film_*.webp',
+ 'serie' => 'Structure/cache/tv/images/serie_tv_film_*.webp',
+ 'série' => 'Structure/cache/tv/images/serie_tv_film_*.webp',
+ 'policier' => 'Structure/cache/tv/images/film_*.webp',
+ 'science-fiction' => 'Structure/cache/tv/images/film_*.webp',
+ 'drame' => 'Structure/cache/tv/images/film_*.webp',
+ 'comédie' => 'Structure/cache/tv/images/film_*.webp',
+ 'aventure' => 'Structure/cache/tv/images/film_*.webp',
+ 'action' => 'Structure/cache/tv/images/film_*.webp',
+ 'western' => 'Structure/cache/tv/images/film_*.webp',
+ 'sport' => 'Structure/cache/tv/images/sport_*.webp',
+ 'foot' => 'Structure/cache/tv/images/sport_*.webp',
+ 'tennis' => 'Structure/cache/tv/images/sport_*.webp',
+ 'rallye' => 'Structure/cache/tv/images/sport_*.webp',
+ 'quitation' => 'Structure/cache/tv/images/sport_*.webp',
+ 'basket' => 'Structure/cache/tv/images/sport_*.webp',
+ 'judo' => 'Structure/cache/tv/images/sport_*.webp',
+ 'handball' => 'Structure/cache/tv/images/sport_*.webp',
+ 'golf' => 'Structure/cache/tv/images/sport_*.webp',
+ 'natation' => 'Structure/cache/tv/images/sport_*.webp',
+ 'rugby' => 'Structure/cache/tv/images/sport_*.webp',
+ 'athlétisme' => 'Structure/cache/tv/images/sport_*.webp',
+ 'documentaire' => 'Structure/cache/tv/images/documentaire_*.webp',
+ 'doc ' => 'Structure/cache/tv/images/documentaire_*.webp',
+ 'journal' => 'Structure/cache/tv/images/journal_*.webp',
+ 'magazine' => 'Structure/cache/tv/images/journal_*.webp',
+ 'mag ' => 'Structure/cache/tv/images/journal_*.webp',
+ 'information' => 'Structure/cache/tv/images/journal_*.webp',
+ 'info ' => 'Structure/cache/tv/images/journal_*.webp',
+ 'infos' => 'Structure/cache/tv/images/journal_*.webp',
+ 'autre' => 'Structure/cache/tv/images/autre_*.webp'
+ ];
+ $categoriesNormalisees = array_map('mb_strtolower', $categories);
+ $priorites = ['film', 'série', 'serie', 'policier', 'science-fiction', 'drame', 'comédie', 'aventure', 'action', 'western', 'sport', 'documentaire', 'doc ', 'journal', 'magazine', 'mag ', 'information', 'info ', 'infos', 'foot', 'tennis', 'rallye', 'quitation', 'basket', 'judo', 'handball', 'golf', 'natation', 'rugby', 'athlétisme'];
+ foreach ($priorites as $motCle) {
+ foreach ($categoriesNormalisees as $categorie) {
+ if (strpos($categorie, $motCle) === 0 || preg_match("/\b$motCle\b/i", $categorie)) {
+ $images = glob($imagesCategories[$motCle]);
+ return $images[array_rand($images)]; }}}
+ $images = glob($imagesCategories['autre']);
+ return $images[array_rand($images)]; }
+?>
+
+<?php
 function tv($source, $startTime, $minDuration, $dayOffset, $maxProgrammes,$encours, $primetime){$programmes=[];try{if(!file_exists($source)){return $programmes;}
 $xml=new SimpleXMLElement(file_get_contents($source));$baseDate=(new DateTime())->modify("+$dayOffset days");
 $startTime=$baseDate->setTime((int)substr($startTime,0,2),(int)substr($startTime,2,2));$maxEndDate=(clone $baseDate)->modify('+5 days')->setTime(23,59);
@@ -50,12 +96,13 @@ echo '<div class="tvcontainer"><div class="f20px">📺&nbsp;'.htmlspecialchars(s
  ['.fr', 'NT1', 'LEquipe21', 'Numero23', 'RMCDecouverte', 'Cherie25', 'ParisPremiere', 'CanalPlusSport', 'CanalPlusCinema', 'PlanetePlus', 'CanalPlus', 'France2', 'France3', 'France5', 'France4', 'LaChaineParlementaire', 'BFMTV', 'TF1SeriesFilms', 'FranceInfo'],
 ['', 'TFX', 'La chaine l’Équipe', 'RMC STORY', 'RMC Découverte', 'Chérie 25', 'Paris Première', 'Canal+ Sport', 'Canal+ Cinéma', 'Planete+', 'Canal+', 'France 2', 'France 3', 'France 5', 'France 4', 'LCP', 'BFM TV', 'TF1 Séries-Films', 'France Info'],
 $chaine)).'</div>';foreach($programmesChaine as $programme){if(!isset($programme['debut'])||!isset($programme['titre'])){continue;}
+$programme['image'] = imageparcategorie(explode(', ', $programme['categories']));
 $debut=new DateTime($programme['debut']);$heureDebut=$debut->format('H:i');$jourLabel=dateLabel($programme['debut']);
 $titre=wordLimit(htmlspecialchars($programme['titre']),120);$jourInfo=($jourLabel!=="Aujourd'hui")?" (".strtolower($jourLabel).")":"";
 $description=wordLimit(htmlspecialchars($programme['description']),400);
 echo '<div class="tvprogramme">
 <div class="tvgrid">
-<img class="tvimage" src="'.htmlspecialchars($programme['image']).'" alt="'.htmlspecialchars($programme['titre']).'">
+<img loading="lazy" class="tvimage" src="'.htmlspecialchars($programme['image']).'" alt="'.htmlspecialchars($programme['titre']).'">
 <span class="tvdescription">
 <span class="tvdescplus">
 <div class="tvprogtitre">
