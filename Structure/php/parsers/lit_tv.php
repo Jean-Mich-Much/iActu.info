@@ -32,12 +32,29 @@ $imagesCategories = [
 'action' => glob('Structure/cache/tv/images/film_*.webp'),
 'western' => glob('Structure/cache/tv/images/film_*.webp'),
 'sport' => glob('Structure/cache/tv/images/sport_*.webp'),
+'foot' => glob('Structure/cache/tv/images/sport_*.webp'),
+'tennis' => glob('Structure/cache/tv/images/sport_*.webp'),
+'rallye' => glob('Structure/cache/tv/images/sport_*.webp'),
+'quitation' => glob('Structure/cache/tv/images/sport_*.webp'),
+'basket' => glob('Structure/cache/tv/images/sport_*.webp'),
+'judo' => glob('Structure/cache/tv/images/sport_*.webp'),
+'handball' => glob('Structure/cache/tv/images/sport_*.webp'),
+'golf' => glob('Structure/cache/tv/images/sport_*.webp'),
+'natation' => glob('Structure/cache/tv/images/sport_*.webp'),
+'rugby' => glob('Structure/cache/tv/images/sport_*.webp'),
+'athlétisme' => glob('Structure/cache/tv/images/sport_*.webp'),
 'documentaire' => glob('Structure/cache/tv/images/documentaire_*.webp'),
+'doc ' => glob('Structure/cache/tv/images/documentaire_*.webp'),
 'journal' => glob('Structure/cache/tv/images/journal_*.webp'),
+'magazine' => glob('Structure/cache/tv/images/journal_*.webp'),
+'mag ' => glob('Structure/cache/tv/images/journal_*.webp'),
+'information' => glob('Structure/cache/tv/images/journal_*.webp'),
+'info ' => glob('Structure/cache/tv/images/journal_*.webp'),
+'infos' => glob('Structure/cache/tv/images/journal_*.webp'),
 'autre' => glob('Structure/cache/tv/images/autre_*.webp')
 ];
 $categoriesNormalisees = array_map('mb_strtolower', $categories);
-$priorites = ['film', 'série', 'serie', 'policier', 'science-fiction', 'drame', 'comédie', 'aventure', 'action', 'western', 'sport', 'documentaire', 'journal', 'autre'];
+$priorites = ['film', 'série', 'serie', 'policier', 'science-fiction', 'drame', 'comédie', 'aventure', 'action', 'western', 'sport', 'documentaire', 'doc ', 'journal', 'magazine', 'mag ', 'information', 'info ', 'infos', 'foot', 'tennis', 'rallye', 'quitation', 'basket', 'judo', 'handball', 'golf', 'natation', 'rugby', 'athlétisme'];
 foreach ($priorites as $motCle) {
 foreach ($categoriesNormalisees as $categorie) {
 if (strpos($categorie, $motCle) === 0 || preg_match("/\b$motCle\b/i", $categorie)) {
