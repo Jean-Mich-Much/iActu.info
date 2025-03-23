@@ -16,7 +16,7 @@ if(!file_exists($nom_page.'.html')||filemtime($nom_page.'.html')<(time()-$cache)
 <?php @readfile ("Structure/css/fonts.css");
 @readfile ("Structure/css/base.css");
 @readfile ("Structure/css/". $theme . ".css");
-@readfile ("Structure/css/tv.css");
+@readfile ("Structure/css/tv_1.css");
 ?>
 </style>
 </head>
