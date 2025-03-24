@@ -18,62 +18,51 @@ return $joursFrancais[$jour->format('w')];}}
 ?>
 
 <?php
-function imageparcategorie($categories) {
-static $indices = [];
-$imagesCategories = [
-'film' => glob('Structure/cache/tv/images/film_*.webp'),
-'serie' => glob('Structure/cache/tv/images/serie_tv_film_*.webp'),
-'série' => glob('Structure/cache/tv/images/serie_tv_film_*.webp'),
-'policier' => glob('Structure/cache/tv/images/film_*.webp'),
-'science-fiction' => glob('Structure/cache/tv/images/film_*.webp'),
-'drame' => glob('Structure/cache/tv/images/film_*.webp'),
-'comédie' => glob('Structure/cache/tv/images/film_*.webp'),
-'aventure' => glob('Structure/cache/tv/images/film_*.webp'),
-'action' => glob('Structure/cache/tv/images/film_*.webp'),
-'western' => glob('Structure/cache/tv/images/film_*.webp'),
-'sport' => glob('Structure/cache/tv/images/sport_*.webp'),
-'foot' => glob('Structure/cache/tv/images/sport_*.webp'),
-'tennis' => glob('Structure/cache/tv/images/sport_*.webp'),
-'rallye' => glob('Structure/cache/tv/images/sport_*.webp'),
-'quitation' => glob('Structure/cache/tv/images/sport_*.webp'),
-'basket' => glob('Structure/cache/tv/images/sport_*.webp'),
-'judo' => glob('Structure/cache/tv/images/sport_*.webp'),
-'handball' => glob('Structure/cache/tv/images/sport_*.webp'),
-'golf' => glob('Structure/cache/tv/images/sport_*.webp'),
-'natation' => glob('Structure/cache/tv/images/sport_*.webp'),
-'rugby' => glob('Structure/cache/tv/images/sport_*.webp'),
-'athlétisme' => glob('Structure/cache/tv/images/sport_*.webp'),
-'documentaire' => glob('Structure/cache/tv/images/documentaire_*.webp'),
-'doc ' => glob('Structure/cache/tv/images/documentaire_*.webp'),
-'journal' => glob('Structure/cache/tv/images/journal_*.webp'),
-'magazine' => glob('Structure/cache/tv/images/journal_*.webp'),
-'mag ' => glob('Structure/cache/tv/images/journal_*.webp'),
-'information' => glob('Structure/cache/tv/images/journal_*.webp'),
-'info ' => glob('Structure/cache/tv/images/journal_*.webp'),
-'infos' => glob('Structure/cache/tv/images/journal_*.webp'),
-'autre' => glob('Structure/cache/tv/images/autre_*.webp')
-];
-$categoriesNormalisees = array_map('mb_strtolower', $categories);
-$priorites = ['film', 'série', 'serie', 'policier', 'science-fiction', 'drame', 'comédie', 'aventure', 'action', 'western', 'sport', 'documentaire', 'doc ', 'journal', 'magazine', 'mag ', 'information', 'info ', 'infos', 'foot', 'tennis', 'rallye', 'quitation', 'basket', 'judo', 'handball', 'golf', 'natation', 'rugby', 'athlétisme'];
-foreach ($priorites as $motCle) {
-foreach ($categoriesNormalisees as $categorie) {
-if (strpos($categorie, $motCle) === 0 || preg_match("/\b$motCle\b/i", $categorie)) {
-$images = $imagesCategories[$motCle];
-if (!empty($images)) {
-if (!isset($indices[$motCle])) {$indices[$motCle] = 0;}
-$image = $images[$indices[$motCle]];
-$indices[$motCle] = ($indices[$motCle] + 1) % min(5, count($images));
-return $image;}}}}
-if (!empty($imagesCategories['autre'])) {
-$images = $imagesCategories['autre'];
-if (!isset($indices['autre'])) {$indices['autre'] = 0;}
-$image = $images[$indices['autre']];
-$indices['autre'] = ($indices['autre'] + 1) % min(5, count($images));
+function imageparcategorie($categories){static $indices=[];$imagesCategories=[
+'film'=>glob('Structure/cache/tv/images/film_*.webp'),
+'serie'=>glob('Structure/cache/tv/images/serie_tv_film_*.webp'),
+'série'=>glob('Structure/cache/tv/images/serie_tv_film_*.webp'),
+'policier'=>glob('Structure/cache/tv/images/film_*.webp'),
+'science-fiction'=>glob('Structure/cache/tv/images/film_*.webp'),
+'drame'=>glob('Structure/cache/tv/images/film_*.webp'),
+'comédie'=>glob('Structure/cache/tv/images/film_*.webp'),
+'aventure'=>glob('Structure/cache/tv/images/film_*.webp'),
+'action'=>glob('Structure/cache/tv/images/film_*.webp'),
+'western'=>glob('Structure/cache/tv/images/film_*.webp'),
+'sport'=>glob('Structure/cache/tv/images/sport_*.webp'),
+'foot'=>glob('Structure/cache/tv/images/sport_*.webp'),
+'tennis'=>glob('Structure/cache/tv/images/sport_*.webp'),
+'rallye'=>glob('Structure/cache/tv/images/sport_*.webp'),
+'quitation'=>glob('Structure/cache/tv/images/sport_*.webp'),
+'basket'=>glob('Structure/cache/tv/images/sport_*.webp'),
+'judo'=>glob('Structure/cache/tv/images/sport_*.webp'),
+'handball'=>glob('Structure/cache/tv/images/sport_*.webp'),
+'golf'=>glob('Structure/cache/tv/images/sport_*.webp'),
+'natation'=>glob('Structure/cache/tv/images/sport_*.webp'),
+'rugby'=>glob('Structure/cache/tv/images/sport_*.webp'),
+'athlétisme'=>glob('Structure/cache/tv/images/sport_*.webp'),
+'documentaire'=>glob('Structure/cache/tv/images/documentaire_*.webp'),
+'doc '=>glob('Structure/cache/tv/images/documentaire_*.webp'),
+'journal'=>glob('Structure/cache/tv/images/journal_*.webp'),
+'magazine'=>glob('Structure/cache/tv/images/journal_*.webp'),
+'mag '=>glob('Structure/cache/tv/images/journal_*.webp'),
+'information'=>glob('Structure/cache/tv/images/journal_*.webp'),
+'info '=>glob('Structure/cache/tv/images/journal_*.webp'),
+'infos'=>glob('Structure/cache/tv/images/journal_*.webp'),
+'autre'=>glob('Structure/cache/tv/images/autre_*.webp')];
+$categoriesNormalisees=array_map('mb_strtolower',$categories);$priorites=['film','série','serie','policier','science-fiction','drame','comédie','aventure','action','western','sport','documentaire','doc ','journal','magazine','mag ','information','info ','infos','foot','tennis','rallye','quitation','basket','judo','handball','golf','natation','rugby','athlétisme'];
+foreach($priorites as $motCle){foreach($categoriesNormalisees as $categorie){
+if(strpos($categorie,$motCle)===0||preg_match("/\b$motCle\b/i",$categorie)){$images=$imagesCategories[$motCle]??[];
+if(!empty($images)){if(!isset($indices[$motCle])){$indices[$motCle]=0;}
+$image=$images[$indices[$motCle]];
+$indices[$motCle]=($indices[$motCle]+1)%count($images);
+return $image;}}}}$imagesAutres=$imagesCategories['autre']??[];
+if(!empty($imagesAutres)){if(!isset($indices['autre'])){$indices['autre']=0;}
+$image=$imagesAutres[$indices['autre']];
+$indices['autre']=($indices['autre']+1)%count($imagesAutres);
 return $image;}
-return null;}
+return 'Structure/cache/tv/images/autre_1.webp';}
 ?>
-
-
 
 <?php
 function tv($source, $startTime, $minDuration, $dayOffset, $maxProgrammes,$encours, $primetime){$programmes=[];try{if(!file_exists($source)){return $programmes;}
@@ -96,7 +85,7 @@ if(($primetime==='1'&&(int)$debut->format('Hi')>=1149&&$debutDay===$currentDay&&
 {$duree=$debut->diff($fin)->i+($debut->diff($fin)->h*60);if($duree>=$minDuration){$channelId=(string)$programme['channel'];
 $titre=(string)$programme->title;$description=(string)$programme->desc??'Aucune description disponible';
 $categories=[];foreach($programme->category as $category){$categories[]=(string)$category;}
-$image=isset($programme->icon['src'])?(string)$programme->icon['src']:'Structure/cache/tv/img2/tv.webp';
+$image=isset($programme->icon['src'])?(string)$programme->icon['src']:'Structure/cache/tv/images/autre_1.webp';
 if(!isset($programmes[$channelId])){$programmes[$channelId]=[];}
 if(count($programmes[$channelId])<$maxProgrammes){$programmes[$channelId][]=['debut'=>$debut->format('Y-m-d H:i:s'),'fin'=>$fin->format('Y-m-d H:i:s'),'titre'=>$titre,'duree'=>$duree,'categories'=>implode(', ',$categories),'description'=>$description,'image'=>$image];}}}}catch(Exception $e){continue;}}}catch(Exception $e){return $programmes;}
 return $programmes;}
