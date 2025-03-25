@@ -10,8 +10,27 @@
  outline: round(up, calc(4 / 1920 * 100vw), 2px) solid var(--c7);
  outline-offset: round(up, calc(-4 / 1920 * 100vw), 2px);
  border-radius: round(up, calc(12 / 1920 * 100vw), 6px);
- padding: round(up, calc(10 / 1920 * 100vw), 5px);
- margin-bottom: round(up, calc(6 / 1920 * 100vw), 3px);
+ padding-left: round(up, calc(8 / 1920 * 100vw),4px);
+ padding-right: round(up, calc(8 / 1920 * 100vw),4px);
+ padding-top: round(up, calc(8 / 1920 * 100vw),4px);
+ padding-bottom: round(up, calc(4 / 1920 * 100vw),2px);
+ margin-bottom: round(up, calc(4 / 1920 * 100vw), 2px);
+}
+
+.f20px {
+ justify-self: stretch;
+ flex-wrap: wrap;
+ display: flex;
+ padding-left: round(up, calc(12 / 1920 * 100vw),6px);
+ padding-right: round(up, calc(12 / 1920 * 100vw),6px);
+ padding-top: round(up, calc(4 / 1920 * 100vw),2px);
+ padding-bottom: round(up, calc(4 / 1920 * 100vw),2px);
+ color: var(--c10);
+ font-variation-settings: "wght" 600;
+ text-wrap: wrap;
+ white-space: normal;
+ overflow: hidden;
+ line-height: round(1.58rem, 1px);
 }
 
 .tvprogramme {
@@ -19,23 +38,19 @@
  justify-self: stretch;
  display: flex;
  flex-direction: column;
- padding: round(up, calc(4 / 1920 * 100vw), 2px);
- margin: round(up, calc(4 / 1920 * 100vw), 2px)
-  round(up, calc(6 / 1920 * 100vw), 3px) round(up, calc(10 / 1920 * 100vw), 5px)
-  round(up, calc(6 / 1920 * 100vw), 3px);
- border-bottom: round(up, calc(2 / 1920 * 100vw), 2px) solid var(--c7);
+ padding-left: 0;
+ padding-right: 0;
+ padding-top: round(up, calc(4 / 1920 * 100vw),2px);
+ padding-bottom: round(up, calc(4 / 1920 * 100vw),2px);
+ margin: round(up, calc(2 / 1920 * 100vw), 1px);
+ border-top: round(up, calc(1 / 1920 * 100vw), 1px) solid var(--c7);
 }
 
 .tvgrid {
  align-self: stretch;
  justify-self: stretch;
  display: grid;
- grid:
-  auto-flow dense / minmax(
-   round(up, calc(90 / 1920 * 100vw), 45px),
-   round(up, calc(180 / 1920 * 100vw), 90px)
-  )
-  1fr;
+ grid: auto-flow dense / 1fr;
  grid-template-rows: 1fr;
  gap: 0px 0px;
  grid-template-areas: ". .";
@@ -43,48 +58,9 @@
  align-items: stretch;
  justify-content: start;
  justify-items: stretch;
- margin: 0 0 round(up, calc(6 / 1920 * 100vw), 3px) 0;
  max-width: fit-content;
  overflow: hidden;
  width: inherit;
-}
-
-.tvprogtitre {
- justify-self: stretch;
- flex-wrap: wrap;
- margin-bottom: round(up, calc(2 / 1920 * 100vw), 2px);
- margin-top: round(up, calc(6 / 1920 * 100vw), 3px);
- max-width: fit-content;
- text-align: start;
- text-wrap: wrap;
- white-space: normal;
-}
-
-.tvproginfos {
- justify-self: stretch;
- flex-wrap: wrap;
- margin-bottom: round(up, calc(2 / 1920 * 100vw), 2px);
- margin-top: round(up, calc(2 / 1920 * 100vw), 2px);
- max-width: fit-content;
- text-align: start;
- text-wrap: wrap;
- white-space: normal;
-}
-
-.tvimage {
- align-self: start;
- justify-self: start;
- display: inline-flex;
- outline: round(up, calc(2 / 1920 * 100vw), 2px) solid var(--c6);
- outline-offset: round(up, calc(-2 / 1920 * 100vw), 1px);
- border-radius: round(up, calc(6 / 1920 * 100vw), 3px);
- margin: round(up, calc(4 / 1920 * 100vw), 2px) 0 0 0;
- min-width: round(up, calc(180 / 1920 * 100vw), 90px);
- min-height: round(up, calc(90 / 1920 * 100vw), 45px);
- max-height: round(up, calc(180 / 1920 * 100vw), 90px);
- height: max-content;
- max-width: fit-content;
- width: 100%;
 }
 
 .tvdescription {
@@ -93,25 +69,42 @@
  display: inline-grid;
  grid-auto-flow: row dense;
  flex-wrap: wrap;
- padding-left: round(up, calc(12 / 1920 * 100vw), 6px);
- padding-right: round(up, calc(8 / 1920 * 100vw), 4px);
- padding-bottom: round(up, calc(4 / 1920 * 100vw), 2px);
- padding-top: round(up, calc(2 / 1920 * 100vw), 2px);
  max-width: fit-content;
  text-align: start;
  text-wrap: wrap;
  white-space: normal;
 }
 
-.tvdescplus {
+.tvprogtitreplus {
  align-self: stretch;
  flex-wrap: wrap;
- margin-bottom: round(up, calc(2 / 1920 * 100vw), 2px);
- max-height: round(up, calc(120 / 1920 * 100vw), 60px);
  text-align: start;
  text-wrap: wrap;
  white-space: normal;
  overflow: hidden;
+ line-height: round(1.56rem, 1px);
+ padding-left: round(up, calc(12 / 1920 * 100vw),6px);
+ padding-right: round(up, calc(12 / 1920 * 100vw),6px);
+ padding-top: 0;
+ padding-bottom: 0;
+ padding-top: 0;
+ padding-bottom: 0;
+ padding-top: 0;
+ padding-bottom: 0;
+}
+
+.tvprogtitre {
+ justify-self: stretch;
+ flex-wrap: wrap;
+ max-width: fit-content;
+ text-align: start;
+ text-wrap: wrap;
+ white-space: normal;
+ line-height: round(1.56rem, 1px);
+ padding-left: 0;
+ padding-right: 0;
+ padding-top: round(up, calc(4 / 1920 * 100vw),2px);
+ padding-bottom: 0;
 }
 
 .f18px {
@@ -123,29 +116,44 @@
  text-wrap: wrap;
  white-space: normal;
  overflow: hidden;
+ line-height: round(1.56rem, 1px);
 }
 
-.f20px {
- justify-self: stretch;
+.tvproginfosplus {
+ align-self: stretch;
  flex-wrap: wrap;
- display: flex;
- border-bottom: round(up, calc(2 / 1920 * 100vw), 2px) solid var(--c7);
- padding: round(up, calc(10 / 1920 * 100vw), 5px);
- color: var(--c10);
- font-variation-settings: "wght" 600;
+ text-align: start;
  text-wrap: wrap;
  white-space: normal;
  overflow: hidden;
+ line-height: round(1.54rem, 1px);
+ padding-left: round(up, calc(12 / 1920 * 100vw),6px);
+ padding-right: round(up, calc(12 / 1920 * 100vw),6px);
+ padding-top: 0;
+ padding-bottom: 0;
 }
 
-@media (max-width: 959px) {
- .tvgrid {
-  display: grid;
-  grid: auto-flow dense / 1fr;
-  grid-template-rows: 1fr;
- }
+.tvproginfos {
+ justify-self: stretch;
+ flex-wrap: wrap;
+ max-width: fit-content;
+ text-align: start;
+ text-wrap: wrap;
+ white-space: normal;
+ line-height: round(1.54rem, 1px);
+}
 
- .tvimage {
-  display: none;
- }
+.tvdescplus {
+ align-self: stretch;
+ flex-wrap: wrap;
+ margin-bottom: round(up, calc(4 / 1920 * 100vw), 2px);
+ text-align: start;
+ text-wrap: wrap;
+ white-space: normal;
+ overflow: hidden;
+ line-height: round(1.52rem, 1px);
+ padding-left: round(up, calc(12 / 1920 * 100vw),6px);
+ padding-right: round(up, calc(12 / 1920 * 100vw),6px);
+ padding-top: 0;
+ padding-bottom: 0;
 }

@@ -20,13 +20,14 @@
  font-variation-settings: "wght" 600;
  text-wrap: wrap;
  white-space: normal;
+ line-height: round(1.4rem, 1px);
 }
 
 .tvcontainerprog {
  display: flex;
  flex-direction: column;
  flex-basis: 100%;
- padding: round(up, calc(4 / 1920 * 100vw), 2px);
+ padding: round(up, calc(2 / 1920 * 100vw), 1px);
  border-bottom: round(up, calc(2 / 1920 * 100vw), 2px) solid var(--c7);
  text-wrap: wrap;
  white-space: normal;
@@ -40,12 +41,14 @@
  gap: 0px 0px;
  grid-template-areas: "tvheure tvtitre tvdesc";
  flex-basis: 100%;
+ padding: round(up, calc(2 / 1920 * 100vw), 1px);
  align-items: start;
  align-content: start;
  justify-content: start;
  justify-items: start;
  text-wrap: wrap;
  white-space: normal;
+ line-height: round(1.35rem, 1px);
 }
 
 .tvheure {
@@ -61,6 +64,7 @@
  padding-left: round(up, calc(4 / 1920 * 100vw), 2px);
  text-wrap: wrap;
  white-space: normal;
+ line-height: round(1.35rem, 1px);
 }
 
 .tvtitre {
@@ -77,8 +81,5 @@
  padding-right: round(up, calc(4 / 1920 * 100vw), 2px);
  text-wrap: wrap;
  white-space: normal;
-}
-
-.tvdescencours {
- color: var(--c3);
+ line-height: round(1.35rem, 1px);
 }
