@@ -39,8 +39,8 @@
  flex-direction: column;
  padding-left: 0;
  padding-right: 0;
- padding-top: round(up, calc(4 / 1920 * 100vw), 2px);
- padding-bottom: round(up, calc(4 / 1920 * 100vw), 2px);
+ padding-top: round(up, calc(6 / 1920 * 100vw), 3px);
+ padding-bottom: round(up, calc(6 / 1920 * 100vw), 3px);
  margin: round(up, calc(2 / 1920 * 100vw), 1px);
  border-top: round(up, calc(1 / 1920 * 100vw), 1px) solid var(--c7);
 }
@@ -132,8 +132,8 @@
  justify-self: stretch;
  flex-wrap: wrap;
  max-width: fit-content;
- padding-top: round(up, calc(4 / 1920 * 100vw), 2px);
- padding-bottom: round(up, calc(4 / 1920 * 100vw), 2px);
+ padding-top: round(up, calc(2 / 1920 * 100vw), 1px);
+ padding-bottom: round(up, calc(3/ 1920 * 100vw), 1px);
  text-align: start;
  text-wrap: wrap;
  white-space: normal;
@@ -154,7 +154,7 @@
 }
 
 .f20px {
- line-height: round(1.82rem, 1px);
+ line-height: round(1.98rem, 1px);
 }
 
 .f18px,
