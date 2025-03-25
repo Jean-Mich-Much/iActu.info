@@ -1,4 +1,4 @@
-<?php $affiche_message_top = false;?>
+<?php $affiche_message_top = true;?>
 
 <?php if ($affiche_message_top) {; ?>
 
