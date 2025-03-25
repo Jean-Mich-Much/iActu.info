@@ -10,10 +10,10 @@
  outline: round(up, calc(4 / 1920 * 100vw), 2px) solid var(--c7);
  outline-offset: round(up, calc(-4 / 1920 * 100vw), 2px);
  border-radius: round(up, calc(12 / 1920 * 100vw), 6px);
- padding-left: round(up, calc(8 / 1920 * 100vw),4px);
- padding-right: round(up, calc(8 / 1920 * 100vw),4px);
- padding-top: round(up, calc(8 / 1920 * 100vw),4px);
- padding-bottom: round(up, calc(4 / 1920 * 100vw),2px);
+ padding-left: round(up, calc(8 / 1920 * 100vw), 4px);
+ padding-right: round(up, calc(8 / 1920 * 100vw), 4px);
+ padding-top: round(up, calc(8 / 1920 * 100vw), 4px);
+ padding-bottom: round(up, calc(4 / 1920 * 100vw), 2px);
  margin-bottom: round(up, calc(4 / 1920 * 100vw), 2px);
 }
 
@@ -21,16 +21,15 @@
  justify-self: stretch;
  flex-wrap: wrap;
  display: flex;
- padding-left: round(up, calc(12 / 1920 * 100vw),6px);
- padding-right: round(up, calc(12 / 1920 * 100vw),6px);
- padding-top: round(up, calc(4 / 1920 * 100vw),2px);
- padding-bottom: round(up, calc(4 / 1920 * 100vw),2px);
+ padding-left: round(up, calc(12 / 1920 * 100vw), 6px);
+ padding-right: round(up, calc(12 / 1920 * 100vw), 6px);
+ padding-top: round(up, calc(4 / 1920 * 100vw), 2px);
+ padding-bottom: round(up, calc(4 / 1920 * 100vw), 2px);
  color: var(--c10);
  font-variation-settings: "wght" 600;
  text-wrap: wrap;
  white-space: normal;
  overflow: hidden;
- line-height: round(1.58rem, 1px);
 }
 
 .tvprogramme {
@@ -40,8 +39,8 @@
  flex-direction: column;
  padding-left: 0;
  padding-right: 0;
- padding-top: round(up, calc(4 / 1920 * 100vw),2px);
- padding-bottom: round(up, calc(4 / 1920 * 100vw),2px);
+ padding-top: round(up, calc(4 / 1920 * 100vw), 2px);
+ padding-bottom: round(up, calc(4 / 1920 * 100vw), 2px);
  margin: round(up, calc(2 / 1920 * 100vw), 1px);
  border-top: round(up, calc(1 / 1920 * 100vw), 1px) solid var(--c7);
 }
@@ -82,9 +81,8 @@
  text-wrap: wrap;
  white-space: normal;
  overflow: hidden;
- line-height: round(1.56rem, 1px);
- padding-left: round(up, calc(12 / 1920 * 100vw),6px);
- padding-right: round(up, calc(12 / 1920 * 100vw),6px);
+ padding-left: round(up, calc(12 / 1920 * 100vw), 6px);
+ padding-right: round(up, calc(12 / 1920 * 100vw), 6px);
  padding-top: 0;
  padding-bottom: 0;
  padding-top: 0;
@@ -100,10 +98,9 @@
  text-align: start;
  text-wrap: wrap;
  white-space: normal;
- line-height: round(1.56rem, 1px);
  padding-left: 0;
  padding-right: 0;
- padding-top: round(up, calc(4 / 1920 * 100vw),2px);
+ padding-top: round(up, calc(4 / 1920 * 100vw), 2px);
  padding-bottom: 0;
 }
 
@@ -116,7 +113,6 @@
  text-wrap: wrap;
  white-space: normal;
  overflow: hidden;
- line-height: round(1.56rem, 1px);
 }
 
 .tvproginfosplus {
@@ -126,9 +122,8 @@
  text-wrap: wrap;
  white-space: normal;
  overflow: hidden;
- line-height: round(1.54rem, 1px);
- padding-left: round(up, calc(12 / 1920 * 100vw),6px);
- padding-right: round(up, calc(12 / 1920 * 100vw),6px);
+ padding-left: round(up, calc(12 / 1920 * 100vw), 6px);
+ padding-right: round(up, calc(12 / 1920 * 100vw), 6px);
  padding-top: 0;
  padding-bottom: 0;
 }
@@ -137,10 +132,11 @@
  justify-self: stretch;
  flex-wrap: wrap;
  max-width: fit-content;
+ padding-top: round(up, calc(4 / 1920 * 100vw), 2px);
+ padding-bottom: round(up, calc(4 / 1920 * 100vw), 2px);
  text-align: start;
  text-wrap: wrap;
  white-space: normal;
- line-height: round(1.54rem, 1px);
 }
 
 .tvdescplus {
@@ -151,9 +147,18 @@
  text-wrap: wrap;
  white-space: normal;
  overflow: hidden;
- line-height: round(1.52rem, 1px);
- padding-left: round(up, calc(12 / 1920 * 100vw),6px);
- padding-right: round(up, calc(12 / 1920 * 100vw),6px);
+ padding-left: round(up, calc(12 / 1920 * 100vw), 6px);
+ padding-right: round(up, calc(12 / 1920 * 100vw), 6px);
  padding-top: 0;
  padding-bottom: 0;
+}
+
+.f20px {
+ line-height: round(1.82rem, 1px);
+}
+
+.f18px,
+.tvproginfos,
+.tvdescplus {
+ line-height: round(1.48rem, 1px);
 }
