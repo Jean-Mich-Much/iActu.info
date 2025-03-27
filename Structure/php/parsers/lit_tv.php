@@ -18,6 +18,33 @@ return $joursFrancais[$jour->format('w')];}}
 ?>
 
 <?php
+function nomImgEnCache($imageUrl){
+$parts=pathinfo($imageUrl);
+$nom=isset($parts['filename'])?$parts['filename']:'';
+$ext=isset($parts['extension'])?$parts['extension']:'';
+$nomNettoye=preg_replace('/[\s\-_]/', '', $nom);
+$nomConverti='';
+foreach(str_split(strtolower($nomNettoye))as$char){
+if(ctype_alpha($char)){$nomConverti.=ord($char)-ord('a')+1;}
+elseif(ctype_digit($char)){$nomConverti.=$char;}
+else{$nomConverti.='';}}
+$nomConverti=substr($nomConverti,-16);
+$nomConverti=str_pad($nomConverti,16,'0',STR_PAD_LEFT);
+return$nomConverti.($ext?'.'.$ext:'');}
+?>
+
+<?php
+function nomImgPlanB($imageUrl,$dossierImages,$dossierImagesPlanB){
+static $currentFallback=1;
+$cachePath=$dossierImages.'/'.nomImgEnCache($imageUrl);
+if(file_exists($cachePath)){return$cachePath;}
+$fallbackImage=$dossierImagesPlanB."/autre_".$currentFallback.".webp";
+if(!file_exists($fallbackImage)){$currentFallback=1;$fallbackImage=$dossierImagesPlanB."/autre_1.webp";}
+$currentFallback=$currentFallback<15?$currentFallback+1:1;
+return$fallbackImage;}
+?>
+
+<?php
 function tv($source, $startTime, $minDuration, $dayOffset, $maxProgrammes,$encours, $primetime){$programmes=[];try{if(!file_exists($source)){return $programmes;}
 $xml=new SimpleXMLElement(file_get_contents($source));$baseDate=(new DateTime())->modify("+$dayOffset days");
 $startTime=$baseDate->setTime((int)substr($startTime,0,2),(int)substr($startTime,2,2));$maxEndDate=(clone $baseDate)->modify('+5 days')->setTime(23,59);
@@ -38,8 +65,9 @@ if(($primetime==='1'&&(int)$debut->format('Hi')>=1149&&$debutDay===$currentDay&&
 {$duree=$debut->diff($fin)->i+($debut->diff($fin)->h*60);if($duree>=$minDuration){$channelId=(string)$programme['channel'];
 $titre=(string)$programme->title;$description=(string)$programme->desc??'Aucune description disponible';
 $categories=[];foreach($programme->category as $category){$categories[]=(string)$category;}
+$image=isset($programme->icon['src'])?(string)$programme->icon['src']:'Structure/cache/tv/images/autre_1.webp';
 if(!isset($programmes[$channelId])){$programmes[$channelId]=[];}
-if(count($programmes[$channelId])<$maxProgrammes){$programmes[$channelId][]=['debut'=>$debut->format('Y-m-d H:i:s'),'fin'=>$fin->format('Y-m-d H:i:s'),'titre'=>$titre,'duree'=>$duree,'categories'=>implode(', ',$categories),'description'=>$description];}}}}catch(Exception $e){continue;}}}catch(Exception $e){return $programmes;}
+if(count($programmes[$channelId])<$maxProgrammes){$programmes[$channelId][]=['debut'=>$debut->format('Y-m-d H:i:s'),'fin'=>$fin->format('Y-m-d H:i:s'),'titre'=>$titre,'duree'=>$duree,'categories'=>implode(', ',$categories),'description'=>$description,'image'=>$image];}}}}catch(Exception $e){continue;}}}catch(Exception $e){return $programmes;}
 return $programmes;}
 ?>
 
@@ -52,8 +80,11 @@ $chaine)).'</div>';foreach($programmesChaine as $programme){if(!isset($programme
 $debut=new DateTime($programme['debut']);$heureDebut=$debut->format('H:i');$jourLabel=dateLabel($programme['debut']);
 $titre=wordLimit(htmlspecialchars($programme['titre']),108);$jourInfo=($jourLabel!=="Aujourd'hui")?" (".strtolower($jourLabel).")":"";
 $description=wordLimit(htmlspecialchars($programme['description']),216);
+$dossierImages='Structure/cache/tv/images/cache';
+$dossierImagesPlanB='Structure/cache/tv/images';
 echo '<div class="tvprogramme">
 <div class="tvgrid">
+<img class="tvimage" src="'.nomImgPlanB($programme['image'],$dossierImages,$dossierImagesPlanB).'" alt="'.htmlspecialchars($programme['titre']).'">
 <span class="tvdescription">
 <span class="tvprogtitreplus">
 <div class="tvprogtitre">
