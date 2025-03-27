@@ -26,6 +26,9 @@
 3 */6 * * * cp /_/Structure/cache/tv/xmltv_tnt_source.xml /_/Structure/cache/tv/xmltv_cp.xml
 4 */6 * * * /usr/bin/php-cgi8.3 /_/xmltv.php > /dev/null 2>&1
 
+# Tâches TV exécutées chaque heure (cache des images)
+5 * * * * python3 /_/copy_images_xmltv.py
+
 # Tâches TV exécutées chaque heure
 16 * * * * /usr/bin/php-cgi8.3 /_/tv_cron.php > /dev/null 2>&1
 17 * * * * /usr/bin/php-cgi8.3 /_/tv_demain_cron.php > /dev/null 2>&1
