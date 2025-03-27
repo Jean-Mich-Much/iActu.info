@@ -79,7 +79,7 @@ echo '<div class="tvcontainer"><div class="f20px">📺&nbsp;'.htmlspecialchars(s
 $chaine)).'</div>';foreach($programmesChaine as $programme){if(!isset($programme['debut'])||!isset($programme['titre'])){continue;}
 $debut=new DateTime($programme['debut']);$heureDebut=$debut->format('H:i');$jourLabel=dateLabel($programme['debut']);
 $titre=wordLimit(htmlspecialchars($programme['titre']),108);$jourInfo=($jourLabel!=="Aujourd'hui")?" (".strtolower($jourLabel).")":"";
-$description=wordLimit(htmlspecialchars($programme['description']),216);
+$description=wordLimit(htmlspecialchars($programme['description']),324);
 $dossierImages='Structure/cache/tv/images/cache';
 $dossierImagesPlanB='Structure/cache/tv/images';
 echo '<div class="tvprogramme">
