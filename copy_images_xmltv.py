@@ -12,8 +12,8 @@ today_xml_file = f"/_/Structure/cache/tv/xmltv_{datetime.now().day}.xml"
 backup_xml_file = "/_/Structure/cache/tv/xmltv_tnt_source.xml"
 output_dir = "/_/Structure/cache/tv/images/cache/"
 valid_formats = {"png", "jpg", "jpeg", "bmp", "avif", "webp"}
-max_file_size = 512 * 1024  # Taille maximale de 512 Ko
-min_file_size = 512         # Taille minimale de 512 octets
+max_file_size = 1024 * 1024  # Taille maximale de 1024 Ko
+min_file_size = 4096         # Taille minimale de 4096 octets
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:112.0) Gecko/20100101 Firefox/112.0",
            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
            "Accept-Encoding": "gzip, deflate",
@@ -22,8 +22,8 @@ problematic_servers = set()
 
 # Initialiser le resolver DNS avec un timeout
 dns_resolver = dns.resolver.Resolver()
-dns_resolver.timeout = 2  # Limite de temps par requête DNS
-dns_resolver.lifetime = 2  # Limite de temps totale pour chaque résolution
+dns_resolver.timeout = 5  # Limite de temps par requête DNS
+dns_resolver.lifetime = 5  # Limite de temps totale pour chaque résolution
 
 def is_long_duration_program(start, stop):
     start_time = datetime.strptime(start, "%Y%m%d%H%M%S %z")
@@ -91,14 +91,14 @@ def download_and_validate_image(link):
         tmp_path = final_path + "_tmp"
 
         # Vérifier la taille avec Content-Length
-        head_response = requests.head(link, headers=headers, timeout=10)
+        head_response = requests.head(link, headers=headers, timeout=8)
         if "Content-Length" in head_response.headers:
             file_size = int(head_response.headers["Content-Length"])
             if file_size < min_file_size or file_size > max_file_size:
                 return  # Ignorer les fichiers trop petits ou trop grands
 
         # Télécharger et vérifier localement
-        response = requests.get(link, headers=headers, stream=True, timeout=10)
+        response = requests.get(link, headers=headers, stream=True, timeout=8)
         if response.status_code == 200:
             with open(tmp_path, "wb") as tmp_file:
                 for chunk in response.iter_content(8 * 1024):
