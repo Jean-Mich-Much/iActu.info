@@ -49,7 +49,12 @@
  align-self: stretch;
  justify-self: stretch;
  display: grid;
- grid: auto-flow dense / 1fr;
+ grid:
+  auto-flow dense / minmax(
+   round(up, calc(256 / 1920 * 100vw), 128px),
+   round(up, calc(128 / 1920 * 100vw), 64px)
+  )
+  1fr;
  grid-template-rows: 1fr;
  gap: 0px 0px;
  grid-template-areas: ". .";
@@ -60,6 +65,23 @@
  max-width: fit-content;
  overflow: hidden;
  width: inherit;
+}
+
+.tvimage {
+ align-self: start;
+ justify-self: start;
+ display: inline-flex;
+ outline: round(up, calc(2 / 1920 * 100vw), 2px) solid var(--c6);
+ outline-offset: round(up, calc(-2 / 1920 * 100vw), 1px);
+ border-radius: round(up, calc(6 / 1920 * 100vw), 3px);
+ margin: round(up, calc(4 / 1920 * 100vw), 2px) 0 0 0;
+ min-width: round(up, calc(128 / 1920 * 100vw), 64px);
+ min-height: round(up, calc(72 / 1920 * 100vw), 36px);
+ max-height: round(up, calc(144 / 1920 * 100vw), 72px);
+ aspect-ratio: 16 / 9;
+ height: auto;
+ max-width: fit-content;
+ width: 100%;
 }
 
 .tvdescription {
@@ -133,7 +155,7 @@
  flex-wrap: wrap;
  max-width: fit-content;
  padding-top: round(up, calc(2 / 1920 * 100vw), 1px);
- padding-bottom: round(up, calc(3/ 1920 * 100vw), 1px);
+ padding-bottom: round(up, calc(3 / 1920 * 100vw), 1px);
  text-align: start;
  text-wrap: wrap;
  white-space: normal;
@@ -161,4 +183,16 @@
 .tvproginfos,
 .tvdescplus {
  line-height: round(1.48rem, 1px);
+}
+
+@media (max-width: 959px) {
+ .tvgrid {
+  display: grid;
+  grid: auto-flow dense / 1fr;
+  grid-template-rows: 1fr;
+ }
+
+ .tvimage {
+  display: none;
+ }
 }
