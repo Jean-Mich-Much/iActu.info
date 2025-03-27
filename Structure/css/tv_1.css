@@ -80,7 +80,7 @@
  max-height: round(up, calc(144 / 1920 * 100vw), 72px);
  aspect-ratio: 16 / 9;
  height: auto;
- max-width: fit-content;
+ max-width: 100%;
  width: 100%;
 }
 
@@ -90,6 +90,7 @@
  display: inline-grid;
  grid-auto-flow: row dense;
  flex-wrap: wrap;
+ max-height: round(up, calc(120 / 1920 * 100vw), 60px);
  max-width: fit-content;
  text-align: start;
  text-wrap: wrap;
@@ -180,9 +181,12 @@
 }
 
 .f18px,
-.tvproginfos,
-.tvdescplus {
+.tvproginfos {
  line-height: round(1.48rem, 1px);
+}
+
+.tvdescplus {
+ line-height: round(1.38rem, 1px);
 }
 
 @media (max-width: 959px) {
@@ -194,5 +198,9 @@
 
  .tvimage {
   display: none;
+ }
+
+ .tvdescription {
+  max-height: none;
  }
 }
