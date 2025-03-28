@@ -36,7 +36,7 @@ def is_long_duration_program(start, stop):
     stop_time = datetime.strptime(stop, "%Y%m%d%H%M%S %z")
     duration_minutes = (stop_time - start_time).total_seconds() / 60
 
-    # Critère : durée minimale de 19 minutes
+    # Critère : autoriser la récupération d'images que pour les programmes tv qui ont une durée minimale de 19 minutes
     return duration_minutes >= 19
 
 def sanitize_filename_with_extension(filepath):
