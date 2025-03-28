@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 from concurrent.futures import ThreadPoolExecutor
 from PIL import Image
 import dns.resolver  # Import du resolver dnspython
+from functools import lru_cache  # Import pour le cache DNS
 
 # Chemins
 today_xml_file = f"/_/Structure/cache/tv/xmltv_{datetime.now().day}.xml"
@@ -24,6 +25,11 @@ problematic_servers = set()
 dns_resolver = dns.resolver.Resolver()
 dns_resolver.timeout = 5  # Limite de temps par requête DNS
 dns_resolver.lifetime = 5  # Limite de temps totale pour chaque résolution
+
+# Cache DNS
+@lru_cache(maxsize=512)  # Cache jusqu'à 512 hôtes résolus
+def resolve_dns_with_cache(hostname):
+    return resolve_dns(hostname)
 
 def is_long_duration_program(start, stop):
     start_time = datetime.strptime(start, "%Y%m%d%H%M%S %z")
@@ -58,14 +64,23 @@ def validate_image(file_path):
 
 def resolve_dns(hostname):
     try:
-        # Résolution des adresses IPv4 et IPv6
-        answers = dns_resolver.resolve(hostname, "A")  # IPv4
-        ipv4_addresses = [answer.address for answer in answers]
+        # Étape 1 : Résolution des adresses IPv4
+        ipv4_addresses = []
         try:
-            answers = dns_resolver.resolve(hostname, "AAAA")  # IPv6
-            ipv6_addresses = [answer.address for answer in answers]
+            answers_ipv4 = dns_resolver.resolve(hostname, "A")
+            ipv4_addresses = [answer.address for answer in answers_ipv4]
         except dns.resolver.NoAnswer:
-            ipv6_addresses = []
+            pass
+
+        # Étape 2 : Résolution des adresses IPv6
+        ipv6_addresses = []
+        try:
+            answers_ipv6 = dns_resolver.resolve(hostname, "AAAA")
+            ipv6_addresses = [answer.address for answer in answers_ipv6]
+        except dns.resolver.NoAnswer:
+            pass
+
+        # Combiner IPv4 et IPv6 et retourner le résultat
         return ipv4_addresses + ipv6_addresses
     except (dns.resolver.NoAnswer, dns.resolver.NXDOMAIN, dns.exception.Timeout):
         problematic_servers.add(hostname)
@@ -76,7 +91,9 @@ def download_and_validate_image(link):
         hostname = link.split("/")[2]
         if hostname in problematic_servers:
             return
-        resolved_addresses = resolve_dns(hostname)
+
+        # Résolution DNS avec cache
+        resolved_addresses = resolve_dns_with_cache(hostname)
         if not resolved_addresses:
             return
 
