@@ -71,10 +71,12 @@
  align-self: start;
  justify-self: start;
  display: inline-flex;
- outline: round(up, calc(2 / 1920 * 100vw), 2px) solid var(--c6);
- outline-offset: round(up, calc(-2 / 1920 * 100vw), 1px);
+ outline: round(up, calc(1 / 1920 * 100vw), 1px) solid rgba(18, 18, 26, 0.8);
+ outline-offset: round(up, calc(-1 / 1920 * 100vw), 1px);
  border-radius: round(up, calc(6 / 1920 * 100vw), 3px);
- margin: round(up, calc(4 / 1920 * 100vw), 2px) 0 0 0;
+ margin: round(up, calc(4 / 1920 * 100vw), 2px)
+  round(up, calc(2 / 1920 * 100vw), 1px) round(up, calc(2 / 1920 * 100vw), 1px)
+  round(up, calc(2 / 1920 * 100vw), 1px);
  min-width: round(up, calc(128 / 1920 * 100vw), 64px);
  min-height: round(up, calc(72 / 1920 * 100vw), 36px);
  max-height: round(up, calc(144 / 1920 * 100vw), 72px);
@@ -82,6 +84,9 @@
  height: auto;
  max-width: 100%;
  width: 100%;
+ box-shadow: round(up, calc(1 / 1920 * 100vw), 1px)
+  round(up, calc(2 / 1920 * 100vw), 1px) round(up, calc(6 / 1920 * 100vw), 3px)
+  round(up, calc(1 / 1920 * 100vw), 1px) rgba(0, 0, 0, 0.4);
 }
 
 .tvdescription {
@@ -105,7 +110,7 @@
  white-space: normal;
  overflow: hidden;
  padding-left: round(up, calc(12 / 1920 * 100vw), 6px);
- padding-right: round(up, calc(12 / 1920 * 100vw), 6px);
+ padding-right: round(up, calc(8 / 1920 * 100vw), 4px);
  padding-top: 0;
  padding-bottom: 0;
  padding-top: 0;
@@ -123,7 +128,7 @@
  white-space: normal;
  padding-left: 0;
  padding-right: 0;
- padding-top: round(up, calc(4 / 1920 * 100vw), 2px);
+ padding-top: round(up, calc(6 / 1920 * 100vw), 3px);
  padding-bottom: 0;
 }
 
@@ -146,7 +151,7 @@
  white-space: normal;
  overflow: hidden;
  padding-left: round(up, calc(12 / 1920 * 100vw), 6px);
- padding-right: round(up, calc(12 / 1920 * 100vw), 6px);
+ padding-right: round(up, calc(8 / 1920 * 100vw), 4px);
  padding-top: 0;
  padding-bottom: 0;
 }
@@ -171,7 +176,7 @@
  white-space: normal;
  overflow: hidden;
  padding-left: round(up, calc(12 / 1920 * 100vw), 6px);
- padding-right: round(up, calc(12 / 1920 * 100vw), 6px);
+ padding-right: round(up, calc(8 / 1920 * 100vw), 4px);
  padding-top: 0;
  padding-bottom: 0;
 }
