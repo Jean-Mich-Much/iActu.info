@@ -109,7 +109,7 @@
  text-wrap: wrap;
  white-space: normal;
  overflow: hidden;
- padding-left: round(up, calc(12 / 1920 * 100vw), 6px);
+ padding-left: round(up, calc(14 / 1920 * 100vw), 7px);
  padding-right: round(up, calc(8 / 1920 * 100vw), 4px);
  padding-top: 0;
  padding-bottom: 0;
@@ -150,7 +150,7 @@
  text-wrap: wrap;
  white-space: normal;
  overflow: hidden;
- padding-left: round(up, calc(12 / 1920 * 100vw), 6px);
+ padding-left: round(up, calc(14 / 1920 * 100vw), 7px);
  padding-right: round(up, calc(8 / 1920 * 100vw), 4px);
  padding-top: 0;
  padding-bottom: 0;
@@ -175,7 +175,7 @@
  text-wrap: wrap;
  white-space: normal;
  overflow: hidden;
- padding-left: round(up, calc(12 / 1920 * 100vw), 6px);
+ padding-left: round(up, calc(14 / 1920 * 100vw), 7px);
  padding-right: round(up, calc(8 / 1920 * 100vw), 4px);
  padding-top: 0;
  padding-bottom: 0;
