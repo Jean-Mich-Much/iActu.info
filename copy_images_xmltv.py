@@ -12,10 +12,10 @@ from functools import lru_cache  # Import pour le cache DNS
 today_xml_file = f"/_/Structure/cache/tv/xmltv_{datetime.now().day}.xml"
 backup_xml_file = "/_/Structure/cache/tv/xmltv_tnt_source.xml"
 output_dir = "/_/Structure/cache/tv/images/cache/"
-valid_formats = {"png", "jpg", "jpeg", "bmp", "avif", "webp"}
-max_file_size = 1024 * 1024  # Taille maximale de 1024 Ko
-min_file_size = 4096         # Taille minimale de 4096 octets
-headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:112.0) Gecko/20100101 Firefox/112.0",
+valid_formats = {"png", "jpg", "jpeg", "bmp", "avif", "webp","heif","svg","gif"}
+max_file_size = 1024 * 2048  # Taille maximale de 2048 Ko
+min_file_size = 2048         # Taille minimale de 2048 octets
+headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Firefox/136.0",
            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
            "Accept-Encoding": "gzip, deflate",
            "Connection": "keep-alive"}
@@ -36,7 +36,7 @@ def is_long_duration_program(start, stop):
     stop_time = datetime.strptime(stop, "%Y%m%d%H%M%S %z")
     duration_minutes = (stop_time - start_time).total_seconds() / 60
 
-    # Critère : autoriser la récupération d'images que pour les programmes tv qui ont une durée minimale de 19 minutes
+    # Critère : durée minimale de 19 minutes
     return duration_minutes >= 19
 
 def sanitize_filename_with_extension(filepath):
