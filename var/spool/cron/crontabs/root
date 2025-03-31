@@ -6,7 +6,7 @@
 # Crontab pour l'utilisateur root
 
 # Sauvegarde hebdomadaire (chaque samedi à 19:56)
-56 19 * * 6 tar -Jcf /_backup/backup.tar.xz /_/ >/dev/null 2>&1
+56 19 * * 6 tar --use-compress-program="zstd -4" -cf /_backup/backup.tar.zst /_/ >/dev/null 2>&1
 
 # Modification des droits (à la 58ème minute de chaque heure de 04:00 à 22:00)
 58 4-22 * * * chown -R caddy:caddy /_ && find /_ -type d -exec chmod 777 {} + && find /_ -type f -exec chmod 777 {} + >/dev/null 2>&1
