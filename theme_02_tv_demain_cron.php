@@ -42,7 +42,7 @@ $programmes = tv(
 afficherProgrammeTV($programmes,'0');
 ?>
 </div>
-<div class="messages retour_ligne_on hauteur_auto"><?php @include 'Structure/php/modules/messages.php';?></div><?php @include 'Structure/php/modules/donateurs.php'; ?>
+<?php @include 'Structure/php/modules/messages.php'; ?><?php @include 'Structure/php/modules/donateurs.php'; ?>
 <div class="menu bot"><?php @include "Structure/php/modules/menu_tv_theme_02.php"; ?></div>
 <div class="menu bot"><?php @include 'Structure/php/modules/'.$lien_menu_theme.'.php'; ?></div>
 </body>

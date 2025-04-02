@@ -34,9 +34,7 @@ $nbrchr='70000';
 <div class="mid">
 <?php @include 'Structure/sites/'.$sites.'.php'; ?>
 </div>
-<div class="messages retour_ligne_on hauteur_auto">
 <?php @include 'Structure/php/modules/messages.php'; ?>
-</div>
 <?php @include 'Structure/php/modules/donateurs.php'; ?>
 <div class="menu bot">
 <?php @include 'Structure/php/modules/menu.php'; ?>
