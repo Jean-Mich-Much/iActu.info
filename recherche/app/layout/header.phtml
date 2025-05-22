@@ -1,5 +1,6 @@
 <?php
 	declare(strict_types=1);
+	/** @var FreshRSS_View $this */
 ?>
 <header class="header">
 	<div class="item title">
@@ -8,32 +9,31 @@
 
 	<div class="item search">
 		<?php if (FreshRSS_Auth::hasAccess() || FreshRSS_Context::systemConf()->allow_anonymous) { ?>
-		<form action="<?= _url('index', 'index') ?>" method="get">
+		<form action="<?= $this->html_url ?>" method="get">
+			<?php if (Minz_Request::controllerName() === 'index'): ?>
+				<?php if (in_array(Minz_Request::actionName(), ['normal', 'global', 'reader'], true)) { ?>
+				<input type="hidden" name="a" value="<?= Minz_Request::actionName() ?>" />
+				<?php } if (Minz_Request::paramString('get') !== '') { ?>
+				<input type="hidden" name="get" value="<?= FreshRSS_Context::currentGet() ?>" />
+				<?php } if (Minz_Request::paramInt('state') !== 0) { ?>
+				<input type="hidden" name="state" value="<?= Minz_Request::paramInt('state') ?>" />
+				<?php } ?>
+			<?php endif; ?>
+			<?php if (Minz_Request::paramString('user') !== '') { ?>
+			<input type="hidden" name="user" value="<?= Minz_User::name() ?>" />
+			<?php } if (ctype_alnum(Minz_Request::paramString('t'))) { ?>
+			<input type="hidden" name="t" value="<?= Minz_Request::paramString('t') ?>" />
+			<?php } if (ctype_lower(Minz_Request::paramString('sort'))) { ?>
+			<input type="hidden" name="sort" value="<?= FreshRSS_Context::$sort ?>" />
+			<?php } if (ctype_upper(Minz_Request::paramString('order'))) { ?>
+			<input type="hidden" name="order" value="<?= FreshRSS_Context::$order ?>" />
+			<?php } if (ctype_lower(Minz_Request::paramString('f'))) { ?>
+			<input type="hidden" name="f" value="<?= Minz_Request::paramString('f') ?>" />
+			<?php } ?>
 			<div class="stick">
 				<input type="search" name="search" id="search"
-					value="<?= htmlspecialchars(htmlspecialchars_decode(FreshRSS_Context::$search->getRawInput(), ENT_QUOTES), ENT_COMPAT, 'UTF-8') ?>"
+					value="<?= htmlspecialchars(htmlspecialchars_decode(Minz_Request::paramString('search'), ENT_QUOTES), ENT_COMPAT, 'UTF-8') ?>"
 					placeholder="<?= _t('gen.menu.search') ?>" />
-
-				<?php $param_a = Minz_Request::actionName(); ?>
-				<?php if (in_array($param_a, ['normal', 'global', 'reader'], true)) { ?>
-				<input type="hidden" name="a" value="<?= $param_a ?>" />
-				<?php } ?>
-
-				<?php $get = Minz_Request::paramString('get'); ?>
-				<?php if ($get !== '') { ?>
-				<input type="hidden" name="get" value="<?= $get ?>" />
-				<?php } ?>
-
-				<?php $order = Minz_Request::paramString('order'); ?>
-				<?php if ($order !== '') { ?>
-				<input type="hidden" name="order" value="<?= $order ?>" />
-				<?php } ?>
-
-				<?php $state = Minz_Request::paramString('state'); ?>
-				<?php if ($state !== '') { ?>
-				<input type="hidden" name="state" value="<?= $state ?>" />
-				<?php } ?>
-
 				<button class="btn" type="submit"><?= _i('search') ?></button>
 			</div>
 		</form>
@@ -42,6 +42,9 @@
 
 	<?php if (FreshRSS_Auth::hasAccess()) { ?>
 	<nav class="item configure">
+		<form id="post-csrf" method="post">
+			<input type="hidden" name="_csrf" value="<?= FreshRSS_Auth::csrfToken() ?>" />
+		</form>
 		<div class="dropdown">
 			<div id="dropdown-configure" class="dropdown-target"></div>
 			<a class="btn dropdown-toggle" href="#dropdown-configure"><?= _i('configure') ?></a>
@@ -55,7 +58,9 @@
 					<ul>
 						<li class="item"><a href="<?= _url('user', 'profile') ?>"><?= _t('gen.menu.user_profile') ?></a></li>
 						<?php if (FreshRSS_Auth::accessNeedsAction()): ?>
-						<li class="item"><a class="signout" href="<?= _url('auth', 'logout') ?>"><?= _t('gen.auth.logout'); ?><?= _i('logout') ?></a></li>
+						<li class="item">
+							<button class="as-link signout" form="post-csrf" formaction="<?= _url('auth', 'logout') ?>"><?= _t('gen.auth.logout'); ?><?= _i('logout') ?></button>
+						</li>
 						<?php else: ?>
 						<li class="item"><span class="signout">(<?= htmlspecialchars(Minz_User::name() ?? '', ENT_NOQUOTES, 'UTF-8') ?>)</span></li>
 						<?php endif; ?>
@@ -73,6 +78,7 @@
 						<li class="item"><a href="<?= _url('configure', 'shortcut') ?>"><?= _t('gen.menu.shortcuts') ?></a></li>
 						<li class="item"><a href="<?= _url('configure', 'queries') ?>"><?= _t('gen.menu.queries') ?></a></li>
 						<li class="item"><a href="<?= _url('extension', 'index') ?>"><?= _t('gen.menu.extensions') ?></a></li>
+						<li class="item"><a href="<?= _url('configure', 'privacy') ?>"><?= _t('gen.menu.privacy') ?></a></li>
 						<?= Minz_ExtensionManager::callHookString('menu_configuration_entry') ?>
 					</ul>
 				</li>
@@ -112,7 +118,7 @@
 	</nav>
 	<?php } elseif (FreshRSS_Auth::accessNeedsAction()) { ?>
 	<div class="item configure">
-		<a class="signin" href="<?= _url('auth', 'login') ?>"><?= _i('login') ?><?= _t('gen.auth.login') ?></a>
+		<a class="signin" href="<?= Minz_Url::display(['c' => 'auth', 'a' => 'login'], 'html', 'root') ?>"><?= _i('login') ?><?= _t('gen.auth.login') ?></a>
 	</div>
 	<?php } ?>
 </header>
