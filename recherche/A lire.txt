@@ -1,0 +1,1 @@
+Ce dossier est la seule partie dont je n’ai pas écrit le code, veuillez récupérer le code de Freshrss à https://github.com/FreshRSS/FreshRSS et modifier quelques fichiers avec ceux fournis dans ce dossier, merci.
