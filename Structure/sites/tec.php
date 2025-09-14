@@ -2,9 +2,9 @@
 
 <?php parse('nextim', '🚀', 'https://next.ink/', 'Next',25,'https://iactu.info/recherche/p/i/?a=rss&get=f_98&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-<?php parse('gennt', '🚀', 'http://www.generation-nt.com/', 'GNT',30,'https://iactu.info/recherche/p/i/?a=rss&get=f_91&user=Gon1Kirua&token=flux&hours=2400'); ?>
+<?php parse('gennt', '🚀', 'https://www.generation-nt.com/', 'GNT',30,'https://iactu.info/recherche/p/i/?a=rss&get=f_91&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-<?php parse('cowco', '🚀', 'http://www.cowcotland.com/', 'Cowcotland',35,'https://iactu.info/recherche/p/i/?a=rss&get=f_87&user=Gon1Kirua&token=flux&hours=2400'); ?>
+<?php parse('cowco', '🚀', 'https://www.cowcotland.com/', 'Cowcotland',35,'https://iactu.info/recherche/p/i/?a=rss&get=f_87&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
 <?php parse('tomsh', '🚀', 'https://www.tomshardware.fr/', 'Tom&#39;s Hardware',40,'https://iactu.info/recherche/p/i/?a=rss&get=f_105&user=Gon1Kirua&token=flux&hours=2400'); ?>
 

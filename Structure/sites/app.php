@@ -1,6 +1,6 @@
 <?php parse('macge', '🚀', 'https://www.macg.co/', 'MacG',25,'https://iactu.info/recherche/p/i/?a=rss&get=f_75&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-<?php parse('macbi', '🚀', 'http://macbidouille.com/', 'MacBidouille',30,'https://iactu.info/recherche/p/i/?a=rss&get=f_74&user=Gon1Kirua&token=flux&hours=2400'); ?>
+<?php parse('macbi', '🚀', 'https://macbidouille.com/', 'MacBidouille',30,'https://iactu.info/recherche/p/i/?a=rss&get=f_74&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
 <?php parse('conso', '🚀', 'https://consomac.fr/', 'Consomac',35,'https://iactu.info/recherche/p/i/?a=rss&get=f_72&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
