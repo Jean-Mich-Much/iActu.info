@@ -36,8 +36,29 @@ return$nomConverti.($ext?'.'.$ext:'');}
 <?php
 function nomImgPlanB($imageUrl,$dossierImages,$dossierImagesPlanB){
 static $currentFallback=1;
-$cachePath=$dossierImages.'/'.nomImgEnCache($imageUrl);
-if(file_exists($cachePath)){return$cachePath;}
+$parts=pathinfo($imageUrl);
+$nom=isset($parts['filename'])?$parts['filename']:'';
+$nomNettoye=preg_replace('/[\s\-_]/', '', $nom);
+$nomConverti='';
+foreach(str_split(strtolower($nomNettoye))as$char){
+if(ctype_alpha($char)){$nomConverti.=ord($char)-ord('a')+1;}
+elseif(ctype_digit($char)){$nomConverti.=$char;}
+else{$nomConverti.='';}}
+$nomConverti=substr($nomConverti,-16);
+$nomConverti=str_pad($nomConverti,16,'0',STR_PAD_LEFT);
+
+// 🖼️ Vérifie si le fichier WebP existe / Check if WebP version exists
+$webpPath=$dossierImages.'/'.$nomConverti.'.webp';
+if(file_exists($webpPath)){return$webpPath;}
+
+// 🔍 Sinon, cherche un fichier du même nom avec n'importe quelle extension / Look for any matching name
+$files=scandir($dossierImages);
+foreach($files as$file){
+if(pathinfo($file,PATHINFO_EXTENSION)!=='webp'&&pathinfo($file,PATHINFO_FILENAME)===$nomConverti){
+return$dossierImages.'/'.$file;}
+}
+
+// 🗂️ Fallback si aucun fichier trouvé / Fallback if no file found
 $fallbackImage=$dossierImagesPlanB."/autre_".$currentFallback.".webp";
 if(!file_exists($fallbackImage)){$currentFallback=1;$fallbackImage=$dossierImagesPlanB."/autre_1.webp";}
 $currentFallback=$currentFallback<15?$currentFallback+1:1;
@@ -121,7 +142,12 @@ echo '</div>';}}
 ?>
 
 <?php
-function afficherProgrammeTV($programmes, $completOuCompact) {if ($completOuCompact == 0) {afficherProgrammeTVComplet($programmes);} elseif ($completOuCompact == 1) {afficherProgrammeTVCompact($programmes);}};
+function afficherProgrammeTV($programmes, $completOuCompact) {
+if ($completOuCompact == 0) {
+afficherProgrammeTVComplet($programmes);
+} elseif ($completOuCompact == 1) {
+afficherProgrammeTVCompact($programmes);
+}}
 ?>
 
-<?php ob_end_flush();
+<?php ob_end_flush(); ?>
