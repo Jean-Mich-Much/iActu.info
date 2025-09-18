@@ -51,8 +51,8 @@
  display: grid;
  grid:
   auto-flow dense / minmax(
-   round(up, calc(256 / 1920 * 100vw), 128px),
-   round(up, calc(128 / 1920 * 100vw), 64px)
+   round(up, calc(192 / 1920 * 100vw), 96px),
+   round(up, calc(108 / 1920 * 100vw), 54px)
   )
   1fr;
  grid-template-rows: 1fr;
@@ -77,9 +77,9 @@
  margin: round(up, calc(4 / 1920 * 100vw), 2px)
   round(up, calc(2 / 1920 * 100vw), 1px) round(up, calc(2 / 1920 * 100vw), 1px)
   round(up, calc(2 / 1920 * 100vw), 1px);
- min-width: round(up, calc(128 / 1920 * 100vw), 64px);
- min-height: round(up, calc(72 / 1920 * 100vw), 36px);
- max-height: round(up, calc(144 / 1920 * 100vw), 72px);
+ min-width: round(up, calc(96 / 1920 * 100vw), 48px);
+ min-height: round(up, calc(54 / 1920 * 100vw), 27px);
+ max-height: round(up, calc(96 / 1920 * 100vw), 48px);
  aspect-ratio: 16 / 9;
  height: auto;
  max-width: 100%;
@@ -95,7 +95,7 @@
  display: inline-grid;
  grid-auto-flow: row dense;
  flex-wrap: wrap;
- max-height: round(up, calc(120 / 1920 * 100vw), 60px);
+ max-height: round(up, calc(68 / 1920 * 100vw), 36px);
  max-width: fit-content;
  text-align: start;
  text-wrap: wrap;
@@ -110,7 +110,7 @@
  white-space: normal;
  overflow: hidden;
  padding-left: round(up, calc(14 / 1920 * 100vw), 7px);
- padding-right: round(up, calc(8 / 1920 * 100vw), 4px);
+ padding-right: round(up, calc(6 / 1920 * 100vw), 3px);
  padding-top: 0;
  padding-bottom: 0;
  padding-top: 0;
@@ -128,7 +128,7 @@
  white-space: normal;
  padding-left: 0;
  padding-right: 0;
- padding-top: round(up, calc(6 / 1920 * 100vw), 3px);
+ padding-top: round(up, calc(4 / 1920 * 100vw), 2px);
  padding-bottom: 0;
 }
 
@@ -151,7 +151,7 @@
  white-space: normal;
  overflow: hidden;
  padding-left: round(up, calc(14 / 1920 * 100vw), 7px);
- padding-right: round(up, calc(8 / 1920 * 100vw), 4px);
+ padding-right: round(up, calc(6 / 1920 * 100vw), 3px);
  padding-top: 0;
  padding-bottom: 0;
 }
@@ -176,7 +176,7 @@
  white-space: normal;
  overflow: hidden;
  padding-left: round(up, calc(14 / 1920 * 100vw), 7px);
- padding-right: round(up, calc(8 / 1920 * 100vw), 4px);
+ padding-right: round(up, calc(6 / 1920 * 100vw), 3px);
  padding-top: 0;
  padding-bottom: 0;
 }
