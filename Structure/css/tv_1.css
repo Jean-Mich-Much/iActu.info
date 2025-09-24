@@ -95,7 +95,7 @@
  display: inline-grid;
  grid-auto-flow: row dense;
  flex-wrap: wrap;
- max-height: round(up, calc(68 / 1920 * 100vw), 36px);
+ max-height: round(up, calc(96 / 1920 * 100vw), 24px);
  max-width: fit-content;
  text-align: start;
  text-wrap: wrap;

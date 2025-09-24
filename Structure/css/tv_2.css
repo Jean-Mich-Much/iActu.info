@@ -1,11 +1,20 @@
 .tvcontainer {
+ justify-self: stretch;
  background-color: var(--c8);
  color: var(--c2);
+ font-synthesis: small-caps auto;
+ font-synthesis-weight: auto;
+ font-synthesis-style: auto;
+ font-variant-emoji: emoji;
+ font-variant: discretionary-ligatures tabular-nums;
  outline: round(up, calc(4 / 1920 * 100vw), 2px) solid var(--c7);
  outline-offset: round(up, calc(-4 / 1920 * 100vw), 2px);
  border-radius: round(up, calc(12 / 1920 * 100vw), 6px);
- padding: round(up, calc(10 / 1920 * 100vw), 5px);
- margin-bottom: round(up, calc(6 / 1920 * 100vw), 3px);
+ padding-left: round(up, calc(8 / 1920 * 100vw), 4px);
+ padding-right: round(up, calc(8 / 1920 * 100vw), 4px);
+ padding-top: round(up, calc(8 / 1920 * 100vw), 4px);
+ padding-bottom: round(up, calc(4 / 1920 * 100vw), 2px);
+ margin-bottom: round(up, calc(4 / 1920 * 100vw), 2px);
 }
 
 .tvchainetitre {
