@@ -99,8 +99,8 @@ echo '<div class="tvcontainer"><div class="f20px">📺&nbsp;'.htmlspecialchars(s
 ['', 'TFX', 'La chaine l’Équipe', 'RMC STORY', 'RMC Découverte', 'Chérie 25', 'Paris Première', 'Canal+ Sport', 'Canal+ Cinéma', 'Planete+', 'Canal+', 'France 2', 'France 3', 'France 5', 'France 4', 'LCP', 'BFM TV', 'TF1 Séries-Films', 'France Info'],
 $chaine)).'</div>';foreach($programmesChaine as $programme){if(!isset($programme['debut'])||!isset($programme['titre'])){continue;}
 $debut=new DateTime($programme['debut']);$heureDebut=$debut->format('H:i');$jourLabel=dateLabel($programme['debut']);
-$titre=wordLimit(htmlspecialchars($programme['titre']),108);$jourInfo=($jourLabel!=="Aujourd'hui")?" (".strtolower($jourLabel).")":"";
-$description=wordLimit(htmlspecialchars($programme['description']),324);
+$titre=wordLimit(htmlspecialchars($programme['titre']),76);$jourInfo=($jourLabel!=="Aujourd'hui")?" (".strtolower($jourLabel).")":"";
+$description=wordLimit(htmlspecialchars($programme['description']),172);
 $dossierImages='Structure/cache/tv/images/cache';
 $dossierImagesPlanB='Structure/cache/tv/images';
 echo '<div class="tvprogramme">
