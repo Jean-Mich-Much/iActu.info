@@ -10,6 +10,6 @@
 
 <?php parse('indie', '🚀', 'https://www.indiemag.fr/', 'IndieMag',52,'https://iactu.info/recherche/p/i/?a=rss&get=f_57&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-<?php parse('get12', '🚀', 'https://iactu.info/recherche/p/i/?a=normal&get=c_12', 'Autres sites',57,'https://iactu.info/recherche/p/i/?a=rss&get=c_12&user=Gon1Kirua&token=flux&hours=2400'); ?>
+<?php parse('get12', '🚀', 'https://iactu.info/recherche/p/i/?a=normal&get=c_12', 'Autres sites',57,'https://iactu.info/recherche/p/i/?a=rss&get=c_12&user=Gon1Kirua&token=flux&hours=336'); ?>
 
-<?php parse('get13', '🚀', 'https://iactu.info/recherche/p/i/?a=normal&get=c_13', 'English',62,'https://iactu.info/recherche/p/i/?a=rss&get=c_13&user=Gon1Kirua&token=flux&hours=2400'); ?>
+<?php parse('get13', '🚀', 'https://iactu.info/recherche/p/i/?a=normal&get=c_13', 'English',62,'https://iactu.info/recherche/p/i/?a=rss&get=c_13&user=Gon1Kirua&token=flux&hours=336'); ?>

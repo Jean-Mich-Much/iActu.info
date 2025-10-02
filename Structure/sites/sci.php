@@ -6,6 +6,6 @@
 
 <?php parse('scipo', '🚀', 'https://sciencepost.fr/', 'SciencePost',44,'https://iactu.info/recherche/p/i/?a=rss&get=f_37&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-<?php parse('get8', '🚀', 'https://iactu.info/recherche/p/i/?a=normal&get=c_8', 'Autres sites',49,'https://iactu.info/recherche/p/i/?a=rss&get=c_8&user=Gon1Kirua&token=flux&hours=2400'); ?>
+<?php parse('get8', '🚀', 'https://iactu.info/recherche/p/i/?a=normal&get=c_8', 'Autres sites',49,'https://iactu.info/recherche/p/i/?a=rss&get=c_8&user=Gon1Kirua&token=flux&hours=336'); ?>
 
-<?php parse('get9', '🚀', 'https://iactu.info/recherche/p/i/?a=normal&get=c_9', 'English',54,'https://iactu.info/recherche/p/i/?a=rss&get=c_9&user=Gon1Kirua&token=flux&hours=2400'); ?>
+<?php parse('get9', '🚀', 'https://iactu.info/recherche/p/i/?a=normal&get=c_9', 'English',54,'https://iactu.info/recherche/p/i/?a=rss&get=c_9&user=Gon1Kirua&token=flux&hours=336'); ?>

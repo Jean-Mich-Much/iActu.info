@@ -16,11 +16,11 @@
 
 <?php parse('overc', '🚀', 'https://overclocking.com/', 'Overclocking',60,'https://iactu.info/recherche/p/i/?a=rss&get=f_101&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-<?php parse('kultu', '🚀', 'https://kulturegeek.fr/', 'KultureGeek',65, 'https://iactu.info/recherche/p/i/?a=rss&get=f_110&user=Gon1Kirua&token=flux&hours=2400');?>
+<?php parse('hardco', '🚀', 'https://hardwareand.co', 'Hardware & Co',65,'https://iactu.info/recherche/p/i/?a=rss&get=f_157&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-<?php parse('numer', '🚀', 'https://www.numerama.com/', 'Numerama',70,'https://iactu.info/recherche/p/i/?a=rss&get=f_100&user=Gon1Kirua&token=flux&hours=2400'); ?>
+<?php parse('kultu', '🚀', 'https://kulturegeek.fr/', 'KultureGeek',70, 'https://iactu.info/recherche/p/i/?a=rss&get=f_110&user=Gon1Kirua&token=flux&hours=2400');?>
 
-<?php parse('omgpu', '🚀', 'https://www.omgpu.com/', 'OmGpu',75,'https://iactu.info/recherche/p/i/?a=rss&get=f_112&user=Gon1Kirua&token=flux&hours=2400'); ?>
+<?php parse('numer', '🚀', 'https://www.numerama.com/', 'Numerama',75,'https://iactu.info/recherche/p/i/?a=rss&get=f_100&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
 <?php parse('jourdg', '🚀', 'https://www.journaldugeek.com/', 'Journal du Geek',80,'https://iactu.info/recherche/p/i/?a=rss&get=f_94&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
@@ -38,10 +38,10 @@
 
 <?php parse('frand', '🚀', 'https://www.frandroid.com/', 'FrAndroid',115,'https://iactu.info/recherche/p/i/?a=rss&get=f_89&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-<?php parse('get18', '🚀', 'https://iactu.info/recherche/p/i/?a=normal&get=c_18', 'Réalité virtuelle',120,'https://iactu.info/recherche/p/i/?a=rss&get=c_18&user=Gon1Kirua&token=flux&hours=2400'); ?>
+<?php parse('get18', '🚀', 'https://iactu.info/recherche/p/i/?a=normal&get=c_18', 'Réalité virtuelle',120,'https://iactu.info/recherche/p/i/?a=rss&get=c_18&user=Gon1Kirua&token=flux&hours=336'); ?>
 
-<?php parse('get14', '🚀', 'https://iactu.info/recherche/p/i/?a=normal&get=c_14', 'Linux',125,'https://iactu.info/recherche/p/i/?a=rss&get=c_14&user=Gon1Kirua&token=flux&hours=2400'); ?>
+<?php parse('get14', '🚀', 'https://iactu.info/recherche/p/i/?a=normal&get=c_14', 'Linux',125,'https://iactu.info/recherche/p/i/?a=rss&get=c_14&user=Gon1Kirua&token=flux&hours=168'); ?>
 
-<?php parse('get20', '🚀', 'https://iactu.info/recherche/p/i/?a=normal&get=c_20', 'Autres sites',130,'https://iactu.info/recherche/p/i/?a=rss&get=c_20&user=Gon1Kirua&token=flux&hours=2400'); ?>
+<?php parse('get20', '🚀', 'https://iactu.info/recherche/p/i/?a=normal&get=c_20', 'Autres sites',130,'https://iactu.info/recherche/p/i/?a=rss&get=c_20&user=Gon1Kirua&token=flux&hours=168'); ?>
 
-<?php parse('get21', '🚀', 'https://iactu.info/recherche/p/i/?a=normal&get=c_21', 'English',135,'https://iactu.info/recherche/p/i/?a=rss&get=c_21&user=Gon1Kirua&token=flux&hours=2400'); ?>
+<?php parse('get21', '🚀', 'https://iactu.info/recherche/p/i/?a=normal&get=c_21', 'English',135,'https://iactu.info/recherche/p/i/?a=rss&get=c_21&user=Gon1Kirua&token=flux&hours=168'); ?>
