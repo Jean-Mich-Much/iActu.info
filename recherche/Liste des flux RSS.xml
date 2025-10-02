@@ -2,16 +2,17 @@
 <opml xmlns:frss="https://freshrss.org/opml" version="2.0">
   <head>
     <title>iActu</title>
-    <dateCreated>Sun, 14 Sep 2025 16:39:53 +0200</dateCreated>
+    <dateCreated>Thu, 02 Oct 2025 12:48:58 +0200</dateCreated>
   </head>
   <body>
     <outline text="1.1 🖥️ Technologie">
       <outline text="Clubic" type="rss" xmlUrl="https://www.clubic.com/feed/rss" htmlUrl="http://clubic.com/" description="Accueil" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="-1" frss:CURLOPT_USERAGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0)"/>
-      <outline text="CowcotLand" type="rss" xmlUrl="https://feeds.feedburner.com/cowcotland" htmlUrl="http://www.cowcotland.com/" description="Actualité informatique hardware, tests, articles" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="5" frss:CURLOPT_USERAGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0)"/>
+      <outline text="CowcotLand" type="rss" xmlUrl="https://feeds.feedburner.com/cowcotland" htmlUrl="http://www.cowcotland.com/" description="Actualit� informatique hardware, tests, articles" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="5" frss:CURLOPT_USERAGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0)"/>
       <outline text="Developpez" type="rss" xmlUrl="https://www.developpez.com/index/rss" htmlUrl="https://www.developpez.com" description="Club des développeurs et IT Pro"/>
       <outline text="FrAndroid" type="rss" xmlUrl="https://www.frandroid.com/feed" htmlUrl="https://www.frandroid.com/" description="La référence tech pour s’informer, comparer et bien acheter" frss:CURLOPT_USERAGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"/>
       <outline text="GinjFo" type="rss" xmlUrl="https://www.ginjfo.com/feed" htmlUrl="http://www.ginjfo.com/" description="Toute l'actualité informatique, Hardware, High-Tech et Gaming. Restez informé au quotidien et découvrez nos tests produits et guides d’achat."/>
       <outline text="GNT" type="rss" xmlUrl="https://www.generation-nt.com/export/rss.xml" htmlUrl="http://www.generation-nt.com/" description="Portail français dédié à l'univers du Hi-Tech et des Nouvelles Technologies"/>
+      <outline text="Hardware &amp; Co" type="rss" xmlUrl="https://hardwareand.co/all-content?format=feed&amp;type=rss" htmlUrl="https://hardwareand.co"/>
       <outline text="Informaticien.be" type="rss" xmlUrl="https://www.informaticien.be/index.ks?page=rss_news" htmlUrl="http://www.informaticien.be/" description="Communauté des informaticiens belges"/>
       <outline text="KultureGeek" type="rss" xmlUrl="http://feeds.feedburner.com/Kulturegeek" htmlUrl="https://kulturegeek.fr/" description="Actualité High-Tech, Culture Geek et comparateur de prix"/>
       <outline text="Le comptoir" type="rss" xmlUrl="https://www.comptoir-hardware.com/home.xml" htmlUrl="https://www.comptoir-hardware.com/" description="Le comptoir du hardware : les actualités, les ragots et les tests du monde hardware informatique" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="5" frss:CURLOPT_USERAGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0)"/>
@@ -20,7 +21,6 @@
       <outline text="Next" type="rss" xmlUrl="https://next.ink/feed/free" htmlUrl="https://next.ink/" description="Next - Actualités informatiques et numériques au quotidien" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="-1"/>
       <outline text="NextPit" type="rss" xmlUrl="https://www.nextpit.fr/feed/main.xml" htmlUrl="https://www.nextpit.fr/" description="Tout sur la high-tech : actualités, tests, tutoriels, vidéos et bien plus encore !"/>
       <outline text="Numerama" type="rss" xmlUrl="https://www.numerama.com/feed/" htmlUrl="https://www.numerama.com/" description="Le média de référence sur la société numérique et l'innovation technologique"/>
-      <outline text="OmgGpu" type="rss" xmlUrl="https://www.omgpu.com/feed/" htmlUrl="https://www.omgpu.com/" description="Toute l'actualité sur les cartes graphique, les processeurs, ainsi que des tests et des guides d'optimisations"/>
       <outline text="Overclocking" type="rss" xmlUrl="https://overclocking.com/feed/" htmlUrl="https://overclocking.com/" description="Overclocking &amp; Hardware"/>
       <outline text="Presse-Citron" type="rss" xmlUrl="https://www.presse-citron.net/feed/" htmlUrl="https://www.presse-citron.net/" description="Connectez-vous à l'innovation"/>
       <outline text="Siècle Digital" type="rss" xmlUrl="https://siecledigital.fr/feed/" htmlUrl="https://siecledigital.fr/" description="Siècle Digital l’actualité de l’économie du numérique" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="3"/>
@@ -30,9 +30,10 @@
     <outline text="1.2 🖥️ Tech. Autres sites">
       <outline text="Fredzone" type="rss" xmlUrl="https://www.fredzone.org/category/news/feed/" htmlUrl="http://www.fredzone.org/" description="Tout sur la high tech, la science et la culture pop"/>
       <outline text="GoodTech" type="rss" xmlUrl="https://goodtech.info/feed/" htmlUrl="https://goodtech.info/" description="L'actualité de l'informatique éthique"/>
-      <outline text="Hardware &amp; Co" type="rss" xmlUrl="https://hardwareand.co/all-content?format=feed&amp;type=rss" htmlUrl="https://hardwareand.co"/>
       <outline text="iPhon" type="rss" xmlUrl="https://www.iphon.fr/feed" htmlUrl="https://www.iphon.fr/" description="Toute l'actualité iPhone, iPad, Mac et Apple Watch"/>
+      <outline text="IT-Connect" type="rss" xmlUrl="https://www.it-connect.fr/feed/" htmlUrl="https://www.it-connect.fr/" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="5"/>
       <outline text="Korben" type="rss" xmlUrl="https://korben.info/feed" htmlUrl="https://korben.info/" description="Nouveaux articles de Korben"/>
+      <outline text="OmgGpu" type="rss" xmlUrl="https://www.omgpu.com/feed/" htmlUrl="https://www.omgpu.com/" description="Toute l'actualité sur les cartes graphique, les processeurs, ainsi que des tests et des guides d'optimisations"/>
       <outline text="Pause Hardware" type="rss" xmlUrl="https://pausehardware.com/feed/" htmlUrl="https://pausehardware.com/" description="Actualités et Tests hardware, Modding PC et bien plus !"/>
       <outline text="PC Astuces" type="rss" xmlUrl="https://www.pcastuces.com/xml/pca_logitheque.xml" htmlUrl="https://www.pcastuces.com/pratique" description="Les dernieres versions de logiciels publiées sur PC Astuces"/>
       <outline text="SOSPC" type="rss" xmlUrl="https://sospc.name/feed/" htmlUrl="https://sospc.name/" description="Il y a toujours une solution."/>
@@ -40,6 +41,7 @@
       <outline text="Vonguru" type="rss" xmlUrl="https://vonguru.fr/feed/" htmlUrl="http://vonguru.fr/" description="High Tech, culture geek et gadgets"/>
     </outline>
     <outline text="1.3 🖥️ Tech. English">
+      <outline text="HotHardware" type="rss" xmlUrl="https://hothardware.com/rss/news" htmlUrl="https://hothardware.com/rss/news" description="HotHardware.com News Rss Feed" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="5"/>
       <outline text="KitGuru" type="rss" xmlUrl="https://www.kitguru.net/feed/" htmlUrl="https://www.kitguru.net/" description="KitGuru.net - Tech News | Hardware News | Hardware Reviews | IOS | Mobile | Gaming | Graphics Cards"/>
       <outline text="PC Perspective" type="rss" xmlUrl="https://pcper.com/feed/" htmlUrl="http://www.pcper.com/" description="A Leader in PC Hardware Reviews and News"/>
       <outline text="TechPowerUp" type="rss" xmlUrl="https://www.techpowerup.com/rss/reviews" htmlUrl="https://www.techpowerup.com/" description="The latest Hardware and Gaming News"/>
