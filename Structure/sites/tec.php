@@ -18,23 +18,23 @@
 
 <?php parse('hardco', '🚀', 'https://hardwareand.co', 'Hardware & Co',65,'https://iactu.info/recherche/p/i/?a=rss&get=f_157&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-<?php parse('kultu', '🚀', 'https://kulturegeek.fr/', 'KultureGeek',70, 'https://iactu.info/recherche/p/i/?a=rss&get=f_110&user=Gon1Kirua&token=flux&hours=2400');?>
+<?php parse('nexpi', '🚀', 'https://www.nextpit.fr/', 'NextPit',70,'https://iactu.info/recherche/p/i/?a=rss&get=f_99&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-<?php parse('numer', '🚀', 'https://www.numerama.com/', 'Numerama',75,'https://iactu.info/recherche/p/i/?a=rss&get=f_100&user=Gon1Kirua&token=flux&hours=2400'); ?>
+<?php parse('siedi', '🚀', 'https://goodtech.info', 'GoodTech',75,'https://iactu.info/recherche/p/i/?a=rss&get=f_106&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-<?php parse('jourdg', '🚀', 'https://www.journaldugeek.com/', 'Journal du Geek',80,'https://iactu.info/recherche/p/i/?a=rss&get=f_94&user=Gon1Kirua&token=flux&hours=2400'); ?>
+<?php parse('kultu', '🚀', 'https://kulturegeek.fr/', 'KultureGeek',80, 'https://iactu.info/recherche/p/i/?a=rss&get=f_110&user=Gon1Kirua&token=flux&hours=2400');?>
 
-<?php parse('lesnum', '🚀', 'https://www.lesnumeriques.com/', 'Les Numériques',85,'https://iactu.info/recherche/p/i/?a=rss&get=f_96&user=Gon1Kirua&token=flux&hours=2400'); ?>
+<?php parse('jourdg', '🚀', 'https://www.journaldugeek.com/', 'Journal du Geek',85,'https://iactu.info/recherche/p/i/?a=rss&get=f_94&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-<?php parse('presc', '🚀', 'https://www.presse-citron.net/', 'Presse-citron',90,'https://iactu.info/recherche/p/i/?a=rss&get=f_102&user=Gon1Kirua&token=flux&hours=2400'); ?>
+<?php parse('numer', '🚀', 'https://www.numerama.com/', 'Numerama',90,'https://iactu.info/recherche/p/i/?a=rss&get=f_100&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-<?php parse('infor', '🚀', 'https://www.informaticien.be/', 'Informaticien',95,'https://iactu.info/recherche/p/i/?a=rss&get=f_93&user=Gon1Kirua&token=flux&hours=2400'); ?>
+<?php parse('lesnum', '🚀', 'https://www.lesnumeriques.com/', 'Les Numériques',95,'https://iactu.info/recherche/p/i/?a=rss&get=f_96&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-<?php parse('devel', '🚀', 'https://www.developpez.com/', 'Developpez',100,'https://iactu.info/recherche/p/i/?a=rss&get=f_88&user=Gon1Kirua&token=flux&hours=2400'); ?>
+<?php parse('infor', '🚀', 'https://www.informaticien.be/', 'Informaticien',100,'https://iactu.info/recherche/p/i/?a=rss&get=f_93&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-<?php parse('siedi', '🚀', 'https://siecledigital.fr/', 'Siècle Digital',105,'https://iactu.info/recherche/p/i/?a=rss&get=f_103&user=Gon1Kirua&token=flux&hours=2400'); ?>
+<?php parse('presc', '🚀', 'https://www.presse-citron.net/', 'Presse-citron',105,'https://iactu.info/recherche/p/i/?a=rss&get=f_102&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
-<?php parse('nexpi', '🚀', 'https://www.nextpit.fr/', 'NextPit',110,'https://iactu.info/recherche/p/i/?a=rss&get=f_99&user=Gon1Kirua&token=flux&hours=2400'); ?>
+<?php parse('devel', '🚀', 'https://www.developpez.com/', 'Developpez',110,'https://iactu.info/recherche/p/i/?a=rss&get=f_88&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
 <?php parse('frand', '🚀', 'https://www.frandroid.com/', 'FrAndroid',115,'https://iactu.info/recherche/p/i/?a=rss&get=f_89&user=Gon1Kirua&token=flux&hours=2400'); ?>
 
