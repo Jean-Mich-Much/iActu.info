@@ -2,7 +2,7 @@
 <opml xmlns:frss="https://freshrss.org/opml" version="2.0">
   <head>
     <title>iActu</title>
-    <dateCreated>Thu, 02 Oct 2025 13:41:33 +0200</dateCreated>
+    <dateCreated>Fri, 10 Oct 2025 15:19:07 +0200</dateCreated>
   </head>
   <body>
     <outline text="1.1 🖥️ Technologie">
@@ -111,6 +111,7 @@
       <outline text="France 24 - Asie" type="rss" xmlUrl="https://www.france24.com/fr/asie-pacifique/rss" htmlUrl="https://www.france24.com/fr/asie-pacifique/rss" description="France 24 décrypte les évènements socio-économiques et politiques de la région Asie-Pacifique : Océanie, Asie du Sud, Asie de l’Est, Asie du Sud-Est, notamment les pays comme la Chine, le Japon, l’Australie, l’Indonésie, l’Inde, le Pakistan)"/>
       <outline text="France 24 - Moyen-Orient" type="rss" xmlUrl="https://www.france24.com/fr/moyen-orient/rss" htmlUrl="https://www.france24.com/fr/moyen-orient/rss" description="France 24 couvre et analyse toute l’actualité politique et sociétale au Moyen Orient, de l’Arabie Saoudite, en passant par l’Irak, l’Iran, le Liban, l’Égypte, Israël, la Syrie, la Jordanie et les pays du Golfe."/>
       <outline text="Journal de Montreal" type="rss" xmlUrl="https://www.journaldemontreal.com/monde/rss.xml" htmlUrl="https://www.journaldemontreal.com/" description="Monde - Nouvelles mondiales et actualités internationales"/>
+      <outline text="L'Express" type="rss" xmlUrl="https://www.lexpress.fr/arc/outboundfeeds/rss/monde.xml" htmlUrl="https://www.lexpress.fr/" description="Grâce aux fils RSS de LExpress.fr, vous pouvez recevoir les dernières informations publiées sur le site en temps réel ou les dernières notes des blogs de nos journalistes." frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="3"/>
       <outline text="L'Obs" type="rss" xmlUrl="https://www.nouvelobs.com/monde/atom.xml" description="Actualité politique, information sociale ou internationale"/>
       <outline text="Le Figaro" type="rss" xmlUrl="https://www.lefigaro.fr/rss/figaro_international.xml" htmlUrl="http://www.lefigaro.fr/" description="International : Retrouvez toute l'actualité internationale, le ministère des affaires étrangères, la politique étrangère sur Le Figaro"/>
       <outline text="Le Monde" type="rss" xmlUrl="https://www.lemonde.fr/international/rss_full.xml" htmlUrl="http://www.lemonde.fr/" description="International  - Découvrez gratuitement tous les articles, les vidéos et les infographies de la rubrique International sur Le Monde.fr."/>
@@ -181,9 +182,6 @@
       <outline text="7.4.3 📰 Infos Sciences" type="rss" xmlUrl="https://iactu.info/recherche/p/i/?a=rss&amp;get=c_7&amp;hours=72" htmlUrl="https://iactu.info/recherche/p" description="Flux RSS de 6.3 📰 Sciences | iActu"/>
       <outline text="7.4.4 📰 Infos Insolites" type="rss" xmlUrl="https://iactu.info/recherche/p/i/?a=rss&amp;get=c_5&amp;hours=72" htmlUrl="https://iactu.info/recherche/p" description="Flux RSS de 6.6 📰 Insolites | iActu"/>
       <outline text="7.4.5 📰 Infos Cinéma | TV" type="rss" xmlUrl="https://iactu.info/recherche/p/i/?a=rss&amp;get=c_2&amp;hours=72" htmlUrl="https://iactu.info/recherche/p" description="Flux RSS de 6.7 📰 Cinéma | TV | iActu"/>
-    </outline>
-    <outline text="Sans catégorie">
-      <outline text="L'Express" type="rss" xmlUrl="https://www.lexpress.fr/arc/outboundfeeds/rss/monde.xml" htmlUrl="https://www.lexpress.fr/" description="Grâce aux fils RSS de LExpress.fr, vous pouvez recevoir les dernières informations publiées sur le site en temps réel ou les dernières notes des blogs de nos journalistes."/>
     </outline>
   </body>
 </opml>
