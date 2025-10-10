@@ -7,7 +7,7 @@
 <meta name="category" content="news">
 <meta name="classification" content="news">
 <meta name="coverage" content="Worldwide">
-<meta name="description" content="<?php echo $titre_page; ?> - iActu est une revue de presse des sites technologiques et bien plus.">
+<meta name="description" content="🚀 <?php echo $titre_page; ?> - 🪧 iActu est une revue de presse des sites technologiques et bien plus 😊">
 <meta name="distribution" content="Global">
 <meta name="format-detection" content="telephone=no">
 <meta name="generator" content="iActu">
