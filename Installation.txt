@@ -1,11 +1,11 @@
-Mon pense pas bête pour installer, instructions en vracs... presque dans l'ordre 😊 : 
+Mon pense pas bête pour installer, instructions en vrac... presque dans l'ordre 😊 : 
 
 (le site sera installé dans le dossier "/_")
 
 root
 mot de passe à définir
 
-Nom de domaine / ip / à récuper :
+Nom de domaine / ip / à récupérer :
 51.38.xxx.xxx
 2001:41d0:xxx:xxx::xxxx
 
