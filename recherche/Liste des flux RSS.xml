@@ -2,7 +2,7 @@
 <opml xmlns:frss="https://freshrss.org/opml" version="2.0">
   <head>
     <title>iActu</title>
-    <dateCreated>Wed, 05 Nov 2025 09:52:08 +0100</dateCreated>
+    <dateCreated>Wed, 12 Nov 2025 12:21:14 +0100</dateCreated>
   </head>
   <body>
     <outline text="1.1 🖥️ Technologie">
@@ -44,6 +44,7 @@
       <outline text="KitGuru" type="rss" xmlUrl="https://www.kitguru.net/feed/" htmlUrl="https://www.kitguru.net/" description="KitGuru.net - Tech News | Hardware News | Hardware Reviews | IOS | Mobile | Gaming | Graphics Cards"/>
       <outline text="PC Perspective" type="rss" xmlUrl="https://pcper.com/feed/" htmlUrl="http://www.pcper.com/" description="A Leader in PC Hardware Reviews and News"/>
       <outline text="TechPowerUp" type="rss" xmlUrl="https://www.techpowerup.com/rss/reviews" htmlUrl="https://www.techpowerup.com/" description="The latest Hardware and Gaming News"/>
+      <outline text="UploadVR" type="rss" xmlUrl="https://www.uploadvr.com/rss/" htmlUrl="https://www.uploadvr.com/" description="VR &amp; AR news, reviews, guides, and industry analysis." frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="-1"/>
       <outline text="Wccftech" type="rss" xmlUrl="https://wccftech.com/review/feed/" htmlUrl="https://wccftech.com/" description="We bring you the latest from hardware, mobile and gaming industries in news, reviews, and guides."/>
     </outline>
     <outline text="2.1 🍏 Apple">
@@ -66,7 +67,7 @@
       <outline text="Gamekult" type="rss" xmlUrl="https://www.gamekult.com/feed.xml" htmlUrl="http://www.gamekult.com/" description="Dernieres actualites de jeux video par la rédaction de Gamekult.com"/>
       <outline text="GamerGen" type="rss" xmlUrl="https://gamergen.com/rss" htmlUrl="http://www.gamergen.com/" description="GAMERGEN.COM est le portail français consacré à l'actualité du geek connecté et du joueur de jeux vidéo sur consoles de salon (PS4 / Xbox One / Switch), consoles portables (PS Vita / 3DS), PC  mais aussi sur smartphones et tablettes (Android, iOS, Windows) ainsi que sur la réalité virtuelle VR. Retrouvez nos actualités, dossiers, tests, tutos, fiches jeu, fiches matériel et autres téléchargements, ainsi que notre communauté dans un forum très actif."/>
       <outline text="IndieMag" type="rss" xmlUrl="https://www.indiemag.fr/feed/rss.xml" htmlUrl="https://www.indiemag.fr" description="L'actualité du jeu vidéo indépendant"/>
-      <outline text="JV France" type="rss" xmlUrl="https://www.jvfrance.com/feed/" htmlUrl="https://www.jvfrance.com/" description="Votre référence indépendante pour tout savoir sur le jeu vidéo"/>
+      <outline text="JV France" type="rss" xmlUrl="https://www.jvfrance.com/feed/" htmlUrl="https://www.jvfrance.com/" description="Votre média indépendant de référence sur le jeu vidéo."/>
       <outline text="NoFrag" type="rss" xmlUrl="https://feeds.feedburner.com/nofrag/disj" htmlUrl="http://www.nofrag.com/" description="L'actualité des simulateurs de meurtres"/>
     </outline>
     <outline text="3.2 🎲 Jeux Autres">
@@ -90,9 +91,9 @@
       <outline text="Phoronix" type="rss" xmlUrl="https://www.phoronix.com/rss.php" htmlUrl="http://www.phoronix.com/" description="Linux Hardware Reviews, Performance Benchmarks &amp; Open-Source / Free Software News"/>
     </outline>
     <outline text="5.1 👓 Réalité Virtuelle">
+      <outline text="Le Monde" type="rss" xmlUrl="https://www.lemonde.fr/realite-virtuelle/rss_full.xml" htmlUrl="https://www.lemonde.fr/realite-virtuelle/rss_full.xml"/>
       <outline text="RealiteVirtuelle" type="rss" xmlUrl="https://realitevirtuelle.com/feed/" htmlUrl="https://realitevirtuelle.com/" description="Réalité Virtuelle - Retrouvez l'actualité VR, tests de jeux VR et casques VR, guides d'achat, tutos et vidéos"/>
-      <outline text="Réalité-Virtuelle" type="rss" xmlUrl="https://www.realite-virtuelle.com/feed/" htmlUrl="https://www.realite-virtuelle.com/" description="Metavers, Gaming &amp; innovation"/>
-      <outline text="Réalité Augmentée" type="rss" xmlUrl="https://feeds.feedburner.com/augmented-reality/iactu" htmlUrl="http://www.augmented-reality.fr/" description="L'association francophone de la réalité augmentée"/>
+      <outline text="Stylistme" type="rss" xmlUrl="https://stylistme.com/feed" htmlUrl="https://stylistme.com/" description="Objets connectés et Réalité Virtuelle"/>
     </outline>
     <outline text="6.1 📰 Infos France">
       <outline text="France 24" type="rss" xmlUrl="https://www.france24.com/fr/france/rss" htmlUrl="https://www.france24.com/fr/france/rss" description="France 24  couvre les évènements en France et en Outre-mer : politique, culture, faits de société, énergie, crise sociale, sport, santé, avec ses reportages, enquêtes, débats et analyses."/>
