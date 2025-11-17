@@ -2,7 +2,7 @@
 <opml xmlns:frss="https://freshrss.org/opml" version="2.0">
   <head>
     <title>iActu</title>
-    <dateCreated>Thu, 13 Nov 2025 20:45:06 +0100</dateCreated>
+    <dateCreated>Mon, 17 Nov 2025 13:39:14 +0100</dateCreated>
   </head>
   <body>
     <outline text="1.1 🖥️ Technologie">
@@ -66,7 +66,7 @@
       <outline text="Gamekult" type="rss" xmlUrl="https://www.gamekult.com/feed.xml" htmlUrl="http://www.gamekult.com/" description="Dernieres actualites de jeux video par la rédaction de Gamekult.com"/>
       <outline text="GamerGen" type="rss" xmlUrl="https://gamergen.com/rss" htmlUrl="http://www.gamergen.com/" description="GAMERGEN.COM est le portail français consacré à l'actualité du geek connecté et du joueur de jeux vidéo sur consoles de salon (PS4 / Xbox One / Switch), consoles portables (PS Vita / 3DS), PC  mais aussi sur smartphones et tablettes (Android, iOS, Windows) ainsi que sur la réalité virtuelle VR. Retrouvez nos actualités, dossiers, tests, tutos, fiches jeu, fiches matériel et autres téléchargements, ainsi que notre communauté dans un forum très actif."/>
       <outline text="IndieMag" type="rss" xmlUrl="https://www.indiemag.fr/feed/rss.xml" htmlUrl="https://www.indiemag.fr" description="L'actualité du jeu vidéo indépendant"/>
-      <outline text="JV France" type="rss" xmlUrl="https://www.jvfrance.com/feed/" htmlUrl="https://www.jvfrance.com/" description="Votre média indépendant de référence sur le jeu vidéo."/>
+      <outline text="JV" type="rss" xmlUrl="https://www.jvfrance.com/feed/" htmlUrl="https://www.jvfrance.com/"/>
       <outline text="NoFrag" type="rss" xmlUrl="https://feeds.feedburner.com/nofrag/disj" htmlUrl="http://www.nofrag.com/" description="L'actualité des simulateurs de meurtres"/>
     </outline>
     <outline text="3.2 🎲 Jeux Autres">
