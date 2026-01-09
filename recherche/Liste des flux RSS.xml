@@ -2,7 +2,7 @@
 <opml xmlns:frss="https://freshrss.org/opml" version="2.0">
   <head>
     <title>iActu</title>
-    <dateCreated>Wed, 03 Dec 2025 09:47:59 +0100</dateCreated>
+    <dateCreated>Fri, 09 Jan 2026 23:02:58 +0100</dateCreated>
   </head>
   <body>
     <outline text="1.1 🖥️ Technologie">
@@ -29,8 +29,8 @@
     </outline>
     <outline text="1.2 🖥️ Tech. Autres sites">
       <outline text="Fredzone" type="rss" xmlUrl="https://www.fredzone.org/category/news/feed/" htmlUrl="http://www.fredzone.org/" description="Tout sur la high tech, la science et la culture pop"/>
-      <outline text="HardwareCooking" type="rss" xmlUrl="https://www.hardwarecooking.fr/feed/" htmlUrl="https://www.hardwarecooking.fr/" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="5"/>
-      <outline text="iPhon" type="rss" xmlUrl="https://www.iphon.fr/feed" htmlUrl="https://www.iphon.fr/" description="Toute l'actualité iPhone, iPad, Mac et Apple Watch"/>
+      <outline text="HardwareCooking" type="rss" xmlUrl="https://www.hardwarecooking.fr/feed/" htmlUrl="https://www.hardwarecooking.fr/" description="de l'actualité, des tests, des unboxings et des photos dans la cuisine du hardware !" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="5"/>
+      <outline text="iPhon" type="rss" xmlUrl="https://www.iphon.fr/feed" htmlUrl="https://www.iphon.fr/" description="Toute l'actualité iPhone, iPad, Mac et Apple Watch" frss:unicityCriteria="sha1:link_published"/>
       <outline text="IT-Connect" type="rss" xmlUrl="https://www.it-connect.fr/feed/" htmlUrl="https://www.it-connect.fr/" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="5"/>
       <outline text="Korben" type="rss" xmlUrl="https://korben.info/feed" htmlUrl="https://korben.info/" description="Nouveaux articles de Korben"/>
       <outline text="Pause Hardware" type="rss" xmlUrl="https://pausehardware.com/feed/" htmlUrl="https://pausehardware.com/" description="Actualit??s et Tests hardware, Modding PC et bien plus !"/>
@@ -42,6 +42,7 @@
     </outline>
     <outline text="1.3 🖥️ Tech. English">
       <outline text="HotHardware" type="rss" xmlUrl="https://hothardware.com/rss/news" htmlUrl="https://hothardware.com/rss/news" description="HotHardware.com News Rss Feed" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="5"/>
+      <outline text="Igor" type="rss" xmlUrl="https://www.igorslab.de/en/feed/" htmlUrl="https://www.igorslab.de/" description="PC &amp; Components | Reviews &amp; News"/>
       <outline text="KitGuru" type="rss" xmlUrl="https://www.kitguru.net/feed/" htmlUrl="https://www.kitguru.net/" description="KitGuru.net - Tech News | Hardware News | Hardware Reviews | IOS | Mobile | Gaming | Graphics Cards"/>
       <outline text="PC Perspective" type="rss" xmlUrl="https://pcper.com/feed/" htmlUrl="http://www.pcper.com/" description="A Leader in PC Hardware Reviews and News"/>
       <outline text="TechPowerUp" type="rss" xmlUrl="https://www.techpowerup.com/rss/reviews" htmlUrl="https://www.techpowerup.com/" description="The latest Hardware and Gaming News" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="-1"/>
@@ -54,7 +55,7 @@
       <outline text="MacG.co" type="rss" xmlUrl="https://megaflux.macg.co/" htmlUrl="http://www.macg.co/" description="Flux RSS de MacGeneration | iGeneration | WatchGeneration"/>
     </outline>
     <outline text="2.2 🍏 Apple Autres">
-      <outline text="Competence Mac" type="rss" xmlUrl="https://www.competencemac.com/xml/syndication.rss" htmlUrl="https://www.competencemac.com/xml/atom.xml"/>
+      <outline text="Competence Mac" type="rss" xmlUrl="https://www.competencemac.com/xml/syndication.rss" htmlUrl="https://www.competencemac.com/xml/atom.xml" description="100% Mac, iPhone, iPad, iPod. 100% iPratique."/>
       <outline text="Cuk" type="rss" xmlUrl="https://leblogducuk.ch/feed/" htmlUrl="https://leblogducuk.ch" description="Ici, mais sûrement aussi ailleurs…"/>
       <outline text="iPhoneAddict" type="rss" xmlUrl="http://feeds.feedburner.com/Iphoneaddictfr" htmlUrl="http://iphoneaddict.fr/" description="Le site des accros de l'iPhone"/>
     </outline>
@@ -77,6 +78,7 @@
       <outline text="JeuxOnLine" type="rss" xmlUrl="https://www.jeuxonline.info/rss/actualites/rss.xml" htmlUrl="http://www.jeuxonline.info/" description="JeuxOnLine - Actualités"/>
       <outline text="Playerone" type="rss" xmlUrl="https://playerone.tv/feed/" htmlUrl="https://playerone.tv/" description="Le meilleur de l'actualité gaming !"/>
       <outline text="Puissance Nintendo" type="rss" xmlUrl="http://feeds.feedburner.com/pn-majs" htmlUrl="http://www.p-nintendo.com/" description="Flux RSS de Puissance Nintendo : actualité des consoles Switch, 3DS, Wii U"/>
+      <outline text="Xbox Gamer" type="rss" xmlUrl="https://www.xbox-gamer.net/rss.php" htmlUrl="https://www.xbox-gamer.net/" description="Xbox Gamer est un magazine en ligne de jeux vidéo informant sur les consoles Xbox Series X|S, Xbox Game Pass, Xbox One, Xbox 360 et Xbox de Microsoft. Au programme, des actualités, des tests, des previews, des interviews, et plus encore." frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="5"/>
     </outline>
     <outline text="3.3 🎲 Jeux English">
       <outline text="DSOGaming" type="rss" xmlUrl="https://www.dsogaming.com/feed/" htmlUrl="https://www.dsogaming.com/" description="PC Games News, Screenshots, Trailers &amp; More"/>
@@ -84,7 +86,7 @@
       <outline text="PC Gamer" type="rss" xmlUrl="https://www.pcgamer.com/feeds.xml" htmlUrl="http://www.pcgamer.com" description="All the latest content from the PC Gamer team"/>
     </outline>
     <outline text="4.1 🐧 Linux">
-      <outline text="DistroWatch" type="rss" xmlUrl="https://distrowatch.com/news/dwd.xml" htmlUrl="https://distrowatch.com/" description="Latest distribution releases" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="-1"/>
+      <outline text="DistroWatch" type="rss" xmlUrl="https://distrowatch.com/news/dwd.xml" htmlUrl="https://distrowatch.com/" description="Latest distribution releases" frss:unicityCriteria="link" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="-1"/>
       <outline text="GamingOnLinux" type="rss" xmlUrl="https://www.gamingonlinux.com/article_rss.php" htmlUrl="https://www.gamingonlinux.com/" description="The latest articles from GamingOnLinux"/>
       <outline text="LinuxFr" type="rss" xmlUrl="https://linuxfr.org/news.atom" htmlUrl="https://linuxfr.org/"/>
       <outline text="Phoronix" type="rss" xmlUrl="https://www.phoronix.com/rss.php" htmlUrl="http://www.phoronix.com/" description="Linux Hardware Reviews, Performance Benchmarks &amp; Open-Source / Free Software News" frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="-1"/>
@@ -92,7 +94,7 @@
     </outline>
     <outline text="5.1 👓 Réalité Virtuelle">
       <outline text="Le Monde" type="rss" xmlUrl="https://www.lemonde.fr/realite-virtuelle/rss_full.xml" htmlUrl="https://www.lemonde.fr/realite-virtuelle/rss_full.xml"/>
-      <outline text="RealiteVirtuelle" type="rss" xmlUrl="https://realitevirtuelle.com/feed/" htmlUrl="https://realitevirtuelle.com/" description="Réalité Virtuelle - Retrouvez l'actualité VR, tests de jeux VR et casques VR, guides d'achat, tutos et vidéos"/>
+      <outline text="RealiteVirtuelle" type="rss" xmlUrl="https://realitevirtuelle.com/feed/" htmlUrl="https://realitevirtuelle.com/" description="Réalité Virtuelle - Retrouvez l'actualité VR, tests de jeux VR et casques VR, guides d'achat, tutos et vidéos" frss:unicityCriteria="sha1:link_published_title"/>
       <outline text="Stylistme" type="rss" xmlUrl="https://stylistme.com/feed" htmlUrl="https://stylistme.com/" description="Objets connectés et Réalité Virtuelle"/>
     </outline>
     <outline text="6.1 📰 Infos France">
@@ -112,7 +114,6 @@
       <outline text="L'Express" type="rss" xmlUrl="https://www.lexpress.fr/arc/outboundfeeds/rss/monde.xml" htmlUrl="https://www.lexpress.fr/" description="Grâce aux fils RSS de LExpress.fr, vous pouvez recevoir les dernières informations publiées sur le site en temps réel ou les dernières notes des blogs de nos journalistes." frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="3"/>
       <outline text="Le Figaro" type="rss" xmlUrl="https://www.lefigaro.fr/rss/figaro_international.xml" htmlUrl="http://www.lefigaro.fr/" description="International : Retrouvez toute l'actualité internationale, le ministère des affaires étrangères, la politique étrangère sur Le Figaro"/>
       <outline text="Le Monde" type="rss" xmlUrl="https://www.lemonde.fr/international/rss_full.xml" htmlUrl="http://www.lemonde.fr/" description="International  - Découvrez gratuitement tous les articles, les vidéos et les infographies de la rubrique International sur Le Monde.fr."/>
-      <outline text="Le Télégramme" type="rss" xmlUrl="https://www.letelegramme.fr/monde/rss.xml" htmlUrl="https://www.letelegramme.fr/" description="Toute l'actualité internationale traitée au quotidien par les journalistes du Télégramme. Reportages, informations de dernière minute, directs en lien avec le monde"/>
       <outline text="RFI" type="rss" xmlUrl="https://feeds.feedburner.com/rfi/europe" htmlUrl="http://www.rfi.fr/" description="Suivez l'actualité en direct dédiée au continent Européen - Les derniers reportages, news et informations en continu en Europe, Emissions, Podcast, dossiers sur RFI."/>
       <outline text="Sud Ouest" type="rss" xmlUrl="https://www.sudouest.fr/international/rss.xml" htmlUrl="https://www.sudouest.fr/international/" description="International : informations actualités en temps réel"/>
     </outline>
@@ -145,7 +146,7 @@
       <outline text="Toutelatele" type="rss" xmlUrl="https://toutelatele.ouest-france.fr/flux-general-tltv.php3" htmlUrl="http://www.toutelatele.com/"/>
     </outline>
     <outline text="6.8 📰 Sports">
-      <outline text="L'Equipe" type="rss" xmlUrl="https://dwh.lequipe.fr/api/edito/rss?path=/" htmlUrl="https://www.lequipe.fr/" description="Le sport en direct sur L'Équipe. Les informations, résultats et classements de tous les sports. Directs commentés, images et vidéos à regarder et à partager"/>
+      <outline text="L'Equipe" type="rss" xmlUrl="https://dwh.lequipe.fr/api/edito/rss?path=/" htmlUrl="https://www.lequipe.fr/" description="Le sport en direct sur L'Équipe. Les informations, résultats et classements de tous les sports. Directs commentés, images et vidéos à regarder et à partager" frss:unicityCriteria="sha1:link_published"/>
       <outline text="Le Figaro" type="rss" xmlUrl="https://www.lefigaro.fr/rss/figaro_sport.xml" htmlUrl="https://www.lefigaro.fr/sports/" description="Sports : Retrouvez toute l'actualit?? sportive en direct et r??sultats en continue avec Le Figaro"/>
       <outline text="Le Monde" type="rss" xmlUrl="https://www.lemonde.fr/sport/rss_full.xml" htmlUrl="http://www.lemonde.fr/" description="Sport  - Découvrez gratuitement tous les articles, les vidéos et les infographies de la rubrique Sport sur Le Monde.fr."/>
       <outline text="Maxifoot" type="rss" xmlUrl="http://rss.maxifoot.com/football-general.xml" htmlUrl="http://www.maxifoot.fr/" description="L'info football et transfert, rss general"/>
@@ -155,7 +156,7 @@
       <outline text="Financial Times" type="rss" xmlUrl="https://www.ft.com/rss/home/uk" htmlUrl="https://www.ft.com/" description="UK homepage"/>
       <outline text="FOXNews" type="rss" xmlUrl="https://moxie.foxnews.com/feedburner/latest.xml" htmlUrl="http://www.foxnews.com/" description="FoxNews.com - Breaking news and video. Latest Current News: U.S., World, Entertainment, Health, Business, Technology, Politics, Sports."/>
       <outline text="National Post" type="rss" xmlUrl="https://nationalpost.com/feed" htmlUrl="https://nationalpost.com/" description="Canadian News, World News and Breaking Headlines"/>
-      <outline text="New York Post" type="rss" xmlUrl="https://nypost.com/feed/" htmlUrl="https://nypost.com/" description="Your source for breaking news, news about New York, sports, business, entertainment, opinion, real estate, culture, fashion, and more."/>
+      <outline text="New York Post" type="rss" xmlUrl="https://nypost.com/feed/" htmlUrl="https://nypost.com/" description="Your source for breaking news, news about New York, sports, business, entertainment, opinion, real estate, culture, fashion, and more." frss:unicityCriteria="sha1:link_published_title"/>
       <outline text="NYT" type="rss" xmlUrl="https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml" htmlUrl="http://www.nytimes.com/"/>
       <outline text="The Guardian" type="rss" xmlUrl="https://www.theguardian.com/international/rss" htmlUrl="https://www.theguardian.com/international" description="Latest international news, sport and comment from the Guardian"/>
       <outline text="The Independent" type="rss" xmlUrl="http://www.independent.co.uk/rss" htmlUrl="https://www.independent.co.uk/rss" description="Visit now for the latest news direct from The Independent and updated throughout the day"/>
@@ -179,5 +180,6 @@
       <outline text="7.4.4 📰 Infos Insolites" type="rss" xmlUrl="https://iactu.info/recherche/p/i/?a=rss&amp;get=c_5&amp;hours=72" htmlUrl="https://iactu.info/recherche/p" description="Flux RSS de 6.6 📰 Insolites | iActu"/>
       <outline text="7.4.5 📰 Infos Cinéma | TV" type="rss" xmlUrl="https://iactu.info/recherche/p/i/?a=rss&amp;get=c_2&amp;hours=72" htmlUrl="https://iactu.info/recherche/p" description="Flux RSS de 6.7 📰 Cinéma | TV | iActu"/>
     </outline>
+    <outline text="Sans catégorie"/>
   </body>
 </opml>
