@@ -1,1 +1,68 @@
-{"name": "iActu","short_name": "iActu","background_color": "#ffffff","description": "Revue de presse","orientation": "any","scope": "/","start_url": "https://iactu.info","display": "standalone","theme_color": "#ffffff","icons":[{"src":"favicon_512.png","type":"image/png","sizes":"512x512"},{"src":"favicon_192.png","type":"image/png","sizes":"192x192"}]}
+{
+  "id": "https://iactu.info/",
+  "name": "iActu",
+  "short_name": "iActu",
+  "lang": "fr",
+  "description": "iActu — Revue de presse technologique, actualités et programme TV du jour.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "dir": "ltr",
+
+  "icons": [
+    {
+      "src": "favicon_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "favicon_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+
+  "shortcuts": [
+    {
+      "name": "Accueil",
+      "short_name": "Accueil",
+      "url": "/"
+    },
+    {
+      "name": "Technologie",
+      "short_name": "Tech",
+      "url": "/technologie.php"
+    },
+    {
+      "name": "Apple",
+      "short_name": "Apple",
+      "url": "/apple.php"
+    },
+    {
+      "name": "Jeux vidéo",
+      "short_name": "Jeux",
+      "url": "/jeux.php"
+    },
+    {
+      "name": "Sciences",
+      "short_name": "Sciences",
+      "url": "/sciences.php"
+    },
+    {
+      "name": "Actualités",
+      "short_name": "Actu",
+      "url": "/actualites.php"
+    },
+    {
+      "name": "Programme TV",
+      "short_name": "TV",
+      "url": "/tv.php"
+    }
+  ],
+
+  "categories": ["news", "technology", "media"],
+  "prefer_related_applications": false
+}
