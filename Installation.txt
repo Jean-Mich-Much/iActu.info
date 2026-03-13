@@ -2,6 +2,7 @@ Mon pense pas bête pour installer, instructions en vrac… presque dans l’ord
 
 (le site sera installé dans le dossier "/_")
 
+
 ────────────────────────────────────────
 Accès & mots de passe
 ────────────────────────────────────────
@@ -24,6 +25,7 @@ Commenter :
 Redémarrer SSH :
 systemctl restart sshd
 
+
 ────────────────────────────────────────
 Infos système
 ────────────────────────────────────────
@@ -32,6 +34,7 @@ ps aux | sort -rnk 5 | head -48
 systemctl --type=service --state=running
 free -m
 cat /proc/cpuinfo
+
 
 ────────────────────────────────────────
 Locales & timezone
@@ -44,6 +47,7 @@ update-locale LANG=fr_FR.UTF-8
 locale
 env
 
+
 ────────────────────────────────────────
 Préparation dossiers
 ────────────────────────────────────────
@@ -52,11 +56,13 @@ cd /tmp
 rm -rf /_/ && mkdir -p /_ && chown -R caddy:caddy /_ && chmod -R 777 /_
 rm -rf /_backup && mkdir -p /_backup && chown -R root:root /_backup && chmod -R 777 /_backup
 
+
 ────────────────────────────────────────
 === FIX DÉPENDANCES ===
 ────────────────────────────────────────
 
 apt --fix-broken install -y
+
 
 ────────────────────────────────────────
 === INSTALLATION PAQUETS (Debian/Ubuntu compatibles) ===
@@ -77,6 +83,7 @@ wget whois xz-utils zlib1g-dev zstd libheif1 libheif-dev
 apt autoremove -y
 apt autoclean -y
 
+
 ────────────────────────────────────────
 === PYTHON ENV ===
 ────────────────────────────────────────
@@ -84,6 +91,7 @@ apt autoclean -y
 python3 -m venv /opt/pyenv
 source /opt/pyenv/bin/activate
 pip install aiohttp aiodns dnspython requests-cache six pillow-heif
+
 
 ────────────────────────────────────────
 === PHP 8.3 ===
@@ -101,6 +109,7 @@ apt autoremove -y
 
 systemctl restart php8.3-fpm.service
 
+
 ────────────────────────────────────────
 === CADDY (Cloudsmith) ===
 ────────────────────────────────────────
@@ -116,6 +125,7 @@ apt --fix-broken install -y
 apt install -y --install-recommends caddy
 
 systemctl restart caddy.service
+
 
 ────────────────────────────────────────
 === FRESHRSS ===
@@ -136,29 +146,33 @@ chown -R caddy:caddy /_/prime+/recherche
 find /_/prime+/recherche -type d -exec chmod 775 {} +
 find /_/prime+/recherche -type f -exec chmod 774 {} +
 
+
 ────────────────────────────────────────
-Maintenance
+=== MAINTENANCE ===
 ────────────────────────────────────────
 
 cd /tmp
-chown -R caddy:caddy /_ && chmod -R 777 /_
-apt update
-apt autoremove --purge -y
-apt clean -y
+chown -R caddy:caddy /_/
+find /_/ -type d -exec chmod 775 {} +
+find /_/ -type f -exec chmod 774 {} +
+
+apt --fix-broken install -y
+apt update || true
 apt upgrade -y
-apt autoremove --purge -y
+apt autoremove -y
 apt clean -y
 
-systemctl stop php8.3-fpm && sleep 2
-systemctl stop caddy && sleep 2
-sync && sleep 5
-shutdown -r now
+systemctl stop php8.3-fpm && sleep 2 \
+&& systemctl stop caddy && sleep 2 \
+&& sync && sleep 5 && shutdown -r now
+
 
 ────────────────────────────────────────
 Backup
 ────────────────────────────────────────
 
 tar -Jcf /_backup/backup.tar.xz /_/ /dev/null 2>&1
+
 
 ────────────────────────────────────────
 Restauration (zstd)
@@ -175,6 +189,7 @@ rm -rf /_/_
 chown -R caddy:caddy /_ && chmod -R 777 /_
 rm -f /_/backup.tar.zst
 echo "Restauration terminée"
+
 
 ────────────────────────────────────────
 UFW (version minimale + OVH Monitoring)
@@ -211,6 +226,7 @@ ufw enable
 ufw reload
 ufw status
 
+
 ────────────────────────────────────────
 SSHGuard
 ────────────────────────────────────────
@@ -228,11 +244,13 @@ Liste blanche :
 nano /etc/sshguard/whitelist
 (ajouter votre IP)
 
+
 ────────────────────────────────────────
 Divers
 ────────────────────────────────────────
 
 Voir les dossiers dans /etc et /var (configuration php / caddy / cron.d et autres crons, remplacez par le bon nom de domaine dans le fichier de config de caddy, voir les crons dans var et adaptez pour votre serveur)
+
 
 ────────────────────────────────────────
 Reboot safe
