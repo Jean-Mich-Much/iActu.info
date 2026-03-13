@@ -1,4 +1,12 @@
 User-agent: *
-Allow: /
+Disallow: /
+
+Allow: /$
+Allow: /technologie.php
+Allow: /apple.php
+Allow: /jeux.php
+Allow: /sciences.php
+Allow: /actualites.php
+Allow: /tv.php
 
 Sitemap: https://iactu.info/sitemap.xml
