@@ -2,7 +2,7 @@
 <opml xmlns:frss="https://freshrss.org/opml" version="2.0">
   <head>
     <title>iActu</title>
-    <dateCreated>Fri, 09 Jan 2026 23:02:58 +0100</dateCreated>
+    <dateCreated>Fri, 13 Mar 2026 07:31:50 +0100</dateCreated>
   </head>
   <body>
     <outline text="1.1 🖥️ Technologie">
@@ -68,7 +68,7 @@
       <outline text="Gamekult" type="rss" xmlUrl="https://www.gamekult.com/feed.xml" htmlUrl="http://www.gamekult.com/" description="Dernieres actualites de jeux video par la rédaction de Gamekult.com"/>
       <outline text="GamerGen" type="rss" xmlUrl="https://gamergen.com/rss" htmlUrl="http://www.gamergen.com/" description="GAMERGEN.COM est le portail français consacré à l'actualité du geek connecté et du joueur de jeux vidéo sur consoles de salon (PS4 / Xbox One / Switch), consoles portables (PS Vita / 3DS), PC  mais aussi sur smartphones et tablettes (Android, iOS, Windows) ainsi que sur la réalité virtuelle VR. Retrouvez nos actualités, dossiers, tests, tutos, fiches jeu, fiches matériel et autres téléchargements, ainsi que notre communauté dans un forum très actif."/>
       <outline text="IndieMag" type="rss" xmlUrl="https://www.indiemag.fr/feed/rss.xml" htmlUrl="https://www.indiemag.fr" description="L'actualité du jeu vidéo indépendant"/>
-      <outline text="JV" type="rss" xmlUrl="https://www.jvfrance.com/feed/" htmlUrl="https://www.jvfrance.com/" description="Votre m??dia ind??pendant de r??f??rence sur le jeu vid??o." frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="-1"/>
+      <outline text="JV" type="rss" xmlUrl="https://www.jvfrance.com/feed/" htmlUrl="https://www.jvfrance.com/" description="Votre média indépendant de référence sur le jeu vidéo." frss:CURLOPT_FOLLOWLOCATION="1" frss:CURLOPT_MAXREDIRS="-1"/>
       <outline text="NoFrag" type="rss" xmlUrl="https://feeds.feedburner.com/nofrag/disj" htmlUrl="http://www.nofrag.com/" description="L'actualité des simulateurs de meurtres"/>
     </outline>
     <outline text="3.2 🎲 Jeux Autres">
@@ -99,9 +99,8 @@
     </outline>
     <outline text="6.1 📰 Infos France">
       <outline text="France 24" type="rss" xmlUrl="https://www.france24.com/fr/france/rss" htmlUrl="https://www.france24.com/fr/france/" description="France 24  couvre les évènements en France et en Outre-mer : politique, culture, faits de société, énergie, crise sociale, sport, santé, avec ses reportages, enquêtes, débats et analyses."/>
-      <outline text="Huffingtonpost" type="rss" xmlUrl="https://www.huffingtonpost.fr/france/rss_headline.xml" htmlUrl="https://www.huffingtonpost.fr/france/" description="Ne ratez rien de l'actu grâce à nos articles et vidéos en accès libre : Politique, France, International, Environnement, Sciences, Life, Culture et Divertissement... A décrouvrir à travers nos nombreux contenus, mais aussi des témoignages et des tribunes."/>
+      <outline text="Huffingtonpost" type="rss" xmlUrl="https://www.huffingtonpost.fr/france/rss_headline.xml" htmlUrl="https://www.huffingtonpost.fr/france/" description="Ne ratez rien de l'actu gr??ce ?? nos articles et vid??os en acc??s libre : Politique, France, International, Environnement, Sciences, Life, Culture et Divertissement... A d??crouvrir ?? travers nos nombreux contenus, mais aussi des t??moignages et des tribunes."/>
       <outline text="Le Monde" type="rss" xmlUrl="https://www.lemonde.fr/economie-francaise/rss_full.xml" htmlUrl="https://www.lemonde.fr" description="Économie française  - Découvrez gratuitement tous les articles, les vidéos et les infographies de la rubrique Économie française sur Le Monde.fr."/>
-      <outline text="Telegramme" type="rss" xmlUrl="https://www.letelegramme.fr/france/rss.xml" htmlUrl="https://www.letelegramme.fr/" description="Toute l'actualité française traitée au quotidien par les journalistes du Télégramme. Reportages, informations de dernière minute, directs en lien avec la France"/>
     </outline>
     <outline text="6.2 📰 Infos Monde">
       <outline text="Bfm" type="rss" xmlUrl="https://www.bfmtv.com/rss/international/" htmlUrl="https://www.bfmtv.com/international/" description="Monde et International - Retrouvez les dernières infos politiques, économiques et sociales: Articles, interviews et vidéos en direct"/>
