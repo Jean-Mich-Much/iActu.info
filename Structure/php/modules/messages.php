@@ -10,27 +10,29 @@
  </span>
 </div> 
 
-<?php $affiche_message_1 = true;?>
+<?php $affiche_message_1 = false; ?>
 <?php if ($affiche_message_1) {; ?>
 <!-- 😊 🤗 😄 😅 😀 🙂 😁 😇 😍 🥳 🥰 😜 🤩 😋 😏 😃 😆 -->
 <div class="messages retour_ligne_on hauteur_auto">
 <span class="pad8px retour_ligne_on hauteur_auto largeur_auto marges_auto">
 <span style="line-height: round(up, 1.35rem, 6px);display: inline;">
-🪧 Montage d’un PC full custom réalisé avec passion par un jeune talentueux, qu’il présentera à la prochaine Paris Games Week&nbsp;: <a href="https://www.twitch.tv/videos/2580514769?filter=archives&sort=time" target="_blank" aria-label="Lien 😊" alt="Lien 😊" title="Lien 😊" style="display: inline;">🔗&nbsp;Lien&nbsp;Twitch&nbsp;</a>
+🪧 La suite du montage d’un autre PC full custom impressionnant qu’il présentera à la prochaine Paris Games Week&nbsp;: <a href="https://www.twitch.tv/videos/2580514769?filter=archives&sort=time" target="_blank" aria-label="Lien 😊" alt="Lien 😊" title="Lien 😊" style="display: inline;">🔗&nbsp;Lien&nbsp;Twitch&nbsp;</a>
 </span></span></div><?php };?>
 
-<?php $affiche_message_2 = true;?>
+<?php $affiche_message_2 = true; ?>
 <?php if ($affiche_message_2) {; ?>
 <!-- 😊 🤗 😄 😅 😀 🙂 😁 😇 😍 🥳 🥰 😜 🤩 😋 😏 😃 😆 -->
 <div class="messages retour_ligne_on hauteur_auto">
 <span class="pad8px retour_ligne_on hauteur_auto largeur_auto marges_auto">
 <span style="line-height: round(up, 1.35rem, 6px);display: inline;">
-🪧 Modifications de la page d'accueil : les sites qui utilisent trop l'IA ont été supprimés et la page a été réorganisée. Vous pouvez néanmoins retrouver les sites retirés dans la section "Autres sites". </span></span></div><?php };?>
+🪧 Coucou, je vois que beaucoup de gens se demandent comment devenir abonné. Au moment de donner sur PayPal, hop, vous cochez “En faire un don mensuel” et voilà, vous devenez un abonné 😊</span></span></div><?php };?>
 
-<?php $affiche_message_3 = true;?>
+<?php $affiche_message_3 = false; ?>
 <?php if ($affiche_message_3) {; ?>
-<!-- 😊 🤗 😄 😅 😀 🙂 😁 😇 😍 🥳 🥰 😜 🤩 😋 😏 😃 😆 -->
+<!-- 😍&nbsp;Patrice&nbsp;D.&nbsp;25€, -->
+<!-- 😄&nbsp;Anthony&nbsp;V.&nbsp;10€, -->
+<!-- 😋&nbsp;Philippe&nbsp;B.&nbsp;5€, -->
 <div class="messages retour_ligne_on hauteur_auto">
 <span class="pad8px retour_ligne_on hauteur_auto largeur_auto marges_auto">
 <span style="line-height: round(up, 1.35rem, 6px);">
-🪧 Dons septembre, merci à 😊 Pierre B. 10€&nbsp; 😍 Patrice D. 20€&nbsp; 😊 Stephane D. 10€&nbsp; 😋 Allan V. 5€&nbsp; 😊 Olivier P. 10€&nbsp; 😍 Johann V. 20€&nbsp; 😋 Jérémy B. 5€&nbsp; 😋 Allan V. 5€&nbsp; 😊 Philippe D. 10€&nbsp; 😋 Nicolas B. 5€&nbsp; 😋 Xavier M. 5€&nbsp; </span></span></div><?php };?>
+🪧 Dons, budget&nbsp;de&nbsp;février (hors&nbsp;abonnés), merci&nbsp;à&nbsp;:  Xavier&nbsp;M.&nbsp;30€, Emmanuel&nbsp;S.&nbsp;20€, Julian&nbsp;M.&nbsp;10€, Tony&nbsp;M.&nbsp;10€ et Olivier&nbsp;P.&nbsp;10€.</span></span></div><?php };
