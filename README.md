@@ -30,7 +30,6 @@ Elle couvre :
 - `maj_cli.php` — mises à jour automatisées et tâches programmées  
 - `lit_rss.php` — parser des flux RSS/Atom  
 - `fusion_rss.php` — moteur de fusion et normalisation des flux RSS  
-- `assets/` — ressources statiques (CSS, images, etc.)  
 - `Fondation/` — cœur technique, librairies internes, documentation  
 
 ## 🔧 Environnement recommandé
