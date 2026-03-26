@@ -7,7 +7,6 @@ Code source complet de la **version 18** du site **iactu.info**.
 - **PHP 8.3.6**
 - **HTML5**
 - **CSS3**
-- **Python**
 - **Ubuntu 24.04 LTS**
 - **Serveur Caddy**
 
@@ -35,8 +34,7 @@ Elle couvre :
 
 ## 🔧 Environnement recommandé
 - Serveur Linux (Ubuntu 24.04 ou équivalent)  
-- PHP 8.3.x avec extensions standard  
-- Python 3.10+  
+- PHP 8.3.x avec extensions standard 
 - Serveur web **Caddy** configuré en HTTPS automatique  
 - Cron ou systemd timers pour les tâches CLI  
 
