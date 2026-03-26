@@ -28,15 +28,13 @@ Structure du projet :
 Environnement recommandé :
 - Linux (Ubuntu 24.04)
 - PHP 8.3.x
-- Python 3.10+
 - Serveur Caddy
 - Cron ou systemd timers
 
 Notes :
-- Encodage obligatoire : UTF-8 LF
-- Architecture basée sur une source unique de vérité
-- Scripts CLI prévus pour Linux
-- Code organisé pour stabilité et maintenance
+- Le projet respecte une logique stricte
+- Les scripts CLI sont conçus pour fonctionner en environnement Linux uniquement  
+- Le code est organisé pour être lisible, stable et facilement maintenable  
 
 Auteur :
 Projet développé avec passion, rigueur et humour par **Jean‑Michel G - Bordeaux - France.**, artisan du code propre et cohérent.

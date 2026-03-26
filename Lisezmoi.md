@@ -41,8 +41,7 @@ Elle couvre :
 - Cron ou systemd timers pour les tâches CLI  
 
 ## 📝 Notes importantes
-- Tous les fichiers doivent être encodés en **UTF‑8 LF**  
-- Le projet respecte une logique stricte de **source unique de vérité**  
+- Le projet respecte une logique stricte
 - Les scripts CLI sont conçus pour fonctionner en environnement Linux uniquement  
 - Le code est organisé pour être lisible, stable et facilement maintenable  
 
