@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /
+
+Allow: /$
+Allow: /Page_technologie.php
+Allow: /Page_Apple.php
+Allow: /Page_jeux.php
+Allow: /Page_sciences.php
+Allow: /Page_actualités.php
+
+Sitemap: https://iactu.info/sitemap.xml
