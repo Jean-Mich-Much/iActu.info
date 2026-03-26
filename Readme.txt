@@ -37,5 +37,5 @@ Notes :
 - Le code est organisé pour être lisible, stable et facilement maintenable  
 
 Auteur :
-Projet développé avec passion, rigueur et humour par **Jean‑Michel G - Bordeaux - France.**, artisan du code propre et cohérent.
+Projet développé avec passion, rigueur et humour par **Jean‑Michel G - Bordeaux - France.**, artisan du code 😊
 
