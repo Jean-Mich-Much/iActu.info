@@ -11,7 +11,7 @@ Code source complet de la **version 18** du site **iactu.info**.
 - **Serveur Caddy**
 
 ## 📚 Documentation
-Une documentation complète, détaillée et normalisée (UTF‑8 LF) est disponible dans :
+Une documentation complète, détaillée et normalisée est disponible dans :
 Fondation/doc/
 
 
