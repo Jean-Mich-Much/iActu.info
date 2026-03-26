@@ -46,6 +46,64 @@ Elle couvre :
 ## 🧑‍💻 Auteur & Collaboration
 Projet développé avec passion, rigueur et humour par **Jean‑Michel G - Bordeaux - France.**, artisan du code propre et cohérent.
 
+📁 Arborescence du projet
+/
+├── Page_technologie.php
+├── Page_Apple.php
+├── Page_jeux.php
+├── Page_sciences.php
+├── Page_actualités.php
+│
+└── Fondation/
+    ├── cache/
+    │   ├── rss/
+    │   └── rss/fusion/
+    │
+    ├── css/
+    │   ├── base.css
+    │   ├── mid.css
+    │   ├── menu.css
+    │   ├── messages.css
+    │   └── fonts.css
+    │
+    ├── doc/
+    │   ├── index.html
+    │   ├── lit_rss.html
+    │   ├── fusion_rss.html
+    │   ├── job.html
+    │   ├── maj_cli.html
+    │   ├── maj.html
+    │   ├── affiche_html.html
+    │   └── pages.html
+    │
+    ├── fonts/
+    │   ├── inter_01.woff2
+    │   ├── inter_02.woff2
+    │   └── Twemoji.woff2
+    │
+    ├── logs/
+    │   ├── job.log
+    │   ├── fusion.log
+    │   └── affiche_html.log
+    │
+    ├── php/
+    │   ├── job.php
+    │   ├── fusion_rss.php
+    │   ├── parser/
+    │   │   └── lit_rss.php
+    │   ├── affiche_html.php
+    │   ├── menu.php
+    │   ├── messages_top.php
+    │   └── messages_bot.php
+    │
+    └── sites/
+        ├── technologie.php
+        ├── apple.php
+        ├── jeux.php
+        ├── sciences.php
+        └── actualités.php
+
+
 Contributions bienvenues via issues ou pull requests.
 
 ---
