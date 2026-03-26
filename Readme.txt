@@ -7,7 +7,6 @@ Technologies utilisées :
 - PHP 8.3.6
 - HTML5
 - CSS3
-- Python
 - Ubuntu 24.04 LTS
 - Serveur Caddy
 
