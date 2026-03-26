@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>fusion_rss.php – Documentation Technique (V18)</title>
+</head>
+<body>
+
+<h1>fusion_rss.php – Fusion et agrégation de flux RSS<br>Version 18 – Pipeline robuste, non bloquant</h1>
+
+<p>
+Le module <strong>fusion_rss.php</strong> assemble plusieurs flux RSS locaux en un flux unique, trié, dédupliqué et propre.
+Il constitue la deuxième étape du pipeline iActu V18.
+Le moteur est conçu pour être <strong>résilient</strong>, <strong>non bloquant</strong> et <strong>tolérant aux erreurs</strong>.
+</p>
+
+<hr>
+
+<h2>1. Rôle du module</h2>
+
+<p>
+Le module fusionne plusieurs flux RSS individuels en un flux unique, en appliquant&nbsp;:
+</p>
+
+<ul>
+<li>la collecte des flux sources locaux (<code>prefix_*.xml</code>),</li>
+<li>la lecture XML tolérante (flux cassés ignorés),</li>
+<li>l’extraction des items (titre, lien, date),</li>
+<li>la déduplication (URL + similarité de titres),</li>
+<li>le tri par date décroissante,</li>
+<li>la limitation au nombre maximal d’items,</li>
+<li>la génération d’un flux RSS final propre,</li>
+<li>l’écriture atomique du fichier final,</li>
+<li>la journalisation légère dans un log rotatif.</li>
+</ul>
+
+<p>
+Le module ne bloque jamais sur un flux ou un item invalide&nbsp;: il passe simplement au suivant.
+</p>
+
+<hr>
+
+<h2>2. Mode d’appel</h2>
+
+<p>
+Le module fonctionne en <strong>mode automatique unique</strong>&nbsp;:
+</p>
+
+<pre>fusion_rss(string $title, string $prefix, int $min, int $max);</pre>
+
+<ul>
+<li><strong>$title</strong> : titre du flux final,</li>
+<li><strong>$prefix</strong> : préfixe des fichiers sources (<code>prefix_*.xml</code>),</li>
+<li><strong>$min</strong> : nombre minimal d’items attendus,</li>
+<li><strong>$max</strong> : nombre maximal d’items à conserver.</li>
+</ul>
+
+<p>
+Tous les fichiers correspondant à <code>cache/rss/$prefix_*.xml</code> sont pris en compte.
+Il n’existe plus de mode manuel ni de gestion de fichiers <code>.ready</code>.
+</p>
+
+<hr>
+
+<h2>3. Collecte des flux sources</h2>
+
+<p>
+Les flux sont recherchés dans&nbsp;:
+</p>
+
+<pre>cache/rss/</pre>
+
+<p>
+Les fichiers doivent respecter le format&nbsp;:
+</p>
+
+<pre>$prefix_*.xml</pre>
+
+<p>
+Le module&nbsp;:
+</p>
+
+<ul>
+<li>ne crée ni ne lit de fichiers <code>.ready</code>,</li>
+<li>n’attend jamais (aucun délai, aucun sleep),</li>
+<li>ne verrouille aucun fichier (aucun lock).</li>
+</ul>
+
+<p>
+Un fichier introuvable, vide ou illisible est simplement ignoré.
+</p>
+
+<hr>
+
+<h2>4. Lecture et validation minimale</h2>
+
+<p>
+Chaque fichier source est chargé via <code>simplexml_load_file()</code>.
+Un flux source est ignoré si&nbsp;:
+</p>
+
+<ul>
+<li>le XML est invalide,</li>
+<li>la structure <code>&lt;channel&gt;</code> / <code>&lt;item&gt;</code> est absente,</li>
+<li>aucun item exploitable n’est trouvé.</li>
+</ul>
+
+<p>
+Un flux cassé ne bloque jamais la fusion&nbsp;: le module passe simplement au suivant.
+</p>
+
+<hr>
+
+<h2>5. Extraction des items</h2>
+
+<p>
+Pour chaque flux valide&nbsp;:
+</p>
+
+<ul>
+<li>parcours des balises <code>&lt;item&gt;</code>,</li>
+<li>extraction des champs suivants&nbsp;:</li>
+</ul>
+
+<ul>
+<li><strong>title</strong> : texte du titre, nettoyé (trim),</li>
+<li><strong>link</strong> : URL de l’article, nettoyée (trim),</li>
+<li><strong>date</strong> : conversion via <code>strtotime()</code> de <code>&lt;pubDate&gt;</code> ou équivalent.</li>
+</ul>
+
+<p>
+Un item est ignoré si&nbsp;:
+</p>
+
+<ul>
+<li>le titre est vide,</li>
+<li>le lien est vide,</li>
+<li>la date est invalide (ou non convertible).</li>
+</ul>
+
+<p>
+Les items valides sont ajoutés à un <strong>buffer global</strong> commun à tous les flux.
+</p>
+
+<hr>
+
+<h2>6. Déduplication – fusion_dedupe()</h2>
+
+<p>
+La déduplication repose sur deux critères complémentaires&nbsp;:
+</p>
+
+<ul>
+<li><strong>égalité stricte des URLs</strong>,</li>
+<li><strong>similarité des titres</strong> via <code>fusion_similar_titles()</code>.</li>
+</ul>
+
+<p>
+En cas de doublon, l’item le plus récent (date la plus élevée) est conservé.
+</p>
+
+<hr>
+
+<h2>7. Similarité des titres – fusion_similar_titles()</h2>
+
+<p>
+La similarité des titres repose sur les étapes suivantes&nbsp;:
+</p>
+
+<ul>
+<li><strong>normalisation</strong> via <code>fusion_norm_title()</code>&nbsp;:
+  <ul>
+    <li>passage en minuscules,</li>
+    <li>suppression de la ponctuation non alphanumérique,</li>
+    <li>réduction des espaces multiples,</li>
+    <li>trim final.</li>
+  </ul>
+</li>
+<li><strong>découpage</strong> en mots (tokens),</li>
+<li><strong>filtrage</strong> des mots de moins de 5 lettres,</li>
+<li><strong>intersection</strong> des mots significatifs.</li>
+</ul>
+
+<p>
+Deux titres sont considérés comme similaires si au moins <strong>4 mots significatifs</strong> (longueur ≥ 5 lettres) sont identiques.
+</p>
+
+<p>
+Ce seuil (4 mots) offre une déduplication robuste, limitant fortement les faux positifs.
+</p>
+
+<hr>
+
+<h2>8. Tri et limitation</h2>
+
+<p>
+Une fois tous les items collectés et dédupliqués, le module applique&nbsp;:
+</p>
+
+<ul>
+<li>un <strong>tri par date décroissante</strong>&nbsp;:
+<pre>usort($items, fn($a, $b) =&gt; $b['date'] &lt;=&gt; $a['date']);</pre>
+</li>
+<li>une <strong>limitation</strong> au nombre maximal d’items&nbsp;:
+  <ul>
+    <li>seuls les <code>$max</code> premiers items sont conservés,</li>
+    <li>le flux final doit contenir au moins <code>$min</code> items pour être considéré comme valide.</li>
+  </ul>
+</li>
+</ul>
+
+<hr>
+
+<h2>9. Génération du flux final – fusion_generate_rss()</h2>
+
+<p>
+Le flux final est généré sous la forme d’un RSS 2.0 propre&nbsp;:
+</p>
+
+<ul>
+<li>XML en <strong>UTF‑8</strong>,</li>
+<li>balises <code>&lt;channel&gt;</code> et <code>&lt;item&gt;</code> complètes,</li>
+<li>titres et liens échappés via <code>htmlspecialchars(..., ENT_XML1, 'UTF-8')</code>,</li>
+<li>dates au format <strong>RFC‑822</strong> (<code>DATE_RSS</code>).</li>
+</ul>
+
+<p>
+La structure est minimale mais strictement correcte pour un lecteur RSS moderne.
+</p>
+
+<hr>
+
+<h2>10. Écriture atomique</h2>
+
+<p>
+Le flux final est écrit de manière atomique afin d’éviter toute publication partielle&nbsp;:
+</p>
+
+<ul>
+<li>écriture dans un fichier temporaire <code>$prefix.xml.tmp</code>,</li>
+<li>application des permissions correctes (par exemple 664),</li>
+<li>renommage atomique du fichier temporaire vers <code>$prefix.xml</code>.</li>
+</ul>
+
+<p>
+En cas d’échec d’écriture, le fichier final n’est pas remplacé, garantissant l’absence de flux corrompu.
+</p>
+
+<hr>
+
+<h2>11. Validation finale – fusion_valid_final()</h2>
+
+<p>
+Après génération, le flux final peut être soumis à une validation minimale&nbsp;:
+</p>
+
+<ul>
+<li>présence d’au moins <strong>$min</strong> items,</li>
+<li>présence des balises <code>&lt;channel&gt;</code> et <code>&lt;/rss&gt;</code>,</li>
+<li>terminaison correcte du document.</li>
+</ul>
+
+<p>
+En cas d’échec, le flux n’est pas publié (le fichier existant est conservé).
+</p>
+
+<hr>
+
+<h2>12. Gestion des logs – fusion_log()</h2>
+
+<p>
+Les opérations sont journalisées dans <code>logs/fusion.log</code>.
+Le fichier de log est géré avec une rotation légère&nbsp;:
+</p>
+
+<ul>
+<li>si le fichier dépasse <strong>512 octets</strong>, il est vidé,</li>
+<li>si le fichier n’a pas été modifié depuis plus de <strong>7 jours</strong>, il est vidé,</li>
+<li>chaque nouvelle entrée est ajoutée avec un horodatage.</li>
+</ul>
+
+<p>
+La journalisation reste minimale et ne bloque jamais la fusion.
+</p>
+
+<hr>
+
+<h2>13. Résumé opérationnel</h2>
+
+<ul>
+<li><strong>collecte</strong> des flux locaux (<code>$prefix_*.xml</code>)</li>
+<li><strong>lecture</strong> XML tolérante (flux cassés ignorés)</li>
+<li><strong>extraction</strong> des items valides (titre, lien, date)</li>
+<li><strong>déduplication</strong> (URL + 4 mots significatifs ≥ 5 lettres)</li>
+<li><strong>tri</strong> par date décroissante</li>
+<li><strong>limitation</strong> à <code>$max</code> items</li>
+<li><strong>génération</strong> d’un flux RSS 2.0 propre</li>
+<li><strong>validation</strong> minimale du flux final</li>
+<li><strong>écriture atomique</strong> du fichier final</li>
+<li><strong>log</strong> léger avec rotation simple</li>
+</ul>
+
+<hr>
+
+<h2>14. Conclusion</h2>
+
+<p>
+Le module <strong>fusion_rss.php</strong> assure une fusion robuste, cohérente et non bloquante des flux RSS normalisés.
+Il garantit&nbsp;:
+</p>
+
+<ul>
+<li>une agrégation fiable des flux sources,</li>
+<li>une déduplication précise (URL + 4 mots significatifs),</li>
+<li>une production de flux propre et stable,</li>
+<li>une compatibilité totale avec PHP 8.3 / 8.4, UTF‑8 et environnements Linux.</li>
+</ul>
+
+<p>
+Il constitue la deuxième étape du pipeline iActu V18, avec un design simple, résilient et adapté à une exécution régulière via cron.
+</p>
+
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>lit_rss.php – Documentation Technique (V18)</title>
+</head>
+<body>
+
+<h1>lit_rss.php – Lecture et normalisation des flux RSS<br>Version 18 – Parser robuste, tolérant et auto‑stabilisant</h1>
+
+<p>
+Ce document décrit le fonctionnement complet du module <strong>lit_rss.php</strong>, utilisé par iActu V18 pour télécharger, analyser, normaliser et stabiliser les flux RSS/Atom.
+Il s’adresse autant aux débutants qu’aux développeurs expérimentés, en présentant d’abord les concepts simples puis les mécanismes internes avancés.
+</p>
+
+<hr>
+
+<h2>1. Rôle général du module</h2>
+
+<p>
+Le module <strong>lit_rss.php</strong> est le cœur du système RSS d’iActu.  
+Il assure :
+</p>
+
+<ul>
+<li>le téléchargement HTTP/HTTPS des flux ;</li>
+<li>la validation XML (RSS 2.0, Atom, variantes hybrides) ;</li>
+<li>l’extraction des items (titre, lien, description, date) ;</li>
+<li>la normalisation complète (UTF‑8, titres, URLs, entités HTML) ;</li>
+<li>la correction des dates (formats exotiques, dates futures) ;</li>
+<li>la déduplication intelligente (URL + similarité titres) ;</li>
+<li>le tri chronologique strict (du plus récent au plus ancien) ;</li>
+<li>la stabilisation via archives quotidiennes ;</li>
+<li>la génération d’un flux RSS propre et valide ;</li>
+<li>la gestion des erreurs et indisponibilités.</li>
+</ul>
+
+<p>
+Il constitue la première étape du pipeline RSS d’iActu, avant la fusion et l’affichage HTML.
+</p>
+
+<hr>
+
+<h2>2. Fonction principale : <code>parse()</code></h2>
+
+<p>
+La fonction <code>parse()</code> possède deux modes :
+</p>
+
+<ul>
+<li><strong>Mode simple (3 arguments)</strong> : <code>parse($nom, $url, $max)</code><br>
+→ utilisé pour les flux simples non catégorisés.</li>
+
+<li><strong>Mode complet (7 arguments)</strong> : <code>parse($titre, $slug, $categorie, $prefixe, $url, $min, $max)</code><br>
+→ utilisé pour les flux iActu (catégories, archives, ready flags, logs, etc.).</li>
+</ul>
+
+<p>
+Les deux modes suivent la même logique générale :
+</p>
+
+<ol>
+<li>création du dossier cache ;</li>
+<li>création d’un fichier lock ;</li>
+<li>vérification du TTL ;</li>
+<li>téléchargement du flux ;</li>
+<li>parsing XML ;</li>
+<li>pipeline de normalisation ;</li>
+<li>génération du RSS final ;</li>
+<li>validation ;</li>
+<li>écriture atomique ;</li>
+<li>suppression du lock.</li>
+</ol>
+
+<hr>
+
+<h2>3. Téléchargement du flux : <code>fetch_feed()</code></h2>
+
+<p>
+Cette fonction télécharge le flux distant avec cURL.
+Elle gère :
+</p>
+
+<ul>
+<li>user‑agent réaliste (Firefox Linux) ;</li>
+<li>headers complets (Accept, Accept‑Language, DNT…) ;</li>
+<li>timeout configurable ;</li>
+<li>redirections (max 5) ;</li>
+<li>compression gzip/br ;</li>
+<li>limite de taille (3 Mo) ;</li>
+<li>conversion UTF‑8 ;</li>
+<li>pause aléatoire (25–125 ms) pour éviter les patterns robots.</li>
+</ul>
+
+<p>
+En cas d’erreur :
+</p>
+
+<ul>
+<li>erreur cURL ;</li>
+<li>erreur HTTP (≥400) ;</li>
+<li>flux vide ;</li>
+<li>flux trop volumineux ;</li>
+</ul>
+
+<p>
+→ la fonction retourne <code>null</code> et renseigne <code>$rss_last_error</code>.
+</p>
+
+<hr>
+
+<h2>4. Parsing XML : <code>parse_feed()</code></h2>
+
+<p>
+Cette fonction :
+</p>
+
+<ul>
+<li>nettoie le XML (<code>clean_xml()</code>) ;</li>
+<li>charge le flux via <code>simplexml_load_string()</code> ;</li>
+<li>extrait les items RSS (<code>&lt;item&gt;</code>) ;</li>
+<li>extrait les items Atom (<code>&lt;entry&gt;</code>) ;</li>
+<li>retourne un tableau brut :
+<pre><code>[
+  'title' => ...,
+  'link'  => ...,
+  'desc'  => ...,
+  'date'  => timestamp
+]</code></pre>
+</li>
+</ul>
+
+<p>
+Si le XML est illisible → <code>null</code>.
+</p>
+
+<hr>
+
+<h2>5. Normalisation des dates</h2>
+
+<h3>5.1 <code>normalize_date()</code></h3>
+
+<p>
+Cherche dans l’ordre :
+</p>
+
+<ul>
+<li><code>pubDate</code></li>
+<li><code>published</code></li>
+<li><code>updated</code></li>
+<li><code>date</code></li>
+</ul>
+
+<p>
+Puis appelle <code>try_parse_date()</code>.
+</p>
+
+<h3>5.2 <code>try_parse_date()</code></h3>
+
+<p>
+Essaye :
+</p>
+
+<ul>
+<li><code>strtotime()</code></li>
+<li>formats manuels (RFC, ISO, exotiques)</li>
+</ul>
+
+<p>
+Puis corrige les dates futures via <code>fix_future_date()</code>.
+</p>
+
+<hr>
+
+<h2>6. Pipeline de traitement des items</h2>
+
+<h3>6.1 Tri brut : <code>sort_items()</code></h3>
+
+<p>
+Tri décroissant par date :
+</p>
+
+<pre><code>usort($it, fn($a,$b) => $b['date'] <=> $a['date']);</code></pre>
+
+<h3>6.2 Normalisation : <code>normalize_items()</code></h3>
+
+<p>
+Pour chaque item :
+</p>
+
+<ul>
+<li>titre → <code>normalize_title()</code></li>
+<li>URL → <code>normalize_url()</code></li>
+<li>validation URL</li>
+<li>suppression des items invalides</li>
+</ul>
+
+<h3>6.3 Filtrage : <code>filter_items()</code></h3>
+
+<p>
+Supprime les items trop courts :
+</p>
+
+<ul>
+<li>titre &lt; 5 caractères</li>
+<li>lien &lt; 5 caractères</li>
+</ul>
+
+<h3>6.4 Déduplication : <code>dedupe_items()</code></h3>
+
+<p>
+Déduplication intelligente :
+</p>
+
+<ul>
+<li>même URL → doublon</li>
+<li>titres similaires → doublon</li>
+<li>si doublon → on garde l’item le plus récent</li>
+</ul>
+
+<h3>6.5 Tri final + slice</h3>
+
+<p>
+Tri final par date puis :
+</p>
+
+<pre><code>$buffer = array_slice($buffer, 0, $max);</code></pre>
+
+<hr>
+
+<h2>7. Génération du RSS final : <code>generate_rss()</code></h2>
+
+<p>
+Produit un flux RSS 2.0 propre :
+</p>
+
+<ul>
+<li>XML UTF‑8</li>
+<li><code>&lt;rss&gt;</code>, <code>&lt;channel&gt;</code></li>
+<li>titre + catégorie</li>
+<li>items normalisés</li>
+<li>dates au format RFC 822</li>
+</ul>
+
+<hr>
+
+<h2>8. Validation du flux : <code>validate_buffer()</code></h2>
+
+<p>
+Vérifie :
+</p>
+
+<ul>
+<li>nombre d’items exact</li>
+<li>présence des titres</li>
+<li>présence des liens</li>
+<li>présence des dates</li>
+<li>présence des balises RSS/Channel</li>
+<li>XML valide</li>
+</ul>
+
+<p>
+En cas d’erreur → <code>false</code> + message dans <code>$rss_last_error</code>.
+</p>
+
+<hr>
+
+<h2>9. Gestion des archives quotidiennes</h2>
+
+<h3>9.1 <code>rss_save_daily()</code></h3>
+
+<p>
+Sauvegarde brute du flux du jour :
+</p>
+
+<ul>
+<li>1 fichier par jour</li>
+<li>nom : <code>prefixe_slug_JJ.xml</code></li>
+</ul>
+
+<h3>9.2 <code>rss_load_daily()</code></h3>
+
+<p>
+Charge jusqu’à 31 jours d’archives, triées par date de fichier.
+</p>
+
+<h3>9.3 <code>rss_cleanup_daily()</code></h3>
+
+<p>
+Supprime les archives au‑delà de 31 jours.
+</p>
+
+<hr>
+
+<h2>10. Gestion des indisponibilités : <code>rss_log_indispo()</code></h2>
+
+<p>
+Crée un log par flux :
+</p>
+
+<ul>
+<li>erreurs HTTP</li>
+<li>erreurs XML</li>
+<li>flux vide</li>
+<li>flux illisible</li>
+<li>archives trop anciennes (&gt;4h)</li>
+</ul>
+
+<hr>
+
+<h2>11. Mécanismes de stabilité</h2>
+
+<p>
+Le parser intègre plusieurs mécanismes pour garantir la stabilité :
+</p>
+
+<ul>
+<li><strong>TTL aléatoire</strong> (30–60 min) → évite les rafales</li>
+<li><strong>lock fichier</strong> → empêche les exécutions simultanées</li>
+<li><strong>ready flag</strong> → indique qu’une archive est utilisable</li>
+<li><strong>fallback automatique</strong> sur archives</li>
+<li><strong>tri strict</strong> par date</li>
+<li><strong>déduplication intelligente</strong></li>
+<li><strong>limitation stricte</strong> du nombre d’items</li>
+<li><strong>écriture atomique</strong> via fichier .tmp</li>
+</ul>
+
+<hr>
+
+<h2>12. Conclusion</h2>
+
+<p>
+Le module <strong>lit_rss.php</strong> est un parser RSS complet, robuste et tolérant, conçu pour absorber la diversité des flux du web moderne.
+Il garantit :
+</p>
+
+<ul>
+<li>une extraction propre ;</li>
+<li>une normalisation cohérente ;</li>
+<li>une stabilité dans le temps ;</li>
+<li>une résilience face aux flux cassés ;</li>
+<li>une intégration parfaite avec le système iActu V18.</li>
+</ul>
+
+<p>
+Il constitue la base fiable sur laquelle reposent la fusion, l’affichage HTML et l’expérience utilisateur d’iActu.
+</p>
+
+</body>
+</html>

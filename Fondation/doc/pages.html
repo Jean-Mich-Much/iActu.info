@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>pages.php – Documentation Technique (V18)</title>
+</head>
+<body>
+
+<h1>pages.php – Architecture des pages dynamiques<br>Version 18 – Cache intelligent & mise à jour automatique</h1>
+
+<p>
+Les fichiers <strong>Page_technologie.php</strong>, <strong>Page_Apple.php</strong>, <strong>Page_jeux.php</strong>, etc. constituent les pages principales du site iActu V18.
+Chaque page suit la même architecture : cache local, fallback, affichage HTML, et déclenchement automatique de la mise à jour RSS.
+</p>
+
+<hr>
+
+<h2>1. Variables principales</h2>
+
+<p>
+Chaque page définit :
+</p>
+
+<ul>
+<li><strong>$titre_page</strong> : titre global du site,</li>
+<li><strong>$nom_page</strong> : préfixe des fichiers HTML mis en cache,</li>
+<li><strong>$cache_secondes</strong> : durée maximale du cache,</li>
+<li><strong>$caracteres</strong> : taille minimale du HTML pour validation,</li>
+<li><strong>$page_active</strong> : identifiant du menu actif,</li>
+<li><strong>$sites</strong> : nom du fichier de contenu (ex : <code>technologie.php</code>).</li>
+</ul>
+
+<p>
+Ces variables permettent de réutiliser la même structure pour toutes les catégories.
+</p>
+
+<hr>
+
+<h2>2. Système de cache – double fichier</h2>
+
+<p>
+Chaque page utilise un cache basé sur deux fichiers :
+</p>
+
+<ul>
+<li><strong>Page_xxx_jour_.html</strong> → cache principal,</li>
+<li><strong>Page_xxx_jour_&lt;jour&gt;.html</strong> → archive du jour.</li>
+</ul>
+
+<p>
+Le cache est utilisé si :
+</p>
+
+<ul>
+<li>le fichier existe,</li>
+<li>il est récent (<strong>$cache_secondes</strong>),</li>
+<li>le fichier du jour existe.</li>
+</ul>
+
+<p>
+Sinon, la page est régénérée.
+</p>
+
+<hr>
+
+<h2>3. Rafraîchissement toutes les minutes paires</h2>
+
+<p>
+Le système alterne :
+</p>
+
+<ul>
+<li><strong>minutes impaires</strong> → lecture du cache,</li>
+<li><strong>minutes paires</strong> → possibilité de régénération.</li>
+</ul>
+
+<p>
+Cela réduit la charge serveur tout en gardant un site très réactif.
+</p>
+
+<hr>
+
+<h2>4. Génération du HTML</h2>
+
+<p>
+Lorsque la page doit être régénérée :
+</p>
+
+<ol>
+<li>activation d’un buffer (<code>ob_start()</code>),</li>
+<li>chargement du module <code>affiche_html.php</code>,</li>
+<li>construction du HTML complet :</li>
+</ol>
+
+<ul>
+<li>header + CSS,</li>
+<li>menu haut,</li>
+<li>messages haut,</li>
+<li>contenu du site (<code>Fondation/sites/$sites.php</code>),</li>
+<li>messages bas,</li>
+<li>menu bas.</li>
+</ul>
+
+<p>
+Le HTML est ensuite validé :
+</p>
+
+<ul>
+<li>présence d’un seul <code>&lt;!DOCTYPE html&gt;</code>,</li>
+<li>présence d’un seul <code>&lt;/html&gt;</code>,</li>
+<li>taille minimale (<strong>$caracteres</strong>).</li>
+</ul>
+
+<p>
+Si valide :
+</p>
+
+<ul>
+<li>affichage immédiat,</li>
+<li>écriture dans <code>$nom_page.html</code>,</li>
+<li>copie dans <code>$nom_page&lt;jour&gt;.html</code>.</li>
+</ul>
+
+<p>
+Sinon → fallback sur le cache existant.
+</p>
+
+<hr>
+
+<h2>5. Déclenchement automatique de la mise à jour RSS</h2>
+
+<p>
+Après l’affichage, la page peut déclencher une mise à jour RSS via <code>maj.php</code>.
+</p>
+
+<p>
+Conditions :
+</p>
+
+<ul>
+<li>minute impaire <strong>ou</strong> première visite (pas de cache),</li>
+<li>fichier <code>maj_lock</code> absent ou trop ancien (&gt; 60 s).</li>
+</ul>
+
+<p>
+Si les conditions sont réunies :
+</p>
+
+<pre>exec("php maj.php > /dev/null 2>&1 &");</pre>
+
+<p>
+Cela lance la mise à jour en arrière‑plan, sans bloquer l’affichage.
+</p>
+
+<hr>
+
+<h2>6. Rôle du fichier maj_lock</h2>
+
+<p>
+Le fichier <code>maj_lock</code> empêche les mises à jour trop fréquentes.
+Il est recréé à chaque lancement de <code>maj.php</code>.
+</p>
+
+<p>
+Il expire automatiquement après 60 secondes.
+</p>
+
+<hr>
+
+<h2>7. Résumé opérationnel</h2>
+
+<ul>
+<li><strong>minutes impaires</strong> → lecture du cache</li>
+<li><strong>minutes paires</strong> → possibilité de régénération</li>
+<li><strong>validation HTML</strong> → sécurité anti‑corruption</li>
+<li><strong>cache du jour</strong> → stabilité visuelle</li>
+<li><strong>maj_lock</strong> → anti‑spam de mise à jour</li>
+<li><strong>maj.php</strong> → mise à jour RSS asynchrone</li>
+</ul>
+
+<hr>
+
+<h2>8. Conclusion</h2>
+
+<p>
+Les pages dynamiques d’iActu V18 utilisent un système de cache intelligent, une validation stricte du HTML et un déclenchement automatique de la mise à jour RSS.
+Elles garantissent :
+</p>
+
+<ul>
+<li>une vitesse d’affichage optimale,</li>
+<li>une stabilité visuelle,</li>
+<li>une mise à jour continue des flux RSS,</li>
+<li>une charge serveur minimale.</li>
+</ul>
+
+<p>
+Ce mécanisme constitue la couche finale du pipeline iActu V18.
+</p>
+
+</body>
+</html>

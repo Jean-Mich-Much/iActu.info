@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>iActu V18 – Documentation</title>
+<style>
+body {
+    background:#0c0a0e;
+    color:#eee;
+    font-family:Inter, sans-serif;
+    margin:0;
+    padding:40px;
+    line-height:1.6;
+}
+h1,h2 {color:#ffb820;}
+a {color:#8ecaff; text-decoration:none;}
+a:hover {color:#ffb820;}
+.section {
+    margin-bottom:40px;
+    padding-bottom:20px;
+    border-bottom:1px solid #333;
+}
+ul {margin:0; padding-left:20px;}
+pre {
+    background:#111;
+    padding:20px;
+    border:1px solid #333;
+    border-radius:8px;
+    overflow:auto;
+    color:#8ecaff;
+}
+</style>
+</head>
+<body>
+
+<h1>📚 Documentation iActu V18</h1>
+<p>
+Bienvenue dans la documentation technique d’iActu V18.  
+Chaque module du pipeline possède sa propre page dédiée.
+</p>
+
+<div class="section">
+<h2>🔧 Pipeline RSS</h2>
+<ul>
+<li><a href="lit_rss.html" rel="noopener" id="a01">lit_rss.php – Parsing & normalisation RSS</a></li>
+<li><a href="fusion_rss.html" rel="noopener" id="a02">fusion_rss.php – Fusion & déduplication</a></li>
+<li><a href="job.html" rel="noopener" id="a03">job.php – Gestionnaire de tâches asynchrones</a></li>
+<li><a href="maj.html" rel="noopener" id="a04">maj.php – Déclencheur HTTP et  orchestration CLI</a></li>
+<li><a href="affiche_html.html" rel="noopener" id="a05">affiche_html.php – Génération HTML des blocs</a></li>
+<li><a href="pages.html" rel="noopener" id="a06">pages.php – Architecture des pages dynamiques</a></li>
+</ul>
+</div>
+
+<div class="section">
+<h2>🎨 Design System & CSS</h2>
+<ul>
+<li><a href="css.html" rel="noopener" id="a07">CSS complet – Design System iActu V18</a></li>
+<li><a href="../css/base.css" rel="noopener" id="a08">base.css</a></li>
+<li><a href="../css/mid.css" rel="noopener" id="a09">mid.css</a></li>
+<li><a href="../css/menu.css" rel="noopener" id="a10">menu.css</a></li>
+<li><a href="../css/messages.css" rel="noopener" id="a11">messages.css</a></li>
+<li><a href="../css/fonts.css" rel="noopener" id="a12">fonts.css</a></li>
+</ul>
+</div>
+
+<div class="section">
+<h2>📜 Code source</h2>
+<ul>
+<li><a href="https://github.com/Jean-Mich-Much/iActu.info" target="_blank" aria-label="Github 😊" alt="Github 😊" title=" Github 😊 " rel="noopener" id="a15">Github </a></li>
+<li><a href="https://codeberg.org/iActuinfo/iActu" target="_blank" aria-label="Codeberg 😊" alt="Codeberg 😊" title=" Codeberg 😊 " rel="noopener" id="a016">Codeberg </a></li>
+</ul>
+</div>
+
+<div class="section">
+<h2>📁 Arborescence du projet</h2>
+
+<pre>
+/
+├── Page_technologie.php
+├── Page_Apple.php
+├── Page_jeux.php
+├── Page_sciences.php
+├── Page_actualités.php
+│
+└── Fondation/
+    ├── cache/
+    │   ├── rss/
+    │   └── rss/fusion/
+    │
+    ├── css/
+    │   ├── base.css
+    │   ├── mid.css
+    │   ├── menu.css
+    │   ├── messages.css
+    │   └── fonts.css
+    │
+    ├── doc/
+    │   ├── index.html
+    │   ├── lit_rss.html
+    │   ├── fusion_rss.html
+    │   ├── job.html
+    │   ├── maj_cli.html
+    │   ├── maj.html
+    │   ├── affiche_html.html
+    │   └── pages.html
+    │
+    ├── fonts/
+    │   ├── inter_01.woff2
+    │   ├── inter_02.woff2
+    │   └── Twemoji.woff2
+    │
+    ├── logs/
+    │   ├── job.log
+    │   ├── fusion.log
+    │   └── affiche_html.log
+    │
+    ├── php/
+    │   ├── job.php
+    │   ├── fusion_rss.php
+    │   ├── parser/
+    │   │   └── lit_rss.php
+    │   ├── affiche_html.php
+    │   ├── menu.php
+    │   ├── messages_top.php
+    │   └── messages_bot.php
+    │
+    └── sites/
+        ├── technologie.php
+        ├── apple.php
+        ├── jeux.php
+        ├── sciences.php
+        └── actualités.php
+</pre>
+
+</div>
+
+<p style="opacity:0.7;margin-top:40px;">
+iActu V18 – Documentation interne.
+</p>
+
+</body>
+</html>

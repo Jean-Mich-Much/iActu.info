@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>maj_cli.php & maj.php – Documentation Technique (V18)</title>
+</head>
+<body>
+
+<h1>maj_cli.php & maj.php – Orchestration du pipeline RSS<br>Version 18 – Mise à jour automatique & exécution parallèle</h1>
+
+<p>
+Les fichiers <strong>maj_cli.php</strong> et <strong>maj.php</strong> constituent la couche d’orchestration du pipeline iActu V18.
+Ils déclenchent l’ensemble des parsers RSS, puis les fusions, en utilisant le système de jobs asynchrones fourni par <code>job.php</code>.
+</p>
+
+<hr>
+
+<h2>1. maj_cli.php – Exécution complète du pipeline</h2>
+
+<p>
+Ce script est le cœur de la mise à jour RSS.  
+Il est conçu pour être exécuté :
+</p>
+
+<ul>
+<li>en ligne de commande (<strong>cron</strong>),</li>
+<li>ou indirectement via <code>maj.php</code>.</li>
+</ul>
+
+<p>
+Il charge les modules essentiels :</p>
+
+<ul>
+<li><code>job.php</code> – gestion des jobs asynchrones,</li>
+<li><code>lit_rss.php</code> – parsing individuel des flux,</li>
+<li><code>fusion_rss.php</code> – fusion des flux par catégories.</li>
+</ul>
+
+<hr>
+
+<h2>2. Structure générale</h2>
+
+<p>
+Le script suit une structure simple :
+</p>
+
+<ol>
+<li><strong>debut_job()</strong> – activation de la capture des jobs,</li>
+<li><strong>job_call()</strong> – empilement de tous les parsers RSS,</li>
+<li><strong>job_call()</strong> – empilement des fusions finales,</li>
+<li><strong>fin_job()</strong> – exécution parallèle de tous les jobs.</li>
+</ol>
+
+<p>
+Chaque section correspond à une catégorie du site :
+</p>
+
+<ul>
+<li>Technologie</li>
+<li>Tech. Autres</li>
+<li>Tech. English</li>
+<li>Apple / Apple autres / Apple english</li>
+<li>Jeux / Jeux autres / Jeux english</li>
+<li>Linux</li>
+<li>Réalité virtuelle</li>
+<li>Infos France</li>
+<li>Infos Monde</li>
+<li>Sciences / Sciences autres / Sciences english</li>
+<li>Insolites</li>
+<li>Cinéma TV</li>
+<li>Sports</li>
+<li>Infos English</li>
+</ul>
+
+<p>
+Chaque flux est traité via :
+</p>
+
+<pre>job_call('parse', [titre, prefixe, catégorie, dossier, url, min, max]);</pre>
+
+<p>
+Puis fusionné via :
+</p>
+
+<pre>job_call('fusion_rss', [titre, prefixe, min, max]);</pre>
+
+<hr>
+
+<h2>3. Rôle des paramètres parse()</h2>
+
+<p>
+Chaque appel <code>parse()</code> reçoit :
+</p>
+
+<ul>
+<li><strong>Nom du site</strong> (affichage),</li>
+<li><strong>Préfixe</strong> (nom des fichiers XML),</li>
+<li><strong>Catégorie</strong> (affichage),</li>
+<li><strong>Dossier</strong> (ex : <code>tec</code>, <code>jeux</code>, <code>infos_fr</code>),</li>
+<li><strong>URL du flux RSS</strong>,</li>
+<li><strong>min</strong> : nombre minimal d’items valides,</li>
+<li><strong>max</strong> : nombre maximal d’items conservés.</li>
+</ul>
+
+<p>
+Le parser génère un fichier :
+</p>
+
+<pre>cache/rss/prefixe_XXXX.xml</pre>
+
+<p>
+…ainsi qu’un fichier <code>.ready</code> indiquant que le flux est prêt pour la fusion.
+</p>
+
+<hr>
+
+<h2>4. Rôle des fusions – fusion_rss()</h2>
+
+<p>
+Chaque catégorie est fusionnée via :
+</p>
+
+<pre>job_call('fusion_rss', [titre, prefixe, min, max]);</pre>
+
+<p>
+La fusion :
+</p>
+
+<ul>
+<li>collecte tous les flux <code>prefixe_*.xml</code>,</li>
+<li>attend les fichiers <code>.ready</code>,</li>
+<li>valide les flux sources,</li>
+<li>déduplique les items (URL + 3 mots ≥ 5 lettres),</li>
+<li>génère un flux final dans :</li>
+</ul>
+
+<pre>cache/rss/fusion/prefixe.xml</pre>
+
+<hr>
+
+<h2>5. Exécution parallèle – job.php</h2>
+
+<p>
+Une fois tous les jobs empilés, <code>fin_job()</code> déclenche :
+</p>
+
+<ul>
+<li>mode CLI → <strong>pcntl_fork()</strong> (parallélisme réel),</li>
+<li>mode FPM → <strong>job_worker.php</strong> (processus séparés).</li>
+</ul>
+
+<p>
+Le système gère :
+</p>
+
+<ul>
+<li>les timeouts,</li>
+<li>les erreurs isolées,</li>
+<li>la rotation automatique des logs.</li>
+</ul>
+
+<hr>
+
+<h2>6. maj.php – Interface HTTP</h2>
+
+<p>
+Le fichier <strong>maj.php</strong> permet de déclencher la mise à jour via HTTP.
+Il ne lance jamais le pipeline directement : il démarre <code>maj_cli.php</code> en arrière‑plan.
+</p>
+
+<p>
+Fonctionnement :
+</p>
+
+<ul>
+<li>si exécuté en CLI → inclut directement <code>maj_cli.php</code>,</li>
+<li>si exécuté via HTTP → lance :</li>
+</ul>
+
+<pre>php maj_cli.php > /dev/null 2>&1 &</pre>
+
+<p>
+Puis renvoie immédiatement :</p>
+
+<pre>HTTP 204 No Content</pre>
+
+<p>
+Cela garantit :
+</p>
+
+<ul>
+<li>aucun blocage du navigateur,</li>
+<li>aucune attente,</li>
+<li>une mise à jour totalement asynchrone.</li>
+</ul>
+
+<hr>
+
+<h2>7. Résumé opérationnel</h2>
+
+<ul>
+<li><strong>maj.php</strong> → déclencheur HTTP (asynchrone)</li>
+<li><strong>maj_cli.php</strong> → orchestration complète du pipeline</li>
+<li><strong>parse()</strong> → parsing individuel des flux</li>
+<li><strong>fusion_rss()</strong> → fusion par catégories</li>
+<li><strong>job.php</strong> → exécution parallèle & gestion des erreurs</li>
+</ul>
+
+<hr>
+
+<h2>8. Conclusion</h2>
+
+<p>
+Le duo <strong>maj.php / maj_cli.php</strong> constitue la couche d’orchestration du système iActu V18.
+Il garantit :
+</p>
+
+<ul>
+<li>une mise à jour fiable et entièrement automatisée,</li>
+<li>une exécution parallèle optimisée,</li>
+<li>une tolérance totale aux erreurs individuelles,</li>
+<li>une compatibilité CLI / HTTP parfaite,</li>
+<li>une intégration fluide avec les modules <code>lit_rss</code>, <code>fusion_rss</code> et <code>affiche_html</code>.</li>
+</ul>
+
+<p>
+Il s’agit de la pièce maîtresse du pipeline RSS d’iActu V18.
+</p>
+
+</body>
+</html>

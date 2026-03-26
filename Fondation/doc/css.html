@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>iActu V18 – Documentation CSS complète</title>
+</head>
+<body>
+
+<h1>iActu V18 – Documentation CSS<br>Design System complet & Architecture proportionnelle</h1>
+
+<p>
+Le système CSS d’iActu V18 repose sur une architecture unifiée, indépendante des OS, entièrement proportionnelle en mode HD, et conçue pour garantir une cohérence psychovisuelle parfaite sur tous les écrans.
+</p>
+
+<hr>
+
+<h2>1. Philosophie générale</h2>
+
+<p>
+Le CSS d’iActu V18 suit quatre principes fondamentaux :
+</p>
+
+<ul>
+<li><strong>Indépendance totale</strong> vis‑à‑vis des polices système et des emojis,</li>
+<li><strong>Proportionnalité automatique</strong> pour les écrans ≥ 1921px,</li>
+<li><strong>Psychovisuel constant</strong> : même rendu sur tous les OS et navigateurs,</li>
+<li><strong>Minimalisme fonctionnel</strong> : aucune propriété inutile, aucune surcharge.</li>
+</ul>
+
+<p>
+Les polices, emojis et métriques sont embarqués localement, garantissant une cohérence absolue.
+</p>
+
+<hr>
+
+<h2>2. Architecture des fichiers CSS</h2>
+
+<ul>
+<li><strong>base.css</strong> → fondations, couleurs, typographie, structure globale</li>
+<li><strong>mid.css</strong> → affichage des blocs d’actualités</li>
+<li><strong>menu.css</strong> → navigation principale</li>
+<li><strong>messages.css</strong> → messages haut/bas</li>
+<li><strong>fonts.css</strong> → polices embarquées (Inter + Twemoji)</li>
+</ul>
+
+<p>
+Chaque fichier est autonome mais cohérent grâce aux variables globales définies dans <code>:root</code>.
+</p>
+
+<hr>
+
+<h2>3. Variables globales – :root</h2>
+
+<p>
+Définies dans <strong>base.css</strong>, elles constituent le cœur du design system :
+</p>
+
+<ul>
+<li>Palette sombre (c1 → c10),</li>
+<li>Couleurs d’accent (jaune, bleu, orange),</li>
+<li>Rayons arrondis (pill),</li>
+<li>Version proportionnelle via <code>round(calc(...))</code>.</li>
+</ul>
+
+<p>
+Exemple :
+</p>
+
+<pre>
+--c1:rgba(12, 10, 14, 1);
+--radius-pill:999px;
+--radius-pill-p:round(calc(999/1920*100vw),1px);
+</pre>
+
+<p>
+Toutes les unités critiques (padding, border, gap, font-size) existent en version px et version proportionnelle.
+</p>
+
+<hr>
+
+<h2>4. Indépendance typographique – fonts.css</h2>
+
+<p>
+iActu V18 ne dépend d’aucune police système.  
+Les polices sont chargées depuis :
+</p>
+
+<pre>Fondation/css/fonts.css</pre>
+
+<p>
+Elles incluent :
+</p>
+
+<ul>
+<li><strong>Inter</strong> (texte principal),</li>
+<li><strong>Twemoji</strong> (emoji vectoriels),</li>
+<li>Fallbacks internes uniquement.</li>
+</ul>
+
+<p>
+Avantages :
+</p>
+
+<ul>
+<li>rendu identique sur Windows, macOS, Linux, Android, iOS,</li>
+<li>aucune variation de graisse ou d’interlignage,</li>
+<li>aucune dépendance aux polices natives.</li>
+</ul>
+
+<hr>
+
+<h2>5. Base CSS – base.css</h2>
+
+<p>
+Le fichier <strong>base.css</strong> définit :
+</p>
+
+<ul>
+<li>le reset minimal,</li>
+<li>la typographie globale,</li>
+<li>la structure flex verticale,</li>
+<li>les couleurs de fond,</li>
+<li>les bordures haut/bas des zones top/bot/messages.</li>
+</ul>
+
+<p>
+Tous les éléments partagent :
+</p>
+
+<ul>
+<li><code>font-family: "Inter", sans-serif, "Twemoji"</code>,</li>
+<li><code>font-size: 16px</code> (ou proportionnel en HD),</li>
+<li><code>line-height: 22px</code>,</li>
+<li><code>hyphens:auto</code>,</li>
+<li><code>text-rendering: optimizeLegibility</code>.</li>
+</ul>
+
+<p>
+Le mode HD (≥ 1921px) convertit automatiquement :
+</p>
+
+<ul>
+<li>font-size,</li>
+<li>line-height,</li>
+<li>border-width,</li>
+<li>padding,</li>
+<li>gap,</li>
+<li>radius.</li>
+</ul>
+
+<hr>
+
+<h2>6. Composants d’affichage – mid.css</h2>
+
+<p>
+Le fichier <strong>mid.css</strong> gère l’affichage des blocs d’actualités :
+</p>
+
+<ul>
+<li>grille responsive (2 colonnes → 1 colonne &lt; 1152px),</li>
+<li>cartes (news-box),</li>
+<li>titres de sites (news-title),</li>
+<li>compteurs (news-count),</li>
+<li>sections (Aujourd’hui / Jours précédents),</li>
+<li>liste des news.</li>
+</ul>
+
+<p>
+Chaque élément utilise :
+</p>
+
+<ul>
+<li>couleurs issues de <code>:root</code>,</li>
+<li>rayons arrondis cohérents,</li>
+<li>bordures fines (1px ou proportionnelles),</li>
+<li>espacements constants (gap, padding).</li>
+</ul>
+
+<p>
+Le responsive repose sur deux seuils :
+</p>
+
+<ul>
+<li><strong>≤ 1152px</strong> → 1 colonne, texte wrap, liens multi‑lignes,</li>
+<li><strong>≥ 1921px</strong> → mode HD proportionnel.</li>
+</ul>
+
+<hr>
+
+<h2>7. Menu principal – menu.css</h2>
+
+<p>
+Le fichier <strong>menu.css</strong> gère la navigation :
+</p>
+
+<ul>
+<li>menu centré,</li>
+<li>icônes emoji Twemoji,</li>
+<li>effet de sélection (outline + skew + rotation),</li>
+<li>mode compact &lt; 1152px (icônes seules),</li>
+<li>mode HD proportionnel.</li>
+</ul>
+
+<p>
+Le menu actif utilise :
+</p>
+
+<ul>
+<li>outline jaune (c6),</li>
+<li>rotation 10°,</li>
+<li>skew -10° / -10°,</li>
+<li>accentuation de la graisse.</li>
+</ul>
+
+<hr>
+
+<h2>8. Messages haut/bas – messages.css</h2>
+
+<p>
+Les messages utilisent :
+</p>
+
+<ul>
+<li>fond c1,</li>
+<li>bordures fines (haut/bas),</li>
+<li>texte wrap automatique,</li>
+<li>emoji Twemoji,</li>
+<li>mode HD proportionnel.</li>
+</ul>
+
+<p>
+Le sélecteur spécial <code>.coucou</code> génère un format e‑mail inversé (RTL) pour éviter les robots.
+</p>
+
+<hr>
+
+<h2>9. Psychovisuel : cohérence totale</h2>
+
+<p>
+Le système CSS garantit :
+</p>
+
+<ul>
+<li>aucune variation de rendu entre navigateurs,</li>
+<li>aucune dépendance aux polices natives,</li>
+<li>aucune différence entre Windows/macOS/Linux/iOS/Android,</li>
+<li>une grille stable, même en zoom,</li>
+<li>un rendu identique en 1080p, 1440p, 4K, 5K.</li>
+</ul>
+
+<p>
+Le mode HD proportionnel assure que :
+</p>
+
+<ul>
+<li>les proportions restent exactes,</li>
+<li>les arrondis restent harmonieux,</li>
+<li>les bordures restent visibles mais fines,</li>
+<li>les espacements restent psychovisuellement constants.</li>
+</ul>
+
+<hr>
+
+<h2>10. Résumé opérationnel</h2>
+
+<ul>
+<li><strong>base.css</strong> → fondations, couleurs, typographie, structure</li>
+<li><strong>mid.css</strong> → affichage des blocs d’actualités</li>
+<li><strong>menu.css</strong> → navigation</li>
+<li><strong>messages.css</strong> → messages haut/bas</li>
+<li><strong>fonts.css</strong> → polices embarquées (Inter + Twemoji)</li>
+<li><strong>HD mode</strong> → proportionnel automatique ≥ 1921px</li>
+</ul>
+
+<hr>
+
+<h2>11. Conclusion</h2>
+
+<p>
+Le système CSS d’iActu V18 est conçu pour offrir :
+</p>
+
+<ul>
+<li>une cohérence visuelle absolue,</li>
+<li>une indépendance totale vis‑à‑vis des OS,</li>
+<li>un rendu psychovisuel stable,</li>
+<li>une lisibilité optimale,</li>
+<li>une esthétique moderne et minimaliste.</li>
+</ul>
+
+<p>
+Il constitue l’un des piliers de l’identité visuelle d’iActu V18.
+</p>
+
+</body>
+</html>

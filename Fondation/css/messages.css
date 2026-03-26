@@ -1,0 +1,80 @@
+/* ============================
+      Messages iActu V18
+   ============================ */
+
+.messages_top,
+.messages_bot {
+background:var(--c1);
+display:flex;
+flex-direction:column;
+padding:4px 8px;
+width:100%;
+}
+
+.messages_top div,
+.messages_bot div {
+align-items:center;
+background:var(--c1);
+border:0;
+box-sizing:border-box;
+display:flex;
+justify-content:center;
+padding:8px 12px;
+width:100%;
+}
+
+.messages_top div:not(:last-child) {border-bottom:1px solid var(--c9);}
+
+.messages_bot div:not(:first-child) {border-top:1px solid var(--c9);}
+
+.messages_top span,
+.messages_bot span {
+align-items:center;
+display:flex;
+flex-wrap:wrap;
+justify-content:flex-start;
+max-width:100%;
+text-align:left;
+text-wrap:wrap;
+white-space:normal;
+width:auto;
+word-break:break-word;
+}
+
+.messages_top span,
+.messages_bot span,
+.messages_top span a,
+.messages_bot span a {
+font-size:16px;
+line-height:22px;
+}
+
+.coucou:before {
+content:"\00a0"attr(data-website) "\0040"attr(data-user) "\00a0\2709\FE0F";
+unicode-bidi:bidi-override;
+direction:rtl;
+}
+
+/* ===================
+       Mode HD ≥ 1921px
+    =================== */
+@media (min-width:1921px){
+.messages_top,
+.messages_bot {padding:round(calc(4 / 1920 * 100vw),1px) round(calc(8 / 1920 * 100vw),1px);}
+
+.messages_top div,
+.messages_bot div {padding:round(calc(8 / 1920 * 100vw),1px) round(calc(12 / 1920 * 100vw),1px);}
+
+.messages_top div:not(:last-child) {border-bottom:round(calc(1 / 1920 * 100vw),1px) solid var(--c9);}
+
+.messages_bot div:not(:first-child) {border-top:round(calc(1 / 1920 * 100vw),1px) solid var(--c9);}
+
+.messages_top span,
+.messages_bot span,
+.messages_top span a,
+.messages_bot span a {
+font-size:round(calc(16 / 1920 * 100vw),1px);
+line-height:round(calc(22 / 1920 * 100vw),1px);
+}
+
+}

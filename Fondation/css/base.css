@@ -1,0 +1,96 @@
+/* =====================
+      iActu V18 — Base CSS
+   ====================== */
+
+:root {
+--c1:rgba(12, 10, 14, 1);
+--c2:rgba(22, 20, 24, 1);
+--c3:rgba(32, 30, 34, 1);
+--c4:rgba(255, 255, 255, 0.84);
+--c5:rgba(172, 170, 174, 0.84);
+--c6:rgba(255, 184, 32, 0.96);
+--c7:rgba(32, 184, 255, 0.92);
+--c8:rgba(255, 144, 32, 0.92);
+--c9:rgba(56, 54, 58, 1);
+--c10:rgba(142, 202, 255, 0.96);
+
+--radius-pill:999px;
+--radius-pill-p:round(calc(999/1920*100vw),1px);
+}
+
+/* -----------
+      Base
+----------- */
+a,aside,body,div,html,main,nav,span {
+box-sizing:border-box;
+color:var(--c4);
+font-family:"Inter",sans-serif,"Twemoji";
+font-kerning:auto;
+font-optical-sizing:auto;
+font-style:normal;
+font-size:16px;
+font-weight:400;
+hyphenate-character:auto;
+hyphens:auto;
+inline-size:auto;
+line-height:22px;
+margin:0;
+padding:0;
+position:relative;
+text-align:start;
+text-decoration:none;
+text-align-last:left;
+text-rendering:optimizeLegibility;
+touch-action:auto;
+writing-mode:horizontal-tb;
+}
+
+html,body {background:var(--c1);}
+
+body {
+display:flex;
+flex-direction:column;
+height:auto;
+min-height:100vh;
+overflow-x:hidden;
+overflow-y:auto;
+width:100%;
+}
+
+.flex {
+display:flex;
+flex-direction:column;
+min-height:100vh;
+width:100%;
+}
+
+.top,.mid,.bot,.messages_top,.messages_bot,.news-wrapper,.news-grid {
+background:var(--c1);
+width:100%;
+}
+
+.top,.bot,.messages_top,.messages_bot {
+align-items:center;
+justify-content:center;
+}
+
+.top,.messages_top {border-bottom:1px solid var(--c9);}
+.bot,.messages_bot {border-top:1px solid var(--c9);}
+
+.mid {flex:1;}
+
+a {color:var(--c4);}
+a:hover {color:var(--c6);}
+
+/* ===================
+       Mode HD ≥ 1921px
+=================== */
+@media (min-width:1921px){
+a,aside,body,div,html,main,nav,span {
+font-size:round(calc(16/1920*100vw),1px);
+line-height:round(calc(22/1920*100vw),1px);
+}
+
+.top,.messages_top {border-bottom:round(calc(1/1920*100vw),1px) solid var(--c9);}
+.bot,.messages_bot {border-top:round(calc(1/1920*100vw),1px) solid var(--c9);}
+}
