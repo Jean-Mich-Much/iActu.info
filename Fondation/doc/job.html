@@ -2,222 +2,380 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>job.php – Documentation Technique (V18)</title>
+<title>job.php – Gestionnaire de jobs asynchrones (V18)</title>
 </head>
 <body>
 
-<h1>job.php – Gestionnaire de tâches asynchrones<br>Version 18 – Exécution parallèle & file d’attente</h1>
+<h1>job.php – Gestionnaire de jobs asynchrones<br>Version 18 – Exécution contrôlée, logs, fork et stabilité</h1>
 
 <p>
-Le module <strong>job.php</strong> fournit un système léger de gestion de tâches asynchrones pour iActu V18.
-Il permet d’empiler des appels de fonctions, puis de les exécuter en parallèle via :
+Ce document décrit le fonctionnement du module <strong>job.php</strong>, utilisé par iActu V18 pour exécuter les parsers RSS et les fusions de manière contrôlée, stable et non bloquante.
+</p>
+
+<p>
+Le système de jobs permet :
 </p>
 
 <ul>
-<li><strong>processus enfants</strong> (mode CLI avec <code>pcntl_fork()</code>),</li>
-<li><strong>processus PHP séparés</strong> (mode FPM via <code>job_worker.php</code>).</li>
-</ul>
-
-<p>
-Il constitue la couche d’orchestration permettant d’exécuter plusieurs parsers RSS en parallèle.
-</p>
-
-<hr>
-
-<h2>1. Constantes globales</h2>
-
-<ul>
-<li><strong>JOB_MAX</strong> : nombre maximal de jobs simultanés (CLI),</li>
-<li><strong>JOB_TIMEOUT</strong> : durée maximale d’un job (secondes),</li>
-<li><strong>JOB_LOG_MAX</strong> : taille maximale du fichier log,</li>
-<li><strong>JOB_IS_CLI</strong> : vrai si exécuté en ligne de commande.</li>
+<li>d’empiler des appels de fonctions ;</li>
+<li>de les exécuter en parallèle (CLI) ou en arrière‑plan (FPM) ;</li>
+<li>de limiter le nombre de processus simultanés ;</li>
+<li>de gérer les timeouts ;</li>
+<li>de journaliser toutes les exécutions ;</li>
+<li>d’assurer la stabilité globale du pipeline RSS.</li>
 </ul>
 
 <hr>
 
-<h2>2. Initialisation</h2>
+<h2>1. Rôle général du module</h2>
+
+<p>
+Le module <strong>job.php</strong> fournit une API simple pour :
+</p>
+
+<ul>
+<li>capturer des appels de fonctions (<code>job_call()</code>) ;</li>
+<li>les exécuter plus tard (<code>fin_job()</code>) ;</li>
+<li>gérer automatiquement les forks, timeouts et logs ;</li>
+<li>adapter le comportement selon l’environnement :
+  <ul>
+    <li><strong>CLI</strong> → exécution parallèle via <code>pcntl_fork()</code> ;</li>
+    <li><strong>FPM/HTTP</strong> → exécution via <code>job_worker.php</code> en arrière‑plan.</li>
+  </ul>
+</li>
+</ul>
+
+<p>
+Il constitue la couche d’orchestration utilisée par <code>maj_cli.php</code> et <code>maj_fusion_cli.php</code>.
+</p>
+
+<hr>
+
+<h2>2. Constantes principales</h2>
+
+<p>
+Le module définit plusieurs constantes de contrôle :
+</p>
+
+<ul>
+<li><strong>JOB_MAX = 20</strong>  
+→ nombre maximum de processus simultanés en mode CLI.</li>
+
+<li><strong>JOB_TIMEOUT = 59</strong>  
+→ durée maximale d’exécution d’un job avant kill forcé.</li>
+
+<li><strong>JOB_LOG_MAX = 512</strong>  
+→ taille maximale du fichier de log avant rotation.</li>
+
+<li><strong>JOB_IS_CLI</strong>  
+→ vrai si le script tourne en ligne de commande.</li>
+</ul>
+
+<hr>
+
+<h2>3. Initialisation et logs</h2>
 
 <p>
 Le module crée automatiquement :
 </p>
 
 <ul>
-<li>le répertoire <code>logs/</code>,</li>
-<li>le fichier <code>job.log</code>,</li>
-<li>les variables globales :</li>
+<li>le dossier <code>logs/</code> ;</li>
+<li>le fichier <code>job.log</code> ;</li>
+<li>les variables globales :
+  <ul>
+    <li><code>_JOB_QUEUE</code> – file d’attente des jobs ;</li>
+    <li><code>_JOB_CAPTURE</code> – mode capture ou exécution directe ;</li>
+    <li><code>_JOB_LOG</code> – chemin du fichier log.</li>
+  </ul>
+</li>
 </ul>
 
-<ul>
-<li><code>_JOB_QUEUE</code> : file d’attente des jobs,</li>
-<li><code>_JOB_CAPTURE</code> : mode capture actif/inactif,</li>
-<li><code>_JOB_LOG</code> : chemin du fichier log.</li>
-</ul>
-
-<hr>
-
-<h2>3. Logging – job_log()</h2>
+<h3>3.1 Fonction <code>job_log()</code></h3>
 
 <p>
-Le fichier <code>job.log</code> est :
+La fonction <code>job_log()</code> :
 </p>
 
 <ul>
-<li>réinitialisé si > 512 octets,</li>
-<li>réinitialisé si trop ancien (> 7 jours),</li>
-<li>alimenté avec des messages horodatés.</li>
+<li>écrit un message horodaté dans <code>job.log</code> ;</li>
+<li>réinitialise le fichier si :
+  <ul>
+    <li>sa taille dépasse 512 octets ;</li>
+    <li>il date de plus d’une semaine.</li>
+  </ul>
+</li>
 </ul>
 
 <hr>
 
-<h2>4. Début de capture – debut_job()</h2>
+<h2>4. Début et fin de capture</h2>
+
+<h3>4.1 <code>debut_job()</code></h3>
 
 <p>
 Active le mode capture :
 </p>
 
 <ul>
-<li>vide la file d’attente,</li>
-<li>active <code>_JOB_CAPTURE</code>,</li>
-<li>log « DEBUT JOB ».</li>
+<li>vide la file d’attente ;</li>
+<li>active <code>_JOB_CAPTURE</code> ;</li>
+<li>log : <code>DEBUT JOB</code>.</li>
 </ul>
 
-<p>
-Tous les appels suivants via <code>job_call()</code> seront mis en file d’attente.
-</p>
-
-<hr>
-
-<h2>5. Ajout d’un job – job_call()</h2>
+<h3>4.2 <code>fin_job()</code></h3>
 
 <p>
-Ajoute un job à la file si la capture est active :
-</p>
-
-<pre>job_call('nom_fonction', ['arg1','arg2']);</pre>
-
-<p>
-Sinon, exécute immédiatement la fonction (mode direct).
-</p>
-
-<p>
-Les exceptions sont capturées et loguées.
-</p>
-
-<hr>
-
-<h2>6. Fin de capture – fin_job()</h2>
-
-<p>
-Désactive la capture, log « FIN JOB », puis déclenche l’exécution de la file via <code>_job_exec()</code>.
-</p>
-
-<hr>
-
-<h2>7. Exécution des jobs – _job_exec()</h2>
-
-<p>
-Deux modes d’exécution :
+Désactive la capture et lance l’exécution :
 </p>
 
 <ul>
-<li><strong>CLI</strong> : exécution parallèle via <code>pcntl_fork()</code>,</li>
-<li><strong>FPM</strong> : lancement de processus PHP séparés via <code>job_worker.php</code>.</li>
+<li>désactive <code>_JOB_CAPTURE</code> ;</li>
+<li>log : <code>FIN JOB</code> ;</li>
+<li>appelle <code>_job_exec()</code>.</li>
 </ul>
 
 <hr>
 
-<h2>8. Mode FPM – _job_exec_fpm()</h2>
+<h2>5. job_call() – Ajout d’un job</h2>
 
 <p>
-Pour chaque job :
+La fonction <code>job_call($f, $a)</code> ajoute un job à la file d’attente.
 </p>
 
 <ul>
-<li>construction d’une commande :</li>
-</ul>
-
-<pre>php job_worker.php fonction arg1 arg2 ... &</pre>
-
-<ul>
-<li>exécution en arrière‑plan,</li>
-<li>pause courte entre chaque lancement.</li>
+<li>si <strong>capture active</strong> → le job est stocké ;</li>
+<li>si <strong>capture inactive</strong> → exécution immédiate (rare).</li>
 </ul>
 
 <p>
-Ce mode est utilisé lorsque <code>pcntl_fork()</code> n’est pas disponible.
+Chaque job est un tableau :
 </p>
+
+<pre><code>[
+  'f' => 'nom_de_fonction',
+  'a' => [arguments]
+]</code></pre>
 
 <hr>
 
-<h2>9. Mode CLI – _job_exec_cli()</h2>
+<h2>6. Exécution des jobs : _job_exec()</h2>
 
 <p>
-Exécution parallèle avec gestion fine des processus :
+La fonction <code>_job_exec()</code> choisit automatiquement le mode d’exécution :
 </p>
 
 <ul>
-<li>jusqu’à <strong>JOB_MAX</strong> processus simultanés,</li>
-<li>surveillance des jobs actifs,</li>
-<li>kill automatique si dépassement de <strong>JOB_TIMEOUT</strong>,</li>
-<li>log des succès et erreurs.</li>
-</ul>
-
-<p>
-Chaque job enfant exécute :</p>
-
-<ul>
-<li><code>call_user_func_array()</code>,</li>
-<li>log « CHILD OK » ou « EX CHILD ».</li>
+<li><strong>CLI + pcntl_fork()</strong> → exécution parallèle ;</li>
+<li><strong>FPM/HTTP</strong> → exécution via job_worker.php.</li>
 </ul>
 
 <hr>
 
-<h2>10. job_worker.php</h2>
+<h2>7. Mode FPM/HTTP : _job_exec_fpm()</h2>
 
 <p>
-Script séparé chargé d’exécuter une fonction dans un processus isolé.
-Il reçoit :
+En environnement web, chaque job est exécuté via :
+</p>
+
+<pre><code>php job_worker.php f arg1 arg2 ... &</code></pre>
+
+<p>
+Caractéristiques :
 </p>
 
 <ul>
-<li>le nom de la fonction,</li>
-<li>les arguments,</li>
-<li>et exécute la tâche en environnement indépendant.</li>
+<li>exécution totalement asynchrone ;</li>
+<li>aucun blocage de la requête HTTP ;</li>
+<li>pause de 8 ms entre chaque lancement ;</li>
+<li>pas de fork → compatible mutualisé / hébergement classique.</li>
 </ul>
 
 <hr>
 
-<h2>11. Résumé opérationnel</h2>
+<h2>8. Mode CLI : _job_exec_cli()</h2>
+
+<p>
+En mode CLI, le module utilise <code>pcntl_fork()</code> pour exécuter plusieurs jobs en parallèle.
+</p>
+
+<h3>8.1 Boucle principale</h3>
 
 <ul>
-<li><strong>debut_job()</strong> → active la capture</li>
-<li><strong>job_call()</strong> → empile les jobs</li>
-<li><strong>fin_job()</strong> → lance l’exécution</li>
-<li><strong>_job_exec()</strong> → choisit CLI ou FPM</li>
-<li><strong>_job_exec_cli()</strong> → exécution parallèle (fork)</li>
-<li><strong>_job_exec_fpm()</strong> → exécution via job_worker.php</li>
-<li><strong>job_log()</strong> → journalisation</li>
+<li>tant qu’il reste des jobs ou des processus actifs ;</li>
+<li>lance jusqu’à <strong>JOB_MAX</strong> processus simultanés ;</li>
+<li>surveille les processus actifs.</li>
 </ul>
+
+<h3>8.2 Gestion des timeouts</h3>
+
+<p>
+Si un job dépasse <strong>59 secondes</strong> :
+</p>
+
+<ul>
+<li>kill forcé via <code>posix_kill(SIGKILL)</code> ;</li>
+<li>log : <code>TIMEOUT nom_fonction pid:X</code>.</li>
+</ul>
+
+<h3>8.3 Gestion des erreurs</h3>
+
+<ul>
+<li>exceptions capturées ;</li>
+<li>log détaillé ;</li>
+<li>sortie propre du processus enfant.</li>
+</ul>
+
+<hr>
+
+<h2>9. job_worker.php</h2>
+
+<p>
+En mode FPM, les jobs sont exécutés par un script séparé :
+</p>
+
+<ul>
+<li>charge l’environnement minimal ;</li>
+<li>exécute la fonction demandée ;</li>
+<li>journalise le résultat ;</li>
+<li>se termine immédiatement.</li>
+</ul>
+
+<p>
+Ce mécanisme garantit une exécution stable même en environnement web.
+</p>
+
+<hr>
+
+<h2>10. Mécanismes de stabilité</h2>
+
+<p>
+Le module <strong>job.php</strong> intègre plusieurs mécanismes pour garantir la stabilité :
+</p>
+
+<ul>
+<li><strong>file d’attente</strong> → contrôle total des jobs ;</li>
+<li><strong>fork limité</strong> → max 20 processus ;</li>
+<li><strong>timeouts</strong> → aucun job bloquant ;</li>
+<li><strong>logs automatiques</strong> → rotation + horodatage ;</li>
+<li><strong>exécution asynchrone</strong> → aucune attente côté HTTP ;</li>
+<li><strong>fallback FPM</strong> → compatible partout ;</li>
+<li><strong>séparation worker</strong> → isolation des erreurs.</li>
+</ul>
+
+<hr>
+
+<h2>11. job_worker.php – Exécuteur secondaire (mode FPM)</h2>
+
+<p>
+Le fichier <strong>job_worker.php</strong> est un module optionnel utilisé uniquement en environnement <strong>non‑CLI</strong> (FPM/HTTP).  
+Il sert d’exécuteur isolé pour les jobs lorsque le système ne peut pas utiliser <code>pcntl_fork()</code>.
+</p>
+
+<p>
+Il est appelé automatiquement par <code>_job_exec_fpm()</code> via une commande du type :
+</p>
+
+<pre><code>php job_worker.php fonction arg1 arg2 ... &</code></pre>
+
+<h3>12.1 Rôle principal</h3>
+
+<p>
+Ce worker a trois objectifs :
+</p>
+
+<ul>
+<li><strong>isoler l’exécution</strong> d’un job dans un processus indépendant ;</li>
+<li><strong>éviter les blocages</strong> dans les environnements web où le fork est impossible ;</li>
+<li><strong>appliquer un timeout strict</strong> identique au mode CLI.</li>
+</ul>
+
+<p>
+Il garantit ainsi une exécution stable même sur des hébergements mutualisés ou des environnements PHP limités.
+</p>
+
+<h3>12.2 Fonctionnement interne</h3>
+
+<p>
+Le worker :
+</p>
+
+<ul>
+<li>charge les modules essentiels :
+  <ul>
+    <li><code>job.php</code></li>
+    <li><code>lit_rss.php</code></li>
+    <li><code>fusion_rss.php</code></li>
+  </ul>
+</li>
+<li>vérifie qu’il tourne bien en <strong>CLI</strong> ;</li>
+<li>récupère la fonction à exécuter et ses arguments ;</li>
+<li>installe une alarme (<code>pcntl_alarm()</code>) pour appliquer <strong>JOB_TIMEOUT</strong> ;</li>
+<li>exécute la fonction via <code>call_user_func_array()</code> ;</li>
+<li>journalise toute erreur ou timeout ;</li>
+<li>désactive l’alarme et termine immédiatement.</li>
+</ul>
+
+<h3>12.3 Timeout du worker</h3>
+
+<p>
+En cas de dépassement du délai :
+</p>
+
+<ul>
+<li>le signal <strong>SIGALRM</strong> est déclenché ;</li>
+<li>le worker écrit dans les logs : <code>TIMEOUT WORKER nom_fonction</code> ;</li>
+<li>le processus se termine avec un code d’erreur.</li>
+</ul>
+
+<h3>12.4 Pourquoi un worker séparé ?</h3>
+
+<p>
+Le worker existe pour garantir la compatibilité maximale du système :
+</p>
+
+<ul>
+<li>en <strong>CLI</strong> → exécution parallèle via <code>pcntl_fork()</code> ;</li>
+<li>en <strong>FPM/HTTP</strong> → exécution isolée via <code>job_worker.php</code>.</li>
+</ul>
+
+<p>
+Cela permet à iActu V18 de fonctionner :
+</p>
+
+<ul>
+<li>sur serveurs dédiés ;</li>
+<li>sur VPS ;</li>
+<li>sur hébergements mutualisés ;</li>
+<li>sur environnements restreints sans extensions POSIX.</li>
+</ul>
+
+<p>
+Le worker est donc un <strong>mécanisme de fallback robuste</strong>, garantissant que tous les jobs peuvent être exécutés, quel que soit l’environnement.
+</p>
 
 <hr>
 
 <h2>12. Conclusion</h2>
 
 <p>
-Le module <strong>job.php</strong> fournit un système de tâches asynchrones robuste, léger et parfaitement adapté au pipeline iActu V18.
+Le module <strong>job.php</strong> est un orchestrateur robuste, conçu pour gérer efficacement des dizaines de jobs RSS en parallèle.
+</p>
+
+<p>
 Il garantit :
 </p>
 
 <ul>
-<li>une exécution parallèle contrôlée,</li>
-<li>une isolation des erreurs,</li>
-<li>une gestion automatique des timeouts,</li>
-<li>une compatibilité totale CLI / FPM,</li>
-<li>une journalisation propre et auto‑rotative.</li>
+<li>une exécution stable ;</li>
+<li>une tolérance aux erreurs ;</li>
+<li>une compatibilité CLI/FPM ;</li>
+<li>une gestion fine des ressources ;</li>
+<li>une intégration parfaite avec le pipeline V18.</li>
 </ul>
 
 <p>
-Il constitue la couche d’orchestration permettant d’exécuter efficacement les parsers RSS en parallèle.
+Il constitue la fondation de l’exécution asynchrone d’iActu.
 </p>
 
 </body>

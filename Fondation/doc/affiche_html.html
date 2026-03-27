@@ -2,220 +2,285 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>affiche_html.php – Documentation Technique (V18)</title>
+<title>affiche_html.php – Génération des blocs HTML (V18)</title>
 </head>
 <body>
 
-<h1>affiche_html.php – Génération HTML des blocs d’actualités<br>Version 18 – Affichage robuste & fallback automatique</h1>
+<h1>affiche_html.php – Génération des blocs HTML<br>Version 18 – Chargement, fallback, tri et affichage des news</h1>
 
 <p>
-Le module <strong>affiche_html.php</strong> est responsable de l’affichage final des flux RSS fusionnés dans l’interface iActu V18.
-Il charge un flux, applique un fallback en cas d’erreur, sépare les news du jour et des jours précédents, puis génère un bloc HTML complet.
+Ce document décrit le fonctionnement du module <strong>affiche_html.php</strong>, utilisé par iActu V18 pour afficher les flux RSS fusionnés sous forme de blocs HTML.
 </p>
 
-<hr>
-
-<h2>1. Journalisation – log_affiche()</h2>
-
 <p>
-Le fichier <code>Fondation/logs/affiche_html.log</code> est :
+Ce module assure :
 </p>
 
 <ul>
-<li>réinitialisé si > 512 octets,</li>
-<li>alimenté avec des messages horodatés,</li>
-<li>utilisé pour signaler les flux invalides ou les dates incorrectes.</li>
+<li>le chargement sécurisé des flux RSS ;</li>
+<li>un système de fallback en cas de flux invalide ;</li>
+<li>la détection automatique du site source ;</li>
+<li>la génération d’identifiants uniques pour les liens ;</li>
+<li>le tri des news du jour et des jours précédents ;</li>
+<li>la production du HTML final (news-box).</li>
 </ul>
 
 <hr>
 
-<h2>2. Chargement du flux – load_flux()</h2>
+<h2>1. Rôle général du module</h2>
 
 <p>
-Charge un flux RSS depuis :
+Le module <strong>affiche_html.php</strong> est utilisé par les pages HTML d’iActu pour afficher les flux fusionnés.  
+Il ne télécharge rien : il lit uniquement les fichiers XML générés par <code>fusion_rss.php</code>.
 </p>
 
-<ul>
-<li><strong>mode fusion</strong> : <code>Fondation/cache/rss/fusion/</code></li>
-<li><strong>mode normal</strong> : <code>Fondation/cache/rss/</code></li>
-</ul>
-
 <p>
-Un flux est considéré valide si :
-</p>
-
-<ul>
-<li>le XML se charge correctement,</li>
-<li>il contient au moins <strong>5 items</strong>.</li>
-</ul>
-
-<p>
-En cas d’échec :
-</p>
-
-<ul>
-<li>le module logue l’erreur,</li>
-<li>puis charge le flux de fallback dans <code>Fondation/cache/rss/valide/</code>.</li>
-</ul>
-
-<p>
-Retourne un objet SimpleXML ou <strong>false</strong>.
+Il garantit un affichage stable même si un flux est corrompu, vide ou incomplet.
 </p>
 
 <hr>
 
-<h2>3. Détection du site source – news_site_url()</h2>
+<h2>2. Journalisation : log_affiche()</h2>
 
 <p>
-Analyse les 5 premiers liens du flux pour déterminer le domaine principal.
+La fonction <code>log_affiche()</code> écrit dans :
 </p>
 
+<pre><code>Fondation/logs/affiche_html.log</code></pre>
+
 <p>
-Étapes :
+Elle réinitialise automatiquement le fichier si :
 </p>
 
 <ul>
-<li>extraction des URLs des premiers items,</li>
-<li>analyse des domaines via <code>parse_url()</code>,</li>
-<li>comptage des occurrences par domaine,</li>
-<li>sélection du domaine majoritaire.</li>
+<li>sa taille dépasse 512 octets ;</li>
+<li>il devient trop ancien.</li>
 </ul>
 
 <p>
-Retourne une URL racine (ex : <code>https://www.lemonde.fr/</code>) ou une chaîne vide.
-</p>
-
-<hr>
-
-<h2>4. Génération d’identifiants – news_title_id() & news_id()</h2>
-
-<p>
-Deux types d’identifiants aléatoires sont utilisés :
+Les logs permettent de diagnostiquer :
 </p>
 
 <ul>
-<li><strong>news_title_id()</strong> : ID court pour le lien du titre du site (6 lettres + nombre),</li>
-<li><strong>news_id()</strong> : ID unique pour chaque news (année‑jour + 7 lettres + nombre).</li>
-</ul>
-
-<p>
-Ces IDs garantissent :
-</p>
-
-<ul>
-<li>l’unicité dans le DOM,</li>
-<li>la compatibilité avec les animations CSS/JS futures.</li>
+<li>les flux invalides ;</li>
+<li>les dates incorrectes ;</li>
+<li>les fallback utilisés.</li>
 </ul>
 
 <hr>
 
-<h2>5. Affichage HTML – affiche()</h2>
+<h2>3. Chargement des flux : load_flux()</h2>
 
 <p>
-La fonction principale <code>affiche($f, $mode, $n)</code> :
+La fonction <code>load_flux($f, $mode)</code> charge un flux RSS depuis :
 </p>
 
 <ul>
-<li>charge le flux via <code>load_flux()</code>,</li>
-<li>détecte le site source,</li>
-<li>sépare les news du jour et des jours précédents,</li>
-<li>limite le nombre total d’items à <strong>$n</strong>,</li>
-<li>génère un bloc HTML complet.</li>
-</ul>
-
-<hr>
-
-<h2>6. Séparation des news</h2>
-
-<p>
-Chaque item est classé selon sa date :
-</p>
-
-<ul>
-<li><strong>Aujourd’hui</strong> → même date que <code>date('Y-m-d')</code>,</li>
-<li><strong>Jours précédents</strong> → dates antérieures.</li>
+<li><strong>Fondation/cache/rss/</strong> (mode normal)</li>
+<li><strong>Fondation/cache/rss/fusion/</strong> (mode fusion)</li>
 </ul>
 
 <p>
-Si les news du jour sont insuffisantes :
+Elle applique une logique de sécurité :
 </p>
 
-<ul>
-<li>elles sont complétées par les jours précédents,</li>
-<li>jusqu’à atteindre <strong>$n</strong> items.</li>
-</ul>
-
-<hr>
-
-<h2>7. Structure HTML générée</h2>
-
-<p>
-Le module produit un bloc HTML de la forme :
-</p>
-
-<ul>
-<li><strong>&lt;article class="news-box"&gt;</strong></li>
-<li>header avec titre du site + compteur</li>
-<li>section “Aujourd’hui” (si news)</li>
-<li>section “C’est tout pour aujourd’hui !” (si aucune news restante)</li>
-<li>section “Jours précédents” (si applicable)</li>
-</ul>
+<ol>
+<li>chargement du flux principal ;</li>
+<li>validation :
+  <ul>
+    <li>XML lisible ;</li>
+    <li>présence d’items ;</li>
+    <li>au moins 5 items.</li>
+  </ul>
+</li>
+<li>si valide → copie dans <code>cache/rss/valide/</code> ;</li>
+<li>si invalide → fallback vers la dernière version valide.</li>
+</ol>
 
 <p>
-Chaque news est affichée sous forme de lien :
-</p>
-
-<pre>&lt;a class="n" id="..." href="..."&gt;Titre&lt;/a&gt;</pre>
-
-<hr>
-
-<h2>8. Gestion des erreurs</h2>
-
-<p>
-Le module logue :
-</p>
-
-<ul>
-<li>les flux invalides,</li>
-<li>les dates impossibles,</li>
-<li>les fallbacks utilisés.</li>
-</ul>
-
-<p>
-En cas d’erreur grave, aucun HTML n’est affiché.
+En cas d’échec total → <code>false</code>.
 </p>
 
 <hr>
 
-<h2>9. Résumé opérationnel</h2>
+<h2>4. Détection du site source : news_site_url()</h2>
+
+<p>
+Cette fonction analyse les 5 premiers liens du flux pour déterminer le site principal.
+</p>
+
+<p>
+Elle :
+</p>
 
 <ul>
-<li><strong>load_flux()</strong> → charge flux + fallback</li>
-<li><strong>news_site_url()</strong> → détecte le domaine principal</li>
-<li><strong>news_title_id()</strong> / <strong>news_id()</strong> → IDs uniques</li>
-<li><strong>affiche()</strong> → génère le bloc HTML final</li>
-<li><strong>log_affiche()</strong> → journalisation</li>
+<li>extrait les URLs ;</li>
+<li>analyse les domaines ;</li>
+<li>compte les occurrences ;</li>
+<li>retourne le domaine dominant (ex. <code>https://www.frandroid.com/</code>).</li>
+</ul>
+
+<p>
+Si aucun domaine n’est détecté → chaîne vide.
+</p>
+
+<hr>
+
+<h2>5. Génération d’identifiants uniques</h2>
+
+<h3>5.1 news_title_id()</h3>
+
+<p>
+Génère un identifiant aléatoire pour le lien du titre :
+</p>
+
+<ul>
+<li>6 lettres minuscules ;</li>
+<li>+ un nombre entre 0 et 100.</li>
+</ul>
+
+<h3>5.2 news_id()</h3>
+
+<p>
+Génère un identifiant unique pour chaque news :
+</p>
+
+<ul>
+<li>année ;</li>
+<li>jour de l’année ;</li>
+<li>7 lettres aléatoires ;</li>
+<li>+ un nombre entre 0 et 1000.</li>
+</ul>
+
+<p>
+Ces identifiants permettent :
+</p>
+
+<ul>
+<li>le tracking local ;</li>
+<li>l’unicité des liens ;</li>
+<li>la compatibilité avec les animations CSS.</li>
 </ul>
 
 <hr>
 
-<h2>10. Conclusion</h2>
+<h2>6. Fonction principale : affiche()</h2>
 
 <p>
-Le module <strong>affiche_html.php</strong> fournit un affichage HTML robuste, tolérant et cohérent avec le pipeline iActu V18.
+La fonction <code>affiche($f, $mode, $n)</code> génère un bloc HTML complet pour un flux donné.
+</p>
+
+<h3>6.1 Chargement du flux</h3>
+
+<p>
+Elle appelle <code>load_flux()</code> :
+</p>
+
+<ul>
+<li>si le flux est valide → XML chargé ;</li>
+<li>si invalide → fallback ;</li>
+<li>si aucun flux disponible → rien n’est affiché.</li>
+</ul>
+
+<h3>6.2 Séparation des news</h3>
+
+<p>
+Les items sont séparés en deux groupes :
+</p>
+
+<ul>
+<li><strong>Aujourd’hui</strong> → même date que le jour courant ;</li>
+<li><strong>Jours précédents</strong> → tout le reste.</li>
+</ul>
+
+<p>
+La fonction :
+</p>
+
+<ul>
+<li>limite les news du jour à <code>$n</code> ;</li>
+<li>complète avec les jours précédents si nécessaire ;</li>
+<li>génère les sections correspondantes.</li>
+</ul>
+
+<h3>6.3 Génération du HTML</h3>
+
+<p>
+Le HTML produit suit la structure :
+</p>
+
+<pre><code>&lt;article class="news-box"&gt;
+  &lt;header class="news-header"&gt;...&lt;/header&gt;
+  &lt;section class="news-section"&gt;...&lt;/section&gt;
+  ...
+&lt;/article&gt;
+</code></pre>
+
+<p>
+Le bloc contient :
+</p>
+
+<ul>
+<li>le titre du flux ;</li>
+<li>le lien vers le site source ;</li>
+<li>le nombre de news du jour ;</li>
+<li>la liste des news du jour ;</li>
+<li>la liste des jours précédents ;</li>
+<li>des messages adaptés (ex. “C’est tout pour aujourd’hui !”).</li>
+</ul>
+
+<hr>
+
+<h2>7. Messages spéciaux</h2>
+
+<p>
+Le module affiche automatiquement :
+</p>
+
+<ul>
+<li><strong>“Rien de neuf ⏰”</strong> si aucune news du jour ;</li>
+<li><strong>“C’est tout pour aujourd’hui !”</strong> si toutes les news sont du jour ;</li>
+<li><strong>“Aujourd’hui : pas de news”</strong> si le flux est vide pour la journée.</li>
+</ul>
+
+<hr>
+
+<h2>8. Mécanismes de stabilité</h2>
+
+<p>
+Le module intègre plusieurs mécanismes pour garantir un affichage fiable :
+</p>
+
+<ul>
+<li><strong>fallback automatique</strong> vers les flux valides ;</li>
+<li><strong>logs détaillés</strong> en cas d’erreur ;</li>
+<li><strong>validation minimale</strong> (≥5 items) ;</li>
+<li><strong>identifiants uniques</strong> pour éviter les collisions ;</li>
+<li><strong>séparation jour / anciens jours</strong> pour un affichage clair ;</li>
+<li><strong>aucune dépendance externe</strong> → HTML pur.</li>
+</ul>
+
+<hr>
+
+<h2>9. Conclusion</h2>
+
+<p>
+Le module <strong>affiche_html.php</strong> est responsable de la présentation finale des flux RSS dans iActu V18.
+</p>
+
+<p>
 Il garantit :
 </p>
 
 <ul>
-<li>un fallback automatique en cas de flux corrompu,</li>
-<li>une présentation claire et homogène,</li>
-<li>une séparation fiable des news du jour,</li>
-<li>des identifiants DOM uniques,</li>
-<li>une compatibilité totale avec PHP 8.3 / 8.4.</li>
+<li>un affichage propre et cohérent ;</li>
+<li>une tolérance élevée aux flux corrompus ;</li>
+<li>une expérience utilisateur stable ;</li>
+<li>une intégration parfaite avec les modules de parsing et de fusion.</li>
 </ul>
 
 <p>
-Il constitue la dernière étape du pipeline iActu V18.
+Il constitue la dernière étape du pipeline RSS avant l’affichage HTML.
 </p>
 
 </body>

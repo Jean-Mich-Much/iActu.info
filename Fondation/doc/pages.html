@@ -2,200 +2,327 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>pages.php – Documentation Technique (V18)</title>
+<title>Pages de news – Documentation Technique (V18)</title>
 </head>
 <body>
 
-<h1>pages.php – Architecture des pages dynamiques<br>Version 18 – Cache intelligent & mise à jour automatique</h1>
+<h1>Pages de news iActu<br>Version 18 – Cache, fallback, affichage et mise à jour automatique</h1>
 
 <p>
-Les fichiers <strong>Page_technologie.php</strong>, <strong>Page_Apple.php</strong>, <strong>Page_jeux.php</strong>, etc. constituent les pages principales du site iActu V18.
-Chaque page suit la même architecture : cache local, fallback, affichage HTML, et déclenchement automatique de la mise à jour RSS.
+Ce document décrit le fonctionnement des cinq pages principales d’iActu V18 :  
+<strong>Page_technologie.php</strong>, <strong>Page_Apple.php</strong>, <strong>Page_jeux.php</strong>,  
+<strong>Page_sciences.php</strong> et <strong>Page_actualités.php</strong>.
+</p>
+
+<p>
+Ces pages constituent la dernière étape du pipeline RSS :  
+elles affichent les flux fusionnés, gèrent le cache, déclenchent les mises à jour et produisent les pages HTML statiques visibles par les visiteurs.
 </p>
 
 <hr>
 
-<h2>1. Variables principales</h2>
+<h2>1. Rôle général des pages</h2>
 
 <p>
-Chaque page définit :
+Chaque page :
 </p>
 
 <ul>
-<li><strong>$titre_page</strong> : titre global du site,</li>
-<li><strong>$nom_page</strong> : préfixe des fichiers HTML mis en cache,</li>
-<li><strong>$cache_secondes</strong> : durée maximale du cache,</li>
-<li><strong>$caracteres</strong> : taille minimale du HTML pour validation,</li>
-<li><strong>$page_active</strong> : identifiant du menu actif,</li>
-<li><strong>$sites</strong> : nom du fichier de contenu (ex : <code>technologie.php</code>).</li>
+<li>charge les flux fusionnés ou non fusionnés ;</li>
+<li>génère le HTML final via <code>affiche_html.php</code> ;</li>
+<li>met en cache la page générée ;</li>
+<li>déclenche les mises à jour si nécessaire ;</li>
+<li>affiche les menus, messages et sections CSS ;</li>
+<li>gère les pages du jour précédent / suivant.</li>
 </ul>
 
 <p>
-Ces variables permettent de réutiliser la même structure pour toutes les catégories.
+Les pages sont statiques pour les visiteurs, mais dynamiques en interne grâce au système de cache.
 </p>
 
 <hr>
 
-<h2>2. Système de cache – double fichier</h2>
+<h2>2. Variables principales</h2>
 
 <p>
-Chaque page utilise un cache basé sur deux fichiers :
+Chaque page définit plusieurs variables essentielles :
 </p>
 
 <ul>
-<li><strong>Page_xxx_jour_.html</strong> → cache principal,</li>
-<li><strong>Page_xxx_jour_&lt;jour&gt;.html</strong> → archive du jour.</li>
+<li><strong>$titre_page</strong> – titre global (ex. “iActu”) ;</li>
+<li><strong>$nom_page</strong> – préfixe des fichiers HTML du jour ;</li>
+<li><strong>$page_active</strong> – identifiant pour le menu ;</li>
+<li><strong>$sites</strong> – nom du fichier dans <code>Fondation/sites/</code> ;</li>
+<li><strong>$cache_secondes</strong> – durée maximale du cache ;</li>
+<li><strong>$caracteres</strong> – taille minimale du HTML généré ;</li>
+<li><strong>$news_box</strong> – nombre minimal de blocs <code>news-box</code> ;</li>
+<li><strong>$class_n</strong> – nombre minimal de liens <code>class="n"</code>.</li>
 </ul>
 
 <p>
-Le cache est utilisé si :
-</p>
-
-<ul>
-<li>le fichier existe,</li>
-<li>il est récent (<strong>$cache_secondes</strong>),</li>
-<li>le fichier du jour existe.</li>
-</ul>
-
-<p>
-Sinon, la page est régénérée.
+Ces valeurs garantissent que la page générée est complète et cohérente.
 </p>
 
 <hr>
 
-<h2>3. Rafraîchissement toutes les minutes paires</h2>
+<h2>3. Gestion du cache</h2>
 
 <p>
-Le système alterne :
+Chaque page génère deux fichiers :
 </p>
 
 <ul>
-<li><strong>minutes impaires</strong> → lecture du cache,</li>
-<li><strong>minutes paires</strong> → possibilité de régénération.</li>
+<li><strong>Page_xxx.html</strong> – cache principal ;</li>
+<li><strong>Page_xxxJJ.html</strong> – archive du jour (JJ = jour du mois).</li>
 </ul>
 
 <p>
-Cela réduit la charge serveur tout en gardant un site très réactif.
+Le système vérifie :
+</p>
+
+<ul>
+<li>si les fichiers existent ;</li>
+<li>si le cache est trop ancien ;</li>
+<li>si le contenu généré est valide.</li>
+</ul>
+
+<p>
+Si tout est correct → la page HTML est simplement lue et affichée.  
+Sinon → une nouvelle version est générée.
 </p>
 
 <hr>
 
-<h2>4. Génération du HTML</h2>
+<h2>4. minute_pair – Rafraîchissement toutes les 2 minutes</h2>
+
+<p>
+Le système alterne entre :
+</p>
+
+<ul>
+<li><strong>minute paire</strong> → génération possible ;</li>
+<li><strong>minute impaire</strong> → lecture du cache uniquement.</li>
+</ul>
+
+<p>
+Cela réduit la charge serveur et évite les rafales de génération.
+</p>
+
+<hr>
+
+<h2>5. Génération du HTML</h2>
 
 <p>
 Lorsque la page doit être régénérée :
 </p>
 
 <ol>
-<li>activation d’un buffer (<code>ob_start()</code>),</li>
-<li>chargement du module <code>affiche_html.php</code>,</li>
-<li>construction du HTML complet :</li>
+<li>un buffer est ouvert (<code>ob_start()</code>) ;</li>
+<li><code>affiche_html.php</code> est chargé ;</li>
+<li>le squelette HTML est généré :
+  <ul>
+    <li>header</li>
+    <li>CSS (fonts, base, menu, messages, mid)</li>
+    <li>menu haut</li>
+    <li>messages top</li>
+    <li>contenu principal (via <code>Fondation/sites/xxx.php</code>)</li>
+    <li>messages bas</li>
+    <li>menu bas</li>
+  </ul>
+</li>
+<li>le contenu est validé ;</li>
+<li>si valide → écrit dans le cache ;</li>
+<li>sinon → fallback vers l’ancienne version.</li>
 </ol>
 
-<ul>
-<li>header + CSS,</li>
-<li>menu haut,</li>
-<li>messages haut,</li>
-<li>contenu du site (<code>Fondation/sites/$sites.php</code>),</li>
-<li>messages bas,</li>
-<li>menu bas.</li>
-</ul>
+<hr>
+
+<h2>6. Validation du contenu généré</h2>
 
 <p>
-Le HTML est ensuite validé :
+Le HTML généré doit respecter plusieurs critères :
 </p>
 
 <ul>
-<li>présence d’un seul <code>&lt;!DOCTYPE html&gt;</code>,</li>
-<li>présence d’un seul <code>&lt;/html&gt;</code>,</li>
-<li>taille minimale (<strong>$caracteres</strong>).</li>
+<li>présence d’un seul <code>&lt;!DOCTYPE html&gt;</code> ;</li>
+<li>présence d’un seul <code>&lt;/html&gt;</code> ;</li>
+<li>au moins <strong>$news_box</strong> blocs <code>class="news-box"</code> ;</li>
+<li>au moins <strong>$class_n</strong> liens <code>class="n"</code> ;</li>
+<li>taille minimale <strong>$caracteres</strong>.</li>
 </ul>
 
 <p>
-Si valide :
-</p>
-
-<ul>
-<li>affichage immédiat,</li>
-<li>écriture dans <code>$nom_page.html</code>,</li>
-<li>copie dans <code>$nom_page&lt;jour&gt;.html</code>.</li>
-</ul>
-
-<p>
-Sinon → fallback sur le cache existant.
+Si un critère échoue → fallback vers le cache précédent.
 </p>
 
 <hr>
 
-<h2>5. Déclenchement automatique de la mise à jour RSS</h2>
+<h2>7. Déclenchement automatique des mises à jour</h2>
 
 <p>
-Après l’affichage, la page peut déclencher une mise à jour RSS via <code>maj.php</code>.
+Les pages peuvent déclencher :
 </p>
+
+<ul>
+<li><strong>maj.php</strong> → parsers RSS ;</li>
+<li><strong>maj_fusion.php</strong> → fusions RSS.</li>
+</ul>
 
 <p>
 Conditions :
 </p>
 
 <ul>
-<li>minute impaire <strong>ou</strong> première visite (pas de cache),</li>
-<li>fichier <code>maj_lock</code> absent ou trop ancien (&gt; 60 s).</li>
+<li>minute paire ;</li>
+<li>ou <strong>$force_maj</strong> si les fichiers du jour n’existent pas ;</li>
+<li>lock non présent ou trop ancien ;</li>
+<li>tempo_maj / tempo_fusion dépassés.</li>
 </ul>
 
 <p>
-Si les conditions sont réunies :
+Les mises à jour sont lancées en arrière‑plan :
 </p>
 
-<pre>exec("php maj.php > /dev/null 2>&1 &");</pre>
-
-<p>
-Cela lance la mise à jour en arrière‑plan, sans bloquer l’affichage.
-</p>
+<pre><code>exec("php maj.php > /dev/null 2>&1 &");</code></pre>
 
 <hr>
 
-<h2>6. Rôle du fichier maj_lock</h2>
+<h2>8. Contenu principal : Fondation/sites/*.php</h2>
 
 <p>
-Le fichier <code>maj_lock</code> empêche les mises à jour trop fréquentes.
-Il est recréé à chaque lancement de <code>maj.php</code>.
+Chaque page inclut un fichier dans <code>Fondation/sites/</code> correspondant à sa catégorie.
 </p>
 
 <p>
-Il expire automatiquement après 60 secondes.
+Exemple pour la technologie :
 </p>
 
-<hr>
-
-<h2>7. Résumé opérationnel</h2>
-
-<ul>
-<li><strong>minutes impaires</strong> → lecture du cache</li>
-<li><strong>minutes paires</strong> → possibilité de régénération</li>
-<li><strong>validation HTML</strong> → sécurité anti‑corruption</li>
-<li><strong>cache du jour</strong> → stabilité visuelle</li>
-<li><strong>maj_lock</strong> → anti‑spam de mise à jour</li>
-<li><strong>maj.php</strong> → mise à jour RSS asynchrone</li>
-</ul>
-
-<hr>
-
-<h2>8. Conclusion</h2>
+<pre><code>Fondation/sites/technologie.php</code></pre>
 
 <p>
-Les pages dynamiques d’iActu V18 utilisent un système de cache intelligent, une validation stricte du HTML et un déclenchement automatique de la mise à jour RSS.
-Elles garantissent :
+Ce fichier contient une grille de blocs :
 </p>
 
 <ul>
-<li>une vitesse d’affichage optimale,</li>
-<li>une stabilité visuelle,</li>
-<li>une mise à jour continue des flux RSS,</li>
-<li>une charge serveur minimale.</li>
+<li>flux individuels (non fusionnés) ;</li>
+<li>flux fusionnés (vr, linux, tecautres, tecenglish).</li>
 </ul>
 
 <p>
-Ce mécanisme constitue la couche finale du pipeline iActu V18.
+Chaque bloc est généré via :
+</p>
+
+<pre><code>affiche('prefixe_flux', 'mode', nombre_items)</code></pre>
+
+<p>
+Exemples :
+</p>
+
+<ul>
+<li><code>affiche('tec_clubic','pasfusion',15)</code></li>
+<li><code>affiche('vr','fusion',15)</code></li>
+</ul>
+
+<hr>
+
+<h2>9. Menus et navigation</h2>
+
+<p>
+Les pages incluent :
+</p>
+
+<ul>
+<li><strong>menu.php</strong> – navigation principale ;</li>
+<li><strong>messages_top.php</strong> – messages d’information ;</li>
+<li><strong>messages_bot.php</strong> – messages bas de page ;</li>
+<li><strong>menu_bot.php</strong> – navigation bas de page.</li>
+</ul>
+
+<h3>9.1 menu.php</h3>
+
+<p>
+Le menu contient :
+</p>
+
+<ul>
+<li>logo iACTU ;</li>
+<li>liens vers les 5 pages ;</li>
+<li>date du jour ;</li>
+<li>navigation jour précédent / suivant ;</li>
+<li>heure de dernière mise à jour.</li>
+</ul>
+
+<h3>9.2 messages_top.php / messages_bot.php</h3>
+
+<p>
+Ces fichiers affichent des messages optionnels (dons, annonces, etc.).  
+Ils sont entièrement configurables.
+</p>
+
+<hr>
+
+<h2>10. CSS des pages</h2>
+
+<p>
+Le design complet est documenté ici :
+</p>
+
+<ul>
+<li><strong><a href="https://iactu.info/Fondation/doc/css.html" target="_blank">Documentation CSS iActu</a></strong></li>
+</ul>
+
+<p>
+Résumé rapide des fichiers CSS utilisés :
+</p>
+
+<ul>
+<li><strong><a href="https://iactu.info/Fondation/css/fonts.css" target="_blank">fonts.css</a></strong> – polices et variables ;</li>
+<li><strong><a href="https://iactu.info/Fondation/css/base.css" target="_blank">base.css</a></strong> – structure générale, couleurs, resets ;</li>
+<li><strong><a href="https://iactu.info/Fondation/css/menu.css" target="_blank">menu.css</a></strong> – navigation ;</li>
+<li><strong><a href="https://iactu.info/Fondation/css/messages.css" target="_blank">messages.css</a></strong> – messages top/bot ;</li>
+<li><strong><a href="https://iactu.info/Fondation/css/mid.css" target="_blank">mid.css</a></strong> – grille des news, responsive, spacing.</li>
+</ul>
+
+<p>
+Le CSS est minimaliste, rapide, optimisé pour mobile et desktop.
+</p>
+
+<hr>
+
+<h2>11. Mécanismes de stabilité</h2>
+
+<p>
+Les pages intègrent plusieurs mécanismes pour garantir un affichage fiable :
+</p>
+
+<ul>
+<li><strong>cache statique</strong> → rapidité maximale ;</li>
+<li><strong>fallback automatique</strong> → jamais de page cassée ;</li>
+<li><strong>validation stricte</strong> du HTML généré ;</li>
+<li><strong>minute_pair</strong> → génération contrôlée ;</li>
+<li><strong>locks</strong> → pas de double exécution ;</li>
+<li><strong>tempo</strong> → évite les rafales de mises à jour.</li>
+</ul>
+
+<hr>
+
+<h2>12. Conclusion</h2>
+
+<p>
+Les pages de news d’iActu V18 constituent la dernière étape du pipeline RSS.  
+Elles assurent :
+</p>
+
+<ul>
+<li>un affichage propre et rapide ;</li>
+<li>une mise à jour automatique fiable ;</li>
+<li>une tolérance élevée aux erreurs ;</li>
+<li>une navigation fluide entre les jours ;</li>
+<li>une intégration parfaite avec les modules internes.</li>
+</ul>
+
+<p>
+Elles sont la vitrine finale d’iActu, combinant performance, stabilité et simplicité.
 </p>
 
 </body>
