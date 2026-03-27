@@ -73,9 +73,12 @@ background:var(--c3);
 border:1px solid var(--c9);
 border-radius:12px;
 display:flex;
-flex:1;
 flex-direction:column;
 padding:4px 14px;
+}
+
+.news-section:last-child {
+flex:1;
 }
 
 .section-title {
