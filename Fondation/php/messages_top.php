@@ -4,7 +4,7 @@
 <?php if ($affiche_message_top_1) { ?>
 <div>
 <span>
-<a href="https://www.paypal.com/donate/?hosted_button_id=QVKRNFGMPXYXY" target="_blank" rel="noopener noreferrer" aria-label="Faire un don 😊" title=" Faire un don 😊 ">&nbsp;✨&nbsp;Faire un don&nbsp;</a> &nbsp;🪧 Derniers donateurs : Arnaud&nbsp;C.&nbsp;5€&nbsp;(abonné),  Alain&nbsp;S.&nbsp;5€&nbsp;(abonné), Stéphane&nbsp;L.&nbsp;5€
+<a href="https://www.paypal.com/donate/?hosted_button_id=QVKRNFGMPXYXY" target="_blank" aria-label="Faire un don, merci par avance 😊" alt="Faire un don, merci par avance 😊" title=" Faire un don, merci par avance 😊 " id="paypal-message-top">✨&nbsp;Faire un don&nbsp; </a> &nbsp;🪧 Bienvenue dans la version 18 !&nbsp;<a href="https://iactu.info/Fondation/doc/index.html" target="_blank" rel="noopener noreferrer" id="dochtml" aria-label="Documentation 😊" title=" Documentation 😊 ">&nbsp;📚&nbsp;Lien doc&nbsp;</a> 
 </span></div><?php };?>
  
 <?php $affiche_message_top_2 = false; ?>

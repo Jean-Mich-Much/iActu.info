@@ -22,12 +22,11 @@ $next=(clone $now);$next->modify("+1 day");$js=$next->format("j");
 ?>
 
 <div class="menu">
-
 <div class="menu-left">
-<a class="logo" href="index.php" title=" Accueil ">
+<a id="menu-logo" class="logo" href="index.php" title=" Accueil ">
 <div class="logo-part logo-ico">🔖</div>
 <div class="logo-part logo-iACTU">iACTU</div>
-<div class="logo-part logo-barre">&#124;</div>
+<div class="logo-part logo-barre">|</div>
 <div class="logo-part logo-INFO">INFO</div>
 <div class="logo-part logo-rocket">🚀</div>
 </a>
@@ -35,7 +34,7 @@ $next=(clone $now);$next->modify("+1 day");$js=$next->format("j");
 
 <div class="menu-center">
 <?php foreach($menu as $p):$active=($page_active===$p["id"]);?>
-<a class="menu-item <?php echo $active?"page_active":"";?>" href="<?php echo $p["url"];?>" title="<?php echo $p["title"];?>">
+<a id="menu-item-<?php echo $p["id"];?>" class="menu-item <?php echo $active?"page_active":"";?>" href="<?php echo $p["url"];?>" title="<?php echo $p["title"];?>">
 <span class="menu_ico"><?php echo $p["ico"];?></span>
 <?php if($active):?><span class="menu_label"><?php echo $p["label"];?></span><?php endif;?>
 </a>
@@ -43,10 +42,9 @@ $next=(clone $now);$next->modify("+1 day");$js=$next->format("j");
 </div>
 
 <div class="menu-right">
-<a class="nav-prev" title=" Jour précédent " href="<?php echo $nom_page.$jp;?>.html">⬅️</a>
-<span class="nav-date">📅&nbsp;<?php echo $txt_date;?></span>
-<a class="nav-next" title=" Jour suivant " href="<?php echo $nom_page.$js;?>.html">➡️</a>
-<span class="nav-hour">⏰&nbsp;Màj&nbsp;<?php echo $txt_heure;?></span>
+<a id="menu-prev" class="nav-prev" title=" Jour précédent " href="<?php echo $nom_page.$jp;?>.html">⬅️</a>
+<span id="menu-date" class="nav-date">📅 <?php echo $txt_date;?></span>
+<a id="menu-next" class="nav-next" title=" Jour suivant " href="<?php echo $nom_page.$js;?>.html">➡️</a>
+<span id="menu-hour" class="nav-hour">⏰ Màj <?php echo $txt_heure;?></span>
 </div>
-
 </div>
