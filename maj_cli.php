@@ -145,7 +145,6 @@ $jobs[]=['parse',['Radio-canada sciences','radiocan','Sciences autres','sciences
 /* 6.5 Sciences english */
 $jobs[]=['parse',['Discover mag','discover','Sciences english','sciencesenglish','https://www.discovermagazine.com/rss/all',5,$max]];
 $jobs[]=['parse',['Physics world','physicsw','Sciences english','sciencesenglish','https://physicsworld.com/feed/',5,$max]];
-$jobs[]=['parse',['Spacenews','spacene','Sciences english','sciencesenglish','https://spacenews.com/feed/',5,$max]];
 $jobs[]=['parse',['Wired science','wiredsci','Sciences english','sciencesenglish','https://www.wired.com/feed/science/rss',5,$max]];
 
 /* 6.6 Insolites */
