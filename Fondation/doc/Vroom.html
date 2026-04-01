@@ -139,7 +139,7 @@ Elle repose sur un principe clair : <strong>un enregistrement = un fichier</stro
 <li>En‑tête ASCII solide (id, type, timestamps, relations)</li>
 <li>Données encodées en Base64</li>
 <li>Répartition automatique dans des sous‑dossiers basés sur l’ID</li>
-<li>Marqueur final <code>⟪⇒¦⇐⟫</code> pour vérifier l’intégrité</li>
+<li>Marqueur final pour vérifier l’intégrité</li>
 </ul>
 </div>
 <div class="card">
@@ -344,7 +344,7 @@ vroom_job_run_queue(2);
 <li>LF uniquement</li>
 <li>Base64 pour les données</li>
 <li>En‑tête ASCII</li>
-<li>Marqueur final <code>⟪⇒¦⇐⟫</code></li>
+<li>Marqueur final</li>
 <li>Écriture atomique</li>
 <li>Locks physiques simples</li>
 <li>Cache RAM avec éviction LRU</li>
@@ -415,7 +415,7 @@ Elle est destinée aux développeurs, architectes et curieux souhaitant comprend
 <li>lecture sécurisée du fichier</li>
 <li>extraction du header ASCII</li>
 <li>décodage Base64</li>
-<li>vérification du marqueur final ⟪⇒¦⇐⟫</li>
+<li>vérification du marqueur final</li>
 <li>mise à jour du cache RAM</li>
 </ul>
 </div>
@@ -572,7 +572,7 @@ Elle permet aux développeurs avancés d’identifier rapidement où intervenir 
 <li><code>vroom_read_file()</code> — lit un .vrec</li>
 <li><code>vroom_parse_header()</code> — extrait l’en‑tête</li>
 <li><code>vroom_parse_data()</code> — décode Base64</li>
-<li><code>vroom_check_marker()</code> — vérifie ⟪⇒¦⇐⟫</li>
+<li><code>vroom_check_marker()</code> — vérifie le marqueur</li>
 </ul>
 </div>
 

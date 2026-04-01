@@ -38,7 +38,7 @@ Vroom combine deux couches :
 - stockage physique en fichiers `.vrec`  
 - header ASCII solide  
 - données encodées en Base64  
-- marqueur final `⟪⇒¦⇐⟫` pour vérifier l’intégrité  
+- marqueur final pour vérifier l’intégrité  
 - répartition automatique dans des sous‑dossiers  
 
 ### **2. Vroom Moteur**
@@ -94,7 +94,7 @@ Fondation/
 - écriture atomique  
 - locks physiques simples  
 - nettoyage automatique  
-- marqueur final `⟪⇒¦⇐⟫`
+- marqueur final
 
 ## 📜 Objectif
 
