@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Vroom : doc</title>
+<style>
+body{
+ margin:0;
+ padding:0;
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+ background:#050816;
+ color:#f5f7ff;
+ font-size:16px;
+ line-height:22px;
+}
+.wrapper{
+ min-height:100vh;
+ display:flex;
+ flex-direction:column;
+}
+.main{
+ flex:1;
+ display:flex;
+ flex-direction:column;
+ padding:24px;
+ max-width:1100px;
+ margin:0 auto;
+}
+h1,h2,h3{
+ margin:0 0 12px 0;
+ line-height:26px;
+}
+h1{
+ font-size:22px;
+}
+h2{
+ font-size:19px;
+ margin-top:28px;
+}
+h3{
+ font-size:17px;
+ margin-top:18px;
+}
+p{
+ margin:0 0 10px 0;
+}
+section{
+ margin-bottom:26px;
+}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+ gap:16px;
+}
+.card{
+ background:linear-gradient(135deg,#111827,#020617);
+ border-radius:10px;
+ padding:16px;
+ border:1px solid rgba(148,163,184,0.4);
+}
+table{
+ width:100%;
+ border-collapse:collapse;
+ margin-top:10px;
+}
+th,td{
+ border:1px solid rgba(148,163,184,0.4);
+ padding:8px;
+ font-size:14px;
+ line-height:20px;
+}
+th{
+ background:#020617;
+}
+code{
+ background:#020617;
+ padding:2px 4px;
+ border-radius:4px;
+ font-size:13px;
+}
+pre{
+ background:#020617;
+ padding:12px;
+ border-radius:8px;
+ overflow:auto;
+ font-size:14px;
+ line-height:20px;
+}
+footer{
+ padding:16px 24px;
+ text-align:center;
+ font-size:14px;
+ line-height:20px;
+ color:#cbd5f5;
+ border-top:1px solid rgba(148,163,184,0.4);
+ background:#020617;
+}
+@media (max-width:700px){
+ .main{
+  padding:16px;
+ }
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<main class="main">
+<header>
+<h1>🚀 Vroom: the reinvented PHP database</h1>
+<p>Vroom is a handcrafted PHP database designed to be simple, readable, fast and unbreakable. It is built on a clear principle: one record = one file, with a RAM‑centered, multitasking engine that touches the disk only through full atomic writes.</p>
+</header>
+<section>
+<h2>🧩 What is Vroom?</h2>
+<p>Vroom is a minimalist storage engine designed to replace an SQL database in cases where:</p>
+<ul>
+<li>simplicity is the priority</li>
+<li>read/write performance is critical</li>
+<li>robustness and corruption prevention are essential</li>
+<li>deployment must remain ultra‑lightweight</li>
+</ul>
+<p>Vroom combines:</p>
+<ul>
+<li>Vroom DB: physical storage in .vrec files</li>
+<li>Vroom Engine: RAM buffers, transactions, locks, workers, queue, multitasking</li>
+</ul>
+</section>
+<section>
+<h2>📦 Overall architecture</h2>
+<div class="grid">
+<div class="card">
+<h3>📁 Vroom DB</h3>
+<ul>
+<li>One .vrec file per record</li>
+<li>Solid ASCII header (id, type, timestamps, relations)</li>
+<li>Data encoded in Base64</li>
+<li>Automatic distribution into subfolders based on ID</li>
+<li>Final marker to verify integrity</li>
+</ul>
+</div>
+<div class="card">
+<h3>⚙️ Vroom Engine</h3>
+<ul>
+<li>RAM buffers for each opened file</li>
+<li>Single‑pass atomic write</li>
+<li>RAM → disk transactions</li>
+<li>Simple physical locks</li>
+<li>Parallel workers (pcntl_fork)</li>
+<li>Queue, supervision, timeouts</li>
+<li>RAM cache with LRU eviction</li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<h2>🗂️ File structure</h2>
+<pre><code>Vroom.php
+Fondation/
+ └── vroom/
+     ├── data/
+     │    └── &lt;type&gt;/00/12/34/00001234.vrec
+     ├── logs/
+     └── php/
+          ├── Vroom_state.php
+          ├── Vroom_id.php
+          ├── Vroom_lock.php
+          ├── Vroom_disk_read.php
+          ├── Vroom_disk_do.php
+          ├── Vroom_ram.php
+          ├── Vroom_exec.php
+          ├── Vroom_job.php
+          └── Vroom_relations.php
+</code></pre>
+</section>
+<section>
+<h2>🧠 How does Vroom work?</h2>
+<div class="grid">
+<div class="card">
+<h3>1. Reading</h3>
+<p>When a file is requested:</p>
+<ul>
+<li>disk read → RAM</li>
+<li>header and data stored in buffers</li>
+<li>relations automatically preloaded</li>
+<li>RAM cache updated</li>
+</ul>
+</div>
+<div class="card">
+<h3>2. Modification</h3>
+<p>All modifications happen in RAM:</p>
+<ul>
+<li>no partial writes</li>
+<li>no file kept open for extended writing</li>
+<li>no corruption risk</li>
+</ul>
+</div>
+<div class="card">
+<h3>3. Atomic write</h3>
+<p>During commit:</p>
+<ul>
+<li>full file built in RAM</li>
+<li>written to a temporary file</li>
+<li>atomic rename()</li>
+<li>final marker written last</li>
+</ul>
+</div>
+<div class="card">
+<h3>4. Automatic cleanup</h3>
+<p>After each write:</p>
+<ul>
+<li>removal of orphan .tmp files</li>
+<li>removal of expired .lock files</li>
+<li>removal of corrupted .vrec files</li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<h2>🛠️ Full Vroom API</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>create(type,data): int</td>
+<td>Creates a record</td>
+<td>$id=create('post',['title'=>'Hello']);</td>
+</tr>
+<tr>
+<td>get(type,id): ?array</td>
+<td>Reads a record</td>
+<td>$post=get('post',$id);</td>
+</tr>
+<tr>
+<td>all(type): array</td>
+<td>Lists all records</td>
+<td>$posts=all('post');</td>
+</tr>
+<tr>
+<td>findBy(type,field,value): array</td>
+<td>Simple search</td>
+<td>$p=findBy('post','user_id',1);</td>
+</tr>
+<tr>
+<td>update(type,id,data): bool</td>
+<td>Updates a record</td>
+<td>update('post',$id,['title'=>'OK']);</td>
+</tr>
+<tr>
+<td>delete(type,id): bool</td>
+<td>Deletes a record</td>
+<td>delete('post',$id);</td>
+</tr>
+<tr>
+<td>begin()</td>
+<td>Starts a RAM transaction</td>
+<td>begin();</td>
+</tr>
+<tr>
+<td>commit()</td>
+<td>Commits writes</td>
+<td>commit();</td>
+</tr>
+<tr>
+<td>rollback()</td>
+<td>Rolls back writes</td>
+<td>rollback();</td>
+</tr>
+<tr>
+<td>info()</td>
+<td>Full internal state</td>
+<td>var_dump(info());</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+<h2>⚡ Concrete examples</h2>
+<div class="grid">
+<div class="card">
+<h3>Create a post</h3>
+<pre><code>&lt;?php
+$id=create('post',[
+'title'=>'Hello',
+'body'=>'Content',
+'user_id'=>1
+]);
+?&gt;</code></pre>
+</div>
+<div class="card">
+<h3>Read and modify</h3>
+<pre><code>&lt;?php
+$p=get('post',$id);
+$p['title']='Updated';
+update('post',$id,$p);
+?&gt;</code></pre>
+</div>
+<div class="card">
+<h3>Transactions</h3>
+<pre><code>&lt;?php
+begin();
+$id1=create('post',['title'=>'A']);
+$id2=create('post',['title'=>'B']);
+commit();
+?&gt;</code></pre>
+</div>
+<div class="card">
+<h3>Workers and queue</h3>
+<pre><code>&lt;?php
+vroom_job_enqueue(function(){
+return ['ok'=>true];
+});
+vroom_job_run_queue(2);
+?&gt;</code></pre>
+</div>
+</div>
+</section>
+<section>
+<h2>🔒 Security and robustness</h2>
+<ul>
+<li>Strict UTF‑8</li>
+<li>LF only</li>
+<li>Base64 for data</li>
+<li>ASCII header</li>
+<li>Final marker</li>
+<li>Atomic write</li>
+<li>Simple physical locks</li>
+<li>RAM cache with LRU eviction</li>
+<li>Automatic cleanup</li>
+</ul>
+</section>
+<section>
+<h2>🧬 Detailed internal structure</h2>
+<p>This section describes in depth the role of each internal Vroom file. It is intended for developers, architects and curious readers who want to understand the exact behavior of the engine.</p>
+<div class="grid">
+<div class="card">
+<h3>📌 Vroom.php</h3>
+<p>Main entry point. Provides the public API:</p>
+<ul>
+<li>create(), get(), update(), delete()</li>
+<li>all(), findBy()</li>
+<li>begin(), commit(), rollback()</li>
+<li>info()</li>
+<li>job management (vroom_job_*)</li>
+</ul>
+<p>Loads all internal modules and orchestrates the entire engine.</p>
+</div>
+<div class="card">
+<h3>🧠 Vroom_state.php</h3>
+<p>The brain of the engine:</p>
+<ul>
+<li>global state</li>
+<li>RAM buffers</li>
+<li>LRU cache</li>
+<li>active transactions</li>
+<li>queue</li>
+<li>active workers</li>
+<li>internal statistics</li>
+</ul>
+</div>
+<div class="card">
+<h3>🔢 Vroom_id.php</h3>
+<p>Full ID management:</p>
+<ul>
+<li>unique ID generation</li>
+<li>atomic increment</li>
+<li>subfolder structure (00/12/34/...)</li>
+<li>path normalization</li>
+</ul>
+</div>
+<div class="card">
+<h3>🔒 Vroom_lock.php</h3>
+<p>Physical lock management:</p>
+<ul>
+<li>creation of .lock files</li>
+<li>automatic expiration</li>
+<li>prevention of concurrent writes</li>
+<li>cleanup of orphan locks</li>
+</ul>
+</div>
+<div class="card">
+<h3>📖 Vroom_disk_read.php</h3>
+<p>Disk → RAM reading:</p>
+<ul>
+<li>secure file reading</li>
+<li>ASCII header extraction</li>
+<li>Base64 decoding</li>
+<li>final marker verification</li>
+<li>RAM cache update</li>
+</ul>
+</div>
+<div class="card">
+<h3>✍️ Vroom_disk_do.php</h3>
+<p>RAM → disk writing:</p>
+<ul>
+<li>full file assembly in RAM</li>
+<li>write to .tmp</li>
+<li>atomic rename()</li>
+<li>final marker write</li>
+<li>cleanup of orphan .tmp files</li>
+<li>cleanup of corrupted .vrec files</li>
+</ul>
+</div>
+<div class="card">
+<h3>💾 Vroom_ram.php</h3>
+<p>RAM buffer management:</p>
+<ul>
+<li>temporary storage</li>
+<li>RAM modifications</li>
+<li>rollback and commit</li>
+<li>LRU eviction</li>
+<li>RAM ↔ disk synchronization</li>
+</ul>
+</div>
+<div class="card">
+<h3>⚡ Vroom_exec.php</h3>
+<p>Multitasking management:</p>
+<ul>
+<li>workers via pcntl_fork()</li>
+<li>timeouts</li>
+<li>supervision</li>
+<li>job isolation</li>
+</ul>
+</div>
+<div class="card">
+<h3>📨 Vroom_job.php</h3>
+<p>Queue management:</p>
+<ul>
+<li>vroom_job_enqueue()</li>
+<li>vroom_job_run_queue()</li>
+<li>sequential or parallel execution</li>
+<li>job logs</li>
+</ul>
+</div>
+<div class="card">
+<h3>🔗 Vroom_relations.php</h3>
+<p>Record relationship management:</p>
+<ul>
+<li>parent → children relations</li>
+<li>reverse relations</li>
+<li>automatic preloading</li>
+<li>optional cascade deletion</li>
+<li>link consistency</li>
+</ul>
+</div>
+</div>
+<h3>📁 Internal directories</h3>
+<div class="grid">
+<div class="card">
+<h4>📂 data/</h4>
+<p>Physical storage:</p>
+<pre><code>&lt;type&gt;/00/12/34/00001234.vrec</code></pre>
+<ul>
+<li>one file per record</li>
+<li>ASCII header</li>
+<li>Base64 data</li>
+<li>final marker</li>
+</ul>
+</div>
+<div class="card">
+<h4>📂 logs/</h4>
+<p>Internal logs:</p>
+<ul>
+<li>jobs</li>
+<li>errors</li>
+<li>expired locks</li>
+<li>detected corruptions</li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<h2>🧩 Internal functions by file</h2>
+<p>This section lists, for each internal Vroom file, the main functions it exposes and their role. It allows advanced developers to quickly identify where to intervene to adapt Vroom to their needs.</p>
+<div class="grid">
+<div class="card">
+<h3>📌 Vroom.php</h3>
+<ul>
+<li>create() — creates a record</li>
+<li>get() — reads a record</li>
+<li>update() — updates a record</li>
+<li>delete() — deletes a record</li>
+<li>all() — lists all records of a type</li>
+<li>findBy() — simple search</li>
+<li>begin(), commit(), rollback() — RAM transactions</li>
+<li>info() — full internal state</li>
+<li>vroom_job_* — job management</li>
+</ul>
+</div>
+<div class="card">
+<h3>🧠 Vroom_state.php</h3>
+<ul>
+<li>vroom_state() — access to global state</li>
+<li>vroom_cache_get() — RAM cache read</li>
+<li>vroom_cache_set() — RAM cache write</li>
+<li>vroom_tx_begin() — start transaction</li>
+<li>vroom_tx_commit() — commit</li>
+<li>vroom_tx_rollback() — rollback</li>
+</ul>
+</div>
+<div class="card">
+<h3>🔢 Vroom_id.php</h3>
+<ul>
+<li>vroom_next_id() — generates a new ID</li>
+<li>vroom_id_path() — computes file path</li>
+<li>vroom_id_exists() — checks existence</li>
+<li>vroom_id_split() — splits ID into subfolders</li>
+</ul>
+</div>
+<div class="card">
+<h3>🔒 Vroom_lock.php</h3>
+<ul>
+<li>vroom_lock_acquire() — creates a lock</li>
+<li>vroom_lock_release() — releases a lock</li>
+<li>vroom_lock_expired() — checks expiration</li>
+<li>vroom_lock_cleanup() — removes orphan locks</li>
+</ul>
+</div>
+<div class="card">
+<h3>📖 Vroom_disk_read.php</h3>
+<ul>
+<li>vroom_read_file() — reads a .vrec</li>
+<li>vroom_parse_header() — extracts header</li>
+<li>vroom_parse_data() — decodes Base64</li>
+<li>vroom_check_marker() — verifies marker</li>
+</ul>
+</div>
+<div class="card">
+<h3>✍️ Vroom_disk_do.php</h3>
+<ul>
+<li>vroom_write_file() — atomic write</li>
+<li>vroom_build_record() — assembles header and data</li>
+<li>vroom_write_tmp() — writes .tmp</li>
+<li>vroom_atomic_rename() — final rename()</li>
+<li>vroom_cleanup_tmp() — removes orphan .tmp files</li>
+</ul>
+</div>
+<div class="card">
+<h3>💾 Vroom_ram.php</h3>
+<ul>
+<li>vroom_ram_get() — reads from RAM</li>
+<li>vroom_ram_set() — writes to RAM</li>
+<li>vroom_ram_delete() — deletes from RAM</li>
+<li>vroom_ram_sync() — sync RAM ↔ disk</li>
+<li>vroom_ram_evict() — LRU eviction</li>
+</ul>
+</div>
+<div class="card">
+<h3>⚡ Vroom_exec.php</h3>
+<ul>
+<li>vroom_exec_fork() — launches a worker</li>
+<li>vroom_exec_wait() — waits for a worker</li>
+<li>vroom_exec_timeout() — handles timeouts</li>
+<li>vroom_exec_supervise() — supervises workers</li>
+</ul>
+</div>
+<div class="card">
+<h3>📨 Vroom_job.php</h3>
+<ul>
+<li>vroom_job_enqueue() — adds a job</li>
+<li>vroom_job_run_queue() — runs the queue</li>
+<li>vroom_job_run() — runs a job</li>
+<li>vroom_job_log() — internal log</li>
+</ul>
+</div>
+<div class="card">
+<h3>🔗 Vroom_relations.php</h3>
+<ul>
+<li>vroom_rel_add() — adds a relation</li>
+<li>vroom_rel_get() — reads relations</li>
+<li>vroom_rel_remove() — removes a relation</li>
+<li>vroom_rel_autoload() — automatic preload</li>
+<li>vroom_rel_cascade() — cascade deletion</li>
+</ul>
+</div>
+</div>
+</section>
+<div class="card">
+<h3>🔗 Vroom_relations.php</h3>
+<ul>
+<li>vroom_rel_add() — adds a relation</li>
+<li>vroom_rel_get() — reads relations</li>
+<li>vroom_rel_remove() — removes a relation</li>
+<li>vroom_rel_autoload() — automatic preload</li>
+<li>vroom_rel_cascade() — cascade deletion</li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<h2>📜 Conclusion</h2>
+<p>Vroom is a handcrafted PHP storage engine designed to be:</p>
+<ul>
+<li>simple to understand</li>
+<li>fast to execute</li>
+<li>resistant to corruption</li>
+<li>suitable for small and medium projects</li>
+<li>ideal for webmasters, developers and architects</li>
+</ul>
+<p>It does not aim to replace a full SQL database, but to offer an ultra‑simple, ultra‑reliable and ultra‑fast alternative for projects that need it.</p>
+</section>
+</main>
+<footer>
+Jean-Michel G, Bordeaux, France, iactu.info since 2003
+</footer>
+</div>
+</body>
+
+</html>
