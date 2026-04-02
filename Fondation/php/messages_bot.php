@@ -11,7 +11,7 @@
 <?php if ($affiche_message_bot_2) { ?>
 <div>
 <span>
-🪧 Dons, budget&nbsp;de&nbsp;mars (hors&nbsp;abonnés), merci&nbsp;à&nbsp;:  Xavier&nbsp;D.&nbsp;10€, Stéphane&nbsp;L.&nbsp;5€, Jérémy&nbsp;B.&nbsp;5€ et Philippe&nbsp;D. M.&nbsp;20€.
+🪧 Dons, budget&nbsp;de&nbsp;mars (hors&nbsp;abonnés), merci&nbsp;à&nbsp;:  Allan&nbsp;V.&nbsp;5€, Olivier&nbsp;P.&nbsp;10€, Xavier&nbsp;D.&nbsp;10€, Stéphane&nbsp;L.&nbsp;5€, Jérémy&nbsp;B.&nbsp;5€ et Philippe&nbsp;D. M.&nbsp;20€.
 </span></div><?php };?>
  
 <?php $affiche_message_bot_3 = true; ?>
