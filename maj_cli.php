@@ -23,7 +23,7 @@ $jobs=[];
 
 /* 1.1 Technologie (principaux) */
 $jobs[]=['parse',['Clubic','clubic','Technologie','tec','https://www.clubic.com/feed/rss',5,$max]];
-$jobs[]=['parse',['Cowcotland','cowcotla','Technologie','tec','https://feeds.feedburner.com/cowcotland',5,$max]];
+$jobs[]=['parse',['Cowcotland','cowcotla','Technologie','tec','https://www.cowcotland.com/rss-news.xml',5,$max]];
 $jobs[]=['parse',['Developpez','developp','Technologie','tec','https://www.developpez.com/index/rss',5,$max]];
 $jobs[]=['parse',['Frandroid','frandroi','Technologie','tec','https://www.frandroid.com/feed',5,$max]];
 $jobs[]=['parse',['Ginjfo','ginjfo','Technologie','tec','https://www.ginjfo.com/feed',5,$max]];
@@ -96,7 +96,6 @@ $jobs[]=['parse',['Puissance nintendo','puissanc','Jeux autres','jeuxautres','ht
 $jobs[]=['parse',['Xbox gamer','xboxgame','Jeux autres','jeuxautres','https://www.xbox-gamer.net/rss.php',5,$max]];
 
 /* 3.3 Jeux english */
-$jobs[]=['parse',['Dsogaming','dsogamin','Jeux english','jeuxenglish','https://www.dsogaming.com/feed/',5,$max]];
 $jobs[]=['parse',['Ign','ign','Jeux english','jeuxenglish','https://feeds.feedburner.com/ign/all',5,$max]];
 $jobs[]=['parse',['Pc gamer','pcgamer','Jeux english','jeuxenglish','https://www.pcgamer.com/feeds.xml',5,$max]];
 
