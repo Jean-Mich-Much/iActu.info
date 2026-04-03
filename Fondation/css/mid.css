@@ -109,7 +109,7 @@ background:var(--c3);
 border-top:1px solid var(--c9);
 display:flex;
 min-width:0;
-padding:3px;
+padding:2px 3px;
 }
 
 .news-item a.n {
@@ -119,7 +119,7 @@ display:inline;
 font-weight:400;
 min-width:0;
 overflow:hidden;
-padding:3px 0;
+padding:8px 0 4px 0;
 text-decoration:none;
 text-overflow:ellipsis;
 text-wrap:nowrap;
@@ -196,10 +196,10 @@ padding:round(calc(12/1920*100vw),1px) round(calc(4/1920*100vw),1px);
 
 .news-item {
 border-top:round(calc(1/1920*100vw),1px) solid var(--c9);
-padding:round(calc(3/1920*100vw),1px);
+padding:round(calc(2/1920*100vw),1px) round(calc(3/1920*100vw),1px);
 }
 
-.news-item a.n {padding:round(calc(3/1920*100vw),1px) 0;}
+.news-item a.n {padding:round(calc(8/1920*100vw),1px) 0 round(calc(4/1920*100vw),1px) 0;}
 
 .news-item a.n::before {margin-right:round(calc(8/1920*100vw),1px);}
 
