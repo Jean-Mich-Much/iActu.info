@@ -1,13 +1,13 @@
 <?php
-$titre_page = 'iActu';
-$nom_page = 'Page_technologie_jour_';
-$page_active = 'technologie';
-$page_listing = 'Page_technologie_listing';
-$sites = 'technologie';
+$titre_page = 'Actualités';
+$nom_page = 'Page_actualités_listing_jour_';
+$page_active = 'actu';
+$page_sites = 'Page_actualités';
+$sites = 'actualites_listing';
 $cache_secondes = 90;
-$caracteres = 48000;
-$news_box='24';
-$class_n='240';
+$caracteres = 12000;
+$news_box='1';
+$class_n='48';
 
 $minute_pair = ((int)date('i') % 2 === 0);
 $lock = __DIR__.'/maj_lock';
@@ -28,7 +28,7 @@ if (!file_exists($nom_page.'.html')
 
 ob_start();
 
-@include 'Fondation/php/affiche_html.php';
+@include 'Fondation/php/affiche_listing_actu_html.php';
 
 ?>
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ ob_start();
 @readfile('Fondation/css/base.css');
 @readfile('Fondation/css/menu.css');
 @readfile('Fondation/css/messages.css');
-@readfile('Fondation/css/mid.css');
+@readfile('Fondation/css/listing.css');
 ?>
 </style>
 
@@ -53,7 +53,7 @@ ob_start();
 
 <div class="flex">
 
-<div class="top"><?php @include 'Fondation/php/menu.php';?></div>
+<div class="top"><?php @include 'Fondation/php/menu_listing.php';?></div>
 
 <div class="messages_top"><?php @include 'Fondation/php/messages_top.php';?></div>
 
@@ -61,7 +61,7 @@ ob_start();
 
 <div class="messages_bot"><?php @include 'Fondation/php/messages_bot.php';?></div>
 
-<div class="bot"><?php @include 'Fondation/php/menu.php';?></div>
+<div class="bot"><?php @include 'Fondation/php/menu_listing.php';?></div>
 
 </div>
 

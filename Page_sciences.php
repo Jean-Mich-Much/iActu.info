@@ -2,6 +2,7 @@
 $titre_page='Sciences';
 $nom_page='Page_sciences_jour_';
 $page_active='sciences';
+$page_listing = 'Page_sciences_listing';
 $sites='sciences';
 $cache_secondes=90;
 $caracteres=12000;

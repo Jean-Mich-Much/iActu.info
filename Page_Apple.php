@@ -2,6 +2,7 @@
 $titre_page='Apple';
 $nom_page='Page_Apple_jour_';
 $page_active='apple';
+$page_listing = 'Page_Apple_listing';
 $sites='apple';
 $cache_secondes=90;
 $caracteres=12000;

@@ -2,6 +2,7 @@
 $titre_page='Jeux';
 $nom_page='Page_jeux_jour_';
 $page_active='jeux';
+$page_listing = 'Page_jeux_listing';
 $sites='jeux';
 $cache_secondes=90;
 $caracteres=16000;

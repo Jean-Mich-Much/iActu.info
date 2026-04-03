@@ -2,6 +2,7 @@
 $titre_page='Actualités';
 $nom_page='Page_actualités_jour_';
 $page_active='actu';
+$page_listing = 'Page_actualités_listing';
 $sites='actualites';
 $cache_secondes=90;
 $caracteres=12000;
