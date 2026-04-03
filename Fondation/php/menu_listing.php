@@ -1,10 +1,10 @@
 <?php
 $menu=[
-["id"=>"technologie","label"=>"Tech.","ico"=>"🤖","url"=>"Page_technologie.php","title"=>" Technologie "],
-["id"=>"apple","label"=>"Apple","ico"=>"🍏","url"=>"Page_Apple.php","title"=>" Apple "],
-["id"=>"jeux","label"=>"Jeux","ico"=>"🕹️","url"=>"Page_jeux.php","title"=>" Jeux "],
-["id"=>"sciences","label"=>"Sciences","ico"=>"🧪","url"=>"Page_sciences.php","title"=>" Sciences "],
-["id"=>"actu","label"=>"Actu","ico"=>"🗞️","url"=>"Page_actualités.php","title"=>" Actualités "]
+["id"=>"technologie","label"=>"Tech.","ico"=>"🤖","url"=>"Page_technologie_listing.php","title"=>" Technologie "],
+["id"=>"apple","label"=>"Apple","ico"=>"🍏","url"=>"Page_Apple_listing.php","title"=>" Apple "],
+["id"=>"jeux","label"=>"Jeux","ico"=>"🕹️","url"=>"Page_jeux_listing.php","title"=>" Jeux "],
+["id"=>"sciences","label"=>"Sciences","ico"=>"🧪","url"=>"Page_sciences_listing.php","title"=>" Sciences "],
+["id"=>"actu","label"=>"Actu","ico"=>"🗞️","url"=>"Page_actualités_listing.php","title"=>" Actualités "]
 ];
 
 $jours=["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
@@ -42,7 +42,7 @@ $next=(clone $now);$next->modify("+1 day");$js=$next->format("j");
 </div>
 
 <div class="menu-right">
-<a id="menu-listing" class="nav-listing" title=" Affichage en mode listing " href="<?php echo $page_listing;?>.php">📜️ Listing </a>
+<a id="menu-listing" class="nav-listing" title=" Affichage par sites " href="<?php echo $page_sites;?>.php">📜️ Sites </a>
 <a id="menu-prev" class="nav-prev" title=" Jour précédent " href="<?php echo $nom_page.$jp;?>.html">⬅️</a>
 <span id="menu-date" class="nav-date">📅 <?php echo $txt_date;?></span>
 <a id="menu-next" class="nav-next" title=" Jour suivant " href="<?php echo $nom_page.$js;?>.html">➡️</a>
