@@ -170,6 +170,11 @@ margin-right:8px;
 .news-item a.n:hover::before {color:var(--c6);}
 .news-item a.n:visited:hover::before {color:var(--c7);}
 
+@media (max-width:1152px){
+.news-header {justify-content: center;}
+.news-count {display:none;}
+}
+
 /* ===================
        Mode HD ≥ 1921px
     =================== */

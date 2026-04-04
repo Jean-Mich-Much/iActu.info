@@ -141,6 +141,7 @@ margin-right:8px;
 
 @media (max-width:1152px){
 .news-grid {grid-template-columns:1fr;}
+.news-header {justify-content: center;}
 .news-item a.n {
 flex-wrap:wrap;
 justify-content:flex-start;
@@ -148,6 +149,7 @@ text-wrap:wrap;
 white-space:normal;
 word-break:break-word;
 }
+.news-count {display:none;}
 }
 
 /* ===================
