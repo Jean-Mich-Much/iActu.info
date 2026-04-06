@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-const JOB_MAX=8,JOB_TIMEOUT=90,JOB_LOG_MAX=512,JOB_IS_CLI=(PHP_SAPI==='cli');
+const JOB_MAX=8,JOB_TIMEOUT=115,JOB_LOG_MAX=512,JOB_IS_CLI=(PHP_SAPI==='cli');
 
 $DIR=__DIR__;
 $LOG=$DIR.'/../logs/job.log';
