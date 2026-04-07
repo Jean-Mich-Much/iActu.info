@@ -22,7 +22,7 @@ debut_job();
 $jobs = [
 ['Réalité virtuelle','vr',5,$max],
 ['Linux','linux',5,$max],
-['Technologie','tec',100,300],
+['Technologie','tec',120,240],
 ['Autres','tecautres',5,$max],
 ['English','tecenglish',5,$max],
 ['Apple','apple',20,60],
