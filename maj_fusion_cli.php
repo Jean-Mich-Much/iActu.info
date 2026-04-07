@@ -8,7 +8,7 @@ $tempo = __DIR__.'/maj_fusion_tempo';
 @file_put_contents($tempo, '');
 @chmod($tempo, 0664);
 
-$hasard = random_int(10, 20);
+$hasard = random_int(8, 24);
 sleep($hasard);
 require __DIR__.'/Fondation/php/job.php';
 require __DIR__.'/Fondation/php/fusion_rss.php';
