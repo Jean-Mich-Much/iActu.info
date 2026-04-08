@@ -3,9 +3,7 @@
 <?php $affiche_message_bot_1 = false; ?>
 <?php if ($affiche_message_bot_1) { ?>
 <div>
-<span>
-🪧 Coucou
-</span></div><?php };?>
+<span>🪧 Coucou</span></div><?php };?>
  
 <?php $affiche_message_bot_2 = false; ?>
 <?php if ($affiche_message_bot_2) { ?>
