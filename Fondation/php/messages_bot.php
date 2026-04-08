@@ -1,10 +1,10 @@
 <!-- 😊 🤗 😄 😅 😀 🙂 😁 😇 😍 🥳 🥰 😜 🤩 😋 😏 😃 😆 -->
 
-<?php $affiche_message_bot_1 = true; ?>
+<?php $affiche_message_bot_1 = false; ?>
 <?php if ($affiche_message_bot_1) { ?>
 <div>
 <span>
-🪧 Coucou, je suis au courant que Cowcotland ne se met pas à jour. C’est leur flux RSS qui est illisible : les balises title sont cassées et l’encodage UTF-8 n’est pas déclaré correctement. Essayez de les contacter. Perso, j’ai déjà eu plein de problèmes avec leurs flux RSS, mais si vous êtes plusieurs à demander, ils feront peut-être quelque chose… ou pas 🤣 <a href="https://www.cowcotland.com/modules.php?name=Bugs" target="_blank" aria-label="Lien pour sIgnaler les bugs 😊" title=" Lien pour sIgnaler les bugs 😊 " rel="noopener" id="a01">🐱&nbsp;Lien pour sIgnaler les bugs </a> 
+🪧 Coucou
 </span></div><?php };?>
  
 <?php $affiche_message_bot_2 = false; ?>
