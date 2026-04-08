@@ -1,13 +1,13 @@
 <!-- 😊 🤗 😄 😅 😀 🙂 😁 😇 😍 🥳 🥰 😜 🤩 😋 😏 😃 😆 -->
 
-<?php $affiche_message_bot_1 = false; ?>
+<?php $affiche_message_bot_1 = true; ?>
 <?php if ($affiche_message_bot_1) { ?>
 <div>
 <span>
-🪧 La suite du montage d’un autre PC full custom impressionnant qu’il présentera à la prochaine Paris Games Week&nbsp;: <a href="https://www.twitch.tv/videos/2580514769?filter=archives&sort=time" target="_blank" aria-label="Lien 😊" title=" Lien 😊 " style="display: inline;">&nbsp;🔗&nbsp;Lien&nbsp;Twitch&nbsp;</a>
+🪧 Coucou, je suis au courant que Cowcotland ne se met pas à jour. C’est leur flux RSS qui est illisible : les balises title sont cassées et l’encodage UTF-8 n’est pas déclaré correctement. Essayez de les contacter. Perso, j’ai déjà eu plein de problèmes avec leurs flux RSS, mais si vous êtes plusieurs à demander, ils feront peut-être quelque chose… ou pas 🤣 <a href="https://www.cowcotland.com/modules.php?name=Bugs" target="_blank" aria-label="Lien pour sIgnaler les bugs 😊" title=" Lien pour sIgnaler les bugs 😊 " rel="noopener" id="a01">🐱&nbsp;Lien pour sIgnaler les bugs </a> 
 </span></div><?php };?>
  
-<?php $affiche_message_bot_2 = true; ?>
+<?php $affiche_message_bot_2 = false; ?>
 <?php if ($affiche_message_bot_2) { ?>
 <div>
 <span>
