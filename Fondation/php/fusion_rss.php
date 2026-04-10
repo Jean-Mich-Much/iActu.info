@@ -11,7 +11,13 @@ if(!is_dir($logDir)){@mkdir($logDir,0775,true);@chmod($logDir,0775);}
 if(!is_file($logFile)){@touch($logFile);@chmod($logFile,0664);}
 
 $files=glob($base.$prefix.'_*.xml')?:[];
-if(!$files){fusion_log($logFile,"NO XML prefix:$prefix");return;}
+
+$now=time();
+$files=array_filter($files,fn($p)=>$now-filemtime($p)<=172800);
+
+if(!$files){
+fusion_log($logFile,"NO RECENT XML prefix:$prefix");
+return;}
 
 $buffer=[];
 foreach($files as$p){
@@ -24,9 +30,7 @@ $t=trim((string)$a->title);
 $l=trim((string)$a->link);
 $d=strtotime((string)$a->pubDate);
 if(!$t||!$l||!$d||mb_strlen($t)<3)continue;
-$buffer[]=['title'=>$t,'link'=>$l,'date'=>$d];
-}
-}
+$buffer[]=['title'=>$t,'link'=>$l,'date'=>$d];}}
 
 if(!$buffer){fusion_log($logFile,"NO ITEMS prefix:$prefix");return;}
 
