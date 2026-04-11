@@ -125,8 +125,12 @@ padding-top:6px;
 .nav-prev,.nav-next {display:none;}
 .nav-date {display:none;}
 .nav-hour {display:none;}
-.menu-center {gap:10px;}
-.menu-item {padding:4px;}
+.menu-center {gap:4px;}
+.menu-item {gap:2px;padding:2px;}
+.menu-item.page_active{padding:2px 4px;}
+.menu_ico {font-size:19px;}
+.nav-listing,.nav-prev,.nav-next,.nav-date,.nav-hour {font-size:14px;}
+.nav-listing,.nav-prev,.nav-next {padding:0 2px;}
 }
 
 /* ===================
