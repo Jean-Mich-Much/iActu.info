@@ -11,7 +11,7 @@ $tempo = __DIR__.'/maj_tempo';
 require __DIR__.'/Fondation/php/job.php';
 require __DIR__.'/Fondation/php/parser/lit_rss.php';
 require __DIR__.'/Fondation/php/fusion_rss.php';
-$max = random_int(20, 30);
+$max = random_int(16, 20);
 
 debut_job();
 

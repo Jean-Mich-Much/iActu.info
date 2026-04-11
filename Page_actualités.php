@@ -79,5 +79,5 @@ $tempo_maj = __DIR__.'/maj_tempo';
 $tempo_fusion = __DIR__.'/maj_fusion_tempo';
 $delai = 655;
 if (!file_exists($tempo_maj) || filemtime($tempo_maj) < time() - $delai) {exec("php maj.php > /dev/null 2>&1 &");};
-if (!file_exists($tempo_fusion) || filemtime($tempo_fusion) < time() - $delai) {exec("php maj_fusion.php > /dev/null 2>&1 &");}
-}}
+if (!file_exists($tempo_fusion) || filemtime($tempo_fusion) < time() - $delai) {exec("php maj_fusion.php > /dev/null 2>&1 &");}}};
+@include 'Fondation/php/stats.php';
