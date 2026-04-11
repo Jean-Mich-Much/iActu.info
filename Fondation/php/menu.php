@@ -5,7 +5,7 @@ $menu=[
 ["id"=>"jeux","label"=>"Jeux","ico"=>"🕹️","url"=>"Page_jeux.php","title"=>" Jeux "],
 ["id"=>"sciences","label"=>"Sciences","ico"=>"🧪","url"=>"Page_sciences.php","title"=>" Sciences "],
 ["id"=>"actu","label"=>"Actu","ico"=>"🗞️","url"=>"Page_actualités.php","title"=>" Actualités "],
-["id"=>"tv","label"=>"TV","ico"=>"📺","url"=>"Page_tv.php","title"=>" TV "]
+["id"=>"tv","label"=>"TV","ico"=>"📺","url"=>"Page_tv.php","title"=>" Programme TV "]
 ];
 
 
