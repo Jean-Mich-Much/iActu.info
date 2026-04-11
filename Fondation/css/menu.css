@@ -127,6 +127,7 @@ padding-top:6px;
 .nav-hour {display:none;}
 .menu-center {gap:4px;}
 .menu-item {gap:2px;padding:2px;}
+.menu-item:hover:not(.page_active){outline-offset:0;}
 .menu-item.page_active{padding:2px 4px;}
 .menu_ico {font-size:19px;}
 .nav-listing,.nav-prev,.nav-next,.nav-date,.nav-hour {font-size:14px;}
