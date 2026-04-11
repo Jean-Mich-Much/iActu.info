@@ -4,7 +4,8 @@ $menu=[
 ["id"=>"apple","label"=>"Apple","ico"=>"🍏","url"=>"Page_Apple_listing.php","title"=>" Apple "],
 ["id"=>"jeux","label"=>"Jeux","ico"=>"🕹️","url"=>"Page_jeux_listing.php","title"=>" Jeux "],
 ["id"=>"sciences","label"=>"Sciences","ico"=>"🧪","url"=>"Page_sciences_listing.php","title"=>" Sciences "],
-["id"=>"actu","label"=>"Actu","ico"=>"🗞️","url"=>"Page_actualités_listing.php","title"=>" Actualités "]
+["id"=>"actu","label"=>"Actu","ico"=>"🗞️","url"=>"Page_actualités_listing.php","title"=>" Actualités "],
+["id"=>"tv","label"=>"TV","ico"=>"📺","url"=>"Page_tv_listing.php","title"=>" TV "]
 ];
 
 $jours=["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];

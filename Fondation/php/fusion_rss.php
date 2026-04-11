@@ -13,7 +13,7 @@ if(!is_file($logFile)){@touch($logFile);@chmod($logFile,0664);}
 $files=glob($base.$prefix.'_*.xml')?:[];
 
 $now=time();
-$files=array_filter($files,fn($p)=>$now-filemtime($p)<=172800);
+$files=array_filter($files,fn($p)=>$now-filemtime($p)<=90000);
 
 if(!$files){
 fusion_log($logFile,"NO RECENT XML prefix:$prefix");
