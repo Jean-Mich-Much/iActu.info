@@ -15,7 +15,7 @@ if($dh){
 while(($f=readdir($dh))!==false){
 if($f==='.'||$f==='..'){continue;}
 if(!str_starts_with($f,'ip_')){continue;}
-if(!str_ends_with($f,'.txt')){continue;} // <-- empêche .idx, .end, .split
+if(!str_ends_with($f,'.txt')){continue;}
 if(str_contains($f,'Total')){continue;}
 if(!str_contains($f,$day)){continue;}
 
