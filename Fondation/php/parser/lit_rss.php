@@ -34,9 +34,8 @@ elseif(!$hasArchive)rss_log_indispo($nom,'Flux illisible : '.($rss_last_error?:'
 return;
 }
 
-/* buffer_flux : tout brut, trié d’abord par date */
 $buffer=$raw;
-$buffer=sort_items($buffer); // tri brut par date (du plus récent au plus ancien)
+$buffer=sort_items($buffer);
 $buffer=normalize_items($buffer,$url);
 $buffer=filter_items($buffer);
 $buffer=dedupe_items($buffer);
@@ -89,7 +88,6 @@ if($dt>3.0&&$hasArchive&&!is_file($ready)){
 @touch($ready);@chmod($ready,0664);@chown($ready,'caddy');@chgrp($ready,'caddy');
 }
 
-/* CAS 1 : flux indisponible → on bascule sur les archives uniquement */
 if(!$x){
 if($hasArchive&&!is_file($ready)){
 @touch($ready);@chmod($ready,0664);@chown($ready,'caddy');@chgrp($ready,'caddy');
@@ -99,7 +97,7 @@ else rss_log_indispo($prefixe.'_'.$slug,'Indisponibilité flux : '.($rss_last_er
 
 $buffer=rss_load_daily($dir,$prefixe,$slug);
 if($buffer){
-$buffer=sort_items($buffer); // tri brut par date
+$buffer=sort_items($buffer);
 $buffer=normalize_items($buffer,$url);
 $buffer=filter_items($buffer);
 $buffer=dedupe_items($buffer);
@@ -118,7 +116,6 @@ return;
 return;
 }
 
-/* CAS 2 : flux récupéré mais XML illisible → archives uniquement */
 $raw=parse_feed($x);
 if(!$raw){
 if($hasArchive&&!is_file($ready)){
@@ -148,23 +145,18 @@ return;
 return;
 }
 
-/* CAS 3 : flux OK → on construit buffer_flux = aujourd’hui (+ archives si besoin) */
 $raw_today=$raw;
 
-/* on sauvegarde la journée brute (comme avant) */
 rss_save_daily($dir,$prefixe,$slug,$titre,$categorie,$raw_today);
 rss_cleanup_daily($dir,$prefixe,$slug);
 
-/* buffer_flux : on part des items du jour */
 $buffer=$raw_today;
 
-/* si on n’a pas assez de matière, on ajoute les archives brutes */
 if(count($buffer)<$max){
 $archives=rss_load_daily($dir,$prefixe,$slug);
 if($archives)$buffer=array_merge($buffer,$archives);
 }
 
-/* si malgré tout le buffer est vide → on log et on sort */
 if(!$buffer){
 if($hasArchive&&!is_file($ready)){
 @touch($ready);@chmod($ready,0664);@chown($ready,'caddy');@chgrp($ready,'caddy');
@@ -174,13 +166,12 @@ else rss_log_indispo($prefixe.'_'.$slug,'Moins de 5 news disponibles');
 return;
 }
 
-/* pipeline : tri brut par date, puis traitement complet */
-$buffer=sort_items($buffer);              // 1. tri brut par date
-$buffer=normalize_items($buffer,$url);    // 2. normalisation titres + URLs
-$buffer=filter_items($buffer);            // 3. filtres simples
-$buffer=dedupe_items($buffer);            // 4. dédup (URL + similarité titres)
-$buffer=sort_items($buffer);              // 5. tri final
-$buffer=array_slice($buffer,0,$max);      // 6. limitation
+$buffer=sort_items($buffer);
+$buffer=normalize_items($buffer,$url);
+$buffer=filter_items($buffer);
+$buffer=dedupe_items($buffer);
+$buffer=sort_items($buffer);
+$buffer=array_slice($buffer,0,$max);
 
 if(count($buffer)<5){
 if($hasArchive&&!is_file($ready)){
