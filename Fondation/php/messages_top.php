@@ -11,12 +11,12 @@
 <?php if ($affiche_message_top_2) { ?>
 <div>
 <span>
-🪧 Coucou
+🪧 Coucou 
 </span></div><?php };?>
  
 <?php $affiche_message_top_3 = false; ?>
 <?php if ($affiche_message_top_3) { ?>
 <div>
 <span>
-🪧 Coucou
+🪧 Coucou 
 </span></div><?php };
