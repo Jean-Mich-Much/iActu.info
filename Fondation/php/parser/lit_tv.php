@@ -132,7 +132,7 @@ $best=null;
 foreach($list as$p){
 $sd=$p['start']->format('Y-m-d');
 $h=(int)$p['start']->format('Hi');
-if($sd===$today&&$h>=1945&&$h<=2145){
+if($sd===$today&&$h>=1939&&$h<=2139){
 if($best===null||$p['duree']>$best['duree'])$best=$p;
 }}
 if($best!==null)$out[$ch]['ce_soir'][]=$best;
@@ -185,7 +185,7 @@ $best=null;
 foreach($list as$p){
 $sd=$p['start']->format('Y-m-d');
 $h=(int)$p['start']->format('Hi');
-if($sd===$tomorrow&&$h>=1945&&$h<=2145){
+if($sd===$tomorrow&&$h>=1939&&$h<=2139){
 if($best===null||$p['duree']>$best['duree'])$best=$p;
 }}
 if($best!==null)$out[$ch]['demain_soir'][]=$best;
