@@ -15,15 +15,19 @@ if($dh){
 while(($f=readdir($dh))!==false){
 if($f==='.'||$f==='..'){continue;}
 if(!str_starts_with($f,'ip_')){continue;}
+if(!str_ends_with($f,'.txt')){continue;} // <-- empêche .idx, .end, .split
 if(str_contains($f,'Total')){continue;}
 if(!str_contains($f,$day)){continue;}
+
 $name=str_replace(['ip_','_'.$day.'.txt'],'',$f);
 $count_file=$stats_dir.'/'.$name.'_'.$day.'.txt';
+
 $count=0;
 if(file_exists($count_file)){
 $val=trim(@file_get_contents($count_file));
 if(ctype_digit($val)){$count=(int)$val;}
 }
+
 $pages[$name]=$count;
 }
 closedir($dh);
@@ -80,7 +84,6 @@ Pour être très clair :<br>
 C’est ce que l’on appelle une anonymisation irréversible, ce qui signifie que ces données ne sont plus des données personnelles au sens du RGPD.<br><br>
 
 👉 Les statistiques comptent uniquement des visites anonymes, et chaque visiteur n’est enregistré qu’une seule fois par jour, quel que soit le nombre de ses passages.<br>
-
 
 </div>
 </div>
