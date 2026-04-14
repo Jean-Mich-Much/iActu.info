@@ -106,6 +106,30 @@ padding:6px 10px;
 white-space:nowrap;
 }
 
+/* ============================
+   Bloc RGPD
+   ============================ */
+
+.stats-rgpd{
+background:var(--c3);
+border:none; /* ← supprime la double bordure */
+border-radius:14px;
+padding:16px 20px;
+color:var(--c4);
+line-height:1.45;
+}
+
+.stats-rgpd-title{
+font-size:18px;
+font-weight:500;
+margin-bottom:10px;
+color:var(--c4);
+}
+
+.stats-rgpd-text{
+font-size:15px;
+color:var(--c4);
+}
 
 /* ============================
    Mode HD ≥ 1921px
@@ -171,6 +195,19 @@ padding:round(calc(8/1920*100vw),1px) 0 round(calc(4/1920*100vw),1px) 0;
 
 .stats-col-count{
 padding:round(calc(6/1920*100vw),1px) round(calc(10/1920*100vw),1px);
+}
+
+.stats-rgpd{
+padding:round(calc(16/1920*100vw),1px) round(calc(20/1920*100vw),1px);
+}
+
+.stats-rgpd-title{
+font-size:round(calc(18/1920*100vw),1px);
+margin-bottom:round(calc(10/1920*100vw),1px);
+}
+
+.stats-rgpd-text{
+font-size:round(calc(15/1920*100vw),1px);
 }
 
 }
