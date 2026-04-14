@@ -4,7 +4,7 @@
 <?php if ($affiche_message_bot_1) { ?>
 <div>
 <span>
-🪧 Coucou
+🪧 Coucou 
 </span></div><?php };?>
  
 <?php $affiche_message_bot_2 = false; ?>
