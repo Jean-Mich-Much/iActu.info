@@ -11,12 +11,12 @@
 <?php if ($affiche_message_top_2) { ?>
 <div>
 <span>
-🪧 Compte tenu des trop nombreux bugs sur le nouveau système de dons, j'ai remis l'ancienne version, on verra plus tard (ou pas : je suis un peu dégoûté en vrai...).
+🪧 Coucou
 </span></div><?php };?>
  
 <?php $affiche_message_top_3 = false; ?>
 <?php if ($affiche_message_top_3) { ?>
 <div>
 <span>
-🪧 Ne tenez pas compte des e-mails envoyés le 12 mars, c'est annulé, on revient à l'ancien système de dons, merci.
+🪧 Coucou
 </span></div><?php };
