@@ -20,3 +20,6 @@
 49 */3 * * * cd /_/Fondation/py && python3 tv.py > /dev/null 2>&1
 53 * * * * cd /_ && php /_/Page_tv.php > /dev/null 2>&1
 53 * * * * cd /_ && php /_/Page_tv_listing.php > /dev/null 2>&1
+
+# Stats 1 fois par jour
+58 23 * * * cd /_ && php /_/Page_stats.php > /dev/null 2>&1
