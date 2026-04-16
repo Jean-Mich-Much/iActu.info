@@ -10,7 +10,7 @@
 <?php affiche('tec_lecompto','pasfusion',15); ?>
 <?php affiche('tec_overcloc','pasfusion',15); ?>
 <?php affiche('tec_hardco','pasfusion',15); ?>
-<?php affiche('tec_nextpit','pasfusion',15); ?>
+<?php affiche('tec_korben','pasfusion',15); ?>
 <?php affiche('tec_goodtech','pasfusion',15); ?>
 <?php affiche('tec_lejourn','pasfusion',15); ?>
 <?php affiche('tec_kultureg','pasfusion',15); ?>
