@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API Happy! – Vision (EN)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --bg: #050816;
+            --bg-alt: #0b1020;
+            --accent: #4f46e5;
+            --accent-soft: rgba(79, 70, 229, 0.25);
+            --accent-strong: rgba(129, 140, 248, 0.35);
+            --border-subtle: rgba(148, 163, 184, 0.35);
+            --text-main: #e5e7eb;
+            --text-soft: #9ca3af;
+            --text-strong: #f9fafb;
+            --danger: #f97373;
+            --success: #4ade80;
+            --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.85);
+            --radius-lg: 18px;
+            --radius-xl: 28px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #1f2937 0, #020617 55%, #000 100%);
+            color: var(--text-main);
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            padding: 32px 16px;
+            font-size: 16px;
+        }
+
+        .app-shell {
+            display: flex;
+            flex-direction: column;
+            max-width: 1280px;
+            flex: 1;
+            background: rgba(15, 23, 42, 0.92);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border-subtle);
+            box-shadow: var(--shadow-soft);
+            overflow: hidden;
+        }
+
+        .app-inner { display: flex; flex: 1; padding: 18px; gap: 18px; }
+
+        .sidebar {
+            flex: 0 0 300px;
+            background: rgba(15, 23, 42, 0.96);
+            border-radius: 22px;
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .sidebar-title h1 { margin: 0; font-size: 20px; color: var(--text-strong); text-transform: uppercase; }
+        
+        .sidebar-search input {
+            flex: none;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--border-subtle);
+            padding: 8px 12px;
+            border-radius: 999px;
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .command-list { display: flex; flex-direction: column; gap: 6px; overflow-y: auto; }
+
+        .command-item {
+            border-radius: 999px;
+            padding: 7px 12px;
+            font-size: 16px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .command-item.active {
+            border-color: var(--accent);
+            background: var(--accent-soft);
+        }
+
+        .main-panel {
+            flex: 1;
+            background: rgba(15, 23, 42, 0.96);
+            border-radius: 22px;
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .content-scroll {
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .code-block {
+            margin: 14px 0;
+            border-radius: 14px;
+            background: #020617;
+            border: 1px solid var(--border-subtle);
+            overflow: hidden;
+        }
+
+        .code-block-header {
+            padding: 8px 12px;
+            background: #1e293b;
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+        }
+
+        .code-block-content { padding: 12px; }
+
+        pre {
+            margin: 0;
+            font-family: monospace;
+            font-size: 16px;
+            color: #e5e7eb;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .copy-btn, .home-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 4px 12px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        h1, h2, h3 {
+            margin: 0 0 8px 0;
+            color: var(--text-strong);
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-top: 16px;
+        }
+
+        p {
+            margin: 6px 0;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--text-main);
+        }
+
+        strong {
+            color: var(--text-strong);
+        }
+
+        @media (max-width: 960px) {
+            .app-inner { flex-direction: column; }
+            .sidebar { flex: none; flex-direction: row; overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+<div class="app-shell">
+    <div class="app-inner">
+        <aside class="sidebar">
+            <div class="sidebar-title">
+                <h1>API Happy!</h1>
+            </div>
+            <div class="sidebar-search">
+                <input type="text" id="apiSearch" placeholder="Search command...">
+            </div>
+            <div class="command-list" id="apiList">
+                <!-- filled by JS -->
+            </div>
+            <div style="margin-top:auto">
+                <button class="home-btn" onclick="location.href='vision_english.html'">🏠 Overview</button>
+            </div>
+        </aside>
+
+        <main class="main-panel">
+            <div id="apiContent" class="content-scroll">
+                <!-- JS will inject API content here -->
+            </div>
+        </main>
+    </div>
+</div>
+<script>
+const apiCommands = [
+    "clean",
+    "count",
+    "create",
+    "delete",
+    "exists",
+    "find",
+    "graph",
+    "link",
+    "read",
+    "relations",
+    "stats",
+    "unlink",
+    "update",
+    "include"
+];
+
+const apiContentData = {};
+
+function buildMenu() {
+    const list = document.getElementById("apiList");
+    list.innerHTML = "";
+
+    apiCommands.forEach(cmd => {
+        const item = document.createElement("div");
+        item.className = "command-item";
+        item.dataset.cmd = cmd;
+        item.textContent = cmd.toUpperCase();
+        item.addEventListener("click", () => selectAPI(cmd));
+        list.appendChild(item);
+    });
+}
+
+document.getElementById("apiSearch").addEventListener("input", (e) => {
+    const val = e.target.value.toLowerCase();
+    document.querySelectorAll(".command-item").forEach(item => {
+        item.style.display = item.dataset.cmd.includes(val) ? "flex" : "none";
+    });
+});
+
+function highlightMenu(cmd) {
+    document.querySelectorAll(".command-item").forEach(el => {
+        el.classList.toggle("active", el.dataset.cmd === cmd);
+    });
+}
+
+function selectAPI(cmd) {
+    highlightMenu(cmd);
+    const container = document.getElementById("apiContent");
+    container.innerHTML = apiContentData[cmd] || "<p>Missing content.</p>";
+    setupCopyButtons();
+}
+
+function setupCopyButtons() {
+    document.querySelectorAll(".copy-btn").forEach(btn => {
+        btn.onclick = () => {
+            const pre = btn.closest(".code-block").querySelector("pre code");
+            const text = pre.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const old = btn.innerHTML;
+                btn.innerHTML = "✔ Copied";
+                setTimeout(() => btn.innerHTML = old, 1200);
+            });
+        };
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    buildMenu();
+    selectAPI(apiCommands[0]);
+});
+// CLEAN
+apiContentData["clean"] = `
+<h1>🧹 clean() — Automatic Maintenance</h1>
+
+<p><strong>Beginner:</strong> This is the engine's "broom". Use this command to delete forgotten temporary files or empty data. It keeps Vision clean and fast.</p>
+<p><strong>Intermediate:</strong> clean() removes all <code>.vr</code> files in the data folder in a safe, atomic way.</p>
+<p><strong>Expert:</strong> clean() wipes all shards, relations and metadata. It is designed for test environments and full resets.</p>
+
+<h2>✨ Example #1</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Basic reset</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>Vision_API::clean();</code></pre></div>
+</div>
+
+<h2>⚙️ Example #2</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Reset before a test suite</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>Vision_API::clean();
+// Now you can safely seed your test data
+Vision_API::create(["role" =&gt; "admin"]);</code></pre></div>
+</div>
+
+<h2>🧠 Example #3</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Reset in a CLI script</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>if (in_array('--reset', $argv, true)) {
+    echo "Resetting Vision...\\n";
+    Vision_API::clean();
+    echo "Done.\\n";
+}</code></pre></div>
+</div>
+`;
+
+// COUNT
+apiContentData["count"] = `
+<h1>🔢 count() — Count cells in Vision</h1>
+
+<p><strong>Beginner:</strong> Instantly counts how many items (news, messages, records) you have in your store.</p>
+<p><strong>Intermediate:</strong> count() scans the underlying shards and returns the total number of stored cells.</p>
+<p><strong>Expert:</strong> count() is optimized for file‑based storage and can be used to monitor growth or capacity.</p>
+
+<h2>✨ Example #1</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Basic count</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$total = Vision_API::count();
+echo "Total cells: " . $total;</code></pre></div>
+</div>
+
+<h2>⚙️ Example #2</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Count after seeding</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>Vision_API::clean();
+Vision_API::create(["type" =&gt; "user"]);
+Vision_API::create(["type" =&gt; "post"]);
+
+echo "Cells after seed: " . Vision_API::count();</code></pre></div>
+</div>
+
+<h2>🧠 Example #3</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Health check</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$count = Vision_API::count();
+if ($count === 0) {
+    error_log("Warning: Vision is empty.");
+}</code></pre></div>
+</div>
+`;
+
+// CREATE
+apiContentData["create"] = `
+<h1>✨ create() — Create a new cell</h1>
+
+<p><strong>Beginner:</strong> Saves a new piece of information (an article, a profile, etc.). Vision immediately gives you back the unique ID of what you just created.</p>
+<p><strong>Intermediate:</strong> create() writes a new <code>.vr</code> file atomically and returns a unique identifier.</p>
+<p><strong>Expert:</strong> create() can also attach relations at creation time using a relations array.</p>
+
+<h2>✨ Example #1</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Basic create</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$id = Vision_API::create([
+    "title" =&gt; "Hello Vision",
+    "text"  =&gt; "First message"
+]);
+
+echo $id;</code></pre></div>
+</div>
+
+<h2>⚙️ Example #2</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Create with relations</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$topicId = Vision_API::create(["name" =&gt; "General"]);
+
+$postId = Vision_API::create(
+    ["text" =&gt; "Hello everyone!"],
+    [["id" =&gt; $topicId, "level" =&gt; 1]]
+);</code></pre></div>
+</div>
+
+<h2>🧠 Example #3</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Bulk create</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$ids = [];
+foreach (range(1, 100) as $i) {
+    $ids[] = Vision_API::create(["index" =&gt; $i]);
+}</code></pre></div>
+</div>
+`;
+
+// DELETE
+apiContentData["delete"] = `
+<h1>🗑 delete() — Delete a cell</h1>
+
+<p><strong>Beginner:</strong> Permanently erases information using its unique identifier.</p>
+<p><strong>Intermediate:</strong> delete() removes the <code>.vr</code> file and cleans related links.</p>
+<p><strong>Expert:</strong> delete() is safe to call even if the cell has many relations; Vision keeps the graph consistent.</p>
+
+<h2>✨ Example #1</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Basic delete</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>Vision_API::delete($id);</code></pre></div>
+</div>
+
+<h2>⚙️ Example #2</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Delete if it exists</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>if (Vision_API::exists($id)) {
+    Vision_API::delete($id);
+}</code></pre></div>
+</div>
+
+<h2>🧠 Example #3</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Delete many</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$cells = Vision_API::find(fn($c) =&gt; $c['data']['type'] ?? null === 'temp');
+foreach ($cells as $c) {
+    Vision_API::delete($c['id']);
+}</code></pre></div>
+</div>
+`;
+
+// EXISTS
+apiContentData["exists"] = `
+<h1>❓ exists() — Check if a cell exists</h1>
+
+<p><strong>Beginner:</strong> Tells you if an ID corresponds to actual data before trying to display it.</p>
+<p><strong>Intermediate:</strong> exists() checks the underlying file and basic integrity.</p>
+<p><strong>Expert:</strong> Useful for guards, migrations, and safe deletes.</p>
+
+<h2>✨ Example #1</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Basic check</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>if (Vision_API::exists($id)) {
+    echo "Cell exists.";
+}</code></pre></div>
+</div>
+
+<h2>⚙️ Example #2</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Guard before read</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>if (!Vision_API::exists($id)) {
+    http_response_code(404);
+    exit("Not found");
+}
+
+$cell = Vision_API::read($id);</code></pre></div>
+</div>
+
+<h2>🧠 Example #3</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Check many IDs</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$ids = ["a1", "b2", "c3"];
+foreach ($ids as $id) {
+    echo $id . ": " . (Vision_API::exists($id) ? "yes" : "no") . "\\n";
+}</code></pre></div>
+</div>
+`;
+
+// FIND
+apiContentData["find"] = `
+<h1>🔍 find() — Search cells with a PHP callback</h1>
+
+<p><strong>Beginner:</strong> Searches through your entire database for items that match your needs (e.g., all news talking about "Speed").</p>
+<p><strong>Intermediate:</strong> find() iterates over cells and passes each one to your callback.</p>
+<p><strong>Expert:</strong> The callback receives the full cell (id, data, relations, meta). You can build complex filters.</p>
+
+<h2>✨ Example #1</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Find all posts</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$posts = Vision_API::find(function ($cell) {
+    return ($cell['data']['type'] ?? null) === 'post';
+});</code></pre></div>
+</div>
+
+<h2>⚙️ Example #2</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Find by title</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$results = Vision_API::find(function ($cell) {
+    return isset($cell['data']['title']) &amp;&amp;
+           str_contains(strtolower($cell['data']['title']), 'vision');
+});</code></pre></div>
+</div>
+
+<h2>🧠 Example #3</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Find everything</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$all = Vision_API::find(fn($c) =&gt; true);</code></pre></div>
+</div>
+`;
+
+// GRAPH
+apiContentData["graph"] = `
+<h1>🕸 graph() — Explore the relation graph</h1>
+
+<p><strong>Beginner:</strong> Retrieves a news item and "pulls the thread" to get everything linked to it (comments, similar articles, authors).</p>
+<p><strong>Intermediate:</strong> graph() lets you see how cells are connected around a given ID.</p>
+<p><strong>Expert:</strong> Useful for debugging complex relation networks and visualizing the structure of your data.</p>
+
+<h2>✨ Example #1</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Basic graph</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$graph = Vision_API::graph($id);
+print_r($graph);</code></pre></div>
+</div>
+
+<h2>⚙️ Example #2</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Graph depth</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$graph = Vision_API::graph($id, depth: 2);</code></pre></div>
+</div>
+
+<h2>🧠 Example #3</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Graph for debugging</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$graph = Vision_API::graph($id);
+file_put_contents("graph.json", json_encode($graph, JSON_PRETTY_PRINT));</code></pre></div>
+</div>
+`;
+
+// LINK
+apiContentData["link"] = `
+<h1>🔗 link() — Create a relation between cells</h1>
+
+<p><strong>Beginner:</strong> Creates a bridge between two pieces of information. For example, link a "Comment" to a "News".</p>
+<p><strong>Intermediate:</strong> link() adds a relation entry with an optional level.</p>
+<p><strong>Expert:</strong> Relations are stored in a graph structure and can be traversed with graph() and relations().</p>
+
+<h2>✨ Example #1</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Basic link</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>Vision_API::link($postId, $topicId);</code></pre></div>
+</div>
+
+<h2>⚙️ Example #2</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Link with level</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>Vision_API::link($childId, $parentId, level: 1);</code></pre></div>
+</div>
+
+<h2>🧠 Example #3</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Link many posts to a topic</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>foreach ($posts as $post) {
+    Vision_API::link($post['id'], $topicId);
+}</code></pre></div>
+</div>
+`;
+
+// READ
+apiContentData["read"] = `
+<h1>📖 read() — Read a cell by ID</h1>
+
+<p><strong>Beginner:</strong> Opens and reads the full content of an information (ID, data, creation date).</p>
+<p><strong>Intermediate:</strong> read() returns an array with id, data, relations and meta.</p>
+<p><strong>Expert:</strong> You can combine read() with relations() and graph() to navigate the data model.</p>
+
+<h2>✨ Example #1</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Basic read</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$cell = Vision_API::read($id);
+print_r($cell);</code></pre></div>
+</div>
+
+<h2>⚙️ Example #2</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Read and display</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$post = Vision_API::read($postId);
+echo "&lt;h1&gt;" . htmlspecialchars($post['data']['title']) . "&lt;/h1&gt;";</code></pre></div>
+</div>
+
+<h2>🧠 Example #3</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Read with guard</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>if (!Vision_API::exists($id)) {
+    http_response_code(404);
+    exit("Not found");
+}
+
+$cell = Vision_API::read($id);</code></pre></div>
+</div>
+`;
+
+// RELATIONS
+apiContentData["relations"] = `
+<h1>🌐 relations() — List relations of a cell</h1>
+
+<p><strong>Beginner:</strong> Lists all the bridges (links) attached to a specific piece of information without reading the content of other items.</p>
+<p><strong>Intermediate:</strong> relations() gives you the IDs and levels of connected cells.</p>
+<p><strong>Expert:</strong> You can use relations() to build navigation, topics, threads, and trees.</p>
+
+<h2>✨ Example #1</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Basic relations</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$rels = Vision_API::relations($id);
+print_r($rels);</code></pre></div>
+</div>
+
+<h2>⚙️ Example #2</h2>
+<div class="code-block">
+<div class="code-block-header"><span>List posts in a topic</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$rels = Vision_API::relations($topicId);
+foreach ($rels as $rel) {
+    $post = Vision_API::read($rel['id']);
+    echo $post['data']['text'] . "\\n";
+}</code></pre></div>
+</div>
+
+<h2>🧠 Example #3</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Relations with level filter</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$rels = array_filter(
+    Vision_API::relations($id),
+    fn($r) =&gt; ($r['level'] ?? 0) === 1
+);</code></pre></div>
+</div>
+`;
+
+// STATS
+apiContentData["stats"] = `
+<h1>📊 stats() — Get Vision engine statistics</h1>
+
+<p><strong>Beginner:</strong> Allows you to monitor your database health: disk size, number of items, shards, etc.</p>
+<p><strong>Intermediate:</strong> stats() can show counts, shard usage and internal metrics.</p>
+<p><strong>Expert:</strong> Useful for monitoring, dashboards and capacity planning.</p>
+
+<h2>✨ Example #1</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Basic stats</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$stats = Vision_API::stats();
+print_r($stats);</code></pre></div>
+</div>
+
+<h2>⚙️ Example #2</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Stats in JSON</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>header("Content-Type: application/json");
+echo json_encode(Vision_API::stats());</code></pre></div>
+</div>
+
+<h2>🧠 Example #3</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Log stats periodically</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$stats = Vision_API::stats();
+error_log("Vision stats: " . json_encode($stats));</code></pre></div>
+</div>
+`;
+
+// UNLINK
+apiContentData["unlink"] = `
+<h1>🧷 unlink() — Remove a relation between cells</h1>
+
+<p><strong>Beginner:</strong> Cuts the bridge between two pieces of information. Both items remain present, but they are no longer linked.</p>
+<p><strong>Intermediate:</strong> unlink() removes a relation entry but keeps both cells intact.</p>
+<p><strong>Expert:</strong> Use unlink() to clean graphs, move threads, or detach items.</p>
+
+<h2>✨ Example #1</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Basic unlink</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>Vision_API::unlink($postId, $topicId);</code></pre></div>
+</div>
+
+<h2>⚙️ Example #2</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Unlink all posts from a topic</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$rels = Vision_API::relations($topicId);
+foreach ($rels as $rel) {
+    Vision_API::unlink($rel['id'], $topicId);
+}</code></pre></div>
+</div>
+
+<h2>🧠 Example #3</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Unlink with guard</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>if (Vision_API::exists($a) &amp;&amp; Vision_API::exists($b)) {
+    Vision_API::unlink($a, $b);
+}</code></pre></div>
+</div>
+`;
+
+// UPDATE
+apiContentData["update"] = `
+<h1>🛠 update() — Update a cell</h1>
+
+<p><strong>Beginner:</strong> Changes the content of an already recorded information (e.g., fixing a typo in a news item).</p>
+<p><strong>Intermediate:</strong> update() rewrites the <code>.vr</code> file atomically.</p>
+<p><strong>Expert:</strong> update() can also replace relations if you pass a relations array.</p>
+
+<h2>✨ Example #1</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Basic update</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>Vision_API::update($id, [
+    "title" =&gt; "New title"
+]);</code></pre></div>
+</div>
+
+<h2>⚙️ Example #2</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Update + add relation</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>Vision_API::update(
+    $postId,
+    ["text" =&gt; "Edited message"],
+    [["id" =&gt; $topicId, "level" =&gt; 1]]
+);</code></pre></div>
+</div>
+
+<h2>🧠 Example #3</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Mass update</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>$cells = Vision_API::find(fn($c) =&gt; true);
+foreach ($cells as $c) {
+    Vision_API::update($c['id'], [
+        "updatedAt" =&gt; time()
+    ]);
+}</code></pre></div>
+</div>
+`;
+
+// INCLUDE
+apiContentData["include"] = `
+<h1>📦 include() — Load Vision into your project</h1>
+
+<p><strong>Beginner:</strong> This is the only installation step. Add a single line of code <code>include "vision/vision.php";</code> at the beginning of your site and <strong>your database is ready</strong>. 
+There is no server to configure, no password, no table to create.</p>
+
+<p><strong>Intermediate:</strong> The inclusion executes the Auto-Bootstrap: it initializes paths, 
+the locking system, the memory manager (RAM) and makes the <code>Vision_API</code> accessible everywhere.</p>
+
+<p><strong>Expert:</strong> The include performs a full bootstrap: path detection, internal cache, shards, minimal autoload, and exposes <code>Vision_API</code>, <code>Vision_Wave</code>, <code>Vision_Cell</code>.</p>
+
+<h2>✨ Example #1 (simple)</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Basic include</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>include "vision/vision.php";
+
+$id = Vision_API::create(["hello" =&gt; "world"]);
+echo $id;</code></pre></div>
+</div>
+
+<h2>⚙️ Example #2 (controller)</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Include in index.php</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>// index.php
+include __DIR__ . "/vision/vision.php";
+
+$posts = Vision_API::find(fn($c) =&gt;
+    isset($c['data']['text'])
+);
+
+print_r($posts);</code></pre></div>
+</div>
+
+<h2>🧠 Example #3 (advanced)</h2>
+<div class="code-block">
+<div class="code-block-header"><span>Include + custom path</span><button class="copy-btn">Copy</button></div>
+<div class="code-block-content"><pre><code>// bootstrap.php
+define("VISION_PATH", __DIR__ . "/vision/");
+include VISION_PATH . "vision.php";
+
+// Internal monitoring
+$wave = VisionWave::get();
+print_r($wave);</code></pre></div>
+</div>
+`;
+</script>
+</body>
+</html>

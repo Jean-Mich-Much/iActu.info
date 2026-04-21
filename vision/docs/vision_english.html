@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vision: doc (English)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    :root {
+        color-scheme: dark;
+        --bg: #050816;
+        --bg-alt: #0b1020;
+        --accent: #4f46e5;
+        --accent-soft: rgba(79, 70, 229, 0.25);
+        --accent-strong: rgba(129, 140, 248, 0.35);
+        --border-subtle: rgba(148, 163, 184, 0.35);
+        --border-glass: rgba(148, 163, 184, 0.2);
+        --text-main: #e5e7eb;
+        --text-soft: #9ca3af;
+        --text-strong: #f9fafb;
+        --code-bg: #020617;
+        --success: #4ade80;
+        --shadow-soft: 0 15px 40px rgba(0, 0, 0, 0.6);
+        --radius-lg: 18px;
+        --radius-md: 14px;
+        --radius-sm: 8px;
+        --gap-lg: 32px;
+        --gap-md: 20px;
+        --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top, #1f2937 0, #020617 55%, #000 100%);
+        color: var(--text-main);
+        font-size: 16px;
+    }
+
+    .wrapper { flex: 1; display: flex; flex-direction: column; }
+
+    .main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-lg);
+        padding: 40px 20px;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .doc-shell {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-lg);
+        background: rgba(15, 23, 42, 0.85);
+        border-radius: 28px;
+        box-shadow: var(--shadow-soft);
+        border: 1px solid var(--border-subtle);
+        padding: 40px;
+        backdrop-filter: blur(20px);
+    }
+
+    header, section { display: flex; flex-direction: column; gap: var(--gap-md); }
+
+    h1, h2, h3, h4 { margin: 0; line-height: 1.3; color: var(--text-strong); }
+
+    body {
+        backdrop-filter: blur(1.2em);
+    }
+
+    h1 {
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 10px;
+    }
+
+    h1 span.badge {
+        font-size: 16px;
+        padding: 4px 12px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: #a5b4fc;
+        border: 1px solid var(--accent-strong);
+    }
+
+    h2 {
+        font-size: 18px;
+        border-left: 3px solid var(--accent);
+        padding-left: 12px;
+        margin-bottom: 8px;
+    }
+
+    h3 { font-size: 17px; }
+
+    p, ul {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--text-main);
+    }
+
+    ul { padding-left: 20px; }
+    li + li { margin-top: 6px; }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(18em, 100%), 1fr));
+        gap: var(--gap-md);
+    }
+
+    .card {
+        background: rgba(15, 23, 42, 0.4);
+        border-radius: var(--radius-md);
+        padding: 20px;
+        border: 1px solid var(--border-glass);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card h3 { display: flex; align-items: center; gap: 8px; }
+    .card h3::before {
+        content: "";
+        width: 4px;
+        height: 18px;
+        border-radius: 4px;
+        background: linear-gradient(to bottom, var(--accent), transparent);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    th, td {
+        border: 1px solid var(--border-glass);
+        padding: 12px;
+        text-align: left;
+    }
+
+    th { background: rgba(30, 41, 59, 0.5); color: var(--text-strong); }
+
+    pre {
+        margin: 0;
+        font-family: var(--font-mono);
+        font-size: 16px;
+        line-height: 1.5;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+
+    .code-block {
+        display: flex;
+        flex-direction: column;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        background: var(--code-bg);
+        border: 1px solid var(--border-subtle);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .code-block-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 16px;
+        background: #1e293b;
+        color: #e5edff;
+    }
+
+    .code-block-content { padding: 16px; color: #e5edff; }
+
+    .copy-btn {
+        background: var(--accent);
+        color: white;
+        border: none;
+        padding: 4px 12px;
+        border-radius: 999px;
+        cursor: pointer;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: 0.2s;
+    }
+
+    .copy-btn:hover { background: #6366f1; transform: translateY(-1px); }
+
+    .highlight {
+        background: rgba(74, 222, 128, 0.05);
+        border-radius: var(--radius-md);
+        padding: 20px;
+        border: 1px solid rgba(74, 222, 128, 0.2);
+        border-left: 4px solid var(--success);
+    }
+
+    footer { padding: 20px; text-align: center; color: var(--text-soft); font-size: 14px; margin-top: 40px; }
+
+    a { color: #a5b4fc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .badge-inline {
+        display: inline-flex;
+        background: var(--accent-soft);
+        color: #a5b4fc;
+        padding: 4px 12px;
+        border-radius: 999px;
+        font-weight: bold;
+    }
+
+</style>
+</head>
+<body>
+<div class="wrapper">
+<main class="main">
+<div class="doc-shell">
+
+<header>
+    <h1>
+        🚀 Vision – Natural Data Engine
+        <span class="badge">NDE • PHP 8.3+</span>
+    </h1>
+    <div class="highlight">
+        <h3 style="color: var(--text-strong); margin-bottom: 6px;">⚡ Zero Configuration (Plug & Play)</h3>
+        <p>
+            Unlike SQL (MySQL) or NoSQL (MongoDB), Vision requires 
+            <strong>no server installation</strong>, <strong>no user account</strong>, 
+            and <strong>no setup</strong>.
+        </p>
+        <p style="margin-top: 8px; font-weight: bold; color: #a5b4fc;">
+            Including <code>vision.php</code> in your code instantly activates 
+            the entire engine (Database, Cache, Locks, Worker).
+        </p>
+    </div>
+    <p><strong>Vision is a Natural Data Engine (NDE).</strong><br>
+    An NDE is an evolution of traditional databases: it stores, reads and links data like a classic DB, but <strong>without schema</strong>, <strong>without tables</strong>, <strong>without SQL</strong> and <strong>without imposed structure</strong>.<br><br>
+    Vision relies on two simple foundations: <strong>UniCell</strong>, where each data point is an autonomous cell stored in a <code>.vr</code> file, and <strong>Wave</strong>, a minimal global state that coordinates the engine.</p>
+</header>
+
+<section>
+    <h2 id="intro">1. Introduction</h2>
+    <p>Vision is a handcrafted data engine in PHP 8.3+, UTF‑8 LF, zero dependencies. It is autonomous, stable, and predictable. It naturally reconstructs complex structures: forums, CMS, knowledge graphs, presentations, etc.</p>
+
+    <ul id="unicell">
+        <li><strong>UniCell</strong> – each piece of data is an autonomous cell stored in a <code>.vr</code> file.  
+        Relations use simple levels:
+            <ul>
+                <li>0 = lateral</li>
+                <li>1 = direct internal</li>
+                <li>2 = deep internal</li>
+                <li>3+ = rare cases</li>
+            </ul>
+        </li>
+        <li><strong>Wave</strong> – a minimal global state, updated continuously (RAM, CPU, Disk, Locks).
+        <br>• <strong>Smart RAM:</strong> Purgue at 75%, reactivate at 50% usage.</li>
+    </ul>
+</section>
+
+<section>
+    <h2 id="arch">2. File Architecture</h2>
+    <div class="code-block" data-code>
+        <div class="code-block-header">
+            <span>Project Structure</span>
+            <button type="button" class="copy-btn">Copy ⧉</button>
+        </div>
+        <div class="code-block-content">
+<pre><code>/vision/
+    vision.php              → entry point (loads all modules)
+    Vision_UniCell.php      → UniCell storage (.vr) + sharding
+    Vision_API.php          → full Vision API
+
+    vision_wave.php         → Wave global state
+    vision_lock.php         → non-blocking global lock
+    vision_worker.php       → async multitasking (Fibers)
+    vision_autoclean.php    → autonomous maintenance
+
+    /data/
+        YYYYMMDD/
+            id_unique.vr    → 1 file = 1 cell
+</code></pre>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 id="format">3. UniCell – .vr Format</h2>
+    <p>Each cell is stored in a <code>.vr</code> file:</p>
+
+    <div class="code-block" data-code>
+        <div class="code-block-header">
+            <span>.vr Envelope</span>
+            <button type="button" class="copy-btn">Copy ⧉</button>
+        </div>
+        <div class="code-block-content">
+<pre><code>VISION1
+⟪¦&lt;base64(json)&gt;¦⟫
+⟪Σ¦&lt;crc32_checksum&gt;¦⟫
+⟪⇒¦⇐⟫
+</code></pre>
+        </div>
+    </div>
+
+    <p>Internal JSON structure:</p>
+    <div class="code-block" data-code>
+        <div class="code-block-header">
+            <span>Internal JSON</span>
+            <button type="button" class="copy-btn">Copy ⧉</button>
+        </div>
+        <div class="code-block-content">
+<pre><code>{
+  "id": "20260416_ab12cd34ef56",
+  "data": {...},
+  "relations": [
+      {"id": "xxx", "niveau": 1},
+      {"id": "yyy", "niveau": 0}
+  ],
+  "createdAt": 1713200000,
+  "updatedAt": 1713200000
+}
+</code></pre>
+        </div>
+    </div>
+
+    <div class="highlight">
+        <ul>
+            <li>Strict atomicity: <code>.tmp → flush → fsync → rename()</code></li>
+            <li>External CRC checksum (Instant verification before JSON decoding)</li>
+            <li>Crash-safe with final marker validation</li>
+            <li>Deterministic UTF‑8 format</li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h2 id="sharding">4. Sharding</h2>
+    <p>Each cell is stored based on its creation date:</p>
+    <div class="code-block" data-code>
+        <div class="code-block-header"><span>Date Sharding</span><button type="button" class="copy-btn">Copy</button></div>
+        <div class="code-block-content"><pre><code>/vision/data/YYYYMMDD/id.vr</code></pre></div>
+    </div>
+    <p>The ID prefix (YYYYMMDD) automatically routes the data to its shard folder, preventing Linux filesystem slowdowns on large datasets.</p>
+</section>
+
+<section>
+    <h2 id="modules">5. Internal Modules</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>vision.php</h3>
+            <ul>
+                <li>Zero-config entry point</li>
+                <li>Silent logging (vision.log)</li>
+                <li>Memory monitoring</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Vision_UniCell.php</h3>
+            <ul>
+                <li>Storage management</li>
+                <li>Atomic I/O</li>
+                <li>L1 RAM Cache</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Vision_API.php</h3>
+            <ul>
+                <li>Full public API</li>
+                <li>Graph traversal</li>
+                <li>Async search</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>vision_worker.php</h3>
+            <ul>
+                <li>Async Fibers scheduler</li>
+                <li>Non-blocking tasks</li>
+                <li>Concurrency manager</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 id="api">6. Vision API (Reference)</h2>
+    <table>
+        <thead>
+            <tr><th>Method</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><strong>create</strong></td><td>Create a new cell with unique ID</td></tr>
+            <tr><td><strong>read</strong></td><td>Load cell data (L1 Cache-first)</td></tr>
+            <tr><td><strong>update</strong></td><td>Modify existing data (Atomic)</td></tr>
+            <tr><td><strong>delete</strong></td><td>Permanently erase a cell</td></tr>
+            <tr><td><strong>link</strong></td><td>Create a relation between two cells</td></tr>
+            <tr><td><strong>graph</strong></td><td>Build a relation graph (depth max: 16)</td></tr>
+            <tr><td><strong>find</strong></td><td>Search using Generator (yield)</td></tr>
+        </tbody>
+    </table>
+    <p><a href="api_english.html" rel="noopener" class="badge-inline">📚 Link: API Happy! Complete Reference with examples 🚀</a></p>
+</section>
+
+<section>
+    <h2 id="tuto">7. Tutorial: Build a micro news system</h2>
+    <p>This guide shows you how to manage articles and categories with Vision in just a few lines of code.</p>
+
+    <div class="code-block" data-code>
+        <div class="code-block-header">
+            <span>App.php — Step-by-step</span>
+            <button type="button" class="copy-btn">Copy ⧉</button>
+        </div>
+        <div class="code-block-content">
+<pre><code>&lt;?php
+// 1. ACTIVATION (Zero Config)
+// Just including this file initializes the DB and Cache.
+include "vision/vision.php";
+
+// 2. CREATE A CATEGORY
+// Vision returns a unique ID (e.g., 20240522_abcdef123456).
+$catId = Vision_API::create(['name' => 'Technology', 'color' => 'blue']);
+echo "Category created: $catId \n";
+
+// 3. CREATE A LINKED ARTICLE
+// We link the article to the category using a niveau 1 (direct).
+$newsId = Vision_API::create(
+    [
+        'title' => 'Vision v18 in Production',
+        'body'  => 'The tutorial is finally here!',
+        'views' => 0
+    ],
+    [['id' => $catId, 'niveau' => 1]] 
+);
+echo "Article created: $newsId \n";
+
+// 4. READ AND UPDATE
+// Read the data, increment views, and save it back.
+$article = Vision_API::read($newsId);
+$article['data']['views']++; 
+Vision_API::update($newsId, $article['data']);
+
+// 5. SEARCH (Find)
+// Search for articles with more than 0 views.
+// The Generator (yield) ensures zero RAM overhead.
+$popular = Vision_API::find(fn($cell) => 
+    ($cell['data']['views'] ?? 0) > 0
+);
+
+foreach($popular as $item) {
+    echo "Trending: " . $item['data']['title'] . "\n";
+}
+
+// 6. EXPLORE THE GRAPH
+// Get the article and its linked category in one call.
+$graph = Vision_API::graph($newsId);
+print_r($graph);
+
+// 7. STATISTICS
+$stats = Vision_API::stats();
+echo "Total records: " . $stats['count'];
+</code></pre>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 id="conclusion">8. Conclusion</h2>
+    <p>Vision is a natural, simple, and predictable data engine. It provides universality through UniCells and coherence through Wave global state. It's built for developers who want full control without the overhead of traditional DB servers.</p>
+</section>
+
+</div>
+</main>
+
+<footer>
+Jean-Michel G, Bordeaux, France, iactu.info since 2003
+</footer>
+</div>
+
+<script>
+(function() {
+    function copyText(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            return navigator.clipboard.writeText(text);
+        }
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        try { document.execCommand('copy'); } catch(e) {}
+        document.body.removeChild(ta);
+        return Promise.resolve();
+    }
+
+    function setupCopyButtons() {
+        const blocks = document.querySelectorAll('[data-code]');
+        blocks.forEach(block => {
+            const btn = block.querySelector('.copy-btn');
+            const pre = block.querySelector('pre');
+            if (!btn || !pre) return;
+
+            btn.addEventListener('click', () => {
+                const text = pre.innerText;
+                const original = btn.innerHTML;
+                copyText(text).then(() => {
+                    btn.innerHTML = '<span>Copied</span><span>✓</span>';
+                    setTimeout(() => {
+                        btn.innerHTML = original;
+                    }, 1200);
+                });
+            });
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupCopyButtons);
+    } else {
+        setupCopyButtons();
+    }
+})();
+</script>
+</body>
+</html>
