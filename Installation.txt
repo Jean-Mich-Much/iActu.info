@@ -170,18 +170,28 @@ echo "Restauration terminée"
 
 
 ────────────────────────────────────────
-UFW (version minimale + OVH Monitoring)
+UFW (version minimale)
 ────────────────────────────────────────
 
-# Politique par défaut
-ufw default deny incoming
-ufw default allow outgoing
+# === FIREWALL UFW ===
 
-# Ports essentiels serveur
-ufw allow ssh
-ufw allow http
-ufw allow https
+ufw default deny
+
+# SSH
+ufw allow 22/tcp
+ufw allow 1022/tcp
+
+# Web
+ufw allow 80/tcp
+ufw allow 443/tcp
+ufw allow 443/udp
+
+# NTP
+ufw allow 123/udp
 ufw allow ntp
+
+# DNS (optionnel)
+ufw allow 53
 
 # === OVH MONITORING ===
 # OVH surveille le serveur via ICMP (ping)
@@ -198,7 +208,7 @@ ufw allow from 92.222.184.0/24
 ufw allow from 92.222.185.0/24
 ufw allow from 92.222.186.0/24
 
-# Activation
+
 ufw logging off
 ufw enable
 ufw reload
