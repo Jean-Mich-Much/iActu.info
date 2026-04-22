@@ -1,71 +1,75 @@
 {
- email jemi33@gmail.com
+	email jemi33@gmail.com
 }
 
 (redirect) {
- @http protocol http
- redir @http https://{host}{uri} permanent
+	@http protocol http
+	redir @http https://{host}{uri} permanent
 }
 
 www.iactu.info, www.iactu.ovh, www.iactu.fr, iactu.ovh, iactu.fr {
- import redirect
- redir https://iactu.info{uri} permanent
+	import redirect
+	redir https://iactu.info{uri} permanent
 }
 
 iactu.info {
- root * /_/
- php_fastcgi unix//run/php/s83.sock
- encode zstd gzip
- file_server
+	root * /_/
+	php_fastcgi unix//run/php/s83.sock
+	encode zstd gzip
+	file_server
 
- @options method OPTIONS
- respond @options 204
+	@options method OPTIONS
+	respond @options 204
 
- header {
-  Access-Control-Allow-Origin "https://iactu.info"
-  Access-Control-Allow-Credentials "true"
-  Access-Control-Allow-Headers "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,X-Custom-Header,Upgrade-Insecure-Requests,Cookie"
-  Access-Control-Allow-Methods "GET, POST, OPTIONS"
-  Access-Control-Expose-Headers "Cache-Control,Content-Length,Content-Range,Content-Language,Content-Type,Expires,Last-Modified,Pragma"
-  Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
-  X-Content-Type-Options "nosniff"
-  Referrer-Policy "strict-origin-when-cross-origin"
-  Cross-Origin-Opener-Policy "same-origin"
-  Cross-Origin-Embedder-Policy "require-corp"
-  Permissions-Policy "accelerometer=(self), autoplay=(self), camera=(self), cross-origin-isolated=(self), display-capture=(self), encrypted-media=(self), fullscreen=(self), geolocation=(self), gyroscope=(self), keyboard-map=(self), magnetometer=(self), microphone=(self), midi=(self), payment=(self), picture-in-picture=(self), publickey-credentials-get=(self), screen-wake-lock=(self), sync-xhr=(self), usb=(self), web-share=(self), xr-spatial-tracking=(self)"
-  Timing-Allow-Origin "*"
-  Content-Security-Policy "upgrade-insecure-requests; base-uri 'self'; default-src 'self' *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info; img-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info; style-src 'self' 'unsafe-inline' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info; media-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info; font-src 'self' data: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info; script-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info 'unsafe-inline' 'unsafe-eval'; child-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info; frame-ancestors 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh *.intopress.info;"
- }
+	header {
+		Access-Control-Allow-Origin "https://iactu.info"
+		Access-Control-Allow-Credentials "true"
+		Access-Control-Allow-Headers "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,X-Custom-Header,Upgrade-Insecure-Requests,Cookie"
+		Access-Control-Allow-Methods "GET, POST, OPTIONS"
+		Access-Control-Expose-Headers "Cache-Control,Content-Length,Content-Range,Content-Language,Content-Type,Expires,Last-Modified,Pragma"
+		Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Cross-Origin-Opener-Policy "same-origin"
+		Cross-Origin-Embedder-Policy "require-corp"
+		Permissions-Policy "accelerometer=(self), autoplay=(self), camera=(self), cross-origin-isolated=(self), display-capture=(self), encrypted-media=(self), fullscreen=(self), geolocation=(self), gyroscope=(self), keyboard-map=(self), magnetometer=(self), microphone=(self), midi=(self), payment=(self), picture-in-picture=(self), publickey-credentials-get=(self), screen-wake-lock=(self), sync-xhr=(self), usb=(self), web-share=(self), xr-spatial-tracking=(self)"
+		Timing-Allow-Origin "*"
+		Content-Security-Policy "upgrade-insecure-requests; base-uri 'self'; default-src 'self' *.iactu.info *.iactu.fr *.iactu.ovh; img-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh; style-src 'self' 'unsafe-inline' data: https: *.iactu.info *.iactu.fr *.iactu.ovh; media-src 'self' data: https: *.iactu.info *.iactu.fr *.iactu.ovh; font-src 'self' data: *.iactu.info *.iactu.fr *.iactu.ovh; script-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh 'unsafe-inline' 'unsafe-eval'; child-src 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh; frame-ancestors 'self' https: *.iactu.info *.iactu.fr *.iactu.ovh;"
+	}
 
- @html path *.html
- header @html Cache-Control "no-cache, public"
+	request_body {
+		max_size 16MB
+	}
 
- @php path *.php
- header @php Cache-Control "no-cache, public"
+	@html path *.html
+	header @html Cache-Control "no-cache, public"
 
- @css path *.css
- header @css Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate"
+	@php path *.php
+	header @php Cache-Control "no-cache, public"
 
- @js path *.js
- header @js Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate"
+	@css path *.css
+	header @css Cache-Control "public, max-age=31536000, must-revalidate, stale-while-revalidate"
 
- @json path *.json
- header @json Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate"
+	@js path *.js
+	header @js Cache-Control "public, max-age=31536000, must-revalidate, stale-while-revalidate"
 
- @txt path *.txt
- header @txt Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate"
+	@json path *.json
+	header @json Cache-Control "public, max-age=31536000, must-revalidate, stale-while-revalidate"
 
- @xml path *.xml
- header @xml Cache-Control "public, max-age=60, immutable, stale-while-revalidate"
+	@txt path *.txt
+	header @txt Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate"
 
- @img path *.jpg *.png *.gif *.webp *.svg *.svgz *.ico
- header @img Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate, no-transform"
+	@xml path *.xml
+	header @xml Cache-Control "public, max-age=60, immutable, stale-while-revalidate"
 
- @fonts path *.woff *.woff2
- header @fonts Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate, no-transform"
+	@img path *.jpg *.png *.gif *.webp *.svg *.svgz *.ico
+	header @img Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate, no-transform"
 
- handle_errors {
-  rewrite * /erreur.html
-  file_server
- }
+	@fonts path *.woff *.woff2
+	header @fonts Cache-Control "public, max-age=31536000, immutable, stale-while-revalidate, no-transform"
+
+	handle_errors {
+		rewrite * /erreur.html
+		file_server
+	}
 }
