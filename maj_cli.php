@@ -23,7 +23,7 @@ $jobs=[];
 
 /* 1.1 Technologie (principaux) */
 $jobs[]=['parse',['Clubic','clubic','Technologie','tec','https://www.clubic.com/feed/rss',5,$max]];
-$jobs[]=['parse',['Cowcotland','cowcotla','Technologie','tec','https://www.cowcotland.com/rss-news.xml',5,$max]];
+$jobs[]=['parse',['Cowcotland','cowcotla','Technologie','tec','https://feeds.feedburner.com/cowcotland',5,$max]];
 $jobs[]=['parse',['Developpez','developp','Technologie','tec','https://www.developpez.com/index/rss',5,$max]];
 $jobs[]=['parse',['Frandroid','frandroi','Technologie','tec','https://www.frandroid.com/feed',5,$max]];
 $jobs[]=['parse',['Ginjfo','ginjfo','Technologie','tec','https://www.ginjfo.com/feed',5,$max]];
