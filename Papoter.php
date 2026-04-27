@@ -806,3 +806,6 @@ echo preg_replace('/ {2,}/', ' ', $html_final);
 if (ob_get_level() > 0) {
     ob_end_flush();
 }
+
+$titre_page = 'Papoter';
+@include 'Fondation/php/stats.php';
