@@ -30,5 +30,6 @@
 <a href="https://iactu.info/Fondation/doc/index.html" target="_blank" aria-label="Doc 😊" title=" Doc 😊 " rel="noopener" id="a03">📚&nbsp;Doc </a> &nbsp;&nbsp; 
 <a href="https://www.paypal.com/donate/?hosted_button_id=QVKRNFGMPXYXY" target="_blank" aria-label="Faire un don, merci par avance 😊" title=" Faire un don, merci par avance 😊 " id="paypal-message-bot">✨&nbsp;Faire un don&nbsp; </a> &nbsp;&nbsp; 
 <a href="https://iactu.info/Page_stats.php" aria-label="Statistiques des pages 😊" title=" Statistiques des pages 😊 " rel="noopener" id="stats">&nbsp;🗃️&nbsp;Stats </a> &nbsp;&nbsp; 
+<a href="Papoter.php" aria-label="Papoter 😊" title=" Papoter 😊 " rel="noopener" id="Papoter-bot">&nbsp;🗨️&nbsp;Papoter </a> &nbsp;&nbsp; 
 <span id="coucou" class="coucou" data-user="33imej" data-website="moc.liamg" title=" Coucou 😊 " aria-label="Coucou 😊" role="term"></span>
 </span></div><?php }
